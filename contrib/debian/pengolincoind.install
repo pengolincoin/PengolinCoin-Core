@@ -1,0 +1,3 @@
+usr/local/bin/pengolincoind usr/bin
+usr/local/bin/pengolincoin-cli usr/bin
+debian/examples/pengolincoin.conf etc/pengolincoin

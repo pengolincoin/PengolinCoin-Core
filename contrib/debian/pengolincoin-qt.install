@@ -1,0 +1,6 @@
+usr/local/bin/pengolincoin-qt usr/bin
+share/pixmaps/pengolincoin32.xpm usr/share/pixmaps
+share/pixmaps/pengolincoin16.xpm usr/share/pixmaps
+share/pixmaps/pengolincoin128.png usr/share/pixmaps
+debian/pengolincoin-qt.desktop usr/share/applications
+debian/pengolincoin-qt.protocol usr/share/kde4/services/

@@ -1,0 +1,81 @@
+policy_module(pengolincoin, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type pengolincoin_t;
+type pengolincoin_exec_t;
+init_daemon_domain(pengolincoin_t, pengolincoin_exec_t)
+
+permissive pengolincoin_t;
+
+type pengolincoin_initrc_exec_t;
+init_script_file(pengolincoin_initrc_exec_t)
+
+type pengolincoin_conf_t;
+files_type(pengolincoin_conf_t)
+
+type pengolincoin_var_lib_t;
+files_type(pengolincoin_var_lib_t)
+
+type pengolincoin_var_run_t;
+files_type(pengolincoin_var_run_t)
+
+type pengolincoin_port_t;
+corenet_port(pengolincoin_port_t)
+
+########################################
+#
+# pengolincoin local policy
+#
+allow pengolincoin_t self:process { fork };
+
+allow pengolincoin_t self:fifo_file rw_fifo_file_perms;
+allow pengolincoin_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(pengolincoin_t, pengolincoin_conf_t, pengolincoin_conf_t)
+manage_files_pattern(pengolincoin_t, pengolincoin_conf_t, pengolincoin_conf_t)
+
+manage_dirs_pattern(pengolincoin_t, pengolincoin_var_lib_t, pengolincoin_var_lib_t)
+manage_files_pattern(pengolincoin_t, pengolincoin_var_lib_t, pengolincoin_var_lib_t)
+files_var_lib_filetrans(pengolincoin_t, pengolincoin_var_lib_t, { dir file })
+
+manage_dirs_pattern(pengolincoin_t, pengolincoin_var_run_t, pengolincoin_var_run_t)
+manage_files_pattern(pengolincoin_t, pengolincoin_var_run_t, pengolincoin_var_run_t)
+
+sysnet_dns_name_resolve(pengolincoin_t)
+corenet_all_recvfrom_unlabeled(pengolincoin_t)
+
+allow pengolincoin_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(pengolincoin_t)
+corenet_tcp_sendrecv_generic_node(pengolincoin_t)
+corenet_tcp_sendrecv_all_ports(pengolincoin_t)
+corenet_tcp_bind_generic_node(pengolincoin_t)
+
+gen_require(`
+    type pengolincoin_port_t;
+')
+allow pengolincoin_t pengolincoin_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type pengolincoin_port_t;
+')
+allow pengolincoin_t pengolincoin_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(pengolincoin_t)
+
+files_read_etc_files(pengolincoin_t)
+
+miscfiles_read_localization(pengolincoin_t)
+
+sysnet_dns_name_resolve(pengolincoin_t)
+
+allow pengolincoin_t pengolincoin_exec_t:file execute_no_trans;
+allow pengolincoin_t self:process setsched;
+corecmd_exec_ls(pengolincoin_t)
+corenet_tcp_connect_http_port(pengolincoin_t)
+dev_read_urand(pengolincoin_t)
+fs_getattr_xattr_fs(pengolincoin_t)
+kernel_read_system_state(pengolincoin_t)

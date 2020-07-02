@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=PENGOLINCOIN Core
+Comment=PENGOLINCOIN P2P Cryptocurrency
+Comment[fr]=PENGOLINCOIN, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=PENGOLINCOIN, eşten eşe kriptografik sanal para birimi
+Exec=pengolincoin-qt %u
+Terminal=false
+Type=Application
+Icon=pengolincoin128
+MimeType=x-scheme-handler/pengolincoin;
+Categories=Office;Finance;
+StartupWMClass=PengolinCoin-qt

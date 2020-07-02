@@ -1,0 +1,11 @@
+[Protocol]
+exec=pengolincoin-qt '%u'
+protocol=pengolincoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false
