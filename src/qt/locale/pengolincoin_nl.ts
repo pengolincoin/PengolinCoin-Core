@@ -4366,7 +4366,7 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
                            &lt;ol&gt;&lt;li&gt;
                            Make sure your wallet is completely synchronized and you are using the latest release.
                            &lt;li&gt;
-                           You must have a balance of PENGOLINCOIN with a minimum of 101 confirmations.
+                           You must have a balance of PENGOLINCOIN with a minimum of 21 confirmations.
                            &lt;li&gt;
                            Your wallet must stay online and be unlocked for anonymization and staking purposes.
                            &lt;li&gt;
@@ -4394,7 +4394,7 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
                            &lt;ol&gt;&lt;li&gt;
                            Zorg ervoor dat uw portemonnee volledig gesynchroniseerd is en dat u de laatste versie gebruikt.
                            &lt;li&gt;
-                           U moet een saldo van PENGOLINCOIN hebben met een minimum van 101 bevestigingen.
+                           U moet een saldo van PENGOLINCOIN hebben met een minimum van 21 bevestigingen.
                            &lt;li&gt;
                            Uw portemonnee moet online blijven en worden ontgrendeld voor anonimisering en staking-doeleinden.
                            &lt;li&gt;

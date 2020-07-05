@@ -4331,7 +4331,7 @@ PENGOLINCOIN零币(zPGO)技术文件
                            &lt;ol&gt;&lt;li&gt;
                            Make sure your wallet is completely synchronized and you are using the latest release.
                            &lt;li&gt;
-                           You must have a balance of PENGOLINCOIN with a minimum of 101 confirmations.
+                           You must have a balance of PENGOLINCOIN with a minimum of 21 confirmations.
                            &lt;li&gt;
                            Your wallet must stay online and be unlocked for anonymization and staking purposes.
                            &lt;li&gt;

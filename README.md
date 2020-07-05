@@ -1,16 +1,16 @@
 PENGOLINCOIN Core integration/staging repository
 =====================================
 
-[![Build Status](https://travis-ci.org/PENGOLINCOIN-Project/PENGOLINCOIN.svg?branch=master)](https://travis-ci.org/PENGOLINCOIN-Project/PENGOLINCOIN) [![GitHub version](https://badge.fury.io/gh/PENGOLINCOIN-Project%2FPENGOLINCOIN.svg)](https://badge.fury.io/gh/PENGOLINCOIN-Project%2FPENGOLINCOIN)
+[![Build Status](https://travis-ci.org/PENGOLINCOIN/PENGOLINCOIN.svg?branch=master)](https://travis-ci.org/PENGOLINCOIN/PENGOLINCOIN) [![GitHub version](https://badge.fury.io/gh/PENGOLINCOIN%2FPENGOLINCOIN.svg)](https://badge.fury.io/gh/PENGOLINCOIN-Project%2FPENGOLINCOIN)
 
-PENGOLINCOIN is an open source crypto-currency focused on fast private transactions using the Zerocoin protocol, with low transaction fees & environmental footprint.  It utilizes the first ever anonymous proof of stake protocol, called zPoS, combined with regular PoS and masternodes for securing its network. zPoS incentivises using the privacy features available in PENGOLINCOIN by granting a higher block reward for zPoS over regular PoS and masternodes. In practice PENGOLINCOIN has between 4 to 10 times higher use of it's privacy features in comparison to other coins that combine public and private transactions. This is thanks to innovations like zPoS and integrating the Zerocoin protocol into light/mobile wallets, allowing for a complete and lightweight privacy protocol that can be used on the go. As well as security improvements like [deterministic generation of zPGO for easy backups.](https://www.reddit.com/r/pengolincoin/comments/8gbjf7/how_to_use_deterministic_zerocoin_generation/)
+PENGOLINCOIN is an open source crypto-currency focused on fast private transactions using the Zerocoin protocol, with low transaction fees & environmental footprint.  It utilizes the first ever anonymous proof of stake protocol, called zPoS, combined with regular PoS and masternodes for securing its network. zPoS incentivises using the privacy features available in PENGOLINCOIN by granting a higher block reward for zPoS over regular PoS and masternodes. In practice PENGOLINCOIN has between 4 to 10 times higher use of it's privacy features in comparison to other coins that combine public and private transactions. This is thanks to innovations like zPoS and integrating the Zerocoin protocol into light/mobile wallets, allowing for a complete and lightweight privacy protocol that can be used on the go. As well as security improvements like deterministic generation of zPGO for easy backups.
 The goal of PENGOLINCOIN is to achieve a decentralized sustainable crypto currency with near instant full-time private transactions, fair governance and community intelligence.
-- Anonymized transactions & consensus using the [_Zerocoin Protocol_](http://www.pengolincoin.xyz/zpgo) and [zPoS](https://pengolincoin.xyz/zpos/).
-- light/mobile wallet privacy using the [Zerocoin Light Node Protocol](https://pengolincoin.xyz/wp-content/uploads/2018/11/Zerocoin_Light_Node_Protocol.pdf)
+- Anonymized transactions & consensus using the Zerocoin Protocol and zPoS.
+- light/mobile wallet privacy using the Zerocoin Light Node Protocol
 - Fast transactions featuring guaranteed zero confirmation transactions, we call it _SwiftX_.
 - Decentralized blockchain voting utilizing Masternode technology to form a DAO. The blockchain will distribute monthly treasury funds based on successful proposals submitted by the community and voted on by the DAO.
 
-More information at [pengolincoin.xyz](http://www.pengolincoin.xyz) Visit our ANN thread at [BitcoinTalk](http://www.bitcointalk.org/index.php?topic=1262920)
+More information at [pengolincoin.xyz](https://www.pengolincoin.xyz) Visit our ANN thread at [BitcoinTalk](https://bitcointalk.org/index.php?topic=5234832)
 
 ### Coin Specs
 <table>
@@ -53,3 +53,4 @@ More information at [pengolincoin.xyz](http://www.pengolincoin.xyz) Visit our AN
 <tr><td>Phase 9</td><td>4730401-18848000</td><td>2 PGO</td><td>50% (1 PGO)</td><td>45% (0.9 PGO)</td><td>5% (0.1 PGO)</td></tr>
 
 </table>
+

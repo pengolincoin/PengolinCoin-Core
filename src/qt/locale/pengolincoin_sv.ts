@@ -1436,7 +1436,7 @@ Den startar automatiskt så snart plånboken har tillräckligt många bekräftel
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 100,000 PGO will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>En transaktion på 10 000 PGO kommer göras till en ny tom adress i din plånbok. Adressen är märkt under huvudnodens namn.</translation>
+        <translation>En transaktion på 100,000 PGO kommer göras till en ny tom adress i din plånbok. Adressen är märkt under huvudnodens namn.</translation>
     </message>
     <message>
         <source>Set Master Node’s IP and port</source>

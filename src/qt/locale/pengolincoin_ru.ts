@@ -1676,7 +1676,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 100,000 PGO will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;На новый пустой адрес в вашем кошельке&lt;/p&gt;&lt;p&gt; будет сделана транзакция в 10 000 PGO. &lt;/p&gt;&lt;p&gt;Адрес отмечен под именем мастерноды.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;На новый пустой адрес в вашем кошельке&lt;/p&gt;&lt;p&gt; будет сделана транзакция в 100,000 PGO. &lt;/p&gt;&lt;p&gt;Адрес отмечен под именем мастерноды.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Set Master Node’s IP and port</source>
@@ -1909,7 +1909,7 @@ Are you sure?</source>
     </message>
     <message>
         <source>Not enough balance to create a masternode, 100,000 PGO required.</source>
-        <translation>Недостаточно баланса для создания мастерноды. Требуется 10 000 PGO.</translation>
+        <translation>Недостаточно баланса для создания мастерноды. Требуется 100,000 PGO.</translation>
     </message>
     <message>
         <source>Error creating masternode</source>
@@ -4357,7 +4357,7 @@ zPGO можно потратить и отправить на любой адр�
                            &lt;ol&gt;&lt;li&gt;
                            Make sure your wallet is completely synchronized and you are using the latest release.
                            &lt;li&gt;
-                           You must have a balance of PENGOLINCOIN with a minimum of 101 confirmations.
+                           You must have a balance of PENGOLINCOIN with a minimum of 21 confirmations.
                            &lt;li&gt;
                            Your wallet must stay online and be unlocked for anonymization and staking purposes.
                            &lt;li&gt;
@@ -4383,7 +4383,7 @@ zPGO можно потратить и отправить на любой адр�
 &lt;/p&gt;&lt;p align="justify"&gt;
  &lt;ol&gt;&lt;li&gt;убедитесь, что ваш кошелек полностью синхронизирован и вы используете последнюю версию.
 &lt;li&gt;
-Вы должны иметь баланс PENGOLINCOIN с минимумом в 101 подтверждение
+Вы должны иметь баланс PENGOLINCOIN с минимумом в 21 подтверждение
 &lt;li&gt;
 Ваш кошелек должен оставаться в сети и быть разблокированным для анонимизации и стекинга.
 &lt;li&gt;
@@ -4491,7 +4491,7 @@ zPGO можно потратить и отправить на любой адр�
 
 Требования:
 
-10 000 PGO для каждой мастерноды
+100,000 PGO для каждой мастерноды
 Должен храниться в основном кошельке
 Требуется выделенный IP-адрес
 Кошелек мастерноды должен оставаться в сети</translation>
@@ -4506,7 +4506,7 @@ zPGO можно потратить и отправить на любой адр�
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the 100,000 PGO collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet/s and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Кошелек контролера мастерноды - это то место, где может находиться залог в 10 000 PGO во время настройки удаленного контролера мастерноды. Это кошелек, который может активировать удаленный кошелек / кошельки мастерноды и позволит вам сохранять ваши сопутствующие монеты в автономном режиме, пока удаленная мастернода остается в сети.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Кошелек контролера мастерноды - это то место, где может находиться залог в 100,000 PGO во время настройки удаленного контролера мастерноды. Это кошелек, который может активировать удаленный кошелек / кошельки мастерноды и позволит вам сохранять ваши сопутствующие монеты в автономном режиме, пока удаленная мастернода остается в сети.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Frequently Asked Questions</source>

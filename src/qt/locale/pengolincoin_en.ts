@@ -5352,7 +5352,7 @@ Verify that you have installed a predetermined text editor.</source>
                            balance to zPGO to assist the network. If you do not wish to
                            stake zPGO or take advantage of the privacy benefit it brings,
                            you can disable the automatic minting in your PENGOLINCOIN wallet by
-                           going to Settings-&gt;Options and deselecting ???Enable zPGO Automint???.
+                           going to Settings-&gt;Options and deselecting “Enable zPGO Automint”.
                            If you are not making use of the PENGOLINCOIN-QT or GUI you can simply open
                            your pengolincoin.conf file and add &lt;i&gt;enablezeromint=0&lt;/i&gt; Without the quotation
                            marks and restart your wallet to disable automint.&lt;/p&gt;
@@ -5382,7 +5382,7 @@ Verify that you have installed a predetermined text editor.</source>
                            zPGO can be spent and sent to any PENGOLINCOIN address. The receiver will
                            receive standard PENGOLINCOIN but the origin of the PENGOLINCOIN is anonymized by the zPGO Protocol.
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           If you want more zPGO you will need to mint your balance in the ???Privacy??? tab.
+                           If you want more zPGO you will need to mint your balance in the “Privacy” tab.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation type="unfinished"></translation>
@@ -5406,7 +5406,7 @@ Verify that you have installed a predetermined text editor.</source>
                            &lt;ol&gt;&lt;li&gt;
                            Make sure your wallet is completely synchronized and you are using the latest release.
                            &lt;li&gt;
-                           You must have a balance of PENGOLINCOIN with a minimum of 101 confirmations.
+                           You must have a balance of PENGOLINCOIN with a minimum of 21 confirmations.
                            &lt;li&gt;
                            Your wallet must stay online and be unlocked for anonymization and staking purposes.
                            &lt;li&gt;
@@ -6579,7 +6579,7 @@ Are you sure?
     </message>
     <message>
         <location line="+143"/>
-        <source>Loading???</source>
+        <source>Loading…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7364,7 +7364,7 @@ Are you sure?
     </message>
     <message>
         <location line="+7"/>
-        <source>D7VFR83SQbie???BhjcWJtcfip5krte2Z </source>
+        <source>D7VFR83SQbieBhjcWJtcfip5krte2Z </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7572,7 +7572,7 @@ PENGOLINCOIN Core Wallet</source>
     </message>
     <message>
         <location line="+27"/>
-        <source>PENGOLINCOIN is the world???s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <source>PENGOLINCOIN is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

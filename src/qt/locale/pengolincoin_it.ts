@@ -4368,7 +4368,7 @@ Se desideri più zPGO, dovrai forgiare il saldo nella scheda "Privacy".
                            &lt;ol&gt;&lt;li&gt;
                            Make sure your wallet is completely synchronized and you are using the latest release.
                            &lt;li&gt;
-                           You must have a balance of PENGOLINCOIN with a minimum of 101 confirmations.
+                           You must have a balance of PENGOLINCOIN with a minimum of 21 confirmations.
                            &lt;li&gt;
                            Your wallet must stay online and be unlocked for anonymization and staking purposes.
                            &lt;li&gt;
@@ -4396,7 +4396,7 @@ Se desideri più zPGO, dovrai forgiare il saldo nella scheda "Privacy".
                            &lt;ol&gt;&lt;li&gt;
                            Assicurati che il tuo portafoglio sia completamente sincronizzato e stai utilizzando l'ultima versione.
                            &lt;li&gt;
-                           Devi avere un saldo di PENGOLINCOIN con un minimo di 101 conferme.
+                           Devi avere un saldo di PENGOLINCOIN con un minimo di 21 conferme.
                            &lt;li&gt;
                            Il tuo portafoglio deve rimanere online ed essere sbloccato per scopi di anonimizzazione e staking.
                            &lt;li&gt;

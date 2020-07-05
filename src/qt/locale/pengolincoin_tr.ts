@@ -4361,7 +4361,7 @@ zPGO Protokolü ile anonimleştirilmiş olacaktır.
                            &lt;ol&gt;&lt;li&gt;
                            Make sure your wallet is completely synchronized and you are using the latest release.
                            &lt;li&gt;
-                           You must have a balance of PENGOLINCOIN with a minimum of 101 confirmations.
+                           You must have a balance of PENGOLINCOIN with a minimum of 21 confirmations.
                            &lt;li&gt;
                            Your wallet must stay online and be unlocked for anonymization and staking purposes.
                            &lt;li&gt;
@@ -4389,7 +4389,7 @@ zPGO Protokolü ile anonimleştirilmiş olacaktır.
                            &lt;ol&gt;&lt;li&gt;
                            Cüzdanınızı tamamen senkronize olduğundan ve son versiyonu kullandığınızdan emin olun.
                            &lt;li&gt;
-                           En az 101 onay almış bir PENGOLINCOIN bakiyeniz olmaldır.
+                           En az 21 onay almış bir PENGOLINCOIN bakiyeniz olmaldır.
                            &lt;li&gt;
                            Cüzdanınız online olmalı, stake ve anonimleştirme işlemleri için kilidini açılmış olmalıdır.
                            &lt;li&gt;

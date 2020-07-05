@@ -669,7 +669,7 @@ background:transparent;
                    <item>
                     <widget class="QLabel" name="textChange">
                      <property name="text">
-                      <string>D7VFR83SQbie???BhjcWJtcfip5krte2Z </string>
+                      <string>D7VFR83SQbieBhjcWJtcfip5krte2Z </string>
                      </property>
                     </widget>
                    </item>

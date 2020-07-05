@@ -52,9 +52,9 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 //    timestamp before)
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of(0, uint256("00000c75e9f1eb19cbd929790fd63d7629dde1ee7343cda4378d7463791cbd93"))
-    (100, uint256("0000022cb7d43f34a122a7798342fa7f246c694ecb5abd9bb14584ef4c54879f"))
-    // (3000, uint256("189fbef6ddca70d4ff8d46f118543c620ec9e2a214e554abc5ed9491043b6b48"))
+    boost::assign::map_list_of(0, uint256("00000865fddb23c371506db1692c393b7f4c5813f9139ea20b808b325aa96316"))
+    (100, uint256("0000014b512647f2f87826dc1f74bdae9a79d69af072035f7133e58796857a9c"))
+    (1100, uint256("a32107ba6b3fd2a48d89a9825889c014a2479d8f17211fc7125874eb781c5286"))
     // (616764, uint256("29dd0bd1c59484f290896687b4ffb6a49afa5c498caf61967c69a541f8191557")) //first block to use modifierV2
     // (623933, uint256("c7aafa648a0f1450157dc93bd4d7448913a85b7448f803b4ab970d91fc2a7da7"))
     // (791150, uint256("8e76f462e4e82d1bd21cb72e1ce1567d4ddda2390f26074ffd1f5d9c270e5e50"))
@@ -198,7 +198,7 @@ public:
         nPengolinCoinBadBlocknBits = 0x1c056dac; // Skip nBit validation of Block 259201 per PR #915
         nModifierUpdateBlock = 615800;
         nZerocoinStartHeight = 1500000;
-        nZerocoinStartTime = 1667216798;  // October 17, 2017 4:30:00 AM
+        nZerocoinStartTime = 1667216798;        // October 17, 2017 4:30:00 AM
         nBlockEnforceSerialRange = 895400;      //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 908000; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 891737;         //First block that bad serials emerged
@@ -238,7 +238,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "PengolinCoin Genesis Block 2020-07-01";
+        const char* pszTimestamp = "PengolinCoin Genesis Block 2020-07-04";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -252,12 +252,12 @@ public:
         genesis.nTime = 1593582000;
         genesis.nBits = 0x1e0ffff0;
 
-        genesis.nNonce = 1239330;
+        genesis.nNonce = 1056171;
 
         hashGenesisBlock = genesis.GetHash();
 
-        assert(hashGenesisBlock == uint256("0x00000c75e9f1eb19cbd929790fd63d7629dde1ee7343cda4378d7463791cbd93"));
-        assert(genesis.hashMerkleRoot == uint256("0x1cb6dbea408fef2bb4d7d002d0e98b19887180c9c2dedf1183da76e051215185"));
+        assert(hashGenesisBlock == uint256("0x00000865fddb23c371506db1692c393b7f4c5813f9139ea20b808b325aa96316"));
+        assert(genesis.hashMerkleRoot == uint256("0xfcfa14c0ca9a1a800cf9aa280214160c58862e99d9448e0930ccdf81cce7084d"));
 
         vSeeds.push_back(CDNSSeedData("pengolincoin.xyz", "seed01.pengolincoin.xyz")); // Primary DNS Seeder from Fuzzbawls
         vSeeds.push_back(CDNSSeedData("pengolincoin.xyz", "seed02.pengolincoin.xyz")); // Primary DNS Seeder from Fuzzbawls
@@ -266,8 +266,8 @@ public:
         vSeeds.push_back(CDNSSeedData("pengolincoin.xyz", "seed05.pengolincoin.xyz")); // Primary DNS Seeder from Fuzzbawls
         vSeeds.push_back(CDNSSeedData("pengolincoin.xyz", "seed06.pengolincoin.xyz")); // Primary DNS Seeder from Fuzzbawls
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 57);     // starting with 'P' or 'Q'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18);     // starting with '8'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 57);  // starting with 'P' or 'Q'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18);  // starting with '8'
         base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 63); // starting with 'S'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 205);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x03)(0x2E)(0x26)(0x34).convert_to_container<std::vector<unsigned char> >();
@@ -381,11 +381,11 @@ public:
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1593582001;
 
-        genesis.nNonce = 438833;
+        genesis.nNonce = 1474993;
 
         hashGenesisBlock = genesis.GetHash();
 
-        assert(hashGenesisBlock == uint256("0x00000aa7d55ec471623028e6a171b98f241fd5daf6569e5ef21680d87190f289"));
+        assert(hashGenesisBlock == uint256("0x00000cde1f27e0baa02b4291f9357975e132b97f6e97a73e3c0fdb4571de19e1"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -398,9 +398,9 @@ public:
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 117);  // Testnet pengolincoin addresses start with 'p'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 10);  // Testnet pengolincoin script addresses start with '5'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 10);   // Testnet pengolincoin script addresses start with '5'
         base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 125); // starting with 's'
-        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 204);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 204);      // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         // Testnet pengolincoin BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x3a)(0x80)(0x61)(0xa0).convert_to_container<std::vector<unsigned char> >();
         // Testnet pengolincoin BIP32 prvkeys start with 'DRKP'
@@ -488,11 +488,11 @@ public:
 
         //! Modify the regtest genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1593582002;
-        genesis.nNonce = 1;
+        genesis.nNonce = 3;
 
         hashGenesisBlock = genesis.GetHash();
-        
-        assert(hashGenesisBlock == uint256("0x65ffd5d12535dc46bca21704ed832c2e9ca8ffcf2209bcc901c3ef20c358ea56"));
+
+        assert(hashGenesisBlock == uint256("0x63a30a6b4ff0e4de73bc326e4fb1357dcb4c395b5239751684115fca4d1222e7"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
