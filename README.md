@@ -5,7 +5,7 @@ PENGOLINCOIN Core integration/staging repository
 
 PENGOLINCOIN is an open source cryptocurrency focused on fast private transactions, with low transaction fees & environmental footprint. It uses PoS and masternodes for securing its network.
 
-The goal of PENGOLINCOIN is to achieve a decentralized sustainable crypto currency with near instant full-time private transactions.
+The goal of PENGOLINCOIN is to achieve a decentralized sustainable cryptocurrency with near instant full-time private transactions.
 
 More information at [pengolincoin.xyz](https://www.pengolincoin.xyz) Visit our ANN thread at [BitcoinTalk](https://bitcointalk.org/index.php?topic=5234832)
 
