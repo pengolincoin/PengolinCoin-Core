@@ -86,6 +86,8 @@ TopBar::TopBar(PENGOLINCOINGUI* _mainWindow, QWidget* parent) : PWidget(_mainWin
 
     ui->pushButtonColdStaking->setButtonClassStyle("cssClass", "btn-check-cold-staking-inactive");
     ui->pushButtonColdStaking->setButtonText("Cold Staking Disabled");
+    ui->pushButtonColdStaking->setVisible(false);
+    ui->pushButtonColdStaking->setEnabled(false);
 
     ui->pushButtonMint->setButtonClassStyle("cssClass", "btn-check-mint-inactive");
     ui->pushButtonMint->setButtonText("Automint Enabled");

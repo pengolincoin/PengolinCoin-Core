@@ -1665,8 +1665,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>创建新的主节点控制器</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100.000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;创建一个PENGOLINCOIN 主节点，你必须奉献给网络100.000 PGO (PENGOLINCOIN的单位)(但是，这些币仍属于你，永远都是属于你的财产)。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;你可以在任何时候关闭该节点并解锁币。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100,000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;创建一个PENGOLINCOIN 主节点，你必须奉献给网络100,000 PGO (PENGOLINCOIN的单位)(但是，这些币仍属于你，永远都是属于你的财产)。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;你可以在任何时候关闭该节点并解锁币。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Make sure you have this amount of coins.</source>

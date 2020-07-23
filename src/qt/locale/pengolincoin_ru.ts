@@ -1663,8 +1663,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>Создать новый контроллер мастерноды</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100.000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Для того, чтобы создать мастерноду PENGOLINCOIN, вам необходимо внести в сеть 100.000 PGO (эти монеты остаются вашими и никогда не покинут вас).&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt; Вы можете отключить узел и разблокировать монеты в любое время.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100,000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Для того, чтобы создать мастерноду PENGOLINCOIN, вам необходимо внести в сеть 100,000 PGO (эти монеты остаются вашими и никогда не покинут вас).&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt; Вы можете отключить узел и разблокировать монеты в любое время.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Make sure you have this amount of coins.</source>

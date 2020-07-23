@@ -1664,8 +1664,8 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
         <translation>Creëer een Nieuwe Masternode Controller</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100.000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Om een PENGOLINCOIN Masternode te maken moet u 100.000 PGO (de eenheid van PENGOLINCOIN) aan het netwerk wijden (deze munten zijn echter nog steeds van u en zullen nooit uw bezit verlaten). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;U kunt de node op elk gewenst moment deactiveren en de munten ontgrendelen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100,000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Om een PENGOLINCOIN Masternode te maken moet u 100,000 PGO (de eenheid van PENGOLINCOIN) aan het netwerk wijden (deze munten zijn echter nog steeds van u en zullen nooit uw bezit verlaten). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;U kunt de node op elk gewenst moment deactiveren en de munten ontgrendelen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Make sure you have this amount of coins.</source>
@@ -4500,7 +4500,7 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            Een masternode is een computer met een volledige node PENGOLINCOIN core portemonnee met een
-                           vereiste van 100.000 PGO onderpand om extra diensten te kunnen verlenen
+                           vereiste van 100,000 PGO onderpand om extra diensten te kunnen verlenen
                            aan het netwerk en in ruil daarvoor ontvangt u regelmatig een deel van de blokbeloning.
                            Deze diensten omvatten::
                            &lt;/p&gt;&lt;p align="justify"&gt;
@@ -4550,7 +4550,7 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the 100,000 PGO collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet/s and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Een Masternode Controller portemonnee is waar de 100.000 PGO onderpand zich kan bevinden tijdens een Controller-Remote masternode setup. Het is een portemonnee die de remote masternode portemonnee(s) kan activeren en waarmee u uw ondergepande munten offline kunt houden terwijl de remote masternode online blijft. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Een Masternode Controller portemonnee is waar de 100,000 PGO onderpand zich kan bevinden tijdens een Controller-Remote masternode setup. Het is een portemonnee die de remote masternode portemonnee(s) kan activeren en waarmee u uw ondergepande munten offline kunt houden terwijl de remote masternode online blijft. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Frequently Asked Questions</source>

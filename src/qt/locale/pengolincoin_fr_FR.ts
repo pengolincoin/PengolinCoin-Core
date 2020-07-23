@@ -1546,8 +1546,8 @@ Il commencera automatiquement dès que le portefeuille aura assez de confirmatio
         <translation>Créer un nouveau contrôleur de Masternode</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100.000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pour créer un Masternode PENGOLINCOIN vous devez dédier 100.000 PGO (l'unité de PENGOLINCOIN) au réseau (notez que ces monnaies restent les votres et ne quitteront jamais votre portefeuille)&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt; Vous pouvez désactiver votre noeud et libérer vos monnaies en tous temps. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100,000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pour créer un Masternode PENGOLINCOIN vous devez dédier 100,000 PGO (l'unité de PENGOLINCOIN) au réseau (notez que ces monnaies restent les votres et ne quitteront jamais votre portefeuille)&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt; Vous pouvez désactiver votre noeud et libérer vos monnaies en tous temps. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Make sure you have this amount of coins.</source>

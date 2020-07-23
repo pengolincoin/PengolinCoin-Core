@@ -1663,7 +1663,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>Crear Nuevo Controlador de Master Node</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100.000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100,000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>Para crear un Masternode de PENGOLINCOIN debes desponer 10.000 PENGOLINCOIN (la unidad de PENGOLINCOIN) a la red (sin embargo, estas monedas siguen siendo tuyas y nunca saldrán de tu posesión). Puedes desactivar el nodo y desbloquear las monedas en cualquier momento.</translation>
     </message>
     <message>
@@ -1905,7 +1905,7 @@ Are you sure?</source>
     </message>
     <message>
         <source>Not enough balance to create a masternode, 100,000 PGO required.</source>
-        <translation>No hay suficiente saldo para crear un masternode, se necesitan 100.000 PGO.</translation>
+        <translation>No hay suficiente saldo para crear un masternode, se necesitan 100,000 PGO.</translation>
     </message>
     <message>
         <source>Error creating masternode</source>
@@ -4468,7 +4468,7 @@ nuestro sitio de apoyo Freshdesk&lt;/a&gt;.
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
 Un Masternode es un ordenador que ejecuta una billetera central PENGOLINCOIN de nodo
-completo con un requisito de 100.000 PGO de garantía asegurados para prestar servicios
+completo con un requisito de 100,000 PGO de garantía asegurados para prestar servicios
 adicionales a la red y a cambio, recibir una parte de la recompensa del bloque
 regularmente. Estos servicios incluyen:
 &lt;/p&gt;&lt;p align="justify"&gt;
@@ -4499,7 +4499,7 @@ Ventajas de los Masternodes:
 Requisitos:
 &lt;/p&gt;
 &lt;p align="justify"&gt;&lt;ul&gt;
-&lt;li&gt;100.000 PGO por cada instancia de Masternode&lt;/li&gt;
+&lt;li&gt;100,000 PGO por cada instancia de Masternode&lt;/li&gt;
 &lt;li&gt;Debe guardarse en una billetera principal&lt;/li&gt;
 &lt;li&gt;Necesita una dirección IP dedicada&lt;/li&gt;
 &lt;li&gt;La billetera Masternode permanecerá en línea&lt;/li&gt;

@@ -1267,7 +1267,7 @@ for staking</source>
         <translation>새로운 마스터노드 컨트롤러 생성</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100.000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100,000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PENGOLINCOIN 마스터노드 생성을 위해서는 최소 100,000 PGO (PENGOLINCOIN 단위) 가 네트워크 상에 존재해야 합니다. (해당 코인들의 소유권은 그대로 유지되며 사라지지 않습니다) &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt; 언제든지 소유하고 있는 노드를 비활성화 시키거나 코인의 잠금상태를 해제할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>

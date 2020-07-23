@@ -1,0 +1,15 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=PENGOLINCOIN Core Daemon SNAP
+Comment=main
+GenericName=PENGOLINCOIN Digital Currency Daemon Client main network
+Exec=pengolincoin-core.daemon %u
+Terminal=true
+Type=Application
+Icon=${SNAP}/share/pixmaps/pengolincoin.png
+MimeType=x-scheme-handler/pgo;
+Categories=X-Office;X-Finance;
+Keywords=internet;pengolincoin;zpgo;core;wallet;daemon;main;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
+Version=1.0

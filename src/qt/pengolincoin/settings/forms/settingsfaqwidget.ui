@@ -205,129 +205,6 @@
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButtonFaq3">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>50</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="focusPolicy">
-                      <enum>Qt::NoFocus</enum>
-                     </property>
-                     <property name="text">
-                      <string>3) PENGOLINCOIN privacy? What is Zerocoin (zPGO)?</string>
-                     </property>
-                     <property name="checkable">
-                      <bool>true</bool>
-                     </property>
-                     <property name="autoExclusive">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButtonFaq4">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>50</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="focusPolicy">
-                      <enum>Qt::NoFocus</enum>
-                     </property>
-                     <property name="text">
-                      <string>4) Why are my zPGO unspendable?</string>
-                     </property>
-                     <property name="checkable">
-                      <bool>true</bool>
-                     </property>
-                     <property name="autoExclusive">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButtonFaq5">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>50</height>
-                      </size>
-                     </property>
-                     <property name="focusPolicy">
-                      <enum>Qt::NoFocus</enum>
-                     </property>
-                     <property name="text">
-                      <string>5) Why did my wallet convert the balance
-    into zPGO automatically?</string>
-                     </property>
-                     <property name="checkable">
-                      <bool>true</bool>
-                     </property>
-                     <property name="autoExclusive">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButtonFaq6">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>50</height>
-                      </size>
-                     </property>
-                     <property name="focusPolicy">
-                      <enum>Qt::NoFocus</enum>
-                     </property>
-                     <property name="text">
-                      <string>6) How do I receive PGO/zPGO?</string>
-                     </property>
-                     <property name="checkable">
-                      <bool>true</bool>
-                     </property>
-                     <property name="autoExclusive">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButtonFaq7">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>50</height>
-                      </size>
-                     </property>
-                     <property name="focusPolicy">
-                      <enum>Qt::NoFocus</enum>
-                     </property>
-                     <property name="text">
-                      <string>7) How do I stake PGO/zPGO?</string>
-                     </property>
-                     <property name="checkable">
-                      <bool>true</bool>
-                     </property>
-                     <property name="autoExclusive">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
                     <widget class="QPushButton" name="pushButtonFaq8">
                      <property name="minimumSize">
                       <size>
@@ -339,7 +216,7 @@
                       <enum>Qt::NoFocus</enum>
                      </property>
                      <property name="text">
-                      <string>8) Where I should go if I need support?</string>
+                      <string>3) Where I should go if I need support?</string>
                      </property>
                      <property name="checkable">
                       <bool>true</bool>
@@ -361,7 +238,7 @@
                       <enum>Qt::NoFocus</enum>
                      </property>
                      <property name="text">
-                      <string>9) What is a Master Node?</string>
+                      <string>4) What is a Master Node?</string>
                      </property>
                      <property name="checkable">
                       <bool>true</bool>
@@ -383,7 +260,7 @@
                       <enum>Qt::NoFocus</enum>
                      </property>
                      <property name="text">
-                      <string>10) What is a Master Node Controller?</string>
+                      <string>5) What is a Master Node Controller?</string>
                      </property>
                      <property name="checkable">
                       <bool>true</bool>
@@ -525,8 +402,8 @@
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>628</width>
-                  <height>2344</height>
+                  <width>641</width>
+                  <height>1610</height>
                  </rect>
                 </property>
                 <property name="autoFillBackground">
@@ -622,20 +499,7 @@
                       <item>
                        <widget class="QLabel" name="labelContent1">
                         <property name="text">
-                         <string>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           PENGOLINCOIN is a form of digital online money using blockchain technology
-                           that can be easily transferred globally, instantly, and with near
-                           zero fees.  PENGOLINCOIN incorporates market leading security &amp;
-                           privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement ZeroCoin(zPGO) and Zerocoin staking.
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           PENGOLINCOIN utilizes a Proof of Stake (PoS) consensus system algorithm,
-                           allowing all owners of PENGOLINCOIN to participate in earning block rewards
-                           while securing the network with full node wallets, as well as to
-                           run Masternodes to create and vote on proposals.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </string>
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PENGOLINCOIN is a form of digital online money using blockchain technology that can be easily transferred globally, instantly, and with near zero fees. PENGOLINCOIN incorporates market leading security &amp;amp; privacy. &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;PENGOLINCOIN utilizes a Proof of Stake (PoS) consensus system algorithm, allowing all owners of PENGOLINCOIN to participate in earning block rewards while securing the network with full node wallets, as well as to run Masternodes to create and vote on proposals. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -765,523 +629,6 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QWidget" name="widgetFaq3" native="true">
-                   <layout class="QHBoxLayout" name="horizontalpage_3" stretch="0,1">
-                    <item alignment="Qt::AlignTop">
-                     <widget class="QLabel" name="labelNumber3">
-                      <property name="minimumSize">
-                       <size>
-                        <width>24</width>
-                        <height>24</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>24</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string>3</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <layout class="QVBoxLayout" name="verticalLayoutpage_3">
-                      <property name="leftMargin">
-                       <number>20</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>20</number>
-                      </property>
-                      <item>
-                       <widget class="QLabel" name="labelSubtitle3">
-                        <property name="text">
-                         <string>PENGOLINCOIN privacy? What is Zerocoin (zPGO)?</string>
-                        </property>
-                        <property name="wordWrap">
-                         <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="verticalSpacer_30">
-                        <property name="orientation">
-                         <enum>Qt::Vertical</enum>
-                        </property>
-                        <property name="sizeType">
-                         <enum>QSizePolicy::Fixed</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>20</width>
-                          <height>30</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="labelContent3">
-                        <property name="text">
-                         <string>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           zPGO is an optional privacy-centric method of coin mixing on the
-                           PENGOLINCOIN blockchain. Basically all your transactions cannot be tracked
-                           on to any block explorer. You can read more about the technicals in the
-                           &lt;a style='color: #005f95' href='https://pengolincoin.xyz/zpgo/'&gt;
-                           &quot;PENGOLINCOIN Zerocoin (zPGO) Technical Paper&quot;&lt;/a&gt;.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                        </property>
-                        <property name="wordWrap">
-                         <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="verticalSpacer_31">
-                        <property name="orientation">
-                         <enum>Qt::Vertical</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>20</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                     </layout>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QWidget" name="widgetFaq4" native="true">
-                   <layout class="QHBoxLayout" name="horizontalPage_4" stretch="0,1">
-                    <item alignment="Qt::AlignTop">
-                     <widget class="QLabel" name="labelNumber4">
-                      <property name="minimumSize">
-                       <size>
-                        <width>24</width>
-                        <height>24</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>24</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string>4</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <layout class="QVBoxLayout" name="verticalLayoutPage_4">
-                      <property name="leftMargin">
-                       <number>20</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>20</number>
-                      </property>
-                      <item>
-                       <widget class="QLabel" name="labelSubtitle4">
-                        <property name="text">
-                         <string>Why are my zPGO unspendable?</string>
-                        </property>
-                        <property name="wordWrap">
-                         <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="verticalSpacer_40">
-                        <property name="orientation">
-                         <enum>Qt::Vertical</enum>
-                        </property>
-                        <property name="sizeType">
-                         <enum>QSizePolicy::Fixed</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>20</width>
-                          <height>30</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="labelContent4">
-                        <property name="text">
-                         <string>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           After minting, zPGO will require 20 confirmations as well as 1
-                           additional mint of the same denomination on the network to
-                           become eligible for spending.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                        </property>
-                        <property name="wordWrap">
-                         <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="verticalSpacer_41">
-                        <property name="orientation">
-                         <enum>Qt::Vertical</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>20</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                     </layout>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QWidget" name="widgetFaq5" native="true">
-                   <layout class="QHBoxLayout" name="horizontalPage_5" stretch="0,1">
-                    <item alignment="Qt::AlignTop">
-                     <widget class="QLabel" name="labelNumber5">
-                      <property name="minimumSize">
-                       <size>
-                        <width>24</width>
-                        <height>24</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>24</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string>5</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <layout class="QVBoxLayout" name="verticalLayoutPage_5">
-                      <property name="leftMargin">
-                       <number>20</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>20</number>
-                      </property>
-                      <item>
-                       <widget class="QLabel" name="labelSubtitle5">
-                        <property name="text">
-                         <string>Why did my wallet convert the balance into zPGO automatically?</string>
-                        </property>
-                        <property name="wordWrap">
-                         <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="verticalSpacer_50">
-                        <property name="orientation">
-                         <enum>Qt::Vertical</enum>
-                        </property>
-                        <property name="sizeType">
-                         <enum>QSizePolicy::Fixed</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>20</width>
-                          <height>30</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="labelContent5">
-                        <property name="text">
-                         <string>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           By default the PENGOLINCOIN wallet will convert 10% of your entire PGO
-                           balance to zPGO to assist the network. If you do not wish to
-                           stake zPGO or take advantage of the privacy benefit it brings,
-                           you can disable the automatic minting in your PENGOLINCOIN wallet by
-                           going to Settings-&gt;Options and deselecting "Enable zPGO Automint".
-                           If you are not making use of the PENGOLINCOIN-QT or GUI you can simply open
-                           your pengolincoin.conf file and add &lt;i&gt;enablezeromint=0&lt;/i&gt; Without the quotation
-                           marks and restart your wallet to disable automint.&lt;/p&gt;
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           You can read more about zPGO in the
-                           &lt;a style='color: #005f95' href='https://pengolincoin.xyz/zpgo/'&gt; &quot;PENGOLINCOIN Zerocoin (zPGO) Technical Paper&quot;&lt;/a&gt;.
-                           If you would like to keep and stake your zPGO, please read the &quot;How do I stake&quot;
-                           section of the FAQ below.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                        </property>
-                        <property name="wordWrap">
-                         <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="verticalSpacer_51">
-                        <property name="orientation">
-                         <enum>Qt::Vertical</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>20</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                     </layout>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QWidget" name="widgetFaq6" native="true">
-                   <layout class="QHBoxLayout" name="horizontalpage_6" stretch="0,1">
-                    <item alignment="Qt::AlignTop">
-                     <widget class="QLabel" name="labelNumber6">
-                      <property name="minimumSize">
-                       <size>
-                        <width>24</width>
-                        <height>24</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>24</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string>6</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <layout class="QVBoxLayout" name="verticalLayoutpage_6">
-                      <property name="spacing">
-                       <number>0</number>
-                      </property>
-                      <property name="leftMargin">
-                       <number>20</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>20</number>
-                      </property>
-                      <item>
-                       <widget class="QLabel" name="labelSubtitle6">
-                        <property name="text">
-                         <string>How do I receive PGO/zPGO?</string>
-                        </property>
-                        <property name="wordWrap">
-                         <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="verticalSpacer_60">
-                        <property name="orientation">
-                         <enum>Qt::Vertical</enum>
-                        </property>
-                        <property name="sizeType">
-                         <enum>QSizePolicy::Fixed</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>20</width>
-                          <height>30</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="labelContent6">
-                        <property name="text">
-                         <string>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           zPGO can be spent and sent to any PENGOLINCOIN address. The receiver will
-                           receive standard PENGOLINCOIN but the origin of the PENGOLINCOIN is anonymized by the zPGO Protocol.
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           If you want more zPGO you will need to mint your balance in the "Privacy" tab.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                        </property>
-                        <property name="wordWrap">
-                         <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="verticalSpacer_61">
-                        <property name="orientation">
-                         <enum>Qt::Vertical</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>20</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                     </layout>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QWidget" name="widgetFaq7" native="true">
-                   <layout class="QHBoxLayout" name="horizontalpage_7" stretch="0,1">
-                    <item alignment="Qt::AlignTop">
-                     <widget class="QLabel" name="labelNumber7">
-                      <property name="minimumSize">
-                       <size>
-                        <width>24</width>
-                        <height>24</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>24</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string>7</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <layout class="QVBoxLayout" name="verticalLayoutpage_7">
-                      <property name="leftMargin">
-                       <number>20</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>20</number>
-                      </property>
-                      <item>
-                       <widget class="QLabel" name="labelSubtitle7">
-                        <property name="text">
-                         <string>How do I stake PGO/zPGO?</string>
-                        </property>
-                        <property name="wordWrap">
-                         <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="verticalSpacer_70">
-                        <property name="orientation">
-                         <enum>Qt::Vertical</enum>
-                        </property>
-                        <property name="sizeType">
-                         <enum>QSizePolicy::Fixed</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>20</width>
-                          <height>30</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="labelContent7">
-                        <property name="text">
-                         <string>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           To Stake PENGOLINCOIN:
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           &lt;ol&gt;&lt;li&gt;
-                           Make sure your wallet is completely synchronized and you are using the latest release.
-                           &lt;li&gt;
-                           You must have a balance of PENGOLINCOIN with a minimum of 21 confirmations.
-                           &lt;li&gt;
-                           Your wallet must stay online and be unlocked for anonymization and staking purposes.
-                           &lt;li&gt;
-                           Once all those steps are followed staking should be enabled.
-                           &lt;li&gt;
-                           You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &quot;Staking Enabled&quot; to indicate it is staking.  Using the command line interface (pengolincoin-cli); the command &lt;i&gt;getstakingstatus&lt;/i&gt; will confirm that staking is active.
-                           &lt;/li&gt;&lt;/ol&gt;
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           To Stake zPGO:
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           &lt;ol&gt;&lt;li&gt;
-                           Make sure your wallet is completely synchronized and you are using the latest release.
-                           &lt;li&gt;
-                           Your newly minted or existing zPGO balance must have a minimum of 200 confirmations.
-                           &lt;li&gt;
-                           Your wallet must stay online and be unlocked for anonymization and staking purposes.
-                           Staking should now be enabled.
-                           &lt;/li&gt;&lt;/ol&gt;
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                        </property>
-                        <property name="wordWrap">
-                         <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="verticalSpacer_71">
-                        <property name="orientation">
-                         <enum>Qt::Vertical</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>20</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                     </layout>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
                   <widget class="QWidget" name="widgetFaq8" native="true">
                    <layout class="QHBoxLayout" name="horizontalpage_8" stretch="0,1">
                     <item alignment="Qt::AlignTop">
@@ -1299,7 +646,7 @@
                        </size>
                       </property>
                       <property name="text">
-                       <string>8</string>
+                       <string>3</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -1398,7 +745,7 @@
                        </size>
                       </property>
                       <property name="text">
-                       <string>9</string>
+                       <string>4</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -1442,48 +789,7 @@
                       <item>
                        <widget class="QLabel" name="labelContent9">
                         <property name="text">
-                         <string>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           A masternode is a computer running a full node PENGOLINCOIN core wallet with a
-                           requirement of 100,000 PGO secured collateral to provide extra services
-                           to the network and in return, receive a portion of the block reward
-                           regularly.  These services include:
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-
-                           &lt;ul&gt;
-                           &lt;li&gt;Instant transactions (SwiftX)&lt;/li&gt;
-                           &lt;li&gt;A decentralized governance (Proposal Voting)&lt;/li&gt;
-                           &lt;li&gt;A decentralized budgeting system (Treasury)&lt;/li&gt;
-                           &lt;li&gt;Validation of transactions within each block&lt;/li&gt;
-                           &lt;li&gt;Act as an additional full node in the network&lt;/li&gt;
-                           &lt;/ul&gt;
-
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           For providing such services, masternodes are also paid a certain portion
-                           of reward for each block. This can serve as a passive income to the
-                           masternode owners minus their running cost.
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-
-                           Masternode Perks:
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           &lt;ul&gt;
-                           &lt;li&gt;Participate in PENGOLINCOIN Governance&lt;/li&gt;
-                           &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
-                           &lt;li&gt;Commodity option for future sale&lt;/li&gt;
-                           &lt;li&gt;Help secure the PENGOLINCOIN network&lt;/li&gt;
-                           &lt;/ul&gt;
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-
-                           Requirements:
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           &lt;ul&gt;
-                           &lt;li&gt;100,000 PGO per single Masternode instance&lt;/li&gt;
-                           &lt;li&gt;Must be stored in a core wallet&lt;/li&gt;
-                           &lt;li&gt;Need dedicated IP address&lt;/li&gt;
-                           &lt;li&gt;Masternode wallet to remain online&lt;/li&gt;
-                           &lt;/ul&gt;
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </string>
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;A masternode is a computer running a full node PENGOLINCOIN core wallet with a requirement of 100,000 PGO secured collateral to provide extra services to the network and in return, receive a portion of the block reward regularly. These services include: &lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;A decentralized governance (Proposal Voting) &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;A decentralized budgeting system (Treasury) &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Validation of transactions within each block &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Act as an additional full node in the network &lt;/li&gt;&lt;/ul&gt;&lt;p align=&quot;justify&quot;&gt;For providing such services, masternodes are also paid a certain portion of reward for each block. This can serve as a passive income to the masternode owners minus their running cost. &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Masternode Perks: &lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Participate in PENGOLINCOIN Governance &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Earn Masternode Rewards &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Commodity option for future sale &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Help secure the PENGOLINCOIN network &lt;/li&gt;&lt;/ul&gt;&lt;p align=&quot;justify&quot;&gt;Requirements: &lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;100,000 PGO per single Masternode instance &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Must be stored in a core wallet &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Need dedicated IP address &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Masternode wallet to remain online &lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -1529,7 +835,7 @@
                        </size>
                       </property>
                       <property name="text">
-                       <string>10</string>
+                       <string>5</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
