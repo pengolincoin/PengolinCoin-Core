@@ -118,8 +118,8 @@ MasterNodesWidget::MasterNodesWidget(PENGOLINCOINGUI *parent) :
 
     connect(ui->pushButtonSave, SIGNAL(clicked()), this, SLOT(onCreateMNClicked()));
     connect(ui->listMn, SIGNAL(clicked(QModelIndex)), this, SLOT(onMNClicked(QModelIndex)));
-    connect(ui->btnAbout, &OptionButton::clicked, [this](){window->openFAQ(9);});
-    connect(ui->btnAboutController, &OptionButton::clicked, [this](){window->openFAQ(10);});
+    connect(ui->btnAbout, &OptionButton::clicked, [this](){window->openFAQ(4);});
+    connect(ui->btnAboutController, &OptionButton::clicked, [this](){window->openFAQ(5);});
 }
 
 void MasterNodesWidget::showEvent(QShowEvent *event){

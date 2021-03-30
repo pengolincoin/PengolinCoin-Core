@@ -95,8 +95,10 @@ static QString GetLangTerritory()
     QString lang_territory = QLocale::system().name();
     // 2) Language from QSettings
     QString lang_territory_qsettings = settings.value("language", "").toString();
-    if (!lang_territory_qsettings.isEmpty())
-        lang_territory = lang_territory_qsettings;
+    if (!lang_territory_qsettings.isEmpty()) {
+        int len = lang_territory_qsettings.lastIndexOf(')') - lang_territory_qsettings.lastIndexOf('(') - 1;
+        lang_territory = lang_territory_qsettings.mid(lang_territory_qsettings.lastIndexOf('(') + 1, len);
+    }
     // 3) -lang command line argument
     lang_territory = QString::fromStdString(GetArg("-lang", lang_territory.toStdString()));
     return lang_territory;

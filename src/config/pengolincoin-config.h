@@ -9,7 +9,7 @@
 /* #undef AC_APPLE_UNIVERSAL_BUILD */
 
 /* Version Build */
-#define CLIENT_VERSION_BUILD 2
+#define CLIENT_VERSION_BUILD 0
 
 /* Version is release */
 #define CLIENT_VERSION_IS_RELEASE true
@@ -21,7 +21,7 @@
 #define CLIENT_VERSION_MINOR 0
 
 /* Build revision */
-#define CLIENT_VERSION_REVISION 0
+#define CLIENT_VERSION_REVISION 1
 
 /* Version is release */
 #define COPYRIGHT_YEAR 2020
@@ -352,7 +352,7 @@
 #define PACKAGE_NAME "PENGOLINCOIN Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "PENGOLINCOIN Core 2.0.0.2"
+#define PACKAGE_STRING "PENGOLINCOIN Core 2.0.1"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "pengolincoin"
@@ -361,7 +361,7 @@
 #define PACKAGE_URL "https://pengolincoin.xyz/"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "2.0.0.2"
+#define PACKAGE_VERSION "2.0.1"
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
@@ -404,7 +404,7 @@
 /* #undef USE_NUM_OPENSSL */
 
 /* Define if QTCHARTS support should be compiled in */
-/* #undef USE_QTCHARTS */
+#define USE_QTCHARTS 1
 
 /* UPnP support not compiled if undefined, otherwise value (0 or 1) determines
    default state */
