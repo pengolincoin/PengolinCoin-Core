@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017-2019 The PENGOLINCOIN developers
+// Copyright (c) 2017-2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -59,19 +60,11 @@ public:
     /** Set whether to hide orphan stakes. */
     void setHideOrphans(bool fHide);
 
-    /** Only zc txes **/
-    void setShowZcTxes(bool fOnlyZc);
-
     /** Only stakes txes **/
     void setOnlyStakes(bool fOnlyStakes);
 
-    /** Shows only p2cs-p2cs && xxx-p2cs **/
-    void setOnlyColdStakes(bool fOnlyColdStakes);
-
     int rowCount(const QModelIndex& parent = QModelIndex()) const;
     static bool isOrphan(const int status, const int type);
-
-    //QVariant dataFromSourcePos(int sourceRow, int role) const;
 
 protected:
     bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;

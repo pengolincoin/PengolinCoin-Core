@@ -31,7 +31,7 @@ static void secp256k1_scalar_get_num(secp256k1_num *r, const secp256k1_scalar *a
     secp256k1_num_set_bin(r, c, 32);
 }
 
-/** secp256k1 curve order, see secp256k1_pgosa_const_order_as_fe in pgosa_impl.h */
+/** secp256k1 curve order, see secp256k1_ecdsa_const_order_as_fe in ecdsa_impl.h */
 static void secp256k1_scalar_order_get_num(secp256k1_num *r) {
 #if defined(EXHAUSTIVE_TEST_ORDER)
     static const unsigned char order[32] = {

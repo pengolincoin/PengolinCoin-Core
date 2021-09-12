@@ -58,7 +58,7 @@
         <item>
          <widget class="QLabel" name="labelTitle">
           <property name="text">
-           <string>TextLabel</string>
+           <string>Frequently Asked Questions</string>
           </property>
          </widget>
         </item>
@@ -78,7 +78,7 @@
         <item>
          <widget class="QPushButton" name="pushButtonExit">
           <property name="text">
-           <string>PushButton</string>
+           <string>Close FAQ</string>
           </property>
          </widget>
         </item>
@@ -146,7 +146,7 @@
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QPushButton" name="pushButtonFaq1">
+                    <widget class="QPushButton" name="pushButton_Intro">
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -177,7 +177,7 @@
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButtonFaq2">
+                    <widget class="QPushButton" name="pushButton_UnspendablePGO">
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -205,7 +205,7 @@
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButtonFaq8">
+                    <widget class="QPushButton" name="pushButton_Stake">
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -216,7 +216,7 @@
                       <enum>Qt::NoFocus</enum>
                      </property>
                      <property name="text">
-                      <string>3) Where I should go if I need support?</string>
+                      <string>3) How do I stake PGO?</string>
                      </property>
                      <property name="checkable">
                       <bool>true</bool>
@@ -227,7 +227,7 @@
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButtonFaq9">
+                    <widget class="QPushButton" name="pushButton_Support">
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -238,7 +238,7 @@
                       <enum>Qt::NoFocus</enum>
                      </property>
                      <property name="text">
-                      <string>4) What is a Master Node?</string>
+                      <string>4) Where I should go if I need support?</string>
                      </property>
                      <property name="checkable">
                       <bool>true</bool>
@@ -249,7 +249,7 @@
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButtonFaq10">
+                    <widget class="QPushButton" name="pushButton_Masternode">
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -260,7 +260,29 @@
                       <enum>Qt::NoFocus</enum>
                      </property>
                      <property name="text">
-                      <string>5) What is a Master Node Controller?</string>
+                      <string>5) What is a Masternode?</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>true</bool>
+                     </property>
+                     <property name="autoExclusive">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="pushButton_MNController">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>50</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::NoFocus</enum>
+                     </property>
+                     <property name="text">
+                      <string>6) What is a Masternode Controller?</string>
                      </property>
                      <property name="checkable">
                       <bool>true</bool>
@@ -294,7 +316,7 @@
                <item>
                 <widget class="QLabel" name="labelWebLink">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>You can read more here</string>
                  </property>
                 </widget>
                </item>
@@ -320,7 +342,7 @@
                   <enum>Qt::NoFocus</enum>
                  </property>
                  <property name="text">
-                  <string>PushButton</string>
+                  <string>https://pengolincoin.xyz/</string>
                  </property>
                 </widget>
                </item>
@@ -402,8 +424,8 @@
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>641</width>
-                  <height>1610</height>
+                  <width>642</width>
+                  <height>1614</height>
                  </rect>
                 </property>
                 <property name="autoFillBackground">
@@ -432,16 +454,16 @@
                   <number>0</number>
                  </property>
                  <item>
-                  <widget class="QWidget" name="widgetFaq1" native="true">
+                  <widget class="QWidget" name="widget_Intro" native="true">
                    <property name="minimumSize">
                     <size>
                      <width>300</width>
                      <height>0</height>
                     </size>
                    </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_1" stretch="0,1">
+                   <layout class="QHBoxLayout" name="horizontalLayout_Intro" stretch="0,1">
                     <item alignment="Qt::AlignTop">
-                     <widget class="QLabel" name="labelNumber1">
+                     <widget class="QLabel" name="labelNumber_Intro">
                       <property name="minimumSize">
                        <size>
                         <width>24</width>
@@ -463,7 +485,7 @@
                      </widget>
                     </item>
                     <item>
-                     <layout class="QVBoxLayout" name="verticalLayout_61">
+                     <layout class="QVBoxLayout" name="verticalLayout_Intro">
                       <property name="leftMargin">
                        <number>20</number>
                       </property>
@@ -471,7 +493,7 @@
                        <number>20</number>
                       </property>
                       <item>
-                       <widget class="QLabel" name="labelSubtitle1">
+                       <widget class="QLabel" name="labelSubtitle_Intro">
                         <property name="text">
                          <string>What is PENGOLINCOIN?</string>
                         </property>
@@ -481,7 +503,7 @@
                        </widget>
                       </item>
                       <item>
-                       <spacer name="verticalSpacer_10">
+                       <spacer name="verticalSpacer1_Intro">
                         <property name="orientation">
                          <enum>Qt::Vertical</enum>
                         </property>
@@ -497,9 +519,9 @@
                        </spacer>
                       </item>
                       <item>
-                       <widget class="QLabel" name="labelContent1">
+                       <widget class="QLabel" name="labelContent_Intro">
                         <property name="text">
-                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PENGOLINCOIN is a form of digital online money using blockchain technology that can be easily transferred globally, instantly, and with near zero fees. PENGOLINCOIN incorporates market leading security &amp;amp; privacy. &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;PENGOLINCOIN utilizes a Proof of Stake (PoS) consensus system algorithm, allowing all owners of PENGOLINCOIN to participate in earning block rewards while securing the network with full node wallets, as well as to run Masternodes to create and vote on proposals. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         <string notr="true">N/A</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -510,7 +532,7 @@
                        </widget>
                       </item>
                       <item>
-                       <spacer name="verticalSpacer_11">
+                       <spacer name="verticalSpacer2_Intro">
                         <property name="orientation">
                          <enum>Qt::Vertical</enum>
                         </property>
@@ -528,10 +550,10 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QWidget" name="widgetFaq2" native="true">
-                   <layout class="QHBoxLayout" name="horizontalPage2" stretch="0,1">
+                  <widget class="QWidget" name="widget_UnspendablePGO" native="true">
+                   <layout class="QHBoxLayout" name="horizontalPage_UnspendablePGO" stretch="0,1">
                     <item alignment="Qt::AlignTop">
-                     <widget class="QLabel" name="labelNumber2">
+                     <widget class="QLabel" name="labelNumber_UnspendablePGO">
                       <property name="minimumSize">
                        <size>
                         <width>24</width>
@@ -553,7 +575,7 @@
                      </widget>
                     </item>
                     <item>
-                     <layout class="QVBoxLayout" name="verticalLayoutPage2">
+                     <layout class="QVBoxLayout" name="verticalLayout_UnspendablePGO">
                       <property name="spacing">
                        <number>0</number>
                       </property>
@@ -564,7 +586,7 @@
                        <number>20</number>
                       </property>
                       <item>
-                       <widget class="QLabel" name="labelSubtitle2">
+                       <widget class="QLabel" name="labelSubtitle_UnspendablePGO">
                         <property name="text">
                          <string>Why are my PGO unspendable?</string>
                         </property>
@@ -574,7 +596,7 @@
                        </widget>
                       </item>
                       <item>
-                       <spacer name="verticalSpacer_20">
+                       <spacer name="verticalSpacer1_UnspendablePGO">
                         <property name="orientation">
                          <enum>Qt::Vertical</enum>
                         </property>
@@ -590,17 +612,9 @@
                        </spacer>
                       </item>
                       <item>
-                       <widget class="QLabel" name="labelContent2">
+                       <widget class="QLabel" name="labelContent_UnspendablePGO">
                         <property name="text">
-                         <string>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           Newly received PENGOLINCOIN requires 6 confirmations on the network
-                           to become eligible for spending which can take ~6 minutes.
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           Your PENGOLINCOIN wallet also needs to be completely synchronized
-                           to see and spend balances on the network.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </string>
+                         <string notr="true">N/A</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -611,7 +625,7 @@
                        </widget>
                       </item>
                       <item>
-                       <spacer name="verticalSpacer_21">
+                       <spacer name="verticalSpacer2_UnspendablePGO">
                         <property name="orientation">
                          <enum>Qt::Vertical</enum>
                         </property>
@@ -629,10 +643,10 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QWidget" name="widgetFaq8" native="true">
-                   <layout class="QHBoxLayout" name="horizontalpage_8" stretch="0,1">
+                  <widget class="QWidget" name="widget_Stake" native="true">
+                   <layout class="QHBoxLayout" name="horizontalpage_Stake" stretch="0,1">
                     <item alignment="Qt::AlignTop">
-                     <widget class="QLabel" name="labelNumber8">
+                     <widget class="QLabel" name="labelNumber_Stake">
                       <property name="minimumSize">
                        <size>
                         <width>24</width>
@@ -654,7 +668,7 @@
                      </widget>
                     </item>
                     <item>
-                     <layout class="QVBoxLayout" name="verticalLayoutpage_8">
+                     <layout class="QVBoxLayout" name="verticalLayoutpage_Stake">
                       <property name="leftMargin">
                        <number>20</number>
                       </property>
@@ -662,9 +676,9 @@
                        <number>20</number>
                       </property>
                       <item>
-                       <widget class="QLabel" name="labelSubtitle8">
+                       <widget class="QLabel" name="labelSubtitle_Stake">
                         <property name="text">
-                         <string>Where I should go if I need support?</string>
+                         <string>How do I stake PGO?</string>
                         </property>
                         <property name="wordWrap">
                          <bool>true</bool>
@@ -672,7 +686,7 @@
                        </widget>
                       </item>
                       <item>
-                       <spacer name="verticalSpacer_80">
+                       <spacer name="verticalSpacer1_Stake">
                         <property name="orientation">
                          <enum>Qt::Vertical</enum>
                         </property>
@@ -688,18 +702,9 @@
                        </spacer>
                       </item>
                       <item>
-                       <widget class="QLabel" name="labelContent8">
+                       <widget class="QLabel" name="labelContent_Stake">
                         <property name="text">
-                         <string>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #005f95' href='https://discord.pengolincoin.xyz'&gt;
-                           #support in our Discord&lt;/a&gt;.
-                           If you prefer to submit a ticket, One can be
-                           &lt;a style='color: #005f95' href='https://PENGOLINCOIN.freshdesk.com'&gt;
-                           our Freshdesk support site&lt;/a&gt;.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </string>
+                         <string notr="true">N/A</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -710,7 +715,7 @@
                        </widget>
                       </item>
                       <item>
-                       <spacer name="verticalSpacer_81">
+                       <spacer name="verticalSpacer2_Stake">
                         <property name="orientation">
                          <enum>Qt::Vertical</enum>
                         </property>
@@ -728,10 +733,10 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QWidget" name="widgetFaq9" native="true">
-                   <layout class="QHBoxLayout" name="horizontalpage_9" stretch="0,1">
+                  <widget class="QWidget" name="widget_Support" native="true">
+                   <layout class="QHBoxLayout" name="horizontalpage_Support" stretch="0,1">
                     <item alignment="Qt::AlignTop">
-                     <widget class="QLabel" name="labelNumber9">
+                     <widget class="QLabel" name="labelNumber_Support">
                       <property name="minimumSize">
                        <size>
                         <width>24</width>
@@ -753,7 +758,7 @@
                      </widget>
                     </item>
                     <item>
-                     <layout class="QVBoxLayout" name="verticalLayoutpage_9">
+                     <layout class="QVBoxLayout" name="verticalLayoutpage_Support">
                       <property name="leftMargin">
                        <number>20</number>
                       </property>
@@ -761,9 +766,9 @@
                        <number>20</number>
                       </property>
                       <item>
-                       <widget class="QLabel" name="labelSubtitle9">
+                       <widget class="QLabel" name="labelSubtitle_Support">
                         <property name="text">
-                         <string>What is a Master Node?</string>
+                         <string>Where should I go if I need support?</string>
                         </property>
                         <property name="wordWrap">
                          <bool>true</bool>
@@ -771,7 +776,7 @@
                        </widget>
                       </item>
                       <item>
-                       <spacer name="verticalSpacer_90">
+                       <spacer name="verticalSpacer1_Support">
                         <property name="orientation">
                          <enum>Qt::Vertical</enum>
                         </property>
@@ -787,9 +792,9 @@
                        </spacer>
                       </item>
                       <item>
-                       <widget class="QLabel" name="labelContent9">
+                       <widget class="QLabel" name="labelContent_Support">
                         <property name="text">
-                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;A masternode is a computer running a full node PENGOLINCOIN core wallet with a requirement of 100,000 PGO secured collateral to provide extra services to the network and in return, receive a portion of the block reward regularly. These services include: &lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;A decentralized governance (Proposal Voting) &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;A decentralized budgeting system (Treasury) &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Validation of transactions within each block &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Act as an additional full node in the network &lt;/li&gt;&lt;/ul&gt;&lt;p align=&quot;justify&quot;&gt;For providing such services, masternodes are also paid a certain portion of reward for each block. This can serve as a passive income to the masternode owners minus their running cost. &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Masternode Perks: &lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Participate in PENGOLINCOIN Governance &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Earn Masternode Rewards &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Commodity option for future sale &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Help secure the PENGOLINCOIN network &lt;/li&gt;&lt;/ul&gt;&lt;p align=&quot;justify&quot;&gt;Requirements: &lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;100,000 PGO per single Masternode instance &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Must be stored in a core wallet &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Need dedicated IP address &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Masternode wallet to remain online &lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         <string notr="true">N/A</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -800,7 +805,7 @@
                        </widget>
                       </item>
                       <item>
-                       <spacer name="verticalSpacer_91">
+                       <spacer name="verticalSpacer2_Support">
                         <property name="orientation">
                          <enum>Qt::Vertical</enum>
                         </property>
@@ -818,10 +823,10 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QWidget" name="widgetFaq10" native="true">
-                   <layout class="QHBoxLayout" name="horizontalpage_10" stretch="0,1">
+                  <widget class="QWidget" name="widget_Masternode" native="true">
+                   <layout class="QHBoxLayout" name="horizontalpage_Masternode" stretch="0,1">
                     <item alignment="Qt::AlignTop">
-                     <widget class="QLabel" name="labelNumber10">
+                     <widget class="QLabel" name="labelNumber_Masternode">
                       <property name="minimumSize">
                        <size>
                         <width>24</width>
@@ -843,7 +848,7 @@
                      </widget>
                     </item>
                     <item>
-                     <layout class="QVBoxLayout" name="verticalLayoutpage_10">
+                     <layout class="QVBoxLayout" name="verticalLayoutpage_Masternode">
                       <property name="leftMargin">
                        <number>20</number>
                       </property>
@@ -851,9 +856,9 @@
                        <number>20</number>
                       </property>
                       <item>
-                       <widget class="QLabel" name="labelSubtitle10">
+                       <widget class="QLabel" name="labelSubtitle_Masternode">
                         <property name="text">
-                         <string>What is a Master Node Controller?</string>
+                         <string>What is a Masternode?</string>
                         </property>
                         <property name="wordWrap">
                          <bool>true</bool>
@@ -861,7 +866,7 @@
                        </widget>
                       </item>
                       <item>
-                       <spacer name="verticalSpacer_100">
+                       <spacer name="verticalSpacer1_Masternode">
                         <property name="orientation">
                          <enum>Qt::Vertical</enum>
                         </property>
@@ -877,9 +882,9 @@
                        </spacer>
                       </item>
                       <item>
-                       <widget class="QLabel" name="labelContent10">
+                       <widget class="QLabel" name="labelContent_Masternode">
                         <property name="text">
-                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;A Masternode Controller wallet is where the 100,000 PGO collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet/s and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         <string notr="true">N/A</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -890,7 +895,97 @@
                        </widget>
                       </item>
                       <item>
-                       <spacer name="verticalSpacer_92">
+                       <spacer name="verticalSpacer2_Masternode">
+                        <property name="orientation">
+                         <enum>Qt::Vertical</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>20</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_MNController" native="true">
+                   <layout class="QHBoxLayout" name="horizontalpage_MNController" stretch="0,1">
+                    <item alignment="Qt::AlignTop">
+                     <widget class="QLabel" name="labelNumber_MNController">
+                      <property name="minimumSize">
+                       <size>
+                        <width>24</width>
+                        <height>24</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>24</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>6</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <layout class="QVBoxLayout" name="verticalLayoutpage_MNController">
+                      <property name="leftMargin">
+                       <number>20</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>20</number>
+                      </property>
+                      <item>
+                       <widget class="QLabel" name="labelSubtitle_MNController">
+                        <property name="text">
+                         <string>What is a Masternode Controller?</string>
+                        </property>
+                        <property name="wordWrap">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <spacer name="verticalSpacer1_MNController">
+                        <property name="orientation">
+                         <enum>Qt::Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                         <enum>QSizePolicy::Fixed</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>20</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item>
+                       <widget class="QLabel" name="labelContent_MNController">
+                        <property name="text">
+                         <string notr="true">N/A</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                        </property>
+                        <property name="wordWrap">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <spacer name="verticalSpacer2_MNController">
                         <property name="orientation">
                          <enum>Qt::Vertical</enum>
                         </property>

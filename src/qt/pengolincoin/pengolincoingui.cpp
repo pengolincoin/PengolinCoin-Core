@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,26 +11,30 @@
 
 #include "qt/guiutil.h"
 #include "clientmodel.h"
+#include "interfaces/handler.h"
 #include "optionsmodel.h"
 #include "networkstyle.h"
 #include "notificator.h"
 #include "guiinterface.h"
 #include "qt/pengolincoin/qtutils.h"
 #include "qt/pengolincoin/defaultdialog.h"
-#include "qt/pengolincoin/settings/settingsfaqwidget.h"
 
-#include <QHBoxLayout>
-#include <QVBoxLayout>
+#include "init.h"
+#include "util/system.h"
+
 #include <QApplication>
 #include <QColor>
-#include <QShortcut>
+#include <QHBoxLayout>
 #include <QKeySequence>
+#include <QScreen>
+#include <QShortcut>
 #include <QWindowStateChangeEvent>
 
-#include "util.h"
 
 #define BASE_WINDOW_WIDTH 1200
 #define BASE_WINDOW_HEIGHT 740
+#define BASE_WINDOW_MIN_HEIGHT 620
+#define BASE_WINDOW_MIN_WIDTH 1100
 
 
 const QString PENGOLINCOINGUI::DEFAULT_WALLET = "~Default";
@@ -40,38 +45,43 @@ PENGOLINCOINGUI::PENGOLINCOINGUI(const NetworkStyle* networkStyle, QWidget* pare
 
     /* Open CSS when configured */
     this->setStyleSheet(GUIUtil::loadStyleSheet());
-    this->setMinimumSize(BASE_WINDOW_WIDTH, BASE_WINDOW_HEIGHT);
-    GUIUtil::restoreWindowGeometry("nWindow", QSize(BASE_WINDOW_WIDTH, BASE_WINDOW_HEIGHT), this);
+    this->setMinimumSize(BASE_WINDOW_MIN_WIDTH, BASE_WINDOW_MIN_HEIGHT);
+
+
+    // Adapt screen size
+    QRect rec = QGuiApplication::primaryScreen()->geometry();
+    int adaptedHeight = (rec.height() < BASE_WINDOW_HEIGHT) ?  BASE_WINDOW_MIN_HEIGHT : BASE_WINDOW_HEIGHT;
+    int adaptedWidth = (rec.width() < BASE_WINDOW_WIDTH) ?  BASE_WINDOW_MIN_WIDTH : BASE_WINDOW_WIDTH;
+    GUIUtil::restoreWindowGeometry(
+            "nWindow",
+            QSize(adaptedWidth, adaptedHeight),
+            this
+    );
 
 #ifdef ENABLE_WALLET
     /* if compiled with wallet support, -disablewallet can still disable the wallet */
-    enableWallet = !GetBoolArg("-disablewallet", false);
+    enableWallet = !gArgs.GetBoolArg("-disablewallet", DEFAULT_DISABLE_WALLET);
 #else
     enableWallet = false;
 #endif // ENABLE_WALLET
 
-    QString windowTitle = tr("PENGOLINCOIN Core") + " - ";
-    windowTitle += ((enableWallet) ? tr("Wallet") : tr("Node"));
+    QString windowTitle = QString::fromStdString(gArgs.GetArg("-windowtitle", ""));
+    if (windowTitle.isEmpty()) {
+        windowTitle = tr("PENGOLINCOIN Core") + " - ";
+        windowTitle += ((enableWallet) ? tr("Wallet") : tr("Node"));
+    }
     windowTitle += " " + networkStyle->getTitleAddText();
     setWindowTitle(windowTitle);
 
-#ifndef Q_OS_MAC
     QApplication::setWindowIcon(networkStyle->getAppIcon());
     setWindowIcon(networkStyle->getAppIcon());
-#else
-    MacDockIconHandler::instance()->setIcon(networkStyle->getAppIcon());
-#endif
-
-
-
 
 #ifdef ENABLE_WALLET
     // Create wallet frame
-    if(enableWallet){
-
+    if (enableWallet) {
         QFrame* centralWidget = new QFrame(this);
-        this->setMinimumWidth(BASE_WINDOW_WIDTH);
-        this->setMinimumHeight(BASE_WINDOW_HEIGHT);
+        this->setMinimumWidth(BASE_WINDOW_MIN_WIDTH);
+        this->setMinimumHeight(BASE_WINDOW_MIN_HEIGHT);
         QHBoxLayout* centralWidgetLayouot = new QHBoxLayout();
         centralWidget->setLayout(centralWidgetLayouot);
         centralWidgetLayouot->setContentsMargins(0,0,0,0);
@@ -115,7 +125,6 @@ PENGOLINCOINGUI::PENGOLINCOINGUI(const NetworkStyle* networkStyle, QWidget* pare
         sendWidget = new SendWidget(this);
         receiveWidget = new ReceiveWidget(this);
         addressesWidget = new AddressesWidget(this);
-        privacyWidget = new PrivacyWidget(this);
         masterNodesWidget = new MasterNodesWidget(this);
         coldStakingWidget = new ColdStakingWidget(this);
         settingsWidget = new SettingsWidget(this);
@@ -125,7 +134,6 @@ PENGOLINCOINGUI::PENGOLINCOINGUI(const NetworkStyle* networkStyle, QWidget* pare
         stackedContainer->addWidget(sendWidget);
         stackedContainer->addWidget(receiveWidget);
         stackedContainer->addWidget(addressesWidget);
-        stackedContainer->addWidget(privacyWidget);
         stackedContainer->addWidget(masterNodesWidget);
         stackedContainer->addWidget(coldStakingWidget);
         stackedContainer->addWidget(settingsWidget);
@@ -158,7 +166,8 @@ PENGOLINCOINGUI::PENGOLINCOINGUI(const NetworkStyle* networkStyle, QWidget* pare
 
 }
 
-void PENGOLINCOINGUI::createActions(const NetworkStyle* networkStyle){
+void PENGOLINCOINGUI::createActions(const NetworkStyle* networkStyle)
+{
     toggleHideAction = new QAction(networkStyle->getAppIcon(), tr("&Show / Hide"), this);
     toggleHideAction->setStatusTip(tr("Show or hide the main Window"));
 
@@ -167,14 +176,15 @@ void PENGOLINCOINGUI::createActions(const NetworkStyle* networkStyle){
     quitAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
     quitAction->setMenuRole(QAction::QuitRole);
 
-    connect(toggleHideAction, SIGNAL(triggered()), this, SLOT(toggleHidden()));
-    connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+    connect(toggleHideAction, &QAction::triggered, this, &PENGOLINCOINGUI::toggleHidden);
+    connect(quitAction, &QAction::triggered, qApp, &QApplication::quit);
 }
 
 /**
  * Here add every event connection
  */
-void PENGOLINCOINGUI::connectActions() {
+void PENGOLINCOINGUI::connectActions()
+{
     QShortcut *consoleShort = new QShortcut(this);
     consoleShort->setKey(QKeySequence(SHORT_KEY + Qt::Key_C));
     connect(consoleShort, &QShortcut::activated, [this](){
@@ -189,7 +199,6 @@ void PENGOLINCOINGUI::connectActions() {
     connect(sendWidget, &SendWidget::showHide, this, &PENGOLINCOINGUI::showHide);
     connect(receiveWidget, &ReceiveWidget::showHide, this, &PENGOLINCOINGUI::showHide);
     connect(addressesWidget, &AddressesWidget::showHide, this, &PENGOLINCOINGUI::showHide);
-    connect(privacyWidget, &PrivacyWidget::showHide, this, &PENGOLINCOINGUI::showHide);
     connect(masterNodesWidget, &MasterNodesWidget::showHide, this, &PENGOLINCOINGUI::showHide);
     connect(masterNodesWidget, &MasterNodesWidget::execDialog, this, &PENGOLINCOINGUI::execDialog);
     connect(coldStakingWidget, &ColdStakingWidget::showHide, this, &PENGOLINCOINGUI::showHide);
@@ -198,7 +207,8 @@ void PENGOLINCOINGUI::connectActions() {
 }
 
 
-void PENGOLINCOINGUI::createTrayIcon(const NetworkStyle* networkStyle) {
+void PENGOLINCOINGUI::createTrayIcon(const NetworkStyle* networkStyle)
+{
 #ifndef Q_OS_MAC
     trayIcon = new QSystemTrayIcon(this);
     QString toolTip = tr("PENGOLINCOIN Core client") + " " + networkStyle->getTitleAddText();
@@ -209,8 +219,8 @@ void PENGOLINCOINGUI::createTrayIcon(const NetworkStyle* networkStyle) {
     notificator = new Notificator(QApplication::applicationName(), trayIcon, this);
 }
 
-//
-PENGOLINCOINGUI::~PENGOLINCOINGUI() {
+PENGOLINCOINGUI::~PENGOLINCOINGUI()
+{
     // Unsubscribe from notifications from core
     unsubscribeFromCoreSignals();
 
@@ -224,16 +234,17 @@ PENGOLINCOINGUI::~PENGOLINCOINGUI() {
 
 
 /** Get restart command-line parameters and request restart */
-void PENGOLINCOINGUI::handleRestart(QStringList args){
+void PENGOLINCOINGUI::handleRestart(QStringList args)
+{
     if (!ShutdownRequested())
-        emit requestedRestart(args);
+        Q_EMIT requestedRestart(args);
 }
 
 
-void PENGOLINCOINGUI::setClientModel(ClientModel* clientModel) {
-    this->clientModel = clientModel;
-    if(this->clientModel) {
-
+void PENGOLINCOINGUI::setClientModel(ClientModel* _clientModel)
+{
+    this->clientModel = _clientModel;
+    if (this->clientModel) {
         // Create system tray menu (or setup the dock menu) that late to prevent users from calling actions,
         // while the client has not yet fully loaded
         createTrayIconMenu();
@@ -241,12 +252,16 @@ void PENGOLINCOINGUI::setClientModel(ClientModel* clientModel) {
         topBar->setClientModel(clientModel);
         dashboard->setClientModel(clientModel);
         sendWidget->setClientModel(clientModel);
+        masterNodesWidget->setClientModel(clientModel);
         settingsWidget->setClientModel(clientModel);
 
         // Receive and report messages from client model
-        connect(clientModel, SIGNAL(message(QString, QString, unsigned int)), this, SLOT(message(QString, QString, unsigned int)));
-        connect(topBar, SIGNAL(walletSynced(bool)), dashboard, SLOT(walletSynced(bool)));
-        connect(topBar, SIGNAL(walletSynced(bool)), coldStakingWidget, SLOT(walletSynced(bool)));
+        connect(clientModel, &ClientModel::message, this, &PENGOLINCOINGUI::message);
+        connect(clientModel, &ClientModel::alertsChanged, [this](const QString& _alertStr) {
+            message(tr("Alert!"), _alertStr, CClientUIInterface::MSG_WARNING);
+        });
+        connect(topBar, &TopBar::walletSynced, dashboard, &DashboardWidget::walletSynced);
+        connect(topBar, &TopBar::walletSynced, coldStakingWidget, &ColdStakingWidget::walletSynced);
 
         // Get restart command-line parameters and handle restart
         connect(settingsWidget, &SettingsWidget::handleRestart, [this](QStringList arg){handleRestart(arg);});
@@ -268,29 +283,31 @@ void PENGOLINCOINGUI::setClientModel(ClientModel* clientModel) {
     }
 }
 
-void PENGOLINCOINGUI::createTrayIconMenu() {
+void PENGOLINCOINGUI::createTrayIconMenu()
+{
 #ifndef Q_OS_MAC
-    // return if trayIcon is unset (only on non-Mac OSes)
+    // return if trayIcon is unset (only on non-macOSes)
     if (!trayIcon)
         return;
 
     trayIconMenu = new QMenu(this);
     trayIcon->setContextMenu(trayIconMenu);
 
-    connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
-            this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
+    connect(trayIcon, &QSystemTrayIcon::activated, this, &PENGOLINCOINGUI::trayIconActivated);
 #else
-    // Note: On Mac, the dock icon is used to provide the tray's functionality.
+    // Note: On macOS, the Dock icon is used to provide the tray's functionality.
     MacDockIconHandler* dockIconHandler = MacDockIconHandler::instance();
-    dockIconHandler->setMainWindow((QMainWindow*)this);
-    trayIconMenu = dockIconHandler->dockMenu();
+    connect(dockIconHandler, &MacDockIconHandler::dockIconClicked, this, &PENGOLINCOINGUI::macosDockIconActivated);
+
+    trayIconMenu = new QMenu(this);
+    trayIconMenu->setAsDockMenu();
 #endif
 
-    // Configuration of the tray icon (or dock icon) icon menu
+    // Configuration of the tray icon (or Dock icon) icon menu
     trayIconMenu->addAction(toggleHideAction);
     trayIconMenu->addSeparator();
 
-#ifndef Q_OS_MAC // This is built-in on Mac
+#ifndef Q_OS_MAC // This is built-in on macOS
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(quitAction);
 #endif
@@ -304,6 +321,12 @@ void PENGOLINCOINGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason
         toggleHidden();
     }
 }
+#else
+void PENGOLINCOINGUI::macosDockIconActivated()
+ {
+     show();
+     activateWindow();
+ }
 #endif
 
 void PENGOLINCOINGUI::changeEvent(QEvent* e)
@@ -314,7 +337,10 @@ void PENGOLINCOINGUI::changeEvent(QEvent* e)
         if (clientModel && clientModel->getOptionsModel() && clientModel->getOptionsModel()->getMinimizeToTray()) {
             QWindowStateChangeEvent* wsevt = static_cast<QWindowStateChangeEvent*>(e);
             if (!(wsevt->oldState() & Qt::WindowMinimized) && isMinimized()) {
-                QTimer::singleShot(0, this, SLOT(hide()));
+                QTimer::singleShot(0, this, &PENGOLINCOINGUI::hide);
+                e->ignore();
+            } else if ((wsevt->oldState() & Qt::WindowMinimized) && !isMinimized()) {
+                QTimer::singleShot(0, this, &PENGOLINCOINGUI::show);
                 e->ignore();
             }
         }
@@ -328,22 +354,28 @@ void PENGOLINCOINGUI::closeEvent(QCloseEvent* event)
     if (clientModel && clientModel->getOptionsModel()) {
         if (!clientModel->getOptionsModel()->getMinimizeOnClose()) {
             QApplication::quit();
+        } else {
+            QMainWindow::showMinimized();
+            event->ignore();
         }
     }
-#endif
+#else
     QMainWindow::closeEvent(event);
+#endif
 }
 
 
-void PENGOLINCOINGUI::messageInfo(const QString& text){
-    if(!this->snackBar) this->snackBar = new SnackBar(this, this);
+void PENGOLINCOINGUI::messageInfo(const QString& text)
+{
+    if (!this->snackBar) this->snackBar = new SnackBar(this, this);
     this->snackBar->setText(text);
     this->snackBar->resize(this->width(), snackBar->height());
     openDialog(this->snackBar, this);
 }
 
 
-void PENGOLINCOINGUI::message(const QString& title, const QString& message, unsigned int style, bool* ret) {
+void PENGOLINCOINGUI::message(const QString& title, const QString& message, unsigned int style, bool* ret)
+{
     QString strTitle =  tr("PENGOLINCOIN Core"); // default title
     // Default to information icon
     int nNotifyIcon = Notificator::Information;
@@ -382,26 +414,27 @@ void PENGOLINCOINGUI::message(const QString& title, const QString& message, unsi
         // Check for buttons, use OK as default, if none was supplied
         int r = 0;
         showNormalIfMinimized();
-        if(style & CClientUIInterface::BTN_MASK){
+        if (style & CClientUIInterface::BTN_MASK) {
             r = openStandardDialog(
                     (title.isEmpty() ? strTitle : title), message, "OK", "CANCEL"
                 );
-        }else{
+        } else {
             r = openStandardDialog((title.isEmpty() ? strTitle : title), message, "OK");
         }
         if (ret != NULL)
             *ret = r;
-    } else if(style & CClientUIInterface::MSG_INFORMATION_SNACK){
+    } else if (style & CClientUIInterface::MSG_INFORMATION_SNACK) {
         messageInfo(message);
-    }else {
+    } else {
         // Append title to "PENGOLINCOIN - "
         if (!msgType.isEmpty())
             strTitle += " - " + msgType;
-        notificator->notify((Notificator::Class) nNotifyIcon, strTitle, message);
+        notificator->notify(static_cast<Notificator::Class>(nNotifyIcon), strTitle, message);
     }
 }
 
-bool PENGOLINCOINGUI::openStandardDialog(QString title, QString body, QString okBtn, QString cancelBtn){
+bool PENGOLINCOINGUI::openStandardDialog(QString title, QString body, QString okBtn, QString cancelBtn)
+{
     DefaultDialog *dialog;
     if (isVisible()) {
         showHide(true);
@@ -423,28 +456,24 @@ bool PENGOLINCOINGUI::openStandardDialog(QString title, QString body, QString ok
 }
 
 
-void PENGOLINCOINGUI::showNormalIfMinimized(bool fToggleHidden) {
+void PENGOLINCOINGUI::showNormalIfMinimized(bool fToggleHidden)
+{
     if (!clientModel)
         return;
-    // activateWindow() (sometimes) helps with keyboard focus on Windows
-    if (isHidden()) {
-        show();
-        activateWindow();
-    } else if (isMinimized()) {
-        showNormal();
-        activateWindow();
-    } else if (GUIUtil::isObscured(this)) {
-        raise();
-        activateWindow();
-    } else if (fToggleHidden)
+    if (!isHidden() && !isMinimized() && !GUIUtil::isObscured(this) && fToggleHidden) {
         hide();
+    } else {
+        GUIUtil::bringToFront(this);
+    }
 }
 
-void PENGOLINCOINGUI::toggleHidden() {
+void PENGOLINCOINGUI::toggleHidden()
+{
     showNormalIfMinimized(true);
 }
 
-void PENGOLINCOINGUI::detectShutdown() {
+void PENGOLINCOINGUI::detectShutdown()
+{
     if (ShutdownRequested()) {
         if (rpcConsole)
             rpcConsole->hide();
@@ -452,30 +481,31 @@ void PENGOLINCOINGUI::detectShutdown() {
     }
 }
 
-void PENGOLINCOINGUI::goToDashboard(){
-    if(stackedContainer->currentWidget() != dashboard){
+void PENGOLINCOINGUI::goToDashboard()
+{
+    if (stackedContainer->currentWidget() != dashboard) {
         stackedContainer->setCurrentWidget(dashboard);
         topBar->showBottom();
     }
 }
 
-void PENGOLINCOINGUI::goToSend(){
+void PENGOLINCOINGUI::goToSend()
+{
     showTop(sendWidget);
 }
 
-void PENGOLINCOINGUI::goToAddresses(){
+void PENGOLINCOINGUI::goToAddresses()
+{
     showTop(addressesWidget);
 }
 
-void PENGOLINCOINGUI::goToPrivacy(){
-    showTop(privacyWidget);
-}
-
-void PENGOLINCOINGUI::goToMasterNodes(){
+void PENGOLINCOINGUI::goToMasterNodes()
+{
     showTop(masterNodesWidget);
 }
 
-void PENGOLINCOINGUI::goToColdStaking(){
+void PENGOLINCOINGUI::goToColdStaking()
+{
     showTop(coldStakingWidget);
 }
 
@@ -483,51 +513,69 @@ void PENGOLINCOINGUI::goToSettings(){
     showTop(settingsWidget);
 }
 
-void PENGOLINCOINGUI::goToReceive(){
+void PENGOLINCOINGUI::goToSettingsInfo()
+{
+    navMenu->selectSettings();
+    settingsWidget->showInformation();
+    goToSettings();
+}
+
+void PENGOLINCOINGUI::goToReceive()
+{
     showTop(receiveWidget);
 }
 
-void PENGOLINCOINGUI::showTop(QWidget* view){
-    if(stackedContainer->currentWidget() != view){
+void PENGOLINCOINGUI::openNetworkMonitor()
+{
+    settingsWidget->openNetworkMonitor();
+}
+
+void PENGOLINCOINGUI::showTop(QWidget* view)
+{
+    if (stackedContainer->currentWidget() != view) {
         stackedContainer->setCurrentWidget(view);
         topBar->showTop();
     }
 }
 
-void PENGOLINCOINGUI::changeTheme(bool isLightTheme){
+void PENGOLINCOINGUI::changeTheme(bool isLightTheme)
+{
 
     QString css = GUIUtil::loadStyleSheet();
     this->setStyleSheet(css);
 
     // Notify
-    emit themeChanged(isLightTheme, css);
+    Q_EMIT themeChanged(isLightTheme, css);
 
     // Update style
     updateStyle(this);
 }
 
-void PENGOLINCOINGUI::resizeEvent(QResizeEvent* event){
+void PENGOLINCOINGUI::resizeEvent(QResizeEvent* event)
+{
     // Parent..
     QMainWindow::resizeEvent(event);
     // background
     showHide(opEnabled);
     // Notify
-    emit windowResizeEvent(event);
+    Q_EMIT windowResizeEvent(event);
 }
 
-bool PENGOLINCOINGUI::execDialog(QDialog *dialog, int xDiv, int yDiv){
+bool PENGOLINCOINGUI::execDialog(QDialog *dialog, int xDiv, int yDiv)
+{
     return openDialogWithOpaqueBackgroundY(dialog, this);
 }
 
-void PENGOLINCOINGUI::showHide(bool show){
-    if(!op) op = new QLabel(this);
-    if(!show){
+void PENGOLINCOINGUI::showHide(bool show)
+{
+    if (!op) op = new QLabel(this);
+    if (!show) {
         op->setVisible(false);
         opEnabled = false;
-    }else{
+    } else {
         QColor bg("#000000");
         bg.setAlpha(200);
-        if(!isLightTheme()){
+        if (!isLightTheme()) {
             bg = QColor("#00000000");
             bg.setAlpha(150);
         }
@@ -546,14 +594,16 @@ void PENGOLINCOINGUI::showHide(bool show){
     }
 }
 
-int PENGOLINCOINGUI::getNavWidth(){
+int PENGOLINCOINGUI::getNavWidth()
+{
     return this->navMenu->width();
 }
 
-void PENGOLINCOINGUI::openFAQ(int section){
+void PENGOLINCOINGUI::openFAQ(SettingsFaqWidget::Section section)
+{
     showHide(true);
-    SettingsFaqWidget* dialog = new SettingsFaqWidget(this);
-    if (section > 0) dialog->setSection(section);
+    SettingsFaqWidget* dialog = new SettingsFaqWidget(this, clientModel);
+    dialog->setSection(section);
     openDialogWithOpaqueBackgroundFullScreen(dialog, this);
     dialog->deleteLater();
 }
@@ -563,7 +613,7 @@ void PENGOLINCOINGUI::openFAQ(int section){
 bool PENGOLINCOINGUI::addWallet(const QString& name, WalletModel* walletModel)
 {
     // Single wallet supported for now..
-    if(!stackedContainer || !clientModel || !walletModel)
+    if (!stackedContainer || !clientModel || !walletModel)
         return false;
 
     // set the model for every view
@@ -573,15 +623,14 @@ bool PENGOLINCOINGUI::addWallet(const QString& name, WalletModel* walletModel)
     receiveWidget->setWalletModel(walletModel);
     sendWidget->setWalletModel(walletModel);
     addressesWidget->setWalletModel(walletModel);
-    privacyWidget->setWalletModel(walletModel);
     masterNodesWidget->setWalletModel(walletModel);
     coldStakingWidget->setWalletModel(walletModel);
     settingsWidget->setWalletModel(walletModel);
 
     // Connect actions..
-    connect(privacyWidget, &PrivacyWidget::message, this, &PENGOLINCOINGUI::message);
+    connect(walletModel, &WalletModel::message, this, &PENGOLINCOINGUI::message);
     connect(masterNodesWidget, &MasterNodesWidget::message, this, &PENGOLINCOINGUI::message);
-    connect(coldStakingWidget, &MasterNodesWidget::message, this, &PENGOLINCOINGUI::message);
+    connect(coldStakingWidget, &ColdStakingWidget::message, this, &PENGOLINCOINGUI::message);
     connect(topBar, &TopBar::message, this, &PENGOLINCOINGUI::message);
     connect(sendWidget, &SendWidget::message,this, &PENGOLINCOINGUI::message);
     connect(receiveWidget, &ReceiveWidget::message,this, &PENGOLINCOINGUI::message);
@@ -589,25 +638,28 @@ bool PENGOLINCOINGUI::addWallet(const QString& name, WalletModel* walletModel)
     connect(settingsWidget, &SettingsWidget::message, this, &PENGOLINCOINGUI::message);
 
     // Pass through transaction notifications
-    connect(dashboard, SIGNAL(incomingTransaction(QString, int, CAmount, QString, QString)), this, SLOT(incomingTransaction(QString, int, CAmount, QString, QString)));
+    connect(dashboard, &DashboardWidget::incomingTransaction, this, &PENGOLINCOINGUI::incomingTransaction);
 
     return true;
 }
 
-bool PENGOLINCOINGUI::setCurrentWallet(const QString& name) {
+bool PENGOLINCOINGUI::setCurrentWallet(const QString& name)
+{
     // Single wallet supported.
     return true;
 }
 
-void PENGOLINCOINGUI::removeAllWallets() {
+void PENGOLINCOINGUI::removeAllWallets()
+{
     // Single wallet supported.
 }
 
-void PENGOLINCOINGUI::incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address) {
+void PENGOLINCOINGUI::incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address)
+{
     // Only send notifications when not disabled
-    if(!bdisableSystemnotifications){
+    if (!bdisableSystemnotifications) {
         // On new transaction, make an info balloon
-        message((amount) < 0 ? (pwalletMain->fMultiSendNotify == true ? tr("Sent MultiSend transaction") : tr("Sent transaction")) : tr("Incoming transaction"),
+        message(amount < 0 ? tr("Sent transaction") : tr("Incoming transaction"),
             tr("Date: %1\n"
                "Amount: %2\n"
                "Type: %3\n"
@@ -617,8 +669,6 @@ void PENGOLINCOINGUI::incomingTransaction(const QString& date, int unit, const C
                 .arg(type)
                 .arg(address),
             CClientUIInterface::MSG_INFORMATION);
-
-        pwalletMain->fMultiSendNotify = false;
     }
 }
 
@@ -647,11 +697,11 @@ static bool ThreadSafeMessageBox(PENGOLINCOINGUI* gui, const std::string& messag
 void PENGOLINCOINGUI::subscribeToCoreSignals()
 {
     // Connect signals to client
-    uiInterface.ThreadSafeMessageBox.connect(boost::bind(ThreadSafeMessageBox, this, _1, _2, _3));
+    m_handler_message_box = interfaces::MakeHandler(uiInterface.ThreadSafeMessageBox.connect(std::bind(ThreadSafeMessageBox, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
 }
 
 void PENGOLINCOINGUI::unsubscribeFromCoreSignals()
 {
     // Disconnect signals from client
-    uiInterface.ThreadSafeMessageBox.disconnect(boost::bind(ThreadSafeMessageBox, this, _1, _2, _3));
+    m_handler_message_box->disconnect();
 }

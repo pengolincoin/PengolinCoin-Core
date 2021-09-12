@@ -1,16 +1,21 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+// file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
 #include "qt/pengolincoin/settings/settingsinformationwidget.h"
 #include "qt/pengolincoin/settings/forms/ui_settingsinformationwidget.h"
+
 #include "clientmodel.h"
 #include "chainparams.h"
 #include "db.h"
-#include "util.h"
+#include "util/system.h"
 #include "guiutil.h"
 #include "qt/pengolincoin/qtutils.h"
+
 #include <QDir>
+
+#define REQUEST_UPDATE_COUNTS 0
 
 SettingsInformationWidget::SettingsInformationWidget(PENGOLINCOINGUI* _window,QWidget *parent) :
     PWidget(_window,parent),
@@ -26,18 +31,7 @@ SettingsInformationWidget::SettingsInformationWidget(PENGOLINCOINGUI* _window,QW
     setCssProperty({ui->layoutOptions1, ui->layoutOptions2, ui->layoutOptions3}, "container-options");
 
     // Title
-    ui->labelTitle->setText(tr("Information"));
     setCssTitleScreen(ui->labelTitle);
-
-    ui->labelTitleGeneral->setText(tr("General"));
-    ui->labelTitleClient->setText(tr("Client Version: "));
-    ui->labelTitleAgent->setText(tr("User Agent:"));
-    ui->labelTitleBerkeley->setText(tr("Using BerkeleyDB version:"));
-    ui->labelTitleDataDir->setText(tr("Datadir: "));
-    ui->labelTitleTime->setText(tr("Startup Time:  "));
-    ui->labelTitleNetwork->setText(tr("Network"));
-    ui->labelTitleName->setText(tr("Name:"));
-    ui->labelTitleConnections->setText(tr("Number Connections:"));
 
     setCssProperty({
         ui->labelTitleDataDir,
@@ -47,8 +41,10 @@ SettingsInformationWidget::SettingsInformationWidget(PENGOLINCOINGUI* _window,QW
         ui->labelTitleTime,
         ui->labelTitleName,
         ui->labelTitleConnections,
+        ui->labelTitleMasternodes,
         ui->labelTitleBlockNumber,
         ui->labelTitleBlockTime,
+        ui->labelTitleBlockHash,
         ui->labelTitleNumberTransactions,
         ui->labelInfoNumberTransactions,
         ui->labelInfoClient,
@@ -57,6 +53,7 @@ SettingsInformationWidget::SettingsInformationWidget(PENGOLINCOINGUI* _window,QW
         ui->labelInfoDataDir,
         ui->labelInfoTime,
         ui->labelInfoConnections,
+        ui->labelInfoMasternodes,
         ui->labelInfoBlockNumber
         }, "text-main-settings");
 
@@ -68,33 +65,25 @@ SettingsInformationWidget::SettingsInformationWidget(PENGOLINCOINGUI* _window,QW
 
     },"text-title");
 
-    ui->labelTitleBlockchain->setText(tr("Blockchain"));
-    ui->labelTitleBlockNumber->setText(tr("Current Number of Blocks:"));
-    ui->labelTitleBlockTime->setText(tr("Last Block Time:"));
-
-    ui->labelTitleMemory->setText(tr("Memory Pool"));
+    // TODO: Mempool section is not currently implemented and instead, hidden for now
     ui->labelTitleMemory->setVisible(false);
-
-    ui->labelTitleNumberTransactions->setText(tr("Current Number of Transactions:"));
     ui->labelTitleNumberTransactions->setVisible(false);
-
     ui->labelInfoNumberTransactions->setText("0");
     ui->labelInfoNumberTransactions->setVisible(false);
 
     // Information Network
     ui->labelInfoName->setText(tr("Main"));
     ui->labelInfoName->setProperty("cssClass", "text-main-settings");
-    ui->labelInfoConnections->setText("0 (In: 0 / Out:0)");
+    ui->labelInfoConnections->setText("0 (In: 0 / Out: 0)");
+    ui->labelInfoMasternodes->setText("Total: 0 (IPv4: 0 / IPv6: 0 / Tor: 0 / Unknown: 0");
 
     // Information Blockchain
     ui->labelInfoBlockNumber->setText("0");
     ui->labelInfoBlockTime->setText("Sept 6, 2018. Thursday, 8:21:49 PM");
     ui->labelInfoBlockTime->setProperty("cssClass", "text-main-grey");
+    ui->labelInfoBlockHash->setProperty("cssClass", "text-main-hash");
 
     // Buttons
-    ui->pushButtonFile->setText(tr("Wallet Conf"));
-    ui->pushButtonNetworkMonitor->setText(tr("Network Monitor"));
-    ui->pushButtonBackups->setText(tr("Backups"));
     setCssBtnSecondary(ui->pushButtonBackups);
     setCssBtnSecondary(ui->pushButtonFile);
     setCssBtnSecondary(ui->pushButtonNetworkMonitor);
@@ -103,7 +92,6 @@ SettingsInformationWidget::SettingsInformationWidget(PENGOLINCOINGUI* _window,QW
 #ifdef ENABLE_WALLET
     // Wallet data -- remove it with if it's needed
     ui->labelInfoBerkeley->setText(DbEnv::version(0, 0, 0));
-    ui->labelInfoDataDir->setText(QString::fromStdString(GetDataDir().string() + QDir::separator().toLatin1() + GetArg("-wallet", "wallet.dat")));
 #else
     ui->labelInfoBerkeley->setText(tr("No information"));
 #endif
@@ -116,27 +104,32 @@ SettingsInformationWidget::SettingsInformationWidget(PENGOLINCOINGUI* _window,QW
         if (!GUIUtil::openConfigfile())
             inform(tr("Unable to open pengolincoin.conf with default application"));
     });
-    connect(ui->pushButtonNetworkMonitor, SIGNAL(clicked()), this, SLOT(openNetworkMonitor()));
+    connect(ui->pushButtonNetworkMonitor, &QPushButton::clicked, this, &SettingsInformationWidget::openNetworkMonitor);
 }
 
 
-void SettingsInformationWidget::loadClientModel(){
+void SettingsInformationWidget::loadClientModel()
+{
     if (clientModel && clientModel->getPeerTableModel() && clientModel->getBanTableModel()) {
         // Provide initial values
         ui->labelInfoClient->setText(clientModel->formatFullVersion());
         ui->labelInfoAgent->setText(clientModel->clientName());
         ui->labelInfoTime->setText(clientModel->formatClientStartupTime());
         ui->labelInfoName->setText(QString::fromStdString(Params().NetworkIDString()));
+        ui->labelInfoDataDir->setText(clientModel->dataDir());
 
         setNumConnections(clientModel->getNumConnections());
-        connect(clientModel, SIGNAL(numConnectionsChanged(int)), this, SLOT(setNumConnections(int)));
+        connect(clientModel, &ClientModel::numConnectionsChanged, this, &SettingsInformationWidget::setNumConnections);
 
         setNumBlocks(clientModel->getNumBlocks());
-        connect(clientModel, SIGNAL(numBlocksChanged(int)), this, SLOT(setNumBlocks(int)));
+        connect(clientModel, &ClientModel::numBlocksChanged, this, &SettingsInformationWidget::setNumBlocks);
+
+        connect(clientModel, &ClientModel::strMasternodesChanged, this, &SettingsInformationWidget::setMasternodeCount);
     }
 }
 
-void SettingsInformationWidget::setNumConnections(int count){
+void SettingsInformationWidget::setNumConnections(int count)
+{
     if (!clientModel)
         return;
 
@@ -147,20 +140,66 @@ void SettingsInformationWidget::setNumConnections(int count){
     ui->labelInfoConnections->setText(connections);
 }
 
-void SettingsInformationWidget::setNumBlocks(int count){
+void SettingsInformationWidget::setNumBlocks(int count)
+{
+    if (!isVisible()) return;
     ui->labelInfoBlockNumber->setText(QString::number(count));
-    if (clientModel)
+    if (clientModel) {
         ui->labelInfoBlockTime->setText(clientModel->getLastBlockDate().toString());
+        ui->labelInfoBlockHash->setText(clientModel->getLastBlockHash());
+    }
 }
 
-void SettingsInformationWidget::openNetworkMonitor(){
-    if(!rpcConsole){
-        rpcConsole = new RPCConsole(0);
+void SettingsInformationWidget::setMasternodeCount(const QString& strMasternodes)
+{
+    ui->labelInfoMasternodes->setText(strMasternodes);
+}
+
+void SettingsInformationWidget::openNetworkMonitor()
+{
+    if (!rpcConsole) {
+        rpcConsole = new RPCConsole(nullptr);
         rpcConsole->setClientModel(clientModel);
+        rpcConsole->setWalletModel(walletModel);
     }
     rpcConsole->showNetwork();
 }
 
-SettingsInformationWidget::~SettingsInformationWidget(){
+void SettingsInformationWidget::showEvent(QShowEvent *event)
+{
+    QWidget::showEvent(event);
+    if (clientModel) {
+        clientModel->startMasternodesTimer();
+        // Initial masternodes count value, running in a worker thread to not lock mnmanager mutex in the main thread.
+        execute(REQUEST_UPDATE_COUNTS);
+    }
+}
+
+void SettingsInformationWidget::hideEvent(QHideEvent *event) {
+    QWidget::hideEvent(event);
+    if (clientModel) {
+        clientModel->stopMasternodesTimer();
+    }
+}
+
+void SettingsInformationWidget::run(int type)
+{
+    if (type == REQUEST_UPDATE_COUNTS) {
+        QMetaObject::invokeMethod(this, "setMasternodeCount",
+                                  Qt::QueuedConnection, Q_ARG(QString, clientModel->getMasternodesCount()));
+        QMetaObject::invokeMethod(this, "setNumBlocks",
+                                  Qt::QueuedConnection, Q_ARG(int, clientModel->getLastBlockProcessedHeight()));
+    }
+}
+
+void SettingsInformationWidget::onError(QString error, int type)
+{
+    if (type == REQUEST_UPDATE_COUNTS) {
+        setMasternodeCount(tr("No available data"));
+    }
+}
+
+SettingsInformationWidget::~SettingsInformationWidget()
+{
     delete ui;
 }

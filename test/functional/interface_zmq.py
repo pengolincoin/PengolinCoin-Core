@@ -3,18 +3,21 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the ZMQ notification interface."""
+
 import configparser
+from io import BytesIO
 import os
 import struct
 import time
 
-from test_framework.test_framework import BitcoinTestFramework, SkipTest
-from test_framework.mininode import CTransaction
-from test_framework.util import (assert_equal,
-                                 bytes_to_hex_str,
-                                 hash256,
-                                )
-from io import BytesIO
+from test_framework.messages import CTransaction
+from test_framework.test_framework import PengolinCoinTestFramework, SkipTest
+from test_framework.util import (
+    assert_equal,
+    bytes_to_hex_str,
+    hash256
+)
+
 
 class ZMQSubscriber:
     def __init__(self, socket, topic):
@@ -35,7 +38,7 @@ class ZMQSubscriber:
         return body
 
 
-class ZMQTest (BitcoinTestFramework):
+class ZMQTest (PengolinCoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
 
@@ -46,14 +49,14 @@ class ZMQTest (BitcoinTestFramework):
         except ImportError:
             raise SkipTest("python3-zmq module not available.")
 
-        # Check that bitcoin has been built with ZMQ enabled.
+        # Check that pengolincoin has been built with ZMQ enabled.
         config = configparser.ConfigParser()
         if not self.options.configfile:
             self.options.configfile = os.path.abspath(os.path.join(os.path.dirname(__file__), "../config.ini"))
         config.read_file(open(self.options.configfile))
 
         if not config["components"].getboolean("ENABLE_ZMQ"):
-            raise SkipTest("bitcoind has not been built with zmq enabled.")
+            raise SkipTest("pengolincoind has not been built with zmq enabled.")
 
         # Initialize ZMQ context and socket.
         # All messages are received in the same socket which means
@@ -110,7 +113,7 @@ class ZMQTest (BitcoinTestFramework):
 
             # Should receive the generated raw block.
             block = self.rawblock.receive()
-            assert_equal(genhashes[x], bytes_to_hex_str(hash256(block[:112])))
+            assert_equal(genhashes[x], bytes_to_hex_str(hash256(block[:80])))
 
         self.log.info("Wait for tx from second node")
         payment_txid = self.nodes[1].sendtoaddress(self.nodes[0].getnewaddress(), 1.0)

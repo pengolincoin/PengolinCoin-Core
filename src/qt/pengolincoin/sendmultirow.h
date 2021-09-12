@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -25,7 +26,7 @@ class SendMultiRow : public PWidget
     Q_OBJECT
 
 public:
-    explicit SendMultiRow(PWidget *parent = nullptr);
+    explicit SendMultiRow(PENGOLINCOINGUI* _window, PWidget *parent = nullptr);
     ~SendMultiRow();
 
     void hideLabels();
@@ -38,6 +39,7 @@ public:
     SendCoinsRecipient getValue();
     QString getAddress();
     CAmount getAmountValue();
+    QString getMemo();
 
     /** Return whether the entry is still empty and unedited */
     bool isClear();
@@ -49,44 +51,50 @@ public:
     void setAmount(const QString& amount);
     void setAddressAndLabelOrDescription(const QString& address, const QString& message);
     void setFocus();
+    void toggleSubtractFeeFromAmount();
 
     QRect getEditLineRect();
     int getEditHeight();
     int getEditWidth();
     int getMenuBtnWidth();
+    bool getSubtractFeeFromAmount() const;
 
-public slots:
+    // Return true if memo was set and false if it was cleared.
+    bool launchMemoDialog();
+
+public Q_SLOTS:
     void clear();
     void updateDisplayUnit();
+    void onMemoClicked();
 
-signals:
+Q_SIGNALS:
     void removeEntry(SendMultiRow* entry);
     void onContactsClicked(SendMultiRow* entry);
     void onMenuClicked(SendMultiRow* entry);
     void onValueChanged();
-    void onUriParsed(SendCoinsRecipient rcp);
+    void onUriParsed(const SendCoinsRecipient& rcp);
 
 protected:
     void resizeEvent(QResizeEvent *event) override;
     virtual void enterEvent(QEvent *) override ;
     virtual void leaveEvent(QEvent *) override ;
 
-private slots:
+private Q_SLOTS:
     void amountChanged(const QString&);
-    bool addressChanged(const QString&);
+    bool addressChanged(const QString&, bool fOnlyValidate = false);
     void deleteClicked();
     //void on_payTo_textChanged(const QString& address);
     //void on_addressBookButton_clicked();
 
 private:
-    Ui::SendMultiRow *ui;
-    QPushButton *iconNumber;
-    QAction *btnContact;
+    Ui::SendMultiRow *ui{nullptr};
+    QPushButton *iconNumber{nullptr};
+    QAction *btnContact{nullptr};
 
-    int displayUnit;
-    int number = 0;
-    bool isExpanded = false;
-    bool onlyStakingAddressAccepted = false;
+    int displayUnit{0};
+    int number{0};
+    bool isExpanded{false};
+    bool onlyStakingAddressAccepted{false};
 
     SendCoinsRecipient recipient;
 

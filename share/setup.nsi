@@ -1,4 +1,4 @@
-Name "PENGOLINCOIN Core (-bit)"
+Name "PENGOLINCOIN Core (64-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -6,14 +6,14 @@ SetCompressor /SOLID lzma
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define COMPANY "PENGOLINCOIN Core project"
-!define URL https://www.pengolincoin.xyz
+!define URL https://www.pengolincoin.xyz/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/share/pixmaps/pengolincoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/share/pixmaps/pengolincoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
@@ -21,15 +21,13 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "PENGOLINCOIN Core"
 !define MUI_FINISHPAGE_RUN $INSTDIR\pengolincoin-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
 !include Sections.nsh
 !include MUI2.nsh
-!if "" == "64"
 !include x64.nsh
-!endif
 
 # Variables
 Var StartMenuGroup
@@ -47,24 +45,20 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/pengolincoin-2.0.1-win-setup.exe
-!if "" == "64"
+OutFile /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/pengolincoin-3.0.0.1-win64-setup-unsigned.exe
 InstallDir $PROGRAMFILES64\PengolinCoin
-!else
-InstallDir $PROGRAMFILES\PengolinCoin
-!endif
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 2.0.1.0
+VIProductVersion 3.0.0.1
 VIAddVersionKey ProductName "PENGOLINCOIN Core"
-VIAddVersionKey ProductVersion "2.0.1"
+VIAddVersionKey ProductVersion "3.0.0.1"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
-VIAddVersionKey FileVersion "2.0.1"
-VIAddVersionKey FileDescription ""
-VIAddVersionKey LegalCopyright ""
+VIAddVersionKey FileVersion "3.0.0.1"
+VIAddVersionKey FileDescription "Installer for PENGOLINCOIN Core"
+VIAddVersionKey LegalCopyright "Copyright (C) 2015-2021 The PENGOLINCOIN Core developers"
 InstallDirRegKey HKCU "${REGKEY}" Path
 ShowUninstDetails show
 
@@ -72,14 +66,17 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/release/pengolincoin-qt
-    File /oname=COPYING.txt /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/COPYING
-    File /oname=readme.txt /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/doc/README_windows.txt
+    File /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/release/pengolincoin-qt
+    File /oname=COPYING.txt /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/COPYING
+    File /oname=readme.txt /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/release/pengolincoind
-    File /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/release/pengolincoin-cli
+    File /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/release/pengolincoind
+    File /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/release/pengolincoin-cli
     SetOutPath $INSTDIR\doc
-    File /r /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/doc\*.*
+    File /r /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/doc\*.*
+    SetOutPath $APPDATA\PENGOLINCOINParams
+    File /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/params/sapling-output.params
+    File /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/params/sapling-spend.params
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
@@ -91,11 +88,11 @@ Section -post SEC0001
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\pengolincoin-qt
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\PENGOLINCOIN Core (testnet, -bit).lnk" "$INSTDIR\pengolincoin-qt" "-testnet" "$INSTDIR\pengolincoin-qt" 1
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\PENGOLINCOIN Core (testnet, 64-bit).lnk" "$INSTDIR\pengolincoin-qt" "-testnet" "$INSTDIR\pengolincoin-qt" 1
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
-    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "2.0.1"
+    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "3.0.0.1"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" Publisher "${COMPANY}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" URLInfoAbout "${URL}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayIcon $INSTDIR\uninstall.exe
@@ -135,7 +132,7 @@ Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\PENGOLINCOIN Core (testnet, -bit).lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\PENGOLINCOIN Core (testnet, 64-bit).lnk"
     Delete /REBOOTOK "$SMSTARTUP\PengolinCoin.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
@@ -157,7 +154,6 @@ SectionEnd
 # Installer functions
 Function .onInit
     InitPluginsDir
-!if "" == "64"
     ${If} ${RunningX64}
       ; disable registry redirection (enable access to 64-bit portion of registry)
       SetRegView 64
@@ -165,7 +161,6 @@ Function .onInit
       MessageBox MB_OK|MB_ICONSTOP "Cannot install 64-bit version on a 32-bit system."
       Abort
     ${EndIf}
-!endif
 FunctionEnd
 
 # Uninstaller functions

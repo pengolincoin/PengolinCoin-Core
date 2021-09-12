@@ -46,7 +46,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
 - #586 `fc211bfdf` [Bug] Fix CMasternodeConfig::read (Fuzzbawls)
 - #587 `69498104f` [Bug] Fix Windows icon files (Fuzzbawls)
 
-## Pgos
+## Credits
 
 Thanks to everyone who directly contributed to this release:
 - Fuzzbawls

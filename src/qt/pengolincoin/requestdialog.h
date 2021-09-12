@@ -1,14 +1,16 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef REQUESTDIALOG_H
 #define REQUESTDIALOG_H
 
-#include <QDialog>
-#include <QPixmap>
-#include "walletmodel.h"
+#include "qt/pengolincoin/focuseddialog.h"
 #include "qt/pengolincoin/snackbar.h"
+#include "walletmodel.h"
+
+#include <QPixmap>
 
 class WalletModel;
 class PENGOLINCOINGUI;
@@ -17,7 +19,7 @@ namespace Ui {
 class RequestDialog;
 }
 
-class RequestDialog : public QDialog
+class RequestDialog : public FocusedDialog
 {
     Q_OBJECT
 
@@ -30,21 +32,21 @@ public:
     void showEvent(QShowEvent *event) override;
     int res = -1;
 
-private slots:
-    void onNextClicked();
+private Q_SLOTS:
+    void accept() override;
     void onCopyClicked();
     void onCopyUriClicked();
 
 private:
-    Ui::RequestDialog *ui;
+    Ui::RequestDialog *ui{nullptr};
     int pos = 0;
     bool isPaymentRequest = true;
-    WalletModel *walletModel;
-    SnackBar *snackBar = nullptr;
+    WalletModel *walletModel{nullptr};
+    SnackBar *snackBar{nullptr};
     // Cached last address
-    SendCoinsRecipient *info = nullptr;
+    SendCoinsRecipient *info{nullptr};
 
-    QPixmap *qrImage = nullptr;
+    QPixmap *qrImage{nullptr};
 
     void updateQr(QString str);
     void inform(QString text);

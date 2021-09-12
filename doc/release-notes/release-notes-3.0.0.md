@@ -113,7 +113,7 @@ git merge commit are mentioned.
 - #264 `15e84e5` zPGO is here! (Fuzzbawls Mrs-X Presstab Spock PENGOLINCOIN)
 
 ### P2P Protocol and Network Code
-- #242 `0pgo77f` [P2P] Improve TOR service connectivity (Fuzzbawls)
+- #242 `0ecd77f` [P2P] Improve TOR service connectivity (Fuzzbawls)
 
 ### GUI
 - #251 `79af8d2` [Qt] Adjust masternode count in information UI (Mrs-X)
@@ -121,7 +121,7 @@ git merge commit are mentioned.
 ### Miscellaneous
 - #258 `c950765` [Depends] Update Depends with newer versions (Fuzzbawls)
 
-Pgos
+Credits
 =======
 
 Thanks to everyone who directly contributed to this release:

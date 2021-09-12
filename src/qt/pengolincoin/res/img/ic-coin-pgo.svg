@@ -1,20 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 24.1.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="ic_zterra_pgo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-<style type="text/css">
+
+<svg
+   version="1.1"
+   id="ic_zterra_pgo"
+   x="0px"
+   y="0px"
+   viewBox="0 0 24 24"
+   style="enable-background:new 0 0 24 24;"
+   xml:space="preserve"
+   sodipodi:docname="ic-coin-pgo.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs16" /><sodipodi:namedview
+   id="namedview14"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:zoom="33.833333"
+   inkscape:cx="11.985222"
+   inkscape:cy="12.014778"
+   inkscape:window-width="1920"
+   inkscape:window-height="1001"
+   inkscape:window-x="-9"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="ic_zterra_pgo" />
+<style
+   type="text/css"
+   id="style2">
 	.st0{fill:#28B8CE;}
 	.st1{fill:none;}
 	.st2{fill:#FFFFFF;}
 </style>
-<path id="Path_18926" class="st0" d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,21.3
-	c-5.1,0-9.3-4.1-9.3-9.3S6.9,2.8,12,2.8s9.3,4.1,9.3,9.3S17.1,21.3,12,21.3L12,21.3z"/>
-<path id="Path_18927" class="st0" d="M12,3.5c-11-0.2-11,17.2,0,17C23,20.7,23,3.3,12,3.5z"/>
-<path id="Rectangle_4542" class="st1" d="M0,0h24v24H0V0z"/>
-<g>
-	<g>
-		<path class="st2" d="M10.1,7.8h2.2c1.6,0,2.7,0.5,2.7,2.1c0,1.5-1.1,2.2-2.7,2.2H11v2.9h-0.9V7.8z M12.1,11.4
-			c1.3,0,1.9-0.5,1.9-1.5c0-1-0.6-1.4-1.9-1.4H11v2.9H12.1z"/>
+<path
+   id="Path_18926"
+   class="st0"
+   d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,21.3  c-5.1,0-9.3-4.1-9.3-9.3S6.9,2.8,12,2.8s9.3,4.1,9.3,9.3S17.1,21.3,12,21.3L12,21.3z"
+   style="fill:#98d6fd;fill-opacity:1" />
+<path
+   id="Path_18927"
+   class="st0"
+   d="M12,3.5c-11-0.2-11,17.2,0,17C23,20.7,23,3.3,12,3.5z"
+   style="fill:#98d6fd;fill-opacity:1" />
+<path
+   id="Rectangle_4542"
+   class="st1"
+   d="M0,0h24v24H0V0z" />
+<g
+   id="g11">
+	<g
+   id="g9">
+		<path
+   class="st2"
+   d="M10.1,7.8h2.2c1.6,0,2.7,0.5,2.7,2.1c0,1.5-1.1,2.2-2.7,2.2H11v2.9h-0.9V7.8z M12.1,11.4    c1.3,0,1.9-0.5,1.9-1.5c0-1-0.6-1.4-1.9-1.4H11v2.9H12.1z"
+   id="path7" />
 	</g>
 </g>
 </svg>

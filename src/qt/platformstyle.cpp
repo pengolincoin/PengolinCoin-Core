@@ -1,5 +1,6 @@
 // Copyright (c) 2015 The Bitcoin Core developers
-// Copyright (c) 2016-2019 The PENGOLINCOIN developers
+// Copyright (c) 2016-2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,10 +10,8 @@
 
 #include <QApplication>
 #include <QColor>
-#include <QIcon>
 #include <QImage>
 #include <QPalette>
-#include <QPixmap>
 
 static const struct {
     const char* platformId;
@@ -47,8 +46,7 @@ void MakeSingleColorImage(QImage& img, const QColor& colorbase)
 QIcon ColorizeIcon(const QIcon& ico, const QColor& colorbase)
 {
     QIcon new_ico;
-    QSize sz;
-    Q_FOREACH (sz, ico.availableSizes()) {
+    for (const QSize sz : ico.availableSizes()) {
         QImage img(ico.pixmap(sz).toImage());
         MakeSingleColorImage(img, colorbase);
         new_ico.addPixmap(QPixmap::fromImage(img));

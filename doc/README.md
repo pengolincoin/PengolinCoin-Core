@@ -16,6 +16,8 @@ Unpack the files into a directory and run:
 - `bin/pengolincoin-qt` (GUI) or
 - `bin/pengolincoind` (headless)
 
+If this is the first time running PENGOLINCOIN Core (since v5.0.0), you'll need to install the sapling params by running the included `install-params.sh` script, which copies the two params files to `$HOME/.pengolincoin-params`
+
 ### Windows
 
 Unpack the files into a directory, and then run pengolincoin-qt.exe.
@@ -62,6 +64,8 @@ The PENGOLINCOIN repo's [root README](/README.md) contains relevant information 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
 - [Files](files.md)
+- [Fuzz-testing](fuzzing.md)
+- [Reduce Memory](reduce-memory.md)
 - [Tor Support](tor.md)
 - [Init Scripts (systemd/upstart/openrc)](init.md)
 

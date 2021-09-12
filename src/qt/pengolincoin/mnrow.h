@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -21,7 +22,7 @@ public:
 
     void updateView(QString address, QString label, QString status, bool wasCollateralAccepted);
 
-signals:
+Q_SIGNALS:
     void onMenuClicked();
 private:
     Ui::MNRow *ui;

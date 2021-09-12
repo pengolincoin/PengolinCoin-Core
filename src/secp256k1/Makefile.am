@@ -21,8 +21,8 @@ noinst_HEADERS += src/group.h
 noinst_HEADERS += src/group_impl.h
 noinst_HEADERS += src/num_gmp.h
 noinst_HEADERS += src/num_gmp_impl.h
-noinst_HEADERS += src/pgosa.h
-noinst_HEADERS += src/pgosa_impl.h
+noinst_HEADERS += src/ecdsa.h
+noinst_HEADERS += src/ecdsa_impl.h
 noinst_HEADERS += src/eckey.h
 noinst_HEADERS += src/eckey_impl.h
 noinst_HEADERS += src/ecmult.h
@@ -174,8 +174,8 @@ endif
 
 EXTRA_DIST = autogen.sh src/gen_context.c src/basic-config.h $(JAVA_FILES)
 
-if ENABLE_MODULE_PGOH
-include src/modules/pgoh/Makefile.am.include
+if ENABLE_MODULE_ECDH
+include src/modules/ecdh/Makefile.am.include
 endif
 
 if ENABLE_MODULE_RECOVERY

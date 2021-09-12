@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,13 +9,12 @@
 #include "qt/pengolincoin/furlistrow.h"
 
 #include <QAbstractItemDelegate>
-#include <QPainter>
-#include <QObject>
-#include <QWidget>
 #include <QColor>
 #include <QModelIndex>
 #include <QObject>
 #include <QPaintEngine>
+#include <QPainter>
+#include <QWidget>
 
 QT_BEGIN_NAMESPACE
 class QModelIndex;

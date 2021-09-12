@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -17,10 +18,10 @@ TooltipMenu::TooltipMenu(PENGOLINCOINGUI *_window, QWidget *parent) :
     ui->btnLast->setVisible(false);
     setCssProperty(ui->container, "container-list-menu");
     setCssProperty({ui->btnCopy, ui->btnDelete, ui->btnEdit, ui->btnLast}, "btn-list-menu");
-    connect(ui->btnCopy, SIGNAL(clicked()), this, SLOT(copyClicked()));
-    connect(ui->btnDelete, SIGNAL(clicked()), this, SLOT(deleteClicked()));
-    connect(ui->btnEdit, SIGNAL(clicked()), this, SLOT(editClicked()));
-    connect(ui->btnLast, SIGNAL(clicked()), this, SLOT(lastClicked()));
+    connect(ui->btnCopy, &QPushButton::clicked, this, &TooltipMenu::copyClicked);
+    connect(ui->btnDelete, &QPushButton::clicked, this, &TooltipMenu::deleteClicked);
+    connect(ui->btnEdit, &QPushButton::clicked, this, &TooltipMenu::editClicked);
+    connect(ui->btnLast, &QPushButton::clicked, this, &TooltipMenu::lastClicked);
 }
 
 void TooltipMenu::setEditBtnText(QString btnText){
@@ -38,6 +39,12 @@ void TooltipMenu::setCopyBtnText(QString btnText){
 void TooltipMenu::setLastBtnText(QString btnText, int minHeight){
     ui->btnLast->setText(btnText);
     ui->btnLast->setMinimumHeight(minHeight);
+}
+
+void TooltipMenu::setLastBtnCheckable(bool checkable, bool isChecked)
+{
+    ui->btnLast->setCheckable(checkable);
+    ui->btnLast->setChecked(isChecked);
 }
 
 void TooltipMenu::setCopyBtnVisible(bool visible){
@@ -58,26 +65,26 @@ void TooltipMenu::setLastBtnVisible(bool visible) {
 
 void TooltipMenu::deleteClicked(){
     hide();
-    emit onDeleteClicked();
+    Q_EMIT onDeleteClicked();
 }
 
 void TooltipMenu::copyClicked(){
     hide();
-    emit onCopyClicked();
+    Q_EMIT onCopyClicked();
 }
 
 void TooltipMenu::editClicked(){
     hide();
-    emit onEditClicked();
+    Q_EMIT onEditClicked();
 }
 
 void TooltipMenu::lastClicked() {
     hide();
-    emit onLastClicked();
+    Q_EMIT onLastClicked();
 }
 
 void TooltipMenu::showEvent(QShowEvent *event){
-    QTimer::singleShot(5000, this, SLOT(hide()));
+    QTimer::singleShot(5000, this, &TooltipMenu::hide);
 }
 
 TooltipMenu::~TooltipMenu()

@@ -46,6 +46,7 @@ config file): *Needed for Tor version 0.2.7.0 and older versions of Tor only. Fo
 versions of Tor see [Section 3](#3-automatically-listen-on-tor).*
 
 	HiddenServiceDir /var/lib/tor/pengolincoin-service/
+	HiddenServiceVersion 2
 	HiddenServicePort 33001 127.0.0.1:33001
 	HiddenServicePort 61472 127.0.0.1:61472
 
@@ -53,7 +54,8 @@ The directory can be different of course, but (both) port numbers should be equa
 your pengolincoind's P2P listen port (33001 by default).
 
 	-externalip=X   You can tell pengolincoin about its publicly reachable address using
-	                this option, and this can be a .onion address. Given the above
+	                this option, and this can be a v2 .onion address (v3 .onion
+	                addresses are not supported by the PENGOLINCOIN network). Given the above
 	                configuration, you can find your .onion address in
 	                /var/lib/tor/pengolincoin-service/hostname. For connections
 	                coming from unroutable addresses (such as 127.0.0.1, where the
@@ -85,7 +87,7 @@ as well, use `discover` instead:
 
 	./pengolincoind ... -discover
 
-and open port 33001 on your firewall (or use -upnp).
+and open port 33001 on your firewall (or use port mapping, i.e., `-upnp` or `-natpmp`).
 
 If you only want to use Tor to reach .onion addresses, but not use it as a proxy
 for normal IPv4/IPv6 communication, use:

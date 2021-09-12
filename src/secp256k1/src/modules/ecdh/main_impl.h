@@ -4,13 +4,13 @@
  * file COPYING or http://www.opensource.org/licenses/mit-license.php.*
  **********************************************************************/
 
-#ifndef SECP256K1_MODULE_PGOH_MAIN_H
-#define SECP256K1_MODULE_PGOH_MAIN_H
+#ifndef SECP256K1_MODULE_ECDH_MAIN_H
+#define SECP256K1_MODULE_ECDH_MAIN_H
 
-#include "include/secp256k1_pgoh.h"
+#include "include/secp256k1_ecdh.h"
 #include "ecmult_const_impl.h"
 
-static int pgoh_hash_function_sha256(unsigned char *output, const unsigned char *x, const unsigned char *y, void *data) {
+static int ecdh_hash_function_sha256(unsigned char *output, const unsigned char *x, const unsigned char *y, void *data) {
     unsigned char version = (y[31] & 0x01) | 0x02;
     secp256k1_sha256 sha;
     (void)data;
@@ -23,10 +23,10 @@ static int pgoh_hash_function_sha256(unsigned char *output, const unsigned char 
     return 1;
 }
 
-const secp256k1_pgoh_hash_function secp256k1_pgoh_hash_function_sha256 = pgoh_hash_function_sha256;
-const secp256k1_pgoh_hash_function secp256k1_pgoh_hash_function_default = pgoh_hash_function_sha256;
+const secp256k1_ecdh_hash_function secp256k1_ecdh_hash_function_sha256 = ecdh_hash_function_sha256;
+const secp256k1_ecdh_hash_function secp256k1_ecdh_hash_function_default = ecdh_hash_function_sha256;
 
-int secp256k1_pgoh(const secp256k1_context* ctx, unsigned char *output, const secp256k1_pubkey *point, const unsigned char *scalar, secp256k1_pgoh_hash_function hashfp, void *data) {
+int secp256k1_ecdh(const secp256k1_context* ctx, unsigned char *output, const secp256k1_pubkey *point, const unsigned char *scalar, secp256k1_ecdh_hash_function hashfp, void *data) {
     int ret = 0;
     int overflow = 0;
     secp256k1_gej res;
@@ -37,7 +37,7 @@ int secp256k1_pgoh(const secp256k1_context* ctx, unsigned char *output, const se
     ARG_CHECK(point != NULL);
     ARG_CHECK(scalar != NULL);
     if (hashfp == NULL) {
-        hashfp = secp256k1_pgoh_hash_function_default;
+        hashfp = secp256k1_ecdh_hash_function_default;
     }
 
     secp256k1_pubkey_load(ctx, &pt, point);
@@ -64,4 +64,4 @@ int secp256k1_pgoh(const secp256k1_context* ctx, unsigned char *output, const se
     return ret;
 }
 
-#endif /* SECP256K1_MODULE_PGOH_MAIN_H */
+#endif /* SECP256K1_MODULE_ECDH_MAIN_H */

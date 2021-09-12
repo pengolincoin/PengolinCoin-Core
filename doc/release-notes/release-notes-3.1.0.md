@@ -385,7 +385,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #426 `3418a64d2` [Docs] Use mainnet port for example in masternode.conf file (Fuzzbawls)
  
  
-## Pgos
+## Credits
 
 Thanks to everyone who directly contributed to this release:
 - gpdionisio

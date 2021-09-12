@@ -1,0 +1,15 @@
+QT_TS = \
+  qt/locale/pengolincoin_de.ts \
+  qt/locale/pengolincoin_en.ts \
+  qt/locale/pengolincoin_en_US.ts \
+  qt/locale/pengolincoin_es.ts \
+  qt/locale/pengolincoin_es_ES.ts \
+  qt/locale/pengolincoin_fr_FR.ts \
+  qt/locale/pengolincoin_hr_HR.ts \
+  qt/locale/pengolincoin_it.ts \
+  qt/locale/pengolincoin_ko_KR.ts \
+  qt/locale/pengolincoin_nl.ts \
+  qt/locale/pengolincoin_pl.ts \
+  qt/locale/pengolincoin_ru.ts \
+  qt/locale/pengolincoin_tr.ts \
+  qt/locale/pengolincoin_zh_CN.ts

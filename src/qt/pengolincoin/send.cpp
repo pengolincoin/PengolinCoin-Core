@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,22 +10,23 @@
 #include "qt/pengolincoin/sendchangeaddressdialog.h"
 #include "qt/pengolincoin/optionbutton.h"
 #include "qt/pengolincoin/sendconfirmdialog.h"
-#include "qt/pengolincoin/myaddressrow.h"
 #include "qt/pengolincoin/guitransactionsutils.h"
+#include "qt/pengolincoin/loadingdialog.h"
 #include "clientmodel.h"
 #include "optionsmodel.h"
+#include "operationresult.h"
 #include "addresstablemodel.h"
 #include "coincontrol.h"
 #include "script/standard.h"
-#include "zpgo/deterministicmint.h"
 #include "openuridialog.h"
-#include "zpgocontroldialog.h"
+
+#define REQUEST_PREPARE_TX 1
+#define REQUEST_REFRESH_BALANCE 2
 
 SendWidget::SendWidget(PENGOLINCOINGUI* parent) :
     PWidget(parent),
     ui(new Ui::send),
-    coinIcon(new QPushButton()),
-    btnContacts(new QPushButton())
+    coinIcon(new QPushButton())
 {
     ui->setupUi(this);
 
@@ -41,84 +43,62 @@ SendWidget::SendWidget(PENGOLINCOINGUI* parent) :
     fontLight.setWeight(QFont::Light);
 
     /* Title */
-    ui->labelTitle->setText(tr("Send"));
     setCssProperty(ui->labelTitle, "text-title-screen");
     ui->labelTitle->setFont(fontLight);
 
     /* Button Group */
-    ui->pushLeft->setText("PGO");
     setCssProperty(ui->pushLeft, "btn-check-left");
     ui->pushLeft->setChecked(true);
-    ui->pushRight->setText("zPGO");
     setCssProperty(ui->pushRight, "btn-check-right");
 
     /* Subtitle */
-    ui->labelSubtitle1->setText(tr("You can transfer public coins (PGO) or private coins (zPGO)"));
-    setCssProperty(ui->labelSubtitle1, "text-subtitle");
+    setCssProperty({ui->labelSubtitle1, ui->labelSubtitle2}, "text-subtitle");
 
-    ui->labelSubtitle2->setText(tr("Select coin type to spend"));
-    setCssProperty(ui->labelSubtitle2, "text-subtitle");
-
-    ui->pushLeft->setVisible(false);
-    ui->pushRight->setVisible(false);
-    ui->labelSubtitle1->setVisible(false);
-    ui->labelSubtitle2->setVisible(false);
-
-    /* Address */
-    ui->labelSubtitleAddress->setText(tr("Enter a PENGOLINCOIN address or contact label"));
-    setCssProperty(ui->labelSubtitleAddress, "text-title");
-
-
-    /* Amount */
-    ui->labelSubtitleAmount->setText(tr("Amount"));
-    setCssProperty(ui->labelSubtitleAmount, "text-title");
+    /* Address - Amount*/
+    setCssProperty({ui->labelSubtitleAddress, ui->labelSubtitleAmount}, "text-title");
 
     /* Buttons */
-    ui->pushButtonFee->setText(tr("Customize fee"));
     setCssBtnSecondary(ui->pushButtonFee);
-
-    ui->pushButtonClear->setText(tr("Clear all"));
     setCssProperty(ui->pushButtonClear, "btn-secundary-clear");
-
-    ui->pushButtonAddRecipient->setText(tr("Add recipient"));
     setCssProperty(ui->pushButtonAddRecipient, "btn-secundary-add");
-
     setCssBtnPrimary(ui->pushButtonSave);
-    ui->pushButtonReset->setText(tr("Reset to default"));
     setCssBtnSecondary(ui->pushButtonReset);
 
     // Coin control
-    ui->btnCoinControl->setTitleClassAndText("btn-title-grey", "Coin Control");
-    ui->btnCoinControl->setSubTitleClassAndText("text-subtitle", "Select the source of the coins.");
+    ui->btnCoinControl->setTitleClassAndText("btn-title-grey", tr("Coin Control"));
+    ui->btnCoinControl->setSubTitleClassAndText("text-subtitle", tr("Select the source of the coins"));
 
     // Change address option
-    ui->btnChangeAddress->setTitleClassAndText("btn-title-grey", "Change Address");
-    ui->btnChangeAddress->setSubTitleClassAndText("text-subtitle", "Customize the change address.");
+    ui->btnChangeAddress->setTitleClassAndText("btn-title-grey", tr("Change Address"));
+    ui->btnChangeAddress->setSubTitleClassAndText("text-subtitle", tr("Customize the change address"));
 
     // Uri
-    ui->btnUri->setTitleClassAndText("btn-title-grey", "Open URI");
-    ui->btnUri->setSubTitleClassAndText("text-subtitle", "Parse a payment request.");
+    ui->btnUri->setTitleClassAndText("btn-title-grey", tr("Open URI"));
+    ui->btnUri->setSubTitleClassAndText("text-subtitle", tr("Parse a PENGOLINCOIN URI"));
 
-    connect(ui->pushButtonFee, SIGNAL(clicked()), this, SLOT(onChangeCustomFeeClicked()));
-    connect(ui->btnCoinControl, SIGNAL(clicked()), this, SLOT(onCoinControlClicked()));
-    connect(ui->btnChangeAddress, SIGNAL(clicked()), this, SLOT(onChangeAddressClicked()));
-    connect(ui->btnUri, SIGNAL(clicked()), this, SLOT(onOpenUriClicked()));
+    // Shield coins
+    ui->btnShieldCoins->setTitleClassAndText("btn-title-grey", tr("Shield Coins"));
+    ui->btnShieldCoins->setSubTitleClassAndText("text-subtitle", tr("Convert all transparent coins into shielded coins"));
+    ui->btnShieldCoins->setVisible(false);
+
+    connect(ui->pushButtonFee, &QPushButton::clicked, this, &SendWidget::onChangeCustomFeeClicked);
+    connect(ui->btnCoinControl, &OptionButton::clicked, this, &SendWidget::onCoinControlClicked);
+    connect(ui->btnChangeAddress, &OptionButton::clicked, this, &SendWidget::onChangeAddressClicked);
+    connect(ui->btnUri, &OptionButton::clicked, this, &SendWidget::onOpenUriClicked);
+    connect(ui->btnShieldCoins, &OptionButton::clicked, this, &SendWidget::onShieldCoinsClicked);
     connect(ui->pushButtonReset, &QPushButton::clicked, [this](){ onResetCustomOptions(true); });
+    connect(ui->checkBoxDelegations, &QCheckBox::stateChanged, this, &SendWidget::onCheckBoxChanged);
 
     setCssProperty(ui->coinWidget, "container-coin-type");
     setCssProperty(ui->labelLine, "container-divider");
 
 
     // Total Send
-    ui->labelTitleTotalSend->setText(tr("Total to send"));
     setCssProperty(ui->labelTitleTotalSend, "text-title");
-
-    ui->labelAmountSend->setText("0.00 PGO");
     setCssProperty(ui->labelAmountSend, "text-body1");
 
     // Total Remaining
     setCssProperty(ui->labelTitleTotalRemaining, "text-title");
-
     setCssProperty(ui->labelAmountRemaining, "text-body1");
 
     // Icon Send
@@ -139,30 +119,21 @@ SendWidget::SendWidget(PENGOLINCOINGUI* parent) :
     // Entry
     addEntry();
 
+    // Init custom fee false (updated in loadWalletModel)
+    setCustomFeeSelected(false);
+
     // Connect
     connect(ui->pushLeft, &QPushButton::clicked, [this](){onPGOSelected(true);});
     connect(ui->pushRight,  &QPushButton::clicked, [this](){onPGOSelected(false);});
-    connect(ui->pushButtonSave, SIGNAL(clicked()), this, SLOT(onSendClicked()));
-    connect(ui->pushButtonAddRecipient, SIGNAL(clicked()), this, SLOT(onAddEntryClicked()));
-    connect(ui->pushButtonClear, SIGNAL(clicked()), this, SLOT(clearAll()));
+    connect(ui->pushButtonSave, &QPushButton::clicked, this, &SendWidget::onSendClicked);
+    connect(ui->pushButtonAddRecipient, &QPushButton::clicked, this, &SendWidget::onAddEntryClicked);
+    connect(ui->pushButtonClear, &QPushButton::clicked, [this](){clearAll(true);});
+
+    coinControlDialog = new CoinControlDialog();
 }
 
-void SendWidget::refreshView(){
-    QString btnText;
-    if(ui->pushLeft->isChecked()){
-        btnText = tr("Send PGO");
-        ui->pushButtonAddRecipient->setVisible(true);
-    }else{
-        btnText = tr("Send zPGO");
-        ui->pushButtonAddRecipient->setVisible(false);
-    }
-    ui->pushButtonSave->setText(btnText);
-
-    refreshAmounts();
-}
-
-void SendWidget::refreshAmounts() {
-
+void SendWidget::refreshAmounts()
+{
     CAmount total = 0;
     QMutableListIterator<SendMultiRow*> it(entries);
     while (it.hasNext()) {
@@ -172,31 +143,59 @@ void SendWidget::refreshAmounts() {
             total += amount;
     }
 
-    bool isZpgo = ui->pushRight->isChecked();
     nDisplayUnit = walletModel->getOptionsModel()->getDisplayUnit();
 
-    ui->labelAmountSend->setText(GUIUtil::formatBalance(total, nDisplayUnit, isZpgo));
-
     CAmount totalAmount = 0;
-    if (CoinControlDialog::coinControl->HasSelected()){
+    CAmount delegatedBalance = 0;
+    QString titleTotalRemaining;
+    if (coinControlDialog->coinControl->HasSelected()) {
         // Set remaining balance to the sum of the coinControl selected inputs
-        totalAmount = walletModel->getBalance(CoinControlDialog::coinControl) - total;
-        ui->labelTitleTotalRemaining->setText(tr("Total remaining from the selected UTXO"));
+        std::vector<OutPointWrapper> coins;
+        coinControlDialog->coinControl->ListSelected(coins);
+        CAmount selectedBalance = 0;
+        for (const auto& coin : coins) {
+            selectedBalance += coin.value;
+        }
+        totalAmount = selectedBalance - total;
+        titleTotalRemaining = tr("Total remaining from the selected UTXO");
     } else {
-        // Wallet's balance
-        totalAmount = (isZpgo ? walletModel->getZerocoinBalance() : walletModel->getBalance()) - total;
-        ui->labelTitleTotalRemaining->setText(tr("Total remaining"));
+        interfaces::WalletBalances balances = walletModel->GetWalletBalances();
+        if (isTransparent) {
+            totalAmount = balances.balance - balances.shielded_balance - walletModel->getLockedBalance() - total;
+            if (!fDelegationsChecked) {
+                totalAmount -= balances.delegate_balance;
+            }
+            // show delegated balance if exist
+            delegatedBalance = balances.delegate_balance;
+        } else {
+            totalAmount = balances.shielded_balance - total;
+        }
+        titleTotalRemaining = tr("Unlocked remaining");
     }
-    ui->labelAmountRemaining->setText(
-            GUIUtil::formatBalance(
-                    totalAmount,
-                    nDisplayUnit,
-                    isZpgo
-                    )
-    );
+
+    QString type = isTransparent ? "transparent" : "shielded";
+    QString labelAmountRemaining = GUIUtil::formatBalance( totalAmount, nDisplayUnit, false) + " " + type;
+    QMetaObject::invokeMethod(this, "updateAmounts", Qt::QueuedConnection,
+                              Q_ARG(QString, titleTotalRemaining),
+                              Q_ARG(QString, GUIUtil::formatBalance(total, nDisplayUnit, false)),
+                              Q_ARG(QString, labelAmountRemaining),
+                              Q_ARG(CAmount, delegatedBalance));
 }
 
-void SendWidget::loadClientModel(){
+void SendWidget::updateAmounts(const QString& _titleTotalRemaining,
+                               const QString& _labelAmountSend,
+                               const QString& _labelAmountRemaining,
+                               CAmount _delegationBalance)
+{
+    ui->labelTitleTotalRemaining->setText(_titleTotalRemaining);
+    ui->labelAmountSend->setText(_labelAmountSend);
+    ui->labelAmountRemaining->setText(_labelAmountRemaining);
+    // show or hide delegations checkbox if need be
+    showHideCheckBoxDelegations(_delegationBalance);
+}
+
+void SendWidget::loadClientModel()
+{
     if (clientModel) {
         connect(clientModel, &ClientModel::numBlocksChanged, [this](){
             if (customFeeDialog) customFeeDialog->updateFee();
@@ -204,47 +203,83 @@ void SendWidget::loadClientModel(){
     }
 }
 
-void SendWidget::loadWalletModel() {
-    if (walletModel && walletModel->getOptionsModel()) {
-        // display unit
-        nDisplayUnit = walletModel->getOptionsModel()->getDisplayUnit();
+void SendWidget::loadWalletModel()
+{
+    if (walletModel) {
+        if (walletModel->getOptionsModel()) {
+            // display unit
+            nDisplayUnit = walletModel->getOptionsModel()->getDisplayUnit();
+        }
 
-        for(SendMultiRow *entry : entries){
-            if(entry){
+        // set walletModel for entries
+        for (SendMultiRow *entry : entries) {
+            if (entry) {
                 entry->setWalletModel(walletModel);
             }
         }
 
-        // Refresh view
-        refreshView();
+        // Restore custom fee from wallet Settings
+        CAmount nCustomFee;
+        if (walletModel->getWalletCustomFee(nCustomFee)) {
+            setCustomFeeSelected(true, nCustomFee);
+        }
 
         // TODO: This only happen when the coin control features are modified in other screen, check before do this if the wallet has another screen modifying it.
         // Coin Control
-        //connect(model->getOptionsModel(), SIGNAL(coinControlFeaturesChanged(bool)), this, SLOT(coinControlFeatureChanged(bool)));
+        //connect(walletModel->getOptionsModel(), &OptionsModel::coinControlFeaturesChanged, [this](){});
         //ui->frameCoinControl->setVisible(model->getOptionsModel()->getCoinControlFeatures());
         //coinControlUpdateLabels();
     }
 }
 
-void SendWidget::clearAll(){
-    onResetCustomOptions(false);
-    if(customFeeDialog) customFeeDialog->clear();
-    ui->pushButtonFee->setText(tr("Customize Fee"));
-    if(walletModel) walletModel->setWalletDefaultFee();
-    clearEntries();
-    refreshAmounts();
-}
-
-void SendWidget::onResetCustomOptions(bool fRefreshAmounts){
-    CoinControlDialog::coinControl->SetNull();
-    ui->btnChangeAddress->setActive(false);
-    ui->btnCoinControl->setActive(false);
-    if (fRefreshAmounts) {
-        refreshAmounts();
+void SendWidget::hideContactsMenu()
+{
+    if (menuContacts && menuContacts->isVisible()) {
+        menuContacts->hide();
     }
 }
 
-void SendWidget::clearEntries(){
+void SendWidget::clearAll(bool fClearSettings)
+{
+    onResetCustomOptions(false);
+    if (fClearSettings) onResetSettings();
+    hideContactsMenu();
+    clearEntries();
+    tryRefreshAmounts();
+}
+
+void SendWidget::onResetSettings()
+{
+    if (customFeeDialog) customFeeDialog->clear();
+    setCustomFeeSelected(false);
+    if (walletModel) walletModel->setWalletCustomFee(false, DEFAULT_TRANSACTION_FEE);
+}
+
+void SendWidget::onResetCustomOptions(bool fRefreshAmounts)
+{
+    ui->btnChangeAddress->setActive(false);
+    if (ui->checkBoxDelegations->isChecked()) ui->checkBoxDelegations->setChecked(false);
+    resetCoinControl();
+    if (fRefreshAmounts) {
+        tryRefreshAmounts();
+    }
+}
+
+void SendWidget::resetCoinControl()
+{
+    if (coinControlDialog) coinControlDialog->coinControl->SetNull();
+    ui->btnCoinControl->setActive(false);
+}
+
+void SendWidget::resetChangeAddress()
+{
+    if (coinControlDialog) coinControlDialog->coinControl->destChange = CNoDestination();
+    ui->btnChangeAddress->setActive(false);
+    ui->btnChangeAddress->setVisible(isTransparent);
+}
+
+void SendWidget::clearEntries()
+{
     int num = entries.length();
     for (int i = 0; i < num; ++i) {
         ui->scrollAreaWidgetContents->layout()->takeAt(0)->widget()->deleteLater();
@@ -254,15 +289,16 @@ void SendWidget::clearEntries(){
     addEntry();
 }
 
-void SendWidget::addEntry(){
-    if(entries.isEmpty()){
+void SendWidget::addEntry()
+{
+    if (entries.isEmpty()) {
         createEntry();
     } else {
         if (entries.length() == 1) {
             SendMultiRow *entry = entries.at(0);
             entry->hideLabels();
             entry->setNumber(1);
-        }else if(entries.length() == MAX_SEND_POPUP_ENTRIES){
+        } else if (entries.length() == MAX_SEND_POPUP_ENTRIES) {
             inform(tr("Maximum amount of outputs reached"));
             return;
         }
@@ -271,11 +307,13 @@ void SendWidget::addEntry(){
         sendMultiRow->setNumber(entries.length());
         sendMultiRow->hideLabels();
     }
+    setFocusOnLastEntry();
 }
 
-SendMultiRow* SendWidget::createEntry(){
-    SendMultiRow *sendMultiRow = new SendMultiRow(this);
-    if(this->walletModel) sendMultiRow->setWalletModel(this->walletModel);
+SendMultiRow* SendWidget::createEntry()
+{
+    SendMultiRow *sendMultiRow = new SendMultiRow(window, this);
+    if (this->walletModel) sendMultiRow->setWalletModel(this->walletModel);
     entries.append(sendMultiRow);
     ui->scrollAreaWidgetContents->layout()->addWidget(sendMultiRow);
     connect(sendMultiRow, &SendMultiRow::onContactsClicked, this, &SendWidget::onContactsClicked);
@@ -284,10 +322,11 @@ SendMultiRow* SendWidget::createEntry(){
     return sendMultiRow;
 }
 
-void SendWidget::onAddEntryClicked(){
+void SendWidget::onAddEntryClicked()
+{
     // Check prev valid entries before add a new one.
-    for (SendMultiRow* entry : entries){
-        if(!entry || !entry->validate()) {
+    for (SendMultiRow* entry : entries) {
+        if (!entry || !entry->validate()) {
             inform(tr("Invalid entry, previous entries must be valid before add a new one"));
             return;
         }
@@ -295,25 +334,69 @@ void SendWidget::onAddEntryClicked(){
     addEntry();
 }
 
-void SendWidget::resizeEvent(QResizeEvent *event){
+void SendWidget::resizeEvent(QResizeEvent *event)
+{
     resizeMenu();
     QWidget::resizeEvent(event);
 }
 
+void SendWidget::showEvent(QShowEvent *event)
+{
+    // Set focus on last recipient address when Send-window is displayed
+    setFocusOnLastEntry();
+    tryRefreshAmounts();
+}
 
-void SendWidget::onSendClicked(){
+void SendWidget::setFocusOnLastEntry()
+{
+    if (!entries.isEmpty()) entries.last()->setFocus();
+}
 
+void SendWidget::showHideCheckBoxDelegations(CAmount delegationBalance)
+{
+    // Show checkbox only when there is any available owned delegation and
+    // coincontrol is not selected, and we are trying to spend transparent PGOs.
+    const bool isCControl = coinControlDialog ? coinControlDialog->coinControl->HasSelected() : false;
+    const bool hasDel = delegationBalance > 0;
+
+    const bool showCheckBox = isTransparent && !isCControl && hasDel;
+    ui->checkBoxDelegations->setVisible(showCheckBox);
+    if (showCheckBox)
+        ui->checkBoxDelegations->setToolTip(
+                tr("Possibly spend coins delegated for cold-staking (currently available: %1").arg(
+                        GUIUtil::formatBalance(delegationBalance, nDisplayUnit, false))
+        );
+}
+
+void SendWidget::onSendClicked()
+{
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
     QList<SendCoinsRecipient> recipients;
+    bool hasShieldedOutput = false;
 
-    for (SendMultiRow* entry : entries){
+    for (SendMultiRow* entry : entries) {
         // TODO: Check UTXO splitter here..
         // Validate send..
-        if(entry && entry->validate()) {
-            recipients.append(entry->getValue());
-        }else{
+        if (entry && entry->validate()) {
+            auto recipient = entry->getValue();
+            bool isShielded = recipient.isShieldedAddr;
+            if (!hasShieldedOutput) hasShieldedOutput = isShielded;
+            if (!recipient.message.isEmpty() && !isShielded) {
+                // memo set for transparent address
+                if (!ask(tr("Warning!"),
+                         tr("Cannot send memo to address\n%1\n\n"
+                            "Encrypted memo messages are available only for shielded recipients.\n\n"
+                            "Do you wish to proceed without memo?\n").arg(recipient.address))) {
+                    return;
+                } else {
+                    // remove memo, so it doesn't show on the confirmation dialog.
+                    recipient.message.clear();
+                }
+            }
+            recipients.append(recipient);
+        } else {
             inform(tr("Invalid entry"));
             return;
         }
@@ -324,68 +407,130 @@ void SendWidget::onSendClicked(){
         return;
     }
 
-    bool sendPgo = ui->pushLeft->isChecked();
+    ProcessSend(recipients, hasShieldedOutput);
+}
 
-    // request unlock only if was locked or unlocked for mixing:
-    // this way we let users unlock by walletpassphrase or by menu
-    // and make many transactions while unlocking through this dialog
-    // will call relock
-    if(!GUIUtil::requestUnlock(walletModel, sendPgo ? AskPassphraseDialog::Context::Send_PGO : AskPassphraseDialog::Context::Send_zPGO, true)){
+void SendWidget::ProcessSend(QList<SendCoinsRecipient>& recipients, bool hasShieldedOutput,
+                             const std::function<bool(QList<SendCoinsRecipient>&)>& func)
+{
+    // First check SPORK_20 (before unlock)
+    bool isShieldedTx = hasShieldedOutput || !isTransparent;
+    if (isShieldedTx) {
+        if (walletModel->isSaplingInMaintenance()) {
+            inform(tr("Sapling Protocol temporarily in maintenance. Shielded transactions disabled (SPORK 20)"));
+            return;
+        }
+    }
+
+    auto ptrUnlockedContext = std::make_unique<WalletModel::UnlockContext>(walletModel->requestUnlock());
+    if (!ptrUnlockedContext->isValid()) {
         // Unlock wallet was cancelled
         inform(tr("Cannot send, wallet locked"));
         return;
     }
 
-    if((sendPgo) ? send(recipients) : sendZpgo(recipients)) {
-        updateEntryLabels(recipients);
+    // Perform needed operation that requires the wallet unlocked
+    if (func && !func(recipients)) return;
+
+    // If tx exists then there is an on-going process being executed, return.
+    if (isProcessing || ptrModelTx) {
+        inform(tr("On going process being executed, please wait until it's finished to create a new transaction"));
+        return;
     }
+    ptrModelTx = new WalletModelTransaction(recipients);
+    ptrModelTx->useV2 = isShieldedTx;
+
+    // Prepare tx
+    window->showHide(true);
+    LoadingDialog *dialog = new LoadingDialog(window, tr("Preparing transaction"));
+    dialog->execute(this, REQUEST_PREPARE_TX, std::move(ptrUnlockedContext));
+    openDialogWithOpaqueBackgroundFullScreen(dialog, window);
+
+    // If all went well, ask if want to broadcast it
+    if (processingResult) {
+        if (sendFinalStep()) {
+            updateEntryLabels(ptrModelTx->getRecipients());
+        }
+        setFocusOnLastEntry();
+    } else if (!processingResultError->isEmpty()){
+        inform(*processingResultError);
+    }
+
+    // Process finished, can reset the tx model now. todo: this can get wrapped on a cached struct.
+    delete ptrModelTx;
+    ptrModelTx = nullptr;
+    if (processingResultError) {
+        processingResultError->clear();
+        processingResultError = nullopt;
+    }
+    processingResult = false;
 }
 
-bool SendWidget::send(QList<SendCoinsRecipient> recipients){
-    // prepare transaction for getting txFee earlier
-    WalletModelTransaction currentTransaction(recipients);
-    WalletModel::SendCoinsReturn prepareStatus;
+OperationResult SendWidget::prepareShielded(WalletModelTransaction* currentTransaction, bool fromTransparent)
+{
+    bool hasCoinsOrNotesSelected = coinControlDialog && coinControlDialog->coinControl && coinControlDialog->coinControl->HasSelected();
+    return walletModel->PrepareShieldedTransaction(currentTransaction,
+                                                   fromTransparent,
+                                                   hasCoinsOrNotesSelected ? coinControlDialog->coinControl : nullptr);
+}
 
-    prepareStatus = walletModel->prepareTransaction(currentTransaction, CoinControlDialog::coinControl);
+OperationResult SendWidget::prepareTransparent(WalletModelTransaction* currentTransaction)
+{
+    if (!walletModel) return errorOut("Error, no wallet model loaded");
+    // prepare transaction for getting txFee earlier
+    WalletModel::SendCoinsReturn prepareStatus;
+    prepareStatus = walletModel->prepareTransaction(currentTransaction,
+                                                    coinControlDialog ? coinControlDialog->coinControl : nullptr,
+                                                    fDelegationsChecked);
 
     // process prepareStatus and on error generate message shown to user
-    GuiTransactionsUtils::ProcessSendCoinsReturn(
+    CClientUIInterface::MessageBoxFlags informType;
+    QString informMsg = GuiTransactionsUtils::ProcessSendCoinsReturn(
             this,
             prepareStatus,
             walletModel,
+            informType,
             BitcoinUnits::formatWithUnit(walletModel->getOptionsModel()->getDisplayUnit(),
-                                         currentTransaction.getTransactionFee()),
+                                         currentTransaction->getTransactionFee()),
             true
     );
 
-    if (prepareStatus.status != WalletModel::OK) {
-        inform(tr("Cannot create transaction."));
-        return false;
+    if (!informMsg.isEmpty()) {
+        return errorOut(informMsg.toStdString());
     }
 
+    if (prepareStatus.status != WalletModel::OK) {
+        return errorOut("Cannot create transaction.");
+    }
+    return OperationResult(true);
+}
+
+bool SendWidget::sendFinalStep()
+{
     showHideOp(true);
+    const bool fStakeDelegationVoided = ptrModelTx->fIsStakeDelegationVoided;
     QString warningStr = QString();
-    if (currentTransaction.getTransaction()->fStakeDelegationVoided)
+    if (fStakeDelegationVoided)
         warningStr = tr("WARNING:\nTransaction spends a cold-stake delegation, voiding it.\n"
-                     "These coins will no longer be cold-staked.");
+                        "These coins will no longer be cold-staked.");
     TxDetailDialog* dialog = new TxDetailDialog(window, true, warningStr);
     dialog->setDisplayUnit(walletModel->getOptionsModel()->getDisplayUnit());
-    dialog->setData(walletModel, currentTransaction);
+    dialog->setData(walletModel, ptrModelTx);
     dialog->adjustSize();
-    openDialogWithOpaqueBackgroundY(dialog, window, 3, 5);
+    openDialogWithOpaqueBackgroundY(dialog, window, 3, 15);
 
-    if(dialog->isConfirm()){
+    if (dialog->isConfirm()) {
         // now send the prepared transaction
         WalletModel::SendCoinsReturn sendStatus = dialog->getStatus();
         // process sendStatus and on error generate message shown to user
-        GuiTransactionsUtils::ProcessSendCoinsReturn(
+        GuiTransactionsUtils::ProcessSendCoinsReturnAndInform(
                 this,
                 sendStatus,
                 walletModel
         );
 
         if (sendStatus.status == WalletModel::OK) {
-            clearAll();
+            clearAll(false);
             inform(tr("Transaction sent"));
             dialog->deleteLater();
             return true;
@@ -396,118 +541,60 @@ bool SendWidget::send(QList<SendCoinsRecipient> recipients){
     return false;
 }
 
-bool SendWidget::sendZpgo(QList<SendCoinsRecipient> recipients){
-    if (!walletModel || !walletModel->getOptionsModel())
-        return false;
-
-    if(sporkManager.IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
-        emit message(tr("Spend Zerocoin"), tr("zPGO is currently undergoing maintenance."), CClientUIInterface::MSG_ERROR);
-        return false;
-    }
-
-    std::list<std::pair<CBitcoinAddress*, CAmount>> outputs;
-    CAmount total = 0;
-    for (SendCoinsRecipient rec : recipients){
-        total += rec.amount;
-        outputs.push_back(std::pair<CBitcoinAddress*, CAmount>(new CBitcoinAddress(rec.address.toStdString()),rec.amount));
-    }
-
-    // use mints from zPGO selector if applicable
-    std::vector<CMintMeta> vMintsToFetch;
-    std::vector<CZerocoinMint> vMintsSelected;
-    if (!ZPgoControlDialog::setSelectedMints.empty()) {
-        vMintsToFetch = ZPgoControlDialog::GetSelectedMints();
-
-        for (auto& meta : vMintsToFetch) {
-            CZerocoinMint mint;
-            if (!walletModel->getMint(meta.hashSerial, mint)){
-                inform(tr("Coin control mint not found"));
-                return false;
-            }
-            vMintsSelected.emplace_back(mint);
-        }
-    }
-
-    QString sendBody = outputs.size() == 1 ?
-            tr("Sending %1 to address %2\n")
-            .arg(BitcoinUnits::formatWithUnit(walletModel->getOptionsModel()->getDisplayUnit(), total, false, BitcoinUnits::separatorAlways))
-            .arg(recipients.first().address)
-            :
-           tr("Sending %1 to addresses:\n%2")
-           .arg(BitcoinUnits::formatWithUnit(walletModel->getOptionsModel()->getDisplayUnit(), total, false, BitcoinUnits::separatorAlways))
-           .arg(recipientsToString(recipients));
-
-    bool ret = false;
-    emit message(
-            tr("Spend Zerocoin"),
-            sendBody,
-            CClientUIInterface::MSG_INFORMATION | CClientUIInterface::BTN_MASK | CClientUIInterface::MODAL,
-            &ret);
-
-    if(!ret) return false;
-
-    CZerocoinSpendReceipt receipt;
-
-    std::string changeAddress = "";
-    if(!boost::get<CNoDestination>(&CoinControlDialog::coinControl->destChange)){
-        changeAddress = CBitcoinAddress(CoinControlDialog::coinControl->destChange).ToString();
-    }else{
-        changeAddress = walletModel->getAddressTableModel()->getAddressToShow().toStdString();
-    }
-
-    if (walletModel->sendZpgo(
-            vMintsSelected,
-            true,
-            true,
-            receipt,
-            outputs,
-            changeAddress
-    )
-            ) {
-        inform(tr("zPGO transaction sent!"));
-        ZPgoControlDialog::setSelectedMints.clear();
-        clearAll();
-        return true;
-    } else {
-        QString body;
-        if (receipt.GetStatus() == ZPGO_SPEND_V1_SEC_LEVEL) {
-            body = tr("Version 1 zPGO require a security level of 100 to successfully spend.");
-        } else {
-            int nNeededSpends = receipt.GetNeededSpends(); // Number of spends we would need for this transaction
-            const int nMaxSpends = Params().Zerocoin_MaxSpendsPerTransaction(); // Maximum possible spends for one zPGO transaction
-            if (nNeededSpends > nMaxSpends) {
-                body = tr("Too much inputs (") + QString::number(nNeededSpends, 10) +
-                       tr(") needed.\nMaximum allowed: ") + QString::number(nMaxSpends, 10);
-                body += tr(
-                        "\nEither mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.");
+void SendWidget::run(int type)
+{
+    if (type == REQUEST_PREPARE_TX) {
+        assert(!processingResult);
+        if (!isProcessing) {
+            isProcessing = true;
+            OperationResult result(false);
+            if ((result = ptrModelTx->useV2 ?
+                        prepareShielded(ptrModelTx, isTransparent) :
+                        prepareTransparent(ptrModelTx)
+                        )) {
+                processingResult = true;
             } else {
-                body = QString::fromStdString(receipt.GetStatusMessage());
+                processingResult = false;
+                processingResultError = tr(result.getError().c_str());
             }
+            isProcessing = false;
         }
-        emit message("zPGO transaction failed", body, CClientUIInterface::MSG_ERROR);
-        return false;
+    } else if (type == REQUEST_REFRESH_BALANCE) {
+        if (!isUpdatingBalance) {
+            isUpdatingBalance = true;
+            refreshAmounts();
+            isUpdatingBalance = false;
+        }
     }
 }
 
-QString SendWidget::recipientsToString(QList<SendCoinsRecipient> recipients){
-    QString s = "";
-    for (SendCoinsRecipient rec : recipients){
-        s += rec.address + " -> " + BitcoinUnits::formatWithUnit(walletModel->getOptionsModel()->getDisplayUnit(), rec.amount, false, BitcoinUnits::separatorAlways) + "\n";
-    }
-    return s;
+void SendWidget::onError(QString error, int type)
+{
+    isProcessing = false;
+    processingResultError = error;
 }
 
-void SendWidget::updateEntryLabels(QList<SendCoinsRecipient> recipients){
-    for (SendCoinsRecipient rec : recipients){
+void SendWidget::tryRefreshAmounts()
+{
+    if (!execute(REQUEST_REFRESH_BALANCE)) {
+        inform(tr("Processing full, refreshing amounts later"));
+    }
+}
+
+void SendWidget::updateEntryLabels(const QList<SendCoinsRecipient>& recipients)
+{
+    for (const SendCoinsRecipient& rec : recipients) {
         QString label = rec.label;
-        if(!label.isNull()) {
+        if (!label.isNull()) {
             QString labelOld = walletModel->getAddressTableModel()->labelForAddress(rec.address);
-            if(label.compare(labelOld) != 0) {
-                CTxDestination dest = CBitcoinAddress(rec.address.toStdString()).Get();
+            if (label.compare(labelOld) != 0) {
+                CTxDestination dest = DecodeDestination(rec.address.toStdString());
                 if (!walletModel->updateAddressBookLabels(dest, label.toStdString(),
-                                                          this->walletModel->isMine(dest) ? "receive" : "send")) {
+                                                          this->walletModel->isMine(dest) ?
+                                                                  AddressBook::AddressBookPurpose::RECEIVE :
+                                                                  AddressBook::AddressBookPurpose::SEND)) {
                     // Label update failed
-                    emit message("", tr("Address label update failed for address: %1").arg(rec.address), CClientUIInterface::MSG_ERROR);
+                    Q_EMIT message("", tr("Address label update failed for address: %1").arg(rec.address), CClientUIInterface::MSG_ERROR);
                     return;
                 }
             }
@@ -516,29 +603,37 @@ void SendWidget::updateEntryLabels(QList<SendCoinsRecipient> recipients){
     }
 }
 
-
-void SendWidget::onChangeAddressClicked(){
+void SendWidget::onChangeAddressClicked()
+{
     showHideOp(true);
-    SendChangeAddressDialog* dialog = new SendChangeAddressDialog(window);
-    if(!boost::get<CNoDestination>(&CoinControlDialog::coinControl->destChange)){
-        dialog->setAddress(QString::fromStdString(CBitcoinAddress(CoinControlDialog::coinControl->destChange).ToString()));
+    SendChangeAddressDialog* dialog = new SendChangeAddressDialog(window, walletModel);
+    if (IsValidDestination(coinControlDialog->coinControl->destChange)) {
+        dialog->setAddress(QString::fromStdString(EncodeDestination(coinControlDialog->coinControl->destChange)));
     }
-    if(openDialogWithOpaqueBackgroundY(dialog, window, 3, 5)) {
-        if(dialog->selected) {
-            QString ret;
-            if (dialog->getAddress(walletModel, &ret)) {
-                CoinControlDialog::coinControl->destChange = CBitcoinAddress(ret.toStdString()).Get();
-                ui->btnChangeAddress->setActive(true);
-            }else{
-                inform(tr("Invalid change address"));
-                ui->btnChangeAddress->setActive(false);
-            }
+
+    CTxDestination destChange = (openDialogWithOpaqueBackgroundY(dialog, window, 3, 5) ?
+                                 dialog->getDestination() : CNoDestination());
+
+    if (!IsValidDestination(destChange)) {
+        // no change address set
+        ui->btnChangeAddress->setActive(false);
+    } else {
+        // Ask confirmation if external address
+        if (!walletModel->isMine(destChange) && !ask(tr("Warning!"),
+                tr("The change address doesn't belong to this wallet.\n\nDo you want to continue?"))) {
+            dialog->deleteLater();
+            return;
         }
+        ui->btnChangeAddress->setActive(true);
     }
+
+    // save change address in coin control
+    coinControlDialog->coinControl->destChange = destChange;
     dialog->deleteLater();
 }
 
-void SendWidget::onOpenUriClicked(){
+void SendWidget::onOpenUriClicked()
+{
     showHideOp(true);
     OpenURIDialog *dlg = new OpenURIDialog(window);
     if (openDialogWithOpaqueBackgroundY(dlg, window, 3, 5)) {
@@ -568,99 +663,172 @@ void SendWidget::onOpenUriClicked(){
             entry->setAddressAndLabelOrDescription(rcp.address, rcp.message);
             entry->setAmount(BitcoinUnits::format(nDisplayUnit, rcp.amount, false));
         }
-        emit receivedURI(dlg->getURI());
+        Q_EMIT receivedURI(dlg->getURI());
     }
     dlg->deleteLater();
 }
 
-void SendWidget::onChangeCustomFeeClicked(){
+void SendWidget::onChangeCustomFeeClicked()
+{
     showHideOp(true);
     if (!customFeeDialog) {
-        customFeeDialog = new SendCustomFeeDialog(window);
-        customFeeDialog->setWalletModel(walletModel);
+        customFeeDialog = new SendCustomFeeDialog(window, walletModel);
     }
-    if (openDialogWithOpaqueBackgroundY(customFeeDialog, window, 3, 5)){
-        ui->pushButtonFee->setText(tr("Custom Fee %1").arg(BitcoinUnits::formatWithUnit(nDisplayUnit, customFeeDialog->getFeeRate().GetFeePerK()) + "/kB"));
-        isCustomFeeSelected = true;
-        walletModel->setWalletDefaultFee(customFeeDialog->getFeeRate().GetFeePerK());
+    if (openDialogWithOpaqueBackgroundY(customFeeDialog, window, 3, 5)) {
+        const CAmount& nFeePerKb = customFeeDialog->getFeeRate().GetFeePerK();
+        setCustomFeeSelected(customFeeDialog->isCustomFeeChecked(), nFeePerKb);
+    }
+}
+
+void SendWidget::onCoinControlClicked()
+{
+    if (walletModel->getBalance() > 0) {
+        // future: move coin control initialization and refresh to a worker thread.
+        if (!coinControlDialog->hasModel()) coinControlDialog->setModel(walletModel);
+        coinControlDialog->setSelectionType(isTransparent);
+        coinControlDialog->refreshDialog();
+        setCoinControlPayAmounts();
+        coinControlDialog->exec();
+        ui->btnCoinControl->setActive(coinControlDialog->coinControl->HasSelected());
+        tryRefreshAmounts();
     } else {
-        ui->pushButtonFee->setText(tr("Customize Fee"));
-        isCustomFeeSelected = false;
-        walletModel->setWalletDefaultFee();
+        inform(tr("You don't have any %1 to select.").arg(CURRENCY_UNIT.c_str()));
     }
 }
 
-void SendWidget::onCoinControlClicked(){
-    if(isPGO){
-        if (walletModel->getBalance() > 0) {
-            if (!coinControlDialog) {
-                coinControlDialog = new CoinControlDialog();
-                coinControlDialog->setModel(walletModel);
-            } else {
-                coinControlDialog->refreshDialog();
+void SendWidget::onShieldCoinsClicked()
+{
+    if (walletModel->isSaplingInMaintenance()) {
+        inform(tr("Sapling Protocol temporarily in maintenance. Shielded transactions disabled (SPORK 20)"));
+        return;
+    }
+
+    auto balances = walletModel->GetWalletBalances();
+    CAmount availableBalance = balances.balance - balances.shielded_balance - walletModel->getLockedBalance();
+    if (availableBalance > 0) {
+
+        // Calculate the required fee first. TODO future: Unify this code with the code in coincontroldialog into the model.
+        std::map<WalletModel::ListCoinsKey, std::vector<WalletModel::ListCoinsValue>> mapCoins;
+        walletModel->listCoins(mapCoins);
+        unsigned int nBytesInputs = 0;
+        for (const auto& out : mapCoins) {
+            bool isP2CS = out.first.stakerAddress != nullopt;
+            nBytesInputs += (CTXIN_SPEND_DUST_SIZE + (isP2CS ? 1 : 0)) * out.second.size();
+        }
+        nBytesInputs += OUTPUTDESCRIPTION_SIZE;
+        nBytesInputs += (BINDINGSIG_SIZE + 8);
+        // (plus at least 2 bytes for shielded in/outs len sizes)
+        nBytesInputs += 2;
+        // ExtraPayload size for special txes. For now 1 byte for nullopt.
+        nBytesInputs += 1;
+        // nVersion, nType, nLockTime and vin/vout len sizes
+        nBytesInputs += 10;
+        CAmount nPayFee = GetMinRelayFee(nBytesInputs) * DEFAULT_SHIELDEDTXFEE_K;
+
+        // load recipient
+        QList<SendCoinsRecipient> recipients;
+        SendCoinsRecipient recipient;
+        recipient.amount = availableBalance - nPayFee;
+        recipient.isShieldedAddr = true;
+        recipients.append(recipient); // address is added later on, when the wallet is unlocked
+
+        // Ask if the user want to do it
+        if (!ask(tr("Shield Coins"),
+                 tr("You are just about to anonymize all of your balance!\nAvailable %1\nWith fee %2\n\n"
+                    "Meaning that you will be able to perform completely\nanonymous transactions"
+                    "\n\nDo you want to continue?\n").arg(GUIUtil::formatBalanceWithoutHtml(recipient.amount, nDisplayUnit, false))
+                                                     .arg(GUIUtil::formatBalanceWithoutHtml(nPayFee, nDisplayUnit, false))
+                    )) {
+            return;
+        }
+
+        // Process spending
+        ProcessSend(recipients, true, [this](QList<SendCoinsRecipient>& recipients) {
+            QString strAddress;
+            auto res = walletModel->getNewShieldedAddress(strAddress, "");
+            // Check for generation errors
+            if (!res.result) {
+                inform(tr("Error generating address to shield PGOs"));
+                return false;
             }
-            coinControlDialog->exec();
-            ui->btnCoinControl->setActive(CoinControlDialog::coinControl->HasSelected());
-            refreshAmounts();
-        } else {
-            inform(tr("You don't have any PGO to select."));
-        }
-    }else{
-        if (walletModel->getZerocoinBalance() > 0) {
-            ZPgoControlDialog *zPgoControl = new ZPgoControlDialog(this);
-            zPgoControl->setModel(walletModel);
-            zPgoControl->exec();
-            ui->btnCoinControl->setActive(!ZPgoControlDialog::setSelectedMints.empty());
-            zPgoControl->deleteLater();
-        } else {
-            inform(tr("You don't have any zPGO in your balance to select."));
-        }
+            recipients.back().address = strAddress;
+            resetCoinControl();
+            return true;
+        });
+    } else {
+        inform(tr("You don't have any transparent PGOs to shield."));
     }
 }
 
-void SendWidget::onValueChanged() {
-    refreshAmounts();
+void SendWidget::setCoinControlPayAmounts()
+{
+    if (!coinControlDialog) return;
+    coinControlDialog->clearPayAmounts();
+    QMutableListIterator<SendMultiRow*> it(entries);
+    while (it.hasNext()) {
+        const auto& entry = it.next();
+        coinControlDialog->addPayAmount(entry->getAmountValue(), entry->getValue().isShieldedAddr);
+    }
 }
 
-void SendWidget::onPGOSelected(bool _isPGO){
-    isPGO = _isPGO;
-    setCssProperty(coinIcon, _isPGO ? "coin-icon-pgo" : "coin-icon-zpgo");
-    refreshView();
+void SendWidget::onValueChanged()
+{
+    tryRefreshAmounts();
+}
+
+void SendWidget::onCheckBoxChanged()
+{
+    const bool checked = ui->checkBoxDelegations->isChecked();
+    if (checked != fDelegationsChecked) {
+        fDelegationsChecked = checked;
+        tryRefreshAmounts();
+    }
+}
+
+void SendWidget::onPGOSelected(bool _isTransparent)
+{
+    isTransparent = _isTransparent;
+    resetChangeAddress();
+    resetCoinControl();
+    tryRefreshAmounts();
     updateStyle(coinIcon);
 }
 
-void SendWidget::onContactsClicked(SendMultiRow* entry){
+void SendWidget::onContactsClicked(SendMultiRow* entry)
+{
     focusedEntry = entry;
-    if(menu && menu->isVisible()){
+    if (menu && menu->isVisible()) {
         menu->hide();
     }
 
-    int contactsSize = walletModel->getAddressTableModel()->sizeSend();
-    if(contactsSize == 0) {
+    int contactsSize = walletModel->getAddressTableModel()->sizeSend() +
+                        walletModel->getAddressTableModel()->sizeShieldedSend();
+    if (contactsSize == 0) {
         inform(tr("No contacts available, you can go to the contacts screen and add some there!"));
         return;
     }
 
-    int height = (contactsSize <= 2) ? entry->getEditHeight() * ( 2 * (contactsSize + 1 )) : entry->getEditHeight() * 4;
+    int height = (contactsSize <= 2) ? entry->getEditHeight() * ( 2 * (contactsSize + 1 )) : entry->getEditHeight() * 6;
     int width = entry->getEditWidth();
 
-    if(!menuContacts){
+    if (!menuContacts) {
         menuContacts = new ContactsDropdown(
                     width,
                     height,
                     this
         );
-        menuContacts->setWalletModel(walletModel, AddressTableModel::Send);
-        connect(menuContacts, &ContactsDropdown::contactSelected, [this](QString address, QString label){
-            if(focusedEntry){
-                focusedEntry->setLabel(label);
+        menuContacts->setWalletModel(walletModel, {AddressTableModel::Send, AddressTableModel::ShieldedSend});
+        connect(menuContacts, &ContactsDropdown::contactSelected, [this](QString address, QString label) {
+            if (focusedEntry) {
+                if (label != "(no label)")
+                    focusedEntry->setLabel(label);
                 focusedEntry->setAddress(address);
             }
         });
 
     }
 
-    if(menuContacts->isVisible()){
+    if (menuContacts->isVisible()) {
         menuContacts->hide();
         return;
     }
@@ -670,7 +838,7 @@ void SendWidget::onContactsClicked(SendMultiRow* entry){
     menuContacts->adjustSize();
 
     QPoint pos;
-    if (entries.size() > 1){
+    if (entries.size() > 1) {
         pos = entry->pos();
         pos.setY((pos.y() + (focusedEntry->getEditHeight() - 12) * 4));
     } else {
@@ -682,42 +850,54 @@ void SendWidget::onContactsClicked(SendMultiRow* entry){
     menuContacts->show();
 }
 
-void SendWidget::onMenuClicked(SendMultiRow* entry){
+void SendWidget::onMenuClicked(SendMultiRow* entry)
+{
     focusedEntry = entry;
-    if(menuContacts && menuContacts->isVisible()){
+    if (menuContacts && menuContacts->isVisible()) {
         menuContacts->hide();
     }
     QPoint pos = entry->pos();
     pos.setX(pos.x() + (entry->width() - entry->getMenuBtnWidth()));
     pos.setY(pos.y() + entry->height() + (entry->getMenuBtnWidth()));
 
-    if(!this->menu){
+    if (!this->menu) {
         this->menu = new TooltipMenu(window, this);
-        this->menu->setCopyBtnVisible(false);
+        this->menu->setCopyBtnText(tr("Add Memo"));
         this->menu->setEditBtnText(tr("Save contact"));
-        this->menu->setMinimumSize(this->menu->width() + 30,this->menu->height());
+        this->menu->setLastBtnVisible(true);
+        this->menu->setLastBtnText(tr("Subtract fee"));
+        this->menu->setMinimumHeight(157);
+        this->menu->setMinimumSize(this->menu->width() + 30, this->menu->height());
         connect(this->menu, &TooltipMenu::message, this, &AddressesWidget::message);
-        connect(this->menu, SIGNAL(onEditClicked()), this, SLOT(onContactMultiClicked()));
-        connect(this->menu, SIGNAL(onDeleteClicked()), this, SLOT(onDeleteClicked()));
-    }else {
+        connect(this->menu, &TooltipMenu::onEditClicked, this, &SendWidget::onContactMultiClicked);
+        connect(this->menu, &TooltipMenu::onDeleteClicked, this, &SendWidget::onDeleteClicked);
+        connect(this->menu, &TooltipMenu::onCopyClicked, this, &SendWidget::onEntryMemoClicked);
+        connect(this->menu, &TooltipMenu::onLastClicked, this, &SendWidget::onSubtractFeeFromAmountChecked);
+    } else {
         this->menu->hide();
     }
+    this->menu->setLastBtnCheckable(true, entry->getSubtractFeeFromAmount());
     menu->move(pos);
     menu->show();
 }
 
-void SendWidget::onContactMultiClicked(){
-    if(focusedEntry) {
+void SendWidget::onContactMultiClicked()
+{
+    if (focusedEntry) {
         QString address = focusedEntry->getAddress();
         if (address.isEmpty()) {
             inform(tr("Address field is empty"));
             return;
         }
-        if (!walletModel->validateAddress(address)) {
+
+        bool isStakingAddr = false;
+        auto pgoAdd = Standard::DecodeDestination(address.toStdString(), isStakingAddr);
+
+        if (!Standard::IsValidDestination(pgoAdd) || isStakingAddr) {
             inform(tr("Invalid address"));
             return;
         }
-        CBitcoinAddress pgoAdd = CBitcoinAddress(address.toStdString());
+
         if (walletModel->isMine(pgoAdd)) {
             inform(tr("Cannot store your own address as contact"));
             return;
@@ -726,7 +906,7 @@ void SendWidget::onContactMultiClicked(){
         showHideOp(true);
         AddNewContactDialog *dialog = new AddNewContactDialog(window);
         QString label = walletModel->getAddressTableModel()->labelForAddress(address);
-        if (!label.isNull()){
+        if (!label.isNull()) {
             dialog->setTexts(tr("Update Contact"), "Edit label for the selected address:\n%1");
             dialog->setData(address, label);
         } else {
@@ -738,7 +918,8 @@ void SendWidget::onContactMultiClicked(){
             if (label == dialog->getLabel()) {
                 return;
             }
-            if (walletModel->updateAddressBookLabels(pgoAdd.Get(), dialog->getLabel().toStdString(), "send")) {
+            if (walletModel->updateAddressBookLabels(pgoAdd, dialog->getLabel().toStdString(),
+                    AddressBook::AddressBookPurpose::SEND)) {
                 inform(tr("New Contact Stored"));
             } else {
                 inform(tr("Error Storing Contact"));
@@ -749,7 +930,23 @@ void SendWidget::onContactMultiClicked(){
 
 }
 
-void SendWidget::onDeleteClicked(){
+void SendWidget::onEntryMemoClicked()
+{
+    if (focusedEntry) {
+        focusedEntry->launchMemoDialog();
+        menu->setCopyBtnText(tr("Memo"));
+    }
+}
+
+void SendWidget::onSubtractFeeFromAmountChecked()
+{
+    if (focusedEntry) {
+        focusedEntry->toggleSubtractFeeFromAmount();
+    }
+}
+
+void SendWidget::onDeleteClicked()
+{
     if (focusedEntry) {
         focusedEntry->hide();
         focusedEntry->deleteLater();
@@ -759,9 +956,9 @@ void SendWidget::onDeleteClicked(){
         QMutableListIterator<SendMultiRow*> it(entries);
         while (it.hasNext()) {
             SendMultiRow* entry = it.next();
-            if (focusedEntry == entry){
+            if (focusedEntry == entry) {
                 it.remove();
-            } else if (focusedEntry && entry->getNumber() > entryNumber){
+            } else if (focusedEntry && entry->getNumber() > entryNumber) {
                 entry->setNumber(entry->getNumber() - 1);
             }
         }
@@ -775,12 +972,14 @@ void SendWidget::onDeleteClicked(){
         focusedEntry = nullptr;
 
         // Update total amounts
-        refreshAmounts();
+        tryRefreshAmounts();
+        setFocusOnLastEntry();
     }
 }
 
-void SendWidget::resizeMenu(){
-    if(menuContacts && menuContacts->isVisible() && focusedEntry){
+void SendWidget::resizeMenu()
+{
+    if (menuContacts && menuContacts->isVisible() && focusedEntry) {
         int width = focusedEntry->getEditWidth();
         menuContacts->resizeList(width, menuContacts->height());
         menuContacts->resize(width, menuContacts->height());
@@ -791,10 +990,23 @@ void SendWidget::resizeMenu(){
     }
 }
 
-void SendWidget::changeTheme(bool isLightTheme, QString& theme){
-    if (coinControlDialog) coinControlDialog->setStyleSheet(theme);
+void SendWidget::setCustomFeeSelected(bool isSelected, const CAmount& customFee)
+{
+    isCustomFeeSelected = isSelected;
+    ui->pushButtonFee->setText(isCustomFeeSelected ?
+                    tr("Custom Fee %1").arg(BitcoinUnits::formatWithUnit(nDisplayUnit, customFee) + "/kB") :
+                    tr("Customize Fee"));
+    if (walletModel)
+        walletModel->setWalletDefaultFee(customFee);
 }
 
-SendWidget::~SendWidget(){
+void SendWidget::changeTheme(bool isLightTheme, QString& theme)
+{
+    coinControlDialog->setStyleSheet(theme);
+}
+
+SendWidget::~SendWidget()
+{
     delete ui;
+    delete coinControlDialog;
 }

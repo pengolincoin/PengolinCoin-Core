@@ -95,7 +95,6 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/build-aux/m4/ax_boost_base.m4 \
 	$(top_srcdir)/build-aux/m4/ax_boost_chrono.m4 \
 	$(top_srcdir)/build-aux/m4/ax_boost_filesystem.m4 \
-	$(top_srcdir)/build-aux/m4/ax_boost_program_options.m4 \
 	$(top_srcdir)/build-aux/m4/ax_boost_system.m4 \
 	$(top_srcdir)/build-aux/m4/ax_boost_thread.m4 \
 	$(top_srcdir)/build-aux/m4/ax_boost_unit_test_framework.m4 \
@@ -110,6 +109,7 @@ am__aclocal_m4_deps = $(top_srcdir)/build-aux/m4/ax_boost_base.m4 \
 	$(top_srcdir)/build-aux/m4/bitcoin_subdir_to_include.m4 \
 	$(top_srcdir)/build-aux/m4/gmp.m4 \
 	$(top_srcdir)/build-aux/m4/l_atomic.m4 \
+	$(top_srcdir)/build-aux/m4/l_socket.m4 \
 	$(top_srcdir)/build-aux/m4/libtool.m4 \
 	$(top_srcdir)/build-aux/m4/ltoptions.m4 \
 	$(top_srcdir)/build-aux/m4/ltsugar.m4 \
@@ -176,14 +176,15 @@ MANS = $(dist_man1_MANS)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 am__DIST_COMMON = $(dist_man1_MANS) $(srcdir)/Makefile.in
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/build-aux/missing aclocal-1.16
+ACLOCAL = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/build-aux/missing aclocal-1.16
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = /usr/bin/ar
 ARFLAGS = cr
-AUTOCONF = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/build-aux/missing automake-1.16
+ARM_CRC_CXXFLAGS = 
+AUTOCONF = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/build-aux/missing autoconf
+AUTOHEADER = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/build-aux/missing autoheader
+AUTOMAKE = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/build-aux/missing automake-1.16
 AVX2_CXXFLAGS = -mavx -mavx2
 AWK = mawk
 BDB_CFLAGS = 
@@ -197,34 +198,32 @@ BOOST_CHRONO_LIB = -lboost_chrono
 BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -pthread -I/usr/include
 BOOST_FILESYSTEM_LIB = -lboost_filesystem
 BOOST_LDFLAGS = -L/usr/lib/x86_64-linux-gnu
-BOOST_LIBS = -L/usr/lib/x86_64-linux-gnu -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread -lboost_chrono
-BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options
+BOOST_LIBS = -L/usr/lib/x86_64-linux-gnu -lboost_system -lboost_filesystem -lboost_thread -lboost_chrono
 BOOST_SYSTEM_LIB = -lboost_system
 BOOST_THREAD_LIB = -lboost_thread
 BOOST_UNIT_TEST_FRAMEWORK_LIB = -lboost_unit_test_framework
 BREW = 
+CARGO = /usr/bin/cargo
 CC = gcc
 CCACHE = 
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
 CHARTS_CFLAGS = -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
 CHARTS_LIBS = -lQt5Charts -lQt5Widgets -lQt5Gui -lQt5Core
-CLIENT_VERSION_BUILD = 0
+CLIENT_VERSION_BUILD = 1
 CLIENT_VERSION_IS_RELEASE = true
-CLIENT_VERSION_MAJOR = 2
+CLIENT_VERSION_MAJOR = 3
 CLIENT_VERSION_MINOR = 0
-CLIENT_VERSION_REVISION = 1
+CLIENT_VERSION_REVISION = 0
 COMPAT_LDFLAGS = 
-COPYRIGHT_YEAR = 2020
+COPYRIGHT_YEAR = 2021
 CPP = gcc -E
 CPPFILT = /usr/bin/c++filt
 CPPFLAGS =  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS
-CRYPTO_CFLAGS = 
-CRYPTO_LIBS = -lcrypto
-CXX = g++ -std=c++11
-CXXCPP = g++ -std=c++11 -E
+CXX = g++ -std=c++14
+CXXCPP = g++ -std=c++14 -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2
+CXXFLAGS = -g -O2 -fno-strict-aliasing -Wno-builtin-declaration-mismatch
 CYGPATH_W = echo
 DEBUG_CPPFLAGS = 
 DEBUG_CXXFLAGS = 
@@ -256,7 +255,15 @@ GREP = /bin/grep
 HARDENED_CPPFLAGS =  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2
 HARDENED_CXXFLAGS =  -Wstack-protector -fstack-protector-all
 HARDENED_LDFLAGS =  -Wl,-z,relro -Wl,-z,now -pie
-HAVE_CXX11 = 1
+HAVE_BUILTIN_PREFETCH = 1
+HAVE_CXX14 = 1
+HAVE_FDATASYNC = 1
+HAVE_FULLFSYNC = 0
+HAVE_GMTIME_R = 
+HAVE_MM_PREFETCH = 1
+HAVE_O_CLOEXEC = 1
+HAVE_STRONG_GETAUXVAL = 0
+HAVE_WEAK_GETAUXVAL = 1
 HEXDUMP = /usr/bin/hexdump
 IMAGEMAGICK_CONVERT = 
 INSTALL = /usr/bin/install -c
@@ -270,13 +277,13 @@ LCOV_OPTS =
 LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
 LEVELDB_CPPFLAGS = 
-LEVELDB_TARGET_FLAGS = -DOS_LINUX
 LIBLEVELDB = 
 LIBMEMENV = 
 LIBOBJS = 
-LIBS =  -lgmp
+LIBS =  /usr/lib/x86_64-linux-gnu/libgmp.a
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_APP_LDFLAGS = 
+LIBZCASH_LIBS = -lboost_system -lsodium  -ldl
 LIPO = 
 LN_S = ln -s
 LRELEASE = /usr/lib/x86_64-linux-gnu/qt5/bin/lrelease
@@ -284,7 +291,7 @@ LTLIBOBJS =
 LT_SYS_LIBRARY_PATH = 
 LUPDATE = /usr/lib/x86_64-linux-gnu/qt5/bin/lupdate
 MAINT = 
-MAKEINFO = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/build-aux/missing makeinfo
+MAKEINFO = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/build-aux/missing makeinfo
 MAKENSIS = 
 MANIFEST_TOOL = :
 MINIUPNPC_CPPFLAGS = 
@@ -292,13 +299,15 @@ MINIUPNPC_LIBS = -lminiupnpc
 MKDIR_P = /bin/mkdir -p
 MOC = /usr/lib/x86_64-linux-gnu/qt5/bin/moc
 MOC_DEFS = -DHAVE_CONFIG_H -I$(srcdir)
+NATPMP_CPPFLAGS = 
+NATPMP_LIBS = 
 NM = /usr/bin/nm -B
 NMEDIT = 
 NOWARN_CXXFLAGS =  -Wno-unused-parameter -Wno-implicit-fallthrough
 OBJCOPY = /usr/bin/objcopy
-OBJCXX = g++ -std=c++11
+OBJCXX = g++ -std=c++14
 OBJCXXDEPMODE = depmode=gcc3
-OBJCXXFLAGS = 
+OBJCXXFLAGS = -g -O2
 OBJDUMP = objdump
 OBJEXT = o
 OTOOL = 
@@ -306,20 +315,16 @@ OTOOL64 =
 PACKAGE = pengolincoin
 PACKAGE_BUGREPORT = https://github.com/pengolincoin-project/pengolincoin/issues
 PACKAGE_NAME = PENGOLINCOIN Core
-PACKAGE_STRING = PENGOLINCOIN Core 2.0.1
+PACKAGE_STRING = PENGOLINCOIN Core 3.0.0.1
 PACKAGE_TARNAME = pengolincoin
-PACKAGE_URL = https://pengolincoin.xyz/
-PACKAGE_VERSION = 2.0.1
+PACKAGE_URL = https://www.pengolincoin.xyz/
+PACKAGE_VERSION = 3.0.0.1
 PATH_SEPARATOR = :
 PIC_FLAGS = -fPIC
 PIE_FLAGS = -fPIE
 PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
 PKG_CONFIG_PATH = 
-PORT = 
-PROTOBUF_CFLAGS = -pthread
-PROTOBUF_LIBS = -lprotobuf -pthread
-PROTOC = /usr/bin/protoc
 PTHREAD_CC = gcc
 PTHREAD_CFLAGS = -pthread
 PTHREAD_LIBS = 
@@ -373,39 +378,37 @@ RCC = /usr/lib/x86_64-linux-gnu/qt5/bin/rcc
 READELF = /usr/bin/readelf
 RELDFLAGS = 
 RSVG_CONVERT = 
+RUSTC = /usr/bin/rustc
+RUST_TARGET = 
+RUST_VENDORED_SOURCES = 
 SANITIZER_CXXFLAGS = 
 SANITIZER_LDFLAGS = 
 SED = /bin/sed
 SET_MAKE = 
 SHANI_CXXFLAGS = -msse4 -msha
 SHELL = /bin/bash
+SODIUM_CFLAGS = 
+SODIUM_LIBS = -lsodium
 SSE41_CXXFLAGS = -msse4.1
 SSE42_CXXFLAGS = -msse4.2
-SSL_CFLAGS = 
-SSL_LIBS = -lssl
 STRIP = /usr/bin/strip
 TESTDEFS =  -DBOOST_TEST_DYN_LINK
 TIFFCP = 
 UIC = /usr/lib/x86_64-linux-gnu/qt5/bin/uic
 UNIVALUE_CFLAGS = -I$(srcdir)/univalue/include
 UNIVALUE_LIBS = univalue/libunivalue.la
-USE_NUM_GMP = 
-USE_NUM_OPENSSL = 
 USE_QTCHARTS = 
 USE_UPNP = 
-VERSION = 2.0.1
+VERSION = 3.0.0.1
 WARN_CXXFLAGS =  -Wall -Wextra -Wformat -Wvla -Wformat-security -Wredundant-decls
-WINDOWS_BITS = 
 WINDRES = 
-X11XCB_CFLAGS = 
-X11XCB_LIBS = 
 XGETTEXT = /usr/bin/xgettext
 ZMQ_CFLAGS = 
 ZMQ_LIBS = 
-abs_builddir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/doc/man
-abs_srcdir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/doc/man
-abs_top_builddir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1
-abs_top_srcdir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1
+abs_builddir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/doc/man
+abs_srcdir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/doc/man
+abs_top_builddir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master
+abs_top_srcdir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -437,7 +440,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-2.0.1/build-aux/install-sh
+install_sh = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -453,7 +456,7 @@ runstatedir = ${localstatedir}/run
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
 srcdir = .
-subdirs =  src/univalue src/secp256k1
+subdirs =  src/univalue src/chiabls src/secp256k1
 sysconfdir = ${prefix}/etc
 target_alias = 
 top_build_prefix = ../../

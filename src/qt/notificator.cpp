@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017-2019 The PENGOLINCOIN developers
+// Copyright (c) 2017-2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,7 +8,6 @@
 
 #include <QApplication>
 #include <QByteArray>
-#include <QIcon>
 #include <QImageWriter>
 #include <QMessageBox>
 #include <QMetaType>
@@ -84,11 +84,11 @@ public:
     static QVariant toVariant(const QImage& img);
 
 private:
-    int width, height, stride;
-    bool hasAlpha;
-    int channels;
-    int bitsPerSample;
-    QByteArray image;
+    int width{0}, height{0}, stride{0};
+    bool hasAlpha{false};
+    int channels{0};
+    int bitsPerSample{0};
+    QByteArray image{};
 
     friend QDBusArgument& operator<<(QDBusArgument& a, const FreedesktopImage& i);
     friend const QDBusArgument& operator>>(const QDBusArgument& a, FreedesktopImage& i);

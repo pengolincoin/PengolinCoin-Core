@@ -124,13 +124,13 @@ AC_ARG_ENABLE(ecmult_static_precomputation,
     [use_ecmult_static_precomputation=$enableval],
     [use_ecmult_static_precomputation=auto])
 
-AC_ARG_ENABLE(module_pgoh,
-    AS_HELP_STRING([--enable-module-pgoh],[enable PGOH shared secret computation (experimental)]),
-    [enable_module_pgoh=$enableval],
-    [enable_module_pgoh=no])
+AC_ARG_ENABLE(module_ecdh,
+    AS_HELP_STRING([--enable-module-ecdh],[enable ECDH shared secret computation (experimental)]),
+    [enable_module_ecdh=$enableval],
+    [enable_module_ecdh=no])
 
 AC_ARG_ENABLE(module_recovery,
-    AS_HELP_STRING([--enable-module-recovery],[enable PGOSA pubkey recovery module (default is no)]),
+    AS_HELP_STRING([--enable-module-recovery],[enable ECDSA pubkey recovery module (default is no)]),
     [enable_module_recovery=$enableval],
     [enable_module_recovery=no])
 
@@ -394,7 +394,7 @@ fi
 if test x"$use_jni" != x"no"; then
   AX_JNI_INCLUDE_DIR
   have_jni_dependencies=yes
-  if test x"$enable_module_pgoh" = x"no"; then
+  if test x"$enable_module_ecdh" = x"no"; then
     have_jni_dependencies=no
   fi
   if test "x$JNI_INCLUDE_DIRS" = "x"; then
@@ -402,7 +402,7 @@ if test x"$use_jni" != x"no"; then
   fi
   if test "x$have_jni_dependencies" = "xno"; then
     if test x"$use_jni" = x"yes"; then
-      AC_MSG_ERROR([jni support explicitly requested but headers/dependencies were not found. Enable PGOH and try again.])
+      AC_MSG_ERROR([jni support explicitly requested but headers/dependencies were not found. Enable ECDH and try again.])
     fi
     AC_MSG_WARN([jni headers/dependencies not found. jni support disabled])
     use_jni=no
@@ -427,12 +427,12 @@ if test x"$set_precomp" = x"yes"; then
   AC_DEFINE(USE_ECMULT_STATIC_PRECOMPUTATION, 1, [Define this symbol to use a statically generated ecmult table])
 fi
 
-if test x"$enable_module_pgoh" = x"yes"; then
-  AC_DEFINE(ENABLE_MODULE_PGOH, 1, [Define this symbol to enable the PGOH module])
+if test x"$enable_module_ecdh" = x"yes"; then
+  AC_DEFINE(ENABLE_MODULE_ECDH, 1, [Define this symbol to enable the ECDH module])
 fi
 
 if test x"$enable_module_recovery" = x"yes"; then
-  AC_DEFINE(ENABLE_MODULE_RECOVERY, 1, [Define this symbol to enable the PGOSA pubkey recovery module])
+  AC_DEFINE(ENABLE_MODULE_RECOVERY, 1, [Define this symbol to enable the ECDSA pubkey recovery module])
 fi
 
 AC_C_BIGENDIAN()
@@ -449,19 +449,19 @@ AC_MSG_NOTICE([Using scalar implementation: $set_scalar])
 AC_MSG_NOTICE([Using endomorphism optimizations: $use_endomorphism])
 AC_MSG_NOTICE([Building benchmarks: $use_benchmark])
 AC_MSG_NOTICE([Building for coverage analysis: $enable_coverage])
-AC_MSG_NOTICE([Building PGOH module: $enable_module_pgoh])
-AC_MSG_NOTICE([Building PGOSA pubkey recovery module: $enable_module_recovery])
+AC_MSG_NOTICE([Building ECDH module: $enable_module_ecdh])
+AC_MSG_NOTICE([Building ECDSA pubkey recovery module: $enable_module_recovery])
 AC_MSG_NOTICE([Using jni: $use_jni])
 
 if test x"$enable_experimental" = x"yes"; then
   AC_MSG_NOTICE([******])
   AC_MSG_NOTICE([WARNING: experimental build])
   AC_MSG_NOTICE([Experimental features do not have stable APIs or properties, and may not be safe for production use.])
-  AC_MSG_NOTICE([Building PGOH module: $enable_module_pgoh])
+  AC_MSG_NOTICE([Building ECDH module: $enable_module_ecdh])
   AC_MSG_NOTICE([******])
 else
-  if test x"$enable_module_pgoh" = x"yes"; then
-    AC_MSG_ERROR([PGOH module is experimental. Use --enable-experimental to allow.])
+  if test x"$enable_module_ecdh" = x"yes"; then
+    AC_MSG_ERROR([ECDH module is experimental. Use --enable-experimental to allow.])
   fi
   if test x"$set_asm" = x"arm"; then
     AC_MSG_ERROR([ARM assembly optimization is experimental. Use --enable-experimental to allow.])
@@ -480,7 +480,7 @@ AM_CONDITIONAL([USE_TESTS], [test x"$use_tests" != x"no"])
 AM_CONDITIONAL([USE_EXHAUSTIVE_TESTS], [test x"$use_exhaustive_tests" != x"no"])
 AM_CONDITIONAL([USE_BENCHMARK], [test x"$use_benchmark" = x"yes"])
 AM_CONDITIONAL([USE_ECMULT_STATIC_PRECOMPUTATION], [test x"$set_precomp" = x"yes"])
-AM_CONDITIONAL([ENABLE_MODULE_PGOH], [test x"$enable_module_pgoh" = x"yes"])
+AM_CONDITIONAL([ENABLE_MODULE_ECDH], [test x"$enable_module_ecdh" = x"yes"])
 AM_CONDITIONAL([ENABLE_MODULE_RECOVERY], [test x"$enable_module_recovery" = x"yes"])
 AM_CONDITIONAL([USE_JNI], [test x"$use_jni" == x"yes"])
 AM_CONDITIONAL([USE_EXTERNAL_ASM], [test x"$use_external_asm" = x"yes"])

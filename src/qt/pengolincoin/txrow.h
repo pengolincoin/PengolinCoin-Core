@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -22,17 +23,19 @@ public:
     ~TxRow();
 
     void init(bool isLightTheme);
+    void showHideSecondAmount(bool show);
     void updateStatus(bool isLightTheme, bool isHover, bool isSelected);
 
     void setDate(QDateTime);
     void setLabel(QString);
-    void setAmount(QString);
+    void setAmount(QString top, QString bottom);
     void setType(bool isLightTheme, int type, bool isConfirmed);
     void setConfirmStatus(bool isConfirmed);
 
 private:
     Ui::TxRow *ui;
     bool isConfirmed = false;
+    bool isDoubleAmount = false;
 };
 
 #endif // TXROW_H

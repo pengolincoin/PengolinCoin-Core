@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -25,12 +26,11 @@ OpenURIDialog::OpenURIDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystem
     setCssProperty(ui->labelTitle, "text-title-dialog");
 
     setCssBtnPrimary(ui->pushButtonOK);
-    setCssBtnPrimary(ui->selectFileButton);
     setCssProperty(ui->pushButtonCancel, "btn-dialog-cancel");
 
     initCssEditLine(ui->uriEdit, true);
-    connect(ui->pushButtonOK, SIGNAL(clicked()), this, SLOT(accept()));
-    connect(ui->pushButtonCancel, SIGNAL(clicked()), this, SLOT(close()));
+    connect(ui->pushButtonOK, &QPushButton::clicked, this, &OpenURIDialog::accept);
+    connect(ui->pushButtonCancel, &QPushButton::clicked, this, &OpenURIDialog::close);
 }
 
 void OpenURIDialog::showEvent(QShowEvent *event)
@@ -56,33 +56,6 @@ void OpenURIDialog::accept()
         QDialog::accept();
     } else {
         setCssEditLineDialog(ui->uriEdit, false, true);
-    }
-}
-
-void OpenURIDialog::on_selectFileButton_clicked()
-{
-    QString filename = GUIUtil::getOpenFileName(this, tr("Select payment request file to open"), "", "", NULL);
-    if (filename.isEmpty())
-        return;
-
-    QFile file(filename);
-    if(!file.exists()) {
-        inform(tr("File not found"));
-        return;
-    }
-
-    if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        QByteArray r = file.readAll();
-        if (r.size() > 200) {
-            inform(tr("Parsed data too large"));
-            return;
-        }
-
-        QString str = QString::fromStdString(std::string(r.constData(), r.length()));
-        if (!str.startsWith("pengolincoin")) {
-            inform(tr("Invalid URI, not starting with \"pengolincoin\" prefix"));
-        }
-        ui->uriEdit->setText(str);
     }
 }
 

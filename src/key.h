@@ -1,14 +1,15 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2015-2018 The PENGOLINCOIN developers
+// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef PENGOLINCOIN_KEY_H
 #define PENGOLINCOIN_KEY_H
 
-#include "allocators.h"
 #include "serialize.h"
+#include "support/allocators/secure.h"
 #include "uint256.h"
 #include "pubkey.h"
 
@@ -20,7 +21,6 @@ class CPubKey;
 struct CExtPubKey;
 
 /**
- * secure_allocator is defined in allocators.h
  * CPrivKey is a serialized private key, with all parameters included
  * (PRIVATE_KEY_SIZE bytes)
  */
@@ -98,7 +98,7 @@ public:
     //! Check whether the public key corresponding to this private key is (to be) compressed.
     bool IsCompressed() const { return fCompressed; }
 
-    //! Initialize from a CPrivKey (serialized OpenSSL private key data).
+    //! Initialize from a CPrivKey (serialized secp256k1 private key data).
     bool SetPrivKey(const CPrivKey& vchPrivKey, bool fCompressed);
 
     //! Generate a new private key using a cryptographic PRNG.
@@ -107,7 +107,7 @@ public:
     uint256 GetPrivKey_256();
 
     /**
-     * Convert the private key to a CPrivKey (serialized OpenSSL private key data).
+     * Convert the private key to a CPrivKey (serialized secp256k1 private key data).
      * This is expensive.
      */
     CPrivKey GetPrivKey() const;
@@ -169,7 +169,7 @@ struct CExtKey {
     void Decode(const unsigned char code[BIP32_EXTKEY_SIZE]);
     bool Derive(CExtKey& out, unsigned int nChild) const;
     CExtPubKey Neuter() const;
-    void SetMaster(const unsigned char* seed, unsigned int nSeedLen);
+    void SetSeed(const unsigned char* seed, unsigned int nSeedLen);
 };
 
 /** Initialize the elliptic curve support. May not be called twice without calling ECC_Stop first. */

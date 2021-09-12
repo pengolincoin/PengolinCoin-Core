@@ -1,15 +1,16 @@
-// Copyright (c) 2017-2019 The PENGOLINCOIN developers
+// Copyright (c) 2017-2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef PENGOLINCOIN_CSPORKDB_H
 #define PENGOLINCOIN_CSPORKDB_H
 
-#include <boost/filesystem/path.hpp>
-#include "leveldbwrapper.h"
+#include "fs.h"
+#include "dbwrapper.h"
 #include "spork.h"
 
-class CSporkDB : public CLevelDBWrapper
+class CSporkDB : public CDBWrapper
 {
 public:
     CSporkDB(size_t nCacheSize, bool fMemory = false, bool fWipe = false);

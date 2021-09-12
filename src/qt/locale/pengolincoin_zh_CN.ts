@@ -1,13 +1,9 @@
-﻿<TS language="zh_CN" version="2.1">
+<TS language="zh_CN" version="2.1">
 <context>
     <name>AddNewAddressDialog</name>
     <message>
         <source>Dialog</source>
         <translation>对话框</translation>
-    </message>
-    <message>
-        <source>My Address</source>
-        <translation>我的地址</translation>
     </message>
     <message>
         <source>Address</source>
@@ -22,8 +18,8 @@
         <translation>删除</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>好的</translation>
+        <source>SAVE</source>
+        <translation>保存</translation>
     </message>
 </context>
 <context>
@@ -33,16 +29,8 @@
         <translation>对话框</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
         <source>CANCEL</source>
         <translation>删除</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>好的</translation>
     </message>
     <message>
         <source>Edit Contact</source>
@@ -51,10 +39,6 @@
     <message>
         <source>Set a label for the selected address</source>
         <translation>为所选地址设置标签</translation>
-    </message>
-    <message>
-        <source>Enter a name for the address (e.g Exchange)</source>
-        <translation>输入地址的名称(例如：交换所)</translation>
     </message>
     <message>
         <source>SAVE</source>
@@ -196,6 +180,10 @@
         <translation>日期</translation>
     </message>
     <message>
+        <source>Type</source>
+        <translation>类别</translation>
+    </message>
+    <message>
         <source>(no label)</source>
         <translation>未设置标签</translation>
     </message>
@@ -207,28 +195,12 @@
         <translation>来自</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>发送</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
-        <source>No active Master Node yet</source>
-        <translation>暂无活跃主节点</translation>
-    </message>
-    <message>
         <source>Contact name</source>
         <translation>联系人名字</translation>
     </message>
     <message>
         <source>Enter address</source>
         <translation>输入地址</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>好的</translation>
     </message>
     <message>
         <source>Contacts</source>
@@ -241,14 +213,6 @@
     <message>
         <source>No contacts yet</source>
         <translation>暂无联系人</translation>
-    </message>
-    <message>
-        <source>e.g. John Doe</source>
-        <translation>例如John Doe</translation>
-    </message>
-    <message>
-        <source>Enter a PENGOLINCOIN address</source>
-        <translation>输入一个PENGOLINCOIN地址</translation>
     </message>
     <message>
         <source>SAVE</source>
@@ -368,6 +332,14 @@ for staking</source>
         <translation>确认钱包加密</translation>
     </message>
     <message>
+        <source>WARNING</source>
+        <translation>注意</translation>
+    </message>
+    <message>
+        <source>If you encrypt your wallet and lose your passphrase, you will</source>
+        <translation>如果你对钱包进行加密但丢失密码的话，你会</translation>
+    </message>
+    <message>
         <source>ENCRYPT</source>
         <translation>加密</translation>
     </message>
@@ -382,10 +354,6 @@ for staking</source>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>您确定加密您的钱包吗？</translation>
-    </message>
-    <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PGO&lt;/b&gt;!</source>
-        <translation>注意：请妥善保管好你的密码，因为在加密后，没有密码将无法打开钱包。这将会让您&lt;b&gt;损失钱包中所有的PGO&lt;/b&gt;！</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -427,11 +395,14 @@ for staking</source>
         <source>Wallet passphrase was successfully changed.</source>
         <translation>钱包密码已经更换为新密码</translation>
     </message>
-    <message>
-        <source>Warning: The Caps Lock key is on!</source>
-        <translation>注意：键盘目前为大写锁定状态。</translation>
-    </message>
 </context>
+<context>
+    <name>BalanceBubble</name>
+    <message>
+        <source>Form</source>
+        <translation>来自</translation>
+    </message>
+    </context>
 <context>
     <name>BanTableModel</name>
     <message>
@@ -441,37 +412,6 @@ for staking</source>
     <message>
         <source>Banned Until</source>
         <translation>禁止直至</translation>
-    </message>
-</context>
-<context>
-    <name>BlockExplorer</name>
-    <message>
-        <source>Blockchain Explorer</source>
-        <translation>区块链浏览器</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>返回</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation>下一步</translation>
-    </message>
-    <message>
-        <source>Address / Block / Transaction</source>
-        <translation>地址/区块/交易</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>搜索</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pengolincoin.conf).</source>
-        <translation>并不显示所有的交易。要查看所有交易，您需要在配置文件(pengolincoin.conf)中设置txindex=1。</translation>
     </message>
 </context>
 <context>
@@ -507,10 +447,6 @@ for staking</source>
         <source>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)</source>
         <translation>总数: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / 未知: %5)</translation>
     </message>
-    <message>
-        <source>Network Alert</source>
-        <translation>网络预警</translation>
-    </message>
 </context>
 <context>
     <name>CoinControlDialog</name>
@@ -529,6 +465,10 @@ for staking</source>
     <message>
         <source>Coin Selection</source>
         <translation>币选择</translation>
+    </message>
+    <message>
+        <source>Select PGO Outputs to Spend</source>
+        <translation>选择PGO支出花费</translation>
     </message>
     <message>
         <source>Dust:</source>
@@ -553,14 +493,6 @@ for staking</source>
     <message>
         <source>Amount</source>
         <translation>金额</translation>
-    </message>
-    <message>
-        <source>Transaction Details</source>
-        <translation>交易明细</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
     </message>
     <message>
         <source>0.00 PGO</source>
@@ -592,7 +524,7 @@ for staking</source>
     </message>
     <message>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>好的</translation>
     </message>
     <message>
         <source>Date</source>
@@ -631,34 +563,6 @@ for staking</source>
         <translation>解锁未花费</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>复制数量</translation>
-    </message>
-    <message>
-        <source>Copy fee</source>
-        <translation>复制费用</translation>
-    </message>
-    <message>
-        <source>Copy after fee</source>
-        <translation>缴费后复制</translation>
-    </message>
-    <message>
-        <source>Copy bytes</source>
-        <translation>复制字节</translation>
-    </message>
-    <message>
-        <source>Copy priority</source>
-        <translation>复制优先级</translation>
-    </message>
-    <message>
-        <source>Copy dust</source>
-        <translation>复制dust</translation>
-    </message>
-    <message>
-        <source>Copy change</source>
-        <translation>复制更改</translation>
-    </message>
-    <message>
         <source>Unselect all</source>
         <translation>全都不选</translation>
     </message>
@@ -667,52 +571,48 @@ for staking</source>
         <translation>请切换到“列表模式”使用此功能。</translation>
     </message>
     <message>
-        <source>highest</source>
-        <translation>最高级</translation>
+        <source>Quantity Copied</source>
+        <translation>数量完成复制</translation>
     </message>
     <message>
-        <source>higher</source>
-        <translation>更高级</translation>
+        <source>Amount Copied</source>
+        <translation>金额完成复制</translation>
     </message>
     <message>
-        <source>high</source>
-        <translation>高级</translation>
+        <source>Fee Copied</source>
+        <translation>费用完成复制</translation>
     </message>
     <message>
-        <source>medium-high</source>
-        <translation>中高级</translation>
+        <source>After Fee Copied</source>
+        <translation>完成费用复制之后</translation>
     </message>
     <message>
-        <source>medium</source>
-        <translation>中级</translation>
+        <source>Bytes Copied</source>
+        <translation>字节完成复制</translation>
     </message>
     <message>
-        <source>low-medium</source>
-        <translation>低中级</translation>
+        <source>Dust Copied</source>
+        <translation>尘埃完成复制</translation>
     </message>
     <message>
-        <source>low</source>
-        <translation>低级</translation>
-    </message>
-    <message>
-        <source>lower</source>
-        <translation>更低级</translation>
-    </message>
-    <message>
-        <source>lowest</source>
-        <translation>最低级</translation>
+        <source>Change Copied</source>
+        <translation>修改完成复制</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
         <translation>(%1已锁住)</translation>
     </message>
     <message>
-        <source>none</source>
-        <translation>无</translation>
-    </message>
-    <message>
         <source>yes</source>
         <translation>是</translation>
+    </message>
+    <message>
+        <source>delegated to %1 for cold staking</source>
+        <translation>委托到%1进行冷加注</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>选择所有</translation>
     </message>
     <message>
         <source>no</source>
@@ -731,115 +631,12 @@ for staking</source>
         <translation>每个输入可以浮动+/- 1 字节。</translation>
     </message>
     <message>
-        <source>Transactions with higher priority are more likely to get included into a block.</source>
-        <translation>具有更高优先级的交易更有可能被包含到区块中。</translation>
-    </message>
-    <message>
-        <source>This label turns red, if the priority is smaller than "medium".</source>
-        <translation>如果优先级小于“中级”，则此标签变为红色。</translation>
-    </message>
-    <message>
-        <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
-        <translation>如果任何收件人收到的金额小于%1，此标签将变为红色。</translation>
-    </message>
-    <message>
-        <source>Can vary +/- %1 upgo per input.</source>
-        <translation>每个输入可以浮动+/- %1 upgo。</translation>
-    </message>
-    <message>
         <source>(no label)</source>
         <translation>未设置标签</translation>
     </message>
     <message>
-        <source>change from %1 (%2)</source>
-        <translation>从 %1 (%2)更改</translation>
-    </message>
-    <message>
         <source>(change)</source>
         <translation>(更改)</translation>
-    </message>
-</context>
-<context>
-    <name>CoinControlPgoWidget</name>
-    <message>
-        <source>Dialog</source>
-        <translation>对话框</translation>
-    </message>
-    <message>
-        <source>Transaction Details</source>
-        <translation>交易明细</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
-    </message>
-    <message>
-        <source>PGO:</source>
-        <translation>PGO:</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>数量：</translation>
-    </message>
-    <message>
-        <source>Fee:</source>
-        <translation>费用：</translation>
-    </message>
-    <message>
-        <source>Amount</source>
-        <translation>金额</translation>
-    </message>
-    <message>
-        <source>Label</source>
-        <translation>标签</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>地址</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>类别</translation>
-    </message>
-    <message>
-        <source>Date</source>
-        <translation>日期</translation>
-    </message>
-    <message>
-        <source>Confirmations</source>
-        <translation>确认</translation>
-    </message>
-    <message>
-        <source>CheckBox</source>
-        <translation>查看列表</translation>
-    </message>
-    <message>
-        <source>Bytes:</source>
-        <translation>字节:</translation>
-    </message>
-    <message>
-        <source>Dust:</source>
-        <translation>Dust:</translation>
-    </message>
-    <message>
-        <source>Change:</source>
-        <translation>变化：</translation>
-    </message>
-    <message>
-        <source>After Fee: </source>
-        <translation>缴费以后：</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>删除</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -849,36 +646,12 @@ for staking</source>
         <translation>来自</translation>
     </message>
     <message>
-        <source>Title</source>
-        <translation>抬头</translation>
+        <source>Owner address (optional, if empty a new address will be created)</source>
+        <translation>所有者地址(可选项，如果为空，将创建一个新地址)</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
-    </message>
-    <message>
-        <source>Owner Address (optional, if empty a new address will be created)</source>
-        <translation>所有者地址（如果为空，将创建一个新地址，可选）</translation>
-    </message>
-    <message>
-        <source>List of delegated balance by address</source>
-        <translation>按地址划分的委托余额清单</translation>
-    </message>
-    <message>
-        <source>Total</source>
-        <translation>总数</translation>
-    </message>
-    <message>
-        <source>Unconfirmed balance will not be shown</source>
-        <translation>未确认的余额将不会显示</translation>
-    </message>
-    <message>
-        <source>No balance delegated</source>
-        <translation>没有佣金余额</translation>
+        <source>Total Staking:</source>
+        <translation>加注总额：</translation>
     </message>
     <message>
         <source>Cold Staking</source>
@@ -893,30 +666,12 @@ for staking</source>
         <translation>宪法</translation>
     </message>
     <message>
-        <source>You can delegate your PGOs and let a hot node (24/7 online node)
-stake in your behalf, keeping the keys in a secure place offline.</source>
-        <translation>您可以委派您的PGO并让热节点（24/7在线节点）
-代表您进行放样并将密钥离线保存在安全的位置。</translation>
-    </message>
-    <message>
-        <source>Add owner address</source>
-        <translation>添加地址</translation>
-    </message>
-    <message>
-        <source>Delegate or Accept PGO delegation</source>
-        <translation>授予权限或接受PGO权限</translation>
-    </message>
-    <message>
         <source>Delegate</source>
         <translation>分配</translation>
     </message>
     <message>
         <source>Clear All</source>
         <translation>清除全部</translation>
-    </message>
-    <message>
-        <source>Add the staking address</source>
-        <translation>添加放样地址</translation>
     </message>
     <message>
         <source>Delegated balance history</source>
@@ -935,20 +690,50 @@ stake in your behalf, keeping the keys in a secure place offline.</source>
         <translation>加载委托时出错：%1</translation>
     </message>
     <message>
+        <source>You can delegate your PGOs, letting a hot node (24/7 online node)
+stake on your behalf, while you keep the keys securely offline.</source>
+        <translation>您可以委托您的PGO并让一个热节点(24/7在线节点)
+代表你加注，而且保持密钥离线安全。</translation>
+    </message>
+    <message>
+        <source>Enter owner address</source>
+        <translation>输入所有者地址</translation>
+    </message>
+    <message>
+        <source>Accept PGO delegation / Delegate PGO</source>
+        <translation>接受PGO委托／委托PGO </translation>
+    </message>
+    <message>
+        <source>Cold Staking address</source>
+        <translation>冷加注地址</translation>
+    </message>
+    <message>
+        <source>No receive addresses available, you can go to the receive screen and create some there!</source>
+        <translation>没有可用接收地址，您可以到接收屏幕那里创建!</translation>
+    </message>
+    <message>
         <source>No contacts available, you can go to the contacts screen and add some there!</source>
         <translation>没有可用的联系人，您可以到联系人界面那里添加!</translation>
+    </message>
+    <message>
+        <source>Cannot send delegation, wallet locked</source>
+        <translation>无法发送委托，钱包被锁了</translation>
     </message>
     <message>
         <source>Cold staking is networkely disabled</source>
         <translation>禁用网络冷积累</translation>
     </message>
     <message>
+        <source>Coin Control</source>
+        <translation>币控制</translation>
+    </message>
+    <message>
         <source>Invalid entry</source>
         <translation>条目无效</translation>
     </message>
     <message>
-        <source>Invalid entry, minimum delegable amount is 10 PGO</source>
-        <translation>输入无效，最小委托量为10 PGO</translation>
+        <source>Invalid entry, minimum delegable amount is </source>
+        <translation>输入无效，最小委托数量为</translation>
     </message>
     <message>
         <source>Owner address invalid</source>
@@ -987,8 +772,8 @@ Do you wish to proceed?</source>
         <translation>委托硬币</translation>
     </message>
     <message>
-        <source>You don't have any PGO to select.</source>
-        <translation>您没有任何PGO可选择。</translation>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation>无法进行操作，钱包被锁了</translation>
     </message>
     <message>
         <source>URI copied to clipboard</source>
@@ -1071,14 +856,6 @@ address</source>
         <source>Form</source>
         <translation>来自</translation>
     </message>
-    <message>
-        <source>Bob Allen</source>
-        <translation>Bob Allen</translation>
-    </message>
-    <message>
-        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
-        <translation>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</translation>
-    </message>
 </context>
 <context>
     <name>DashboardWidget</name>
@@ -1091,40 +868,12 @@ address</source>
         <translation>交易</translation>
     </message>
     <message>
-        <source>You can see here the history of your account</source>
-        <translation>你可以在这里查看你账户的历史</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>注意</translation>
-    </message>
-    <message>
-        <source>No transactions</source>
-        <translation>无交易</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
-    </message>
-    <message>
         <source>Staking Rewards</source>
         <translation>加注奖励</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
         <source>Staking statistics</source>
         <translation>加注数据</translation>
-    </message>
-    <message>
-        <source>PGO</source>
-        <translation>PGO</translation>
-    </message>
-    <message>
-        <source>zPGO</source>
-        <translation>zPGO</translation>
     </message>
     <message>
         <source>Sort by</source>
@@ -1147,60 +896,8 @@ address</source>
         <translation>过滤</translation>
     </message>
     <message>
-        <source>LabelText</source>
-        <translation>标签文本</translation>
-    </message>
-    <message>
-        <source>You can view your account's history</source>
-        <translation>您可以查看您的帐户的历史</translation>
-    </message>
-    <message>
         <source>Amount of PGO and zPGO staked.</source>
         <translation>已加注的PGO 和 zPGO 金额</translation>
-    </message>
-    <message>
-        <source>All</source>
-        <translation>所有</translation>
-    </message>
-    <message>
-        <source>Received</source>
-        <translation>已接收</translation>
-    </message>
-    <message>
-        <source>Sent</source>
-        <translation>已发送</translation>
-    </message>
-    <message>
-        <source>Mined</source>
-        <translation>已挖矿</translation>
-    </message>
-    <message>
-        <source>Minted</source>
-        <translation>已铸币</translation>
-    </message>
-    <message>
-        <source>MN reward</source>
-        <translation>MN奖励</translation>
-    </message>
-    <message>
-        <source>To yourself</source>
-        <translation>给您自己</translation>
-    </message>
-    <message>
-        <source>Cold stakes</source>
-        <translation>感冒</translation>
-    </message>
-    <message>
-        <source>Hot stakes</source>
-        <translation>热提</translation>
-    </message>
-    <message>
-        <source>Delegated</source>
-        <translation>委托</translation>
-    </message>
-    <message>
-        <source>Delegations</source>
-        <translation>宪法</translation>
     </message>
     <message>
         <source>Please wait until the wallet is fully synced to see your correct balance</source>
@@ -1209,10 +906,6 @@ address</source>
     <message>
         <source>No transactions yet</source>
         <translation>暂无交易</translation>
-    </message>
-    <message>
-        <source>How to get PGO or zPGO</source>
-        <translation>如何获取PGO 或 zPGO</translation>
     </message>
     <message>
         <source>You can verify the staking activity in the status bar at the top right of the wallet.
@@ -1252,83 +945,12 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>来自</translation>
     </message>
     <message>
-        <source>Transaction Details</source>
-        <translation>交易明细</translation>
-    </message>
-    <message>
-        <source>Text Label</source>
-        <translation>文本标签</translation>
+        <source>OK</source>
+        <translation>好的</translation>
     </message>
     <message>
         <source>CANCEL</source>
         <translation>删除</translation>
-    </message>
-    <message>
-        <source>SAVE</source>
-        <translation>保存</translation>
-    </message>
-</context>
-<context>
-    <name>DenomGenerationDialog</name>
-    <message>
-        <source>Form</source>
-        <translation>来自</translation>
-    </message>
-    <message>
-        <source>Transaction Details</source>
-        <translation>交易明细</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
-    </message>
-    <message>
-        <source>This will unlock your wallet fully, so that anyone with access to it can spend until the wallet is closed or locked again.</source>
-        <translation>这会完全解锁你的钱包，直到钱包再次关闭或锁定，不然这样任何人都可以使用它，</translation>
-    </message>
-    <message>
-        <source>5000</source>
-        <translation>5000</translation>
-    </message>
-    <message>
-        <source>100</source>
-        <translation>100</translation>
-    </message>
-    <message>
-        <source>10</source>
-        <translation>10</translation>
-    </message>
-    <message>
-        <source>1000</source>
-        <translation>1000</translation>
-    </message>
-    <message>
-        <source>50</source>
-        <translation>50</translation>
-    </message>
-    <message>
-        <source>500</source>
-        <translation>500</translation>
-    </message>
-    <message>
-        <source>5</source>
-        <translation>5</translation>
-    </message>
-    <message>
-        <source>1</source>
-        <translation>1</translation>
-    </message>
-    <message>
-        <source>Select All</source>
-        <translation>选择所有</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>删除</translation>
-    </message>
-    <message>
-        <source>SAVE</source>
-        <translation>保存</translation>
     </message>
 </context>
 <context>
@@ -1417,49 +1039,6 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
 </context>
 <context>
-    <name>GovernancePage</name>
-    <message>
-        <source>Form</source>
-        <translation>来自</translation>
-    </message>
-    <message>
-        <source>GOVERNANCE</source>
-        <translation>治理</translation>
-    </message>
-    <message>
-        <source>Update Proposals</source>
-        <translation>更新提议</translation>
-    </message>
-    <message>
-        <source>Next super block:</source>
-        <translation>下一个超级区块：</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>Blocks to next super block:</source>
-        <translation>区块到下一个超级区块:</translation>
-    </message>
-    <message>
-        <source>Days to budget payout (estimate):</source>
-        <translation>预算需要天数(预估):</translation>
-    </message>
-    <message>
-        <source>Allotted budget:</source>
-        <translation>分配预算:</translation>
-    </message>
-    <message>
-        <source>Budget left:</source>
-        <translation>剩余预算：</translation>
-    </message>
-    <message>
-        <source>Masternodes count:</source>
-        <translation>主节点计数：</translation>
-    </message>
-</context>
-<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
@@ -1502,6 +1081,10 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>启动时显示启动画面(默认:%u)</translation>
     </message>
     <message>
+        <source>Hide QT staking charts on startup (default: %u)</source>
+        <translation>在启动时隐藏QT标记图表(默认值:%u)</translation>
+    </message>
+    <message>
         <source>Set language, for example "de_DE" (default: system locale)</source>
         <translation>设置语言，例如“de_DE”(默认:系统语言环境)</translation>
     </message>
@@ -1515,7 +1098,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>好的</translation>
     </message>
 </context>
 <context>
@@ -1550,7 +1133,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>好的</translation>
     </message>
     <message>
         <source>PENGOLINCOIN Core</source>
@@ -1617,19 +1200,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <source>Form</source>
         <translation>来自</translation>
     </message>
-    <message>
-        <source>user_masternode</source>
-        <translation>用户_主节点</translation>
-    </message>
-    <message>
-        <source>Address: 88.26.164.88:33003</source>
-        <translation>地址: 88.26.164.88:33003</translation>
-    </message>
-    <message>
-        <source>Jan. 19, 2019</source>
-        <translation>2019年1月19日</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>MasterNodeWizardDialog</name>
     <message>
@@ -1661,28 +1232,32 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>地址</translation>
     </message>
     <message>
-        <source>Create New Master Node Controller</source>
+        <source>Create New Masternode Controller</source>
         <translation>创建新的主节点控制器</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100,000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;创建一个PENGOLINCOIN 主节点，你必须奉献给网络100,000 PGO (PENGOLINCOIN的单位)(但是，这些币仍属于你，永远都是属于你的财产)。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;你可以在任何时候关闭该节点并解锁币。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;要去创建一个PENGOLINCOIN主节点，你必须奉献100,000 PGO（PENGOLINCOIN的单位）到网络（但是这些币还是属于你的，一直为你所有）。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;你可以在任何时候关闭该节点并解锁币。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Set Masternode Name</source>
+        <translation>设置主节点名称</translation>
+    </message>
+    <message>
+        <source>Set Masternode IP and Port</source>
+        <translation>设置主节点IP和端口</translation>
+    </message>
+    <message>
+        <source>Enter port</source>
+        <translation>输入端口</translation>
     </message>
     <message>
         <source>Make sure you have this amount of coins.</source>
         <translation>确保你有这么多币</translation>
     </message>
     <message>
-        <source>Set Master Node’s Name</source>
-        <translation>设置主节点名称</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 100,000 PGO will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将进行100,000 PGO的交易&lt;/p&gt;&lt;p&gt;到您的钱包空地址&lt;/p&gt;&lt;p&gt;地址被标记在主节点的名称之下&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Set Master Node’s IP and port</source>
-        <translation>设置主节点IP和端口</translation>
     </message>
     <message>
         <source>Address of the node that must always be online running the actual master node.</source>
@@ -1691,22 +1266,6 @@ It will start automatically as soon as the wallet has enough confirmations on an
     <message>
         <source>Enter IP address</source>
         <translation>输入IP 地址</translation>
-    </message>
-    <message>
-        <source>Enter Port</source>
-        <translation>输入端口</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>删除</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>e.g user_masternode</source>
-        <translation>例如 用户_主节点</translation>
     </message>
     <message>
         <source>NEXT</source>
@@ -1725,12 +1284,34 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>IP 或端口不能为空</translation>
     </message>
     <message>
-        <source>Invalid port number</source>
-        <translation>端口数字无效</translation>
+        <source>Invalid IP address</source>
+        <translation> IP地址无效</translation>
     </message>
     <message>
-        <source>Prepare master node failed..</source>
-        <translation>准备主节点失败…</translation>
+        <source>Prepare master node failed.
+
+%1
+</source>
+        <translation>准备主节点失败。
+
+%1
+</translation>
+    </message>
+    <message>
+        <source>Invalid collateral output index</source>
+        <translation>输出指标无效</translation>
+    </message>
+    <message>
+        <source>Master node created! Wait %1 confirmations before starting it.</source>
+        <translation>主节点创建完成!在启动它之前，请等待%1确认。</translation>
+    </message>
+    <message>
+        <source>Cannot send collateral transaction.
+
+%1</source>
+        <translation>不能发送抵押品交易。
+
+%1</translation>
     </message>
     <message>
         <source>Invalid masternode.conf file</source>
@@ -1741,56 +1322,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>解析主节点配置文件出错</translation>
     </message>
     <message>
-        <source>Invalid collaterall output index</source>
-        <translation>担保品输出指标出错</translation>
-    </message>
-    <message>
-        <source>Master node created!</source>
-        <translation>主节点已创建</translation>
-    </message>
-    <message>
         <source>masternode.conf file doesn't exists</source>
         <translation>主节点配置文件不存在</translation>
-    </message>
-    <message>
-        <source>The recipient address is not valid, please recheck.</source>
-        <translation>收件人地址无效，请重新检查。</translation>
-    </message>
-    <message>
-        <source>The amount to pay must be larger than 0.</source>
-        <translation>支付金额必须大于0</translation>
-    </message>
-    <message>
-        <source>The amount exceeds your balance.</source>
-        <translation>金额超过您的余额。</translation>
-    </message>
-    <message>
-        <source>The total exceeds your balance when the %1 transaction fee is included.</source>
-        <translation>当包含%1交易费用时，总额超过您的余额。</translation>
-    </message>
-    <message>
-        <source>Duplicate address found, can only send to each address once per send operation.</source>
-        <translation>发现重复地址，每次发送操作只能发送到每个地址一次</translation>
-    </message>
-    <message>
-        <source>Transaction creation failed!</source>
-        <translation>交易创建失败</translation>
-    </message>
-    <message>
-        <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>交易被拒绝！ 可能在您的钱包中这些硬币已经花了，比如，您使用了wallet.dat的副本，硬币在副本中被使用，但并没有被标记就可能发生这种情况。</translation>
-    </message>
-    <message>
-        <source>Error: The wallet was unlocked only to anonymize coins.</source>
-        <translation>错误:钱包只对匿名硬币解锁。</translation>
-    </message>
-    <message>
-        <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
-        <translation>每kB比%2高%1倍的费用被认为是高得离谱的费用</translation>
-    </message>
-    <message>
-        <source>Error: The wallet was unlocked only to anonymize coins. Unlock canceled.</source>
-        <translation>错误:钱包只对匿名硬币解锁。已取消解锁</translation>
     </message>
 </context>
 <context>
@@ -1800,16 +1333,12 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>来自</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
+        <source>Start All</source>
+        <translation>启动所有项</translation>
     </message>
     <message>
-        <source>No active Master Node yet</source>
-        <translation>暂无活跃主节点</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
+        <source>Start Inactive/s</source>
+        <translation>停止活跃／秒</translation>
     </message>
     <message>
         <source>Masternodes</source>
@@ -1842,6 +1371,10 @@ and vote on the treasury system receiving a periodic reward.</source>
         <translation>消息</translation>
     </message>
     <message>
+        <source>Please wait until the node is fully synced</source>
+        <translation>请等到节点完全同步</translation>
+    </message>
+    <message>
         <source>Start Masternode</source>
         <translation>开始主节点</translation>
     </message>
@@ -1852,14 +1385,54 @@ and vote on the treasury system receiving a periodic reward.</source>
 </translation>
     </message>
     <message>
-        <source>Cannot start masternode, the collateral transaction has not been accepted by the network.
-Please wait few more minutes.</source>
-        <translation>无法启动主节点，抵押品交易未被网络接受。
-请再等几分钟。</translation>
+        <source>Cannot edit masternode, wallet locked</source>
+        <translation>无法编辑主节点，钱包被锁了</translation>
+    </message>
+    <message>
+        <source>Cannot start masternode, the collateral transaction has not been confirmed by the network yet.
+Please wait few more minutes (masternode collaterals require %1 confirmations).</source>
+        <translation>无法启动主节点，抵押品交易还没有被网络确认。
+请再稍等几分钟(主节点担保品需要%1确认)。</translation>
+    </message>
+    <message>
+        <source>Background task is being executed, please wait</source>
+        <translation>后台任务正在执行，请稍候</translation>
+    </message>
+    <message>
+        <source>Start ALL masternodes failed</source>
+        <translation>启动所有主节点失败</translation>
+    </message>
+    <message>
+        <source>Wallet unlock cancelled</source>
+        <translation>解锁钱包已取消</translation>
+    </message>
+    <message>
+        <source>Cannot perform Masternodes start</source>
+        <translation>无法启动主节点</translation>
+    </message>
+    <message>
+        <source>%1 Masternodes failed to start, %2 started</source>
+        <translation>%1主节点启动失败，%2已经启动</translation>
+    </message>
+    <message>
+        <source>All Masternodes started!</source>
+        <translation>所有主节点已经启动！</translation>
+    </message>
+    <message>
+        <source>Cannot show Masternode information, wallet locked</source>
+        <translation>无法显示主节点信息，钱包被锁了</translation>
+    </message>
+    <message>
+        <source>Masternode data copied to the clipboard.</source>
+        <translation>复制到剪贴板的主节点数据。</translation>
     </message>
     <message>
         <source>Remote Masternode Data</source>
         <translation>远程主节点数据</translation>
+    </message>
+    <message>
+        <source>What is a Masternode?</source>
+        <translation>主节点是什么？</translation>
     </message>
     <message>
         <source>You are just about to export the required data to run a Masternode
@@ -1878,10 +1451,6 @@ this controller wallet (select the Masternode in the list and press "start").
 ，然后使用主节点启动它
 这个控制器钱包(在列表中选择主节点并按“开始”)。
 </translation>
-    </message>
-    <message>
-        <source>Masternode exported!, check your clipboard</source>
-        <translation>主节点输出!，检查你的剪贴板</translation>
     </message>
     <message>
         <source>Delete Masternode</source>
@@ -1910,8 +1479,8 @@ Are you sure?</source>
         <translation>主节点配置文件不存在</translation>
     </message>
     <message>
-        <source>Not enough balance to create a masternode, 100,000 PGO required.</source>
-        <translation>没有足够的余额创建主节点，需要100,000 PGO。</translation>
+        <source>Cannot create Masternode controller, wallet locked</source>
+        <translation>无法创建主节点控制器，钱包被锁了</translation>
     </message>
     <message>
         <source>Error creating masternode</source>
@@ -1925,24 +1494,16 @@ Are you sure?</source>
         <translation>来自</translation>
     </message>
     <message>
-        <source>Master Node Information</source>
-        <translation>主节点消息</translation>
+        <source>Masternode Information</source>
+        <translation>主节点信息</translation>
     </message>
     <message>
         <source>Public Key:</source>
         <translation>公钥：</translation>
     </message>
     <message>
-        <source>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</source>
-        <translation>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</translation>
-    </message>
-    <message>
         <source>Address: </source>
         <translation>地址：</translation>
-    </message>
-    <message>
-        <source>127.0.0.2:43223</source>
-        <translation>127.0.0.2:43223</translation>
     </message>
     <message>
         <source>Collaterall tx id:</source>
@@ -1961,31 +1522,15 @@ Are you sure?</source>
         <translation>状态：</translation>
     </message>
     <message>
-        <source>MISSING</source>
-        <translation>略过</translation>
+        <source>Export data to run the Masternode on a remote server</source>
+        <translation>导出数据去远程服务器上运行主节点</translation>
     </message>
-    <message>
-        <source>Export data to run the Master Node on a remote server</source>
-        <translation>导出数据以在远程服务器上运行主节点</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>MyAddressRow</name>
     <message>
         <source>Form</source>
         <translation>来自</translation>
-    </message>
-    <message>
-        <source>Savings</source>
-        <translation>存款</translation>
-    </message>
-    <message>
-        <source>Jan. 19, 2019</source>
-        <translation>2019年1月19日</translation>
-    </message>
-    <message>
-        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
-        <translation>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</translation>
     </message>
 </context>
 <context>
@@ -2023,7 +1568,7 @@ Are you sure?</source>
     </message>
     <message>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>好的</translation>
     </message>
     <message>
         <source>Select payment request file</source>
@@ -2051,10 +1596,6 @@ Are you sure?</source>
     <message>
         <source>Form</source>
         <translation>来自</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
     </message>
 </context>
 <context>
@@ -2412,17 +1953,6 @@ Address: %4
 地址：%4
 </translation>
     </message>
-    <message>
-        <source>A fatal error occurred. PENGOLINCOIN can no longer continue safely and will quit.</source>
-        <translation>发生了一个致命的错误。PENGOLINCOIN不能继续安全，将退出。</translation>
-    </message>
-</context>
-<context>
-    <name>PWidget</name>
-    <message>
-        <source>Wallet locked, you need to unlock it to perform this action</source>
-        <translation>钱包已锁定，您需要解锁它来执行此操作</translation>
-    </message>
 </context>
 <context>
     <name>PaymentServer</name>
@@ -2529,201 +2059,7 @@ Address: %4
         <source>Ping Time</source>
         <translation>Ping时间</translation>
     </message>
-</context>
-<context>
-    <name>PrivacyWidget</name>
-    <message>
-        <source>Form</source>
-        <translation>来自</translation>
-    </message>
-    <message>
-        <source>Title</source>
-        <translation>抬头</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
-    </message>
-    <message>
-        <source>No active Master Node yet</source>
-        <translation>暂无活跃主节点</translation>
-    </message>
-    <message>
-        <source>Privacy</source>
-        <translation>隐私</translation>
-    </message>
-    <message>
-        <source>Convert</source>
-        <translation>转换</translation>
-    </message>
-    <message>
-        <source>Mint</source>
-        <translation>铸造</translation>
-    </message>
-    <message>
-        <source>Minting zPGO anonymizes your PGO by removing any
-transaction history, making transactions untraceable </source>
-        <translation>铸造zPGO会通过删除任何
-交易历史匿名化您的PGO，使交易无法被跟踪</translation>
-    </message>
-    <message>
-        <source>Mint new zPGO or convert back to PGO</source>
-        <translation>铸造新的zPGO或转换回PGO</translation>
-    </message>
-    <message>
-        <source>Last Zerocoin Movements</source>
-        <translation>最后零币移动</translation>
-    </message>
-    <message>
-        <source>No transactions yet</source>
-        <translation>暂无交易</translation>
-    </message>
-    <message>
-        <source>Mint zPGO</source>
-        <translation>铸造zPGO</translation>
-    </message>
-    <message>
-        <source>Enter amount of PGO to mint into zPGO</source>
-        <translation>输入一定量的PGO铸造成zPGO</translation>
-    </message>
-    <message>
-        <source>Convert back to PGO</source>
-        <translation>转换回PGO</translation>
-    </message>
-    <message>
-        <source>Enter amount of zPGO to convert back into PGO</source>
-        <translation>输入一定量的zPGO转换回PGO</translation>
-    </message>
-    <message>
-        <source>Zerocoin</source>
-        <translation>零币</translation>
-    </message>
-    <message>
-        <source>zPGO is currently undergoing maintenance</source>
-        <translation>zPGO目前正在维护中</translation>
-    </message>
-    <message>
-        <source>You need to unlock the wallet to be able to %1 zPGO</source>
-        <translation>你需要解锁钱包才能%1 zPGO</translation>
-    </message>
-    <message>
-        <source>convert</source>
-        <translation>转换</translation>
-    </message>
-    <message>
-        <source>mint</source>
-        <translation>铸造</translation>
-    </message>
-    <message>
-        <source>Invalid value</source>
-        <translation>无效值</translation>
-    </message>
-    <message>
-        <source>zPGO minted successfully</source>
-        <translation>zPGO铸造成功</translation>
-    </message>
-    <message>
-        <source>zPGO converted back to PGO</source>
-        <translation>zPGO 转换回PGO</translation>
-    </message>
-    <message>
-        <source>You don't have any PGO to select.</source>
-        <translation>您没有任何PGO可选择。</translation>
-    </message>
-    <message>
-        <source>Rescan Mints</source>
-        <translation>重新扫描铸造</translation>
-    </message>
-    <message>
-        <source>Your zerocoin mints are going to be scanned from the blockchain from scratch</source>
-        <translation>你的零币铸造将从零区块链被扫描</translation>
-    </message>
-    <message>
-        <source>Reset Spent Zerocoins</source>
-        <translation>重置花费零币</translation>
-    </message>
-    <message>
-        <source>Your zerocoin spends are going to be scanned from the blockchain from scratch</source>
-        <translation>你的零币花费铸造将从零区块链被扫描</translation>
-    </message>
-    <message>
-        <source>Total %1</source>
-        <translation>总额%1</translation>
-    </message>
-</context>
-<context>
-    <name>ProposalFrame</name>
-    <message>
-        <source>Open proposal page in browser</source>
-        <translation>在浏览器中打开建议页面</translation>
-    </message>
-    <message>
-        <source> remaining payment(s).</source>
-        <translation>剩余的付款</translation>
-    </message>
-    <message>
-        <source>Yes:</source>
-        <translation>是：</translation>
-    </message>
-    <message>
-        <source>Abstain:</source>
-        <translation>弃权:</translation>
-    </message>
-    <message>
-        <source>No:</source>
-        <translation>否：</translation>
-    </message>
-    <message>
-        <source>A proposal URL can be used for phishing, scams and computer viruses. Open this link only if you trust the following URL.
-</source>
-        <translation>提案URL可用于网络钓鱼、诈骗和计算机病毒。如果你信任以下URL，才打开这个链接
-</translation>
-    </message>
-    <message>
-        <source>Open link</source>
-        <translation>打开链接</translation>
-    </message>
-    <message>
-        <source>Copy link</source>
-        <translation>复制链接</translation>
-    </message>
-    <message>
-        <source>Wallet Locked</source>
-        <translation>钱包已锁住</translation>
-    </message>
-    <message>
-        <source>You must unlock your wallet to vote.</source>
-        <translation>你必须解锁钱包才能投票。</translation>
-    </message>
-    <message>
-        <source>Do you want to vote %1 on</source>
-        <translation>您是否要对%1进行投票</translation>
-    </message>
-    <message>
-        <source>using all your masternodes?</source>
-        <translation>用你所有主节点？</translation>
-    </message>
-    <message>
-        <source>Proposal Hash:</source>
-        <translation>提议哈希：</translation>
-    </message>
-    <message>
-        <source>Proposal URL:</source>
-        <translation>提议URL:</translation>
-    </message>
-    <message>
-        <source>Confirm Vote</source>
-        <translation>确认投票</translation>
-    </message>
-    <message>
-        <source>Vote Results</source>
-        <translation>投票结果</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>QObject</name>
     <message>
@@ -2731,8 +2067,8 @@ transaction history, making transactions untraceable </source>
         <translation>金额</translation>
     </message>
     <message>
-        <source>Enter a PENGOLINCOIN address (e.g. %1)</source>
-        <translation>输入一个 PENGOLINCOIN 地址 (e.g. %1)</translation>
+        <source>Enter PENGOLINCOIN address (e.g. %1)</source>
+        <translation>输入PENGOLINCOIN a地址(e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2759,10 +2095,6 @@ transaction history, making transactions untraceable </source>
         <translation>爆发</translation>
     </message>
     <message>
-        <source>ZK_BLOOM</source>
-        <translation>ZK_爆发</translation>
-    </message>
-    <message>
         <source>UNKNOWN</source>
         <translation>未知</translation>
     </message>
@@ -2777,6 +2109,10 @@ transaction history, making transactions untraceable </source>
     <message>
         <source>%1 ms</source>
         <translation>%1 毫秒</translation>
+    </message>
+    <message>
+        <source>A fatal error occurred. PENGOLINCOIN can no longer continue safely and will quit.</source>
+        <translation>发生了一个致命的错误。PENGOLINCOIN不能继续安全，将退出。</translation>
     </message>
     <message>
         <source>PENGOLINCOIN Core</source>
@@ -2802,7 +2138,115 @@ transaction history, making transactions untraceable </source>
         <source>PENGOLINCOIN Core didn't yet exit safely...</source>
         <translation>PENGOLINCOIN核心尚未安全退出……</translation>
     </message>
-</context>
+    <message>
+        <source>Contact</source>
+        <translation>联系人</translation>
+    </message>
+    <message>
+        <source>Receiving</source>
+        <translation>正在接收</translation>
+    </message>
+    <message>
+        <source>Delegator</source>
+        <translation>委托人</translation>
+    </message>
+    <message>
+        <source>Cold Staking</source>
+        <translation>冷堆</translation>
+    </message>
+    <message>
+        <source>Cold Staking Contact</source>
+        <translation>冷加注联系人</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>隐藏</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>未知</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>所有</translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation>联系人</translation>
+    </message>
+    <message>
+        <source>Staking Contacts</source>
+        <translation>加注联系人</translation>
+    </message>
+    <message>
+        <source>Date desc</source>
+        <translation>日期desc</translation>
+    </message>
+    <message>
+        <source>Date asc</source>
+        <translation>日期asc</translation>
+    </message>
+    <message>
+        <source>Amount desc</source>
+        <translation>金额desc</translation>
+    </message>
+    <message>
+        <source>Amount asc</source>
+        <translation>金额asc</translation>
+    </message>
+    <message>
+        <source>Received</source>
+        <translation>已接收</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>已发送</translation>
+    </message>
+    <message>
+        <source>Mined</source>
+        <translation>已挖矿</translation>
+    </message>
+    <message>
+        <source>Minted</source>
+        <translation>已铸币</translation>
+    </message>
+    <message>
+        <source>MN reward</source>
+        <translation>MN奖励</translation>
+    </message>
+    <message>
+        <source>To yourself</source>
+        <translation>给您自己</translation>
+    </message>
+    <message>
+        <source>Cold stakes</source>
+        <translation>感冒</translation>
+    </message>
+    <message>
+        <source>Hot stakes</source>
+        <translation>热提</translation>
+    </message>
+    <message>
+        <source>Delegated</source>
+        <translation>委托</translation>
+    </message>
+    <message>
+        <source>Delegations</source>
+        <translation>宪法</translation>
+    </message>
+    <message>
+        <source>by Label</source>
+        <translation>标签</translation>
+    </message>
+    <message>
+        <source>by Address</source>
+        <translation>地址</translation>
+    </message>
+    <message>
+        <source>by Date</source>
+        <translation>日期</translation>
+    </message>
+    </context>
 <context>
     <name>RPCConsole</name>
     <message>
@@ -3217,24 +2661,12 @@ transaction history, making transactions untraceable </source>
         <translation>对话框</translation>
     </message>
     <message>
-        <source>Transaction Details</source>
-        <translation>交易明细</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
-    </message>
-    <message>
-        <source>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
+        <source>My Address</source>
+        <translation>我的地址</translation>
     </message>
     <message>
         <source>CANCEL</source>
         <translation>删除</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -3242,14 +2674,6 @@ transaction history, making transactions untraceable </source>
     <message>
         <source>Form</source>
         <translation>来自</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
-        <source>No address</source>
-        <translation>无地址</translation>
     </message>
     <message>
         <source>Add Label</source>
@@ -3268,24 +2692,12 @@ transaction history, making transactions untraceable </source>
         <translation>接收</translation>
     </message>
     <message>
-        <source>Scan the QR code or copy the address to receive PGO.</source>
-        <translation>扫描二维码或复制地址接收PGO</translation>
-    </message>
-    <message>
-        <source>No address </source>
-        <translation>无地址</translation>
-    </message>
-    <message>
-        <source>No available address, try unlocking the wallet</source>
-        <translation>没有可用地址，尝试解锁钱包</translation>
-    </message>
-    <message>
         <source>Error generating address</source>
         <translation>生成地址出错</translation>
     </message>
     <message>
-        <source>Change Label</source>
-        <translation>改变标签</translation>
+        <source>Edit Label</source>
+        <translation>编辑标签</translation>
     </message>
     <message>
         <source>Edit Address Label</source>
@@ -3300,12 +2712,20 @@ transaction history, making transactions untraceable </source>
         <translation>保存地址标签出错</translation>
     </message>
     <message>
+        <source>Cannot create new address, wallet locked</source>
+        <translation>无法创建新地址，钱包被锁了</translation>
+    </message>
+    <message>
         <source>New address created</source>
         <translation>已创建新地址</translation>
     </message>
     <message>
         <source>Address copied</source>
         <translation>地址已复制</translation>
+    </message>
+    <message>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation>无法进行操作，钱包被锁了</translation>
     </message>
     <message>
         <source>URI copied to clipboard</source>
@@ -3358,14 +2778,6 @@ transaction history, making transactions untraceable </source>
         <translation>对话框</translation>
     </message>
     <message>
-        <source>New Request Payment</source>
-        <translation>新支付请求</translation>
-    </message>
-    <message>
-        <source>Lorem ipsum dolor sit amet, consectur cling elit, sed do </source>
-        <translation>Lorem ipsum dolor sit amet, consectur cling elit, sed do </translation>
-    </message>
-    <message>
         <source>Amount</source>
         <translation>金额</translation>
     </message>
@@ -3374,12 +2786,8 @@ transaction history, making transactions untraceable </source>
         <translation>PGO</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
-        <source>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
+        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
     </message>
     <message>
         <source>COPY ADDRESS</source>
@@ -3394,28 +2802,24 @@ transaction history, making transactions untraceable </source>
         <translation>删除</translation>
     </message>
     <message>
-        <source>REQUEST</source>
-        <translation>请求</translation>
-    </message>
-    <message>
-        <source>Instead of only sharing a PENGOLINCOIN address, you can create a Payment Request message which bundles up more information than is contained in just a PENGOLINCOIN address.</source>
-        <translation>与共享PENGOLINCOIN地址不同，您可以创建一个支付请求消息，该消息包含的信息比仅包含PENGOLINCOIN地址所包含的信息更多。</translation>
-    </message>
-    <message>
         <source>Label</source>
         <translation>标签</translation>
-    </message>
-    <message>
-        <source>Enter a label to be saved within the address</source>
-        <translation>输入要保存在地址中的标签</translation>
     </message>
     <message>
         <source>Description (optional)</source>
         <translation>说明书(可选)</translation>
     </message>
     <message>
-        <source>Add description </source>
-        <translation>添加说明书</translation>
+        <source>New Payment Request</source>
+        <translation>新的支付请求</translation>
+    </message>
+    <message>
+        <source>Enter a label for the address</source>
+        <translation>为地址输入一个便签</translation>
+    </message>
+    <message>
+        <source>Enter description</source>
+        <translation>输入说明</translation>
     </message>
     <message>
         <source>Error</source>
@@ -3433,7 +2837,15 @@ transaction history, making transactions untraceable </source>
         <source>New Cold Staking Address</source>
         <translation>新冷堆地址</translation>
     </message>
-</context>
+    <message>
+        <source>Amount (optional)</source>
+        <translation>金额（可选项）</translation>
+    </message>
+    <message>
+        <source>Invalid amount</source>
+        <translation>金额无效</translation>
+    </message>
+    </context>
 <context>
     <name>SendChangeAddressDialog</name>
     <message>
@@ -3441,25 +2853,8 @@ transaction history, making transactions untraceable </source>
         <translation>对话框</translation>
     </message>
     <message>
-        <source>Transaction Details</source>
-        <translation>交易明细</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
-    </message>
-    <message>
-        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</source>
-        <translation> 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</translation>
-    </message>
-    <message>
         <source>CANCEL</source>
         <translation>删除</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>OK</translation>
     </message>
     <message>
         <source>Custom Change Address</source>
@@ -3469,7 +2864,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" PENGOLINCOIN address</source>
         <translation>输入值减去输出值所得的值的其余部分归为“更改”PENGOLINCOIN地址</translation>
     </message>
-</context>
+    <message>
+        <source>SAVE</source>
+        <translation>保存</translation>
+    </message>
+    <message>
+        <source>RESET</source>
+        <translation>重置</translation>
+    </message>
+    <message>
+        <source>Invalid address</source>
+        <translation>地址无效</translation>
+    </message>
+    </context>
 <context>
     <name>SendCustomFeeDialog</name>
     <message>
@@ -3477,16 +2884,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <translation>来自</translation>
     </message>
     <message>
-        <source>Transaction Details</source>
-        <translation>交易明细</translation>
-    </message>
-    <message>
-        <source>Customize the transaction fee at your to your liking, depending on the fee value your transaction will be included or not in the blockchain.</source>
-        <translation>根据您的喜好定制交易费用，取决于您的交易是否包含在区块链中。</translation>
-    </message>
-    <message>
-        <source>Recomended</source>
+        <source>Recommended</source>
         <translation>已推荐</translation>
+    </message>
+    <message>
+        <source>PGO/kilobyte</source>
+        <translation>PGO/k字节</translation>
     </message>
     <message>
         <source>0.00 KB</source>
@@ -3497,24 +2900,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <translation>自定义</translation>
     </message>
     <message>
-        <source>Per kilobyte</source>
-        <translation>每千字节</translation>
-    </message>
-    <message>
         <source>CANCEL</source>
         <translation>删除</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>OK</translation>
-    </message>
-    <message>
         <source>Customize Fee</source>
-        <translation>自定义费用</translation>
-    </message>
-    <message>
-        <source>Customize the transaction fee, depending on the fee value your transaction will be included or not in the blockchain.</source>
-        <translation>根据您的喜好定制交易费用，取决于您的交易是否包含在区块链中。</translation>
+        <translation>定制费用</translation>
     </message>
     <message>
         <source>Normal</source>
@@ -3532,6 +2923,25 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>SAVE</source>
         <translation>保存</translation>
     </message>
+    </context>
+<context>
+    <name>SendMemoDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>对话框</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>保存</translation>
+    </message>
+    <message>
+        <source>RESET</source>
+        <translation>重置</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>删除</translation>
+    </message>
 </context>
 <context>
     <name>SendMultiRow</name>
@@ -3540,75 +2950,31 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <translation>来自</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
+        <source>Enter address</source>
+        <translation>输入地址</translation>
     </message>
     <message>
-        <source>Add address</source>
-        <translation>添加地址</translation>
+        <source>Enter label</source>
+        <translation>输入标签</translation>
     </message>
-    <message>
-        <source>Add description</source>
-        <translation>添加说明书</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>SendWidget</name>
-    <message>
-        <source>Send</source>
-        <translation>发送</translation>
-    </message>
-    <message>
-        <source>You can transfer public coins (PGO) or private coins (zPGO)</source>
-        <translation>您可以转换公共币(PGO)或私人币(zPGO)</translation>
-    </message>
-    <message>
-        <source>Select coin type to spend</source>
-        <translation>选择需要花费的币种类</translation>
-    </message>
-    <message>
-        <source>Enter a PENGOLINCOIN address or contact label</source>
-        <translation>输入PENGOLINCOIN地址或联系人标签</translation>
-    </message>
-    <message>
-        <source>Amount</source>
-        <translation>金额</translation>
-    </message>
-    <message>
-        <source>Customize fee</source>
-        <translation>定制费用</translation>
-    </message>
-    <message>
-        <source>Clear all</source>
-        <translation>清除所有</translation>
-    </message>
-    <message>
-        <source>Add recipient</source>
-        <translation>添加接收人</translation>
-    </message>
-    <message>
-        <source>Reset to default</source>
-        <translation>重置到默认值</translation>
-    </message>
-    <message>
-        <source>Total to send</source>
-        <translation>花费总金额</translation>
-    </message>
-    <message>
-        <source>Send PGO</source>
-        <translation>花费PGO</translation>
-    </message>
-    <message>
-        <source>Send zPGO</source>
-        <translation>花费zPGO</translation>
-    </message>
     <message>
         <source>Total remaining from the selected UTXO</source>
         <translation>所选UTXO的剩余总数</translation>
     </message>
     <message>
-        <source>Total remaining</source>
-        <translation>总剩余</translation>
+        <source>Warning!</source>
+        <translation>注意！</translation>
+    </message>
+    <message>
+        <source>The change address doesn't belong to this wallet.
+
+Do you want to continue?</source>
+        <translation>这个变更地址不属于这个钱包。
+
+你仍需继续吗?</translation>
     </message>
     <message>
         <source>Customize Fee</source>
@@ -3623,6 +2989,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <translation>条目无效，在添加新条目之前，先前的条目必须有效</translation>
     </message>
     <message>
+        <source>Possibly spend coins delegated for cold-staking (currently available: %1</source>
+        <translation>可能花费委托用于冷加注到币（当前可用：%1</translation>
+    </message>
+    <message>
         <source>Invalid entry</source>
         <translation>条目无效</translation>
     </message>
@@ -3633,10 +3003,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     <message>
         <source>Cannot send, wallet locked</source>
         <translation>无法发送，钱包被锁了</translation>
-    </message>
-    <message>
-        <source>Cannot create transaction.</source>
-        <translation>无法创建交易</translation>
     </message>
     <message>
         <source>WARNING:
@@ -3651,60 +3017,8 @@ These coins will no longer be cold-staked.</source>
         <translation>交易已发送</translation>
     </message>
     <message>
-        <source>Spend Zerocoin</source>
-        <translation>花费零币</translation>
-    </message>
-    <message>
-        <source>zPGO is currently undergoing maintenance.</source>
-        <translation>zPGO目前正在维护中</translation>
-    </message>
-    <message>
-        <source>Coin control mint not found</source>
-        <translation>硬币控制铸币不存在</translation>
-    </message>
-    <message>
-        <source>Sending %1 to address %2
-</source>
-        <translation>正在发送%1 到 地址%2
-</translation>
-    </message>
-    <message>
-        <source>Sending %1 to addresses:
-%2</source>
-        <translation>正在发送%1到地址：
-%2</translation>
-    </message>
-    <message>
-        <source>zPGO transaction sent!</source>
-        <translation>zPGO交易已发送！</translation>
-    </message>
-    <message>
-        <source>Version 1 zPGO require a security level of 100 to successfully spend.</source>
-        <translation>版本1 zPGO要求安全级别为100才能成功使用。</translation>
-    </message>
-    <message>
-        <source>Too much inputs (</source>
-        <translation>输入过多（</translation>
-    </message>
-    <message>
-        <source>) needed.
-Maximum allowed: </source>
-        <translation>)需要。
-最大额限制:</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>
-要么铸造更高面额的币(这样需要的投入就更少)，要么减少开支。</translation>
-    </message>
-    <message>
         <source>Address label update failed for address: %1</source>
         <translation>地址标签更新失败的地址:%1</translation>
-    </message>
-    <message>
-        <source>Invalid change address</source>
-        <translation>更改地址无效</translation>
     </message>
     <message>
         <source>Invalid URI</source>
@@ -3719,12 +3033,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>定制费用%1</translation>
     </message>
     <message>
-        <source>You don't have any PGO to select.</source>
-        <translation>您没有任何PGO可供选择。</translation>
+        <source>Coin Control</source>
+        <translation>币控制</translation>
     </message>
     <message>
-        <source>You don't have any zPGO in your balance to select.</source>
-        <translation>你的余额中没有zPGO可供选择。</translation>
+        <source>Open URI</source>
+        <translation>开源URI</translation>
     </message>
     <message>
         <source>No contacts available, you can go to the contacts screen and add some there!</source>
@@ -3770,44 +3084,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>来自</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
-    </message>
-    <message>
-        <source>Backup Wallet </source>
-        <translation>返回钱包</translation>
-    </message>
-    <message>
         <source>Change Wallet Passphrase</source>
         <translation>变更钱包密码</translation>
-    </message>
-    <message>
-        <source>Keep your wallet safe doing regular backups, store your backup file externally.
-This option creates a wallet.dat file that can be used to recover your whole balance (transactions and addresses) from another device.</source>
-        <translation>定期安全备份您的钱包，在外部设备储存你的备份文件。
-此选项创建一个wallet.dat文件，可用于从另一个设备恢复您的全部余额(交易和地址)。</translation>
-    </message>
-    <message>
-        <source>This will decrypt the whole wallet data and encrypt it back with the new passphrase.
-Remember to write it down and store it safely, otherwise you might lose access to your funds.</source>
-        <translation>这将解密整个钱包数据，并使用新密码将其加密回来。
-请记住将其写下并安全地存储，否则您可能无法使用这笔资金。</translation>
     </message>
     <message>
         <source>Where</source>
         <translation>哪里</translation>
     </message>
     <message>
-        <source>Set a folder location</source>
-        <translation>设置文件夹位置</translation>
-    </message>
-    <message>
-        <source>Backup</source>
-        <translation>返回</translation>
+        <source>Select folder...</source>
+        <translation>选择文件夹...</translation>
     </message>
     <message>
         <source>Change Passphrase</source>
@@ -3841,24 +3127,8 @@ Remember to write it down and store it safely, otherwise you might lose access t
         <translation>来自</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
-    </message>
-    <message>
-        <source>Decrypt Address Result</source>
-        <translation>解密地址结果</translation>
-    </message>
-    <message>
         <source>Import Address</source>
         <translation>导入地址</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>明确</translation>
     </message>
     <message>
         <source>BIP38 Tool</source>
@@ -3885,10 +3155,6 @@ Remember to write it down and store it safely, otherwise you might lose access t
         <translation>密码</translation>
     </message>
     <message>
-        <source>Enter a passphrase </source>
-        <translation>输入密码</translation>
-    </message>
-    <message>
         <source>Decrypted address result</source>
         <translation>解密地址结果</translation>
     </message>
@@ -3901,16 +3167,16 @@ Remember to write it down and store it safely, otherwise you might lose access t
         <translation>解密钥匙</translation>
     </message>
     <message>
-        <source>Enter a PENGOLINCOIN address</source>
-        <translation>输入一个PENGOLINCOIN地址</translation>
+        <source>PENGOLINCOIN address</source>
+        <translation>PENGOLINCOIN地址</translation>
     </message>
     <message>
-        <source>Add address</source>
-        <translation>添加地址</translation>
+        <source>Enter address</source>
+        <translation>输入地址</translation>
     </message>
     <message>
-        <source>Write a message</source>
-        <translation>写入信息</translation>
+        <source>Enter passphrase</source>
+        <translation>输入钱包密码</translation>
     </message>
     <message>
         <source>Encrypted Key</source>
@@ -3993,7 +3259,7 @@ Remember to write it down and store it safely, otherwise you might lose access t
         <translation>添加钥匙到钱包出错</translation>
     </message>
     <message>
-        <source>Successfully added pgoate key to the wallet</source>
+        <source>Successfully added private key to the wallet</source>
         <translation>成功添加私钥到钱包</translation>
     </message>
 </context>
@@ -4004,10 +3270,6 @@ Remember to write it down and store it safely, otherwise you might lose access t
         <translation>来自</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
         <source>Console</source>
         <translation>控制台</translation>
     </message>
@@ -4016,12 +3278,12 @@ Remember to write it down and store it safely, otherwise you might lose access t
         <translation>控制台输入</translation>
     </message>
     <message>
-        <source>Command Line Options </source>
-        <translation>命令行选项</translation>
-    </message>
-    <message>
         <source>Open Debug File</source>
         <translation>打开调试文件</translation>
+    </message>
+    <message>
+        <source>Clear history</source>
+        <translation>清空历史记录</translation>
     </message>
     <message>
         <source>Cannot open debug file.
@@ -4053,12 +3315,8 @@ Verify that you have installed a predetermined text editor.</source>
         <translation>来自</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
+        <source>Hide stake charts in the dashboard</source>
+        <translation>把加注图表隐藏在仪表板中</translation>
     </message>
     <message>
         <source>Reset to default</source>
@@ -4110,18 +3368,113 @@ Verify that you have installed a predetermined text editor.</source>
     </message>
 </context>
 <context>
-    <name>SettingsFaqWidget</name>
+    <name>SettingsExportCSV</name>
     <message>
         <source>Form</source>
         <translation>来自</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
+        <source>Export Accounting</source>
+        <translation>导出账单</translation>
     </message>
     <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
+        <source>Export your wallet's accounting data to a csv file.</source>
+        <translation>导出你的钱包账单到一个csv文件。</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>哪里</translation>
+    </message>
+    <message>
+        <source>Select folder...</source>
+        <translation>选择文件夹...</translation>
+    </message>
+    <message>
+        <source>Export Address Book</source>
+        <translation>导出地址簿</translation>
+    </message>
+    <message>
+        <source>Export CSV</source>
+        <translation>导出CSV</translation>
+    </message>
+    <message>
+        <source>Export Address List</source>
+        <translation>导出地址列表</translation>
+    </message>
+    <message>
+        <source>PENGOLINCOIN_tx_csv_export(*.csv)</source>
+        <translation>PENGOLINCOIN_tx_csv_export(*.csv)</translation>
+    </message>
+    <message>
+        <source>PENGOLINCOIN_addresses_csv_export(*.csv)</source>
+        <translation>PENGOLINCOIN_addresses_csv_export(*.csv)</translation>
+    </message>
+    <message>
+        <source>Please select a folder to export the csv file first.</source>
+        <translation>请先选择一个导出csv文件到文件夹。</translation>
+    </message>
+    <message>
+        <source>Confirmed</source>
+        <translation>已确认</translation>
+    </message>
+    <message>
+        <source>Watch-only</source>
+        <translation>只读</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>日期</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>类别</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>标签</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>地址</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Exporting Successful
+The transaction history was successfully saved to %1.</source>
+        <translation>导出成功
+交易历史已经成功保存到%1。</translation>
+    </message>
+    <message>
+        <source>Exporting Failed
+There was an error trying to save the transaction history to %1.</source>
+        <translation>导出失败
+保存交易历史到%1过程出错了。</translation>
+    </message>
+    <message>
+        <source>No available addresses to export under the selected filter</source>
+        <translation>在所选的筛选器下没有可供导出的地址</translation>
+    </message>
+    <message>
+        <source>Exporting Successful
+The address book was successfully saved to %1.</source>
+        <translation>导出成功
+地址簿已经成功保存到%1。</translation>
+    </message>
+    <message>
+        <source>Exporting Failed
+There was an error trying to save the address list to %1. Please try again.</source>
+        <translation>导出失败
+保存地址列表到%1的过程出错。请重试。</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsFaqWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>来自</translation>
     </message>
     <message>
         <source>1) What is PENGOLINCOIN?</source>
@@ -4132,74 +3485,12 @@ Verify that you have installed a predetermined text editor.</source>
         <translation>2) 我的PGO为什么不能用？</translation>
     </message>
     <message>
-        <source>3) PENGOLINCOIN privacy? What is Zerocoin (zPGO)?</source>
-        <translation>3）PENGOLINCOIN 隐私？什么是零币(zPGO)？</translation>
-    </message>
-    <message>
-        <source>4) Why are my zPGO unspendable?</source>
-        <translation>4) 我的zPGO为什么不能用？</translation>
-    </message>
-    <message>
-        <source>5) Why did my wallet convert the balance
-    into zPGO automatically?</source>
-        <translation>5）为什么我的钱包把余额自动转换成
-zPGO了?</translation>
-    </message>
-    <message>
-        <source>6) How do I receive PGO/zPGO?</source>
-        <translation>6）如何接收PGO/zPGO?</translation>
-    </message>
-    <message>
-        <source>7) How do I stake PGO/zPGO?</source>
-        <translation>7）如何加注PGO/zPGO?</translation>
-    </message>
-    <message>
-        <source>8) Where I should go if I need support?</source>
-        <translation>8）该到哪里寻求帮助？</translation>
-    </message>
-    <message>
-        <source>9) What is a Master Node?</source>
-        <translation>9）什么是主节点？</translation>
-    </message>
-    <message>
-        <source>10) What is a Master Node Controller?</source>
-        <translation>10）什么是主节点控制器？</translation>
-    </message>
-    <message>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
         <source>What is PENGOLINCOIN?</source>
         <translation>PENGOLINCOIN是什么?</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           PENGOLINCOIN is a form of digital online money using blockchain technology
-                           that can be easily transferred globally, instantly, and with near
-                           zero fees.  PENGOLINCOIN incorporates market leading security &amp;
-                           privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement ZeroCoin(zPGO) and Zerocoin staking.
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           PENGOLINCOIN utilizes a Proof of Stake (PoS) consensus system algorithm,
-                           allowing all owners of PENGOLINCOIN to participate in earning block rewards
-                           while securing the network with full node wallets, as well as to
-                           run Masternodes to create and vote on proposals.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-PENGOLINCOIN是一种使用区块链技术的数字在线货币
-全球范围内快捷交易，即时，基本为
-零的交易费用。PENGOLINCOIN是市场上领先的安全和
-隐私加密货币，也是第一个PoS(股权证明)加密货币
-实现零币(zPGO)和零币加注。
-&lt;/p&gt;&lt;p align="justify"&gt;
-PENGOLINCOIN使用了一个股权证明(PoS)一致系统算法，
-允许所有PENGOLINCOIN的所有者参与赚取区块奖励
-同时保护网络与完整的节点钱包，以及
-运行主节点创建和投票来进行提案。</translation>
     </message>
     <message>
         <source>2</source>
@@ -4234,185 +3525,32 @@ PENGOLINCOIN使用了一个股权证明(PoS)一致系统算法，
         <translation>3</translation>
     </message>
     <message>
-        <source>PENGOLINCOIN privacy? What is Zerocoin (zPGO)?</source>
-        <translation>PENGOLINCOIN 隐私？什么是零币(zPGO)？</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           zPGO is an optional privacy-centric method of coin mixing on the
-                           PENGOLINCOIN blockchain. Basically all your transactions cannot be tracked
-                           on to any block explorer. You can read more about the technicals in the
-                           &lt;a style='color: #88edff' href='https://pengolincoin.xyz/zpgo/'&gt;
-                           "PENGOLINCOIN Zerocoin (zPGO) Technical Paper"&lt;/a&gt;.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-zPGO是一种可选的以隐私为中心的隐私币
-它是PENGOLINCOIN区块链的一员，基本上在任何块资源管理器
-所有的交易都不能被跟踪&lt;a style='color: #88edff' href='https://pengolincoin.xyz/zpgo/'&gt;
-
-你可以阅读更多关于技术方面的文章&lt;/a&gt;
-
-PENGOLINCOIN零币(zPGO)技术文件
-&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-</translation>
-    </message>
-    <message>
         <source>4</source>
         <translation>4</translation>
-    </message>
-    <message>
-        <source>Why are my zPGO unspendable?</source>
-        <translation>我的PGO为什么不能用？</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           After minting, zPGO will require 20 confirmations as well as 1
-                           additional mint of the same denomination on the network to
-                           become eligible for spending.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-铸币后，zPGO将需要20个确认和1个确认
-在网络上增加相同面额的铸币
-才够资格消费。
-&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>5</source>
         <translation>5</translation>
     </message>
     <message>
-        <source>Why did my wallet convert the balance into zPGO automatically?</source>
-        <translation>为什么我的钱包会自动将余额转换成zPGO ?</translation>
-    </message>
-    <message>
         <source>6</source>
         <translation>6</translation>
     </message>
     <message>
-        <source>How do I receive PGO/zPGO?</source>
-        <translation>我怎么接收PGO/zPGO?</translation>
+        <source>Where should I go if I need support?</source>
+        <translation>如果我需要帮助，我该怎么办？</translation>
     </message>
     <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           zPGO can be spent and sent to any PENGOLINCOIN address. The receiver will
-                           receive standard PENGOLINCOIN but the origin of the PENGOLINCOIN is anonymized by the zPGO Protocol.
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           If you want more zPGO you will need to mint your balance in the “Privacy” tab.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-可以使用zPGO并将其发送到任何PENGOLINCOIN地址。接收机将
-接收标准的PENGOLINCOIN，但是根据zPGO协议，PENGOLINCOIN的来源是匿名的。
-&lt;/p&gt;&lt;p align="justify"&gt;
-如果你想要更多的zPGO，你将需要在“隐私”标签上铸造你的余额。
-&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>What is a Masternode?</source>
+        <translation>主节点是什么？</translation>
     </message>
     <message>
-        <source>7</source>
-        <translation>7</translation>
+        <source>What is a Masternode Controller?</source>
+        <translation>什么是主节点控制器？</translation>
     </message>
     <message>
-        <source>How do I stake PGO/zPGO?</source>
-        <translation>我怎么加注PGO/zPGO?</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           To Stake PENGOLINCOIN:
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           &lt;ol&gt;&lt;li&gt;
-                           Make sure your wallet is completely synchronized and you are using the latest release.
-                           &lt;li&gt;
-                           You must have a balance of PENGOLINCOIN with a minimum of 21 confirmations.
-                           &lt;li&gt;
-                           Your wallet must stay online and be unlocked for anonymization and staking purposes.
-                           &lt;li&gt;
-                           Once all those steps are followed staking should be enabled.
-                           &lt;li&gt;
-                           You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state "Staking Enabled" to indicate it is staking.  Using the command line interface (pengolincoin-cli); the command &lt;i&gt;getstakingstatus&lt;/i&gt; will confirm that staking is active.
-                           &lt;/li&gt;&lt;/ol&gt;
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           To Stake zPGO:
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           &lt;ol&gt;&lt;li&gt;
-                           Make sure your wallet is completely synchronized and you are using the latest release.
-                           &lt;li&gt;
-                           Your newly minted or existing zPGO balance must have a minimum of 200 confirmations.
-                           &lt;li&gt;
-                           Your wallet must stay online and be unlocked for anonymization and staking purposes.
-                           Staking should now be enabled.
-                           &lt;/li&gt;&lt;/ol&gt;
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-加注PENGOLINCOIN:
-&lt;/p&gt;&lt;p align="justify"&gt;
-&lt;ol&gt;&lt;li&gt;
-确保你的钱包是完全同步的，且使用最新版本。
-&lt;li&gt;
-您必须有至少101个确认的PENGOLINCOIN余额。
-&lt;li&gt;
-你的钱包必须在线，并为匿名和加注的目的被解锁。
-&lt;li&gt;
-一旦所有这些步骤都遵循了，应该就可以启用加注
-&lt;li&gt;
-您可以通过将鼠标移到钱包界面左上角的行中的package图标上来查看在钱包中进行标记的状态。被点亮，并将状态“Staking启用”，以表明它是加注状态。使用命令行接口(pengolincoin-cli);命令getstakingstatus将确认加注是活跃状态。
-&lt;/li&gt;&lt;/ol&gt;
-&lt;/p&gt;&lt;p align="justify"&gt;
-加注zPGO:&lt;/p&gt;&lt;p align="justify"&gt;
-&lt;ol&gt;&lt;li&gt;
-确保你的钱包是完全同步的，且使用最新版本
-&lt;li&gt;
-您新创建的或现有的zPGO余额必须至少有200个确认。
-&lt;li&gt;
-我们的钱包必须在线，并为匿名和加注的目的被解锁。
-加注现在应该是启用状态了。
-&lt;/li&gt;&lt;/ol&gt;
-&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>8</source>
-        <translation>8</translation>
-    </message>
-    <message>
-        <source>Where I should go if I need support?</source>
-        <translation>该到哪里寻求帮助？</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #88edff' href='https://Discord.pengolincoin.xyz'&gt;
-                           #support in our Discord&lt;/a&gt;.
-                           If you prefer to submit a ticket, One can be
-                           &lt;a style='color: #88edff' href='https://PENGOLINCOIN.FreshDesk.com'&gt;
-                           our Freshdesk support site&lt;/a&gt;.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-例如，我们在大多数官方聊天组中都有支持频道
-&lt;a style='color: #88edff' href='https://Discord.pengolincoin.xyz'&gt;
-#在&lt;/a&gt;Discord支持我们
-如果您想订票&lt;a style='color: #88edff' href='https://PENGOLINCOIN.FreshDesk.com'&gt;，我们可以为您提供前台支持&lt;/a&gt;
-&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>9</source>
-        <translation>9</translation>
-    </message>
-    <message>
-        <source>What is a Master Node?</source>
-        <translation>什么是主节点？</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the 100,000 PGO collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet(s) and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;主节点控制器钱包是控制器-远程主节点建立期间100,000 PGO抵押可以驻留的地方。这是一个可以激活远程主节点钱包(s)的钱包，可以让你的抵押币离线但远程主节点保持在线。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>
@@ -4460,7 +3598,7 @@ PENGOLINCOIN零币(zPGO)技术文件
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
 主节点是运行完整节点PENGOLINCOIN核心钱包的计算机
-需要10,000个PGO作抵押以提供额外服务
+需要100,000个PGO作抵押以提供额外服务
 到网络，会收到一部分的区块奖励作为定期
 回报
 这些服务包括:
@@ -4502,18 +3640,6 @@ PENGOLINCOIN零币(zPGO)技术文件
 </translation>
     </message>
     <message>
-        <source>10</source>
-        <translation>10</translation>
-    </message>
-    <message>
-        <source>What is a Master Node Controller?</source>
-        <translation>什么是主节点控制器？</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the 100,000 PGO collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet/s and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;主节点控制器钱包是在控制器-远程主节点设置期间100,000 PGO附属品可以驻留的地方。这是一个可以激活远程主节点钱包的钱包/s，远程主节点保持在线的时候，可以让你的抵押品硬币离线。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Frequently Asked Questions</source>
         <translation>常见问题</translation>
     </message>
@@ -4521,20 +3647,12 @@ PENGOLINCOIN零币(zPGO)技术文件
         <source>You can read more here</source>
         <translation>查看这里了解更多内容</translation>
     </message>
-    <message>
-        <source>Exit</source>
-        <translation>退出</translation>
-    </message>
 </context>
 <context>
     <name>SettingsInformationWidget</name>
     <message>
         <source>Form</source>
         <translation>来自</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
     </message>
     <message>
         <source>Network Monitor</source>
@@ -4549,24 +3667,48 @@ PENGOLINCOIN零币(zPGO)技术文件
         <translation>总的</translation>
     </message>
     <message>
-        <source>Client Version: </source>
-        <translation>客户端版本：</translation>
+        <source>Client Version:</source>
+        <translation>客户版本：</translation>
+    </message>
+    <message>
+        <source>BerkeleyDB version:</source>
+        <translation>BerkeleyDB版本：</translation>
+    </message>
+    <message>
+        <source>Datadir:</source>
+        <translation>数据dir:</translation>
+    </message>
+    <message>
+        <source>Startup time:</source>
+        <translation>启动时间：</translation>
+    </message>
+    <message>
+        <source>Connections:</source>
+        <translation>连接：</translation>
+    </message>
+    <message>
+        <source>Number of Masternodes:</source>
+        <translation>主节点数量：</translation>
+    </message>
+    <message>
+        <source>Current number of blocks:</source>
+        <translation>当前区块数量：</translation>
+    </message>
+    <message>
+        <source>Last block time:</source>
+        <translation>上一个区块时间：</translation>
+    </message>
+    <message>
+        <source>Last block hash:</source>
+        <translation>上一个区块哈希：</translation>
+    </message>
+    <message>
+        <source>Current number of transactions:</source>
+        <translation>当前交易数量：</translation>
     </message>
     <message>
         <source>User Agent:</source>
         <translation>客户端代理：</translation>
-    </message>
-    <message>
-        <source>Using BerkeleyDB version:</source>
-        <translation>使用BerkeleyDB 版本</translation>
-    </message>
-    <message>
-        <source>Datadir: </source>
-        <translation>数据目录:</translation>
-    </message>
-    <message>
-        <source>Startup Time:  </source>
-        <translation>开始时间：</translation>
     </message>
     <message>
         <source>Network</source>
@@ -4577,28 +3719,12 @@ PENGOLINCOIN零币(zPGO)技术文件
         <translation>名称：</translation>
     </message>
     <message>
-        <source>Number Connections:</source>
-        <translation>连接数量：</translation>
-    </message>
-    <message>
         <source>Blockchain</source>
         <translation>区块链</translation>
     </message>
     <message>
-        <source>Current Number of Blocks:</source>
-        <translation>当前区块数量：</translation>
-    </message>
-    <message>
-        <source>Last Block Time:</source>
-        <translation>上一个区块时间：</translation>
-    </message>
-    <message>
         <source>Memory Pool</source>
         <translation>记忆工具</translation>
-    </message>
-    <message>
-        <source>Current Number of Transactions:</source>
-        <translation>当前交易数量：</translation>
     </message>
     <message>
         <source>Main</source>
@@ -4632,16 +3758,12 @@ PENGOLINCOIN零币(zPGO)技术文件
         <source>Out:</source>
         <translation>出：</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>SettingsMainOptionsWidget</name>
     <message>
         <source>Form</source>
         <translation>来自</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
     </message>
     <message>
         <source>Window</source>
@@ -4650,10 +3772,6 @@ PENGOLINCOIN零币(zPGO)技术文件
     <message>
         <source>Customize the application window options</source>
         <translation>自定义应用视图选项</translation>
-    </message>
-    <message>
-        <source>CheckBox</source>
-        <translation>查看列表</translation>
     </message>
     <message>
         <source>Reset to default</source>
@@ -4737,12 +3855,12 @@ Are you sure?
         <translation>多重发送新接收人</translation>
     </message>
     <message>
-        <source>Label (optional)</source>
-        <translation>标签（可选）</translation>
+        <source>Address Label (optional)</source>
+        <translation>地址标签（可选项）</translation>
     </message>
     <message>
-        <source>Enter a label to add this address in your address book</source>
-        <translation>输入此地址的标签，将其添加到您的地址列表中</translation>
+        <source>Enter label to be saved with this address</source>
+        <translation>输入要用此地址保存的标签</translation>
     </message>
     <message>
         <source>Percentage</source>
@@ -4760,8 +3878,8 @@ Are you sure?
         <translation>文本标签</translation>
     </message>
     <message>
-        <source>No active Master Node yet</source>
-        <translation>暂无活跃主节点</translation>
+        <source>N/A</source>
+        <translation>N/A</translation>
     </message>
     <message>
         <source>CheckBox</source>
@@ -4800,12 +3918,20 @@ Are you sure?
         <translation>清除所有</translation>
     </message>
     <message>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation>无法进行操作，钱包被锁了</translation>
+    </message>
+    <message>
         <source>Clear succeed</source>
         <translation>清除成功</translation>
     </message>
     <message>
         <source>Clear all failed, could not locate address in wallet file</source>
         <translation>清除所有失败，无法找到钱包文件中的地址</translation>
+    </message>
+    <message>
+        <source>Cannot add multisend recipient, wallet locked</source>
+        <translation>无法添加多重发送接收人，钱包被锁了</translation>
     </message>
     <message>
         <source>The entered address: %1 is invalid.
@@ -4845,7 +3971,7 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
     </message>
     <message>
         <source>MultiSend deactivated but writing settings to DB failed</source>
-        <translation>输出发送未激活，但设置写入DB失败</translation>
+        <translation>多重发送未激活，但设置写入DB失败</translation>
     </message>
     <message>
         <source>MultiSend deactivated</source>
@@ -4859,28 +3985,8 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>来自</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>明确</translation>
-    </message>
-    <message>
         <source>Sign/Verify Message</source>
         <translation>签署/验证消息</translation>
-    </message>
-    <message>
-        <source>Enter a PENGOLINCOIN address or contact label</source>
-        <translation>输入PENGOLINCOIN地址或联系人标签</translation>
-    </message>
-    <message>
-        <source>Add address</source>
-        <translation>添加地址</translation>
     </message>
     <message>
         <source>Sign</source>
@@ -4899,8 +4005,12 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>消息 </translation>
     </message>
     <message>
-        <source>Write a message</source>
-        <translation>写入信息</translation>
+        <source>PENGOLINCOIN address or contact label</source>
+        <translation>PENGOLINCOIN 地址或者联系人标签</translation>
+    </message>
+    <message>
+        <source>Enter address</source>
+        <translation>输入地址</translation>
     </message>
     <message>
         <source>Signature</source>
@@ -4986,18 +4096,6 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>来自</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
-        <source>CheckBox</source>
-        <translation>查看列表</translation>
-    </message>
-    <message>
-        <source>RadioButton</source>
-        <translation>单选按钮</translation>
-    </message>
-    <message>
         <source>Reset to default</source>
         <translation>重置到默认值</translation>
     </message>
@@ -5006,20 +4104,12 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>放弃更改</translation>
     </message>
     <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
-    </message>
-    <message>
         <source>Wallet</source>
         <translation>钱包</translation>
     </message>
     <message>
         <source>Customize the internal wallet options</source>
         <translation>自定义内部钱包选项</translation>
-    </message>
-    <message>
-        <source>Stake split threshold:</source>
-        <translation>股权分割阈值:</translation>
     </message>
     <message>
         <source>Spend unconfirmed change</source>
@@ -5034,16 +4124,12 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>自定义节点网络选项</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
-        <translation>代理 IP</translation>
+        <source>Enter port</source>
+        <translation>输入端口</translation>
     </message>
     <message>
         <source>Enter proxy IP</source>
         <translation>输入代理 IP</translation>
-    </message>
-    <message>
-        <source>Port:</source>
-        <translation>端口：</translation>
     </message>
     <message>
         <source>Map port using UPnP</source>
@@ -5052,10 +4138,6 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
     <message>
         <source>Allow incoming connections</source>
         <translation>允许进来的连接</translation>
-    </message>
-    <message>
-        <source>Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>使用SOCKS5代理（默认代理）：</translation>
     </message>
     <message>
         <source>SAVE</source>
@@ -5073,52 +4155,20 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>来自</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
-    </message>
-    <message>
         <source>Wallet Repair</source>
         <translation>钱包修复</translation>
-    </message>
-    <message>
-        <source>The buttons below will restart the wallet with command-line options to repair this wallet, fix issues with corrupt blockchain files or missing/obsolete transactions.</source>
-        <translation>下面的按钮将用命令行选项重新启动钱包来修复这个钱包，修复损坏的区块链文件或丢失/过时的交易。</translation>
-    </message>
-    <message>
-        <source>Attempt to recover private keys from a corrupt wallet.dat.</source>
-        <translation>尝试从损坏的钱包中恢复私钥。</translation>
-    </message>
-    <message>
-        <source>Rescan the blockchain for missing wallet transactions.</source>
-        <translation>重新扫描区块链以查找丢失的钱包交易。</translation>
-    </message>
-    <message>
-        <source>Recover transactions from blockchain (keep-meta-data, e.g. account owner).</source>
-        <translation>从区块链恢复交易(保存元数据，例如帐户所有者)。</translation>
-    </message>
-    <message>
-        <source>Recover transactions from blockchain (drop meta-data).</source>
-        <translation>从区块链恢复交易(删除元数据)。</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format on startup. (Note: this is NOT an update of the wallet itself)</source>
         <translation>启动时将钱包升级到最新格式。(注意:这不是钱包本身的更新)</translation>
     </message>
     <message>
-        <source>Rebuild blockchain index from current blk000???.dat files.</source>
-        <translation>从当前的blk000?? .dat文件重建区块链索引。</translation>
-    </message>
-    <message>
-        <source>Deletes all local blockchain folders so the wallet synchronizes from scratch.</source>
-        <translation>删除所有本地区块链文件夹，使钱包从零开始同步。</translation>
-    </message>
-    <message>
         <source>Salvage wallet</source>
         <translation>Salvage 钱包：</translation>
+    </message>
+    <message>
+        <source>Attempt to recover private keys from a corrupt wallet.dat</source>
+        <translation>试图从损坏的钱包中恢复私钥</translation>
     </message>
     <message>
         <source>Rescan blockchain file</source>
@@ -5139,10 +4189,6 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
     <message>
         <source>Rebuild index</source>
         <translation>重建索引</translation>
-    </message>
-    <message>
-        <source>Delete local blockchain </source>
-        <translation>删除本地区块链</translation>
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
@@ -5172,10 +4218,6 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>来自</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
         <source>Wallet Data</source>
         <translation>钱包数据</translation>
     </message>
@@ -5188,12 +4230,16 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>多重发送</translation>
     </message>
     <message>
+        <source>Export Accounting</source>
+        <translation>导出账单</translation>
+    </message>
+    <message>
         <source>Tools</source>
         <translation>工具</translation>
     </message>
     <message>
         <source>Sign/Verify Message</source>
-        <translation>&lt;div&gt;&lt;/div&gt;</translation>
+        <translation>签署/验证消息</translation>
     </message>
     <message>
         <source>BIP38 Tool</source>
@@ -5340,26 +4386,6 @@ Are you sure?
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>PENGOLINCOIN Core</source>
-        <translation>PENGOLINCOIN Core</translation>
-    </message>
-    <message>
-        <source>Version %1</source>
-        <translation>版本%1</translation>
-    </message>
-    <message>
-        <source>The Bitcoin Core developers</source>
-        <translation>比特币核心开发者</translation>
-    </message>
-    <message>
-        <source>The Dash Core developers</source>
-        <translation>达世币核心开发者</translation>
-    </message>
-    <message>
-        <source>The PENGOLINCOIN Core developers</source>
-        <translation>PENGOLINCOIN 核心开发者</translation>
-    </message>
-    <message>
         <source>[testnet]</source>
         <translation>［测试网］</translation>
     </message>
@@ -5394,14 +4420,6 @@ Are you sure?
         <translation>来自</translation>
     </message>
     <message>
-        <source>480.0685 PGO</source>
-        <translation>480.0685 PGO</translation>
-    </message>
-    <message>
-        <source>1,000 zPGO</source>
-        <translation>1,000 zPGO</translation>
-    </message>
-    <message>
         <source>Available</source>
         <translation>可用</translation>
     </message>
@@ -5410,24 +4428,8 @@ Are you sure?
         <translation>进行当中：</translation>
     </message>
     <message>
-        <source>6.943 PGO</source>
-        <translation>6.943 PGO</translation>
-    </message>
-    <message>
         <source>Immature</source>
         <translation>不成熟</translation>
-    </message>
-    <message>
-        <source>10 PGO</source>
-        <translation>10 PGO</translation>
-    </message>
-    <message>
-        <source>60 zPGO</source>
-        <translation>60 PGO</translation>
-    </message>
-    <message>
-        <source>10 zPGO</source>
-        <translation>10 PGO</translation>
     </message>
     <message>
         <source>Wallet Unlocked for staking</source>
@@ -5442,14 +4444,6 @@ Are you sure?
         <translation>地址已复制</translation>
     </message>
     <message>
-        <source>Automint enabled</source>
-        <translation>自动挖矿可使用</translation>
-    </message>
-    <message>
-        <source>Automint disabled</source>
-        <translation>自动挖矿不可使用</translation>
-    </message>
-    <message>
         <source>Staking active</source>
         <translation>加注激活</translation>
     </message>
@@ -5457,33 +4451,101 @@ Are you sure?
         <source>Staking not active</source>
         <translation>加注没激活</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s)</source>
-        <translation><numerusform>%n激活连接</numerusform></translation>
-    </message>
     <message>
-        <source>Synchronized</source>
-        <translation>已同步</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n小时</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n天</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n周</numerusform></translation>
+        <source>Synchronized - Block: %1</source>
+        <translation>已同步区块：%1</translation>
     </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 和 %2</translation>
     </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n年</numerusform></translation>
+    <message>
+        <source>Wallet Upgrade</source>
+        <translation>钱包升级</translation>
+    </message>
+    <message>
+        <source>Upgrading to HD wallet will improve
+the wallet's reliability and security.
+
+
+NOTE: after the upgrade, a new
+backup will be created.
+</source>
+        <translation>升级到高清钱包将会得到改进
+钱包的可靠性和安全性。
+
+
+注意:升级后，会创建一份新的
+备份。
+</translation>
+    </message>
+    <message>
+        <source>Upgrade Wallet</source>
+        <translation>升级钱包</translation>
+    </message>
+    <message>
+        <source>Wallet unlock cancelled</source>
+        <translation>解锁钱包已取消</translation>
+    </message>
+    <message>
+        <source>Tor Active: %1</source>
+        <translation>Tor 激活: %1</translation>
+    </message>
+    <message>
+        <source>Tor Disabled</source>
+        <translation>Tor 关闭</translation>
+    </message>
+    <message>
+        <source>FAQ</source>
+        <translation>常见问题</translation>
+    </message>
+    <message>
+        <source>Wallet Locked</source>
+        <translation>钱包已锁住</translation>
+    </message>
+    <message>
+        <source>Available (Locked included)</source>
+        <translation>可用状态（包括被锁状态）</translation>
+    </message>
+    <message>
+        <source>The wallet has been successfully upgraded to HD.</source>
+        <translation>钱包已经成功升级到HD。</translation>
+    </message>
+    <message>
+        <source>It is advised to make a backup.</source>
+        <translation>建议备份。</translation>
+    </message>
+    <message>
+        <source>Do you wish to backup now?</source>
+        <translation>想要现在备份吗？</translation>
+    </message>
+    <message>
+        <source>Backup Wallet</source>
+        <translation>返回钱包</translation>
+    </message>
+    <message>
+        <source>Wallet Data (*.dat)</source>
+        <translation>钱包数据(*.dat)</translation>
+    </message>
+    <message>
+        <source>Backup created</source>
+        <translation>返回创建</translation>
+    </message>
+    <message>
+        <source>Backup creation failed</source>
+        <translation>备份创建失败</translation>
+    </message>
+    <message>
+        <source>no file selected</source>
+        <translation>没有选择文件</translation>
+    </message>
+    <message>
+        <source>Wallet upgraded successfully, but no backup created.</source>
+        <translation>钱包升级成功，但没有创建备份。</translation>
+    </message>
+    <message>
+        <source>Upgrade Wallet Error</source>
+        <translation>升级钱包出错</translation>
     </message>
 </context>
 <context>
@@ -5491,189 +4553,6 @@ Are you sure?
     <message>
         <source>KB/s</source>
         <translation>KB/s</translation>
-    </message>
-</context>
-<context>
-    <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>打开%n更多区块</numerusform></translation>
-    </message>
-    <message>
-        <source>Open until %1</source>
-        <translation>直到%1才打开</translation>
-    </message>
-    <message>
-        <source>conflicted</source>
-        <translation>冲突</translation>
-    </message>
-    <message>
-        <source>%1/offline</source>
-        <translation>%1/线下</translation>
-    </message>
-    <message>
-        <source>%1/unconfirmed</source>
-        <translation>%1/未确认</translation>
-    </message>
-    <message>
-        <source>%1 confirmations</source>
-        <translation>%1确认</translation>
-    </message>
-    <message>
-        <source>%1/offline (verified via SwiftX)</source>
-        <translation>%1/线下（通过SwiftX验证）</translation>
-    </message>
-    <message>
-        <source>%1/confirmed (verified via SwiftX)</source>
-        <translation>%1/确认（通过SwiftX验证）</translation>
-    </message>
-    <message>
-        <source>%1 confirmations (verified via SwiftX)</source>
-        <translation>%1/确认（通过SwiftX验证）</translation>
-    </message>
-    <message>
-        <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1/线下（SwiftX验证正在进行当中- %3的%2 签名 ）</translation>
-    </message>
-    <message>
-        <source>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</source>
-        <translation>%1/确认（SwiftX验证正在进行当中- %3的%2 签名 ）</translation>
-    </message>
-    <message>
-        <source>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1/确认（SwiftX验证正在进行当中- %3的%2 签名 ）</translation>
-    </message>
-    <message>
-        <source>%1/offline (SwiftX verification failed)</source>
-        <translation>%1/线下（SwiftX验证失败 ）</translation>
-    </message>
-    <message>
-        <source>%1/confirmed (SwiftX verification failed)</source>
-        <translation>%1/确认（SwiftX验证失败 ）</translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation>状态</translation>
-    </message>
-    <message>
-        <source>, has not been successfully broadcast yet</source>
-        <translation>，尚未成功播出</translation>
-    </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>，通过%n节点广播</numerusform></translation>
-    </message>
-    <message>
-        <source>Date</source>
-        <translation>日期</translation>
-    </message>
-    <message>
-        <source>Source</source>
-        <translation>资源</translation>
-    </message>
-    <message>
-        <source>Generated</source>
-        <translation>已生成</translation>
-    </message>
-    <message>
-        <source>From</source>
-        <translation>从</translation>
-    </message>
-    <message>
-        <source>unknown</source>
-        <translation>未知</translation>
-    </message>
-    <message>
-        <source>To</source>
-        <translation>到</translation>
-    </message>
-    <message>
-        <source>own address</source>
-        <translation>拥有的地址</translation>
-    </message>
-    <message>
-        <source>watch-only</source>
-        <translation>只读</translation>
-    </message>
-    <message>
-        <source>label</source>
-        <translation>标签</translation>
-    </message>
-    <message>
-        <source>Pgo</source>
-        <translation>信用</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>在%n多个块中成熟</numerusform></translation>
-    </message>
-    <message>
-        <source>not accepted</source>
-        <translation>不接受</translation>
-    </message>
-    <message>
-        <source>Debit</source>
-        <translation>借记</translation>
-    </message>
-    <message>
-        <source>Total debit</source>
-        <translation>借记总额</translation>
-    </message>
-    <message>
-        <source>Total pgo</source>
-        <translation>信用总额</translation>
-    </message>
-    <message>
-        <source>Transaction fee</source>
-        <translation>交易费用</translation>
-    </message>
-    <message>
-        <source>Net amount</source>
-        <translation>Net数量</translation>
-    </message>
-    <message>
-        <source>Message</source>
-        <translation>消息 </translation>
-    </message>
-    <message>
-        <source>Comment</source>
-        <translation>评论</translation>
-    </message>
-    <message>
-        <source>Transaction ID</source>
-        <translation>交易 ID</translation>
-    </message>
-    <message>
-        <source>Output index</source>
-        <translation>输出索引</translation>
-    </message>
-    <message>
-        <source>Merchant</source>
-        <translation>商家</translation>
-    </message>
-    <message>
-        <source>Debug information</source>
-        <translation>纠错信息</translation>
-    </message>
-    <message>
-        <source>Transaction</source>
-        <translation>交易</translation>
-    </message>
-    <message>
-        <source>Inputs</source>
-        <translation>输入</translation>
-    </message>
-    <message>
-        <source>Amount</source>
-        <translation>金额</translation>
-    </message>
-    <message>
-        <source>true</source>
-        <translation>是</translation>
-    </message>
-    <message>
-        <source>false</source>
-        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -5690,17 +4569,9 @@ Are you sure?
         <source>Address</source>
         <translation>地址</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>打开%n更多区块</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>直到%1才打开</translation>
-    </message>
-    <message>
-        <source>Offline</source>
-        <translation>线下</translation>
     </message>
     <message>
         <source>Unconfirmed</source>
@@ -5723,10 +4594,6 @@ Are you sure?
         <translation>未完成的(%1确认，将在%2之后可用)</translation>
     </message>
     <message>
-        <source>This block was not received by any other nodes and will probably not be accepted!</source>
-        <translation>此区块未被任何其他节点接收，可能不会被接受!</translation>
-    </message>
-    <message>
         <source>Received with</source>
         <translation>接收</translation>
     </message>
@@ -5739,64 +4606,8 @@ Are you sure?
         <translation>接收</translation>
     </message>
     <message>
-        <source>Received via Obfuscation</source>
-        <translation>模糊接收</translation>
-    </message>
-    <message>
-        <source>PGO Stake</source>
-        <translation>PGO加注</translation>
-    </message>
-    <message>
-        <source>zPGO Stake</source>
-        <translation>zPGO 加注</translation>
-    </message>
-    <message>
-        <source>PGO Cold Stake</source>
-        <translation>PGO冷饮</translation>
-    </message>
-    <message>
-        <source>PGO Stake in behalf of</source>
-        <translation>PGO权益代表</translation>
-    </message>
-    <message>
         <source>Stake delegation</source>
         <translation>股权委托</translation>
-    </message>
-    <message>
-        <source>Obfuscation Denominate</source>
-        <translation>模糊命名</translation>
-    </message>
-    <message>
-        <source>Obfuscation Collateral Payment</source>
-        <translation>模糊担保付款</translation>
-    </message>
-    <message>
-        <source>Obfuscation Make Collateral Inputs</source>
-        <translation>模糊担保输入</translation>
-    </message>
-    <message>
-        <source>Obfuscation Create Denominations</source>
-        <translation>模糊创建命名</translation>
-    </message>
-    <message>
-        <source>Converted PGO to zPGO</source>
-        <translation>转换PGO为zPGO</translation>
-    </message>
-    <message>
-        <source>Spent zPGO</source>
-        <translation>已经花费zPGO</translation>
-    </message>
-    <message>
-        <source>Received PGO from zPGO</source>
-        <translation>从zPGO接收PGO</translation>
-    </message>
-    <message>
-        <source>Minted Change as zPGO from zPGO Spend</source>
-        <translation>铸币的变化，从zPGO花费zPGO</translation>
-    </message>
-    <message>
-        <source>Converted zPGO to PGO</source>
-        <translation>转换PGO为zPGO</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -5811,12 +4622,12 @@ Are you sure?
         <translation>支付给您自己</translation>
     </message>
     <message>
-        <source>Mined</source>
-        <translation>已挖矿</translation>
+        <source>Stake delegation spent by</source>
+        <translation>加注花费委托</translation>
     </message>
     <message>
-        <source>Obfuscated</source>
-        <translation>已模糊</translation>
+        <source>Mined</source>
+        <translation>已挖矿</translation>
     </message>
     <message>
         <source>watch-only</source>
@@ -5870,36 +4681,8 @@ Are you sure?
         <translation>交易明细</translation>
     </message>
     <message>
-        <source>ID:</source>
-        <translation>ID:</translation>
-    </message>
-    <message>
-        <source>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</source>
-        <translation>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</translation>
-    </message>
-    <message>
-        <source>Sending to: </source>
-        <translation>正在发送到：</translation>
-    </message>
-    <message>
-        <source>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
-    </message>
-    <message>
         <source>Total amount</source>
         <translation>总金额</translation>
-    </message>
-    <message>
-        <source>2 PGO</source>
-        <translation>2 PGO</translation>
-    </message>
-    <message>
-        <source>Coin inputs:</source>
-        <translation>币输入：</translation>
-    </message>
-    <message>
-        <source>1 Inputs</source>
-        <translation>1 输入</translation>
     </message>
     <message>
         <source>Previous Transaction</source>
@@ -5910,52 +4693,52 @@ Are you sure?
         <translation>导出索引</translation>
     </message>
     <message>
-        <source>Fee:</source>
-        <translation>费用：</translation>
-    </message>
-    <message>
-        <source>0.0001 PGO</source>
-        <translation>0.0001 PGO</translation>
-    </message>
-    <message>
-        <source>Change address:</source>
-        <translation>更改地址：</translation>
-    </message>
-    <message>
         <source>D7VFR83SQbie…BhjcWJtcfip5krte2Z </source>
         <translation>D7VFR83SQbie…BhjcWJtcfip5krte2Z </translation>
-    </message>
-    <message>
-        <source>Confirmations:</source>
-        <translation>确认：</translation>
-    </message>
-    <message>
-        <source>12</source>
-        <translation>12</translation>
-    </message>
-    <message>
-        <source>Size:</source>
-        <translation>大小：</translation>
-    </message>
-    <message>
-        <source>2 kB</source>
-        <translation>2 kB</translation>
-    </message>
-    <message>
-        <source>Date:</source>
-        <translation>日期：</translation>
     </message>
     <message>
         <source>May 25, 2017</source>
         <translation>2017年5月25</translation>
     </message>
     <message>
-        <source>Status:</source>
-        <translation>状态：</translation>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Sending to</source>
+        <translation>花费</translation>
+    </message>
+    <message>
+        <source>Coin inputs</source>
+        <translation>币输入</translation>
+    </message>
+    <message>
+        <source>Fee</source>
+        <translation>费用</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>大小</translation>
+    </message>
+    <message>
+        <source>Change address</source>
+        <translation>变更地址</translation>
     </message>
     <message>
         <source>Spendable</source>
         <translation>可用</translation>
+    </message>
+    <message>
+        <source>Confirmations</source>
+        <translation>确认</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>状态</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>日期</translation>
     </message>
     <message>
         <source>TextLabel</source>
@@ -5967,7 +4750,7 @@ Are you sure?
     </message>
     <message>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>好的</translation>
     </message>
     <message>
         <source>Confirm Your Transaction</source>
@@ -5993,62 +4776,19 @@ Are you sure?
         <translation>来自</translation>
     </message>
     <message>
-        <source>Received from Bob</source>
-        <translation>从Bob接收</translation>
-    </message>
-    <message>
-        <source>18/05/18</source>
-        <translation>18/05/18</translation>
-    </message>
-    <message>
         <source>+0.000585 PGO</source>
         <translation>+0.000585 PGO</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
         <translation>发送币</translation>
     </message>
-    <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 PGO.</source>
-        <translation>SwiftX目前还不支持发送这么高的值。当前的交易限制为%1 PGO。</translation>
-    </message>
-</context>
-<context>
-    <name>WalletPasswordDialog</name>
-    <message>
-        <source>Dialog</source>
-        <translation>对话框</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
-    </message>
-    <message>
-        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</source>
-        <translation>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>删除</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>OK</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>WelcomeContentWidget</name>
-    <message>
-        <source>Dialog</source>
-        <translation>对话框</translation>
-    </message>
     <message>
         <source>1</source>
         <translation>1</translation>
@@ -6117,54 +4857,7 @@ PENGOLINCOIN核心钱包</translation>
     </message>
 </context>
 <context>
-    <name>ZPgoControlDialog</name>
-    <message>
-        <source>Select zPGO to Spend</source>
-        <translation>选择zPGO 花费</translation>
-    </message>
-    <message>
-        <source>Coin Control</source>
-        <translation>币控制</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
-    </message>
-    <message>
-        <source>zPgo</source>
-        <translation>zPgo</translation>
-    </message>
-    <message>
-        <source>0.00 </source>
-        <translation>0.00</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>数量：</translation>
-    </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>可用</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>Select/Deselect All</source>
-        <translation>选择／删除所有</translation>
-    </message>
-    <message>
-        <source>Select zPGO Denominations to Spend</source>
-        <translation>选择zPGO 面额花费</translation>
-    </message>
-</context>
-<context>
     <name>pengolincoin-core</name>
-    <message>
-        <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
-        <translation>(1 =保留tx元数据，例如帐户所有者和付款请求信息，2 =删除tx元数据)</translation>
-    </message>
     <message>
         <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
         <translation>允许来自指定源的JSON-RPC连接。适用于&lt;ip&gt;单一IP(如1.2.3.4)、网络/网掩码(如1.2.3.4/255.255.255.0)或网络/CIDR(如1.2.3.4/24)。可以多次指定此选项</translation>
@@ -6180,10 +4873,6 @@ PENGOLINCOIN核心钱包</translation>
     <message>
         <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
         <translation>绑定到给定地址监听JSON-RPC连接。使用[主机]: IPv6的端口符号。可以多次指定此选项(默认:绑定到所有接口)</translation>
-    </message>
-    <message>
-        <source>Calculated accumulator checkpoint is not what is recorded by block index</source>
-        <translation>计算累加器检查点并不是块索引记录的内容</translation>
     </message>
     <message>
         <source>Cannot obtain a lock on data directory %s. PENGOLINCOIN Core is probably already running.</source>
@@ -6206,32 +4895,12 @@ PENGOLINCOIN核心钱包</translation>
         <translation>删除所有钱包交易，只恢复那些部分的区块链-通过启动时进行重新扫描</translation>
     </message>
     <message>
-        <source>Delete all zerocoin spends and mints that have been recorded to the blockchain database and reindex them (0-1, default: %u)</source>
-        <translation>删除所有已记录到区块链数据库的零币花费和铸造，并重新索引它们(0-1，默认值:%u)</translation>
-    </message>
-    <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
         <translation>在MIT软件许可下发布，参见附带的文件复制或&lt;http://www.opensource.org/licenses/mit-license.php&gt;。</translation>
     </message>
     <message>
-        <source>Enable automatic Zerocoin minting from specific addresses (0-1, default: %u)</source>
-        <translation>启用从特定地址自动生成零币(0-1，默认:%u)</translation>
-    </message>
-    <message>
-        <source>Enable automatic wallet backups triggered after each zPGO minting (0-1, default: %u)</source>
-        <translation>启用每次zPGO生成后触发的自动钱包备份(0-1，默认值:%u)</translation>
-    </message>
-    <message>
         <source>Enable cold staking functionality (0-1, default: %u). Disabled if staking=0</source>
         <translation>启用冷堆叠（0-1，默认值：%u）。 如果累计= 0，则禁用</translation>
-    </message>
-    <message>
-        <source>Enable or disable staking functionality for PGO inputs (0-1, default: %u)</source>
-        <translation>启用或禁用PGO输入标记功能(0-1，默认值:%u)</translation>
-    </message>
-    <message>
-        <source>Enable or disable staking functionality for zPGO inputs (0-1, default: %u)</source>
-        <translation>启用或禁用zPGO输入的标记功能(0-1，默认值:%u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -6246,12 +4915,12 @@ PENGOLINCOIN核心钱包</translation>
         <translation>错误:监听传入连接失败(监听返回错误%s)</translation>
     </message>
     <message>
-        <source>Error: The transaction is larger than the maximum allowed transaction size!</source>
-        <translation>错误:交易大于交易最大限制值!</translation>
-    </message>
-    <message>
         <source>Error: Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
         <translation>错误:发现不支持的参数-socks。设置SOCKS版本已经不可能了，只支持SOCKS5代理。</translation>
+    </message>
+    <message>
+        <source>Exclude debugging information for a category. Can be used in conjunction with -debug=1 to output debug logs for all categories except one or more specified categories.</source>
+        <translation>排除调试信息类别。可以与-debug=1一起使用，输出一个或多个指定类别外的所有类别的调试日志。</translation>
     </message>
     <message>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
@@ -6266,14 +4935,6 @@ PENGOLINCOIN核心钱包</translation>
         <translation>当最佳区块更改时执行命令(cmd中的%s被块散列替换)</translation>
     </message>
     <message>
-        <source>Fees (in PGO/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>小于此值的费用(以PGO/Kb为单位)视为零中继费用(默认值:%s)</translation>
-    </message>
-    <message>
-        <source>Fees (in PGO/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>小于此值的费用(以PGO/Kb为单位)被认为是交易创建的零费用(默认值:%s)</translation>
-    </message>
-    <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation>每&lt;n&gt;兆字节将数据库活动从内存池刷新到磁盘日志(默认:%u)</translation>
     </message>
@@ -6286,16 +4947,8 @@ PENGOLINCOIN核心钱包</translation>
         <translation>在这种模式下，genproclimit控制立即生成的区块的数量。</translation>
     </message>
     <message>
-        <source>Insufficient or insufficient confirmed funds, you might need to wait a few minutes and try again.</source>
-        <translation>资金不足或确认资金不足，您可能需要等待几分钟，然后再试一次。</translation>
-    </message>
-    <message>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
         <translation>最大tx费用金额无效=&lt;amount&gt;:'%s'(必须至少是%s的最小中继费用，以防止交易中断)</translation>
-    </message>
-    <message>
-        <source>Keep the specified amount available for spending at all times (default: 0)</source>
-        <translation>始终保留指定的支出金额(默认值:0)</translation>
     </message>
     <message>
         <source>Log transaction priority and fee per kB when mining blocks (default: %u)</source>
@@ -6326,16 +4979,8 @@ PENGOLINCOIN核心钱包</translation>
         <translation>防止行为不端的节点重新连接的秒数(默认值:%u)</translation>
     </message>
     <message>
-        <source>Obfuscation uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
-        <translation>模糊使用精确的金额来发送资金，你可能只需要匿名化更多的币即可。</translation>
-    </message>
-    <message>
         <source>Output debugging information (default: %u, supplying &lt;category&gt; is optional)</source>
         <translation>输出调试信息(默认:%u，&lt;category&gt;可选提供)</translation>
-    </message>
-    <message>
-        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
-        <translation>如果地址为低值的话，通过DNS查询端口地址(默认:1除非-连接)</translation>
     </message>
     <message>
         <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
@@ -6354,20 +4999,12 @@ PENGOLINCOIN核心钱包</translation>
         <translation>设置高优先级/低费用交易的最大值字节大小(默认:%d)</translation>
     </message>
     <message>
-        <source>Set the number of included blocks to precompute per cycle. (minimum: %d) (maximum: %d) (default: %d)</source>
-        <translation>将包含的区块的数量设置为每个循环预计算。(最小值:%d)(最大值:%d)(默认值:%d)</translation>
-    </message>
-    <message>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
         <translation>设置脚本验证线程的数量(%u为%d, 0 = 自动， &lt;0 =保留多个内核空闲，默认为%d)</translation>
     </message>
     <message>
         <source>Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)</source>
         <translation>如果启用，设置生成硬币的线程数(-1 =所有核心，默认:%d)</translation>
-    </message>
-    <message>
-        <source>Show N confirmations for a successfully locked transaction (0-9999, default: %u)</source>
-        <translation>显示一个成功锁定的交易的N个确认(0-9999，默认值:%u)</translation>
     </message>
     <message>
         <source>Support filtering of blocks and transaction with bloom filters (default: %u)</source>
@@ -6390,18 +5027,6 @@ PENGOLINCOIN核心钱包</translation>
         <translation>无法绑定到此计算机上的%s。PENGOLINCOIN核心可能已经在运行了。</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
-        <translation>无法为这笔交易找到足够的模糊基金。</translation>
-    </message>
-    <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 100000 PGO.</source>
-        <translation>无法找到不等于100000 PGO的模糊非计价基金来进行这笔交易。</translation>
-    </message>
-    <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 100000 PGO.</source>
-        <translation>无法为这次交易找到不等于100000 PGO的足够资金。</translation>
-    </message>
-    <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
         <translation>使用单独的SOCKS5代理通过Tor隐藏服务(默认:%s)到达节点</translation>
     </message>
@@ -6412,10 +5037,6 @@ PENGOLINCOIN核心钱包</translation>
     <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>警告:-支付tx费用设置的非常高!这是您发送交易时要支付的交易费。</translation>
-    </message>
-    <message>
-        <source>Warning: Peers are being disconnected due time differences. Please check that your computer's date and time are correct! If your clock is wrong PENGOLINCOIN Core will not work properly.</source>
-        <translation>警告：由于时差，对等连接已断开。 请检查计算机的日期和时间是否正确！ 如果您的时钟错误，PENGOLINCOIN Core将无法正常工作。</translation>
     </message>
     <message>
         <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong PENGOLINCOIN Core will not work properly.</source>
@@ -6430,14 +5051,6 @@ PENGOLINCOIN核心钱包</translation>
         <translation>警告:我们似乎不完全同意我们端口!您可能需要升级，或者其他节点可能需要升级。</translation>
     </message>
     <message>
-        <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
-        <translation>警告:读取钱包出错。所有键都正确读取，但交易数据或地址簿项可能丢失或不正确。</translation>
-    </message>
-    <message>
-        <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
-        <translation>注意：wallet.dat损坏，请恢复数据！原始wallet.dat保存为钱包。{timestamp} .bak in %s; 如果您的余额或交易不正确，您应该从备份还原。</translation>
-    </message>
-    <message>
         <source>Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</source>
         <translation>从给定的网络掩码或IP地址连接的白名单端口。可以多次指定。</translation>
     </message>
@@ -6446,32 +5059,12 @@ PENGOLINCOIN核心钱包</translation>
         <translation>白名单的端口不能被DoS禁止，它们的交易一直被中继，即使它们已经在内存池里面，这对网关很有用</translation>
     </message>
     <message>
-        <source>You must specify a masternodeprivkey in the configuration. Please see documentation for help.</source>
-        <translation>您必须在配置中指定一个主节点privkey。有关帮助，请参阅文档。</translation>
-    </message>
-    <message>
-        <source>(33001 could be used only on mainnet)</source>
-        <translation>(51472只可在网上使用)</translation>
-    </message>
-    <message>
         <source>(default: %s)</source>
         <translation>(默认: %s)</translation>
     </message>
     <message>
-        <source>(default: 1)</source>
-        <translation>(默认: 1)</translation>
-    </message>
-    <message>
-        <source>(must be 33001 for mainnet)</source>
-        <translation>(主网必须为51472)</translation>
-    </message>
-    <message>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>接受命令行和JSON-RPC命令</translation>
-    </message>
-    <message>
-        <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
-        <translation>接受外部连接(如果没有-proxy或-connect，默认为1)</translation>
     </message>
     <message>
         <source>Accept public REST requests (default: %u)</source>
@@ -6482,14 +5075,6 @@ PENGOLINCOIN核心钱包</translation>
         <translation>添加要连接的节点并尝试保持连接打开</translation>
     </message>
     <message>
-        <source>Adding Wrapped Serials supply...</source>
-        <translation>添加包装的串行供应…</translation>
-    </message>
-    <message>
-        <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
-        <translation>允许DNS查找-addnode， -seednode和-connect</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>始终通过DNS查询端口地址(默认:%u)</translation>
     </message>
@@ -6498,44 +5083,12 @@ PENGOLINCOIN核心钱包</translation>
         <translation>将注释附加到用户代理字符串</translation>
     </message>
     <message>
-        <source>Attempt to recover private keys from a corrupt wallet.dat</source>
-        <translation>试图从损坏的钱包中恢复私钥</translation>
-    </message>
-    <message>
         <source>Automatically create Tor hidden service (default: %d)</source>
         <translation>自动创建Tor隐藏服务(默认:%d)</translation>
     </message>
     <message>
         <source>Block creation options:</source>
         <translation>区块创建选项:</translation>
-    </message>
-    <message>
-        <source>Calculating missing accumulators...</source>
-        <translation>计算漏掉的计算器……</translation>
-    </message>
-    <message>
-        <source>Cannot downgrade wallet</source>
-        <translation>不能降级钱包</translation>
-    </message>
-    <message>
-        <source>Cannot resolve -bind address: '%s'</source>
-        <translation>无法解析-绑定地址:'%s'</translation>
-    </message>
-    <message>
-        <source>Cannot resolve -externalip address: '%s'</source>
-        <translation>无法解析-外部地址:'%s'</translation>
-    </message>
-    <message>
-        <source>Cannot resolve -whitebind address: '%s'</source>
-        <translation>无法解析-空白地址:'%s</translation>
-    </message>
-    <message>
-        <source>CoinSpend: failed check</source>
-        <translation>币花费:检查失败</translation>
-    </message>
-    <message>
-        <source>Connect only to the specified node(s)</source>
-        <translation>只连接到指定的节点（）</translation>
     </message>
     <message>
         <source>Connect through SOCKS5 proxy</source>
@@ -6570,10 +5123,6 @@ PENGOLINCOIN核心钱包</translation>
         <translation>无法解析主节点配置</translation>
     </message>
     <message>
-        <source>Couldn't generate the accumulator witness</source>
-        <translation>无法生成累加器见证</translation>
-    </message>
-    <message>
         <source>Debugging/Testing options:</source>
         <translation>调试/测试选项:</translation>
     </message>
@@ -6584,10 +5133,6 @@ PENGOLINCOIN核心钱包</translation>
     <message>
         <source>Disable OS notifications for incoming transactions (default: %u)</source>
         <translation>禁用OS交易通知(默认:%u)</translation>
-    </message>
-    <message>
-        <source>Disable safemode, override a real safe mode event (default: %u)</source>
-        <translation>禁用安全模式，覆盖一个真正的安全模式事件(默认:%u)</translation>
     </message>
     <message>
         <source>Discover own IP address (default: 1 when listening and no -externalip)</source>
@@ -6606,22 +5151,6 @@ PENGOLINCOIN核心钱包</translation>
         <translation>下载完成</translation>
     </message>
     <message>
-        <source>Enable automatic Zerocoin minting (0-1, default: %u)</source>
-        <translation>启用自动零币铸造(0-1，默认:%u)</translation>
-    </message>
-    <message>
-        <source>Enable precomputation of zPGO spends and stakes (0-1, default %u)</source>
-        <translation>启用预先计算zPGO的花费和加注(0-1，默认%u)</translation>
-    </message>
-    <message>
-        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
-        <translation>启用&lt;address&gt;发布哈希交易(通过SwiftX锁定)</translation>
-    </message>
-    <message>
-        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
-        <translation>启用&lt;address&gt;发布原始交易(通过SwiftX锁定)</translation>
-    </message>
-    <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
         <translation>允许客户端充当主节点(0-1，默认值:%u)</translation>
     </message>
@@ -6630,24 +5159,8 @@ PENGOLINCOIN核心钱包</translation>
         <translation>初始化区块数据库出错</translation>
     </message>
     <message>
-        <source>Error initializing wallet database environment %s!</source>
-        <translation>初始化钱包数据库环境%s出错!</translation>
-    </message>
-    <message>
         <source>Error loading block database</source>
         <translation>加载区块数据库出错</translation>
-    </message>
-    <message>
-        <source>Error loading wallet.dat</source>
-        <translation>加载钱包.dat错误</translation>
-    </message>
-    <message>
-        <source>Error loading wallet.dat: Wallet corrupted</source>
-        <translation>加载钱包出错。dat:钱包损坏</translation>
-    </message>
-    <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of PENGOLINCOIN Core</source>
-        <translation>加载的钱包出错。dat: 钱包需要更新版本的PENGOLINCOIN核心</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -6656,10 +5169,6 @@ PENGOLINCOIN核心钱包</translation>
     <message>
         <source>Error reading from database, shutting down.</source>
         <translation>数据库读取出错，正在关闭。</translation>
-    </message>
-    <message>
-        <source>Error writing zerocoinDB to disk</source>
-        <translation>零币编码写入磁盘出错</translation>
     </message>
     <message>
         <source>Error</source>
@@ -6678,28 +5187,12 @@ PENGOLINCOIN核心钱包</translation>
         <translation>误:发现不支持的参数-tor，使用-onion。</translation>
     </message>
     <message>
-        <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>错误:钱包锁定，无法创建交易!</translation>
-    </message>
-    <message>
-        <source>Failed to calculate accumulator checkpoint</source>
-        <translation>计算累加器检查点失败</translation>
-    </message>
-    <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>监听任何端口失败。使用-listen=0即可。</translation>
     </message>
     <message>
         <source>Failed to parse host:port string</source>
         <translation>未能解析:主机端口字符串</translation>
-    </message>
-    <message>
-        <source>Failed to read block</source>
-        <translation>读取区块失败</translation>
-    </message>
-    <message>
-        <source>Fee (in PGO/kB) to add to transactions you send (default: %s)</source>
-        <translation>将费用(以PGO/kB为单位)添加到您发送的交易中(默认:%s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
@@ -6742,10 +5235,6 @@ PENGOLINCOIN核心钱包</translation>
         <translation>初始化完整性检查失败。PENGOLINCOIN核心快要关闭了。</translation>
     </message>
     <message>
-        <source>Insufficient funds</source>
-        <translation>资金不足</translation>
-    </message>
-    <message>
         <source>Insufficient funds.</source>
         <translation>资金不足</translation>
     </message>
@@ -6754,120 +5243,16 @@ PENGOLINCOIN核心钱包</translation>
         <translation>无效的-洋葱地址或主机名:'%s'</translation>
     </message>
     <message>
-        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s'</source>
-        <translation>-tx费用最大值fee的无效金额=:'%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -minrelaytxfee=&lt;amount&gt;: '%s'</source>
-        <translation>-最小延时费用的无效金额=&lt;amount&gt;:'%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -mintxfee=&lt;amount&gt;: '%s'</source>
-        <translation>-最小tx费用的无效金额=:'%s'</translation>
-    </message>
-    <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s' (must be at least %s)</source>
         <translation>支付tx费用金额无效=:'&lt;amount&gt;%s'(必须至少是%s)</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
-        <translation>支付tx金额无效=:'&lt;amount&gt;'%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -reservebalance=&lt;amount&gt;</source>
-        <translation>储蓄金额无效＝&lt;amount&gt;</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>金额无效</translation>
-    </message>
-    <message>
-        <source>Invalid masternodeprivkey. Please see documenation.</source>
-        <translation>主节点私钥无效。请参阅文件。</translation>
     </message>
     <message>
         <source>Invalid netmask specified in -whitelist: '%s'</source>
         <translation>白名单中指定的无效网络掩码:'%s'</translation>
     </message>
     <message>
-        <source>Invalid port detected in masternode.conf</source>
-        <translation>在masternode.conf中检测到无效端口</translation>
-    </message>
-    <message>
-        <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
-        <translation>自动铸造零币的百分比(1-100，默认:%u)</translation>
-    </message>
-    <message>
-        <source>Recalculating PGO supply...</source>
-        <translation>重新计算PGO供应量……</translation>
-    </message>
-    <message>
-        <source>Recalculating minted ZPGO...</source>
-        <translation>重新计算铸造ZPGO……</translation>
-    </message>
-    <message>
-        <source>Recalculating spent ZPGO...</source>
-        <translation>重新计算ZPGO……</translation>
-    </message>
-    <message>
-        <source>Reindex the PGO and zPGO money supply statistics</source>
-        <translation>重新索引PGO和zPGO货币供应统计数据</translation>
-    </message>
-    <message>
-        <source>Reindexing zerocoin database...</source>
-        <translation>重新索引零币数据库。</translation>
-    </message>
-    <message>
-        <source>Reindexing zerocoin failed</source>
-        <translation>重建索引零币失败</translation>
-    </message>
-    <message>
-        <source>Selected coins value is less than payment target</source>
-        <translation>所选择币价值低于支付目标金额</translation>
-    </message>
-    <message>
-        <source>Support the zerocoin light node protocol (default: %u)</source>
-        <translation>支持零币轻节点协议(默认:%u)</translation>
-    </message>
-    <message>
-        <source>SwiftX options:</source>
-        <translation>SwiftX 选项：</translation>
-    </message>
-    <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
         <translation>这是一个预发行测试版本 - 您自己承担风险 - 不要用于商业应用！</translation>
-    </message>
-    <message>
-        <source> mints deleted
-</source>
-        <translation>铸造已删除
-</translation>
-    </message>
-    <message>
-        <source> mints updated, </source>
-        <translation>铸造已更新</translation>
-    </message>
-    <message>
-        <source> unconfirmed transactions removed
-</source>
-        <translation>未确认交易已经移除
-</translation>
-    </message>
-    <message>
-        <source>Disable all PENGOLINCOIN specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>禁用所有PENGOLINCOIN特定功能(主节点, 零币, SwiftX, budget)(0-1，默认值:%u)</translation>
-    </message>
-    <message>
-        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>启用SwiftX，显示锁定交易的确认(bool，默认值:%s)</translation>
-    </message>
-    <message>
-        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>错误:交易被拒绝!如果你钱包里的硬币已经花掉了，比如你用了复制钱包，那么这种情况就会发生。</translation>
-    </message>
-    <message>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
-        <translation>错误:此交易需要至少%s的交易费用，因为其数额，复杂性，或使用最近收到的资金!</translation>
     </message>
     <message>
         <source>Error: Unsupported argument -checklevel found. Checklevel must be level 4.</source>
@@ -6878,28 +5263,8 @@ PENGOLINCOIN核心钱包</translation>
         <translation>当最佳区块发生变化且大小超过时执行命令(cmd中的%s被替换为区块散列，%d是区块大小)</translation>
     </message>
     <message>
-        <source>Failed to find coin set amongst held coins with less than maxNumber of Spends</source>
-        <translation>在持有的币中找到小于最大花费数的币集失败</translation>
-    </message>
-    <message>
-        <source>In rare cases, a spend with 7 coins exceeds our maximum allowable transaction size, please retry spend using 6 or less coins</source>
-        <translation>在极少数情况下，7个硬币的花费超过了我们的最大允许交易大小，请重试使用6个或更少的硬币</translation>
-    </message>
-    <message>
-        <source>Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)</source>
-        <translation>自动铸造零币的首选面额(1/5/10/50/100/500/1000/5000)，0为无偏好。默认值: %u)</translation>
-    </message>
-    <message>
-        <source>Specify custom backup path to add a copy of any automatic zPGO backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>指定自定义备份路径，以添加任何自动zPGO备份的副本。如果将其设置为dir，则每个备份将生成一个时间戳文件。如果设置为文件，将重写到该文件的每次备份。如果还设置了备份文件，则会进行4次备份</translation>
-    </message>
-    <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
         <translation>指定自定义备份路径去添加任何钱包备份的副本。如果将其设置为dir，则每个备份将生成一个时间戳文件。如果设置为文件，将重写到每次备份的该文件</translation>
-    </message>
-    <message>
-        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>SwiftX要求输入至少6个确认，您可能需要等待几分钟，然后重试。</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
@@ -6908,14 +5273,6 @@ PENGOLINCOIN核心钱包</translation>
     <message>
         <source>Attempt to force blockchain corruption recovery</source>
         <translation>尝试强制区块链腐败恢复</translation>
-    </message>
-    <message>
-        <source>Cannot create public spend input</source>
-        <translation>不能创造公共花费投入</translation>
-    </message>
-    <message>
-        <source>CoinSpend: Accumulator witness does not verify</source>
-        <translation>投币:累加器见证不验证</translation>
     </message>
     <message>
         <source>Display the stake modifier calculations in the debug.log file.</source>
@@ -6950,40 +5307,12 @@ PENGOLINCOIN核心钱包</translation>
         <translation>错误:出现一个致命的内部错误，详情请参阅debug.log</translation>
     </message>
     <message>
-        <source>Error: No valid utxo!</source>
-        <translation>错误:没有有效的utxo!</translation>
-    </message>
-    <message>
-        <source>Failed to create mint</source>
-        <translation>创建铸造失败</translation>
-    </message>
-    <message>
-        <source>Failed to find Zerocoins in wallet.dat</source>
-        <translation>钱包里没找到零币</translation>
-    </message>
-    <message>
-        <source>Failed to parse public spend</source>
-        <translation>解析公共花费失败</translation>
-    </message>
-    <message>
-        <source>Failed to select a zerocoin</source>
-        <translation>选择零币失败</translation>
-    </message>
-    <message>
-        <source>Failed to wipe zerocoinDB</source>
-        <translation>擦写零币DB失败</translation>
-    </message>
-    <message>
-        <source>Failed to write coin serial number into wallet</source>
-        <translation>硬币序列号写入钱包失败</translation>
+        <source>Invalid amount for -%s=&lt;amount&gt;: '%s'</source>
+        <translation>金额无效-%s=&lt;amount&gt;: '%s'</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>在内存中保留最多&lt;n&gt;不可连接的交易(默认值:%u)</translation>
-    </message>
-    <message>
-        <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
-        <translation>将签名缓存的大小限制为&lt;n&gt;条目大小(默认为%u)</translation>
     </message>
     <message>
         <source>Line: %d</source>
@@ -7000,6 +5329,10 @@ PENGOLINCOIN核心钱包</translation>
     <message>
         <source>Loading addresses...</source>
         <translation>正在下载地址...</translation>
+    </message>
+    <message>
+        <source>Loading banlist...</source>
+        <translation>正在下载banlist...</translation>
     </message>
     <message>
         <source>Loading block index...</source>
@@ -7022,10 +5355,6 @@ PENGOLINCOIN核心钱包</translation>
         <translation>正在下载分叉...</translation>
     </message>
     <message>
-        <source>Loading wallet... (%3.2f %%)</source>
-        <translation>站在下载钱包……(%3.2f %%)</translation>
-    </message>
-    <message>
         <source>Loading wallet...</source>
         <translation>正在下载钱包……</translation>
     </message>
@@ -7040,6 +5369,10 @@ PENGOLINCOIN核心钱包</translation>
     <message>
         <source>Lookup(): Invalid -proxy address or hostname: '%s'</source>
         <translation>查找():无效-代理地址或主机名:'%s'</translation>
+    </message>
+    <message>
+        <source>MNs synchronization pending...</source>
+        <translation>MNs同步正在进行...</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: %u)</source>
@@ -7058,10 +5391,6 @@ PENGOLINCOIN核心钱包</translation>
         <translation>每个连接最大发送缓冲区，&lt;n&gt;*1000字节(默认:%u)</translation>
     </message>
     <message>
-        <source>Mint did not make it into blockchain</source>
-        <translation>没有进入区块链铸造</translation>
-    </message>
-    <message>
         <source>Need to specify a port with -whitebind: '%s'</source>
         <translation>需要使用-whitebind指定端口:'%s'</translation>
     </message>
@@ -7074,12 +5403,12 @@ PENGOLINCOIN核心钱包</translation>
         <translation>可用的文件描述符不足</translation>
     </message>
     <message>
-        <source>Number of automatic wallet backups (default: 10)</source>
-        <translation>钱包自动备份次数(默认为10次)</translation>
-    </message>
-    <message>
         <source>Number of custom location backups to retain (default: %d)</source>
         <translation>要保留的自定义位置备份的数量(默认值:%d)</translation>
+    </message>
+    <message>
+        <source>On first run, create a legacy wallet instead of a HD wallet</source>
+        <translation>第一次运行，创建一个遗留钱包而不是HD钱包</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -7098,20 +5427,12 @@ PENGOLINCOIN核心钱包</translation>
         <translation>SON-RPC连接的密码</translation>
     </message>
     <message>
-        <source>Unable to find transaction containing mint %s</source>
-        <translation>无法找到包含铸造 %s的交易</translation>
-    </message>
-    <message>
-        <source>Unable to find transaction containing mint, txHash: %s</source>
-        <translation>无法找到包含铸造, tx哈希: %s的交易</translation>
+        <source>Peers are being disconnected due time differences.</source>
+        <translation>由于时间差异，节点被断开连接。</translation>
     </message>
     <message>
         <source>Use block spam filter (default: %u)</source>
         <translation>使用垃圾邮件过滤器块(默认:%u)</translation>
-    </message>
-    <message>
-        <source>could not get lock on cs_spendcache</source>
-        <translation>无法锁定cs_spendcache</translation>
     </message>
     <message>
         <source>isValid(): Invalid -proxy address or hostname: '%s'</source>
@@ -7122,8 +5443,16 @@ PENGOLINCOIN核心钱包</translation>
         <translation>准备重新同步……</translation>
     </message>
     <message>
-        <source>Need destination or change address because change is not exact</source>
-        <translation>需要目的地或更改地址，因为更改不准确</translation>
+        <source>Please check that your computer's date and time are correct! If your clock is wrong PENGOLINCOIN Core will not work properly.</source>
+        <translation>请检查您的电脑的日期和时间是否正确!如果你的时间错误，PENGOLINCOIN Core将无法正常工作。</translation>
+    </message>
+    <message>
+        <source>Specify location of debug log file: this can be an absolute path or a path relative to the data directory (default: %s)</source>
+        <translation>指定调试日志文件的位置:可以是绝对路径，也可以是相对于数据目录的路径(默认值:%s)</translation>
+    </message>
+    <message>
+        <source>Cannot resolve -%s address: '%s'</source>
+        <translation>无法解析-%s地址:'%s'</translation>
     </message>
     <message>
         <source>Prepend debug output with timestamp (default: %u)</source>
@@ -7132,10 +5461,6 @@ PENGOLINCOIN核心钱包</translation>
     <message>
         <source>Print version and exit</source>
         <translation>打印版本并退出</translation>
-    </message>
-    <message>
-        <source>Pubcoin not found in mint tx</source>
-        <translation>公共币没有发现在铸造tx</translation>
     </message>
     <message>
         <source>RPC server options:</source>
@@ -7154,14 +5479,6 @@ PENGOLINCOIN核心钱包</translation>
         <translation>从当前的blk000??.dat文件重建块链索引。</translation>
     </message>
     <message>
-        <source>Receive and display P2P network alerts (default: %u)</source>
-        <translation>接收和显示P2P网络警报(默认:%u)</translation>
-    </message>
-    <message>
-        <source>Reindex the accumulator database</source>
-        <translation>重新索引累加器数据库</translation>
-    </message>
-    <message>
         <source>Relay and mine data carrier transactions (default: %u)</source>
         <translation>中继和铸造数据载体交易(默认:%u)</translation>
     </message>
@@ -7178,28 +5495,12 @@ PENGOLINCOIN核心钱包</translation>
         <translation>重新扫描……</translation>
     </message>
     <message>
-        <source>ResetMintZerocoin finished: </source>
-        <translation>重置铸造零币完成:</translation>
-    </message>
-    <message>
-        <source>ResetSpentZerocoin finished: </source>
-        <translation>重置花费零币完成：</translation>
-    </message>
-    <message>
         <source>Run a thread to flush wallet periodically (default: %u)</source>
         <translation>运行一个线程定期刷新钱包(默认:%u)</translation>
     </message>
     <message>
         <source>Run in the background as a daemon and accept commands</source>
         <translation>作为守护进程在后台运行并接受命令</translation>
-    </message>
-    <message>
-        <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
-        <translation>可以的话，以零费用方式发送交易(默认:%u)</translation>
-    </message>
-    <message>
-        <source>Session timed out.</source>
-        <translation>会话超时。</translation>
     </message>
     <message>
         <source>Set database cache size in megabytes (%d to %d, default: %d)</source>
@@ -7246,10 +5547,6 @@ PENGOLINCOIN核心钱包</translation>
         <translation>客户端启动时收缩debug.log文件(没有-debug时默认为1)</translation>
     </message>
     <message>
-        <source>Signing timed out.</source>
-        <translation>签署超时。</translation>
-    </message>
-    <message>
         <source>Signing transaction failed</source>
         <translation>签署交易失败</translation>
     </message>
@@ -7282,16 +5579,8 @@ PENGOLINCOIN核心钱包</translation>
         <translation>指定您自己的公共地址</translation>
     </message>
     <message>
-        <source>Spend Valid</source>
-        <translation>花费有效</translation>
-    </message>
-    <message>
         <source>Spend unconfirmed change when sending transactions (default: %u)</source>
         <translation>发送交易时花费未确认更改(默认值:%u)</translation>
-    </message>
-    <message>
-        <source>Staking options:</source>
-        <translation>加注选项：</translation>
     </message>
     <message>
         <source>Stop running after importing blocks from disk (default: %u)</source>
@@ -7304,10 +5593,6 @@ PENGOLINCOIN核心钱包</translation>
     <message>
         <source>Synchronization finished</source>
         <translation>同步已完成</translation>
-    </message>
-    <message>
-        <source>Synchronization pending...</source>
-        <translation>同步等待……</translation>
     </message>
     <message>
         <source>Synchronizing budgets...</source>
@@ -7326,18 +5611,6 @@ PENGOLINCOIN核心钱包</translation>
         <translation>正在同步分叉...</translation>
     </message>
     <message>
-        <source>Syncing zPGO wallet...</source>
-        <translation>正在同步zPGO钱包……</translation>
-    </message>
-    <message>
-        <source>The coin spend has been used</source>
-        <translation>币花费已经用完了</translation>
-    </message>
-    <message>
-        <source>The transaction did not verify</source>
-        <translation>交易没有得到验证</translation>
-    </message>
-    <message>
         <source>This help message</source>
         <translation>这个帮助信息</translation>
     </message>
@@ -7354,24 +5627,12 @@ PENGOLINCOIN核心钱包</translation>
         <translation>断开错误的端口的阈值(默认值:%u)</translation>
     </message>
     <message>
-        <source>Too many spends needed</source>
-        <translation>太多花费被需求</translation>
-    </message>
-    <message>
         <source>Tor control port password (default: empty)</source>
         <translation>Tor控制端口密码(默认:空)</translation>
     </message>
     <message>
         <source>Tor control port to use if onion listening enabled (default: %s)</source>
         <translation>洋葱监听启用时使用的Tor控制端口(默认:%s)</translation>
-    </message>
-    <message>
-        <source>Transaction Created</source>
-        <translation>交易已创建</translation>
-    </message>
-    <message>
-        <source>Transaction Mint Started</source>
-        <translation>交易铸造已经开始</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
@@ -7390,16 +5651,12 @@ PENGOLINCOIN核心钱包</translation>
         <translation>交易过大</translation>
     </message>
     <message>
-        <source>Trying to spend an already spent serial #, try again.</source>
-        <translation>尝试使用已使用的序列号，再试一次。</translation>
-    </message>
-    <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>无法绑定到此计算机上的%s(绑定返回的错误%s)</translation>
     </message>
     <message>
-        <source>Unable to generate initial key</source>
-        <translation>无法生成初始密钥</translation>
+        <source>Unable to generate keys</source>
+        <translation>无法合成密钥</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
@@ -7414,20 +5671,16 @@ PENGOLINCOIN核心钱包</translation>
         <translation>在-onlynet中指定的未知网络:'%s'</translation>
     </message>
     <message>
+        <source>Unsupported logging category %s=%s.</source>
+        <translation>不支持此日志记录类别%s=%s。</translation>
+    </message>
+    <message>
         <source>Upgrade wallet to latest format</source>
         <translation>升级钱包到最新的格式</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: %u)</source>
         <translation>使用UPnP映射监听端口(默认:%u)</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 1 when listening)</source>
-        <translation>使用UPnP映射监听端口(监听时默认为1)</translation>
-    </message>
-    <message>
-        <source>Use a custom max chain reorganization depth (default: %u)</source>
-        <translation>使用自定义最大链重组深度(默认:%u)</translation>
     </message>
     <message>
         <source>Use the test network</source>
@@ -7442,20 +5695,12 @@ PENGOLINCOIN核心钱包</translation>
         <translation>JSON-RPC连接的用户名</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zPGO</source>
-        <translation>值小于zPGO的最小可用面额(= 1)</translation>
-    </message>
-    <message>
         <source>Verifying blocks...</source>
         <translation>正在验证区块……</translation>
     </message>
     <message>
         <source>Verifying wallet...</source>
         <translation>正在验证钱包……</translation>
-    </message>
-    <message>
-        <source>Wallet %s resides outside data directory %s</source>
-        <translation>钱包%s驻留在数据目录%s之外</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart PENGOLINCOIN Core to complete</source>
@@ -7486,10 +5731,6 @@ PENGOLINCOIN核心钱包</translation>
         <translation>警告:不支持的参数-debugnet被忽略，使用-debug=net。</translation>
     </message>
     <message>
-        <source>You don't have enough Zerocoins in your wallet</source>
-        <translation>你的钱包里没有足够的零币</translation>
-    </message>
-    <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>您需要使用-reindex来更改-txindex来重新构建数据库</translation>
     </message>
@@ -7502,16 +5743,8 @@ PENGOLINCOIN核心钱包</translation>
         <translation>ZeroMQ通知选项:</translation>
     </message>
     <message>
-        <source>Zerocoin options:</source>
-        <translation>零币选项：</translation>
-    </message>
-    <message>
         <source>on startup</source>
         <translation>启动</translation>
-    </message>
-    <message>
-        <source>wallet.dat corrupt, salvage failed</source>
-        <translation>wallet.dat 损坏，修复失败</translation>
     </message>
 </context>
 <context>
@@ -7525,12 +5758,36 @@ PENGOLINCOIN核心钱包</translation>
         <translation>发送</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>文本标签</translation>
+        <source>PENGOLINCOIN address or contact label</source>
+        <translation>PENGOLINCOIN 地址或者联系人标签</translation>
     </message>
     <message>
-        <source>PushButton</source>
-        <translation>按钮</translation>
+        <source>Amount</source>
+        <translation>金额</translation>
+    </message>
+    <message>
+        <source>Customize fee</source>
+        <translation>定制费用</translation>
+    </message>
+    <message>
+        <source>Clear all</source>
+        <translation>清除所有</translation>
+    </message>
+    <message>
+        <source>Add recipient</source>
+        <translation>添加接收人</translation>
+    </message>
+    <message>
+        <source>Total to send</source>
+        <translation>花费总金额</translation>
+    </message>
+    <message>
+        <source>Reset to default</source>
+        <translation>重置到默认值</translation>
+    </message>
+    <message>
+        <source>Include delegated</source>
+        <translation>包含委托</translation>
     </message>
 </context>
 </TS>

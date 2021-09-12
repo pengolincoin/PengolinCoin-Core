@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # Copyright (c) 2016-2018 The Bitcoin Core developers
-# Copyright (c) 2018-2019 The PENGOLINCOIN developers
+# Copyright (c) 2018-2019 The PIVX developers
+# Copyright (c) 2020-2021 The PENGOLINCOIN developers
+
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -34,6 +36,7 @@ EXCLUDE_DIRS = [
     "src/leveldb/",
     "src/secp256k1/",
     "src/univalue/",
+    "src/crc32c",
 ]
 
 INCLUDE = ['*.h', '*.cpp', '*.cc', '*.c', '*.py']

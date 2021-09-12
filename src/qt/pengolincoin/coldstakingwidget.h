@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -48,10 +49,12 @@ public:
     void run(int type) override;
     void onError(QString error, int type) override;
 
-public slots:
+    void showEvent(QShowEvent *event) override;
+
+public Q_SLOTS:
     void walletSynced(bool sync);
 
-private slots:
+private Q_SLOTS:
     void changeTheme(bool isLightTheme, QString &theme) override;
     void handleAddressClicked(const QModelIndex &index);
     void handleMyColdAddressClicked(const QModelIndex &rIndex);
@@ -67,12 +70,15 @@ private slots:
     void onCopyOwnerClicked();
     void onAddressCopyClicked();
     void onAddressEditClicked();
-    void onTxArrived(const QString& hash, const bool& isCoinStake, const bool& isCSAnyType);
+    void onTxArrived(const QString& hash, const bool isCoinStake, const bool isCSAnyType);
     void onContactsClicked(bool ownerAdd);
     void clearAll();
     void onLabelClicked();
     void onMyStakingAddressesClicked();
+    void onOwnerAddressChanged();
     void onDelegationsRefreshed();
+    void onSortChanged(int idx);
+    void onSortOrderChanged(int idx);
 
 private:
     Ui::ColdStakingWidget *ui = nullptr;
@@ -89,6 +95,7 @@ private:
     QSpacerItem *spacerDiv = nullptr;
 
     bool isInDelegation = true;
+    bool isStakingAddressListVisible = false;
 
     ContactsDropdown *menuContacts = nullptr;
     TooltipMenu* menu = nullptr;
@@ -97,23 +104,28 @@ private:
     bool isShowingDialog = false;
     bool isChainSync = false;
 
-    bool isContactOwnerSelected;
-    int64_t lastRefreshTime = 0;
+    bool isContactOwnerSelected{false};
+    int64_t lastRefreshTime{0};
     std::atomic<bool> isLoading;
 
     // Cached index
     QModelIndex index;
     QModelIndex addressIndex;
 
+    // Cached sort type and order
+    AddressTableModel::ColumnIndex sortType = AddressTableModel::Label;
+    Qt::SortOrder sortOrder = Qt::AscendingOrder;
 
-    int nDisplayUnit;
+    int nDisplayUnit{0};
 
     void showAddressGenerationDialog(bool isPaymentRequest);
     void onContactsClicked();
     void tryRefreshDelegations();
     bool refreshDelegations();
-    void onLabelClicked(QString dialogTitle, const QModelIndex &index, const bool& isMyColdStakingAddresses);
+    void onLabelClicked(QString dialogTitle, const QModelIndex &index, const bool isMyColdStakingAddresses);
     void updateStakingTotalLabel();
+    void sortAddresses();
+    void setCoinControlPayAmounts();
 };
 
 #endif // COLDSTAKINGWIDGET_H

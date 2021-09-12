@@ -273,7 +273,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #763 `d4762f7e7a` [Wallet] Add automint address (Fuzzbawls)
  - #759 `19fd0877cd` [Wallet] Avoid failed zPGO spend because of changed seed (warrows)
  - #755 `65be6b611b` [Wallet] Fix zPGO spend when too much mints are selected (warrows)
- - #734 `5df105fed2` [Staking] Ensure nPgo is correctly initialized in CreateCoinStake (warrows)
+ - #734 `5df105fed2` [Staking] Ensure nCredit is correctly initialized in CreateCoinStake (warrows)
  - #730 `394d48b2c9` [Wallet] fix bug with fWalletUnlockAnonymizeOnly flag setting (random-zebra)
  - #715 `30048cce62` [Refactor] Remove GetCoinAge (Fuzzbawls)
  - #700 `a2d717090f` [Wallet] Avoid autocombine getting stuck (warrows)
@@ -306,7 +306,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #762 `abfceb39a1` [Random] WIN32 Seed Cleanup: Move nLastPerfmon behind win32 ifdef. (21E14)
  - #771 `4b1be14505` [Main] Clean up sync.cpp/h with upstream declarations (Fuzzbawls)
  
-## Pgos
+## Credits
 
 Thanks to everyone who directly contributed to this release:
 

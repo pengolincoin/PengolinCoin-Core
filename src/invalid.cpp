@@ -1,14 +1,17 @@
-// Copyright (c) 2018 The PENGOLINCOIN developers
+// Copyright (c) 2018-2020 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "invalid.h"
 #include "invalid_outpoints.json.h"
-#include "invalid_serials.json.h"
+
+#include "primitives/transaction.h"
+
+#include <univalue.h>
 
 namespace invalid_out
 {
-    std::set<CBigNum> setInvalidSerials;
     std::set<COutPoint> setInvalidOutPoints;
 
     UniValue read_json(const std::string& jsondata)
@@ -37,8 +40,8 @@ namespace invalid_out
             if (!vTxid.isStr())
                 return false;
 
-            uint256 txid = uint256(vTxid.get_str());
-            if (txid == 0)
+            uint256 txid = uint256S(vTxid.get_str());
+            if (txid.IsNull())
                 return false;
 
             const UniValue &vN = find_value(o, "n");
@@ -52,39 +55,9 @@ namespace invalid_out
         return true;
     }
 
-    bool LoadSerials()
-    {
-        UniValue v = read_json(LoadInvalidSerials());
-
-        if (v.empty())
-            return false;
-
-        for (unsigned int idx = 0; idx < v.size(); idx++) {
-            const UniValue &val = v[idx];
-            const UniValue &o = val.get_obj();
-
-            const UniValue &vSerial = find_value(o, "s");
-            if (!vSerial.isStr())
-                return false;
-
-            CBigNum bnSerial = 0;
-            bnSerial.SetHex(vSerial.get_str());
-            if (bnSerial == 0)
-                return false;
-            setInvalidSerials.insert(bnSerial);
-        }
-
-        return true;
-    }
-
     bool ContainsOutPoint(const COutPoint& out)
     {
         return static_cast<bool>(setInvalidOutPoints.count(out));
-    }
-
-    bool ContainsSerial(const CBigNum& bnSerial)
-    {
-        return static_cast<bool>(setInvalidSerials.count(bnSerial));
     }
 }
 

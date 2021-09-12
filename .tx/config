@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.com
+
+[pengolincoin-project-translations.qt-translation-50x]
+file_filter = src/qt/locale/pengolincoin_<lang>.ts
+source_file = src/qt/locale/pengolincoin_en.ts
+source_lang = en

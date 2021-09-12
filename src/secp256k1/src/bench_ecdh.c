@@ -7,7 +7,7 @@
 #include <string.h>
 
 #include "include/secp256k1.h"
-#include "include/secp256k1_pgoh.h"
+#include "include/secp256k1_ecdh.h"
 #include "util.h"
 #include "bench.h"
 
@@ -15,11 +15,11 @@ typedef struct {
     secp256k1_context *ctx;
     secp256k1_pubkey point;
     unsigned char scalar[32];
-} bench_pgoh_data;
+} bench_ecdh_data;
 
-static void bench_pgoh_setup(void* arg) {
+static void bench_ecdh_setup(void* arg) {
     int i;
-    bench_pgoh_data *data = (bench_pgoh_data*)arg;
+    bench_ecdh_data *data = (bench_ecdh_data*)arg;
     const unsigned char point[] = {
         0x03,
         0x54, 0x94, 0xc1, 0x5d, 0x32, 0x09, 0x97, 0x06,
@@ -36,19 +36,19 @@ static void bench_pgoh_setup(void* arg) {
     CHECK(secp256k1_ec_pubkey_parse(data->ctx, &data->point, point, sizeof(point)) == 1);
 }
 
-static void bench_pgoh(void* arg) {
+static void bench_ecdh(void* arg) {
     int i;
     unsigned char res[32];
-    bench_pgoh_data *data = (bench_pgoh_data*)arg;
+    bench_ecdh_data *data = (bench_ecdh_data*)arg;
 
     for (i = 0; i < 20000; i++) {
-        CHECK(secp256k1_pgoh(data->ctx, res, &data->point, data->scalar, NULL, NULL) == 1);
+        CHECK(secp256k1_ecdh(data->ctx, res, &data->point, data->scalar, NULL, NULL) == 1);
     }
 }
 
 int main(void) {
-    bench_pgoh_data data;
+    bench_ecdh_data data;
 
-    run_benchmark("pgoh", bench_pgoh, bench_pgoh_setup, NULL, &data, 10, 20000);
+    run_benchmark("ecdh", bench_ecdh, bench_ecdh_setup, NULL, &data, 10, 20000);
     return 0;
 }

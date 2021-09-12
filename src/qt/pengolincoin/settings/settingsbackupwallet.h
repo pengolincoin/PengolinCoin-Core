@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,14 +21,12 @@ public:
     explicit SettingsBackupWallet(PENGOLINCOINGUI* _window, QWidget *parent = nullptr);
     ~SettingsBackupWallet();
 
-private slots:
-    void backupWallet();
+private Q_SLOTS:
     void selectFileOutput();
     void changePassphrase();
 
 private:
     Ui::SettingsBackupWallet *ui;
-    QString filename;
 };
 
 #endif // SETTINGSBACKUPWALLET_H

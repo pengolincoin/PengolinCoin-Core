@@ -1,37 +1,40 @@
-PENGOLINCOIN Core version *v4.0.0* is now available from:  <https://github.com/pengolincoin-project/pengolincoin/releases>
+(note: this is a temporary file, to be added-to by anybody, and moved to release-notes at release time)
+
+PENGOLINCOIN Core version *version* is now available from:  <https://github.com/pengolincoin-project/pengolincoin/releases>
 
 This is a new major version release, including various bug fixes and performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github: <https://github.com/pengolincoin-project/pengolincoin/issues>
 
 
-Mandatory Update
-==============
-
-PENGOLINCOIN Core v4.0.0 is a mandatory update for all users. This release contains new consensus rules and improvements that are not backwards compatible with older versions. Users will need to update their clients before enforcement of this update goes into effect.
-
-Update enforcement is currently scheduled to go into effect at the following time:
-
-```
-Mainnet: Sunday, January 5, 2020 12:00:00 AM GMT
-```
-
-Masternodes will need to be restarted once both the masternode daemon and the controller wallet have been upgraded.
-
 How to Upgrade
 ==============
 
 If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/PENGOLINCOIN-Qt (on Mac) or pengolincoind/pengolincoin-qt (on Linux).
 
+Sapling Parameters
+==================
+
+In order to run, PENGOLINCOIN Core now requires two files, `sapling-output.params` and `sapling-spend.params` (with total size ~50 MB), to be saved in a specific location.
+
+For the following packages, no action is required by the user:
+- macOS release `dmg` binaries will use the params that are bundled into the .app bundle.
+- Windows installer `.exe` will automatically copy the files in the proper location.
+- Linux `PPA/Snap` installs will automatically copy the files in the proper location.
+
+For the other packages, the user must save the param files in the proper location, before being able to run PENGOLINCOIN v5.0.0:
+- macOS/Linux `tar.gz` tarballs include a bash script (`install-params.sh`) to copy the parameters in the appropriate location.
+- Windows `.zip` users need to manually copy the files from the `share/pengolincoin` folder to the `%APPDATA%\PENGOLINCOINParams` directory.
+- self compilers can run the script from the repository sources (`params/install-params.sh`), or copy the files directly from the `params` subdirectory.
 
 Compatibility
 ==============
 
-PENGOLINCOIN Core is extensively tested on multiple operating systems using the Linux kernel, macOS 10.10+, and Windows 7 and later.
+PENGOLINCOIN Core is extensively tested on multiple operating systems using the Linux kernel, macOS 10.12+, and Windows 7 and later.
 
 Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support), No attempt is made to prevent installing or running the software on Windows XP, you can still do so at your own risk but be aware that there are known instabilities and issues. Please do not report issues about Windows XP to the issue tracker.
 
-Apple released it's last Mountain Lion update August 13, 2015, and officially ended support on [December 14, 2015](http://news.fnal.gov/2015/10/mac-os-x-mountain-lion-10-8-end-of-life-december-14/). PENGOLINCOIN Core software starting with v3.2.0 will no longer run on MacOS versions prior to Yosemite (10.10). Please do not report issues about MacOS versions prior to Yosemite to the issue tracker.
+From PENGOLINCOIN Core 6.0 onwards, macOS versions earlier than 10.12 are no longer supported.
 
 PENGOLINCOIN Core should also work on most other Unix-like systems but is not frequently tested on them.
 
@@ -39,537 +42,613 @@ PENGOLINCOIN Core should also work on most other Unix-like systems but is not fr
 Notable Changes
 ==============
 
-New Wallet UI
--------------------
-
-v4.0.0 introduces a completely new GUI for the wallet, designed and coded from the ground up by the [Krubit](https://krubit.com/) team.
-
-This new UI, aside from the overall design large implementation, includes user-focused improvements and features such as a brief introduction on first load, a FAQ section, one-click QRCode compatible receiving addresses, masternode creation wizard, dark and light themes, filterable staking charts, and much more.
-
-You can read more details about this extensive work in ([PR #954](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/954))
-
-There are some legacy features that have not been included, however, notably the in-wallet block explorer and the governance page. The in-wallet block explorer was sorely outdated, and the governance page was a newer addition that will be seeing a return in a future version.
-
-Cold Staking
--------------------
-
-A brand new feature is being introduced with the release of v4.0.0: Cold Staking ([PR #955](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/955))! This feature allows a coin owner to keep coins in a "cold" (or locked) wallet whilst a "hot" wallet carries out the burden of staking those coins.
-
-This brings added security to coin owners as they are no longer required to use an unlocked or partially unlocked wallet (with the ability to spend coins anywhere) in order to gain staking rewards. Users who have chosen to store their coins on hardware devices such as a Ledger or Trezor<sup>1</sup> can also gain staking rewards with those coins.
-
-A full technical writup is available on the [PENGOLINCOIN Wiki](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/wiki/ColdStaking), and an initial video showcase is available on [YouTube](https://www.youtube.com/watch?v=utxB5TzAeXc).
-A brief guide to setup cold staking with GUI and RPC is available [here](https://github.com/random-zebra/PENGOLINCOIN-Wiki/blob/master/User-Documentation/Cold-Staking-HowTo.md).
-
-<sup>1</sup> Spending cold stakes from HW wallets currently available only for Ledger devices via [PET4L](https://github.com/PENGOLINCOIN-Project/PET4L) tool.
-
-Multi-Split Stake Splitting
--------------------
-
-Stake splitting has received a makeover and now supports splitting to more than two (2) outputs. [PR #968](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/968) introduced the change, which is controlled by the wallet's `stakesplitthreshold` setting.
-
-The default split threshold remains at 2000 PGO, and can be adjusted in the GUI's Settings page, or via the RPC `setstakesplitthreshold` command.
-
-For a real example, with a stake split threshold of 1500, and a UTXO of 4708.1557; the current stake split algorithm would break that into two outputs of approximately 2355.07785. With this new logic; it will be broken into 3 outputs instead of two; each sized 1570.0519 (4708.1557 input + 2 stake = 4710.1557 / 3 outputs = 1570.0519.
-
-The maximum number of outputs is currently capped at 48. Also, in relation to the new Cold Staking feature described above; the stake split threshold is set by the staker wallet and **NOT** the owner wallet.
-
-New Consensus Rules
--------------------
-
-The following consensus rule changes will be enforced on or shortly after block `2153200`. Note that **Upgrade Enforcement** (mentioned above) will occur prior to this block height.
-
-### V1 zPGO Spending (Public Spends Version 4)
-
-Since the discovery of a critical exploit within the libzerocoin library in early 2019, remaining legacy v1 zPGO have been un-spendable. We're happy to say that, once the new consensus rules are in effect, users will once again be able to spend their v1 zPGO with public spends version 4 ([PR #936](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/936)).
-
-As with the previous version 3 public spends introduced in core wallet version 3.3.0 (enabling the spending of v2 zPGO), version 4 spends will also be public. A full technical writeup is available on the [PENGOLINCOIN Wiki](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/wiki/CoinRandomnessSchnorrSignature).
-
-### OP_CHECKCOLDSTAKEVERIFY and P2CS
-
-Cold staking introduces a new opcode, `OP_CHECKCOLDSTAKEVERIFY`, in the scripting language, and a new standard transaction type using it, named `P2CS` (Pay-To-Cold-Staking). A P2CS script is defined as follows:
-```
-OP_DUP OP_HASH160 OP_ROT OP_IF OP_CHECKCOLDSTAKEVERIFY [HASH160(stakerPubKey]
-OP_ELSE [HASH160(ownerPubKey)] OP_ENDIF OP_EQUALVERIFY OP_CHECKSIG
-```
-`OP_CHECKCOLDSTAKEVERIFY` is used to ensure that the staker can only spend the output in a valid coinstake transaction (using the same P2CS script in the new output).
-
-### Time Protocol v2
-
-[#PR1002](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/1002) introduces a new time protocol for the Proof-Of-Stake consensus mechanism, to ensure better efficiency, fairness and security. The time is now divided in 15-seconds slots and valid blocktimes are at the beginning of each slot (i.e. the block timestamp's seconds can only be `00`, or `15`, or `30` or `45`).<br>
-The maximum future time limit is lowered from 3 minutes to 14 seconds and the past limit is set to the previous blocktime (i.e. a block can no longer have a timestamp earlier than its previous block).<br>
-This means that, when looking for a valid kernel, each stakeable input can be hashed only once every 15 seconds (once per timeslot), and it is not possible to submit blocks with timestamp higher than the current time slot. This ultimately enables the removal of the "hashdrift" concept.<br>
-
-**NOTE:** Given the much stricter time constraints, a node's clock synchronization is required for P2P connections: the maximum time offset is 15 seconds and peers with a time drift higher than 30 seconds (in absolute value) will be outright disconnected.
-
- For advanced users, we recommend the setup of NTP clients and own servers. This will provide to your node a higher level of time accuracy and the best, time wise, synchronization with the peers in the network.
-
-### Block Version 7
-
-[#PR1022](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/1022) defines Version 7 blocks, which remove the (now-unused) accumulator checkpoint from the block header. This results in an overall data reduction of ~256 bits from each block as well as the in-memory indexes.
-
-### New Network Message Signatures
-
-Layer 2 network messages (MN, Budget, Spork, etc) are now signed based on the hash of their **binary** content instead of their **string** representation ([#PR1024](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/1024)).
-
-### New SPORKS
-
-Two new SPORKS are introduced, `SPORK_17` ([#PR975](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/975)) and `SPORK_18` ([#PR995](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/995)).<br>
-`SPORK_17` (off by default) is used to activate the [Cold Staking](#cold-staking) protocol. When this spork is off, no cold-staked block is accepted by the network and new delegations are rejected, but coin-owners are still able to spend previously created pay-to-cold-stake delegations.
-
-`SPORK_18` (off by default) is used to switch between Version 3 and [Version 4 Public Spends](#v1-zpgo-spending-public-spends-version-4). When this spork is active, only version 4 spends are accepted by the network. When it's not, only version 3 spends are accepted.
-
-RPC Changes
---------------
-
-### New options for existing wallet commands
-
-A new (optional) argument, `includeDelegated`, has been added to the following commands that allows these commands to include delegated coins/information in their operation:
-- `getbalance` - Boolean (Default: True)
-- `sendfrom` - Boolean (Default: False)
-- `sendmany` - Boolean (Default: False)
-- `listtransactions` - Boolean (Default: True)
-
-Additionally, a new (optional) argument, `includeCold`, has been added to the `listtransactions` command (Boolean - Default: True), which allows for filtering of cold-staker delegated transactions.
-
-### New return fields for existing commands
-
-The `validateaddress` command now includes an additional response field, `isstaking`, to indicate wither or not the specified address is a cold staking address.
-
-The `getwalletinfo` command now includes two additional response fields:
-- `delegated_balance` - PGO balance held in P2CS contracts (delegated amount total).
-- `cold_staking_balance` - PGO balance held in cold staking addresses.
-
-### Newly introduced commands
-
-The following new commands have been added to the RPC interface:
-- `getnewstakingaddress`
-- `delegatestake`
-- `rawdelegatestake`
-- `getcoldstakingbalance`
-- `delegatoradd`
-- `delegatorremove`
-- `listcoldutxos`
-- `liststakingaddresses`
-- `listdelegators`
-
-Details about each new command can be found below.
-
-`getnewstakingaddress` generates a new cold staking address:
-```
-getnewstakingaddress ( "account" )
-
-Returns a new PENGOLINCOIN cold staking address for receiving delegated cold stakes.
-
-Arguments:
-1. "account"        (string, optional) The account name for the address to be linked to. if not provided, the default account "" is used. It can also be set to the empty string "" to represent the default account. The account does not need to exist, it will be created if there is no account by the given name.
-
-Result:
-"pengolincoinaddress"    (string) The new pengolincoin address
-```
-
-`delegatestake` sends a cold staking delegation transaction:
-```
-delegatestake "stakingaddress" amount ( "owneraddress" fExternalOwner fUseDelegated fForceNotEnabled )
-
-Delegate an amount to a given address for cold staking. The amount is a real and is rounded to the nearest 0.00000001
-
-Requires wallet passphrase to be set with walletpassphrase call.
-
-Arguments:
-1. "stakingaddress"      (string, required) The pengolincoin staking address to delegate.
-2. "amount"              (numeric, required) The amount in PGO to delegate for staking. eg 100
-3. "owneraddress"        (string, optional) The pengolincoin address corresponding to the key that will be able to spend the stake.
-                               If not provided, or empty string, a new wallet address is generated.
-4. "fExternalOwner"      (boolean, optional, default = false) use the provided 'owneraddress' anyway, even if not present in this wallet.
-                               WARNING: The owner of the keys to 'owneraddress' will be the only one allowed to spend these coins.
-5. "fUseDelegated"       (boolean, optional, default = false) include already delegated inputs if needed.6. "fForceNotEnabled"    (boolean, optional, default = false) force the creation even if SPORK 17 is disabled (for tests).
-
-Result:
-{
-   "owner_address": "xxx"   (string) The owner (delegator) owneraddress.
-   "staker_address": "xxx"  (string) The cold staker (delegate) stakingaddress.
-   "txid": "xxx"            (string) The stake delegation transaction id.
-}
-```
-
-`rawdelegatestake` creates a raw cold staking delegation transaction without broadcasting it to the network:
-```
-rawdelegatestake "stakingaddress" amount ( "owneraddress" fExternalOwner fUseDelegated )
-
-Delegate an amount to a given address for cold staking. The amount is a real and is rounded to the nearest 0.00000001
-
-Delegate transaction is returned as json object.
-Requires wallet passphrase to be set with walletpassphrase call.
-
-Arguments:
-1. "stakingaddress"      (string, required) The pengolincoin staking address to delegate.
-2. "amount"              (numeric, required) The amount in PGO to delegate for staking. eg 100
-3. "owneraddress"        (string, optional) The pengolincoin address corresponding to the key that will be able to spend the stake.
-                               If not provided, or empty string, a new wallet address is generated.
-4. "fExternalOwner"      (boolean, optional, default = false) use the provided 'owneraddress' anyway, even if not present in this wallet.
-                               WARNING: The owner of the keys to 'owneraddress' will be the only one allowed to spend these coins.
-5. "fUseDelegated         (boolean, optional, default = false) include already delegated inputs if needed.
-
-Result:
-{
-  "txid" : "id",        (string) The transaction id (same as provided)
-  "version" : n,          (numeric) The version
-  "size" : n,             (numeric) The serialized transaction size
-  "locktime" : ttt,       (numeric) The lock time
-  "vin" : [               (array of json objects)
-     {
-       "txid": "id",    (string) The transaction id
-       "vout": n,         (numeric)
-       "scriptSig": {     (json object) The script
-         "asm": "asm",  (string) asm
-         "hex": "hex"   (string) hex
-       },
-       "sequence": n      (numeric) The script sequence number
-     }
-     ,...
-  ],
-  "vout" : [              (array of json objects)
-     {
-       "value" : x.xxx,            (numeric) The value in btc
-       "n" : n,                    (numeric) index
-       "scriptPubKey" : {          (json object)
-         "asm" : "asm",          (string) the asm
-         "hex" : "hex",          (string) the hex
-         "reqSigs" : n,            (numeric) The required sigs
-         "type" : "pubkeyhash",  (string) The type, eg 'pubkeyhash'
-         "addresses" : [           (json array of string)
-           "pengolincoinaddress"        (string) pengolincoin address
-           ,...
-         ]
-       }
-     }
-     ,...
-  ],
-  "hex" : "data",       (string) The serialized, hex-encoded data for 'txid'
-}
-```
-
-`getcoldstakingbalance` returns the cold balance of the wallet:
-```
-getcoldstakingbalance ( "account" )
-
-If account is not specified, returns the server's total available cold balance.
-If account is specified, returns the cold balance in the account.
-Note that the account "" is not the same as leaving the parameter out.
-The server total may be different to the balance in the default "" account.
-
-Arguments:
-1. "account"      (string, optional) The selected account, or "*" for entire wallet. It may be the default account using "".
-
-Result:
-amount              (numeric) The total amount in PGO received for this account in P2CS contracts.
-```
-
-`delegatoradd` whitelists a delegated owner address for cold staking:
-```
-delegatoradd "addr"
-
-Add the provided address <addr> into the allowed delegators AddressBook.
-This enables the staking of coins delegated to this wallet, owned by <addr>
-
-Arguments:
-1. "addr"        (string, required) The address to whitelist
-
-Result:
-true|false           (boolean) true if successful.
-```
-
-`delegatorremove` to remove previously whitelisted owner address:
-```
-delegatoradd "addr"
-
-Add the provided address <addr> into the allowed delegators AddressBook.
-This enables the staking of coins delegated to this wallet, owned by <addr>
-
-Arguments:
-1. "addr"        (string, required) The address to whitelist
-
-Result:
-true|false           (boolean) true if successful.
-```
-
-`listcoldutxos` lists all P2CS UTXOs belonging to the wallet (both delegator and cold staker):
-```
-listcoldutxos ( nonWhitelistedOnly )
-
-List P2CS unspent outputs received by this wallet as cold-staker-
-
-Arguments:
-1. nonWhitelistedOnly   (boolean, optional, default=false) Whether to exclude P2CS from whitelisted delegators.
-
-Result:
-[
-  {
-    "txid" : "true",            (string) The transaction id of the P2CS utxo
-    "txidn" : "accountname",    (string) The output number of the P2CS utxo
-    "amount" : x.xxx,             (numeric) The amount of the P2CS utxo
-    "confirmations" : n           (numeric) The number of confirmations of the P2CS utxo
-    "cold-staker" : n             (string) The cold-staker address of the P2CS utxo
-    "coin-owner" : n              (string) The coin-owner address of the P2CS utxo
-    "whitelisted" : n             (string) "true"/"false" coin-owner in delegator whitelist
-  }
-  ,...
-]
-```
-
-`liststakingaddresses` lists all cold staking addresses generated by the wallet:
-```
-liststakingaddresses "addr"
-
-Shows the list of staking addresses for this wallet.
-
-Result:
-[
-   {
-   "label": "yyy",  (string) account label
-   "address": "xxx",  (string) PENGOLINCOIN address string
-   }
-  ...
-]
-```
-
-`listdelegators` lists the whitelisted owner addresses
-```
-listdelegators "addr"
-
-Shows the list of allowed delegator addresses for cold staking.
-
-Result:
-[
-   {
-   "label": "yyy",  (string) account label
-   "address": "xxx",  (string) PENGOLINCOIN address string
-   }
-  ...
-]
-```
-
-Snapcraft Packages
+(Developers: add your notes here as part of your pull requests whenever possible)
+
+
+Deterministic Masternode Lists
+------------------------------
+
+PENGOLINCOIN v6.0.0 introduces on-chain consensus for masternode lists, which allow for deterministic quorum derivation, implementing Dash's [DIP-0003](https://github.com/dashpay/dips/blob/master/dip-0003.md).
+
+In the previous masternode system, each node needed to maintain their own individual masternode list with P2P messages, thus discrepancies might occur, for example, due to a different order of message reception.
+Deterministic Masternode lists are lists of masternodes, built at every block, relying only on on-chain data (previous list, and transactions included in the current block).
+All nodes derive (and verify) their masternode lists independently, from the same on-chain transactions, thus they immediately reach consensus on the tier-two state (number of masternodes, properties and status of each one).
+
+Masternodes are "registered" by special transactions called ProTx, and removed only by spending the collateral.
+A ProTx either creates a 100,000 PGO collateral as tx output, or includes a reference to an unspent 100,000 PGO utxo on chain (and a proof of ownership).
+See PR [#2267](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/2267) for more information.
+
+Upgrade instructions: !TODO
+
+### New RPC commands
+
+* `protx_list`
+    ```  
+    protx_list (detailed wallet_only valid_only height)
+    
+    Lists all ProTxs.
+    
+    Arguments:
+    1. detailed       (bool, optional, default=true) Return detailed information about each protx.
+                          If set to false, return only the list of txids.
+    2. wallet_only    (bool, optional, default=false) If set to true, return only protx which involves
+                          keys from this wallet (collateral, owner, operator, voting, or payout addresses).
+    3. valid_only     (bool, optional, default=false) If set to true, return only ProTx which are active/valid
+                          at the height specified.
+    4. height         (numeric, optional) If height is not specified, it defaults to the current chain-tip.
+
+    Result:
+    [...]                         (list) List of protx txids or, if detailed=true, list of json objects.
+    ```
+
+* `protx_register`
+    ```
+    protx_register "collateralHash" collateralIndex "ipAndPort" "ownerAddress" "operatorPubKey" "votingAddress" "payoutAddress" (operatorReward "operatorPayoutAddress")
+    
+    Creates and sends a ProTx to the network. The collateral is specified through "collateralHash" and collateralIndex, and must be an unspent
+    transaction output spendable by this wallet. It must also not be used by any other masternode.
+    
+    Arguments:
+    1. "collateralHash"        (string, required) The collateral transaction hash.
+    2. collateralIndex         (numeric, required) The collateral transaction output index.
+    3. "ipAndPort"             (string, required) IP and port in the form "IP:PORT".
+                                  Must be unique on the network. Can be set to 0, which will require a ProUpServTx afterwards.
+    4. "ownerAddress"          (string, required) The PENGOLINCOIN address to use for payee updates and proposal voting.
+                                  The private key belonging to this address must be known in your wallet, in order to send updates.
+                                  The address must not be already registered, and must differ from the collateralAddress
+    5. "operatorPubKey"        (string, required) The operator BLS public key. The private BLS key does not have to be known.
+                                  It has to match the BLS private key which is later used when operating the masternode.
+    6. "votingAddress"         (string, required) The voting key address. The private key does not have to be known by your wallet.
+                                  It has to match the private key which is later used when voting on proposals.
+                                  If set to an empty string, ownerAddress will be used.
+    7. "payoutAddress"         (string, required) The PENGOLINCOIN address to use for masternode reward payments.
+    8. "operatorReward"        (numeric, optional) The fraction in % to share with the operator. The value must be
+                                  between 0.00 and 100.00. If not set, it takes the default value of 0.0
+    9. "operatorPayoutAddress" (string, optional) The address used for operator reward payments.
+                                  Only allowed when the ProRegTx had a non-zero operatorReward value.
+                                  If set to an empty string, the operatorAddress is used.
+
+    Result:
+    "txid"                 (string) The transaction id.
+    ```
+
+* `protx_register_fund`
+    ```
+    protx_register_fund "collateralAddress" "ipAndPort" "ownerAddress" "operatorPubKey" "votingAddress" "payoutAddress" (operatorReward "operatorPayoutAddress")
+
+    Creates, funds and sends a ProTx to the network. The resulting transaction will move 100,000 PGO
+    to the address specified by collateralAddress and will then function as masternode collateral.
+
+    Arguments:
+    1. "collateralAddress"     (string, required) The PENGOLINCOIN address to send the collateral to.
+    2. "ipAndPort"             (string, required) IP and port in the form "IP:PORT".
+                                  Must be unique on the network. Can be set to 0, which will require a ProUpServTx afterwards.
+    3. "ownerAddress"          (string, required) The PENGOLINCOIN address to use for payee updates and proposal voting.
+                                  The private key belonging to this address must be known in your wallet, in order to send updates.
+                                  The address must not be already registered, and must differ from the collateralAddress
+    4. "operatorPubKey"        (string, required) The operator BLS public key. The private BLS key does not have to be known.
+                                  It has to match the BLS private key which is later used when operating the masternode.
+    5. "votingAddress"         (string, required) The voting key address. The private key does not have to be known by your wallet.
+                                  It has to match the private key which is later used when voting on proposals.
+                                  If set to an empty string, ownerAddress will be used.
+    6. "payoutAddress"         (string, required) The PENGOLINCOIN address to use for masternode reward payments.
+    7. "operatorReward"        (numeric, optional) The fraction in % to share with the operator. The value must be
+                                  between 0.00 and 100.00. If not set, it takes the default value of 0.0
+    8. "operatorPayoutAddress" (string, optional) The address used for operator reward payments.
+                                  Only allowed when the ProRegTx had a non-zero operatorReward value.
+                                  If set to an empty string, the operatorAddress is used.
+
+    Result:
+    "txid"                        (string) The transaction id.
+    ```
+
+* `protx_register_prepare`
+    ```
+    protx_register_prepare "collateralHash" collateralIndex "ipAndPort" "ownerAddress" "operatorPubKey" "votingAddress" "payoutAddress" (operatorReward "operatorPayoutAddress")
+
+    Creates an unsigned ProTx and returns it. The ProTx must be signed externally with the collateral
+    key and then passed to "protx_register_submit".
+    The collateral is specified through "collateralHash" and "collateralIndex" and must be an unspent transaction output.
+
+    Arguments:
+    1. "collateralHash"         (string, required) The collateral transaction hash.
+    2. collateralIndex          (numeric, required) The collateral transaction output index.
+    3. "ipAndPort"              (string, required) IP and port in the form "IP:PORT".
+                                  Must be unique on the network. Can be set to 0, which will require a ProUpServTx afterwards.
+    4. "ownerAddress"           (string, required) The PENGOLINCOIN address to use for payee updates and proposal voting.
+                                  The private key belonging to this address must be known in your wallet, in order to send updates.
+                                  The address must not be already registered, and must differ from the collateralAddress
+    5. "operatorPubKey"         (string, required) The operator BLS public key. The private BLS key does not have to be known.
+                                  It has to match the BLS private key which is later used when operating the masternode.
+    6. "votingAddress"          (string, required) The voting key address. The private key does not have to be known by your wallet.
+                                  It has to match the private key which is later used when voting on proposals.
+                                  If set to an empty string, ownerAddress will be used.
+    7. "payoutAddress"          (string, required) The PENGOLINCOIN address to use for masternode reward payments.
+    8. "operatorReward"         (numeric, optional) The fraction in % to share with the operator. The value must be
+                                  between 0.00 and 100.00. If not set, it takes the default value of 0.0
+    9. "operatorPayoutAddress"  (string, optional) The address used for operator reward payments.
+                                  Only allowed when the ProRegTx had a non-zero operatorReward value.
+                                  If set to an empty string, the operatorAddress is used.
+
+    Result:
+    {                        (json object)
+      "tx" :                 (string) The serialized ProTx in hex format.
+      "collateralAddress" :  (string) The collateral address.
+      "signMessage" :        (string) The string message that needs to be signed with the collateral key
+    }
+    ```
+
+* `protx_register_submit`
+    ```
+    protx_register_submit "tx" "sig"
+
+    Submits the specified ProTx to the network. This command will also sign the inputs of the transaction
+    which were previously added by "protx_register_prepare" to cover transaction fees
+
+    Arguments:
+    1. "tx"                 (string, required) The serialized transaction previously returned by "protx_register_prepare"
+    2. "sig"                (string, required) The signature signed with the collateral key. Must be in base64 format.
+
+    Result:
+    "txid"                  (string) The transaction id.
+    ```
+
+* `protx_revoke`
+    ```
+    protx_revoke \"proTxHash\" (\"operatorKey\" reason)\n"
+    
+    Creates and sends a ProUpRevTx to the network. This will revoke the operator key of the masternode and
+    put it into the PoSe-banned state. It will also set the service field of the masternode
+    to zero. Use this in case your operator key got compromised or you want to stop providing your service
+    to the masternode owner.
+
+    Arguments:
+    1. "proTxHash"    (string, required) The hash of the initial ProRegTx.
+    2. "operatorKey"  (string, optional) The operator BLS private key associated with the registered operator public key.
+                         If not specified, or set to an empty string, then this command must be performed on the active
+                         masternode with the corresponding operator key.
+    3 reason          (numeric, optional) The reason for masternode service revocation. Default: 0.
+                         0=not_specified, 1=service_termination, 2=compromised_keys, 3=keys_change.
+
+    Result:
+    "txid"                  (string) The transaction id.
+    ```
+
+* `protx_update_registrar`
+    ```
+    protx update_registrar \"proTxHash\" \"operatorPubKey\" \"votingAddress\" \"payoutAddress\" (\"ownerKey\")
+    
+    Creates and sends a ProUpRegTx to the network. This will update the operator key, voting key and payout
+    address of the masternode specified by \"proTxHash\".
+    The owner key of this masternode must be known to your wallet.
+
+    Creates and sends a ProUpServTx to the network. This will update the IP address
+    of a masternode, and/or the operator payout address.
+    If the IP is changed for a masternode that got PoSe-banned, the ProUpServTx will also revive this masternode.
+
+    Arguments:
+    1. "proTxHash"             (string, required) The hash of the initial ProRegTx.
+    2. "operatorPubKey         (string, required) The operator BLS public key. The private BLS key does not have to be known.
+                                  It has to match the BLS private key which is later used when operating the masternode.
+                                  If set to an empty string, the currently active operator BLS public key is reused.
+    3. "votingAddress"         (string, required) The voting key address. The private key does not have to be known by your wallet.
+                                  It has to match the private key which is later used when voting on proposals.
+                                  If set to an empty string, the currently active voting key address is reused.
+    4. "payoutAddress"         (string, required) The PENGOLINCOIN address to use for masternode reward payments.
+                                  If set to an empty string, the currently active payout address is reused.
+    5. "ownerKey"              (string, optional) The owner key associated with the operator address of the masternode.
+                                  If not specified, or set to an empty string, then the mn key must be known by your wallet,
+                                  in order to sign the tx.
+    Result:
+    "txid"                        (string) The transaction id.
+    ```
+
+* `protx_update_service`
+    ```
+    protx_update_service "proTxHash" "ipAndPort" ("operatorPayoutAddress" "operatorKey")
+
+    Creates and sends a ProUpServTx to the network. This will update the IP address
+    of a masternode, and/or the operator payout address.
+    If the IP is changed for a masternode that got PoSe-banned, the ProUpServTx will also revive this masternode.
+
+    Arguments:
+    1. "proTxHash"             (string, required) The hash of the initial ProRegTx.
+    2. "ipAndPort"             (string, required) IP and port in the form "IP:PORT".
+                                 If set to an empty string, the currently active ip is reused.
+    3. "operatorPayoutAddress" (string, optional) The address used for operator reward payments.
+                                Only allowed when the ProRegTx had a non-zero operatorReward value.
+                                 If set to an empty string, the currently active one is reused.
+    4. "operatorKey"           (string, optional) The operator BLS private key associated with the registered operator public key.
+                                 If not specified, or set to an empty string, then this command must be performed on the active
+                                 masternode with the corresponding operator key.
+    Result:
+    "txid"                        (string) The transaction id.
+    ```
+
+### GUI changes
+
+!TODO
+
+### Protocol changes
+
+Starting with the enforcement block, masternode rewards and budget payments are paid as outputs of the coinbase transaction, instead of the coinstake transaction.
+With this rule, a new opcode (`0xd2`) is introduced (see PR [#2275](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/2275)).
+It enforces the same rules as the legacy cold-staking opcode, but without allowing a "free" script for the last output of the transaction.
+The new opcode takes the name of `OP_CHECKCOLDSTAKEVERIFY`, and the legacy opcode (`0xd1`) is renamed to `OP_CHECKCOLDSTAKEVERIFY_LOF` (last-output-free).
+Scripts with the old opcode are still accepted on the network (the restriction on the last-output is enforced after the script validation in this case), but the client creates new delegations with the new opcode, by default, after the upgrade enforcement.
+
+
+Multi-wallet support
+--------------------
+
+PENGOLINCOIN Core now supports loading multiple, separate wallets (See [PR #2337](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/2337)). The wallets are completely separated, with individual balances, keys and received transactions.
+
+Multi-wallet is enabled by using more than one `-wallet` argument when starting PENGOLINCOIN client, either on the command line or in the pengolincoin.conf config file.
+
+**In pengolincoin-qt, only the first wallet will be displayed and accessible for creating and signing transactions.** GUI selectable multiple wallets will be supported in a future version. However, even in 6.0 other loaded wallets will remain synchronized to the node's current tip in the background.
+
+PENGOLINCOIN Core 6.0.0 contains the following changes to the RPC interface and pengolincoin-cli for multi-wallet:
+
+* When running PENGOLINCOIN Core with a single wallet, there are **no** changes to the RPC interface or `pengolincoin-cli`. All RPC calls and `pengolincoin-cli` commands continue to work as before.
+* When running PENGOLINCOIN Core with multi-wallet, all *node-level* RPC methods continue to work as before. HTTP RPC requests should be send to the normal `<RPC IP address>:<RPC port>` endpoint, and `pengolincoin-cli` commands should be run as before. A *node-level* RPC method is any method which does not require access to the wallet.
+* When running PENGOLINCOIN Core with multi-wallet, *wallet-level* RPC methods must specify the wallet for which they're intended in every request. HTTP RPC requests should be send to the `<RPC IP address>:<RPC port>/wallet/<wallet name>` endpoint, for example `127.0.0.1:8332/wallet/wallet1.dat`. `pengolincoin-cli` commands should be run with a `-rpcwallet` option, for example `pengolincoin-cli -rpcwallet=wallet1.dat getbalance`.
+
+* A new *node-level* `listwallets` RPC method is added to display which wallets are currently loaded. The names returned by this method are the same as those used in the HTTP endpoint and for the `rpcwallet` argument.
+
+The `getwalletinfo` RPC method returns the name of the wallet used for the query.
+
+Note that while multi-wallet is now fully supported, the RPC multi-wallet interface should be considered unstable for version 6.0.0, and there may backwards-incompatible changes in future versions.
+
+Wallets directory configuration (`-walletdir`)
+----------------------------------------------
+
+PENGOLINCOIN Core now has more flexibility in where the wallets directory can be
+located. Previously wallet database files were stored at the top level of the
+PENGOLINCOIN data directory. The behavior is now:
+
+- For new installations (where the data directory doesn't already exist),
+  wallets will now be stored in a new `wallets/` subdirectory inside the data
+  directory by default.
+- For existing nodes (where the data directory already exists), wallets will be
+  stored in the data directory root by default. If a `wallets/` subdirectory
+  already exists in the data directory root, then wallets will be stored in the
+  `wallets/` subdirectory by default.
+- The location of the wallets directory can be overridden by specifying a
+  `-walletdir=<path>` option where `<path>` can be an absolute path to a
+  directory or directory symlink.
+
+Care should be taken when choosing the wallets directory location, as if it
+becomes unavailable during operation, funds may be lost.
+
+External wallet files
+---------------------
+
+The `-wallet=<path>` option now accepts full paths instead of requiring wallets
+to be located in the -walletdir directory.
+
+Newly created wallet format
+---------------------------
+
+If `-wallet=<path>` is specified with a path that does not exist, it will now
+create a wallet directory at the specified location (containing a wallet.dat
+data file, a db.log file, and database/log.?????????? files) instead of just
+creating a data file at the path and storing log files in the parent
+directory. This should make backing up wallets more straightforward than
+before because the specified wallet path can just be directly archived without
+having to look in the parent directory for transaction log files.
+
+For backwards compatibility, wallet paths that are names of existing data files
+in the `-walletdir` directory will continue to be accepted and interpreted the
+same as before.
+
+Low-level RPC changes
+---------------------
+
+- When PENGOLINCOIN is not started with any `-wallet=<path>` options, the name of
+  the default wallet returned by `getwalletinfo` and `listwallets` RPCs is
+  now the empty string `""` instead of `"wallet.dat"`. If PENGOLINCOIN is started
+  with any `-wallet=<path>` options, there is no change in behavior, and the
+  name of any wallet is just its `<path>` string.
+
+Database cache memory increased
+--------------------------------
+
+As a result of growth of the UTXO set, performance with the prior default database cache of 100 MiB has suffered.
+For this reason the default was changed to 300 MiB in this release.
+For nodes on low-memory systems, the database cache can be changed back to 100 MiB (or to another value) by either:
+- Adding `dbcache=100` in pengolincoin.conf
+- Adding `-dbcache=100` startup flag
+- Changing it in the GUI under `Settings → Options → Main → Size of database cache`
+
+Note that the database cache setting has the most performance impact during initial sync of a node, and when catching up after downtime.
+
+
+Reindexing changes
 ------------------
 
-For our linux users, in addition to the [Ubuntu PPA](https://launchpad.net/~pengolincoin) repository, we are now offering a [Snap package](https://snapcraft.io/pengolincoin-core) as quick way to install and update a PENGOLINCOIN wallet.
+It is now possible to only redo validation, without rebuilding the block index, using the command line option `-reindex-chainstate` (in addition to `-reindex` which does both).
+This new option is useful when the blocks on disk are assumed to be fine, but the chainstate is still corrupted. It is also useful for benchmarks.
 
-Release versions are available via the `Stable` branch, and (for testing-only purposes) nightly builds are available in the `Beta` branch.
 
-Internal Miner/Staker Change
---------------
+Mining/Staking transaction selection ("Child Pays For Parent")
+--------------------------------------------------------------
 
-The wallet's internal miner/staker is no longer prevented from running prior to having synced all the additional layer 2 (MN/Budget) data. Instead, mining/staking uses better logic to allow block creation without fully synced layer 2 data when the full data set wouldn't be required.
+The block-generation transaction selection algorithm now selects transactions based on their feerate inclusive of unconfirmed ancestor transactions.  This means that a low-fee transaction can become more likely to be selected if a high-fee transaction that spends its outputs is relayed.
+With this change, the `-blockminsize` command line option has been removed.
 
-In other words, try to stake a new block only if:
 
-- full layer 2 sync is complete
-OR
-- The spork list is synced and all three sporks (8,9 and 13) are **not** active.
+Removal of Priority Estimation - Coin Age Priority
+--------------------------------------------------
 
-Faster Shutdown During Initial Loading
---------------
+In previous versions of PENGOLINCOIN Core, a portion of each block could be reserved for transactions based on the age and value of UTXOs they spent. This concept (Coin Age Priority) is a policy choice by miners/stakers, and there are no consensus rules around the inclusion of Coin Age Priority transactions in blocks. 
+PENGOLINCOIN Core v6.0.0 removes all remaining support for Coin Age Priority (See [PR #2378](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/2378)). This has the following implications:
 
-Previously, if a user wanted to close/quit the wallet before it had finished its initial loading process, they would need to wait until that loading process actually completed before the wallet would fully close.
+- The concept of *free transactions* has been removed. High Coin Age Priority transactions would previously be allowed to be relayed even if they didn't attach a miner fee. This is no longer possible since there is no concept of Coin Age Priority. The `-limitfreerelay` and `-relaypriority` options which controlled relay of free transactions have therefore been removed.
+- The `-blockprioritysize` option has been removed.
+- The `prioritisetransaction` RPC no longer takes a `priority_delta` argument. The RPC is still used to change the apparent fee-rate of the transaction by using the `fee_delta` argument.
+- `-minrelaytxfee` can now be set to 0. If `minrelaytxfee` is set, then fees smaller than `minrelaytxfee` (per kB) are rejected from relaying, mining and transaction creation. This defaults to 10000 satoshi/kB.
+- The `-printpriority` option has been updated to only output the fee rate and hash of transactions included in a block by the mining code.
 
-Now, the new behavior is to gracefully close the wallet once the current step is complete.
 
-*v4.0.0* Change log
+GUI changes
+-----------
+
+- The launch-on-startup option is no longer available on macOS
+
+### Settings
+
+A new checkbox has been added to the wallet settings UI to enable or disable automatic port mapping with NAT-PMP.
+If both UPnP and NAT-PMP are enabled, a successful allocation from UPnP prevails over one from NAT-PMP.
+
+Note: Successful automatic port mapping requires a router that supports either UPnP or NAT-PMP.
+
+### RPC-Console
+
+The GUI RPC-Console now accepts "parenthesized syntax", nested commands, and simple queries (see [PR #2282](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/2282).
+A new command `help-console` (available only on the GUI console) documents how to use it:
+
+```
+This console accepts RPC commands using the standard syntax.
+    example:    getblockhash 0
+
+This console can also accept RPC commands using parenthesized syntax.
+    example:    getblockhash(0)
+
+Commands may be nested when specified with the parenthesized syntax.
+    example:    getblock(getblockhash(0) true)
+
+A space or a comma can be used to delimit arguments for either syntax.
+    example:    getblockhash 0
+                getblockhash,0
+
+Named results can be queried with a non-quoted key string in brackets.
+    example:    getblock(getblockhash(0) true)[tx]
+
+Results without keys can be queried using an integer in brackets.
+    example:    getblock(getblockhash(0),true)[tx][0]
+```
+
+
+Support for JSON-RPC Named Arguments
+------------------------------------
+
+Commands sent over the JSON-RPC interface and through the `pengolincoin-cli` binary can now use named arguments. This follows the [JSON-RPC specification](http://www.jsonrpc.org/specification) for passing parameters by-name with an object.
+`pengolincoin-cli` has been updated to support this by parsing `name=value` arguments when the `-named` option is given.
+
+Some examples:
+
+```
+    src/pengolincoin-cli -named help command="help"
+    src/pengolincoin-cli -named getblockhash height=0
+    src/pengolincoin-cli -named getblock blockhash=000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
+    src/pengolincoin-cli -named sendtoaddress address="DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6" amount="1.0" comment="donation"
+```
+
+The order of arguments doesn't matter in this case. Named arguments are also useful to leave out arguments that should stay at their default value.
+The RPC server remains fully backwards compatible with positional arguments.
+
+
+Low-level RPC changes
+---------------------
+
+### Query options for listunspent RPC
+
+- The `listunspent` RPC now takes a `query_options` argument (see [PR #2317](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/2317)), which is a JSON object
+  containing one or more of the following members:
+  - `minimumAmount` - a number specifying the minimum value of each UTXO
+  - `maximumAmount` - a number specifying the maximum value of each UTXO
+  - `maximumCount` - a number specifying the minimum number of UTXOs
+  - `minimumSumAmount` - a number specifying the minimum sum value of all UTXOs
+
+- The `listunspent` RPC also takes an additional boolean argument `include_unsafe` (true by default) to optionally exclude "unsafe" utxos.
+  An unconfirmed output from outside keys is considered unsafe (see [PR #2351](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/2351)).
+
+- The `listunspent` output also shows whether the utxo is considered safe to spend or not.
+
+- the `stop` RPC no longer accepts the (already deprecated, ignored, and undocumented) optional boolean argument `detach`.
+
+### Subtract fee from recipient amount for RPC
+
+A new argument `subtract_fee_from` is added to `sendmany`/`shieldsendmany` RPC functions.
+It can be used to provide the list of recipent addresses paying the fee.
+```
+subtract_fee_from         (array, optional) 
+A json array with addresses.
+The fee will be equally deducted from the amount of each selected address.
+  [\"address\"          (string) Subtract fee from this address\n"
+   ,...
+  ]
+```
+
+For `fundrawtransaction` a new key (`subtractFeeFromOutputs`) is added to the `options` argument.
+It can be used to specify a list of output indexes.
+```
+subtractFeeFromOutputs    (array, optional)  A json array of integers.
+The fee will be equally deducted from the amount of each specified output.
+The outputs are specified by their zero-based index, before any change output is added.
+  [vout_index,...]
+```
+
+For `sendtoaddress`, the new parameter is called `subtract_fee` and it is a simple boolean.
+
+In all cases those recipients will receive less PGO than you enter in their corresponding amount field.
+If no outputs/addresses are specified, the sender pays the fee as usual.
+
+### Show wallet's auto-combine settings in getwalletinfo
+
+`getwalletinfo` now has two additional return fields. `autocombine_enabled` (boolean) and `autocombine_threshold` (numeric) that will show the auto-combine threshold and whether or not it is currently enabled.
+
+### Deprecate the autocombine RPC command
+
+The `autocombine` RPC command has been replaced with specific set/get commands (`setautocombinethreshold` and `getautocombinethreshold`, respectively) to bring this functionality further in-line with our RPC standards. Previously, the `autocombine` command gave no user-facing feedback when the setting was changed. This is now resolved with the introduction of the two new commands as detailed below:
+
+* `setautocombinethreshold`
+    ```  
+    setautocombinethreshold enable ( value )
+    This will set the auto-combine threshold value.
+    Wallet will automatically monitor for any coins with value below the threshold amount, and combine them if they reside with the same PENGOLINCOIN address
+    When auto-combine runs it will create a transaction, and therefore will be subject to transaction fees.
+    
+    Arguments:
+    1. enable          (boolean, required) Enable auto combine (true) or disable (false)
+    2. threshold       (numeric, optional. required if enable is true) Threshold amount. Must be greater than 1.
+    
+    Result:
+    {
+      "enabled": true|false,     (boolean) true if auto-combine is enabled, otherwise false
+      "threshold": n.nnn,        (numeric) auto-combine threshold in PGO
+      "saved": true|false        (boolean) true if setting was saved to the database, otherwise false
+    }
+    ```
+
+* `getautocombinethreshold`
+    ```
+    getautocombinethreshold
+    Returns the current threshold for auto combining UTXOs, if any
+
+    Result:
+    {
+      "enabled": true|false,    (boolean) true if auto-combine is enabled, otherwise false
+      "threshold": n.nnn         (numeric) the auto-combine threshold amount in PGO
+    }
+    ```
+
+Build system changes
+--------------------
+
+The minimum supported miniUPnPc API version is set to 10. This keeps compatibility with Ubuntu 16.04 LTS and Debian 8 `libminiupnpc-dev` packages. Please note, on Debian this package is still vulnerable to [CVE-2017-8798](https://security-tracker.debian.org/tracker/CVE-2017-8798) (in jessie only) and [CVE-2017-1000494](https://security-tracker.debian.org/tracker/CVE-2017-1000494) (both in jessie and in stretch).
+
+OpenSSL is no longer used by PENGOLINCOIN Core
+
+
+P2P and network changes
+-----------------------
+
+#### Removal of reject network messages from PENGOLINCOIN Core (BIP61)
+
+The command line option to enable BIP61 (`-enablebip61`) has been removed.
+
+Nodes on the network can not generally be trusted to send valid ("reject")
+messages, so this should only ever be used when connected to a trusted node.
+Please use the recommended alternatives if you rely on this feature:
+
+* Testing or debugging of implementations of the PENGOLINCOIN P2P network protocol
+  should be done by inspecting the log messages that are produced by a recent
+  version of PENGOLINCOIN Core. Bitcoin Core logs debug messages
+  (`-debug=<category>`) to a stream (`-printtoconsole`) or to a file
+  (`-debuglogfile=<debug.log>`).
+
+* Testing the validity of a block can be achieved by specific RPCs:
+  - `submitblock`
+
+* Testing the validity of a transaction can be achieved by specific RPCs:
+  - `sendrawtransaction`
+
+* Wallets should not use the absence of "reject" messages to indicate a
+  transaction has propagated the network, nor should wallets use "reject"
+  messages to set transaction fees. Wallets should rather use fee estimation
+  to determine transaction fees and set replace-by-fee if desired. Thus, they
+  could wait until the transaction has confirmed (taking into account the fee
+  target they set (compare the RPC `estimatesmartfee`)) or listen for the
+  transaction announcement by other network peers to check for propagation.
+
+#### NAT-PMP Support
+- Added NAT-PMP port mapping support via [`libnatpmp`](https://miniupnp.tuxfamily.org/libnatpmp.html)
+
+
+Configuration changes
+---------------------
+
+### Configuration sections for testnet and regtest
+
+It is now possible for a single configuration file to set different options for different networks. This is done by using sections or by prefixing the option with the network, such as:
+
+    main.uacomment=pengolincoin
+    test.uacomment=pengolincoin-testnet
+    regtest.uacomment=regtest
+    [main]
+    mempoolsize=300
+    [test]
+    mempoolsize=100
+    [regtest]
+    mempoolsize=20
+
+The `addnode=`, `connect=`, `port=`, `bind=`, `rpcport=`, `rpcbind=`, and `wallet=` options will only apply to mainnet when specified in the configuration file, unless a network is specified.
+
+### Allow to optional specify the directory for the blocks storage
+
+A new init option flag '-blocksdir' will allow one to keep the blockfiles external from the data directory.
+
+### Disable PoW mining RPC Commands
+
+A new configure flag has been introduced to allow more granular control over weather or not the PoW mining RPC commands are compiled into the wallet. By default they are not. This behavior can be overridden by passing `--enable-mining-rpc` to the `configure` script.
+
+### Enable NAT-PMP port mapping at startup
+
+The `-natpmp` option has been added to use NAT-PMP to map the listening port. If both UPnP
+and NAT-PMP are enabled, a successful allocation from UPnP prevails over one from NAT-PMP.
+
+### Removed startup options
+
+- `printstakemodifier`
+
+### Logging
+
+The log timestamp format is now ISO 8601 (e.g. "2021-02-28T12:34:56Z").
+
+### Automatic Backup File Naming
+
+The file extension applied to automatic backups is now in ISO 8601 basic notation (e.g. "20210228T123456Z"). The basic notation is used to prevent illegal `:` characters from appearing in the filename.
+
+
+*version* Change log
 ==============
 
-Detailed release notes follow. For convenience in locating the code changes and accompanying discussion, both the pull request and git merge commit are mentioned.
-
-### Core
-- #643 `469d974519` [Crypto] Use stronger rand for key generation (warrows)
-- #936 `12a6b704b6` [zPGO] PublicCoinSpend v4 - Coin Randomness Schnorr Signature (random-zebra)
-- #955 `008b7938db` [Core][Script][Wallet][RPC][Tests] Cold Staking (random-zebra)
-- #989 `6f645ce457` [DB] Db runtime error cleaning the variable that needs to be logged (furszy)
-- #1000 `34e11dd5fa` [Core] Spork code overhaul (random-zebra)
-- #1002 `5666184cc5` [PoS] Time Protocol v2 (random-zebra)
-- #1022 `b5bede0661` remove accumulators checkpoint (random-zebra)
-- #1025 `988ee3fe37` [Startup] Stop loading the wallet if shutdown was requested. (furszy)
-- #1029 `0df20ddbab` [Startup][Refactor][Backport] Memory allocation fail handler + init step 1 refactored. (furszy)
-- #1040 `01fe200d4a` [Bug] Fix GetDepthInMainChain returning 0 when tx is not in mempool (random-zebra)
-- #1050 `adc74f737c` [Core] Prevent coinstakes from overpaying masternodes (random-zebra)
-- #1063 `04834fff67` [Node] Remove a call to IsSuperMajority (warrows)
-- #1066 `6a4bf7c42c` [Cleanup][Refactor]Main.cpp code cleanup. (furszy)
-- #1067 `c947e534ee` [Node] Replace IsSuperMajority with height checks (warrows)
-- #1070 `fbffae1b38` [Bug] Fix contextCheckBlock for the first  block that it's a v1 block. (furszy)
-- #1129 `a87bfc32a0` [Consensus] Define TestNet changeover block for PENGOLINCOIN v4.0 RC (random-zebra)
-- #1134 `a4ded20de4` [Trivial] Remove a duplicate variable definition (warrows)
-- #1191 `9a054eeba6` [Consensus] Define MainNet changeover block for PENGOLINCOIN v4.0 (random-zebra)
-- #1197 `ad241150e9` [Trivial] Update copyright headers (Fuzzbawls)
+Detailed release notes follow. This overview includes changes that affect behavior, not code moves, refactors and string updates. For convenience in locating the code changes and accompanying discussion, both the pull request and git merge commit are mentioned.
 
 ### GUI
-- #954 `e815815fdc` [GUI]??[Model] New Wallet UI (furszy)
-- #997 `4d50ff33da` [Trivial][UI] MN screen (furszy)
-- #998 `6380da7eb4` [Qt] Guard MN tab from possible missing TXs in masternode.conf (Fuzzbawls)
-- #999 `c6567aec89` [UI] Send screen total amounts refresh after custom options cleaned (furszy)
-- #1003 `a89f4e6603` [QT][Performance] Memory leak re creating the row object instead of re initialize it. (furszy)
-- #1006 `ac523b24c2` [Trivial] Fix mnrow ifdef typo (Fuzzbawls)
-- #1007 `39e8a03505` [Qt] Reintroduce networkstyle to title texts (Fuzzbawls)
-- #1008 `91514a0326` [Qt] Don't set placeholder on QPlainTextEdit (Fuzzbawls)
-- #1009 `e0178087c8` [QT] Dashboard chart left and right day range movement control buttons (furszy)
-- #1012 `0d05b5381d` [Performance][Wallet][QT][Model] TransactionTableModel multi-thread initialization + tx filter sort speed improved. (furszy)
-- #1014 `49f42e9a59` [GUI] Refresh coin control upon reopening (CryptoDev-Project)
-- #1015 `17ef4163dc` [Qt] Update source strings (Fuzzbawls)
-- #1016 `33182066ba` [GUI] Tx detail dialog (furszy)
-- #1017 `8b6819a9d8` [GUI][Trivial] Remove hardcoded address. (Matias Furszyfer)
-- #1018 `e264c77e63` [GUI] Update amounts when entry is removed from SendMultiRow (random-zebra)
-- #1026 `968000bb33` [Cleanup] Prev 4.0 wallet UI files cleanup. (furszy)
-- #1032 `d3b2969fff` [GUI] Dashboard chart map first segfault (furszy)
-- #1033 `c04f442e4c` [GUI][Model][Wallet] Cold staking UI. (furszy)
-- #1048 `1cb55b4822` [Qt] Make CoinControlTreeWidget focusable (Fuzzbawls)
-- #1053 `6aaa531ec1` [GUI] Segfault for a bad cast of the parent in the escape key press event (furszy)
-- #1054 `7c2cd32d6e` [UI] Guard a call to GetDepthInMainChain (warrows)
-- #1055 `232cea5584` [Wallet] Create label for addresses generated via masternode wizard (CryptoDev-Project)
-- #1057 `d4e6525410` [UI] Fix AA_EnableHighDpiScaling warning (Akshay)
-- #1071 `297acac8d6` [UI] Settings options buttons hover css (furszy)
-- #1072 `1e0cea53e8` [Qt] Update welcomecontentwidget.ui (Jeffrey)
-- #1073 `64a90d717f` [Model][Backport] Remove mapWallet not needed call + stop treating coinbase differently (furszy)
-- #1074 `54ff8bd3da` [UI] TransactionFilter do not invalidate filter if range is already set (furszy)
-- #1075 `31e9f0fbde` [Model][UI] Receive dialog (furszy)
-- #1076 `decac23124` [GUI] Decreasing the tooltip padding for #1076 windows issue. (furszy)
-- #1083 `fba6d3cdac` [Qt] Hide option for 3rd party transaction URLs (Fuzzbawls)
-- #1084 `7b3455acaa` [Qt] Show display unit option as text (Fuzzbawls)
-- #1085 `a4d141fd1c` [Qt] Fixup topbar balance calculation (Fuzzbawls)
-- #1099 `5d03160837` [GUI][Model][Performance] Dashboard (furszy)
-- #1104 `97bea9cfc0` [Trivial][GUI] Fix typos in welcome widget (random-zebra)
-- #1105 `e4e5df1018` [GUI] Fix bug in change wallet passphrase (random-zebra)
-- #1109 `4771f6a7d7` [Trivial] [GUI] Customize Fee Dialog text change (NoobieDev12)
-- #1112 `645854ad57` [Qt] Refresh coin control when re-opening from CS widget (Fuzzbawls)
-- #1113 `b546151bc0` [Qt] Re-work settings restart and saving flow (Fuzzbawls)
-- #1115 `12be3e2a8c` [Trivial] [GUI] Request Dialog typo fix (JSKitty)
-- #1119 `6ceff8f97f` [GUI] Cold staking Warning for unconfirmed balance + stop multiple model updates (furszy)
-- #1120 `0d04267c89` [GUI][BUG] Bad top padding on the dashboard nav icon in dark theme fix. (furszy)
-- #1121 `0216fd3c8a` [GUI] Cold staking alert user if the owner address is not from the wallet (furszy)
-- #1122 `641b1d6bbe` [GUI][Backport] Explicitly disable "Dark Mode" appearance on macOS (fanquake)
-- #1123 `a4fb368d39` [GUI] Prevent worker constant creation and invalid removal (furszy)
-- #1124 `bbb0125077` [GUI] Use QRegexValidator instead of the QDoubleValidator. (furszy)
-- #1125 `c6e238ca4d` [GUI] Inform if open pengolincoin.conf and/or backups folder fail. (furszy)
-- #1126 `c910490c53` [BUG] Fix send transaction detail destinations (furszy)
-- #1130 `c582cabbd3` [UI] Copy correct data from mninfo dialog (Akshay)
-- #1131 `8ca5db691b` [Bug] URI read from file coded properly.. (furszy)
-- #1132 `a34a7dfe1f` [Bug][GUI] Tx list row amount color changing invalidly. (furszy)
-- #1133 `d159cb1878` [Bug][GUI] Topbar sync progressbar not expanding fixed. (furszy)
-- #1139 `03b51c411d` [Qt] Fix segfault when running GUI client with --help or -? (Fuzzbawls)
-- #1141 `01c517085b` [GUI][Model] isTestNetwork regtest correction. (furszy)
-- #1142 `17ad5a2a61` [Bug] Fix segfault on GUI initialization for cold staker wallet (random-zebra)
-- #1151 `da3bea5971` Rewording text under Change Wallet Passphrase (NoobieDev12)
-- #1158 `7deae859f1` [BUG] Masternodes wizard (furszy)
-- #1159 `1ae53d0a2a` [GUI][Trivial] Rewording of Error message when wallet is unlocked for staking only (NoobieDev12)
-- #1160 `88ddd1a947` [GUI][Model] Do not re request passphrase when the wallet is unlocked. (furszy)
-- #1161 `e4bfe3e9af` [GUI][Trivial] Custom change address (furszy)
-- #1162 `1c23ea6a59` [Qt] Periodic make translate (Fuzzbawls)
-- #1163 `474e2bc6b2` [GUI] Validate wallet password on enter key press (warrows)
-- #1165 `c54dad3b9f` [GUI][Bug] Cold staking screen (furszy)
-- #1166 `4cc04b0ba6` [Qt] properly copy IPv6 externalip MN info (Fuzzbawls)
-- #1173 `8e42e03192` [GUI][Trivial] Remove every pushButton focus decoration property. (furszy)
-- #1174 `b352e2d096` [GUI] Min cold staking amount in ColdStaking widget (random-zebra)
-- #1178 `d7a929c6a8` [GUI][Bug] Cold staking screen (furszy)
-- #1179 `7a33fe10d2` [Qt] Fix for dead link to wrong PENGOLINCOIN website (NoobieDev12)
-- #1183 `60053d6786` [GUI][Trivial] Allow immediate typing in dialogs / tools widget (random-zebra)
-- #1185 `682d54cd12` [GUI][Trivial] Make amount optional in staking address gen dialog (random-zebra)
-- #1186 `0cc2976bbc` [GUI][Trivial] move caps lock warning in askpassphrase dialog (random-zebra)
-- #1187 `0a2baa686d` [GUI][Trivial] Fix tx detail dialog expanding policy (random-zebra)
-- #1188 `d5ed83896c` [GUI] Workaround to the OSX border-image pink stripes. (furszy)
-- #1190 `129c4744ea` [GUI] Feature/Bug CoinControl Update on Open (Liquid369)
-- #1192 `e52043b260` [GUI][Bug] Accept P2CS locked coins in coincontrol (random-zebra)
-- #1193 `f49b0309a0` [GUI][Wallet] Allow spending of P2CS without coincontrol selection (random-zebra)
-- #1194 `8854eace66` fix "total staking" amount (random-zebra)
-- #1195 `ce5bc08988` [Qt] Update translations from transifex (Fuzzbawls)
-
-### P2P and Network Code
-- #975 `9765a772b8` [Consensus] Define SPORK_17 (random-zebra)
-- #995 `8f2217d2bd` [Consensus] Define SPORK_18 (random-zebra)
-- #1001 `59f55d6a54` [Consensus] Remove Old message format in CMasternodeBroadcast (random-zebra)
-- #1024 `98aa3fa438` [Consensus] New signatures for network messages (random-zebra)
-- #1110 `f89f672847` [Masterndoes] Masternodes sync try locking cs_main when it looks for the tip (furszy)
-- #1118 `3219d9b48c` [Sporks] Guard chainActive.Tip() and chainActive.Height() methods call. (furszy)
-- #1128 `d6573e70c7` [Consensus] nTimeOffset warning for time protocol V2 (random-zebra)
-- #1137 `4241574857` [Net] Protocol update enforcement for 30001 (random-zebra)
-- #1138 `e0c49356ae` [Consensus] nTimeOffset warning addition (random-zebra)
-- #1167 `fc4ffcf4af` [Trivial] Remove time offset warning when it gets back within range (random-zebra)
-- #1177 `421cc1017b` [Network] Add SPORK 17 & 18 to the fMissingSporks flag + code reorg. (furszy)
 
 ### Wallet
-- #968 `47ccf45adb` [Staking][Wallet] Add Multi-Split functionality to stake output splitting (Cave Spectre)
-- #970 `0f1764a3db` [Wallet] Various transaction handling improvements (warrows)
-- #1030 `ed83481494` [Wallet][Startup][DB][Backport] Remove vchDefaultKey from wallet.h (furszy)
-- #1031 `52aed66930` [Wallet] fix CreateZerocoinSpendTransaction with empty addressesTo (random-zebra)
-- #1039 `41d19c106f` Fix OOM when deserializing UTXO entries with invalid length (random-zebra)
-- #1043 `d1d0cb691a` [Wallet][Tests] Fix bug re-adding orphan coinstake's inputs to the wallet (random-zebra)
-- #1056 `3ba3b0e244` [Wallet][Refactor] Updating ancient getbalanceXXX methods to a lambda call. (furszy)
-- #1058 `18e23a49e7` [Wallet] Transaction IsEquivalentTo method backported + code cleanup. (furszy)
-- #1064 `bfbbb6b30c` [Wallet][RPC] Diagnose unsuitable outputs in lockunspent() (random-zebra)
-- #1065 `d605e528db` [Wallet] Unlock spent outputs (random-zebra)
-- #1068 `59b45e6d33` [Wallet] Do not cache the pgo amount if fUnspent is enabled. (random-zebra)
-- #1069 `d6f9eff763` [Wallet] Enable miner with mnsync incomplete (random-zebra)
-- #1116 `e4d7addbb7` [Wallet] Do not use p2cs outputs in the autocombine flow. (furszy)
-- #1117 `8d425bdf0d` [Wallet][GUI][Model] Cold staking addresses contacts flow. (furszy)
 
-### Build System(s)
-- #977 `ee9f6ca9da` [Build] CMake Improvements (Fuzzbawls)
-- #979 `8ffc045f7d` [Compilation] Pass caught exceptions by reference (warrows)
-- #990 `e7e31442e8` [Build] Fix wrong argument when verifying MacOS signatures (Mrs-X)
-- #991 `4f3dd5ef66` [Build] Remove OpenSSL 1.0 check (warrows)
-- #1010 `6ff12f70de` [Build] Fixup moc includes and generation (Fuzzbawls)
-- #1013 `75b8ad2ae5` [Build] Clean up GUI dependency checking (Fuzzbawls)
-- #1021 `899b4bd6a9` [Build] Use in-tree intermediary endian header (Fuzzbawls)
-- #1023 `509d63526b` [Travis] Lower timeout for the full test suite (warrows)
-- #1027 `569ac5e5e0` [Cleanup] Get rid of compiler warnings (random-zebra)
-- #1036 `adfcb46149` [Build] Add SnapCraft Builds (Fuzzbawls)
-- #1042 `8efd696b3f` [TravisCI] Run CMake tests earlier (Fuzzbawls)
-- #1045 `a761323178` [travis] Update .travis.yml (Warrows)
-- #1052 `dd62f3f66a` [CMake] Fix macOS Boost detection (Fuzzbawls)
-- #1127 `c7bc2e1288` [Deployment] Windows taskbar icon pixelated fix. (furszy)
-- #1136 `0f92bf8e17` [Build] Include full version in release file names (fanquake)
-- #1157 `04480012aa` [Travis] Increase functional tests reserved time (Warrows)
-- #1180 `4f4da456de` [Build] Add random-zebra gitian GPG public key fingerprint (random-zebra)
+### RPC
 
-### RPC Interface
-- #1111 `fcb0db8321` [Trivial] Fix help text for delegatorremove (Akshay)
+### Masternodes/Budget
 
-### Testing System(s)
-- #981 `92de4b81b3` [Tests] Add RPC budget regression tests (Fuzzbawls)
+### Core
 
-### Documentation
-- #1051 `9ea7519026` [Doxygen] Generate Todo list (Fuzzbawls)
-- #1176 `eb1eb4d2c6` [Docs][Utils] Overhaul gitian build docs/script (Fuzzbawls)
-- #1181 `78034c937b` [Docs] 4.0.0 release notes (Fuzzbawls)
+### Build Systems
 
-## Pgos
+### P2P/Network
+
+### Testing
+
+### Cleanup/Refactoring
+
+### Docs/Output
+
+## Credits
 
 Thanks to everyone who directly contributed to this release:
-- Akshay
-- Alex Morcos
-- Andrew Chow
-- Ben Woosley
-- Cave Spectre
-- Cory Fields
-- CryptoDev-Project
-- Dag Robole
-- Fuzzbawls
-- Gregory Solarte
-- JSKitty
-- James Hilliard
-- Jeffrey
-- Jonas Schnelli
-- Liquid369
-- MarcoFalke
-- Matias Furszyfer
-- Matt Corallo
-- Mrs-X
-- NoobieDev12
-- Pieter Wuille
-- Warrows
-- Wladimir J. van der Laan
-- cevap
-- dexX7
-- fanquake
-- furszy
-- practicalswift
-- presstab
-- random-zebra
+
 
 As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/pengolincoin-project-translations/), the QA team during Testing and the Node hosts supporting our Testnet.

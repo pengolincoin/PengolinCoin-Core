@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -35,36 +36,49 @@ public:
 
     void loadWalletModel() override;
 
-public slots:
+public Q_SLOTS:
     void onRequestClicked();
     void onMyAddressesClicked();
     void onNewAddressClicked();
 
-private slots:
+private Q_SLOTS:
     void changeTheme(bool isLightTheme, QString &theme) override ;
     void onLabelClicked();
     void onCopyClicked();
+    void refreshView(const QModelIndex& tl, const QModelIndex& br);
     void refreshView(QString refreshAddress = QString());
     void handleAddressClicked(const QModelIndex &index);
+    void onSortChanged(int idx);
+    void onSortOrderChanged(int idx);
+    void filterChanged(const QString& str);
+
 private:
-    Ui::ReceiveWidget *ui;
+    Ui::ReceiveWidget *ui{nullptr};
 
-    FurAbstractListItemDelegate *delegate;
-    AddressTableModel* addressTableModel = nullptr;
-    AddressFilterProxyModel *filter = nullptr;
+    FurAbstractListItemDelegate *delegate{nullptr};
+    AddressTableModel* addressTableModel{nullptr};
+    AddressFilterProxyModel *filter{nullptr};
 
-    QSpacerItem *spacer = nullptr;
+    QSpacerItem *spacer{nullptr};
 
     // Cached last address
-    SendCoinsRecipient *info = nullptr;
+    SendCoinsRecipient *info{nullptr};
     // Cached qr
-    QPixmap *qrImage = nullptr;
+    QPixmap *qrImage{nullptr};
 
-    void updateQr(QString address);
+    // Cached sort type and order
+    AddressTableModel::ColumnIndex sortType = AddressTableModel::Label;
+    Qt::SortOrder sortOrder = Qt::AscendingOrder;
+
+    void updateQr(QString& address);
     void updateLabel();
     void showAddressGenerationDialog(bool isPaymentRequest);
+    void sortAddresses();
+    void onTransparentSelected(bool transparentSelected);
 
-    bool isShowingDialog = false;
+    bool isShowingDialog{false};
+    // Whether the main section is presenting a shielded address or a regular one
+    bool shieldedMode{false};
 
 };
 

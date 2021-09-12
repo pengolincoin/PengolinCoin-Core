@@ -108,7 +108,7 @@ git merge commit are mentioned.
 - #328 `a6c18c8` [Main] PENGOLINCOIN not responding on user quitting app (Aaron Langford)
 
 
-Pgos
+Credits
 =======
 
 Thanks to everyone who directly contributed to this release:

@@ -26,14 +26,14 @@ ssl.BN_CTX_free.argtypes = [ctypes.c_void_p]
 ssl.BN_CTX_new.restype = ctypes.c_void_p
 ssl.BN_CTX_new.argtypes = []
 
-ssl.PGOH_compute_key.restype = ctypes.c_int
-ssl.PGOH_compute_key.argtypes = [ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p, ctypes.c_void_p]
+ssl.ECDH_compute_key.restype = ctypes.c_int
+ssl.ECDH_compute_key.argtypes = [ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p, ctypes.c_void_p]
 
-ssl.PGOSA_sign.restype = ctypes.c_int
-ssl.PGOSA_sign.argtypes = [ctypes.c_int, ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p]
+ssl.ECDSA_sign.restype = ctypes.c_int
+ssl.ECDSA_sign.argtypes = [ctypes.c_int, ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p]
 
-ssl.PGOSA_verify.restype = ctypes.c_int
-ssl.PGOSA_verify.argtypes = [ctypes.c_int, ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p]
+ssl.ECDSA_verify.restype = ctypes.c_int
+ssl.ECDSA_verify.argtypes = [ctypes.c_int, ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p]
 
 ssl.EC_KEY_free.restype = None
 ssl.EC_KEY_free.argtypes = [ctypes.c_void_p]
@@ -68,7 +68,7 @@ ssl.EC_POINT_free.argtypes = [ctypes.c_void_p]
 ssl.EC_POINT_mul.restype = ctypes.c_int
 ssl.EC_POINT_mul.argtypes = [ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p]
 
-# this specifies the curve used with PGOSA.
+# this specifies the curve used with ECDSA.
 NID_secp256k1 = 714 # from openssl/obj_mac.h
 
 SECP256K1_ORDER = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
@@ -132,18 +132,18 @@ class CECKey():
         ssl.i2o_ECPublicKey(self.k, ctypes.byref(ctypes.pointer(mb)))
         return mb.raw
 
-    def get_raw_pgoh_key(self, other_pubkey):
-        pgoh_keybuffer = ctypes.create_string_buffer(32)
-        r = ssl.PGOH_compute_key(ctypes.pointer(pgoh_keybuffer), 32,
+    def get_raw_ecdh_key(self, other_pubkey):
+        ecdh_keybuffer = ctypes.create_string_buffer(32)
+        r = ssl.ECDH_compute_key(ctypes.pointer(ecdh_keybuffer), 32,
                                  ssl.EC_KEY_get0_public_key(other_pubkey.k),
                                  self.k, 0)
         if r != 32:
-            raise Exception('CKey.get_pgoh_key(): PGOH_compute_key() failed')
-        return pgoh_keybuffer.raw
+            raise Exception('CKey.get_ecdh_key(): ECDH_compute_key() failed')
+        return ecdh_keybuffer.raw
 
-    def get_pgoh_key(self, other_pubkey, kdf=lambda k: hashlib.sha256(k).digest()):
+    def get_ecdh_key(self, other_pubkey, kdf=lambda k: hashlib.sha256(k).digest()):
         # FIXME: be warned it's not clear what the kdf should be as a default
-        r = self.get_raw_pgoh_key(other_pubkey)
+        r = self.get_raw_ecdh_key(other_pubkey)
         return kdf(r)
 
     def sign(self, hash, low_s = True):
@@ -154,9 +154,9 @@ class CECKey():
             raise ValueError('Hash must be exactly 32 bytes long')
 
         sig_size0 = ctypes.c_uint32()
-        sig_size0.value = ssl.PGOSA_size(self.k)
+        sig_size0.value = ssl.ECDSA_size(self.k)
         mb_sig = ctypes.create_string_buffer(sig_size0.value)
-        result = ssl.PGOSA_sign(0, hash, len(hash), mb_sig, ctypes.byref(sig_size0), self.k)
+        result = ssl.ECDSA_sign(0, hash, len(hash), mb_sig, ctypes.byref(sig_size0), self.k)
         assert 1 == result
         assert mb_sig.raw[0] == 0x30
         assert mb_sig.raw[1] == sig_size0.value - 2
@@ -180,7 +180,7 @@ class CECKey():
 
     def verify(self, hash, sig):
         """Verify a DER signature"""
-        return ssl.PGOSA_verify(0, hash, len(hash), sig, len(sig), self.k) == 1
+        return ssl.ECDSA_verify(0, hash, len(hash), sig, len(sig), self.k) == 1
 
     def set_compressed(self, compressed):
         if compressed:

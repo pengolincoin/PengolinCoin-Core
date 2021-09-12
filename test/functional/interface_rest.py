@@ -4,14 +4,17 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the REST API."""
 
-from test_framework.test_framework import BitcoinTestFramework
-from test_framework.util import *
-from struct import *
-from io import BytesIO
 from codecs import encode
-
+from decimal import Decimal
 import http.client
+from io import BytesIO
+import json
+from struct import unpack, pack
 import urllib.parse
+
+from test_framework.test_framework import PengolinCoinTestFramework
+from test_framework.util import assert_equal, assert_greater_than, connect_nodes, hex_str_to_bytes
+
 
 def deser_uint256(f):
     r = 0
@@ -40,7 +43,7 @@ def http_post_call(host, port, path, requestdata = '', response_object = 0):
 
     return conn.getresponse().read()
 
-class RESTTest (BitcoinTestFramework):
+class RESTTest (PengolinCoinTestFramework):
     FORMAT_SEPARATOR = "."
 
     def set_test_params(self):
@@ -49,7 +52,7 @@ class RESTTest (BitcoinTestFramework):
 
     def setup_network(self, split=False):
         super().setup_network()
-        connect_nodes_bi(self.nodes, 0, 2)
+        connect_nodes(self.nodes[0], 2)
 
     def run_test(self):
         url = urllib.parse.urlparse(self.nodes[0].url)

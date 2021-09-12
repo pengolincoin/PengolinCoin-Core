@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -34,17 +35,10 @@ public:
     void loadClientModel() override;
     void showEvent(QShowEvent *event) override;
 
-    enum MessageClass {
-        MC_ERROR,
-        MC_DEBUG,
-        CMD_REQUEST,
-        CMD_REPLY,
-        CMD_ERROR
-    };
-
-public slots:
-    void clear();
-    void message(int category, const QString& message, bool html = false);
+public Q_SLOTS:
+    void clear(bool clearHistory = true);
+    void response(int category, const QString &message) { messageInternal(category, message); };
+    void messageInternal(int category, const QString &message, bool html = false);
     /** Go forward or back in history */
     void browseHistory(int offset);
     /** Scroll console view to end */
@@ -54,10 +48,10 @@ public slots:
 protected:
     virtual bool eventFilter(QObject* obj, QEvent* event) override;
 
-protected slots:
+protected Q_SLOTS:
     void changeTheme(bool isLightTheme, QString &theme) override;
 
-signals:
+Q_SIGNALS:
     // For RPC command executor
     void stopExecutor();
     void cmdCommandRequest(const QString& command);
@@ -72,7 +66,7 @@ private:
 
     void startExecutor();
 
-private slots:
+private Q_SLOTS:
     void on_lineEdit_returnPressed();
 
 

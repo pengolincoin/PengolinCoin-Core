@@ -138,7 +138,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #611 `c6a57f664` [Output] Properly log reason(s) for increasing a peer's DoS score. (Fuzzbawls)
  - #649 `f6bfb4ade` [Utils] Add copyright header to logprint-scanner.py (Fuzzbawls)
  
-## Pgos
+## Credits
 Thanks to everyone who directly contributed to this release:
 
  - Fuzzbawls

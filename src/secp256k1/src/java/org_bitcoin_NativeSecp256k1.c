@@ -3,7 +3,7 @@
 #include <string.h>
 #include "org_bitcoin_NativeSecp256k1.h"
 #include "include/secp256k1.h"
-#include "include/secp256k1_pgoh.h"
+#include "include/secp256k1_ecdh.h"
 #include "include/secp256k1_recovery.h"
 
 
@@ -43,7 +43,7 @@ SECP256K1_API void JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1destroy_1
   (void)classObject;(void)env;
 }
 
-SECP256K1_API jint JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1pgosa_1verify
+SECP256K1_API jint JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1ecdsa_1verify
   (JNIEnv* env, jclass classObject, jobject byteBufferObject, jlong ctx_l, jint siglen, jint publen)
 {
   secp256k1_context *ctx = (secp256k1_context*)(uintptr_t)ctx_l;
@@ -52,16 +52,16 @@ SECP256K1_API jint JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1pgosa_1ve
   const unsigned char* sigdata = {  (unsigned char*) (data + 32) };
   const unsigned char* pubdata = { (unsigned char*) (data + siglen + 32) };
 
-  secp256k1_pgosa_signature sig;
+  secp256k1_ecdsa_signature sig;
   secp256k1_pubkey pubkey;
 
-  int ret = secp256k1_pgosa_signature_parse_der(ctx, &sig, sigdata, siglen);
+  int ret = secp256k1_ecdsa_signature_parse_der(ctx, &sig, sigdata, siglen);
 
   if( ret ) {
     ret = secp256k1_ec_pubkey_parse(ctx, &pubkey, pubdata, publen);
 
     if( ret ) {
-      ret = secp256k1_pgosa_verify(ctx, &sig, data, &pubkey);
+      ret = secp256k1_ecdsa_verify(ctx, &sig, data, &pubkey);
     }
   }
 
@@ -70,7 +70,7 @@ SECP256K1_API jint JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1pgosa_1ve
   return ret;
 }
 
-SECP256K1_API jobjectArray JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1pgosa_1sign
+SECP256K1_API jobjectArray JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1ecdsa_1sign
   (JNIEnv* env, jclass classObject, jobject byteBufferObject, jlong ctx_l)
 {
   secp256k1_context *ctx = (secp256k1_context*)(uintptr_t)ctx_l;
@@ -81,15 +81,15 @@ SECP256K1_API jobjectArray JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1p
   jbyteArray sigArray, intsByteArray;
   unsigned char intsarray[2];
 
-  secp256k1_pgosa_signature sig[72];
+  secp256k1_ecdsa_signature sig[72];
 
-  int ret = secp256k1_pgosa_sign(ctx, sig, data, secKey, NULL, NULL);
+  int ret = secp256k1_ecdsa_sign(ctx, sig, data, secKey, NULL, NULL);
 
   unsigned char outputSer[72];
   size_t outputLen = 72;
 
   if( ret ) {
-    int ret2 = secp256k1_pgosa_signature_serialize_der(ctx,outputSer, &outputLen, sig ); (void)ret2;
+    int ret2 = secp256k1_ecdsa_signature_serialize_der(ctx,outputSer, &outputLen, sig ); (void)ret2;
   }
 
   intsarray[0] = outputLen;
@@ -324,7 +324,7 @@ SECP256K1_API jobjectArray JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1p
   return retArray;
 }
 
-SECP256K1_API jlong JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1pgosa_1pubkey_1combine
+SECP256K1_API jlong JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1ecdsa_1pubkey_1combine
   (JNIEnv * env, jclass classObject, jobject byteBufferObject, jlong ctx_l, jint numkeys)
 {
   (void)classObject;(void)env;(void)byteBufferObject;(void)ctx_l;(void)numkeys;
@@ -332,12 +332,12 @@ SECP256K1_API jlong JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1pgosa_1p
   return 0;
 }
 
-SECP256K1_API jobjectArray JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1pgoh
+SECP256K1_API jobjectArray JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1ecdh
   (JNIEnv* env, jclass classObject, jobject byteBufferObject, jlong ctx_l, jint publen)
 {
   secp256k1_context *ctx = (secp256k1_context*)(uintptr_t)ctx_l;
-  const unsigned char* spgoata = (*env)->GetDirectBufferAddress(env, byteBufferObject);
-  const unsigned char* pubdata = (const unsigned char*) (spgoata + 32);
+  const unsigned char* secdata = (*env)->GetDirectBufferAddress(env, byteBufferObject);
+  const unsigned char* pubdata = (const unsigned char*) (secdata + 32);
 
   jobjectArray retArray;
   jbyteArray outArray, intsByteArray;
@@ -349,11 +349,11 @@ SECP256K1_API jobjectArray JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1p
   int ret = secp256k1_ec_pubkey_parse(ctx, &pubkey, pubdata, publen);
 
   if (ret) {
-    ret = secp256k1_pgoh(
+    ret = secp256k1_ecdh(
       ctx,
       nonce_res,
       &pubkey,
-      spgoata,
+      secdata,
       NULL,
       NULL
     );

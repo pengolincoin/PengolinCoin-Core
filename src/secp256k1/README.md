@@ -8,7 +8,7 @@ Optimized C library for EC operations on curve secp256k1.
 This library is a work in progress and is being used to research best practices. Use at your own risk.
 
 Features:
-* secp256k1 PGOSA signing/verification and key generation.
+* secp256k1 ECDSA signing/verification and key generation.
 * Adding/multiplying private/public keys.
 * Serialization/parsing of private keys, public keys, signatures.
 * Constant time, constant memory access signing and pubkey generation.

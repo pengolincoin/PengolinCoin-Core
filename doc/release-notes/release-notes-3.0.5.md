@@ -98,7 +98,7 @@ git merge commit are mentioned.
 ### Miscellaneous
 - #332 `0c2cd61` [Docs] Add missing archived release notes (Fuzzbawls)
 
-Pgos
+Credits
 =======
 
 Thanks to everyone who directly contributed to this release:

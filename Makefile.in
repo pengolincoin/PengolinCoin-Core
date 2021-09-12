@@ -99,7 +99,6 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/build-aux/m4/ax_boost_base.m4 \
 	$(top_srcdir)/build-aux/m4/ax_boost_chrono.m4 \
 	$(top_srcdir)/build-aux/m4/ax_boost_filesystem.m4 \
-	$(top_srcdir)/build-aux/m4/ax_boost_program_options.m4 \
 	$(top_srcdir)/build-aux/m4/ax_boost_system.m4 \
 	$(top_srcdir)/build-aux/m4/ax_boost_thread.m4 \
 	$(top_srcdir)/build-aux/m4/ax_boost_unit_test_framework.m4 \
@@ -114,6 +113,7 @@ am__aclocal_m4_deps = $(top_srcdir)/build-aux/m4/ax_boost_base.m4 \
 	$(top_srcdir)/build-aux/m4/bitcoin_subdir_to_include.m4 \
 	$(top_srcdir)/build-aux/m4/gmp.m4 \
 	$(top_srcdir)/build-aux/m4/l_atomic.m4 \
+	$(top_srcdir)/build-aux/m4/l_socket.m4 \
 	$(top_srcdir)/build-aux/m4/libtool.m4 \
 	$(top_srcdir)/build-aux/m4/ltoptions.m4 \
 	$(top_srcdir)/build-aux/m4/ltsugar.m4 \
@@ -220,7 +220,7 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
-DIST_SUBDIRS = src doc/man
+DIST_SUBDIRS = src doc/man params
 am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(srcdir)/libbitcoinconsensus.pc.in \
 	$(top_srcdir)/build-aux/compile \
@@ -289,6 +289,7 @@ AMTAR = @AMTAR@
 AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
 AR = @AR@
 ARFLAGS = @ARFLAGS@
+ARM_CRC_CXXFLAGS = @ARM_CRC_CXXFLAGS@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
 AUTOMAKE = @AUTOMAKE@
@@ -306,11 +307,11 @@ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
 BOOST_FILESYSTEM_LIB = @BOOST_FILESYSTEM_LIB@
 BOOST_LDFLAGS = @BOOST_LDFLAGS@
 BOOST_LIBS = @BOOST_LIBS@
-BOOST_PROGRAM_OPTIONS_LIB = @BOOST_PROGRAM_OPTIONS_LIB@
 BOOST_SYSTEM_LIB = @BOOST_SYSTEM_LIB@
 BOOST_THREAD_LIB = @BOOST_THREAD_LIB@
 BOOST_UNIT_TEST_FRAMEWORK_LIB = @BOOST_UNIT_TEST_FRAMEWORK_LIB@
 BREW = @BREW@
+CARGO = @CARGO@
 CC = @CC@
 CCACHE = @CCACHE@
 CCDEPMODE = @CCDEPMODE@
@@ -327,8 +328,6 @@ COPYRIGHT_YEAR = @COPYRIGHT_YEAR@
 CPP = @CPP@
 CPPFILT = @CPPFILT@
 CPPFLAGS = @CPPFLAGS@
-CRYPTO_CFLAGS = @CRYPTO_CFLAGS@
-CRYPTO_LIBS = @CRYPTO_LIBS@
 CXX = @CXX@
 CXXCPP = @CXXCPP@
 CXXDEPMODE = @CXXDEPMODE@
@@ -364,7 +363,15 @@ GREP = @GREP@
 HARDENED_CPPFLAGS = @HARDENED_CPPFLAGS@
 HARDENED_CXXFLAGS = @HARDENED_CXXFLAGS@
 HARDENED_LDFLAGS = @HARDENED_LDFLAGS@
-HAVE_CXX11 = @HAVE_CXX11@
+HAVE_BUILTIN_PREFETCH = @HAVE_BUILTIN_PREFETCH@
+HAVE_CXX14 = @HAVE_CXX14@
+HAVE_FDATASYNC = @HAVE_FDATASYNC@
+HAVE_FULLFSYNC = @HAVE_FULLFSYNC@
+HAVE_GMTIME_R = @HAVE_GMTIME_R@
+HAVE_MM_PREFETCH = @HAVE_MM_PREFETCH@
+HAVE_O_CLOEXEC = @HAVE_O_CLOEXEC@
+HAVE_STRONG_GETAUXVAL = @HAVE_STRONG_GETAUXVAL@
+HAVE_WEAK_GETAUXVAL = @HAVE_WEAK_GETAUXVAL@
 HEXDUMP = @HEXDUMP@
 IMAGEMAGICK_CONVERT = @IMAGEMAGICK_CONVERT@
 INSTALL = @INSTALL@
@@ -378,13 +385,13 @@ LCOV_OPTS = @LCOV_OPTS@
 LD = @LD@
 LDFLAGS = @LDFLAGS@
 LEVELDB_CPPFLAGS = @LEVELDB_CPPFLAGS@
-LEVELDB_TARGET_FLAGS = @LEVELDB_TARGET_FLAGS@
 LIBLEVELDB = @LIBLEVELDB@
 LIBMEMENV = @LIBMEMENV@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
 LIBTOOL_APP_LDFLAGS = @LIBTOOL_APP_LDFLAGS@
+LIBZCASH_LIBS = @LIBZCASH_LIBS@
 LIPO = @LIPO@
 LN_S = @LN_S@
 LRELEASE = @LRELEASE@
@@ -400,6 +407,8 @@ MINIUPNPC_LIBS = @MINIUPNPC_LIBS@
 MKDIR_P = @MKDIR_P@
 MOC = @MOC@
 MOC_DEFS = @MOC_DEFS@
+NATPMP_CPPFLAGS = @NATPMP_CPPFLAGS@
+NATPMP_LIBS = @NATPMP_LIBS@
 NM = @NM@
 NMEDIT = @NMEDIT@
 NOWARN_CXXFLAGS = @NOWARN_CXXFLAGS@
@@ -424,10 +433,6 @@ PIE_FLAGS = @PIE_FLAGS@
 PKG_CONFIG = @PKG_CONFIG@
 PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
 PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
-PORT = @PORT@
-PROTOBUF_CFLAGS = @PROTOBUF_CFLAGS@
-PROTOBUF_LIBS = @PROTOBUF_LIBS@
-PROTOC = @PROTOC@
 PTHREAD_CC = @PTHREAD_CC@
 PTHREAD_CFLAGS = @PTHREAD_CFLAGS@
 PTHREAD_LIBS = @PTHREAD_LIBS@
@@ -481,32 +486,30 @@ RCC = @RCC@
 READELF = @READELF@
 RELDFLAGS = @RELDFLAGS@
 RSVG_CONVERT = @RSVG_CONVERT@
+RUSTC = @RUSTC@
+RUST_TARGET = @RUST_TARGET@
+RUST_VENDORED_SOURCES = @RUST_VENDORED_SOURCES@
 SANITIZER_CXXFLAGS = @SANITIZER_CXXFLAGS@
 SANITIZER_LDFLAGS = @SANITIZER_LDFLAGS@
 SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHANI_CXXFLAGS = @SHANI_CXXFLAGS@
 SHELL = @SHELL@
+SODIUM_CFLAGS = @SODIUM_CFLAGS@
+SODIUM_LIBS = @SODIUM_LIBS@
 SSE41_CXXFLAGS = @SSE41_CXXFLAGS@
 SSE42_CXXFLAGS = @SSE42_CXXFLAGS@
-SSL_CFLAGS = @SSL_CFLAGS@
-SSL_LIBS = @SSL_LIBS@
 STRIP = @STRIP@
 TESTDEFS = @TESTDEFS@
 TIFFCP = @TIFFCP@
 UIC = @UIC@
 UNIVALUE_CFLAGS = @UNIVALUE_CFLAGS@
 UNIVALUE_LIBS = @UNIVALUE_LIBS@
-USE_NUM_GMP = @USE_NUM_GMP@
-USE_NUM_OPENSSL = @USE_NUM_OPENSSL@
 USE_QTCHARTS = @USE_QTCHARTS@
 USE_UPNP = @USE_UPNP@
 VERSION = @VERSION@
 WARN_CXXFLAGS = @WARN_CXXFLAGS@
-WINDOWS_BITS = @WINDOWS_BITS@
 WINDRES = @WINDRES@
-X11XCB_CFLAGS = @X11XCB_CFLAGS@
-X11XCB_LIBS = @X11XCB_LIBS@
 XGETTEXT = @XGETTEXT@
 ZMQ_CFLAGS = @ZMQ_CFLAGS@
 ZMQ_LIBS = @ZMQ_LIBS@
@@ -568,13 +571,13 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 ACLOCAL_AMFLAGS = -I build-aux/m4
-SUBDIRS = src $(am__append_1)
+SUBDIRS = src $(am__append_1) params
 @BUILD_BITCOIN_LIBS_TRUE@pkgconfigdir = $(libdir)/pkgconfig
 @BUILD_BITCOIN_LIBS_TRUE@pkgconfig_DATA = libbitcoinconsensus.pc
 BITCOIND_BIN = $(top_builddir)/src/$(BITCOIN_DAEMON_NAME)$(EXEEXT)
 BITCOIN_QT_BIN = $(top_builddir)/src/qt/$(BITCOIN_GUI_NAME)$(EXEEXT)
 BITCOIN_CLI_BIN = $(top_builddir)/src/$(BITCOIN_CLI_NAME)$(EXEEXT)
-BITCOIN_WIN_INSTALLER = $(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
+BITCOIN_WIN_INSTALLER = $(PACKAGE)-$(PACKAGE_VERSION)-win64-setup$(EXEEXT)
 empty := 
 space := $(empty) $(empty)
 OSX_APP = PENGOLINCOIN-Qt.app
@@ -583,13 +586,14 @@ OSX_DMG = $(OSX_VOLNAME).dmg
 OSX_BACKGROUND_SVG = background.svg
 OSX_BACKGROUND_IMAGE = background.tiff
 OSX_BACKGROUND_IMAGE_DPIS = 36 72
-OSX_DSSTORE_GEN = $(top_srcdir)/contrib/macdeploy/custom_dsstore.py
 OSX_DEPLOY_SCRIPT = $(top_srcdir)/contrib/macdeploy/macdeployqtplus
-OSX_FANCY_PLIST = $(top_srcdir)/contrib/macdeploy/fancy.plist
 OSX_INSTALLER_ICONS = $(top_srcdir)/src/qt/res/icons/bitcoin.icns
 OSX_PLIST = $(top_builddir)/share/qt/Info.plist #not installed
-OSX_QT_TRANSLATIONS = da,de,es,hu,ru,uk,zh_CN,zh_TW
-DIST_DOCS = $(wildcard doc/*.md) $(wildcard doc/release-notes/*.md)
+DIST_DOCS = \
+  README.md \
+  $(wildcard doc/*.md) \
+  $(wildcard doc/release-notes/*.md)
+
 DIST_CONTRIB = $(top_srcdir)/contrib/pengolincoin-cli.bash-completion \
 	       $(top_srcdir)/contrib/pengolincoin-tx.bash-completion \
 	       $(top_srcdir)/contrib/pengolincoind.bash-completion \
@@ -599,6 +603,13 @@ DIST_CONTRIB = $(top_srcdir)/contrib/pengolincoin-cli.bash-completion \
 DIST_SHARE = \
            $(top_srcdir)/share/genbuild.sh \
            $(top_srcdir)/share/rpcauth
+
+DIST_CARGO = \
+           $(top_srcdir)/.cargo/config.offline \
+           $(top_srcdir)/Cargo.lock \
+           $(top_srcdir)/Cargo.toml \
+           $(top_srcdir)/rust-toolchain \
+           $(top_srcdir)/params/install-params.sh
 
 BIN_CHECKS = $(top_srcdir)/contrib/devtools/symbol-check.py \
            $(top_srcdir)/contrib/devtools/security-check.py
@@ -612,12 +623,13 @@ LINUX_PACKAGING = $(top_srcdir)/share/pixmaps/pengolincoin16.xpm \
   $(top_srcdir)/share/pixmaps/pengolincoin32.xpm \
   $(top_srcdir)/share/pixmaps/pengolincoin128.png
 
-OSX_PACKAGING = $(OSX_DEPLOY_SCRIPT) $(OSX_FANCY_PLIST) $(OSX_INSTALLER_ICONS) \
+OSX_PACKAGING = $(OSX_DEPLOY_SCRIPT) $(OSX_INSTALLER_ICONS) \
   $(top_srcdir)/contrib/macdeploy/$(OSX_BACKGROUND_SVG) \
-  $(OSX_DSSTORE_GEN) \
   $(top_srcdir)/contrib/macdeploy/detached-sig-apply.sh \
   $(top_srcdir)/contrib/macdeploy/detached-sig-create.sh
 
+SPEND_PARAMS = $(top_srcdir)/params/sapling-spend.params
+OUTPUT_PARAMS = $(top_srcdir)/params/sapling-output.params
 COVERAGE_INFO = baseline.info \
   test_pengolincoin_filtered.info total_coverage.info \
   baseline_filtered.info functional_test.info functional_test_filtered.info \
@@ -625,16 +637,18 @@ COVERAGE_INFO = baseline.info \
 
 OSX_APP_BUILT = $(OSX_APP)/Contents/PkgInfo $(OSX_APP)/Contents/Resources/empty.lproj \
   $(OSX_APP)/Contents/Resources/bitcoin.icns $(OSX_APP)/Contents/Info.plist \
-  $(OSX_APP)/Contents/MacOS/PENGOLINCOIN-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
+  $(OSX_APP)/Contents/MacOS/PENGOLINCOIN-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings \
+  $(OSX_APP)/Contents/Resources/sapling-spend.params $(OSX_APP)/Contents/Resources/sapling-output.params
 
 @BUILD_DARWIN_FALSE@APP_DIST_DIR = $(top_builddir)/dist
 @BUILD_DARWIN_FALSE@APP_DIST_EXTRAS = $(APP_DIST_DIR)/.background/$(OSX_BACKGROUND_IMAGE) $(APP_DIST_DIR)/.DS_Store $(APP_DIST_DIR)/Applications
 @BUILD_DARWIN_FALSE@OSX_BACKGROUND_IMAGE_DPIFILES := $(foreach dpi,$(OSX_BACKGROUND_IMAGE_DPIS),dpi$(dpi).$(OSX_BACKGROUND_IMAGE))
-@USE_LCOV_TRUE@LCOV_FILTER_PATTERN = -p "/usr/include/" -p "/usr/lib/" -p "src/leveldb/" -p "src/univalue" -p "src/secp256k1"
+@USE_LCOV_TRUE@LCOV_FILTER_PATTERN = -p "/usr/include/" -p "/usr/lib/" -p "src/leveldb/" -p "src/crc32c/" -p "src/univalue" -p "src/secp256k1"
 dist_noinst_SCRIPTS = autogen.sh
-EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_DOCS) \
+EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_DOCS) $(DIST_CARGO) \
 	$(WINDOWS_PACKAGING) $(LINUX_PACKAGING) $(OSX_PACKAGING) \
-	$(BIN_CHECKS) test/functional test/util/bitcoin-util-test.py \
+	$(BIN_CHECKS) test/functional test/fuzz \
+	test/util/bitcoin-util-test.py \
 	test/util/data/bitcoin-util-test.json \
 	test/util/data/blanktxv1.hex test/util/data/blanktxv1.json \
 	test/util/data/tt-delin1-out.hex \
@@ -649,7 +663,8 @@ EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_DOCS) \
 	test/util/data/txcreatescript1.hex \
 	test/util/data/txcreatescript1.json \
 	test/util/data/txcreatesign.hex \
-	test/util/data/txcreatesign.json test/util/rpcauth-test.py
+	test/util/data/txcreatesign.json \
+	test/util/data/pre_hd_wallet.dat test/util/rpcauth-test.py
 CLEANFILES = $(OSX_DMG) $(BITCOIN_WIN_INSTALLER)
 DISTCHECK_CONFIGURE_FLAGS = --enable-man
 all: all-recursive
@@ -1177,6 +1192,10 @@ uninstall-am: uninstall-pkgconfigDATA
 
 .PRECIOUS: Makefile
 
+
+# Pattern rule to print variables, e.g. make print-top_srcdir
+print-%:
+	@echo $* = $($*)
 .PHONY: deploy FORCE
 
 export PYTHONPATH
@@ -1217,11 +1236,19 @@ $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings:
 	$(MKDIR_P) $(@D)
 	echo '{	CFBundleDisplayName = "$(PACKAGE_NAME)"; CFBundleName = "$(PACKAGE_NAME)"; }' > $@
 
+$(OSX_APP)/Contents/Resources/sapling-spend.params: $(SPEND_PARAMS)
+	$(MKDIR_P) $(@D)
+	$(INSTALL_DATA) $< $@
+
+$(OSX_APP)/Contents/Resources/sapling-output.params: $(OUTPUT_PARAMS)
+	$(MKDIR_P) $(@D)
+	$(INSTALL_DATA) $< $@
+
 osx_volname:
 	echo $(OSX_VOLNAME) >$@
 
 @BUILD_DARWIN_TRUE@$(OSX_DMG): $(OSX_APP_BUILT) $(OSX_PACKAGING) $(OSX_BACKGROUND_IMAGE)
-@BUILD_DARWIN_TRUE@	$(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) -add-qt-tr $(OSX_QT_TRANSLATIONS) -translations-dir=$(QT_TRANSLATION_DIR) -dmg -fancy $(OSX_FANCY_PLIST) -verbose 2 -volname $(OSX_VOLNAME)
+@BUILD_DARWIN_TRUE@	$(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) $(OSX_VOLNAME) -translations-dir=$(QT_TRANSLATION_DIR) -dmg
 
 @BUILD_DARWIN_TRUE@$(OSX_BACKGROUND_IMAGE).png: contrib/macdeploy/$(OSX_BACKGROUND_SVG)
 @BUILD_DARWIN_TRUE@	sed 's/PACKAGE_NAME/$(PACKAGE_NAME)/' < "$<" | $(RSVG_CONVERT) -f png -d 36 -p 36 -o $@
@@ -1247,11 +1274,8 @@ osx_volname:
 @BUILD_DARWIN_FALSE@	$(MKDIR_P) $(@D)
 @BUILD_DARWIN_FALSE@	$(TIFFCP) -c none $(OSX_BACKGROUND_IMAGE_DPIFILES) $@
 
-@BUILD_DARWIN_FALSE@$(APP_DIST_DIR)/.DS_Store: $(OSX_DSSTORE_GEN)
-@BUILD_DARWIN_FALSE@	$(PYTHON) $< "$@" "$(OSX_VOLNAME)"
-
 @BUILD_DARWIN_FALSE@$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/PENGOLINCOIN-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
-@BUILD_DARWIN_FALSE@	INSTALLNAMETOOL=$(INSTALLNAMETOOL)  OTOOL=$(OTOOL) STRIP=$(STRIP) $(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) -translations-dir=$(QT_TRANSLATION_DIR) -add-qt-tr $(OSX_QT_TRANSLATIONS) -verbose 2
+@BUILD_DARWIN_FALSE@	INSTALLNAMETOOL=$(INSTALLNAMETOOL) OTOOL=$(OTOOL) STRIP=$(STRIP) $(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) $(OSX_VOLNAME) -translations-dir=$(QT_TRANSLATION_DIR)
 
 @BUILD_DARWIN_FALSE@deploydir: $(APP_DIST_EXTRAS)
 

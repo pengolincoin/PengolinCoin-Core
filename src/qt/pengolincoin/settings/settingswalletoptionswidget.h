@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -22,11 +23,26 @@ public:
 
     void setMapper(QDataWidgetMapper *mapper);
 
-public slots:
+    void discardWalletOnlyOptions();
+    bool saveWalletOnlyOptions();
+
+    void saveMapPortOptions();
+
+Q_SIGNALS:
+    void saveSettings();
+    void discardSettings();
+
+public Q_SLOTS:
     void onResetClicked();
 
 private:
     Ui::SettingsWalletOptionsWidget *ui;
+
+    void loadWalletModel() override;
+    void reloadWalletOptions();
+
+    void setSpinBoxStakeSplitThreshold(double val);
+    double getSpinBoxStakeSplitThreshold() const;
 };
 
 #endif // SETTINGSWALLETOPTIONSWIDGET_H

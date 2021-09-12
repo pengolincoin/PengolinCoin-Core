@@ -113,7 +113,7 @@ git merge commit are mentioned.
 - #276 `03f14ba` Append BIP38 encrypted key with an 4 byte Base58 Checksum (presstab)
 - #288 `2522aa1` Bad CBlockHeader copy. (furszy)
 
-Pgos
+Credits
 =======
 
 Thanks to everyone who directly contributed to this release:

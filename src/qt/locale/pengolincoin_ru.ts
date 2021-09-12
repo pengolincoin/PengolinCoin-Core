@@ -6,8 +6,8 @@
         <translation>Диалоговое окно</translation>
     </message>
     <message>
-        <source>My Address</source>
-        <translation>Мой адрес</translation>
+        <source>New Address</source>
+        <translation>Новый адрес</translation>
     </message>
     <message>
         <source>Address</source>
@@ -22,8 +22,8 @@
         <translation>ОТМЕНА</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>ХОРОШО</translation>
+        <source>SAVE</source>
+        <translation>СОХРАНИТЬ</translation>
     </message>
 </context>
 <context>
@@ -33,16 +33,8 @@
         <translation>Диалоговое окно</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
         <source>CANCEL</source>
         <translation>ОТМЕНА</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>ХОРОШО</translation>
     </message>
     <message>
         <source>Edit Contact</source>
@@ -53,8 +45,8 @@
         <translation>Установить ярлык для выбранного адреса</translation>
     </message>
     <message>
-        <source>Enter a name for the address (e.g Exchange)</source>
-        <translation>Введите имя адреса (например, биржи)</translation>
+        <source>Enter a label for the address (e.g. Exchange)</source>
+        <translation>Введите метку для адреса (например, Биржа)</translation>
     </message>
     <message>
         <source>SAVE</source>
@@ -196,6 +188,10 @@
         <translation>Дата</translation>
     </message>
     <message>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
         <source>(no label)</source>
         <translation>(нет ярлыка)</translation>
     </message>
@@ -207,28 +203,12 @@
         <translation>Вид</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Отправить</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
-        <source>No active Master Node yet</source>
-        <translation>Пока что нет активной Мастерноды</translation>
-    </message>
-    <message>
         <source>Contact name</source>
         <translation>Контактное имя</translation>
     </message>
     <message>
         <source>Enter address</source>
         <translation>Ввести адрес</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>ХОРОШО</translation>
     </message>
     <message>
         <source>Contacts</source>
@@ -243,16 +223,16 @@
         <translation>Пока что нет контактов</translation>
     </message>
     <message>
-        <source>e.g. John Doe</source>
-        <translation>Например, Иван Петров</translation>
-    </message>
-    <message>
-        <source>Enter a PENGOLINCOIN address</source>
-        <translation>Ввести адрес PENGOLINCOIN</translation>
-    </message>
-    <message>
         <source>SAVE</source>
         <translation>СОХРАНИТЬ</translation>
+    </message>
+    <message>
+        <source>Add new contact</source>
+        <translation>Добавить новый контакт</translation>
+    </message>
+    <message>
+        <source>Generate a new address to receive tokens.</source>
+        <translation>Сгенерировать новый адрес для получения токенов.</translation>
     </message>
     <message>
         <source>Invalid Contact Address</source>
@@ -367,6 +347,14 @@ for staking</source>
         <translation>Подтверждение шифрования кошелька</translation>
     </message>
     <message>
+        <source>WARNING</source>
+        <translation>ВНИМАНИЕ</translation>
+    </message>
+    <message>
+        <source>If you encrypt your wallet and lose your passphrase, you will</source>
+        <translation>Если вы зашифруете свой кошелек и потеряете парольную фразу, вы</translation>
+    </message>
+    <message>
         <source>ENCRYPT</source>
         <translation>РАСШИФРОВАТЬ</translation>
     </message>
@@ -383,12 +371,20 @@ for staking</source>
         <translation>Вы действительно хотите зашифровать свой кошелек?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PGO&lt;/b&gt;!</source>
-        <translation>Внимание: если вы зашифруете свой кошелёк и потеряете от него пароль, то вы &lt;b&gt;ПОТЕРЯЕТЕ ВСЕ СВОИ PGO&lt;/b&gt;!</translation>
-    </message>
-    <message>
         <source>Wallet encrypted</source>
         <translation>Кошелек зашифрован</translation>
+    </message>
+    <message>
+        <source>WARNING:</source>
+        <translation>ПРЕДУПРЕЖДЕНИЕ:</translation>
+    </message>
+    <message>
+        <source>The caps lock key is on!</source>
+        <translation>Нажата кнопка caps lock!</translation>
+    </message>
+    <message>
+        <source>Passphrases do not match!</source>
+        <translation>Парольные фразы не совпадают!</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -411,6 +407,10 @@ for staking</source>
         <translation>Введенные парольные фразы не совпадают.</translation>
     </message>
     <message>
+        <source>LOSE ALL OF YOUR COINS</source>
+        <translation>ЛИШИТЬСЯ ВСЕХ СВОИХ МОНЕТ</translation>
+    </message>
+    <message>
         <source>Wallet unlock failed</source>
         <translation>Не удалось разблокировать кошелек</translation>
     </message>
@@ -426,11 +426,14 @@ for staking</source>
         <source>Wallet passphrase was successfully changed.</source>
         <translation>Кодовая фраза кошелька успешно изменена.</translation>
     </message>
-    <message>
-        <source>Warning: The Caps Lock key is on!</source>
-        <translation>Внимание: Клавиша Caps Lock включена!</translation>
-    </message>
 </context>
+<context>
+    <name>BalanceBubble</name>
+    <message>
+        <source>Form</source>
+        <translation>Вид</translation>
+    </message>
+    </context>
 <context>
     <name>BanTableModel</name>
     <message>
@@ -440,37 +443,6 @@ for staking</source>
     <message>
         <source>Banned Until</source>
         <translation>Запрещено до</translation>
-    </message>
-</context>
-<context>
-    <name>BlockExplorer</name>
-    <message>
-        <source>Blockchain Explorer</source>
-        <translation>Обзор блокчейна</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Назад</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation>вперед</translation>
-    </message>
-    <message>
-        <source>Address / Block / Transaction</source>
-        <translation>Адрес / Блок / Транзакция</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Поиск</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pengolincoin.conf).</source>
-        <translation>Будут показаны не все транзакции. Для отображения всех транзакций необходимо выставить txindex=1 в конфигурационном файле (pengolincoin.conf).</translation>
     </message>
 </context>
 <context>
@@ -506,10 +478,6 @@ for staking</source>
         <source>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)</source>
         <translation>Общее количество: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Неизвестные: %5)</translation>
     </message>
-    <message>
-        <source>Network Alert</source>
-        <translation>Сетевое предупреждение</translation>
-    </message>
 </context>
 <context>
     <name>CoinControlDialog</name>
@@ -528,6 +496,10 @@ for staking</source>
     <message>
         <source>Coin Selection</source>
         <translation>Выбор монеты</translation>
+    </message>
+    <message>
+        <source>Select PGO Outputs to Spend</source>
+        <translation>Выберите PGO выходы для расходов</translation>
     </message>
     <message>
         <source>Dust:</source>
@@ -552,14 +524,6 @@ for staking</source>
     <message>
         <source>Amount</source>
         <translation>Сумма</translation>
-    </message>
-    <message>
-        <source>Transaction Details</source>
-        <translation>Детали транзакции</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
     </message>
     <message>
         <source>0.00 PGO</source>
@@ -630,34 +594,6 @@ for staking</source>
         <translation>Разблокировать неистраченные</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Копировать количество</translation>
-    </message>
-    <message>
-        <source>Copy fee</source>
-        <translation>Копировать комиссию</translation>
-    </message>
-    <message>
-        <source>Copy after fee</source>
-        <translation>Копировать после вознаграждения </translation>
-    </message>
-    <message>
-        <source>Copy bytes</source>
-        <translation>Копировать байты</translation>
-    </message>
-    <message>
-        <source>Copy priority</source>
-        <translation>Копировать приоритет</translation>
-    </message>
-    <message>
-        <source>Copy dust</source>
-        <translation>Копировать пыль</translation>
-    </message>
-    <message>
-        <source>Copy change</source>
-        <translation>Копировать изменение</translation>
-    </message>
-    <message>
         <source>Unselect all</source>
         <translation>Снять все</translation>
     </message>
@@ -666,52 +602,52 @@ for staking</source>
         <translation>Для использования этой функции перейдите в "Режим списка"</translation>
     </message>
     <message>
-        <source>highest</source>
-        <translation>самый высокий</translation>
+        <source>Quantity Copied</source>
+        <translation>Количество скопировано</translation>
     </message>
     <message>
-        <source>higher</source>
-        <translation>выше</translation>
+        <source>Amount Copied</source>
+        <translation>Сумма скопирована</translation>
     </message>
     <message>
-        <source>high</source>
-        <translation>высокий</translation>
+        <source>Fee Copied</source>
+        <translation>Комиссия скопирована</translation>
     </message>
     <message>
-        <source>medium-high</source>
-        <translation>средне-высокий</translation>
+        <source>After Fee Copied</source>
+        <translation>После того, как комиссия скопирована</translation>
     </message>
     <message>
-        <source>medium</source>
-        <translation>промежуточный</translation>
+        <source>Bytes Copied</source>
+        <translation>Скопировано байтов</translation>
     </message>
     <message>
-        <source>low-medium</source>
-        <translation>низко-средний</translation>
+        <source>Dust Copied</source>
+        <translation>Остаток скопирован</translation>
     </message>
     <message>
-        <source>low</source>
-        <translation>низкий</translation>
-    </message>
-    <message>
-        <source>lower</source>
-        <translation>ниже</translation>
-    </message>
-    <message>
-        <source>lowest</source>
-        <translation>самый низкий</translation>
+        <source>Change Copied</source>
+        <translation>Скопировано сдачи</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
         <translation>(%1 заблокирован)</translation>
     </message>
     <message>
-        <source>none</source>
-        <translation>ничего</translation>
-    </message>
-    <message>
         <source>yes</source>
         <translation>да</translation>
+    </message>
+    <message>
+        <source>Can vary +/- %1 u%2 per input.</source>
+        <translation>Может варьироваться +/- %1 u%2 на вход.</translation>
+    </message>
+    <message>
+        <source>delegated to %1 for cold staking</source>
+        <translation>делегирован в %1 для холодного стекинга</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Выбрать все</translation>
     </message>
     <message>
         <source>no</source>
@@ -730,115 +666,12 @@ for staking</source>
         <translation>Может вариировать +/- 1 байт на каждый ввод</translation>
     </message>
     <message>
-        <source>Transactions with higher priority are more likely to get included into a block.</source>
-        <translation>Транзакции с высоким приоритетом с большей вероятностью будут включены в блок.</translation>
-    </message>
-    <message>
-        <source>This label turns red, if the priority is smaller than "medium".</source>
-        <translation>Этот маркер становится красным если приоритет ниже, чем "средний".</translation>
-    </message>
-    <message>
-        <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
-        <translation>Этот маркер становится красным если получаемая адресатом сумма меньше, чем %1</translation>
-    </message>
-    <message>
-        <source>Can vary +/- %1 upgo per input.</source>
-        <translation>Может вариироваться +/- %1 upgo при вводе</translation>
-    </message>
-    <message>
         <source>(no label)</source>
-        <translation>(нет метки)</translation>
-    </message>
-    <message>
-        <source>change from %1 (%2)</source>
-        <translation>изменить с %1 (%2)</translation>
+        <translation>(нет ярлыка)</translation>
     </message>
     <message>
         <source>(change)</source>
         <translation>(изменить)</translation>
-    </message>
-</context>
-<context>
-    <name>CoinControlPgoWidget</name>
-    <message>
-        <source>Dialog</source>
-        <translation>Диалоговое окно</translation>
-    </message>
-    <message>
-        <source>Transaction Details</source>
-        <translation>Детали транзакции</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
-    </message>
-    <message>
-        <source>PGO:</source>
-        <translation>PGO:</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Количество:</translation>
-    </message>
-    <message>
-        <source>Fee:</source>
-        <translation>Комиссия:</translation>
-    </message>
-    <message>
-        <source>Amount</source>
-        <translation>Сумма</translation>
-    </message>
-    <message>
-        <source>Label</source>
-        <translation>Метка</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Адрес</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Тип</translation>
-    </message>
-    <message>
-        <source>Date</source>
-        <translation>Дата</translation>
-    </message>
-    <message>
-        <source>Confirmations</source>
-        <translation>Подтверждения</translation>
-    </message>
-    <message>
-        <source>CheckBox</source>
-        <translation>Флажок</translation>
-    </message>
-    <message>
-        <source>Bytes:</source>
-        <translation>Байты:</translation>
-    </message>
-    <message>
-        <source>Dust:</source>
-        <translation>Пыль:</translation>
-    </message>
-    <message>
-        <source>Change:</source>
-        <translation>Изменить:</translation>
-    </message>
-    <message>
-        <source>After Fee: </source>
-        <translation>После комиссии:</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>ОТМЕНА</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>ХОРОШО</translation>
     </message>
 </context>
 <context>
@@ -848,36 +681,12 @@ for staking</source>
         <translation>Вид</translation>
     </message>
     <message>
-        <source>Title</source>
-        <translation>Название</translation>
+        <source>Owner address (optional, if empty a new address will be created)</source>
+        <translation>Адрес владельца (необязательно; если пусто, будет создан новый адрес)</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
-    </message>
-    <message>
-        <source>Owner Address (optional, if empty a new address will be created)</source>
-        <translation>Адрес владельца (по желанию; если пусто, то тогда будет создан новый адрес)</translation>
-    </message>
-    <message>
-        <source>List of delegated balance by address</source>
-        <translation>Список делегированного баланса по адресам</translation>
-    </message>
-    <message>
-        <source>Total</source>
-        <translation>В сумме</translation>
-    </message>
-    <message>
-        <source>Unconfirmed balance will not be shown</source>
-        <translation>Неподтвержденный баланс не будет показан</translation>
-    </message>
-    <message>
-        <source>No balance delegated</source>
-        <translation>Нет делегированного баланса</translation>
+        <source>Total Staking:</source>
+        <translation>Общий стекинг:</translation>
     </message>
     <message>
         <source>Cold Staking</source>
@@ -892,30 +701,12 @@ for staking</source>
         <translation>Делегирование</translation>
     </message>
     <message>
-        <source>You can delegate your PGOs and let a hot node (24/7 online node)
-stake in your behalf, keeping the keys in a secure place offline.</source>
-        <translation>Вы можете делегировать свои PGO и позволить горячему узлу (онлайн-узел 24/7 )
-запускать стекинг от вашего имени, при этом удерживая ключи оффлайн в безопасном месте.</translation>
-    </message>
-    <message>
-        <source>Add owner address</source>
-        <translation>Добавить адрес владельца</translation>
-    </message>
-    <message>
-        <source>Delegate or Accept PGO delegation</source>
-        <translation>Делегировать или принять делегирование PGO</translation>
-    </message>
-    <message>
         <source>Delegate</source>
         <translation>Делегировать</translation>
     </message>
     <message>
         <source>Clear All</source>
         <translation>Очистить все</translation>
-    </message>
-    <message>
-        <source>Add the staking address</source>
-        <translation>Добавить стекинг адрес</translation>
     </message>
     <message>
         <source>Delegated balance history</source>
@@ -934,20 +725,71 @@ stake in your behalf, keeping the keys in a secure place offline.</source>
         <translation>Ошибка при загрузке делегаций: %1</translation>
     </message>
     <message>
+        <source>You can delegate your PGOs, letting a hot node (24/7 online node)
+stake on your behalf, while you keep the keys securely offline.</source>
+        <translation>Вы можете делегировать свои PGO, позволяя горячему узлу (онлайн-узлу, работаещему 24/7) делать стекинг от вашего имени, в то время как ключи надежно хранятся в автономном режиме.</translation>
+    </message>
+    <message>
+        <source>Enter owner address</source>
+        <translation>Введите адрес владельца</translation>
+    </message>
+    <message>
+        <source>Accept PGO delegation / Delegate PGO</source>
+        <translation>Принять делегацию PGO / Делегировать PGO</translation>
+    </message>
+    <message>
+        <source>Cold Staking address</source>
+        <translation>Адрес холодного стекинга</translation>
+    </message>
+    <message>
+        <source>No receive addresses available, you can go to the receive screen and create some there!</source>
+        <translation>Нет доступных адресов получения, вы можете перейти на экран получения и создать там несколько!</translation>
+    </message>
+    <message>
         <source>No contacts available, you can go to the contacts screen and add some there!</source>
         <translation>Нет доступных контактов. Вы можете перейти на вкладку контактов и добавить несколько!</translation>
+    </message>
+    <message>
+        <source>Cannot send delegation, wallet locked</source>
+        <translation>Не удается отправить делегацию, кошелек заблокирован</translation>
     </message>
     <message>
         <source>Cold staking is networkely disabled</source>
         <translation>Холодный стекинг отключен в сети</translation>
     </message>
     <message>
+        <source>Coin Control</source>
+        <translation>Контроль Монеты</translation>
+    </message>
+    <message>
+        <source>Select %1 outputs to delegate.</source>
+        <translation>Выбрать %1 выходы для делегирования.</translation>
+    </message>
+    <message>
+        <source>Create Cold Staking Address</source>
+        <translation>Создать адрес холодного стекинга</translation>
+    </message>
+    <message>
+        <source>Creates an address to receive delegated coins
+and stake them on their owner's behalf.</source>
+        <translation>Создает адрес для получения делегированных монет
+и запускает стекинг от имени их владельца.</translation>
+    </message>
+    <message>
+        <source>My Cold Staking Addresses</source>
+        <translation>Мой адрес холодного стекинга</translation>
+    </message>
+    <message>
+        <source>List your own cold staking addresses.</source>
+        <translation>Залистить свои собственные адреса холодного стекинга.</translation>
+    </message>
+    <message>
         <source>Invalid entry</source>
         <translation>Неверная запись</translation>
     </message>
     <message>
-        <source>Invalid entry, minimum delegable amount is 10 PGO</source>
-        <translation>Неверная запись, минимальная делегируемая сумма равна 10 PGO</translation>
+        <source>Invalid entry, minimum delegable amount is </source>
+        <translation>Неверная запись, минимальная делегируемая сумма</translation>
     </message>
     <message>
         <source>Owner address invalid</source>
@@ -985,8 +827,12 @@ Do you wish to proceed?</source>
         <translation>Монеты делегированы</translation>
     </message>
     <message>
-        <source>You don't have any PGO to select.</source>
-        <translation>У вас нет PGO.</translation>
+        <source>You don't have any %1 to select.</source>
+        <translation>У вас нет %1 для выбора.</translation>
+    </message>
+    <message>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation>Невозможно выполнить операцию, кошелек заблокирован</translation>
     </message>
     <message>
         <source>URI copied to clipboard</source>
@@ -1069,14 +915,6 @@ address</source>
         <source>Form</source>
         <translation>Вид</translation>
     </message>
-    <message>
-        <source>Bob Allen</source>
-        <translation>Иван Петров</translation>
-    </message>
-    <message>
-        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
-        <translation>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</translation>
-    </message>
 </context>
 <context>
     <name>DashboardWidget</name>
@@ -1089,40 +927,20 @@ address</source>
         <translation>Транзакции</translation>
     </message>
     <message>
-        <source>You can see here the history of your account</source>
-        <translation>Здесь вы можете посмотреть историю вашего аккаунта</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>Предупреждение</translation>
-    </message>
-    <message>
-        <source>No transactions</source>
-        <translation>Нет транзакций</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
-    </message>
-    <message>
         <source>Staking Rewards</source>
         <translation>Вознаграждения за стекинг</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
     </message>
     <message>
         <source>Staking statistics</source>
         <translation>Статистика стекинга</translation>
     </message>
     <message>
-        <source>PGO</source>
-        <translation>PGO</translation>
+        <source>View your account's history</source>
+        <translation>Обзор истории вашего аккаунта</translation>
     </message>
     <message>
-        <source>zPGO</source>
-        <translation>zPGO</translation>
+        <source>How to get PGO</source>
+        <translation>Как получить PGO</translation>
     </message>
     <message>
         <source>Sort by</source>
@@ -1145,60 +963,8 @@ address</source>
         <translation>Сортировать по</translation>
     </message>
     <message>
-        <source>LabelText</source>
-        <translation>Текст ярлыка</translation>
-    </message>
-    <message>
-        <source>You can view your account's history</source>
-        <translation>Вы можете просмотреть историю вашего аккаунта</translation>
-    </message>
-    <message>
         <source>Amount of PGO and zPGO staked.</source>
         <translation>Сумма добытых PGO и zPGO</translation>
-    </message>
-    <message>
-        <source>All</source>
-        <translation>все</translation>
-    </message>
-    <message>
-        <source>Received</source>
-        <translation>Принято</translation>
-    </message>
-    <message>
-        <source>Sent</source>
-        <translation>Отправлено</translation>
-    </message>
-    <message>
-        <source>Mined</source>
-        <translation>заминированный</translation>
-    </message>
-    <message>
-        <source>Minted</source>
-        <translation>Чеканка</translation>
-    </message>
-    <message>
-        <source>MN reward</source>
-        <translation>Вознаграждение от MN</translation>
-    </message>
-    <message>
-        <source>To yourself</source>
-        <translation>Самому себе</translation>
-    </message>
-    <message>
-        <source>Cold stakes</source>
-        <translation>Холодные стекинг ставки</translation>
-    </message>
-    <message>
-        <source>Hot stakes</source>
-        <translation>Горячие стекинг ставки</translation>
-    </message>
-    <message>
-        <source>Delegated</source>
-        <translation>Делегирован</translation>
-    </message>
-    <message>
-        <source>Delegations</source>
-        <translation>Делегирования</translation>
     </message>
     <message>
         <source>Please wait until the wallet is fully synced to see your correct balance</source>
@@ -1207,10 +973,6 @@ address</source>
     <message>
         <source>No transactions yet</source>
         <translation>Пока что нет транзакций</translation>
-    </message>
-    <message>
-        <source>How to get PGO or zPGO</source>
-        <translation>Как получить PGO или zPGO</translation>
     </message>
     <message>
         <source>You can verify the staking activity in the status bar at the top right of the wallet.
@@ -1250,83 +1012,12 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>Вид</translation>
     </message>
     <message>
-        <source>Transaction Details</source>
-        <translation>Детали транзакции</translation>
-    </message>
-    <message>
-        <source>Text Label</source>
-        <translation>Ярлык текста</translation>
+        <source>OK</source>
+        <translation>ХОРОШО</translation>
     </message>
     <message>
         <source>CANCEL</source>
         <translation>ОТМЕНА</translation>
-    </message>
-    <message>
-        <source>SAVE</source>
-        <translation>СОХРАНИТЬ</translation>
-    </message>
-</context>
-<context>
-    <name>DenomGenerationDialog</name>
-    <message>
-        <source>Form</source>
-        <translation>Вид</translation>
-    </message>
-    <message>
-        <source>Transaction Details</source>
-        <translation>Детали транзакции</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
-    </message>
-    <message>
-        <source>This will unlock your wallet fully, so that anyone with access to it can spend until the wallet is closed or locked again.</source>
-        <translation>Это полностью разблокирует ваш кошелек и любой, кто имеет к нему доступ, может тратить монеты до тех пор, пока кошелек не будет закрыт или заблокирован снова.</translation>
-    </message>
-    <message>
-        <source>5000</source>
-        <translation>5000</translation>
-    </message>
-    <message>
-        <source>100</source>
-        <translation>100</translation>
-    </message>
-    <message>
-        <source>10</source>
-        <translation>10</translation>
-    </message>
-    <message>
-        <source>1000</source>
-        <translation>1000</translation>
-    </message>
-    <message>
-        <source>50</source>
-        <translation>50</translation>
-    </message>
-    <message>
-        <source>500</source>
-        <translation>500</translation>
-    </message>
-    <message>
-        <source>5</source>
-        <translation>5</translation>
-    </message>
-    <message>
-        <source>1</source>
-        <translation>1</translation>
-    </message>
-    <message>
-        <source>Select All</source>
-        <translation>Выбрать все</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>ОТМЕНА</translation>
-    </message>
-    <message>
-        <source>SAVE</source>
-        <translation>СОХРАНИТЬ</translation>
     </message>
 </context>
 <context>
@@ -1415,49 +1106,6 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
 </context>
 <context>
-    <name>GovernancePage</name>
-    <message>
-        <source>Form</source>
-        <translation>Вид</translation>
-    </message>
-    <message>
-        <source>GOVERNANCE</source>
-        <translation>УПРАВЛЕНИЕ</translation>
-    </message>
-    <message>
-        <source>Update Proposals</source>
-        <translation>Обновить предложения</translation>
-    </message>
-    <message>
-        <source>Next super block:</source>
-        <translation>Следующий супер блок:</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>Blocks to next super block:</source>
-        <translation>Блоки до следующего суперблока:</translation>
-    </message>
-    <message>
-        <source>Days to budget payout (estimate):</source>
-        <translation>Дней до выплаты бюджета (приблизительно):</translation>
-    </message>
-    <message>
-        <source>Allotted budget:</source>
-        <translation>Выделенный бюджет:</translation>
-    </message>
-    <message>
-        <source>Budget left:</source>
-        <translation>Остаток Бюджета:</translation>
-    </message>
-    <message>
-        <source>Masternodes count:</source>
-        <translation>Количество мастернод:</translation>
-    </message>
-</context>
-<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
@@ -1498,6 +1146,10 @@ It will start automatically as soon as the wallet has enough confirmations on an
     <message>
         <source>Show splash screen on startup (default: %u)</source>
         <translation>Показывать загрузочную заставку при запуске (по умолчанию: %u)</translation>
+    </message>
+    <message>
+        <source>Hide QT staking charts on startup (default: %u)</source>
+        <translation>Скрыть график стекинга QT при запуске (по умолчанию: %u)</translation>
     </message>
     <message>
         <source>Set language, for example "de_DE" (default: system locale)</source>
@@ -1616,16 +1268,12 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>Вид</translation>
     </message>
     <message>
-        <source>user_masternode</source>
-        <translation>user_masternode</translation>
+        <source>Collateral tx not found</source>
+        <translation>tx залога не найден</translation>
     </message>
     <message>
-        <source>Address: 88.26.164.88:33003</source>
-        <translation>Адрес: 88.26.164.88:33003 </translation>
-    </message>
-    <message>
-        <source>Jan. 19, 2019</source>
-        <translation>19 января, 2019</translation>
+        <source>Status: %1</source>
+        <translation>Статус: %1</translation>
     </message>
 </context>
 <context>
@@ -1659,28 +1307,28 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>Адрес</translation>
     </message>
     <message>
-        <source>Create New Master Node Controller</source>
-        <translation>Создать новый контроллер мастерноды</translation>
+        <source>Create New Masternode Controller</source>
+        <translation>Создать новый контроллер Мастерноды</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100,000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Для того, чтобы создать мастерноду PENGOLINCOIN, вам необходимо внести в сеть 100,000 PGO (эти монеты остаются вашими и никогда не покинут вас).&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt; Вы можете отключить узел и разблокировать монеты в любое время.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>Set Masternode Name</source>
+        <translation>Установить имя мастерноды</translation>
+    </message>
+    <message>
+        <source>Set Masternode IP and Port</source>
+        <translation>Задать IP-адрес и порт Мастерноды</translation>
+    </message>
+    <message>
+        <source>Enter port</source>
+        <translation>Ввести порт</translation>
     </message>
     <message>
         <source>Make sure you have this amount of coins.</source>
         <translation>Убедитесь, что у вас есть такое количество монет.</translation>
     </message>
     <message>
-        <source>Set Master Node’s Name</source>
-        <translation>Установить имя мастерноды</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 100,000 PGO will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;На новый пустой адрес в вашем кошельке&lt;/p&gt;&lt;p&gt; будет сделана транзакция в 100,000 PGO. &lt;/p&gt;&lt;p&gt;Адрес отмечен под именем мастерноды.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Set Master Node’s IP and port</source>
-        <translation>Установите IP-адрес и порт мастерноды</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;На новый пустой адрес в вашем кошельке&lt;/p&gt;&lt;p&gt; будет сделана транзакция в 10 000 PGO. &lt;/p&gt;&lt;p&gt;Адрес отмечен под именем мастерноды.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Address of the node that must always be online running the actual master node.</source>
@@ -1689,22 +1337,6 @@ It will start automatically as soon as the wallet has enough confirmations on an
     <message>
         <source>Enter IP address</source>
         <translation>Ввести IP-адрес</translation>
-    </message>
-    <message>
-        <source>Enter Port</source>
-        <translation>Ввести порт</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>ОТМЕНА</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>ХОРОШО</translation>
-    </message>
-    <message>
-        <source>e.g user_masternode</source>
-        <translation>например, user_masternode</translation>
     </message>
     <message>
         <source>NEXT</source>
@@ -1723,12 +1355,42 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>IP и порт не могут быть пустыми</translation>
     </message>
     <message>
-        <source>Invalid port number</source>
-        <translation>Неверный номер порта</translation>
+        <source>Invalid IP address</source>
+        <translation>Неверный IP-адрес</translation>
     </message>
     <message>
-        <source>Prepare master node failed..</source>
-        <translation>Не удалось подготовить мастерноду</translation>
+        <source>Unknown error</source>
+        <translation>Неизвестная ошибка</translation>
+    </message>
+    <message>
+        <source>Prepare master node failed.
+
+%1
+</source>
+        <translation>Не удалось подготовить мастерноду.
+
+ %1
+</translation>
+    </message>
+    <message>
+        <source>Invalid collateral output index</source>
+        <translation>Неверный индекс выхода коллатераля</translation>
+    </message>
+    <message>
+        <source>Master node created! Wait %1 confirmations before starting it.</source>
+        <translation>Мастернода создана! Подождите %1 подтверждений, прежде чем запустить его.</translation>
+    </message>
+    <message>
+        <source>Cannot send collateral transaction.
+
+%1</source>
+        <translation>Не удается отправить транзакцию коллатераля.
+
+%1</translation>
+    </message>
+    <message>
+        <source>walletModel not set</source>
+        <translation>walletModel не установлен</translation>
     </message>
     <message>
         <source>Invalid masternode.conf file</source>
@@ -1739,56 +1401,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>Ошибка разбора файла masternode.conf</translation>
     </message>
     <message>
-        <source>Invalid collaterall output index</source>
-        <translation>Неверный индекс выхода залога</translation>
-    </message>
-    <message>
-        <source>Master node created!</source>
-        <translation>Мастернода успешно создана!</translation>
-    </message>
-    <message>
         <source>masternode.conf file doesn't exists</source>
         <translation>Файла masternode.cong не существует</translation>
-    </message>
-    <message>
-        <source>The recipient address is not valid, please recheck.</source>
-        <translation>Адрес получателя недействителен, повторите проверку.</translation>
-    </message>
-    <message>
-        <source>The amount to pay must be larger than 0.</source>
-        <translation>Сумма для платежа должна быть больше, чем 0.</translation>
-    </message>
-    <message>
-        <source>The amount exceeds your balance.</source>
-        <translation>Сумма превышает ваш баланс.</translation>
-    </message>
-    <message>
-        <source>The total exceeds your balance when the %1 transaction fee is included.</source>
-        <translation>Сумма превышает ваш баланс, когда включена комиссия за транзакцию %1.</translation>
-    </message>
-    <message>
-        <source>Duplicate address found, can only send to each address once per send operation.</source>
-        <translation>Дублированный адрес найден, можно отправлять только на каждый адрес один раз за операцию отправки.</translation>
-    </message>
-    <message>
-        <source>Transaction creation failed!</source>
-        <translation>Не удалось создать транзакцию!</translation>
-    </message>
-    <message>
-        <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Сделка была отклонена! Это может произойти, если некоторые из монет в вашем кошельке уже были потрачены, например, если вы использовали копию wallet.dat и монеты были потрачены в копии, но не отмечены как потраченные здесь.</translation>
-    </message>
-    <message>
-        <source>Error: The wallet was unlocked only to anonymize coins.</source>
-        <translation>Ошибка: кошелек был разблокирован только для анонимизации монет.</translation>
-    </message>
-    <message>
-        <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
-        <translation>Плата в %1 раз выше, чем %2 за КБ, считается безумно высокой.</translation>
-    </message>
-    <message>
-        <source>Error: The wallet was unlocked only to anonymize coins. Unlock canceled.</source>
-        <translation>Ошибка: кошелек был разблокирован только для анонимизации монет. Разблокировка отменена.</translation>
     </message>
 </context>
 <context>
@@ -1798,16 +1412,12 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>Вид</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
+        <source>Start All</source>
+        <translation>Запустить все</translation>
     </message>
     <message>
-        <source>No active Master Node yet</source>
-        <translation>Пока что нет активной Мастерноды</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
+        <source>Start Inactive/s</source>
+        <translation>Запустить неактивные</translation>
     </message>
     <message>
         <source>Masternodes</source>
@@ -1840,6 +1450,10 @@ and vote on the treasury system receiving a periodic reward.</source>
         <translation>Информация</translation>
     </message>
     <message>
+        <source>Please wait until the node is fully synced</source>
+        <translation>Пожалуйста, дождитесь полной синхронизации узла</translation>
+    </message>
+    <message>
         <source>Start Masternode</source>
         <translation>Запустить мастерноду</translation>
     </message>
@@ -1850,14 +1464,69 @@ and vote on the treasury system receiving a periodic reward.</source>
 </translation>
     </message>
     <message>
-        <source>Cannot start masternode, the collateral transaction has not been accepted by the network.
-Please wait few more minutes.</source>
-        <translation>Невозможно запустить мастерноду - транзакция залога не была принята сетью.
-Пожалуйста, подождите еще несколько минут.</translation>
+        <source>Cannot edit masternode, wallet locked</source>
+        <translation>Невозможно редактировать мастерноду, кошелек заблокирован</translation>
+    </message>
+    <message>
+        <source>Cannot start masternode, the collateral transaction has not been confirmed by the network yet.
+Please wait few more minutes (masternode collaterals require %1 confirmations).</source>
+        <translation>Невозможно запустить мастерноду, транзакция коллатераля еще не подтверждена сетью. Подождите еще несколько минут (для коллатералей мастерноды требуется %1 подтверждений).</translation>
+    </message>
+    <message>
+        <source>Background task is being executed, please wait</source>
+        <translation>Выполняется фоновая задача, пожалуйста, подождите</translation>
+    </message>
+    <message>
+        <source>Start ALL masternodes failed</source>
+        <translation>Не удалось запустить ВСЕ мастерноды</translation>
+    </message>
+    <message>
+        <source>Wallet unlock cancelled</source>
+        <translation>Разблокировка кошелька отменена</translation>
+    </message>
+    <message>
+        <source>Cannot perform Masternodes start</source>
+        <translation>Невозможно выполнить запуск Мастернод</translation>
+    </message>
+    <message>
+        <source>%1 Masternodes failed to start, %2 started</source>
+        <translation>Не удалось запустить %1 мастернод, запущено %2</translation>
+    </message>
+    <message>
+        <source>All Masternodes started!</source>
+        <translation>Все Мастерноды запущены!</translation>
+    </message>
+    <message>
+        <source>Cannot show Masternode information, wallet locked</source>
+        <translation>Невозможно отобразить информацию о Мастерноде, кошелек заблокирован</translation>
+    </message>
+    <message>
+        <source>Masternode data copied to the clipboard.</source>
+        <translation>Данные Мастерноды скопированы в буфер обмена.</translation>
+    </message>
+    <message>
+        <source>Not enough balance to create a masternode, 100,000 %1 required.</source>
+        <translation>Недостаточно баланса для создания мастерноды, требуется 10000 %1.</translation>
     </message>
     <message>
         <source>Remote Masternode Data</source>
         <translation>Данные удаленной мастерноды</translation>
+    </message>
+    <message>
+        <source>What is a Masternode?</source>
+        <translation>Что такое мастернода?</translation>
+    </message>
+    <message>
+        <source>FAQ explaining what Masternodes are</source>
+        <translation>FAQ, объясняющий, что такое Мастерноды</translation>
+    </message>
+    <message>
+        <source>What is a Controller?</source>
+        <translation>Что такое Контроллер?</translation>
+    </message>
+    <message>
+        <source>FAQ explaining what is a Masternode Controller</source>
+        <translation>FAQ, объясняющий, что такое Контроллер Мастерноды</translation>
     </message>
     <message>
         <source>You are just about to export the required data to run a Masternode
@@ -1876,10 +1545,6 @@ this controller wallet (select the Masternode in the list and press "start").
 вашего удаленного сервера и запустить его, а затем запустить мастерноду,
 используя этот кошелек контроллера (выберите мастерноду из списка и нажмите «Старт»).
 </translation>
-    </message>
-    <message>
-        <source>Masternode exported!, check your clipboard</source>
-        <translation>Мастернода экспортирована! Проверьте свой буфер обмена</translation>
     </message>
     <message>
         <source>Delete Masternode</source>
@@ -1908,8 +1573,8 @@ Are you sure?</source>
         <translation>Файла masternode.cong не существует</translation>
     </message>
     <message>
-        <source>Not enough balance to create a masternode, 100,000 PGO required.</source>
-        <translation>Недостаточно баланса для создания мастерноды. Требуется 100,000 PGO.</translation>
+        <source>Cannot create Masternode controller, wallet locked</source>
+        <translation>Невозможно создать контроллер Мастерноды, кошелек заблокирован</translation>
     </message>
     <message>
         <source>Error creating masternode</source>
@@ -1923,24 +1588,16 @@ Are you sure?</source>
         <translation>Вид</translation>
     </message>
     <message>
-        <source>Master Node Information</source>
-        <translation>Информация по мастерноде</translation>
+        <source>Masternode Information</source>
+        <translation>Информация о Мастерноде</translation>
     </message>
     <message>
         <source>Public Key:</source>
         <translation>Публичный ключ:</translation>
     </message>
     <message>
-        <source>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</source>
-        <translation>492526e7fa3c810b35016...40a5df85ee227ab00b1156994 </translation>
-    </message>
-    <message>
         <source>Address: </source>
         <translation>Адрес:</translation>
-    </message>
-    <message>
-        <source>127.0.0.2:43223</source>
-        <translation>127.0.0.2:43223 </translation>
     </message>
     <message>
         <source>Collaterall tx id:</source>
@@ -1959,12 +1616,16 @@ Are you sure?</source>
         <translation>Статус:</translation>
     </message>
     <message>
-        <source>MISSING</source>
-        <translation>ОТСУТСТВУЕТ</translation>
+        <source>Export data to run the Masternode on a remote server</source>
+        <translation>Экспорт данных для запуска Мастерноды на удаленном сервере</translation>
     </message>
     <message>
-        <source>Export data to run the Master Node on a remote server</source>
-        <translation>Экспорт данных для запуска мастерноды на удаленном сервере</translation>
+        <source>Masternode public key copied</source>
+        <translation>Открытый ключ мастерноды скопирован</translation>
+    </message>
+    <message>
+        <source>Collateral tx id copied</source>
+        <translation>tx Id залога скопирован</translation>
     </message>
 </context>
 <context>
@@ -1973,24 +1634,54 @@ Are you sure?</source>
         <source>Form</source>
         <translation>Вид</translation>
     </message>
-    <message>
-        <source>Savings</source>
-        <translation>Сбережения</translation>
-    </message>
-    <message>
-        <source>Jan. 19, 2019</source>
-        <translation>19 января, 2019</translation>
-    </message>
-    <message>
-        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
-        <translation>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</translation>
-    </message>
 </context>
 <context>
     <name>NavMenuWidget</name>
     <message>
         <source>Form</source>
         <translation>Вид</translation>
+    </message>
+    <message>
+        <source>HOME
+</source>
+        <translation>ГЛАВНАЯ
+</translation>
+    </message>
+    <message>
+        <source>SEND
+</source>
+        <translation>ОТПРАВИТЬ
+</translation>
+    </message>
+    <message>
+        <source>RECEIVE
+</source>
+        <translation>ПОЛУЧИТЬ
+</translation>
+    </message>
+    <message>
+        <source>CONTACTS
+</source>
+        <translation>КОНТАКТЫ
+</translation>
+    </message>
+    <message>
+        <source>MASTER
+NODES</source>
+        <translation>МАСТЕР
+НОДЫ</translation>
+    </message>
+    <message>
+        <source>COLD
+STAKING</source>
+        <translation>ХОЛОДНЫЙ
+СТЕКИНГ</translation>
+    </message>
+    <message>
+        <source>SETTINGS
+</source>
+        <translation>НАСТРОЙКИ
+</translation>
     </message>
     <message>
         <source>V 1.0.0</source>
@@ -2049,10 +1740,6 @@ Are you sure?</source>
     <message>
         <source>Form</source>
         <translation>Вид</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
     </message>
 </context>
 <context>
@@ -2410,17 +2097,6 @@ Address: %4
 Адрес: %4
 </translation>
     </message>
-    <message>
-        <source>A fatal error occurred. PENGOLINCOIN can no longer continue safely and will quit.</source>
-        <translation>Произошла фатальная ошибка. PENGOLINCOIN больше не может безопасно продолжать работу и завершит работу.</translation>
-    </message>
-</context>
-<context>
-    <name>PWidget</name>
-    <message>
-        <source>Wallet locked, you need to unlock it to perform this action</source>
-        <translation>Кошелек заблокирован. Для выполнения этого действия вам нужно его разблокировать</translation>
-    </message>
 </context>
 <context>
     <name>PaymentServer</name>
@@ -2527,200 +2203,7 @@ Address: %4
         <source>Ping Time</source>
         <translation>Время отклика</translation>
     </message>
-</context>
-<context>
-    <name>PrivacyWidget</name>
-    <message>
-        <source>Form</source>
-        <translation>Вид</translation>
-    </message>
-    <message>
-        <source>Title</source>
-        <translation>Название</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
-    </message>
-    <message>
-        <source>No active Master Node yet</source>
-        <translation>Пока что нет активной Мастерноды</translation>
-    </message>
-    <message>
-        <source>Privacy</source>
-        <translation>Конфиденциальность</translation>
-    </message>
-    <message>
-        <source>Convert</source>
-        <translation>Конвертировать</translation>
-    </message>
-    <message>
-        <source>Mint</source>
-        <translation>Чеканить</translation>
-    </message>
-    <message>
-        <source>Minting zPGO anonymizes your PGO by removing any
-transaction history, making transactions untraceable </source>
-        <translation>Чеканка zPGO анонимизирует ваш PGO, удаляя любую историю транзакций и делая транзакции недоступными для отслеживания.</translation>
-    </message>
-    <message>
-        <source>Mint new zPGO or convert back to PGO</source>
-        <translation>Чеканить новые zPGO или конвертировать обратно в PGO</translation>
-    </message>
-    <message>
-        <source>Last Zerocoin Movements</source>
-        <translation>Последние движения Zerocoin</translation>
-    </message>
-    <message>
-        <source>No transactions yet</source>
-        <translation>Пока что нет транзакций</translation>
-    </message>
-    <message>
-        <source>Mint zPGO</source>
-        <translation>Чеканить zPGO</translation>
-    </message>
-    <message>
-        <source>Enter amount of PGO to mint into zPGO</source>
-        <translation>Введите количество PGO для чеканки в zPGO</translation>
-    </message>
-    <message>
-        <source>Convert back to PGO</source>
-        <translation>Конвертировать обратно в PGO</translation>
-    </message>
-    <message>
-        <source>Enter amount of zPGO to convert back into PGO</source>
-        <translation>Введите количество zPGO для чеканки в PGO </translation>
-    </message>
-    <message>
-        <source>Zerocoin</source>
-        <translation>Zerocoin </translation>
-    </message>
-    <message>
-        <source>zPGO is currently undergoing maintenance</source>
-        <translation>zPGO в настоящее время проходит техническое обслуживание</translation>
-    </message>
-    <message>
-        <source>You need to unlock the wallet to be able to %1 zPGO</source>
-        <translation>Вам нужно разблокировать кошелек, чтобы иметь возможность %1 zPGO</translation>
-    </message>
-    <message>
-        <source>convert</source>
-        <translation>конвертировать</translation>
-    </message>
-    <message>
-        <source>mint</source>
-        <translation>чеканить</translation>
-    </message>
-    <message>
-        <source>Invalid value</source>
-        <translation>Неверное значение</translation>
-    </message>
-    <message>
-        <source>zPGO minted successfully</source>
-        <translation>zPGO отчеканились успешно</translation>
-    </message>
-    <message>
-        <source>zPGO converted back to PGO</source>
-        <translation>ZPGO конвертированы обратно в PGO</translation>
-    </message>
-    <message>
-        <source>You don't have any PGO to select.</source>
-        <translation>У вас нет PGO.</translation>
-    </message>
-    <message>
-        <source>Rescan Mints</source>
-        <translation>Повторно сканировать чеканку</translation>
-    </message>
-    <message>
-        <source>Your zerocoin mints are going to be scanned from the blockchain from scratch</source>
-        <translation>Ваши чеканки zerocoin будут сканироваться из блокчейна с нуля</translation>
-    </message>
-    <message>
-        <source>Reset Spent Zerocoins</source>
-        <translation>Сбросить потраченные Zerocoins</translation>
-    </message>
-    <message>
-        <source>Your zerocoin spends are going to be scanned from the blockchain from scratch</source>
-        <translation>Ваши потраченные zerocoin будут сканироваться из блокчейна с нуля</translation>
-    </message>
-    <message>
-        <source>Total %1</source>
-        <translation>Всего %1</translation>
-    </message>
-</context>
-<context>
-    <name>ProposalFrame</name>
-    <message>
-        <source>Open proposal page in browser</source>
-        <translation>Откройте страницу предложения в браузере</translation>
-    </message>
-    <message>
-        <source> remaining payment(s).</source>
-        <translation>оставшиеся платеж(и).</translation>
-    </message>
-    <message>
-        <source>Yes:</source>
-        <translation>Да:</translation>
-    </message>
-    <message>
-        <source>Abstain:</source>
-        <translation>Воздержаться:</translation>
-    </message>
-    <message>
-        <source>No:</source>
-        <translation>Нет:</translation>
-    </message>
-    <message>
-        <source>A proposal URL can be used for phishing, scams and computer viruses. Open this link only if you trust the following URL.
-</source>
-        <translation>URL-адрес предложения может быть использован для фишинга, мошенничества и компьютерных вирусов. Открывайте эту ссылку, только если вы доверяете данному URL.
-</translation>
-    </message>
-    <message>
-        <source>Open link</source>
-        <translation>Открыть ссылку</translation>
-    </message>
-    <message>
-        <source>Copy link</source>
-        <translation>Копировать ссылку</translation>
-    </message>
-    <message>
-        <source>Wallet Locked</source>
-        <translation>Кошелек заблокирован</translation>
-    </message>
-    <message>
-        <source>You must unlock your wallet to vote.</source>
-        <translation>Для того, чтобы голосовать вы должны разблокировать ваш кошелек.</translation>
-    </message>
-    <message>
-        <source>Do you want to vote %1 on</source>
-        <translation>Вы хотите проголосовать %1 за</translation>
-    </message>
-    <message>
-        <source>using all your masternodes?</source>
-        <translation>использовать все ваши мастерноды?</translation>
-    </message>
-    <message>
-        <source>Proposal Hash:</source>
-        <translation>Hash предложения:</translation>
-    </message>
-    <message>
-        <source>Proposal URL:</source>
-        <translation>URL предложения:</translation>
-    </message>
-    <message>
-        <source>Confirm Vote</source>
-        <translation>Подтвердить свой голос</translation>
-    </message>
-    <message>
-        <source>Vote Results</source>
-        <translation>Результаты голосования</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>QObject</name>
     <message>
@@ -2728,8 +2211,8 @@ transaction history, making transactions untraceable </source>
         <translation>Сумма</translation>
     </message>
     <message>
-        <source>Enter a PENGOLINCOIN address (e.g. %1)</source>
-        <translation>Введите адрес PENGOLINCOIN (например %1)</translation>
+        <source>Enter PENGOLINCOIN address (e.g. %1)</source>
+        <translation>Введите адрес PENGOLINCOIN (например, %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2756,10 +2239,6 @@ transaction history, making transactions untraceable </source>
         <translation>BLOOM</translation>
     </message>
     <message>
-        <source>ZK_BLOOM</source>
-        <translation>ZK_BLOOM </translation>
-    </message>
-    <message>
         <source>UNKNOWN</source>
         <translation>НЕИЗВЕСТНО</translation>
     </message>
@@ -2774,6 +2253,10 @@ transaction history, making transactions untraceable </source>
     <message>
         <source>%1 ms</source>
         <translation>%1 мс</translation>
+    </message>
+    <message>
+        <source>A fatal error occurred. PENGOLINCOIN can no longer continue safely and will quit.</source>
+        <translation>Произошла фатальная ошибка. PENGOLINCOIN больше не может безопасно продолжать работу и завершит работу.</translation>
     </message>
     <message>
         <source>PENGOLINCOIN Core</source>
@@ -2798,6 +2281,170 @@ transaction history, making transactions untraceable </source>
     <message>
         <source>PENGOLINCOIN Core didn't yet exit safely...</source>
         <translation>PENGOLINCOIN Core еще не вышел безопасно...</translation>
+    </message>
+    <message>
+        <source>Contact</source>
+        <translation>Контакты</translation>
+    </message>
+    <message>
+        <source>Receiving</source>
+        <translation>Получающий</translation>
+    </message>
+    <message>
+        <source>Delegator</source>
+        <translation>Делегатор</translation>
+    </message>
+    <message>
+        <source>Delegable</source>
+        <translation>Делегируемый</translation>
+    </message>
+    <message>
+        <source>Cold Staking</source>
+        <translation>Холодный стекинг</translation>
+    </message>
+    <message>
+        <source>Cold Staking Contact</source>
+        <translation>Контакт холодного стекинга</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Спрятан</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Неизвестно</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>все</translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation>Контакты</translation>
+    </message>
+    <message>
+        <source>Staking Contacts</source>
+        <translation>Контакты стекинга</translation>
+    </message>
+    <message>
+        <source>Date desc</source>
+        <translation>Дата по убыванию</translation>
+    </message>
+    <message>
+        <source>Date asc</source>
+        <translation>Дата по возрастанию</translation>
+    </message>
+    <message>
+        <source>Amount desc</source>
+        <translation>Сумма по убыванию</translation>
+    </message>
+    <message>
+        <source>Amount asc</source>
+        <translation>Сумма по возрастанию</translation>
+    </message>
+    <message>
+        <source>Received</source>
+        <translation>Принято</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>Отправлено</translation>
+    </message>
+    <message>
+        <source>Mined</source>
+        <translation>заминированный</translation>
+    </message>
+    <message>
+        <source>Minted</source>
+        <translation>Чеканка</translation>
+    </message>
+    <message>
+        <source>MN reward</source>
+        <translation>Вознаграждение от MN</translation>
+    </message>
+    <message>
+        <source>To yourself</source>
+        <translation>Самому себе</translation>
+    </message>
+    <message>
+        <source>Cold stakes</source>
+        <translation>Холодные стекинг ставки</translation>
+    </message>
+    <message>
+        <source>Hot stakes</source>
+        <translation>Горячие стекинг ставки</translation>
+    </message>
+    <message>
+        <source>Delegated</source>
+        <translation>Делегирован</translation>
+    </message>
+    <message>
+        <source>Delegations</source>
+        <translation>Делегирования</translation>
+    </message>
+    <message>
+        <source>by Label</source>
+        <translation>по метке</translation>
+    </message>
+    <message>
+        <source>by Address</source>
+        <translation>по адресу</translation>
+    </message>
+    <message>
+        <source>by Date</source>
+        <translation>по дате</translation>
+    </message>
+    <message>
+        <source>Jan</source>
+        <translation>Январь</translation>
+    </message>
+    <message>
+        <source>Feb</source>
+        <translation>Февраль</translation>
+    </message>
+    <message>
+        <source>Mar</source>
+        <translation>Март</translation>
+    </message>
+    <message>
+        <source>Apr</source>
+        <translation>Апрель</translation>
+    </message>
+    <message>
+        <source>May</source>
+        <translation>Май</translation>
+    </message>
+    <message>
+        <source>Jun</source>
+        <translation>Июнь</translation>
+    </message>
+    <message>
+        <source>Jul</source>
+        <translation>Июль</translation>
+    </message>
+    <message>
+        <source>Aug</source>
+        <translation>Август</translation>
+    </message>
+    <message>
+        <source>Sep</source>
+        <translation>Сентябрь</translation>
+    </message>
+    <message>
+        <source>Oct</source>
+        <translation>Октябрь</translation>
+    </message>
+    <message>
+        <source>Nov</source>
+        <translation>Ноябрь</translation>
+    </message>
+    <message>
+        <source>Dec</source>
+        <translation>Декабрь</translation>
+    </message>
+    <message>
+        <source>Address with no label</source>
+        <translation>Адрес без метки</translation>
     </message>
 </context>
 <context>
@@ -3157,7 +2804,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
-        <translation>ВНИМАНИЕ: мошенники активизировались, предлагая пользователям вводить здесь команды и воруя содержимое кошелька. Не используйте эту консоль без полного понимания последствий команды.</translation>
+        <translation>ВНИМАНИЕ: активизировались мошенники, которые предлагают пользователям вводить здесь команды и воруя содержимое их кошелька. Не используйте эту консоль без полного понимания последствий команды.</translation>
     </message>
     <message>
         <source>%1 B</source>
@@ -3215,24 +2862,16 @@ transaction history, making transactions untraceable </source>
         <translation>Диалоговое окно</translation>
     </message>
     <message>
-        <source>Transaction Details</source>
-        <translation>Детали транзакции</translation>
+        <source>My Address</source>
+        <translation>Мой адрес</translation>
     </message>
     <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
-    </message>
-    <message>
-        <source>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
+        <source>COPY</source>
+        <translation>КОПИРОВАТЬ</translation>
     </message>
     <message>
         <source>CANCEL</source>
         <translation>ОТМЕНА</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>ХОРОШО</translation>
     </message>
 </context>
 <context>
@@ -3242,12 +2881,8 @@ transaction history, making transactions untraceable </source>
         <translation>Вид</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
-        <source>No address</source>
-        <translation>Нет адресов</translation>
+        <source>Scan the QR code or copy the address to receive PGO</source>
+        <translation>Сканируйте QR-код или скопируйте адрес для получения PGO</translation>
     </message>
     <message>
         <source>Add Label</source>
@@ -3266,24 +2901,28 @@ transaction history, making transactions untraceable </source>
         <translation>Получить</translation>
     </message>
     <message>
-        <source>Scan the QR code or copy the address to receive PGO.</source>
-        <translation>Сканировать QR-код или копировать адрес для получения PGO.</translation>
+        <source>My Addresses</source>
+        <translation>Мои адреса</translation>
     </message>
     <message>
-        <source>No address </source>
-        <translation>Нет адреса</translation>
+        <source>List your own addresses</source>
+        <translation>Записать мои собственные адреса</translation>
     </message>
     <message>
-        <source>No available address, try unlocking the wallet</source>
-        <translation>Нет доступного адреса, попробуйте разблокировать кошелек</translation>
+        <source>Create Request</source>
+        <translation>Создать запрос</translation>
+    </message>
+    <message>
+        <source>Request payment with a fixed amount</source>
+        <translation>Запросить оплату с фиксированной суммой</translation>
     </message>
     <message>
         <source>Error generating address</source>
         <translation>Ошибка при генерации адреса</translation>
     </message>
     <message>
-        <source>Change Label</source>
-        <translation>Сменить ярлык</translation>
+        <source>Edit Label</source>
+        <translation>Изменить ярлык</translation>
     </message>
     <message>
         <source>Edit Address Label</source>
@@ -3298,12 +2937,20 @@ transaction history, making transactions untraceable </source>
         <translation>Ошибка при сохранении адресной метки</translation>
     </message>
     <message>
+        <source>Cannot create new address, wallet locked</source>
+        <translation>Невозможно создать новый адрес, кошелек заблокирован</translation>
+    </message>
+    <message>
         <source>New address created</source>
         <translation>Создан новый адрес</translation>
     </message>
     <message>
         <source>Address copied</source>
         <translation>Адрес скопирован</translation>
+    </message>
+    <message>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation>Невозможно выполнить операцию, кошелек заблокирован</translation>
     </message>
     <message>
         <source>URI copied to clipboard</source>
@@ -3338,7 +2985,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>(no label)</source>
-        <translation>(нет метки)</translation>
+        <translation>(нет ярлыка)</translation>
     </message>
     <message>
         <source>(no message)</source>
@@ -3356,14 +3003,6 @@ transaction history, making transactions untraceable </source>
         <translation>Диалоговое окно</translation>
     </message>
     <message>
-        <source>New Request Payment</source>
-        <translation>Новый запрос оплаты</translation>
-    </message>
-    <message>
-        <source>Lorem ipsum dolor sit amet, consectur cling elit, sed do </source>
-        <translation>Lorem ipsum dolor sit amet, consectur cling elit, sed do </translation>
-    </message>
-    <message>
         <source>Amount</source>
         <translation>Сумма</translation>
     </message>
@@ -3372,12 +3011,12 @@ transaction history, making transactions untraceable </source>
         <translation>PGO</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
+        <source>Instead of sharing only a PENGOLINCOIN address, you can create a payment request, bundling up more information</source>
+        <translation>Вместо того, чтобы делиться только адресом PENGOLINCOIN, вы можете создать запрос на оплату, связывая больше информации</translation>
     </message>
     <message>
-        <source>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
+        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
     </message>
     <message>
         <source>COPY ADDRESS</source>
@@ -3392,28 +3031,24 @@ transaction history, making transactions untraceable </source>
         <translation>ОТМЕНА</translation>
     </message>
     <message>
-        <source>REQUEST</source>
-        <translation>ЗАПРОС</translation>
-    </message>
-    <message>
-        <source>Instead of only sharing a PENGOLINCOIN address, you can create a Payment Request message which bundles up more information than is contained in just a PENGOLINCOIN address.</source>
-        <translation>Вместо того, чтобы просто делиться адресом PENGOLINCOIN, вы можете создать сообщение с запросом платежа, в котором содержится больше информации, чем содержится в адресе PENGOLINCOIN.</translation>
-    </message>
-    <message>
         <source>Label</source>
         <translation>Метка</translation>
-    </message>
-    <message>
-        <source>Enter a label to be saved within the address</source>
-        <translation>Введите метку для сохранения в адресе</translation>
     </message>
     <message>
         <source>Description (optional)</source>
         <translation>Описание (необязательно)</translation>
     </message>
     <message>
-        <source>Add description </source>
-        <translation>Добавить описание</translation>
+        <source>New Payment Request</source>
+        <translation>Новый запрос на оплату</translation>
+    </message>
+    <message>
+        <source>Enter a label for the address</source>
+        <translation>Введите метку для адреса</translation>
+    </message>
+    <message>
+        <source>Enter description</source>
+        <translation>Введите описание</translation>
     </message>
     <message>
         <source>Error</source>
@@ -3431,6 +3066,26 @@ transaction history, making transactions untraceable </source>
         <source>New Cold Staking Address</source>
         <translation>Новый адрес для холодного стекинга</translation>
     </message>
+    <message>
+        <source>Amount (optional)</source>
+        <translation>Сумма (необязательно)</translation>
+    </message>
+    <message>
+        <source>Address label cannot be empty</source>
+        <translation>Метка адреса не может быть пустой</translation>
+    </message>
+    <message>
+        <source>Invalid amount</source>
+        <translation>Недопустимая сумма</translation>
+    </message>
+    <message>
+        <source>Request for </source>
+        <translation>Запрос для</translation>
+    </message>
+    <message>
+        <source>Cold Staking Address Generated</source>
+        <translation>Адрес холодного стекинга сгенерирован</translation>
+    </message>
 </context>
 <context>
     <name>SendChangeAddressDialog</name>
@@ -3439,24 +3094,8 @@ transaction history, making transactions untraceable </source>
         <translation>Диалоговое окно</translation>
     </message>
     <message>
-        <source>Transaction Details</source>
-        <translation>Детали транзакции</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
-    </message>
-    <message>
-        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</source>
-        <translation>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. </translation>
-    </message>
-    <message>
         <source>CANCEL</source>
         <translation>ОТМЕНА</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>ХОРОШО</translation>
     </message>
     <message>
         <source>Custom Change Address</source>
@@ -3466,6 +3105,22 @@ transaction history, making transactions untraceable </source>
         <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" PENGOLINCOIN address</source>
         <translation>Остаточная часть значения, полученного от значения входов минус выходов, идет на «изменение» адреса PENGOLINCOIN</translation>
     </message>
+    <message>
+        <source>SAVE</source>
+        <translation>СОХРАНИТЬ</translation>
+    </message>
+    <message>
+        <source>RESET</source>
+        <translation>СБРОС</translation>
+    </message>
+    <message>
+        <source>Invalid address</source>
+        <translation>Неверный адрес</translation>
+    </message>
+    <message>
+        <source>Cannot use cold staking addresses for change</source>
+        <translation>Невозможно использовать адреса холодного стекинга для изменения</translation>
+    </message>
 </context>
 <context>
     <name>SendCustomFeeDialog</name>
@@ -3474,44 +3129,32 @@ transaction history, making transactions untraceable </source>
         <translation>Вид</translation>
     </message>
     <message>
-        <source>Transaction Details</source>
-        <translation>Детали транзакции</translation>
+        <source>Recommended</source>
+        <translation>рекомендуемые</translation>
     </message>
     <message>
-        <source>Customize the transaction fee at your to your liking, depending on the fee value your transaction will be included or not in the blockchain.</source>
-        <translation>Настроить комиссию за транзакцию на свой выбор, в зависимости от суммы комиссии, которая будет/не будет включена в вашу транзакцию в блокчейне.</translation>
-    </message>
-    <message>
-        <source>Recomended</source>
-        <translation>Рекоммендуется</translation>
+        <source>PGO/kilobyte</source>
+        <translation>PGO/килобайт</translation>
     </message>
     <message>
         <source>0.00 KB</source>
         <translation>0.00 KB</translation>
     </message>
     <message>
-        <source>Custom</source>
-        <translation>Настроенная</translation>
+        <source>Customize the transaction fee, depending on the fee value your transaction might be included faster in the blockchain</source>
+        <translation>Настройте комиссию за транзакцию. В зависимости от величины комиссии, ваша транзакция может быть быстрее включена в блокчейн</translation>
     </message>
     <message>
-        <source>Per kilobyte</source>
-        <translation>За килобайт</translation>
+        <source>Custom</source>
+        <translation>Настроенная</translation>
     </message>
     <message>
         <source>CANCEL</source>
         <translation>ОТМЕНА</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>ХОРОШО</translation>
-    </message>
-    <message>
         <source>Customize Fee</source>
         <translation>Настройка комиссии</translation>
-    </message>
-    <message>
-        <source>Customize the transaction fee, depending on the fee value your transaction will be included or not in the blockchain.</source>
-        <translation>Настройте комиссию за транзакцию. В зависимости от величины комиссии, ваша транзакция будет включена или не включена в блокчейн.</translation>
     </message>
     <message>
         <source>Normal</source>
@@ -3529,6 +3172,33 @@ transaction history, making transactions untraceable </source>
         <source>SAVE</source>
         <translation>СОХРАНИТЬ</translation>
     </message>
+    <message>
+        <source>Fee too high. Must be below: %1</source>
+        <translation>Комиссия слишком высокая. Должно быть ниже: %1</translation>
+    </message>
+    <message>
+        <source>Fee too low. Must be at least: %1</source>
+        <translation>Комиссия слишком низкая. Должно быть не менее: %1</translation>
+    </message>
+</context>
+<context>
+    <name>SendMemoDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Диалоговое окно</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>СОХРАНИТЬ</translation>
+    </message>
+    <message>
+        <source>RESET</source>
+        <translation>СБРОС</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>ОТМЕНА</translation>
+    </message>
 </context>
 <context>
     <name>SendMultiRow</name>
@@ -3537,75 +3207,35 @@ transaction history, making transactions untraceable </source>
         <translation>Вид</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
+        <source>Enter address</source>
+        <translation>Ввести адрес</translation>
     </message>
     <message>
-        <source>Add address</source>
-        <translation>Добавить адрес</translation>
+        <source>Address label (optional)</source>
+        <translation>Метка адреса (по желанию)</translation>
     </message>
     <message>
-        <source>Add description</source>
-        <translation>Добавить описание</translation>
+        <source>Enter label</source>
+        <translation>Введите метку</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>SendWidget</name>
-    <message>
-        <source>Send</source>
-        <translation>Отправить</translation>
-    </message>
-    <message>
-        <source>You can transfer public coins (PGO) or private coins (zPGO)</source>
-        <translation>Вы можете отправить публичные монеты (PGO) или конфиденциальные монеты (zPGO)</translation>
-    </message>
-    <message>
-        <source>Select coin type to spend</source>
-        <translation>Выберите тип монеты для трат</translation>
-    </message>
-    <message>
-        <source>Enter a PENGOLINCOIN address or contact label</source>
-        <translation>Введите адрес PENGOLINCOIN или метку контакта</translation>
-    </message>
-    <message>
-        <source>Amount</source>
-        <translation>Сумма</translation>
-    </message>
-    <message>
-        <source>Customize fee</source>
-        <translation>Настройка комиссии</translation>
-    </message>
-    <message>
-        <source>Clear all</source>
-        <translation>Очистить все</translation>
-    </message>
-    <message>
-        <source>Add recipient</source>
-        <translation>Добавить получателя</translation>
-    </message>
-    <message>
-        <source>Reset to default</source>
-        <translation>Сбросить настройки по умолчанию</translation>
-    </message>
-    <message>
-        <source>Total to send</source>
-        <translation>Общая сумма к отправке</translation>
-    </message>
-    <message>
-        <source>Send PGO</source>
-        <translation>Отправить PGO</translation>
-    </message>
-    <message>
-        <source>Send zPGO</source>
-        <translation>Отправить zPGO</translation>
-    </message>
     <message>
         <source>Total remaining from the selected UTXO</source>
         <translation>Всего осталось от выбранного UTXO</translation>
     </message>
     <message>
-        <source>Total remaining</source>
-        <translation>Всего осталось</translation>
+        <source>Warning!</source>
+        <translation>Предупреждение!</translation>
+    </message>
+    <message>
+        <source>The change address doesn't belong to this wallet.
+
+Do you want to continue?</source>
+        <translation>Смена адреса не относится к этому кошельку.
+
+Хотите продолжить?</translation>
     </message>
     <message>
         <source>Customize Fee</source>
@@ -3620,6 +3250,10 @@ transaction history, making transactions untraceable </source>
         <translation>Неверная запись. Прежде чем добавить новую запись, предыдущие записи должны быть действительными</translation>
     </message>
     <message>
+        <source>Possibly spend coins delegated for cold-staking (currently available: %1</source>
+        <translation>Возможно потратить монеты, выделенные для холодного стекинга (в настоящее время доступно: %1</translation>
+    </message>
+    <message>
         <source>Invalid entry</source>
         <translation>Неверная запись</translation>
     </message>
@@ -3630,10 +3264,6 @@ transaction history, making transactions untraceable </source>
     <message>
         <source>Cannot send, wallet locked</source>
         <translation>Невозможно отправить, так как кошелек заблокирован.</translation>
-    </message>
-    <message>
-        <source>Cannot create transaction.</source>
-        <translation>Невозможно создать транзакцию.</translation>
     </message>
     <message>
         <source>WARNING:
@@ -3648,60 +3278,8 @@ These coins will no longer be cold-staked.</source>
         <translation>Транзакция отправлена</translation>
     </message>
     <message>
-        <source>Spend Zerocoin</source>
-        <translation>Потратить Zerocoin</translation>
-    </message>
-    <message>
-        <source>zPGO is currently undergoing maintenance.</source>
-        <translation>В настоящее время zPGO проходит техническое обслуживание.</translation>
-    </message>
-    <message>
-        <source>Coin control mint not found</source>
-        <translation>Контроль отчеканенных монет не найден</translation>
-    </message>
-    <message>
-        <source>Sending %1 to address %2
-</source>
-        <translation>Отправка %1 на адрес %2
-</translation>
-    </message>
-    <message>
-        <source>Sending %1 to addresses:
-%2</source>
-        <translation>Отправка %1 на адреса:
-%2</translation>
-    </message>
-    <message>
-        <source>zPGO transaction sent!</source>
-        <translation>Транзакция zPGO отправлена!</translation>
-    </message>
-    <message>
-        <source>Version 1 zPGO require a security level of 100 to successfully spend.</source>
-        <translation>Для версии 1 zPGO требуется уровень безопасности 100, который можно успешно тратить.</translation>
-    </message>
-    <message>
-        <source>Too much inputs (</source>
-        <translation>Слишком много входов (</translation>
-    </message>
-    <message>
-        <source>) needed.
-Maximum allowed: </source>
-        <translation>) необходимо.
-Максимально допустимое:</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>
-Либо чеканятся монеты с  высоким номиналом (поэтому требуется меньше ресурсов), либо уменьшите сумму, которую нужно потратить.</translation>
-    </message>
-    <message>
         <source>Address label update failed for address: %1</source>
         <translation>Не удалось обновить метку адреса для адреса: %1</translation>
-    </message>
-    <message>
-        <source>Invalid change address</source>
-        <translation>Неверное изменение адреса</translation>
     </message>
     <message>
         <source>Invalid URI</source>
@@ -3716,12 +3294,36 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Сбор по выбору %1</translation>
     </message>
     <message>
-        <source>You don't have any PGO to select.</source>
-        <translation>У вас нет PGO.</translation>
+        <source>Coin Control</source>
+        <translation>Контроль Монеты</translation>
     </message>
     <message>
-        <source>You don't have any zPGO in your balance to select.</source>
-        <translation>На вашем балансе нет zPGO для выбора.</translation>
+        <source>Select the source of the coins</source>
+        <translation>Выберите источник монет</translation>
+    </message>
+    <message>
+        <source>Change Address</source>
+        <translation>Изменить адрес</translation>
+    </message>
+    <message>
+        <source>Customize the change address</source>
+        <translation>Настройте адрес изменения</translation>
+    </message>
+    <message>
+        <source>Open URI</source>
+        <translation>Открыть URI</translation>
+    </message>
+    <message>
+        <source>Parse a payment request</source>
+        <translation>Анализ запроса на оплату</translation>
+    </message>
+    <message>
+        <source>Unlocked remaining</source>
+        <translation>Остается разблокированным</translation>
+    </message>
+    <message>
+        <source>You don't have any %1 to select.</source>
+        <translation>У вас нет %1 для выбора.</translation>
     </message>
     <message>
         <source>No contacts available, you can go to the contacts screen and add some there!</source>
@@ -3741,7 +3343,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Cannot store your own address as contact</source>
-        <translation>Невозможно хранить ваш личный адрес в качестве контакта</translation>
+        <translation>Невозможно сохранить ваш личный адрес в качестве контакта</translation>
     </message>
     <message>
         <source>Update Contact</source>
@@ -3767,43 +3369,28 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Вид</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
-    </message>
-    <message>
-        <source>Backup Wallet </source>
-        <translation>Сделать резервную копию кошелька</translation>
-    </message>
-    <message>
         <source>Change Wallet Passphrase</source>
         <translation>Изменить фразовый пароль кошелька</translation>
-    </message>
-    <message>
-        <source>Keep your wallet safe doing regular backups, store your backup file externally.
-This option creates a wallet.dat file that can be used to recover your whole balance (transactions and addresses) from another device.</source>
-        <translation>Храните свой кошелек в безопасности, делайте регулярные резервные копии и храните файл резервной копии вне сети.
-Этот параметр создает файл wallet.dat, который можно использовать для восстановления всего вашего баланса (транзакций и адресов) с другого устройства.</translation>
-    </message>
-    <message>
-        <source>This will decrypt the whole wallet data and encrypt it back with the new passphrase.
-Remember to write it down and store it safely, otherwise you might lose access to your funds.</source>
-        <translation>Это расшифрует все данные кошелька и зашифрует их с новой парольной фразой. Не забудьте записать и хранить ее в надежном месте, иначе вы можете потерять доступ к своим средствам.</translation>
     </message>
     <message>
         <source>Where</source>
         <translation>Где</translation>
     </message>
     <message>
-        <source>Set a folder location</source>
-        <translation>Установить местоположение папки</translation>
+        <source>Keep your wallet safe by doing regular backups and storing your backup file externally.
+This option creates a wallet.dat file that can be used to recover your whole balance (transactions and addresses) on another device</source>
+        <translation>Держите свой кошелек в безопасности, регулярно создавая резервные копии и сохраняя файл резервной копии вне системы.
+Эта опция создает файл wallet.dat, который можно использовать для восстановления всего вашего баланса (транзакций и адресов) на другом устройстве.</translation>
     </message>
     <message>
-        <source>Backup</source>
-        <translation>Сделать резервную копию</translation>
+        <source>Select folder...</source>
+        <translation>Выберите папку...</translation>
+    </message>
+    <message>
+        <source>This will decrypt the whole wallet data and encrypt it back with the new passphrase.
+Remember to write it down and store it safely, otherwise you might lose access to your funds</source>
+        <translation>Это расшифрует все данные кошелька и зашифрует их с новой парольной фразой.
+Заапишите ее и храните в безопасности, иначе вы можете потерять доступ к своим средствам.</translation>
     </message>
     <message>
         <source>Change Passphrase</source>
@@ -3837,28 +3424,18 @@ Remember to write it down and store it safely, otherwise you might lose access t
         <translation>Вид</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
-    </message>
-    <message>
-        <source>Decrypt Address Result</source>
-        <translation>Расшифровать результат адреса</translation>
-    </message>
-    <message>
         <source>Import Address</source>
         <translation>Импортировать Адрес</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Очистить</translation>
-    </message>
-    <message>
         <source>BIP38 Tool</source>
         <translation>Инструмент BIP38</translation>
+    </message>
+    <message>
+        <source>Encrypt your PENGOLINCOIN addresses (key pair actually) using BIP38 encryption.
+Using this mechanism you can share your keys without middle-man risk, only need to store your passphrase safely</source>
+        <translation>Зашифруйте свои адреса PENGOLINCOIN (фактически, пару ключей), используя шифрование BIP38.
+С помощью этого механизма вы можете делиться своими ключами без риска посредника, вам нужно только безопасно хранить вашу парольную фразу</translation>
     </message>
     <message>
         <source>Encrypt</source>
@@ -3881,10 +3458,6 @@ Remember to write it down and store it safely, otherwise you might lose access t
         <translation>Фразовый пароль</translation>
     </message>
     <message>
-        <source>Enter a passphrase </source>
-        <translation>Ввести фразовый пароль</translation>
-    </message>
-    <message>
         <source>Decrypted address result</source>
         <translation>Расшифрованный результат адреса</translation>
     </message>
@@ -3897,16 +3470,16 @@ Remember to write it down and store it safely, otherwise you might lose access t
         <translation>Расшифровать ключ</translation>
     </message>
     <message>
-        <source>Enter a PENGOLINCOIN address</source>
-        <translation>Ввести адрес PENGOLINCOIN</translation>
+        <source>PENGOLINCOIN address</source>
+        <translation>Адрес PENGOLINCOIN</translation>
     </message>
     <message>
-        <source>Add address</source>
-        <translation>Добавить адрес</translation>
+        <source>Enter address</source>
+        <translation>Ввести адрес</translation>
     </message>
     <message>
-        <source>Write a message</source>
-        <translation>Написать сообщение</translation>
+        <source>Enter passphrase</source>
+        <translation>Введите кодовую фразу</translation>
     </message>
     <message>
         <source>Encrypted Key</source>
@@ -3919,6 +3492,10 @@ Remember to write it down and store it safely, otherwise you might lose access t
     <message>
         <source>CLEAR ALL</source>
         <translation>ОЧИСТИТЬ ВСЕ</translation>
+    </message>
+    <message>
+        <source>Enter a passphrase</source>
+        <translation>Введите парольную фразу</translation>
     </message>
     <message>
         <source>CLEAR</source>
@@ -3989,8 +3566,8 @@ Remember to write it down and store it safely, otherwise you might lose access t
         <translation>Ошибка при добавлении ключа к кошельку</translation>
     </message>
     <message>
-        <source>Successfully added pgoate key to the wallet</source>
-        <translation>Добавление приватного ключа к кошельку прошло успешно</translation>
+        <source>Successfully added private key to the wallet</source>
+        <translation>Закрытый ключ успешно добавлен в кошелек</translation>
     </message>
 </context>
 <context>
@@ -3998,10 +3575,6 @@ Remember to write it down and store it safely, otherwise you might lose access t
     <message>
         <source>Form</source>
         <translation>Вид</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
     </message>
     <message>
         <source>Console</source>
@@ -4012,12 +3585,16 @@ Remember to write it down and store it safely, otherwise you might lose access t
         <translation>Консольный вход</translation>
     </message>
     <message>
-        <source>Command Line Options </source>
+        <source>Open Debug File</source>
+        <translation>Открыть файл отладки</translation>
+    </message>
+    <message>
+        <source>Command Line Options</source>
         <translation>Параметры командной строки</translation>
     </message>
     <message>
-        <source>Open Debug File</source>
-        <translation>Открыть файл отладки</translation>
+        <source>Clear history</source>
+        <translation>Очистить историю</translation>
     </message>
     <message>
         <source>Cannot open debug file.
@@ -4049,12 +3626,8 @@ Verify that you have installed a predetermined text editor.</source>
         <translation>Вид</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
+        <source>Hide stake charts in the dashboard</source>
+        <translation>Скрыть график стекинга на панели инструментов</translation>
     </message>
     <message>
         <source>Reset to default</source>
@@ -4106,18 +3679,112 @@ Verify that you have installed a predetermined text editor.</source>
     </message>
 </context>
 <context>
-    <name>SettingsFaqWidget</name>
+    <name>SettingsExportCSV</name>
     <message>
         <source>Form</source>
         <translation>Вид</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
+        <source>Export Accounting</source>
+        <translation>Экспорт учета</translation>
     </message>
     <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
+        <source>Export your wallet's accounting data to a csv file.</source>
+        <translation>Экспорт учетных данных вашего кошелька в CSV-файл.</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Где</translation>
+    </message>
+    <message>
+        <source>Select folder...</source>
+        <translation>Выберите папку...</translation>
+    </message>
+    <message>
+        <source>Export Address Book</source>
+        <translation>Экспорт адресной книги</translation>
+    </message>
+    <message>
+        <source>Export CSV</source>
+        <translation>Экспорт CSV</translation>
+    </message>
+    <message>
+        <source>Export Address List</source>
+        <translation>Экспорт списка адресов</translation>
+    </message>
+    <message>
+        <source>PENGOLINCOIN_tx_csv_export(*.csv)</source>
+        <translation>PENGOLINCOIN_tx_csv_export(*.csv)</translation>
+    </message>
+    <message>
+        <source>PENGOLINCOIN_addresses_csv_export(*.csv)</source>
+        <translation>PENGOLINCOIN_addresses_csv_export(*.csv)</translation>
+    </message>
+    <message>
+        <source>Please select a folder to export the csv file first.</source>
+        <translation>Пожалуйста, сначало выберите папку для экспорта файла CSV.</translation>
+    </message>
+    <message>
+        <source>Confirmed</source>
+        <translation>Подтверждено</translation>
+    </message>
+    <message>
+        <source>Watch-only</source>
+        <translation>смотреть только</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Дата</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Метка</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адрес</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation>Номер</translation>
+    </message>
+    <message>
+        <source>Exporting Successful
+The transaction history was successfully saved to %1.</source>
+        <translation>Экспорт выполнен успешно.
+История транзакций была успешно сохранена в %1.</translation>
+    </message>
+    <message>
+        <source>Exporting Failed
+There was an error trying to save the transaction history to %1.</source>
+        <translation>Экспорт не удался. Произошла ошибка при попытке сохранить историю транзакций в %1.</translation>
+    </message>
+    <message>
+        <source>No available addresses to export under the selected filter</source>
+        <translation>Нет доступных адресов для экспорта под выбранным фильтром</translation>
+    </message>
+    <message>
+        <source>Exporting Successful
+The address book was successfully saved to %1.</source>
+        <translation>Экспорт выполнен успешно.
+Адресная книга успешно сохранена в %1.</translation>
+    </message>
+    <message>
+        <source>Exporting Failed
+There was an error trying to save the address list to %1. Please try again.</source>
+        <translation>Экспорт не удался.
+Произошла ошибка при попытке сохранить список адресов в %1. Пожалуйста, попробуйте еще раз.</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsFaqWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Вид</translation>
     </message>
     <message>
         <source>1) What is PENGOLINCOIN?</source>
@@ -4128,38 +3795,8 @@ Verify that you have installed a predetermined text editor.</source>
         <translation>2) Почему мои PGO невозможно потратить?</translation>
     </message>
     <message>
-        <source>3) PENGOLINCOIN privacy? What is Zerocoin (zPGO)?</source>
-        <translation>3) Конфиденциальность PENGOLINCOIN? Что такое Zerocoin (zPGO)?</translation>
-    </message>
-    <message>
-        <source>4) Why are my zPGO unspendable?</source>
-        <translation>4) Почему мои zPGO невозможно потратить?</translation>
-    </message>
-    <message>
-        <source>5) Why did my wallet convert the balance
-    into zPGO automatically?</source>
-        <translation>5) Почему мой кошелек автоматически конвертировал баланс
-в zPGO?</translation>
-    </message>
-    <message>
-        <source>6) How do I receive PGO/zPGO?</source>
-        <translation>6) Как я могу получить PGO/zPGO?</translation>
-    </message>
-    <message>
-        <source>7) How do I stake PGO/zPGO?</source>
-        <translation>7) Как запустить стекинг PGO/zPGO?</translation>
-    </message>
-    <message>
-        <source>8) Where I should go if I need support?</source>
-        <translation>8) Куда я могу обратиться за помощью?</translation>
-    </message>
-    <message>
-        <source>9) What is a Master Node?</source>
-        <translation>9) Что такое мастернода?</translation>
-    </message>
-    <message>
-        <source>10) What is a Master Node Controller?</source>
-        <translation>10) Что такое контролер мастерноды?</translation>
+        <source>https://pengolincoin.xyz/</source>
+        <translation>https://pengolincoin.xyz/</translation>
     </message>
     <message>
         <source>1</source>
@@ -4168,34 +3805,6 @@ Verify that you have installed a predetermined text editor.</source>
     <message>
         <source>What is PENGOLINCOIN?</source>
         <translation>Что такое PENGOLINCOIN?</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           PENGOLINCOIN is a form of digital online money using blockchain technology
-                           that can be easily transferred globally, instantly, and with near
-                           zero fees.  PENGOLINCOIN incorporates market leading security &amp;
-                           privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement ZeroCoin(zPGO) and Zerocoin staking.
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           PENGOLINCOIN utilizes a Proof of Stake (PoS) consensus system algorithm,
-                           allowing all owners of PENGOLINCOIN to participate in earning block rewards
-                           while securing the network with full node wallets, as well as to
-                           run Masternodes to create and vote on proposals.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-PENGOLINCOIN - это форма цифровых онлайн-денег, использующая технологию блокчейн,
-которая может быть легко переведена по всему миру, мгновенно и с практически
-нулевой комиссией. PENGOLINCOIN включает в себя лидирующую на рынке защиту и
-«конфиденциальность», а также является первой PoS криптовалютой (Proof of Stake),
-в которой реализована система стекинга ZeroCoin (zPGO) и Zerocoin.
-&lt;/p&gt;&lt;p align="justify"&gt;
-PENGOLINCOIN использует консенсус PoS (Proof of Stake), позволяя всем владельцам PENGOLINCOIN участвовать в заработке вознаграждений
-при этом обеспечивая безопасность сети с помощью кошельков с полными узлами, а также позволяет
-запускать мастерноды для создания предложений и голосования по ним.
- &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>2</source>
@@ -4229,204 +3838,34 @@ PENGOLINCOIN использует консенсус PoS (Proof of Stake), по�
         <translation>3</translation>
     </message>
     <message>
-        <source>PENGOLINCOIN privacy? What is Zerocoin (zPGO)?</source>
-        <translation>Конфиденциальность PENGOLINCOIN? Что такое Zerocoin (zPGO)?</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           zPGO is an optional privacy-centric method of coin mixing on the
-                           PENGOLINCOIN blockchain. Basically all your transactions cannot be tracked
-                           on to any block explorer. You can read more about the technicals in the
-                           &lt;a style='color: #88edff' href='https://pengolincoin.xyz/zpgo/'&gt;
-                           "PENGOLINCOIN Zerocoin (zPGO) Technical Paper"&lt;/a&gt;.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-zPGO - это необязательная конфиденциальность, которая возможна при микшировании монет
-в блокчейне PENGOLINCOIN. По сути,ни одна транзакция не может быть отслежена
-ни в одном из обозревателей блоков. Вы можете прочитать больше о технических характеристиках в
-&lt;a style='color: #88edff' href='https://pengolincoin.xyz/zpgo/'&gt;
-"Техническом документе PENGOLINCOIN Zerocoin (zPGO)"&lt;/a&gt;.
- &lt;/p&gt;&lt;/body&gt;&lt;/html&gt; </translation>
+        <source>How do I stake PGO?</source>
+        <translation>Как мне запустить стекинг PGO?</translation>
     </message>
     <message>
         <source>4</source>
         <translation>4</translation>
     </message>
     <message>
-        <source>Why are my zPGO unspendable?</source>
-        <translation>Почему мои zPGO невозможно потратить?</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           After minting, zPGO will require 20 confirmations as well as 1
-                           additional mint of the same denomination on the network to
-                           become eligible for spending.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-После чеканки zPGO потребуется 20 подтверждений, а также 1
-дополнительная чеканка того же номинала в сети,
-чтобы получить право быть расходуемым.
-&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; </translation>
-    </message>
-    <message>
         <source>5</source>
         <translation>5</translation>
-    </message>
-    <message>
-        <source>Why did my wallet convert the balance into zPGO automatically?</source>
-        <translation>Почему мой кошелек автоматически конвертировал баланс в zPGO?</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           By default the PENGOLINCOIN wallet will convert 10% of your entire PGO
-                           balance to zPGO to assist the network. If you do not wish to
-                           stake zPGO or take advantage of the privacy benefit it brings,
-                           you can disable the automatic minting in your PENGOLINCOIN wallet by
-                           going to Settings-&gt;Options and deselecting “Enable zPGO Automint”.
-                           If you are not making use of the PENGOLINCOIN-QT or GUI you can simply open
-                           your pengolincoin.conf file and add &lt;i&gt;enablezeromint=0&lt;/i&gt; Without the quotation
-                           marks and restart your wallet to disable automint.&lt;/p&gt;
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           You can read more about zPGO in the
-                           &lt;a style='color: #88edff' href='https://pengolincoin.xyz/zpgo/'&gt; "PENGOLINCOIN Zerocoin (zPGO) Technical Paper"&lt;/a&gt;.
-                           If you would like to keep and stake your zPGO, please read the "How do I stake"
-                           section of the FAQ below.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-По умолчанию кошелек PENGOLINCOIN преобразует 10% всего вашего баланса PGO
-в zPGO для помощи сети. Если вы не хотите
-запускать стекинг zPGO или пользоваться преимуществами конфиденциальности, которые она приносит,
-вы можете отключить автоматическую чеканку в своем PENGOLINCOIN-кошельке,
-перейдя в «Настройки-&gt; Параметры» и отменив выбор «Включить авточекунку zPGO».
-Если вы не используете PENGOLINCOIN-QT или GUI, вы можете просто открыть
-свой файл pengolincoin.conf и добавить &lt;i&gt;enablezeromint=0&lt;/i&gt; без кавычек и
-перезапустите свой кошелек для отключения  автоматической чеканки. &lt;/p&gt; &lt;/p&gt;&lt;p align="justify"&gt; Вы можете прочитать больше о zPGO в
-&lt;a style='color: #88edff' href='https://pengolincoin.xyz/zpgo/'&gt;
- "Технический документ PENGOLINCOIN Zerocoin (zPGO)"&lt;/a&gt;.
-Если вы хотите продолжать стекинг zPGO, ознакомьтесь с разделом" Как осуществить стекинг"
-в разделе часто задаваемых вопросов ниже.
- &lt;/p&gt;&lt;/body&gt;&lt;/html&gt; </translation>
     </message>
     <message>
         <source>6</source>
         <translation>6</translation>
     </message>
     <message>
-        <source>How do I receive PGO/zPGO?</source>
-        <translation>Как мне получить PGO/zPGO?</translation>
+        <source>Where should I go if I need support?</source>
+        <translation>Куда мне обратиться, если мне нужна поддержка?</translation>
     </message>
     <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           zPGO can be spent and sent to any PENGOLINCOIN address. The receiver will
-                           receive standard PENGOLINCOIN but the origin of the PENGOLINCOIN is anonymized by the zPGO Protocol.
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           If you want more zPGO you will need to mint your balance in the “Privacy” tab.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-zPGO можно потратить и отправить на любой адрес PENGOLINCOIN. Получатель получит
-стандартный PENGOLINCOIN, но оригинальное происхождение PENGOLINCOIN анонимизируется протоколом zPGO.
-&lt;/p&gt;&lt;p align="justify"&gt;
-Если вы хотите больше zPGO, вам нужно будет чеканить свой баланс на вкладке «Конфиденциальность».
-&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; </translation>
-    </message>
-    <message>
-        <source>7</source>
-        <translation>7</translation>
-    </message>
-    <message>
-        <source>How do I stake PGO/zPGO?</source>
-        <translation>Как мне запустить стекинг PGO/zPGO?</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           To Stake PENGOLINCOIN:
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           &lt;ol&gt;&lt;li&gt;
-                           Make sure your wallet is completely synchronized and you are using the latest release.
-                           &lt;li&gt;
-                           You must have a balance of PENGOLINCOIN with a minimum of 21 confirmations.
-                           &lt;li&gt;
-                           Your wallet must stay online and be unlocked for anonymization and staking purposes.
-                           &lt;li&gt;
-                           Once all those steps are followed staking should be enabled.
-                           &lt;li&gt;
-                           You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state "Staking Enabled" to indicate it is staking.  Using the command line interface (pengolincoin-cli); the command &lt;i&gt;getstakingstatus&lt;/i&gt; will confirm that staking is active.
-                           &lt;/li&gt;&lt;/ol&gt;
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           To Stake zPGO:
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           &lt;ol&gt;&lt;li&gt;
-                           Make sure your wallet is completely synchronized and you are using the latest release.
-                           &lt;li&gt;
-                           Your newly minted or existing zPGO balance must have a minimum of 200 confirmations.
-                           &lt;li&gt;
-                           Your wallet must stay online and be unlocked for anonymization and staking purposes.
-                           Staking should now be enabled.
-                           &lt;/li&gt;&lt;/ol&gt;
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Чтобы запустить стекинг PENGOLINCOIN:
-&lt;/p&gt;&lt;p align="justify"&gt;
- &lt;ol&gt;&lt;li&gt;убедитесь, что ваш кошелек полностью синхронизирован и вы используете последнюю версию.
-&lt;li&gt;
-Вы должны иметь баланс PENGOLINCOIN с минимумом в 21 подтверждение
-&lt;li&gt;
-Ваш кошелек должен оставаться в сети и быть разблокированным для анонимизации и стекинга.
-&lt;li&gt;
-После того, как все эти шаги будут выполнены, следует включить стекинг.
-&lt;li&gt;
-Вы можете увидеть статус стекинга в кошельке, наведя курсор на соответствующий значок в строке в левом верхнем углу интерфейса кошелька. Там будет подсвечен значек, в котором будет указано «Стекинг включен», а это значит, что делает стекинг запущен. Использование интерфейса командной строки (pengolincoin-cli); команда getstakingstatus подтвердит, что стекинг активен. Чтобы запустить стекинг zPGO: убедитесь, что ваш кошелек полностью синхронизирован и вы используете последнюю версию. Ваш недавно отчеканенный или существующий баланс zPGO должен иметь, как минимум, 200 подтверждений. Ваш кошелек должен оставаться в сети и быть разблокированным для анонимизации и стекинга. Стекинг будет включен.</translation>
-    </message>
-    <message>
-        <source>8</source>
-        <translation>8</translation>
-    </message>
-    <message>
-        <source>Where I should go if I need support?</source>
-        <translation>Куда мне обращаться за помощью?</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #88edff' href='https://Discord.pengolincoin.xyz'&gt;
-                           #support in our Discord&lt;/a&gt;.
-                           If you prefer to submit a ticket, One can be
-                           &lt;a style='color: #88edff' href='https://PENGOLINCOIN.FreshDesk.com'&gt;
-                           our Freshdesk support site&lt;/a&gt;.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-У нас есть каналы поддержки в большинстве наших официальных групп, например
-&lt;a style='color: #88edff' href='https://Discord.pengolincoin.xyz'&gt;
-#support в нашем Discord&lt;/a&gt;.
-Если вы хотите задать вопрос, одним из способов это сделать может послужить
-&lt;a style='color: #88edff' href='https://PENGOLINCOIN.FreshDesk.com'&gt;
-наш сайт поддержки Freshdesk&lt;/a&gt;.
-&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>9</source>
-        <translation>9</translation>
-    </message>
-    <message>
-        <source>What is a Master Node?</source>
+        <source>What is a Masternode?</source>
         <translation>Что такое мастернода?</translation>
+    </message>
+    <message>
+        <source>What is a Masternode Controller?</source>
+        <translation>Что такое контроллер Мастерноды?
+
+ </translation>
     </message>
     <message>
         <source>
@@ -4472,7 +3911,7 @@ zPGO можно потратить и отправить на любой адр�
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
-Мастернода - это компьютер, на котором запущен базовый кошелек PENGOLINCOIN с полным узлом и для которого требуется обеспечение в 100000 PGO для обеспечения дополнительных услуг сети и, в свою очередь, регулярного получения части вознаграждения за блок. Эти услуги в себя включают:
+Мастернода - это компьютер, на котором запущен базовый кошелек PENGOLINCOIN с полным узлом и для которого требуется обеспечение в 100,000 PGO для обеспечения дополнительных услуг сети и, в свою очередь, регулярного получения части вознаграждения за блок. Эти услуги в себя включают:
 
 Мгновенные транзакции (SwiftX)
 Децентрализованное управление (Голосование по предложениям)
@@ -4491,34 +3930,34 @@ zPGO можно потратить и отправить на любой адр�
 
 Требования:
 
-100,000 PGO для каждой мастерноды
+10 000 PGO для каждой мастерноды
 Должен храниться в основном кошельке
 Требуется выделенный IP-адрес
 Кошелек мастерноды должен оставаться в сети</translation>
-    </message>
-    <message>
-        <source>10</source>
-        <translation>10</translation>
-    </message>
-    <message>
-        <source>What is a Master Node Controller?</source>
-        <translation>Что такое контролер мастерноды?</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the 100,000 PGO collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet/s and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Кошелек контролера мастерноды - это то место, где может находиться залог в 100,000 PGO во время настройки удаленного контролера мастерноды. Это кошелек, который может активировать удаленный кошелек / кошельки мастерноды и позволит вам сохранять ваши сопутствующие монеты в автономном режиме, пока удаленная мастернода остается в сети.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Frequently Asked Questions</source>
         <translation>Часто задаваемые вопросы</translation>
     </message>
     <message>
-        <source>You can read more here</source>
-        <translation>Вы можете прочитать подробнее здесь</translation>
+        <source>3) How do I stake PGO?</source>
+        <translation>3) Как мне запустить стекинг PGO?</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>Выход</translation>
+        <source>4) Where I should go if I need support?</source>
+        <translation>4) Куда я могу обратиться, если мне нужна поддержка?</translation>
+    </message>
+    <message>
+        <source>5) What is a Masternode?</source>
+        <translation>5) Что такое Мастернода?</translation>
+    </message>
+    <message>
+        <source>6) What is a Masternode Controller?</source>
+        <translation>6) Что такое Контроллер Мастерноды?</translation>
+    </message>
+    <message>
+        <source>You can read more here</source>
+        <translation>Вы можете прочитать подробнее здесь</translation>
     </message>
 </context>
 <context>
@@ -4526,10 +3965,6 @@ zPGO можно потратить и отправить на любой адр�
     <message>
         <source>Form</source>
         <translation>Вид</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
     </message>
     <message>
         <source>Network Monitor</source>
@@ -4544,24 +3979,48 @@ zPGO можно потратить и отправить на любой адр�
         <translation>Основное</translation>
     </message>
     <message>
-        <source>Client Version: </source>
-        <translation>Версия клиента:</translation>
+        <source>Client Version:</source>
+        <translation>Версия Клиента:</translation>
+    </message>
+    <message>
+        <source>BerkeleyDB version:</source>
+        <translation>Версия BerkeleyDB:</translation>
+    </message>
+    <message>
+        <source>Datadir:</source>
+        <translation>Datadir:</translation>
+    </message>
+    <message>
+        <source>Startup time:</source>
+        <translation>Время запуска:</translation>
+    </message>
+    <message>
+        <source>Connections:</source>
+        <translation>Соединения:</translation>
+    </message>
+    <message>
+        <source>Number of Masternodes:</source>
+        <translation>Число Мастернод:</translation>
+    </message>
+    <message>
+        <source>Current number of blocks:</source>
+        <translation>Текущее количество блоков:</translation>
+    </message>
+    <message>
+        <source>Last block time:</source>
+        <translation>Время последнего блока:</translation>
+    </message>
+    <message>
+        <source>Last block hash:</source>
+        <translation>Хэш последнего блока:</translation>
+    </message>
+    <message>
+        <source>Current number of transactions:</source>
+        <translation>Текущее количество транзакций:</translation>
     </message>
     <message>
         <source>User Agent:</source>
         <translation>Пользовательский агент:</translation>
-    </message>
-    <message>
-        <source>Using BerkeleyDB version:</source>
-        <translation>Используя версию BerkeleyDB:</translation>
-    </message>
-    <message>
-        <source>Datadir: </source>
-        <translation>Datadir: </translation>
-    </message>
-    <message>
-        <source>Startup Time:  </source>
-        <translation>Время запуска:</translation>
     </message>
     <message>
         <source>Network</source>
@@ -4572,28 +4031,12 @@ zPGO можно потратить и отправить на любой адр�
         <translation>Имя:</translation>
     </message>
     <message>
-        <source>Number Connections:</source>
-        <translation>Количество подключений:</translation>
-    </message>
-    <message>
         <source>Blockchain</source>
         <translation>Блокчейн</translation>
     </message>
     <message>
-        <source>Current Number of Blocks:</source>
-        <translation>Текущий номер блоков:</translation>
-    </message>
-    <message>
-        <source>Last Block Time:</source>
-        <translation>Время последнего блока:</translation>
-    </message>
-    <message>
         <source>Memory Pool</source>
         <translation>Пул памяти</translation>
-    </message>
-    <message>
-        <source>Current Number of Transactions:</source>
-        <translation>Текущий номер транзакций:</translation>
     </message>
     <message>
         <source>Main</source>
@@ -4627,16 +4070,12 @@ zPGO можно потратить и отправить на любой адр�
         <source>Out:</source>
         <translation>Вывод:</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>SettingsMainOptionsWidget</name>
     <message>
         <source>Form</source>
         <translation>Вид</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
     </message>
     <message>
         <source>Window</source>
@@ -4645,10 +4084,6 @@ zPGO можно потратить и отправить на любой адр�
     <message>
         <source>Customize the application window options</source>
         <translation>Настройте параметры окна приложения</translation>
-    </message>
-    <message>
-        <source>CheckBox</source>
-        <translation>Флажок</translation>
     </message>
     <message>
         <source>Reset to default</source>
@@ -4665,6 +4100,10 @@ zPGO можно потратить и отправить на любой адр�
     <message>
         <source>Main</source>
         <translation>Главная</translation>
+    </message>
+    <message>
+        <source>Customize the main application options</source>
+        <translation>Настройка основных параметров приложения</translation>
     </message>
     <message>
         <source>Size of database cache</source>
@@ -4732,12 +4171,12 @@ Are you sure?
         <translation>Новый получатель для мультиотправки</translation>
     </message>
     <message>
-        <source>Label (optional)</source>
-        <translation>Метка (необязательно)</translation>
+        <source>Address Label (optional)</source>
+        <translation>Лейбл Адреса (необязательно)</translation>
     </message>
     <message>
-        <source>Enter a label to add this address in your address book</source>
-        <translation>Введите метку, чтобы добавить этот адрес в адресную книгу</translation>
+        <source>Enter label to be saved with this address</source>
+        <translation>Введите лейбл для сохранения с этим адресом</translation>
     </message>
     <message>
         <source>Percentage</source>
@@ -4755,8 +4194,8 @@ Are you sure?
         <translation>Текстовая метка</translation>
     </message>
     <message>
-        <source>No active Master Node yet</source>
-        <translation>Пока что нет активной Мастерноды</translation>
+        <source>N/A</source>
+        <translation>Недоступно</translation>
     </message>
     <message>
         <source>CheckBox</source>
@@ -4792,7 +4231,11 @@ Are you sure?
     </message>
     <message>
         <source>CLEAR ALL</source>
-        <translation>УБРАТЬ ВСЕ</translation>
+        <translation>ОЧИСТИТЬ ВСЕ</translation>
+    </message>
+    <message>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation>Невозможно выполнить операцию, кошелек заблокирован</translation>
     </message>
     <message>
         <source>Clear succeed</source>
@@ -4801,6 +4244,10 @@ Are you sure?
     <message>
         <source>Clear all failed, could not locate address in wallet file</source>
         <translation>Полная очистка не удалась. Не удалось найти адрес в файле кошелька</translation>
+    </message>
+    <message>
+        <source>Cannot add multisend recipient, wallet locked</source>
+        <translation>Невозможно добавить получателя мультисендинга, кошелек заблокирован</translation>
     </message>
     <message>
         <source>The entered address: %1 is invalid.
@@ -4858,28 +4305,8 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>Вид</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Очистить</translation>
-    </message>
-    <message>
         <source>Sign/Verify Message</source>
         <translation>Подписать/верифицировать сообщение</translation>
-    </message>
-    <message>
-        <source>Enter a PENGOLINCOIN address or contact label</source>
-        <translation>Введите адрес PENGOLINCOIN или метку контакта</translation>
-    </message>
-    <message>
-        <source>Add address</source>
-        <translation>Добавить адрес</translation>
     </message>
     <message>
         <source>Sign</source>
@@ -4890,6 +4317,10 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>Верифицировать</translation>
     </message>
     <message>
+        <source>Write message here...</source>
+        <translation>Напишите сообщение здесь...</translation>
+    </message>
+    <message>
         <source>Select mode</source>
         <translation>Выбрать режим</translation>
     </message>
@@ -4898,8 +4329,12 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>Сообщение</translation>
     </message>
     <message>
-        <source>Write a message</source>
-        <translation>Написать сообщение</translation>
+        <source>PENGOLINCOIN address or contact label</source>
+        <translation>PENGOLINCOIN адрес или лейбл контакта</translation>
+    </message>
+    <message>
+        <source>Enter address</source>
+        <translation>Ввести адрес</translation>
     </message>
     <message>
         <source>Signature</source>
@@ -4911,7 +4346,7 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
     </message>
     <message>
         <source>CLEAR ALL</source>
-        <translation>УБРАТЬ ВСЕ</translation>
+        <translation>ОЧИСТИТЬ ВСЕ</translation>
     </message>
     <message>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
@@ -4985,28 +4420,12 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>Вид</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
-        <source>CheckBox</source>
-        <translation>Флажок</translation>
-    </message>
-    <message>
-        <source>RadioButton</source>
-        <translation>Переключатель</translation>
-    </message>
-    <message>
         <source>Reset to default</source>
         <translation>Сбросить настройки по умолчанию</translation>
     </message>
     <message>
         <source>Discard changes</source>
         <translation>Отменить изменения</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -5017,8 +4436,8 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>Настройте параметры внутреннего кошелька</translation>
     </message>
     <message>
-        <source>Stake split threshold:</source>
-        <translation>Порог разделения доли:</translation>
+        <source>Stake split threshold</source>
+        <translation>Порог разделения стекинга</translation>
     </message>
     <message>
         <source>Spend unconfirmed change</source>
@@ -5033,16 +4452,24 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>Настройте параметры сети узла</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
-        <translation>IP прокси:</translation>
+        <source>Connect through SOCKS5 proxy (default proxy)</source>
+        <translation>Подключиться через прокси SOCKS5 (прокси по умолчанию)</translation>
+    </message>
+    <message>
+        <source>Proxy IP</source>
+        <translation>IP прокси</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Порт</translation>
+    </message>
+    <message>
+        <source>Enter port</source>
+        <translation>Ввести порт</translation>
     </message>
     <message>
         <source>Enter proxy IP</source>
         <translation>Ввести IP прокси:</translation>
-    </message>
-    <message>
-        <source>Port:</source>
-        <translation>Порт:</translation>
     </message>
     <message>
         <source>Map port using UPnP</source>
@@ -5051,10 +4478,6 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
     <message>
         <source>Allow incoming connections</source>
         <translation>Разрешить входящие подключения</translation>
-    </message>
-    <message>
-        <source>Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>Подключиться через SOCKS5 прокси (по умолчанию):</translation>
     </message>
     <message>
         <source>SAVE</source>
@@ -5072,64 +4495,48 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>Вид</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
-    </message>
-    <message>
         <source>Wallet Repair</source>
         <translation>Ремонт кошелька</translation>
-    </message>
-    <message>
-        <source>The buttons below will restart the wallet with command-line options to repair this wallet, fix issues with corrupt blockchain files or missing/obsolete transactions.</source>
-        <translation>Кнопки ниже перезапустят кошелек с параметрами командной строки для восстановления этого кошелька, исправления проблем с поврежденными файлами блокчейна или отсутствующими / устаревшими транзакциями.</translation>
-    </message>
-    <message>
-        <source>Attempt to recover private keys from a corrupt wallet.dat.</source>
-        <translation>Попытка востановить секрентые ключи битого wallet.dat.</translation>
-    </message>
-    <message>
-        <source>Rescan the blockchain for missing wallet transactions.</source>
-        <translation>Повторно просканируйте блокчейн на предмет отсутствия транзакций кошелька.</translation>
-    </message>
-    <message>
-        <source>Recover transactions from blockchain (keep-meta-data, e.g. account owner).</source>
-        <translation>Восстановление транзакций из блокчейна (keep-meta-data, например, владелец аккаунта).</translation>
-    </message>
-    <message>
-        <source>Recover transactions from blockchain (drop meta-data).</source>
-        <translation>Перезаписать транзакции из блокчейна (с удалением мета-данных, таких как владелец кошелька).</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format on startup. (Note: this is NOT an update of the wallet itself)</source>
         <translation>При запуске обновлять кошелек до последнего формата. (Примечание: это НЕ обновление самого кошелька)</translation>
     </message>
     <message>
-        <source>Rebuild blockchain index from current blk000???.dat files.</source>
-        <translation>Перестроить индекс блокчейна из текущих файлов blk000???.dat.</translation>
-    </message>
-    <message>
-        <source>Deletes all local blockchain folders so the wallet synchronizes from scratch.</source>
-        <translation>Удаляет все локальные папки с цепочкой, чтобы кошелек синхронизировался с нуля.</translation>
+        <source>The buttons below will restart the wallet with command-line options to repair this wallet, fix issues with corrupt blockchain files or missing/obsolete transactions</source>
+        <translation>Кнопки ниже перезапустят кошелек с параметрами командной строки для восстановления этого кошелька, исправления проблем с поврежденными файлами блокчейна или отсутствующими / устаревшими транзакциями</translation>
     </message>
     <message>
         <source>Salvage wallet</source>
         <translation>Кошелёк для сбора</translation>
     </message>
     <message>
+        <source>Attempt to recover private keys from a corrupt wallet.dat</source>
+        <translation>Попытка восстановить секретные ключи из поврежденного файла wallet.dat</translation>
+    </message>
+    <message>
         <source>Rescan blockchain file</source>
         <translation>Повторно сканировать файл блокчена</translation>
+    </message>
+    <message>
+        <source>Rescan the blockchain for missing wallet transactions</source>
+        <translation>Пересканируйте блокчейн для поиска пропущенных транзакций кошелька</translation>
     </message>
     <message>
         <source>Recover transactions 1</source>
         <translation>Востановление транзакций 1</translation>
     </message>
     <message>
+        <source>Recover transactions from blockchain (keep-meta-data, e.g. account owner)</source>
+        <translation>Восстановление транзакций из блокчейна (keep-meta-data, например, владелец аккаунта)</translation>
+    </message>
+    <message>
         <source>Recover transactions 2</source>
         <translation>Востановление транзакций 2</translation>
+    </message>
+    <message>
+        <source>Recover transactions from blockchain (drop meta-data)</source>
+        <translation>Восстановление транзакций из цепочки блоков (drop meta-data)</translation>
     </message>
     <message>
         <source>Upgrade wallet format</source>
@@ -5140,8 +4547,16 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>Пересоздать индекс</translation>
     </message>
     <message>
-        <source>Delete local blockchain </source>
+        <source>Rebuild blockchain index from current blk000???.dat files</source>
+        <translation>Перестроить индекс блокчейна из текущих файлов blk000???.dat</translation>
+    </message>
+    <message>
+        <source>Delete local blockchain</source>
         <translation>Удалить локальный блокчейн</translation>
+    </message>
+    <message>
+        <source>Deletes all local blockchain folders so the wallet synchronizes from scratch</source>
+        <translation>Удаляет все локальные папки блокчейна, поэтому кошелек синхронизируется с нуля</translation>
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
@@ -5171,10 +4586,6 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>Вид</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
         <source>Wallet Data</source>
         <translation>Данные кошелька</translation>
     </message>
@@ -5185,6 +4596,10 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
     <message>
         <source>Multisend</source>
         <translation>Multisend</translation>
+    </message>
+    <message>
+        <source>Export Accounting</source>
+        <translation>Экспорт учета</translation>
     </message>
     <message>
         <source>Tools</source>
@@ -5253,6 +4668,10 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
     <message>
         <source>Client will be shutdown, do you want to proceed?</source>
         <translation>Клиент будет закрыт, вы хотите продолжить?</translation>
+    </message>
+    <message>
+        <source>Stake Split too low, it shall be either &gt;= %1 or equal to 0 (to disable stake splitting)</source>
+        <translation>Разделение стекинга слишком низкое, оно должно быть либо &gt;= %1, либо равно 0 (чтобы отключить разделение стекинга)</translation>
     </message>
     <message>
         <source>Restart required</source>
@@ -5339,26 +4758,6 @@ Are you sure?
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>PENGOLINCOIN Core</source>
-        <translation>PENGOLINCOIN Core</translation>
-    </message>
-    <message>
-        <source>Version %1</source>
-        <translation>Версия %1</translation>
-    </message>
-    <message>
-        <source>The Bitcoin Core developers</source>
-        <translation>Разработчики Bitcoin Core</translation>
-    </message>
-    <message>
-        <source>The Dash Core developers</source>
-        <translation>Разработчики Dash Core</translation>
-    </message>
-    <message>
-        <source>The PENGOLINCOIN Core developers</source>
-        <translation>Разработчики PENGOLINCOIN Core</translation>
-    </message>
-    <message>
         <source>[testnet]</source>
         <translation>[тестовая сеть]</translation>
     </message>
@@ -5393,14 +4792,6 @@ Are you sure?
         <translation>Вид</translation>
     </message>
     <message>
-        <source>480.0685 PGO</source>
-        <translation>480.0685 PGO</translation>
-    </message>
-    <message>
-        <source>1,000 zPGO</source>
-        <translation>1 000 zPGO</translation>
-    </message>
-    <message>
         <source>Available</source>
         <translation>Доступный</translation>
     </message>
@@ -5409,24 +4800,8 @@ Are you sure?
         <translation>В ожидании</translation>
     </message>
     <message>
-        <source>6.943 PGO</source>
-        <translation>6.943 PGO</translation>
-    </message>
-    <message>
         <source>Immature</source>
         <translation>Незрелый</translation>
-    </message>
-    <message>
-        <source>10 PGO</source>
-        <translation>10 PGO</translation>
-    </message>
-    <message>
-        <source>60 zPGO</source>
-        <translation>60 zPGO</translation>
-    </message>
-    <message>
-        <source>10 zPGO</source>
-        <translation>10 zPGO</translation>
     </message>
     <message>
         <source>Wallet Unlocked for staking</source>
@@ -5441,14 +4816,6 @@ Are you sure?
         <translation>Адрес скопирован</translation>
     </message>
     <message>
-        <source>Automint enabled</source>
-        <translation>Включена автоматическая чеканка</translation>
-    </message>
-    <message>
-        <source>Automint disabled</source>
-        <translation>Автоматическая чеканка отключена</translation>
-    </message>
-    <message>
         <source>Staking active</source>
         <translation>Стекинг активен</translation>
     </message>
@@ -5457,194 +4824,147 @@ Are you sure?
         <translation>Стекинг не активен</translation>
     </message>
     <message>
-        <source>Synchronized</source>
-        <translation>Синхронизировано</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n час</numerusform><numerusform>%n часа</numerusform><numerusform>%n часов</numerusform><numerusform>%n часов</numerusform></translation>
+        <source>Synchronized - Block: %1</source>
+        <translation>Синхронизировано - Блок: %1</translation>
     </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 и %2</translation>
     </message>
-    </context>
+    <message>
+        <source>Wallet Upgrade</source>
+        <translation>Обновление кошелька</translation>
+    </message>
+    <message>
+        <source>Upgrading to HD wallet will improve
+the wallet's reliability and security.
+
+
+NOTE: after the upgrade, a new
+backup will be created.
+</source>
+        <translation>Обновление до HD-кошелька улучшит
+надежность и безопасность кошелька.
+
+
+ПРИМЕЧАНИЕ: после обновления будет создана новая
+резервная копия.
+</translation>
+    </message>
+    <message>
+        <source>Upgrade Wallet</source>
+        <translation>Обновить кошелек</translation>
+    </message>
+    <message>
+        <source>Wallet unlock cancelled</source>
+        <translation>Разблокировка кошелька отменена</translation>
+    </message>
+    <message>
+        <source>Tor Active: %1</source>
+        <translation>Активные Tor: %1</translation>
+    </message>
+    <message>
+        <source>Tor Disabled</source>
+        <translation>Tor отключен</translation>
+    </message>
+    <message>
+        <source>FAQ</source>
+        <translation>ЧаВо</translation>
+    </message>
+    <message>
+        <source>Upgrade to HD Wallet</source>
+        <translation>Обновить до HD кошелька</translation>
+    </message>
+    <message>
+        <source>No Connection</source>
+        <translation>Нет соединения</translation>
+    </message>
+    <message>
+        <source>Staking Disabled</source>
+        <translation>Стекинг отключен</translation>
+    </message>
+    <message>
+        <source>Cold Staking Disabled</source>
+        <translation>Холодный стекинг отключен</translation>
+    </message>
+    <message>
+        <source> %54 Synchronizing..</source>
+        <translation>Синхронизировано %54.. </translation>
+    </message>
+    <message>
+        <source>Light Theme</source>
+        <translation>Дневной режим</translation>
+    </message>
+    <message>
+        <source>Dark Theme</source>
+        <translation>Ночной режим</translation>
+    </message>
+    <message>
+        <source>Wallet Locked </source>
+        <translation>Кошелек заблокирован</translation>
+    </message>
+    <message>
+        <source>Wallet Locked</source>
+        <translation>Кошелек заблокирован</translation>
+    </message>
+    <message>
+        <source>Wallet Unlocked</source>
+        <translation>Кошелек разблокирован</translation>
+    </message>
+    <message>
+        <source>Wallet Unencrypted</source>
+        <translation>Кошелек не зашифрован</translation>
+    </message>
+    <message>
+        <source>Available (Locked included)</source>
+        <translation>Доступно (включая заблокированное)</translation>
+    </message>
+    <message>
+        <source>The wallet has been successfully upgraded to HD.</source>
+        <translation>Кошелек был успешно обновлен до HD.</translation>
+    </message>
+    <message>
+        <source>It is advised to make a backup.</source>
+        <translation>Рекомендуется сделать резервную копию.</translation>
+    </message>
+    <message>
+        <source>Do you wish to backup now?</source>
+        <translation>Вы хотите сделать резервную копию сейчас?</translation>
+    </message>
+    <message>
+        <source>Backup Wallet</source>
+        <translation>Резервная копия кошелька</translation>
+    </message>
+    <message>
+        <source>Wallet Data (*.dat)</source>
+        <translation>Данные кошелька (* .dat)</translation>
+    </message>
+    <message>
+        <source>Backup created</source>
+        <translation>Резервная копия сделана</translation>
+    </message>
+    <message>
+        <source>Backup creation failed</source>
+        <translation>Не удалось создать резервную копию</translation>
+    </message>
+    <message>
+        <source>no file selected</source>
+        <translation>файл не выбран</translation>
+    </message>
+    <message>
+        <source>Wallet upgraded successfully, but no backup created.</source>
+        <translation>Кошелек успешно обновлен, но резервная копия не создана.</translation>
+    </message>
+    <message>
+        <source>Upgrade Wallet Error</source>
+        <translation>Ошибка обновления кошелька</translation>
+    </message>
+</context>
 <context>
     <name>TrafficGraphWidget</name>
     <message>
         <source>KB/s</source>
         <translation>КБ/с</translation>
-    </message>
-</context>
-<context>
-    <name>TransactionDesc</name>
-    <message>
-        <source>Open until %1</source>
-        <translation>Открыть до %1</translation>
-    </message>
-    <message>
-        <source>conflicted</source>
-        <translation>противоречивый</translation>
-    </message>
-    <message>
-        <source>%1/offline</source>
-        <translation>%1/ не в сети</translation>
-    </message>
-    <message>
-        <source>%1/unconfirmed</source>
-        <translation>%1/ неподтвержденный</translation>
-    </message>
-    <message>
-        <source>%1 confirmations</source>
-        <translation>%1 подтверждения</translation>
-    </message>
-    <message>
-        <source>%1/offline (verified via SwiftX)</source>
-        <translation>%1 / офлайн (проверено через SwiftX)</translation>
-    </message>
-    <message>
-        <source>%1/confirmed (verified via SwiftX)</source>
-        <translation>%1 / подтверждено (проверено через SwiftX)</translation>
-    </message>
-    <message>
-        <source>%1 confirmations (verified via SwiftX)</source>
-        <translation>%1 подтверждений (проверено через SwiftX)</translation>
-    </message>
-    <message>
-        <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 / офлайн (проверка SwiftX - %2 %3 подписей)</translation>
-    </message>
-    <message>
-        <source>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</source>
-        <translation>%1 / подтверждено (выполняется проверка SwiftX - %2 %3 подписей)</translation>
-    </message>
-    <message>
-        <source>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 подтверждений (Проверка SwiftX в процессе - %2 %3 подписи)</translation>
-    </message>
-    <message>
-        <source>%1/offline (SwiftX verification failed)</source>
-        <translation>%1 / офлайн (проверка SwiftX не выполнена)</translation>
-    </message>
-    <message>
-        <source>%1/confirmed (SwiftX verification failed)</source>
-        <translation>%1 / подтверждено (проверка SwiftX не выполнена)</translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation>Состояние</translation>
-    </message>
-    <message>
-        <source>, has not been successfully broadcast yet</source>
-        <translation>, еще не была успешно передана</translation>
-    </message>
-    <message>
-        <source>Date</source>
-        <translation>Дата</translation>
-    </message>
-    <message>
-        <source>Source</source>
-        <translation>Источник</translation>
-    </message>
-    <message>
-        <source>Generated</source>
-        <translation>Сформировано</translation>
-    </message>
-    <message>
-        <source>From</source>
-        <translation>От</translation>
-    </message>
-    <message>
-        <source>unknown</source>
-        <translation>неизвестно</translation>
-    </message>
-    <message>
-        <source>To</source>
-        <translation>Кому</translation>
-    </message>
-    <message>
-        <source>own address</source>
-        <translation>собственный адрес</translation>
-    </message>
-    <message>
-        <source>watch-only</source>
-        <translation>смотреть только</translation>
-    </message>
-    <message>
-        <source>label</source>
-        <translation>метка</translation>
-    </message>
-    <message>
-        <source>Pgo</source>
-        <translation>Кредит</translation>
-    </message>
-    <message>
-        <source>not accepted</source>
-        <translation>не принимаются</translation>
-    </message>
-    <message>
-        <source>Debit</source>
-        <translation>Дебит</translation>
-    </message>
-    <message>
-        <source>Total debit</source>
-        <translation>Общий дебет</translation>
-    </message>
-    <message>
-        <source>Total pgo</source>
-        <translation>Общий кредит</translation>
-    </message>
-    <message>
-        <source>Transaction fee</source>
-        <translation>Комиссия за транзакцию</translation>
-    </message>
-    <message>
-        <source>Net amount</source>
-        <translation>Чистая сумма</translation>
-    </message>
-    <message>
-        <source>Message</source>
-        <translation>Сообщение</translation>
-    </message>
-    <message>
-        <source>Comment</source>
-        <translation>Комментарий</translation>
-    </message>
-    <message>
-        <source>Transaction ID</source>
-        <translation>Номер транзакции</translation>
-    </message>
-    <message>
-        <source>Output index</source>
-        <translation>Выходной индекс</translation>
-    </message>
-    <message>
-        <source>Merchant</source>
-        <translation>коммерсант</translation>
-    </message>
-    <message>
-        <source>Debug information</source>
-        <translation>Отладочная информация</translation>
-    </message>
-    <message>
-        <source>Transaction</source>
-        <translation>Транзакция</translation>
-    </message>
-    <message>
-        <source>Inputs</source>
-        <translation>входы</translation>
-    </message>
-    <message>
-        <source>Amount</source>
-        <translation>Сумма</translation>
-    </message>
-    <message>
-        <source>true</source>
-        <translation>истина</translation>
-    </message>
-    <message>
-        <source>false</source>
-        <translation>ложь</translation>
     </message>
 </context>
 <context>
@@ -5664,10 +4984,6 @@ Are you sure?
     <message>
         <source>Open until %1</source>
         <translation>Открыть до %1</translation>
-    </message>
-    <message>
-        <source>Offline</source>
-        <translation>не в сети</translation>
     </message>
     <message>
         <source>Unconfirmed</source>
@@ -5690,10 +5006,6 @@ Are you sure?
         <translation>Незрелые (%1 подтверждения будут доступны после %2)</translation>
     </message>
     <message>
-        <source>This block was not received by any other nodes and will probably not be accepted!</source>
-        <translation>Этот блок не был принят никакими другими узлами и, вероятно, не будет принят!</translation>
-    </message>
-    <message>
         <source>Received with</source>
         <translation>Получено с</translation>
     </message>
@@ -5706,64 +5018,24 @@ Are you sure?
         <translation>Получен от</translation>
     </message>
     <message>
-        <source>Received via Obfuscation</source>
-        <translation>Получено через обфускацию</translation>
+        <source>%1 Stake</source>
+        <translation>%1 Стекинга</translation>
     </message>
     <message>
-        <source>PGO Stake</source>
-        <translation>Доля PGO</translation>
+        <source>z%1 Stake</source>
+        <translation>z%1 Стекинга</translation>
     </message>
     <message>
-        <source>zPGO Stake</source>
-        <translation>Доля zPGO</translation>
+        <source>%1 Cold Stake</source>
+        <translation>%1 Холодного стекинга</translation>
     </message>
     <message>
-        <source>PGO Cold Stake</source>
-        <translation>Холодный стекинг PGO</translation>
-    </message>
-    <message>
-        <source>PGO Stake in behalf of</source>
-        <translation>Стекинг PGO от имени</translation>
+        <source>%1 Stake on behalf of</source>
+        <translation>%1 Стекинга от имени</translation>
     </message>
     <message>
         <source>Stake delegation</source>
         <translation>Делегация стекинга</translation>
-    </message>
-    <message>
-        <source>Obfuscation Denominate</source>
-        <translation>Обфускация</translation>
-    </message>
-    <message>
-        <source>Obfuscation Collateral Payment</source>
-        <translation>Обфускационный Сопутствующий платеж</translation>
-    </message>
-    <message>
-        <source>Obfuscation Make Collateral Inputs</source>
-        <translation>Обфускация</translation>
-    </message>
-    <message>
-        <source>Obfuscation Create Denominations</source>
-        <translation>Обфускация Создание конфессий</translation>
-    </message>
-    <message>
-        <source>Converted PGO to zPGO</source>
-        <translation>Преобразованный PGO в zPGO</translation>
-    </message>
-    <message>
-        <source>Spent zPGO</source>
-        <translation>потраченный zPGO</translation>
-    </message>
-    <message>
-        <source>Received PGO from zPGO</source>
-        <translation>Полученный PGO от zPGO</translation>
-    </message>
-    <message>
-        <source>Minted Change as zPGO from zPGO Spend</source>
-        <translation>созданная  замена  zPGO из потраенного zPGO </translation>
-    </message>
-    <message>
-        <source>Converted zPGO to PGO</source>
-        <translation>Преобразованный zPGO to PGO</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -5778,12 +5050,32 @@ Are you sure?
         <translation>Оплата себе</translation>
     </message>
     <message>
+        <source>Stake delegation spent by</source>
+        <translation>Делегация стекинга потрачена</translation>
+    </message>
+    <message>
         <source>Mined</source>
         <translation>заминированный</translation>
     </message>
     <message>
-        <source>Obfuscated</source>
-        <translation>затемненный</translation>
+        <source>Converted %1 to z%1</source>
+        <translation>%1 преобразовано в z%1 </translation>
+    </message>
+    <message>
+        <source>Spent z%1</source>
+        <translation>Потрачено z%1</translation>
+    </message>
+    <message>
+        <source>Received %1 from z%1</source>
+        <translation>Получено %1 из z%1</translation>
+    </message>
+    <message>
+        <source>Minted Change as z%1 from z%1 Spend</source>
+        <translation>Изменить отчеканенные, как z %1 от потраченных z %1 </translation>
+    </message>
+    <message>
+        <source>Converted z%1 to %1</source>
+        <translation>z%1 преобразовано в %1</translation>
     </message>
     <message>
         <source>watch-only</source>
@@ -5837,36 +5129,8 @@ Are you sure?
         <translation>Детали транзакции</translation>
     </message>
     <message>
-        <source>ID:</source>
-        <translation>ID:</translation>
-    </message>
-    <message>
-        <source>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</source>
-        <translation>492526e7fa3c810b35016...40a5df85ee227ab00b1156994 </translation>
-    </message>
-    <message>
-        <source>Sending to: </source>
-        <translation>Отправить:</translation>
-    </message>
-    <message>
-        <source>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
-    </message>
-    <message>
         <source>Total amount</source>
         <translation>Общая сумма</translation>
-    </message>
-    <message>
-        <source>2 PGO</source>
-        <translation>2 PGO</translation>
-    </message>
-    <message>
-        <source>Coin inputs:</source>
-        <translation>Входы монеты:</translation>
-    </message>
-    <message>
-        <source>1 Inputs</source>
-        <translation>1 вход</translation>
     </message>
     <message>
         <source>Previous Transaction</source>
@@ -5877,52 +5141,52 @@ Are you sure?
         <translation>Индекс выхода</translation>
     </message>
     <message>
-        <source>Fee:</source>
-        <translation>Комиссия:</translation>
-    </message>
-    <message>
-        <source>0.0001 PGO</source>
-        <translation>0.0001 PGO</translation>
-    </message>
-    <message>
-        <source>Change address:</source>
-        <translation>Изменить адрес:</translation>
-    </message>
-    <message>
         <source>D7VFR83SQbie…BhjcWJtcfip5krte2Z </source>
         <translation>D7VFR83SQbie…BhjcWJtcfip5krte2Z</translation>
-    </message>
-    <message>
-        <source>Confirmations:</source>
-        <translation>Подтверждения:</translation>
-    </message>
-    <message>
-        <source>12</source>
-        <translation>12</translation>
-    </message>
-    <message>
-        <source>Size:</source>
-        <translation>Размер:</translation>
-    </message>
-    <message>
-        <source>2 kB</source>
-        <translation>2 kB</translation>
-    </message>
-    <message>
-        <source>Date:</source>
-        <translation>Дата:</translation>
     </message>
     <message>
         <source>May 25, 2017</source>
         <translation>25 мая, 2017</translation>
     </message>
     <message>
-        <source>Status:</source>
-        <translation>Статус:</translation>
+        <source>ID</source>
+        <translation>Номер</translation>
+    </message>
+    <message>
+        <source>Sending to</source>
+        <translation>Отправка в</translation>
+    </message>
+    <message>
+        <source>Coin inputs</source>
+        <translation>Входы монеты</translation>
+    </message>
+    <message>
+        <source>Fee</source>
+        <translation>Комиссия</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Размер</translation>
+    </message>
+    <message>
+        <source>Change address</source>
+        <translation>Изменить адрес</translation>
     </message>
     <message>
         <source>Spendable</source>
         <translation>Расходуемый</translation>
+    </message>
+    <message>
+        <source>Confirmations</source>
+        <translation>Подтверждения</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Состояние</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Дата</translation>
     </message>
     <message>
         <source>TextLabel</source>
@@ -5949,6 +5213,10 @@ Are you sure?
         <translation>ID скопирован</translation>
     </message>
     <message>
+        <source>Delegating to</source>
+        <translation>Делегирование в</translation>
+    </message>
+    <message>
         <source>Unknown</source>
         <translation>Неизвестно</translation>
     </message>
@@ -5960,18 +5228,10 @@ Are you sure?
         <translation>Вид</translation>
     </message>
     <message>
-        <source>Received from Bob</source>
-        <translation>Получено от Боба</translation>
-    </message>
-    <message>
-        <source>18/05/18</source>
-        <translation>18/05/18 </translation>
-    </message>
-    <message>
         <source>+0.000585 PGO</source>
         <translation>+0.000585 PGO</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>WalletModel</name>
     <message>
@@ -5979,43 +5239,19 @@ Are you sure?
         <translation>Отправить Монеты</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 PGO.</source>
-        <translation>SwiftX не поддерживает отправку значений, которые еще высоки. В настоящее время транзакции ограничены %1 PGO.</translation>
-    </message>
-</context>
-<context>
-    <name>WalletPasswordDialog</name>
-    <message>
-        <source>Dialog</source>
-        <translation>Диалоговое окно</translation>
+        <source>Transaction creation failed!
+%1</source>
+        <translation>Ошибка при создании транзакции! %1</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
-    </message>
-    <message>
-        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</source>
-        <translation>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. </translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>ОТМЕНА</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>ХОРОШО</translation>
+        <source>The size of the transaction is too big.
+Select fewer inputs with coin control.</source>
+        <translation>Размер транзакции слишком велик.
+Выберите меньше входов с контролем монет.</translation>
     </message>
 </context>
 <context>
     <name>WelcomeContentWidget</name>
-    <message>
-        <source>Dialog</source>
-        <translation>Диалоговое окно</translation>
-    </message>
     <message>
         <source>1</source>
         <translation>1</translation>
@@ -6084,54 +5320,7 @@ PENGOLINCOIN Core Wallet</source>
     </message>
 </context>
 <context>
-    <name>ZPgoControlDialog</name>
-    <message>
-        <source>Select zPGO to Spend</source>
-        <translation>Выберите zPGO чтобы потратить</translation>
-    </message>
-    <message>
-        <source>Coin Control</source>
-        <translation>Контроль Монеты</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
-    </message>
-    <message>
-        <source>zPgo</source>
-        <translation>zPgo</translation>
-    </message>
-    <message>
-        <source>0.00 </source>
-        <translation>0.00 </translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Количество:</translation>
-    </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Расходы</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>Select/Deselect All</source>
-        <translation>Выбрать / Отменить выбор</translation>
-    </message>
-    <message>
-        <source>Select zPGO Denominations to Spend</source>
-        <translation>Выберите деноминации zPGO для расходов</translation>
-    </message>
-</context>
-<context>
     <name>pengolincoin-core</name>
-    <message>
-        <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
-        <translation>(1 = сохранить tx метаданные, например, владельца учетной записи и информацию о запросе платежа, 2 = удалить tx метаданные)</translation>
-    </message>
     <message>
         <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
         <translation>Разрешить соединения JSON-RPC из указанного источника. Действительно для  &lt;ip&gt; одного IP (например, 1.2.3.4), сетевой / сетевой маски (например, 1.2.3.4/255.255.255.0) или сети / CIDR (например, 1.2.3.4/24). Эта опция может быть указана несколько раз</translation>
@@ -6147,10 +5336,6 @@ PENGOLINCOIN Core Wallet</source>
     <message>
         <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
         <translation>Привяжите к указанному адресу для прослушивания соединений JSON-RPC. Используйте [host]: обозначение порта для IPv6. Эта опция может быть указана несколько раз (по умолчанию: привязка ко всем интерфейсам)</translation>
-    </message>
-    <message>
-        <source>Calculated accumulator checkpoint is not what is recorded by block index</source>
-        <translation>Расчетная контрольная точка  не является тем, что регистрируется блочным индексом</translation>
     </message>
     <message>
         <source>Cannot obtain a lock on data directory %s. PENGOLINCOIN Core is probably already running.</source>
@@ -6173,32 +5358,12 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Удалите все транзакции кошелька и восстановите только те части блок-цепи через -rescan при запуске</translation>
     </message>
     <message>
-        <source>Delete all zerocoin spends and mints that have been recorded to the blockchain database and reindex them (0-1, default: %u)</source>
-        <translation>Удалите все траты и монетки zerocoin, которые были записаны в базу данных blockchain, и переиндексируйте их (0-1, по умолчанию: %u)</translation>
-    </message>
-    <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
         <translation>Распространяется по лицензии программного обеспечения MIT, см. Сопроводительный файл COPYING или &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
-        <source>Enable automatic Zerocoin minting from specific addresses (0-1, default: %u)</source>
-        <translation>Включить автоматическую чеканку Zerocoin с определенных адресов (0-1, по умолчанию:%u)</translation>
-    </message>
-    <message>
-        <source>Enable automatic wallet backups triggered after each zPGO minting (0-1, default: %u)</source>
-        <translation>Включить автоматическое резервное копирование кошелька, запускаемое после каждого чеканки zPGO (0-1, по умолчанию: %u)</translation>
-    </message>
-    <message>
         <source>Enable cold staking functionality (0-1, default: %u). Disabled if staking=0</source>
         <translation>Включить функцию холодного стекинга (0-1, по умолчанию:%u). Отключено, если стекинг = 0</translation>
-    </message>
-    <message>
-        <source>Enable or disable staking functionality for PGO inputs (0-1, default: %u)</source>
-        <translation>Включение или отключение функций разбивки для входов PGO (0-1, по умолчанию: %u)</translation>
-    </message>
-    <message>
-        <source>Enable or disable staking functionality for zPGO inputs (0-1, default: %u)</source>
-        <translation>Включение или отключение функций разбивки для входов zPGO (0-1, по умолчанию: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -6213,12 +5378,12 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Ошибка: Прослушивание входящих соединений не выполнено (при возврате ошибки %s)</translation>
     </message>
     <message>
-        <source>Error: The transaction is larger than the maximum allowed transaction size!</source>
-        <translation>Ошибка: транзакция больше максимально допустимого размера транзакции!</translation>
-    </message>
-    <message>
         <source>Error: Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
         <translation>Ошибка: обнаружен неподдерживаемый аргумент -socks. Настройка версии SOCKS больше невозможна, поддерживаются только прокси SOCKS5.</translation>
+    </message>
+    <message>
+        <source>Exclude debugging information for a category. Can be used in conjunction with -debug=1 to output debug logs for all categories except one or more specified categories.</source>
+        <translation>Исключить отладочную информацию для категории. Может использоваться вместе с -debug=1 для вывода журналов отладки для всех категорий, кроме одной или нескольких указанных категорий.</translation>
     </message>
     <message>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
@@ -6233,14 +5398,6 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Выполнить команду, когда лучший блок изменяется (%s в cmd заменяется блочным хэшем)</translation>
     </message>
     <message>
-        <source>Fees (in PGO/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Тарифы (в PGO / Kb), меньшие, чем это, считаются нулевой комиссией за ретрансляцию (по умолчанию: %s)</translation>
-    </message>
-    <message>
-        <source>Fees (in PGO/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Плата (в PGO / Kb) меньше этого считается нулевой комиссией за создание транзакции (по умолчанию: %s)</translation>
-    </message>
-    <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation>Сбросить активность базы данных из пула памяти в журнал диска каждый &lt;n&gt; мегабайт (по умолчанию: %u)</translation>
     </message>
@@ -6253,16 +5410,8 @@ PENGOLINCOIN Core Wallet</source>
         <translation>В этом режиме контролируется, сколько блоков генерируется немедленно.</translation>
     </message>
     <message>
-        <source>Insufficient or insufficient confirmed funds, you might need to wait a few minutes and try again.</source>
-        <translation>Недостаточно или недостаточно подтвержденных средств, вам может потребоваться несколько минут и повторите попытку.</translation>
-    </message>
-    <message>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
         <translation>Недопустимая сумма для -maxtxfee =&lt;amount&gt;: '%s' (должна быть минимальная плата %s для предотвращения застревания транзакций)</translation>
-    </message>
-    <message>
-        <source>Keep the specified amount available for spending at all times (default: 0)</source>
-        <translation>Держите указанную сумму доступной для расходов в любое время (по умолчанию: 0)</translation>
     </message>
     <message>
         <source>Log transaction priority and fee per kB when mining blocks (default: %u)</source>
@@ -6293,16 +5442,8 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Количество секунд, чтобы не допустить повторного подключения неверных пользователей (по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>Obfuscation uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
-        <translation>Obfuscation использует точные деноминированные суммы для отправки средств, вам просто нужно будет анонимизировать еще несколько монет.</translation>
-    </message>
-    <message>
         <source>Output debugging information (default: %u, supplying &lt;category&gt; is optional)</source>
         <translation>Выходная информация отладки (по умолчанию: %u, поставка &lt;category&gt; необязательна)</translation>
-    </message>
-    <message>
-        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
-        <translation>Запрос для одноранговых адресов через DNS-поиск, если он имеет низкий адрес (по умолчанию: 1, если не подключено)</translation>
     </message>
     <message>
         <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
@@ -6321,20 +5462,12 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Установите максимальный размер транзакций с высоким приоритетом / низкой оплатой в байтах (по умолчанию: %d)</translation>
     </message>
     <message>
-        <source>Set the number of included blocks to precompute per cycle. (minimum: %d) (maximum: %d) (default: %d)</source>
-        <translation>Установить количество включенных блоков для предварительного вычисления за цикл. (минимум: %d) (максимум: %d) (по умолчанию: %d)</translation>
-    </message>
-    <message>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
         <translation>Задайте количество потоков проверки скриптов (%u до %d, 0 = auto, &lt;0 = оставить много ядер бесплатно, по умолчанию: %d)</translation>
     </message>
     <message>
         <source>Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)</source>
         <translation>Установите количество потоков для генерации монет, если включено (-1 = все ядра, по умолчанию: %d)</translation>
-    </message>
-    <message>
-        <source>Show N confirmations for a successfully locked transaction (0-9999, default: %u)</source>
-        <translation>Показывать подтверждения N для успешно заблокированной транзакции (0-9999, по умолчанию: %u)</translation>
     </message>
     <message>
         <source>Support filtering of blocks and transaction with bloom filters (default: %u)</source>
@@ -6357,18 +5490,6 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Не удалось привязать к %s на этом компьютере. PENGOLINCOIN Core, вероятно, уже запущен.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
-        <translation>Не удалось найти достаточное количество средств, предназначенных для обфускации, для этой транзакции.</translation>
-    </message>
-    <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 100000 PGO.</source>
-        <translation>Невозможно найти достаточное количество средств, не предназначенных для обфускации, для этой транзакции, которые не равны 100000 PGO.</translation>
-    </message>
-    <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 100000 PGO.</source>
-        <translation>Не удалось найти достаточное количество средств для этой транзакции, которые не равны 100000 PGO.</translation>
-    </message>
-    <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
         <translation>Используйте отдельный прокси SOCKS5 для доступа к сверстникам через скрытые сервисы Tor (по умолчанию: %s)</translation>
     </message>
@@ -6379,10 +5500,6 @@ PENGOLINCOIN Core Wallet</source>
     <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>Предупреждение: -paytxfee установлен очень высоко! Это комиссия за транзакцию, которую вы заплатите, если вы отправляете транзакцию.</translation>
-    </message>
-    <message>
-        <source>Warning: Peers are being disconnected due time differences. Please check that your computer's date and time are correct! If your clock is wrong PENGOLINCOIN Core will not work properly.</source>
-        <translation>Предупреждение: пиры отключаются из-за разницы во времени. Пожалуйста, проверьте правильность даты и времени на вашем компьютере! Если ваши часы настроены не правильно, PENGOLINCOIN Core не будет работать должным образом.</translation>
     </message>
     <message>
         <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong PENGOLINCOIN Core will not work properly.</source>
@@ -6397,14 +5514,6 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Предупреждение: Мы, похоже, не полностью согласны с нашими сверстниками! Возможно, вам потребуется обновить или другие узлы, возможно, потребуется обновить.</translation>
     </message>
     <message>
-        <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
-        <translation>Предупреждение: ошибка чтения wallet.dat! Все ключи читаются правильно, но данные транзакции или записи адресной книги могут отсутствовать или некорректны.</translation>
-    </message>
-    <message>
-        <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
-        <translation>Предупреждение: wallet.dat поврежден, данные спасены! Исходный wallet.dat сохранен как кошелек. {Timestamp} .bak в %s; если ваш баланс или транзакции неверны, вам следует восстановить резервную копию.</translation>
-    </message>
-    <message>
         <source>Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</source>
         <translation>Список белых списков, соединяющихся с данной сетевой маской или IP-адресом. Может быть указано несколько раз.</translation>
     </message>
@@ -6413,32 +5522,12 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Учетные записи белых списков не могут быть запрещены DoS, и их транзакции всегда передаются, даже если они уже находятся в мэппуле, полезными, например, для шлюза</translation>
     </message>
     <message>
-        <source>You must specify a masternodeprivkey in the configuration. Please see documentation for help.</source>
-        <translation>Вы должны указать в  строке приложенный ключ. Пожалуйста, обратитесь к документации для получения справки</translation>
-    </message>
-    <message>
-        <source>(33001 could be used only on mainnet)</source>
-        <translation>(33001 можно использовать только в сети)</translation>
-    </message>
-    <message>
         <source>(default: %s)</source>
         <translation>(неуплата: %s)</translation>
     </message>
     <message>
-        <source>(default: 1)</source>
-        <translation>(неуплата: 1)</translation>
-    </message>
-    <message>
-        <source>(must be 33001 for mainnet)</source>
-        <translation>(должен быть 33001 для mainet)</translation>
-    </message>
-    <message>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Принять командную строку и команды JSON-RPC</translation>
-    </message>
-    <message>
-        <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
-        <translation>Принять соединения извне (по умолчанию: 1, если нет -proxy или -connect)</translation>
     </message>
     <message>
         <source>Accept public REST requests (default: %u)</source>
@@ -6449,14 +5538,6 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Добавьте узел для подключения и попытку сохранить соединение открытым</translation>
     </message>
     <message>
-        <source>Adding Wrapped Serials supply...</source>
-        <translation>Добавление предложения завернутых серий...</translation>
-    </message>
-    <message>
-        <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
-        <translation>Разрешить поиск в DNS для -addnode, -seednode и -connect</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Всегда запрашивать одноранговые адреса через DNS-поиск (по умолчанию: %u)</translation>
     </message>
@@ -6465,44 +5546,12 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Добавить комментарий к строке агента пользователя</translation>
     </message>
     <message>
-        <source>Attempt to recover private keys from a corrupt wallet.dat</source>
-        <translation>Попытка восстановить секретные ключи из поврежденного файла wallet.dat</translation>
-    </message>
-    <message>
         <source>Automatically create Tor hidden service (default: %d)</source>
         <translation>Автоматически создавать скрытую службу Tor (по умолчанию: %d)</translation>
     </message>
     <message>
         <source>Block creation options:</source>
         <translation>Варианты создания блока:</translation>
-    </message>
-    <message>
-        <source>Calculating missing accumulators...</source>
-        <translation>Вычисление недостающих аккумуляторов ...</translation>
-    </message>
-    <message>
-        <source>Cannot downgrade wallet</source>
-        <translation>Нельзя понизить кошелек</translation>
-    </message>
-    <message>
-        <source>Cannot resolve -bind address: '%s'</source>
-        <translation>Не удается разрешить -включить адрес: '%s'</translation>
-    </message>
-    <message>
-        <source>Cannot resolve -externalip address: '%s'</source>
-        <translation>Не удается разрешить -externalip адрес: '%s'</translation>
-    </message>
-    <message>
-        <source>Cannot resolve -whitebind address: '%s'</source>
-        <translation>Не удается разрешить -whitebind адрес: '%s'</translation>
-    </message>
-    <message>
-        <source>CoinSpend: failed check</source>
-        <translation>CoinSpend: неудачная проверка</translation>
-    </message>
-    <message>
-        <source>Connect only to the specified node(s)</source>
-        <translation>Подключитесь только к указанному узлу (узлам)</translation>
     </message>
     <message>
         <source>Connect through SOCKS5 proxy</source>
@@ -6537,10 +5586,6 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Не удалось разобрать masternode.conf</translation>
     </message>
     <message>
-        <source>Couldn't generate the accumulator witness</source>
-        <translation>Не удалось сгенерировать witness аккумулятор</translation>
-    </message>
-    <message>
         <source>Debugging/Testing options:</source>
         <translation>Параметры отладки / тестирования:</translation>
     </message>
@@ -6551,10 +5596,6 @@ PENGOLINCOIN Core Wallet</source>
     <message>
         <source>Disable OS notifications for incoming transactions (default: %u)</source>
         <translation>Отключить уведомления ОС для входящих транзакций (по умолчанию: %u)</translation>
-    </message>
-    <message>
-        <source>Disable safemode, override a real safe mode event (default: %u)</source>
-        <translation>Отключить безопасный режим, переопределить реальное событие безопасного режима (по умолчанию: %u)</translation>
     </message>
     <message>
         <source>Discover own IP address (default: 1 when listening and no -externalip)</source>
@@ -6573,22 +5614,6 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Загрузка выполнена</translation>
     </message>
     <message>
-        <source>Enable automatic Zerocoin minting (0-1, default: %u)</source>
-        <translation>Включить автоматическую чистку Zerocoin (0-1, по умолчанию: %u)</translation>
-    </message>
-    <message>
-        <source>Enable precomputation of zPGO spends and stakes (0-1, default %u)</source>
-        <translation>Включить предварительное вычисление расходов и стекинга zPGO (0-1, по умолчанию %u)</translation>
-    </message>
-    <message>
-        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
-        <translation>Включить публикацию хеш-транзакции (заблокированной через SwiftX) в &lt;address&gt;</translation>
-    </message>
-    <message>
-        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
-        <translation>Включить публикацию необработанных транзакций (заблокированных через SwiftX) в &lt;address&gt;</translation>
-    </message>
-    <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
         <translation>Разрешить клиенту действовать как мастернод (0-1, по умолчанию: %u)</translation>
     </message>
@@ -6597,24 +5622,8 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Ошибка инициализации базы данных блоков</translation>
     </message>
     <message>
-        <source>Error initializing wallet database environment %s!</source>
-        <translation>Ошибка инициализации среды базы данных кошелька %s!</translation>
-    </message>
-    <message>
         <source>Error loading block database</source>
         <translation>Ошибка загрузки базы данных блоков</translation>
-    </message>
-    <message>
-        <source>Error loading wallet.dat</source>
-        <translation>Ошибка при загрузке wallet.dat</translation>
-    </message>
-    <message>
-        <source>Error loading wallet.dat: Wallet corrupted</source>
-        <translation>Ошибка при загрузке wallet.dat: Кошелек поврежден</translation>
-    </message>
-    <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of PENGOLINCOIN Core</source>
-        <translation>Ошибка загрузки wallet.dat: Кошелек требует более новой версии PENGOLINCOIN Core</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -6623,10 +5632,6 @@ PENGOLINCOIN Core Wallet</source>
     <message>
         <source>Error reading from database, shutting down.</source>
         <translation>Ошибка чтения из базы данных, завершение работы.</translation>
-    </message>
-    <message>
-        <source>Error writing zerocoinDB to disk</source>
-        <translation>Ошибка записи zerocoinDB на диск</translation>
     </message>
     <message>
         <source>Error</source>
@@ -6645,28 +5650,12 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Ошибка: Неподдерживаемый аргумент -tor найден, используйте -onion.</translation>
     </message>
     <message>
-        <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>Ошибка: кошелек заблокирован, невозможно создать транзакцию!</translation>
-    </message>
-    <message>
-        <source>Failed to calculate accumulator checkpoint</source>
-        <translation>Не удалось вычислить контрольную точку аккумулятора</translation>
-    </message>
-    <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Не удалось прослушивать любой порт. Используйте -listen = 0, если вы этого хотите.</translation>
     </message>
     <message>
         <source>Failed to parse host:port string</source>
         <translation>Не удалось проанализировать хост: строка порта</translation>
-    </message>
-    <message>
-        <source>Failed to read block</source>
-        <translation>Не удалось прочитать блок</translation>
-    </message>
-    <message>
-        <source>Fee (in PGO/kB) to add to transactions you send (default: %s)</source>
-        <translation>Плата (в PGO / kB) для добавления к транзакциям, которые вы отправляете (по умолчанию: %s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
@@ -6709,10 +5698,6 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Инициализация проверки работоспособности не удалась. PENGOLINCOIN Core отключается.</translation>
     </message>
     <message>
-        <source>Insufficient funds</source>
-        <translation>Недостаточно средств.</translation>
-    </message>
-    <message>
         <source>Insufficient funds.</source>
         <translation>Недостаточно средств.</translation>
     </message>
@@ -6721,120 +5706,16 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Недопустимый -онионный адрес или имя хоста: '%s'</translation>
     </message>
     <message>
-        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Недопустимая сумма для -maxtxfee =&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -minrelaytxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Недопустимая сумма для -minrelaytxfee&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -mintxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Недопустимая сумма для -mintxfee =&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s' (must be at least %s)</source>
         <translation>Invalid amount for -paytxfee=&lt;amount&gt;: '%s' (должен быть не менее%s)</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Недопустимая сумма для -paytxfee =&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -reservebalance=&lt;amount&gt;</source>
-        <translation>Недопустимая сумма для -reservebalance =&lt;amount&gt;</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>Недопустимая сумма</translation>
-    </message>
-    <message>
-        <source>Invalid masternodeprivkey. Please see documenation.</source>
-        <translation>Недопустимый секретный ключ. См. Документацию.</translation>
     </message>
     <message>
         <source>Invalid netmask specified in -whitelist: '%s'</source>
         <translation>Недопустимая сетевая маска, указанная в -whitelist: '%s'</translation>
     </message>
     <message>
-        <source>Invalid port detected in masternode.conf</source>
-        <translation>Неверный порт обнаружен в файле masternode.conf</translation>
-    </message>
-    <message>
-        <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
-        <translation>Процент автоматически отчеканенного Zerocoin (1-100, по умолчанию: %u)</translation>
-    </message>
-    <message>
-        <source>Recalculating PGO supply...</source>
-        <translation>Перерасчет предложения PGO...</translation>
-    </message>
-    <message>
-        <source>Recalculating minted ZPGO...</source>
-        <translation>Перерасчет отчеканенных ZPGO...</translation>
-    </message>
-    <message>
-        <source>Recalculating spent ZPGO...</source>
-        <translation>Перерасчет потраченных ZPGO...</translation>
-    </message>
-    <message>
-        <source>Reindex the PGO and zPGO money supply statistics</source>
-        <translation>Reindex статистика денежной массы PGO и zPGO</translation>
-    </message>
-    <message>
-        <source>Reindexing zerocoin database...</source>
-        <translation>Реиндексирующая база данных нулевого цикла ...</translation>
-    </message>
-    <message>
-        <source>Reindexing zerocoin failed</source>
-        <translation>Повторный обмен зерокоинта не удался</translation>
-    </message>
-    <message>
-        <source>Selected coins value is less than payment target</source>
-        <translation>Выбранная стоимость монет меньше цели платежа</translation>
-    </message>
-    <message>
-        <source>Support the zerocoin light node protocol (default: %u)</source>
-        <translation>Поддержка лайт узла zerocoin протокола (по умолчанию: %u)</translation>
-    </message>
-    <message>
-        <source>SwiftX options:</source>
-        <translation>Параметры SwiftX:</translation>
-    </message>
-    <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
         <translation>Это предварительная версия сборки - используйте на свой страх и риск - не используйте для ставок или коммерческих приложений!</translation>
-    </message>
-    <message>
-        <source> mints deleted
-</source>
-        <translation>удалены монеты
-</translation>
-    </message>
-    <message>
-        <source> mints updated, </source>
-        <translation>монеты обновлены,</translation>
-    </message>
-    <message>
-        <source> unconfirmed transactions removed
-</source>
-        <translation>удалены неподтвержденные транзакции
-</translation>
-    </message>
-    <message>
-        <source>Disable all PENGOLINCOIN specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>Отключите все специфические функции PENGOLINCOIN (Masternodes, Zerocoin, SwiftX, Бюджетирование) (0-1, по умолчанию: %u)</translation>
-    </message>
-    <message>
-        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>Включить SwiftX, показать подтверждения для заблокированных транзакций (bool, default: %s)</translation>
-    </message>
-    <message>
-        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Ошибка: транзакция была отклонена! Это может произойти, если некоторые из монет в вашем кошельке уже были потрачены, например, если вы использовали копию кошелька. Dat и монеты были потрачены в копии, но не отмечены как потраченные здесь.</translation>
-    </message>
-    <message>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
-        <translation>Ошибка. Для этой транзакции требуется комиссия за транзакцию не менее %s из-за ее количества, сложности или использования недавно полученных средств!</translation>
     </message>
     <message>
         <source>Error: Unsupported argument -checklevel found. Checklevel must be level 4.</source>
@@ -6845,28 +5726,8 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Выполнять команду, когда лучший блок изменяется и его размер превышает (%s в cmd заменяется блочным хешем, %d с размером блока)</translation>
     </message>
     <message>
-        <source>Failed to find coin set amongst held coins with less than maxNumber of Spends</source>
-        <translation>Не удалось найти монету, установленную среди удерживаемых монет с минимальным количеством расходов</translation>
-    </message>
-    <message>
-        <source>In rare cases, a spend with 7 coins exceeds our maximum allowable transaction size, please retry spend using 6 or less coins</source>
-        <translation>В редких случаях трата с 7 монетами превышает наш максимально допустимый размер транзакции, пожалуйста, попробуйте потратить, используя 6 или менее монет</translation>
-    </message>
-    <message>
-        <source>Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)</source>
-        <translation>Предпочтительный номинал для автоматически чеканившегося Zerocoin (1/5/10/50/100/500/1000/5000), 0 без предпочтений. default: %u)</translation>
-    </message>
-    <message>
-        <source>Specify custom backup path to add a copy of any automatic zPGO backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Укажите собственный путь резервного копирования, чтобы добавить копию любой автоматической резервной копии zPGO. Если задано как dir, каждая резервная копия генерирует файл с отметкой времени. Если он установлен как файл, он будет переписывать в этот файл каждую резервную копию. Если также установлен резервный путь, произойдет 4 резервных копии</translation>
-    </message>
-    <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
         <translation>Укажите собственный путь резервного копирования, чтобы добавить копию любой резервной копии кошелька. Если задано как dir, каждая резервная копия генерирует файл с отметкой времени. Если он установлен как файл, он будет переписывать в этот файл каждую резервную копию.</translation>
-    </message>
-    <message>
-        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>SwiftX требует ввода с не менее чем 6 подтверждениями, вам может потребоваться несколько минут и повторите попытку.</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
@@ -6875,14 +5736,6 @@ PENGOLINCOIN Core Wallet</source>
     <message>
         <source>Attempt to force blockchain corruption recovery</source>
         <translation>Попытка принудительного восстановления блокады</translation>
-    </message>
-    <message>
-        <source>Cannot create public spend input</source>
-        <translation>Невозможно создать вход публичных расходов</translation>
-    </message>
-    <message>
-        <source>CoinSpend: Accumulator witness does not verify</source>
-        <translation>CoinSpend: Свидетель Аккумулятора не проверяет</translation>
     </message>
     <message>
         <source>Display the stake modifier calculations in the debug.log file.</source>
@@ -6917,40 +5770,12 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Ошибка: произошла фатальная внутренняя ошибка, подробнее см. Debug.log.</translation>
     </message>
     <message>
-        <source>Error: No valid utxo!</source>
-        <translation>Ошибка: нет действительного utxo!</translation>
-    </message>
-    <message>
-        <source>Failed to create mint</source>
-        <translation>Не удалось создать монетный двор</translation>
-    </message>
-    <message>
-        <source>Failed to find Zerocoins in wallet.dat</source>
-        <translation>Не удалось найти Zerocoins в файле wallet.dat</translation>
-    </message>
-    <message>
-        <source>Failed to parse public spend</source>
-        <translation>Не удалось разобрать публичные расходы</translation>
-    </message>
-    <message>
-        <source>Failed to select a zerocoin</source>
-        <translation>Не удалось выбрать зерокоин</translation>
-    </message>
-    <message>
-        <source>Failed to wipe zerocoinDB</source>
-        <translation>Не удалось вытереть zerocoinDB</translation>
-    </message>
-    <message>
-        <source>Failed to write coin serial number into wallet</source>
-        <translation>Не удалось записать серийный номер монеты в кошелек</translation>
+        <source>Invalid amount for -%s=&lt;amount&gt;: '%s'</source>
+        <translation>Недопустимая сумма для -%s = &lt;amount&gt;: '%s'</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>Непрерывные  &lt;n&gt; транзакции в памяти (по умолчанию: %u)</translation>
-    </message>
-    <message>
-        <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
-        <translation>Ограничить размер кэша подписи &lt;n&gt; для записей (по умолчанию: %u)</translation>
     </message>
     <message>
         <source>Line: %d</source>
@@ -6967,6 +5792,10 @@ PENGOLINCOIN Core Wallet</source>
     <message>
         <source>Loading addresses...</source>
         <translation>Загрузка адресов ...</translation>
+    </message>
+    <message>
+        <source>Loading banlist...</source>
+        <translation>Загрузка банлиста...</translation>
     </message>
     <message>
         <source>Loading block index...</source>
@@ -6989,10 +5818,6 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Загрузка ...</translation>
     </message>
     <message>
-        <source>Loading wallet... (%3.2f %%)</source>
-        <translation>Загрузка кошелька ... (%3.2f %%)</translation>
-    </message>
-    <message>
         <source>Loading wallet...</source>
         <translation>Загрузка кошелька ...</translation>
     </message>
@@ -7007,6 +5832,10 @@ PENGOLINCOIN Core Wallet</source>
     <message>
         <source>Lookup(): Invalid -proxy address or hostname: '%s'</source>
         <translation>Lookup (): Invalid -proxy адрес или имя хоста: '%s'</translation>
+    </message>
+    <message>
+        <source>MNs synchronization pending...</source>
+        <translation>Ожидается синхронизация Мастернод...</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: %u)</source>
@@ -7025,10 +5854,6 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Максимальный буфер отправки для каждого соединения &lt;n&gt;* 1000 байтов (по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>Mint did not make it into blockchain</source>
-        <translation>чеканка не превратила его в блокчейн</translation>
-    </message>
-    <message>
         <source>Need to specify a port with -whitebind: '%s'</source>
         <translation>Необходимо указать порт с -whitebind: '%s'</translation>
     </message>
@@ -7041,12 +5866,12 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Недостаточно доступных дескрипторов файлов.</translation>
     </message>
     <message>
-        <source>Number of automatic wallet backups (default: 10)</source>
-        <translation>Количество резервных копий автоматического кошелька (по умолчанию: 10)</translation>
-    </message>
-    <message>
         <source>Number of custom location backups to retain (default: %d)</source>
         <translation>Количество резервных копий пользовательского местоположения для сохранения (по умолчанию: %d)</translation>
+    </message>
+    <message>
+        <source>On first run, create a legacy wallet instead of a HD wallet</source>
+        <translation>При первом запуске создайте предыдущий кошелек вместо HD-кошелька</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -7065,20 +5890,12 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Пароль для подключений JSON-RPC</translation>
     </message>
     <message>
-        <source>Unable to find transaction containing mint %s</source>
-        <translation>Не удалось найти транзакцию, содержащую чеканку %s</translation>
-    </message>
-    <message>
-        <source>Unable to find transaction containing mint, txHash: %s</source>
-        <translation>Не удалось найти транзакцию, содержащую чеканку, txHash: %s</translation>
+        <source>Peers are being disconnected due time differences.</source>
+        <translation>Пиры отключены из-за разницы во времени.</translation>
     </message>
     <message>
         <source>Use block spam filter (default: %u)</source>
         <translation>Использовать блок спам-фильтр (по умолчанию: %u)</translation>
-    </message>
-    <message>
-        <source>could not get lock on cs_spendcache</source>
-        <translation>не удалось получить блокировку на cs_spendcache</translation>
     </message>
     <message>
         <source>isValid(): Invalid -proxy address or hostname: '%s'</source>
@@ -7089,8 +5906,126 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Подготовка к повторной синхронизации ...</translation>
     </message>
     <message>
-        <source>Need destination or change address because change is not exact</source>
-        <translation>Необходимо место назначения или изменение адреса, потому что изменение не является точным</translation>
+        <source>Connect only to the specified node(s); -noconnect or -connect=0 alone to disable automatic connections</source>
+        <translation>Подключаться только к указанному узлу(ам); -noconnect или -connect = 0 отдельно для отключения автоматического соединения</translation>
+    </message>
+    <message>
+        <source>Do not accept transactions if any ancestor would have &lt;n&gt; or more in-mempool descendants (default: %u)</source>
+        <translation>Не принимать транзакции, если у какой-либо истории будет &lt;n&gt; или больше в -mempool (по умолчанию: %u)</translation>
+    </message>
+    <message>
+        <source>Do not accept transactions if any ancestor would have more than &lt;n&gt; kilobytes of in-mempool descendants (default: %u).</source>
+        <translation>Не принимайте транзакции, если у любой истории было бы больше чем &lt;n&gt; килобайтов в -mempool (по умолчанию: %u).</translation>
+    </message>
+    <message>
+        <source>Do not accept transactions if number of in-mempool ancestors is &lt;n&gt; or more (default: %u)</source>
+        <translation>Не принимать транзакции, если число истории в -mempool &lt;n&gt; или больше (по умолчанию: %u)</translation>
+    </message>
+    <message>
+        <source>Do not accept transactions whose size with all in-mempool ancestors exceeds &lt;n&gt; kilobytes (default: %u)</source>
+        <translation>Не принимать транзакции, размер которых со всей историей в -mempool превышает &lt;n&gt; килобайтов (по умолчанию: %u)</translation>
+    </message>
+    <message>
+        <source>Do not keep transactions in the mempool longer than &lt;n&gt; hours (default: %u)</source>
+        <translation>Не хранить транзакции в mempool дольше, чем &lt;n&gt; часов (по умолчанию: %u)</translation>
+    </message>
+    <message>
+        <source>Fees (in %s/Kb) smaller than this are considered zero fee for relaying, mining and transaction creation (default: %s)</source>
+        <translation>Комиссия (в %s/Кб), меньше чем это, считаются с нулевой комиссией за ретрансляцию, майнинг и создание транзакций (по умолчанию: %s)</translation>
+    </message>
+    <message>
+        <source>Fees (in %s/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Комиссия (в %s/Кбайт) меньше этого значения считается с нулевой комиссией за создание транзакции (по умолчанию: %s)</translation>
+    </message>
+    <message>
+        <source>Minimum positive amount (in PGO) allowed by GUI and RPC for the stake split threshold (default: %s)</source>
+        <translation>Минимальная положительная сумма (в PGO), разрешенная GUI и RPC для порога разделения стекинга (по умолчанию: %s)</translation>
+    </message>
+    <message>
+        <source>Please check that your computer's date and time are correct! If your clock is wrong PENGOLINCOIN Core will not work properly.</source>
+        <translation>Пожалуйста, проверьте правильность даты и времени на вашем компьютере! Если ваши часы не точны, PENGOLINCOIN Core не будет работать должным образом.</translation>
+    </message>
+    <message>
+        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect/-noconnect)</source>
+        <translation>Запросить адреса одноранговых узлов через DNS-поиск, если мало адресов (по умолчанию: 1, если -connect / -noconnect)</translation>
+    </message>
+    <message>
+        <source>Specify location of debug log file: this can be an absolute path or a path relative to the data directory (default: %s)</source>
+        <translation>Укажите местоположение файла журнала отладки: это может быть абсолютный путь или путь относительно каталога данных (по умолчанию: %s)</translation>
+    </message>
+    <message>
+        <source>WARNING: The transaction has been signed and recorded, so the wallet will try to re-send it. Use 'abandontransaction' to cancel it. (txid: %s)</source>
+        <translation>ВНИМАНИЕ: транзакция была подписана и записана, поэтому кошелек попытается отправить ее повторно. Используйте 'abandontransaction' для ее отмены. (txid: %s)</translation>
+    </message>
+    <message>
+        <source>(must be %d for %s-net)</source>
+        <translation>(должно быть %d для %s-net)</translation>
+    </message>
+    <message>
+        <source>Active Masternode not initialized.</source>
+        <translation>Активный Мастернода не инициализирована.</translation>
+    </message>
+    <message>
+        <source>Allows deprecated RPC method(s) to be used</source>
+        <translation>Позволяет использовать устаревшие метод(ы) RPC</translation>
+    </message>
+    <message>
+        <source>Can't generate a change-address key. Please call keypoolrefill first.</source>
+        <translation>Невозможно сгенерировать ключ изменения адреса. Пожалуйста, сначала позвоните в keypoolrefill.</translation>
+    </message>
+    <message>
+        <source>Cannot resolve -%s address: '%s'</source>
+        <translation>Не удается разрешить -%s адрес: '%s'</translation>
+    </message>
+    <message>
+        <source>Change index out of range</source>
+        <translation>Изменить индекс вне диапазона</translation>
+    </message>
+    <message>
+        <source>Error: -listen must be true if -masternode is set.</source>
+        <translation>Ошибка: -listen должен быть истинным, если установлена -masternode.</translation>
+    </message>
+    <message>
+        <source>Error: -maxmempool must be at least %d MB</source>
+        <translation>Ошибка: -maxmempool должен быть не менее %d МБ</translation>
+    </message>
+    <message>
+        <source>Failed to accept tx in the memory pool (reason: %s)
+</source>
+        <translation>Не удалось принять tx в пул памяти (причина: %s)
+</translation>
+    </message>
+    <message>
+        <source>Fee (in %s/kB) to add to transactions you send (default: %s)</source>
+        <translation>Комиссия (в %s/кБ) для добавления к отправляемым транзакциям (по умолчанию: %s)</translation>
+    </message>
+    <message>
+        <source>Invalid -masternodeaddr address: %s</source>
+        <translation>Неверный адрес -masternodeaddr: %s</translation>
+    </message>
+    <message>
+        <source>Invalid port %d detected in masternode.conf</source>
+        <translation>В masternode.conf обнаружен неверный порт %d</translation>
+    </message>
+    <message>
+        <source>Invalid status error.</source>
+        <translation>Неверная ошибка статуса.</translation>
+    </message>
+    <message>
+        <source>Keep the transaction memory pool below &lt;n&gt; megabytes (default: %u)</source>
+        <translation>Хранить пул памяти транзакций ниже &lt;n&gt; мегабайтов (по умолчанию: %u)</translation>
+    </message>
+    <message>
+        <source>Keypool ran out, please call keypoolrefill first, or unlock the wallet.</source>
+        <translation>Keypool закончился, пожалуйста, сначала позвоните в keypoolrefill или разблокируйте кошелек.</translation>
+    </message>
+    <message>
+        <source>Limit size of signature cache to &lt;n&gt; MiB (default: %u)</source>
+        <translation>Ограничить размер кэша подписи до &lt;n&gt; МБ (по умолчанию: %u)</translation>
+    </message>
+    <message>
+        <source>No error</source>
+        <translation>Нет ошибки</translation>
     </message>
     <message>
         <source>Prepend debug output with timestamp (default: %u)</source>
@@ -7099,10 +6034,6 @@ PENGOLINCOIN Core Wallet</source>
     <message>
         <source>Print version and exit</source>
         <translation>Версия для печати и выхода</translation>
-    </message>
-    <message>
-        <source>Pubcoin not found in mint tx</source>
-        <translation>Pubcoin не найден в чеканке tx</translation>
     </message>
     <message>
         <source>RPC server options:</source>
@@ -7121,14 +6052,6 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Перестроить индекс цепочки блоков из текущих файлов blk000 ?? .dat</translation>
     </message>
     <message>
-        <source>Receive and display P2P network alerts (default: %u)</source>
-        <translation>Получение и отображение оповещений сети P2P (по умолчанию: %u)</translation>
-    </message>
-    <message>
-        <source>Reindex the accumulator database</source>
-        <translation>Reindex база данных аккумулятора</translation>
-    </message>
-    <message>
         <source>Relay and mine data carrier transactions (default: %u)</source>
         <translation>Операции передачи данных реле и мины (по умолчанию: %u)</translation>
     </message>
@@ -7145,28 +6068,12 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Повторное сканирование ...</translation>
     </message>
     <message>
-        <source>ResetMintZerocoin finished: </source>
-        <translation>ResetMintZerocoin завершен:</translation>
-    </message>
-    <message>
-        <source>ResetSpentZerocoin finished: </source>
-        <translation>ResetSpentZerocoin завершен:</translation>
-    </message>
-    <message>
         <source>Run a thread to flush wallet periodically (default: %u)</source>
         <translation>Запустите поток, чтобы периодически очищать кошелек (по умолчанию: %u)</translation>
     </message>
     <message>
         <source>Run in the background as a daemon and accept commands</source>
         <translation>Запускать в фоновом режиме в качестве демона и принимать команды</translation>
-    </message>
-    <message>
-        <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
-        <translation>Отправлять транзакции как транзакции с нулевой оплатой, если это возможно (по умолчанию: %u)</translation>
-    </message>
-    <message>
-        <source>Session timed out.</source>
-        <translation>Время сеанса истекло.</translation>
     </message>
     <message>
         <source>Set database cache size in megabytes (%d to %d, default: %d)</source>
@@ -7213,10 +6120,6 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Сжать файл debug.log при запуске клиента (по умолчанию: 1, когда нет -debug)</translation>
     </message>
     <message>
-        <source>Signing timed out.</source>
-        <translation>Подписание закончилось.</translation>
-    </message>
-    <message>
         <source>Signing transaction failed</source>
         <translation>Не удалось подписать транзакцию</translation>
     </message>
@@ -7249,16 +6152,8 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Укажите свой собственный общедоступный адрес</translation>
     </message>
     <message>
-        <source>Spend Valid</source>
-        <translation>Проводить проверку</translation>
-    </message>
-    <message>
         <source>Spend unconfirmed change when sending transactions (default: %u)</source>
         <translation>Проводить неподтвержденные изменения при отправке транзакций (по умолчанию: %u)</translation>
-    </message>
-    <message>
-        <source>Staking options:</source>
-        <translation>Варианты ставок:</translation>
     </message>
     <message>
         <source>Stop running after importing blocks from disk (default: %u)</source>
@@ -7271,10 +6166,6 @@ PENGOLINCOIN Core Wallet</source>
     <message>
         <source>Synchronization finished</source>
         <translation>Синхронизация завершена</translation>
-    </message>
-    <message>
-        <source>Synchronization pending...</source>
-        <translation>Ожидается синхронизация ...</translation>
     </message>
     <message>
         <source>Synchronizing budgets...</source>
@@ -7293,16 +6184,8 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Синхронизация спорков ...</translation>
     </message>
     <message>
-        <source>Syncing zPGO wallet...</source>
-        <translation>Синхронизация zPGO кошелька ...</translation>
-    </message>
-    <message>
-        <source>The coin spend has been used</source>
-        <translation>Расходы на монеты использовались</translation>
-    </message>
-    <message>
-        <source>The transaction did not verify</source>
-        <translation>Транзакция не подтверждена</translation>
+        <source>The threshold value cannot be less than %s</source>
+        <translation>Пороговое значение не может быть меньше, чем %s</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -7317,12 +6200,16 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Это предназначено для инструментов тестирования регрессии и разработки приложений.</translation>
     </message>
     <message>
-        <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
-        <translation>Порог для отключения ошибочных сверстников (по умолчанию: %u)</translation>
+        <source>This is not a masternode. 'local' option disabled.</source>
+        <translation>Это не мастернода. Опция 'local' отключена.</translation>
     </message>
     <message>
-        <source>Too many spends needed</source>
-        <translation>Слишком много расходов</translation>
+        <source>This is not a masternode.</source>
+        <translation>Это не мастернода.</translation>
+    </message>
+    <message>
+        <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
+        <translation>Порог для отключения ошибочных сверстников (по умолчанию: %u)</translation>
     </message>
     <message>
         <source>Tor control port password (default: empty)</source>
@@ -7333,20 +6220,16 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Tor для использования при включенном прослушивании лука (по умолчанию: %s)</translation>
     </message>
     <message>
-        <source>Transaction Created</source>
-        <translation>Создана транзакция</translation>
-    </message>
-    <message>
-        <source>Transaction Mint Started</source>
-        <translation>Чеканка началась</translation>
-    </message>
-    <message>
         <source>Transaction amount too small</source>
         <translation>Слишком маленькая сумма транзакции</translation>
     </message>
     <message>
         <source>Transaction amounts must be positive</source>
         <translation>Суммы транзакций должны быть положительными</translation>
+    </message>
+    <message>
+        <source>Transaction canceled.</source>
+        <translation>Транзакция отменена.</translation>
     </message>
     <message>
         <source>Transaction too large for fee policy</source>
@@ -7357,16 +6240,12 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Слишком большая транзакция</translation>
     </message>
     <message>
-        <source>Trying to spend an already spent serial #, try again.</source>
-        <translation>Пытаясь потратить уже потраченный серийный номер #, попробуйте еще раз.</translation>
-    </message>
-    <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Невозможно связать %s на этом компьютере (связать возвращенную ошибку %s)</translation>
     </message>
     <message>
-        <source>Unable to generate initial key</source>
-        <translation>Невозможно сгенерировать первоначальный ключ</translation>
+        <source>Unable to generate keys</source>
+        <translation>Невозможно сгенерировать ключи</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
@@ -7381,20 +6260,16 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Неизвестная сеть, указанная в -onlynet: '%s'</translation>
     </message>
     <message>
+        <source>Unsupported logging category %s=%s.</source>
+        <translation>Неподдерживаемая категория протоколирования %s =%s.</translation>
+    </message>
+    <message>
         <source>Upgrade wallet to latest format</source>
         <translation>Обновление кошелька до последнего формата</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: %u)</source>
         <translation>Используйте UPnP для отображения порта прослушивания (по умолчанию: %u)</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 1 when listening)</source>
-        <translation>Используйте UPnP для отображения порта прослушивания (по умолчанию: 1 при прослушивании)</translation>
-    </message>
-    <message>
-        <source>Use a custom max chain reorganization depth (default: %u)</source>
-        <translation>Используйте настраиваемую максимальную глубину реорганизации цепочки (по умолчанию: %u)</translation>
     </message>
     <message>
         <source>Use the test network</source>
@@ -7409,20 +6284,12 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Имя пользователя для соединений JSON-RPC</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zPGO</source>
-        <translation>Значение ниже наименьшего доступного номинала (= 1) zPgo</translation>
-    </message>
-    <message>
         <source>Verifying blocks...</source>
         <translation>Проверка блоков ...</translation>
     </message>
     <message>
         <source>Verifying wallet...</source>
         <translation>Проверка кошелька ...</translation>
-    </message>
-    <message>
-        <source>Wallet %s resides outside data directory %s</source>
-        <translation>Кошелек %s находится за пределами каталога данных %s</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart PENGOLINCOIN Core to complete</source>
@@ -7453,10 +6320,6 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Предупреждение. Неподдерживаемый аргумент -debugnet игнорируется, используйте -debug = net.</translation>
     </message>
     <message>
-        <source>You don't have enough Zerocoins in your wallet</source>
-        <translation>У вас недостаточно Zerocoins в вашем кошельке</translation>
-    </message>
-    <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>Вам нужно перестроить базу данных с помощью -reindex для изменения -txindex</translation>
     </message>
@@ -7469,16 +6332,8 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Опции уведомления ZeroMQ:</translation>
     </message>
     <message>
-        <source>Zerocoin options:</source>
-        <translation>Варианты Zerocoin:</translation>
-    </message>
-    <message>
         <source>on startup</source>
         <translation>на старте</translation>
-    </message>
-    <message>
-        <source>wallet.dat corrupt, salvage failed</source>
-        <translation>wallet.dat коррумпирован, сбор не выполнен</translation>
     </message>
 </context>
 <context>
@@ -7492,12 +6347,36 @@ PENGOLINCOIN Core Wallet</source>
         <translation>Отправить</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>Текстовая метка</translation>
+        <source>PENGOLINCOIN address or contact label</source>
+        <translation>PENGOLINCOIN адрес или лейбл контакта</translation>
     </message>
     <message>
-        <source>PushButton</source>
-        <translation>Нажать кнопку</translation>
+        <source>Amount</source>
+        <translation>Сумма</translation>
+    </message>
+    <message>
+        <source>Customize fee</source>
+        <translation>Настройка комиссии</translation>
+    </message>
+    <message>
+        <source>Clear all</source>
+        <translation>Очистить все</translation>
+    </message>
+    <message>
+        <source>Add recipient</source>
+        <translation>Добавить получателя</translation>
+    </message>
+    <message>
+        <source>Total to send</source>
+        <translation>Общая сумма к отправке</translation>
+    </message>
+    <message>
+        <source>Reset to default</source>
+        <translation>Сбросить настройки по умолчанию</translation>
+    </message>
+    <message>
+        <source>Include delegated</source>
+        <translation>Включить делегированного</translation>
     </message>
 </context>
 </TS>

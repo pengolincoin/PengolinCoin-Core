@@ -103,7 +103,7 @@ git merge commit are mentioned.
 - #401 `f30d9b7` [Scripts] LogPrint(f) scanner script (Sonic, PeterL73)
 - #409 `4f78e67` Handle debug.log "CWalletTx::GetAmounts: Unknown transaction type" spam. (presstab)
 
-Pgos
+Credits
 =======
 
 Thanks to everyone who directly contributed to this release:

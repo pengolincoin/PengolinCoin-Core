@@ -66,18 +66,18 @@ SECP256K1_API void JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1destroy_1
 
 /*
  * Class:     org_bitcoin_NativeSecp256k1
- * Method:    secp256k1_pgosa_verify
+ * Method:    secp256k1_ecdsa_verify
  * Signature: (Ljava/nio/ByteBuffer;JII)I
  */
-SECP256K1_API jint JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1pgosa_1verify
+SECP256K1_API jint JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1ecdsa_1verify
   (JNIEnv *, jclass, jobject, jlong, jint, jint);
 
 /*
  * Class:     org_bitcoin_NativeSecp256k1
- * Method:    secp256k1_pgosa_sign
+ * Method:    secp256k1_ecdsa_sign
  * Signature: (Ljava/nio/ByteBuffer;J)[[B
  */
-SECP256K1_API jobjectArray JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1pgosa_1sign
+SECP256K1_API jobjectArray JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1ecdsa_1sign
   (JNIEnv *, jclass, jobject, jlong);
 
 /*
@@ -106,10 +106,10 @@ SECP256K1_API jobjectArray JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1e
 
 /*
  * Class:     org_bitcoin_NativeSecp256k1
- * Method:    secp256k1_pgoh
+ * Method:    secp256k1_ecdh
  * Signature: (Ljava/nio/ByteBuffer;JI)[[B
  */
-SECP256K1_API jobjectArray JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1pgoh
+SECP256K1_API jobjectArray JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1ecdh
   (JNIEnv* env, jclass classObject, jobject byteBufferObject, jlong ctx_l, jint publen);
 
 

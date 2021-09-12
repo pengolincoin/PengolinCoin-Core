@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017-2019 The PENGOLINCOIN developers
+// Copyright (c) 2017-2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,14 +12,11 @@ WalletModelTransaction::WalletModelTransaction(const QList<SendCoinsRecipient>& 
                                                                                               walletTransaction(0),
                                                                                               keyChange(0),
                                                                                               fee(0)
-{
-    walletTransaction = new CWalletTx();
-}
+{ }
 
 WalletModelTransaction::~WalletModelTransaction()
 {
     delete keyChange;
-    delete walletTransaction;
 }
 
 QList<SendCoinsRecipient> WalletModelTransaction::getRecipients()
@@ -26,14 +24,14 @@ QList<SendCoinsRecipient> WalletModelTransaction::getRecipients()
     return recipients;
 }
 
-CWalletTx* WalletModelTransaction::getTransaction()
+CTransactionRef& WalletModelTransaction::getTransaction()
 {
     return walletTransaction;
 }
 
 unsigned int WalletModelTransaction::getTransactionSize()
 {
-    return (!walletTransaction ? 0 : (::GetSerializeSize(*(CTransaction*)walletTransaction, SER_NETWORK, PROTOCOL_VERSION)));
+    return (!walletTransaction ? 0 : (::GetSerializeSize(*walletTransaction, PROTOCOL_VERSION)));
 }
 
 CAmount WalletModelTransaction::getTransactionFee()
@@ -46,18 +44,28 @@ void WalletModelTransaction::setTransactionFee(const CAmount& newFee)
     fee = newFee;
 }
 
+unsigned int WalletModelTransaction::subtractFeeFromRecipents() const
+{
+    unsigned int count = 0;
+    for (const SendCoinsRecipient& rcp : recipients) {
+        if (rcp.fSubtractFee) count++;
+    }
+    return count;
+}
+
 CAmount WalletModelTransaction::getTotalTransactionAmount()
 {
     CAmount totalTransactionAmount = 0;
-    foreach (const SendCoinsRecipient& rcp, recipients) {
+    for (const SendCoinsRecipient& rcp : recipients) {
         totalTransactionAmount += rcp.amount;
     }
     return totalTransactionAmount;
 }
 
-void WalletModelTransaction::newPossibleKeyChange(CWallet* wallet)
+CReserveKey* WalletModelTransaction::newPossibleKeyChange(CWallet* wallet)
 {
     keyChange = new CReserveKey(wallet);
+    return keyChange;
 }
 
 CReserveKey* WalletModelTransaction::getPossibleKeyChange()

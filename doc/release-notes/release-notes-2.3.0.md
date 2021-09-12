@@ -182,7 +182,7 @@ git merge commit are mentioned.
 - #175 `8727f1c` [Docs] Reformat main README.md (Fuzzbawls)
 - #213 `ddd8994` [Trivial] Reduce debug.log spam for masternode messages (Fuzzbawls)
 
-Pgos
+Credits
 =======
 
 Thanks to everyone who directly contributed to this release:

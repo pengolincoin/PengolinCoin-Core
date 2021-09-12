@@ -1,55 +1,55 @@
 PENGOLINCOIN Core integration/staging repository
 =====================================
 
-[![Build Status](https://travis-ci.org/PENGOLINCOIN/PENGOLINCOIN.svg?branch=master)](https://travis-ci.org/PENGOLINCOIN/PENGOLINCOIN) [![GitHub version](https://badge.fury.io/gh/PENGOLINCOIN%2FPENGOLINCOIN.svg)](https://badge.fury.io/gh/PENGOLINCOIN-Project%2FPENGOLINCOIN)
+[![master Actions Status](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/workflows/CI%20Actions%20for%20PENGOLINCOIN/badge.svg)](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/actions)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/PENGOLINCOIN-Project/pengolincoin?color=%235c4b7d&cacheSeconds=3600)](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/releases)
+[![GitHub Release Date](https://img.shields.io/github/release-date/PENGOLINCOIN-Project/pengolincoin?color=%235c4b7d&cacheSeconds=3600)](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/releases)
 
-PENGOLINCOIN is an open source crypto-currency focused on fast private transactions using the Zerocoin protocol, with low transaction fees & environmental footprint.  It utilizes the first ever anonymous proof of stake protocol, called zPoS, combined with regular PoS and masternodes for securing its network. zPoS incentivises using the privacy features available in PENGOLINCOIN by granting a higher block reward for zPoS over regular PoS and masternodes. In practice PENGOLINCOIN has between 4 to 10 times higher use of it's privacy features in comparison to other coins that combine public and private transactions. This is thanks to innovations like zPoS and integrating the Zerocoin protocol into light/mobile wallets, allowing for a complete and lightweight privacy protocol that can be used on the go. As well as security improvements like deterministic generation of zPGO for easy backups.
-The goal of PENGOLINCOIN is to achieve a decentralized sustainable crypto currency with near instant full-time private transactions, fair governance and community intelligence.
-- light/mobile wallet privacy using the Zerocoin Light Node Protocol
-- Fast transactions featuring guaranteed zero confirmation transactions, we call it _SwiftX_.
-- Decentralized blockchain voting utilizing Masternode technology to form a DAO. The blockchain will distribute monthly treasury funds based on successful proposals submitted by the community and voted on by the DAO.
+## What is PENGOLINCOIN?
 
-More information at [pengolincoin.xyz](https://www.pengolincoin.xyz) Visit our ANN thread at [BitcoinTalk](https://bitcointalk.org/index.php?topic=5234832)
+PENGOLINCOIN is an open source community-driven cryptocurrency, focused on five main aspects:
 
-### Coin Specs
-<table>
-<tr><td>Algo</td><td>Quark</td></tr>
-<tr><td>Block Time</td><td>60 Seconds</td></tr>
-<tr><td>Difficulty Retargeting</td><td>Every Block</td></tr>
-<tr><td>Max Coin Supply (PoW Phase)</td><td>15,001,980 PGO</td></tr>
-<tr><td>Max Coin Supply (PoS Phase)</td><td>100,000,000 PGO</td></tr>
-<tr><td>Premine</td><td>15,000,000 PGO</td></tr>
-</table>
+(1) User Data Protection: Through the use of SHIELD, a zk-SNARKs based privacy protocol.
 
-### Reward Distribution
+(2) Low environmental footprint and network participation equality: Through the use of a highly developed Proof of Stake protocol.
 
-<table>
-<th colspan=4>Genesis Block</th>
-<tr><th>Block Height</th><th>Reward Amount</th><th>Notes</th></tr>
-<tr><td>1</td><td>15,000,000 PGO</td><td>Initial Pre-mine</td></tr>
-</table>
+(3) Decentralized Governance System: A DAO built on top of the tier two Masternodes network, enabling a monthly community treasury, proposals submission and decentralized voting.
 
-### PoW Rewards Breakdown
+(4) Fast Transactions: Through the use of fast block times and the tier two network, PENGOLINCOIN is committed to continue researching new and better instant transactions mechanisms.
 
-<table>
-<th>Block Height</th><th>Masternodes</th><th>Miner</th><th>Dev</th>
-<tr><td>2-1000</td><td>50% (10 PGO)</td><td>45% (9 PGO)</td><td>5% (1 PGO)</td></tr>
-</table>
+(5) Ease of Use: PENGOLINCOIN is determined to offer the best possible graphical interface for a core node/wallet. A full featured graphical product for new and advanced users.
 
-### PoS Rewards Breakdown
+A lot more information and specs at [pengolincoin.xyz](https://www.pengolincoin.xyz/). Join the community at [PENGOLINCOIN Discord](https://discordapp.com/invite/jzqVsJd).
 
-<table>
-<th>Phase</th><th>Block Height</th><th>Reward</th><th>Masternodes</th><th>Stakers</th><th>Dev</th>
-<tr><td>Phase 0</td><td>1001-525600</td><td>20 PGO</td><td>50% (10 PGO)</td><td>45% (9 PGO)</td><td>5% (1 PGO)</td></tr>
-<tr><td>Phase 1</td><td>525601-1051200</td><td>18 PGO</td><td>50% (9 PGO)</td><td>45% (8.1 PGO)</td><td>5% (0.9 PGO)</td></tr>
-<tr><td>Phase 2</td><td>1051201-1576800</td><td>16 PGO</td><td>50% (8 PGO)</td><td>45% (7.2 PGO)</td><td>5% (0.8 PGO)</td></tr>
-<tr><td>Phase 3</td><td>1576801-2102400</td><td>14 PGO</td><td>50% (7 PGO)</td><td>45% (6.3 PGO)</td><td>5% (0.7 PGO)</td></tr>
-<tr><td>Phase 4</td><td>2102401-2628000</td><td>12 PGO</td><td>50% (6 PGO)</td><td>45% (5.4 PGO)</td><td>5% (0.6 PGO)</td></tr>
-<tr><td>Phase 5</td><td>2628001-3153600</td><td>10 PGO</td><td>50% (5 PGO)</td><td>45% (4.5 PGO)</td><td>5% (0.5 PGO)</td></tr>
-<tr><td>Phase 6</td><td>3153601-3679200</td><td>8 PGO</td><td>50% (4 PGO)</td><td>45% (3.6 PGO)</td><td>5% (0.4 PGO)</td></tr>
-<tr><td>Phase 7</td><td>3679201-4204800</td><td>6 PGO</td><td>50% (3 PGO)</td><td>45% (2.7 PGO)</td><td>5% (0.3 PGO)</td></tr>
-<tr><td>Phase 8</td><td>4204801-4730400</td><td>4 PGO</td><td>50% (2 PGO)</td><td>45% (1.8 PGO)</td><td>5% (0.2 PGO)</td></tr>
-<tr><td>Phase 9</td><td>4730401-18848000</td><td>2 PGO</td><td>50% (1 PGO)</td><td>45% (0.9 PGO)</td><td>5% (0.1 PGO)</td></tr>
+## License
+PENGOLINCOIN Core is released under the terms of the MIT license. See [COPYING](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/blob/master/COPYING) for more information or see https://opensource.org/licenses/MIT.
 
-</table>
+## Development Process
 
+The master branch is regularly built (see doc/build-*.md for instructions) and tested, but it is not guaranteed to be completely stable. [Tags](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/tags) are created regularly from release branches to indicate new official, stable release versions of PENGOLINCOIN Core.
+
+The contribution workflow is described in [CONTRIBUTING.md](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/blob/master/CONTRIBUTING.md) and useful hints for developers can be found in [doc/developer-notes.md](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/blob/master/doc/developer-notes.md).
+
+## Testing
+
+Testing and code review is the bottleneck for development; we get more pull requests than we can review and test on short notice. Please be patient and help out by testing other people's pull requests, and remember this is a security-critical project where any mistake might cost people a lot of money.
+
+## Automated Testing
+
+Developers are strongly encouraged to write [unit tests](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/blob/master/src/test/README.md) for new code, and to submit new unit tests for old code. Unit tests can be compiled and run (assuming they weren't disabled in configure) with: make check. Further details on running and extending unit tests can be found in [/src/test/README.md](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/blob/master/src/test/README.md).
+
+There are also regression and integration tests, written in Python. These tests can be run (if the test dependencies are installed) with: test/functional/test_runner.py`
+
+The CI (Continuous Integration) systems make sure that every pull request is built for Windows, Linux, and macOS, and that unit/sanity tests are run automatically.
+
+## Manual Quality Assurance (QA) Testing
+
+Changes should be tested by somebody other than the developer who wrote the code. This is especially important for large or high-risk changes. It is useful to add a test plan to the pull request description if testing the changes is not straightforward.
+
+## Translations
+
+Changes to translations as well as new translations can be submitted to PENGOLINCOIN Core's Transifex page.
+
+Translations are periodically pulled from Transifex and merged into the git repository. See the [translation process](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/blob/master/doc/translation_process.md) for details on how this works.
+
+Important: We do not accept translation changes as GitHub pull requests because the next pull from Transifex would automatically overwrite them again.

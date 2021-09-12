@@ -109,7 +109,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #957 `2c9f624455` [Build] Add info about '--with-unsupported-ssl' (Warrows)
 
 ### P2P Protocol and Network Code
- - #987 `fa1dbab247` [Net] Protocol update enforcement for 30000 and new spork keys (Fuzzbawls)
+ - #987 `fa1dbab247` [Net] Protocol update enforcement for 70917 and new spork keys (Fuzzbawls)
 
 ### GUI
  - #933 `e47fe3d379` [Qt] Add blockhash + datadir to information tab (Mrs-X)
@@ -138,7 +138,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #986 `fdd0cdb72f` [Doc] Release notes update (Fuzzbawls)
 
 
-## Pgos
+## Credits
 
 Thanks to everyone who directly contributed to this release:
 - Cave Spectre

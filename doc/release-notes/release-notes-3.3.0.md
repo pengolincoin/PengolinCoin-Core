@@ -200,7 +200,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #926 `49a69b8931` [Doc] 3.3.0 Notable Changes (Fuzzbawls)
  - #927 `048d1295dc` [Trivial] Update header copyright years (Fuzzbawls)
 
-## Pgos
+## Credits
 
 Thanks to everyone who directly contributed to this release:
 

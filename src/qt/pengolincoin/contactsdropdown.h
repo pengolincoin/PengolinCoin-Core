@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -31,10 +32,10 @@ public:
     explicit ContactsDropdown(int minWidth, int minHeight, PWidget *parent = nullptr);
 
     void resizeList(int minWidth, int mintHeight);
-    void setWalletModel(WalletModel* _model, const QString& type);
-    void setType(const QString& type);
+    void setWalletModel(WalletModel* _model, const QStringList& type);
+    void setType(const QStringList& type);
     void changeTheme(bool isLightTheme, QString& theme) override;
-signals:
+Q_SIGNALS:
     void contactSelected(QString address, QString label);
 private:
     FurAbstractListItemDelegate* delegate = nullptr;
@@ -42,7 +43,7 @@ private:
     AddressFilterProxyModel *filter = nullptr;
     QListView *list;
     QFrame *frameList;
-private slots:
+private Q_SLOTS:
     void handleClick(const QModelIndex &index);
 };
 

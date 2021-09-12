@@ -19,27 +19,22 @@ Tests correspond to code in rpc/blockchain.cpp.
 """
 
 from decimal import Decimal
-import http.client
-import subprocess
 
-from test_framework.test_framework import BitcoinTestFramework
+from test_framework.test_framework import PengolinCoinTestFramework
 from test_framework.util import (
     assert_equal,
-    assert_greater_than,
     assert_greater_than_or_equal,
-    assert_raises,
     assert_raises_rpc_error,
     assert_is_hex_string,
     assert_is_hash_string,
 )
 
-class BlockchainTest(BitcoinTestFramework):
+class BlockchainTest(PengolinCoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
-        self.extra_args = [['-stopatheight=207', '-prune=1']]
 
     def run_test(self):
-        #self._test_getblockchaininfo()
+        self._test_getblockchaininfo()
         self._test_gettxoutsetinfo()
         self._test_getblockheader()
         #self._test_getdifficulty()
@@ -55,12 +50,17 @@ class BlockchainTest(BitcoinTestFramework):
             'chainwork',
             'difficulty',
             'headers',
+            'initial_block_downloading',
+            'shield_pool_value',
+            'softforks',
+            'upgrades',
             'verificationprogress',
             'warnings',
         ]
         res = self.nodes[0].getblockchaininfo()
         # result should have these additional pruning keys if manual pruning is enabled
         assert_equal(sorted(res.keys()), sorted(keys))
+
     def _test_gettxoutsetinfo(self):
         node = self.nodes[0]
         res = node.gettxoutsetinfo()
@@ -69,9 +69,12 @@ class BlockchainTest(BitcoinTestFramework):
         assert_equal(res['transactions'], 200)
         assert_equal(res['height'], 200)
         assert_equal(res['txouts'], 200)
-        assert_equal(res['bytes_serialized'], 14073),
+        assert_equal(res['bestblock'], node.getblockhash(200))
+        size = res['disk_size']
+        assert_greater_than_or_equal(size, 6400)
+        assert_greater_than_or_equal(64000, size)
         assert_equal(len(res['bestblock']), 64)
-        assert_equal(len(res['hash_serialized']), 64)
+        assert_equal(len(res['hash_serialized_2']), 64)
 
     def _test_getblockheader(self):
         node = self.nodes[0]

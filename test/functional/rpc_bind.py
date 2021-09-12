@@ -7,11 +7,19 @@
 import socket
 import sys
 
-from test_framework.test_framework import BitcoinTestFramework, SkipTest
-from test_framework.util import *
-from test_framework.netutil import *
+from test_framework.netutil import addr_to_hex, all_interfaces, get_bind_addrs
+from test_framework.test_framework import PengolinCoinTestFramework, SkipTest
+from test_framework.util import (
+    assert_equal,
+    assert_raises_rpc_error,
+    get_datadir_path,
+    get_rpc_proxy,
+    rpc_port,
+    rpc_url
+)
 
-class RPCBindTest(BitcoinTestFramework):
+
+class RPCBindTest(PengolinCoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1

@@ -268,8 +268,8 @@ HEADERS += src/activemasternode.h \
            src/qt/test/paymentservertests.h \
            src/qt/test/uritests.h \
            src/secp256k1/include/secp256k1.h \
-           src/secp256k1/src/pgosa.h \
-           src/secp256k1/src/pgosa_impl.h \
+           src/secp256k1/src/ecdsa.h \
+           src/secp256k1/src/ecdsa_impl.h \
            src/secp256k1/src/eckey.h \
            src/secp256k1/src/eckey_impl.h \
            src/secp256k1/src/ecmult.h \

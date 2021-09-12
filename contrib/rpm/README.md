@@ -153,7 +153,7 @@ At this time, this RPM spec file does not support the ZeroMQ build options. A
 suitable version of ZeroMQ is not available for the platform this spec file was
 developed on (CentOS 7).
 
-## Legacy Pgo
+## Legacy Credit
 
 This RPM spec file is largely based upon the work of Michael Hampton at
 [Ringing Liberty](https://www.ringingliberty.com/bitcoin/). He has been

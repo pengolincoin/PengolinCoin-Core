@@ -6,8 +6,8 @@
         <translation>Dialoog</translation>
     </message>
     <message>
-        <source>My Address</source>
-        <translation>Mijn Adres</translation>
+        <source>New Address</source>
+        <translation>Nieuw Adres</translation>
     </message>
     <message>
         <source>Address</source>
@@ -15,15 +15,15 @@
     </message>
     <message>
         <source>PushButton</source>
-        <translation>Druk Knop</translation>
+        <translation>DrukKnop</translation>
     </message>
     <message>
         <source>CANCEL</source>
         <translation>Annuleren</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>Akkoord</translation>
+        <source>SAVE</source>
+        <translation>Opslaan</translation>
     </message>
 </context>
 <context>
@@ -33,16 +33,8 @@
         <translation>Dialoog</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
         <source>CANCEL</source>
         <translation>Annuleren</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>Akkoord</translation>
     </message>
     <message>
         <source>Edit Contact</source>
@@ -53,8 +45,8 @@
         <translation>Stel een label in voor het geselecteerde adres</translation>
     </message>
     <message>
-        <source>Enter a name for the address (e.g Exchange)</source>
-        <translation>Voeg een naam toe bij het behorende adres</translation>
+        <source>Enter a label for the address (e.g. Exchange)</source>
+        <translation>Voer een label in voor het adres (bv. Beurs)</translation>
     </message>
     <message>
         <source>SAVE</source>
@@ -163,7 +155,7 @@
     </message>
     <message>
         <source>There was an error trying to save the address list to %1. Please try again.</source>
-        <translation>Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Probeer het nogmaals.</translation>
+        <translation>Er is een fout opgetreden tijdens het opslaan van de adreslijst naar %1. Probeer het opnieuw.</translation>
     </message>
 </context>
 <context>
@@ -196,6 +188,10 @@
         <translation>Datum</translation>
     </message>
     <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
         <source>(no label)</source>
         <translation>(geen label)</translation>
     </message>
@@ -207,28 +203,12 @@
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Zenden</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
-        <source>No active Master Node yet</source>
-        <translation>Nog geen actieve Master Node</translation>
-    </message>
-    <message>
         <source>Contact name</source>
         <translation>Contactpersoon</translation>
     </message>
     <message>
         <source>Enter address</source>
         <translation>Voeg adres toe</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>Akkoord</translation>
     </message>
     <message>
         <source>Contacts</source>
@@ -243,16 +223,16 @@
         <translation>Nog geen contacten</translation>
     </message>
     <message>
-        <source>e.g. John Doe</source>
-        <translation>bv. Jan Jansen</translation>
-    </message>
-    <message>
-        <source>Enter a PENGOLINCOIN address</source>
-        <translation>Voeg een PENGOLINCOIN adres toe</translation>
-    </message>
-    <message>
         <source>SAVE</source>
         <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>Add new contact</source>
+        <translation>Nieuw contact toevoegen</translation>
+    </message>
+    <message>
+        <source>Generate a new address to receive tokens.</source>
+        <translation>Genereer een nieuw adres om tokens te ontvangen.</translation>
     </message>
     <message>
         <source>Invalid Contact Address</source>
@@ -296,7 +276,7 @@ Are you sure?</source>
 
 %1
 
-Weet U het zeker?</translation>
+Weet u het zeker?</translation>
     </message>
     <message>
         <source>Contact Deleted</source>
@@ -323,7 +303,7 @@ Weet U het zeker?</translation>
     </message>
     <message>
         <source>PushButton</source>
-        <translation>Druk Knop</translation>
+        <translation>DrukKnop</translation>
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
@@ -368,6 +348,14 @@ voor bewijs van Inzet</translation>
         <translation>Bevestig versleuteling van de portemonnee</translation>
     </message>
     <message>
+        <source>WARNING</source>
+        <translation>WAARSCHUWING</translation>
+    </message>
+    <message>
+        <source>If you encrypt your wallet and lose your passphrase, you will</source>
+        <translation>Als u uw portemonnee versleutelt en uw wachtwoord vergeet, zal u</translation>
+    </message>
+    <message>
         <source>ENCRYPT</source>
         <translation>Versleutelen</translation>
     </message>
@@ -384,12 +372,20 @@ voor bewijs van Inzet</translation>
         <translation>Weet u zeker dat u uw portemonnee wilt versleutelen?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PGO&lt;/b&gt;!</source>
-        <translation>Waarschuwing: Als u uw portemonnee versleutelt en uw wachtwoord vergeet, zult u &lt;b&gt;AL UW PGO VERLIEZEN&lt;/b&gt;!</translation>
-    </message>
-    <message>
         <source>Wallet encrypted</source>
         <translation>Portemonnee versleuteld</translation>
+    </message>
+    <message>
+        <source>WARNING:</source>
+        <translation>WAARSCHUWING:</translation>
+    </message>
+    <message>
+        <source>The caps lock key is on!</source>
+        <translation>De caps Lock-toets staat aan!</translation>
+    </message>
+    <message>
+        <source>Passphrases do not match!</source>
+        <translation>Wachtwoorden komen niet overeen!</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -412,6 +408,10 @@ voor bewijs van Inzet</translation>
         <translation>De opgegeven wachtwoordzinnen komen niet overeen.</translation>
     </message>
     <message>
+        <source>LOSE ALL OF YOUR COINS</source>
+        <translation>VERLIES VAN AL UW MUNTEN</translation>
+    </message>
+    <message>
         <source>Wallet unlock failed</source>
         <translation>Portemonnee openen mislukt</translation>
     </message>
@@ -427,11 +427,14 @@ voor bewijs van Inzet</translation>
         <source>Wallet passphrase was successfully changed.</source>
         <translation>Portemonnee wachtwoordzin is met succes gewijzigd.</translation>
     </message>
-    <message>
-        <source>Warning: The Caps Lock key is on!</source>
-        <translation>Waarschuwing: De Caps-Lock-toets staat aan!</translation>
-    </message>
 </context>
+<context>
+    <name>BalanceBubble</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    </context>
 <context>
     <name>BanTableModel</name>
     <message>
@@ -441,37 +444,6 @@ voor bewijs van Inzet</translation>
     <message>
         <source>Banned Until</source>
         <translation>Verboden tot</translation>
-    </message>
-</context>
-<context>
-    <name>BlockExplorer</name>
-    <message>
-        <source>Blockchain Explorer</source>
-        <translation>Blockchain Verkenner</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Terug</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation>Volgende</translation>
-    </message>
-    <message>
-        <source>Address / Block / Transaction</source>
-        <translation>Adres / Block / Transactie</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Zoeken</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pengolincoin.conf).</source>
-        <translation>Niet alle transacties zullen worden getoond. Om alle transacties te bekijken moet u txindex=1 instellen in het configuratie bestand (pengolincoin.conf).</translation>
     </message>
 </context>
 <context>
@@ -507,10 +479,6 @@ voor bewijs van Inzet</translation>
         <source>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)</source>
         <translation>Totaal: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Onbekend: %5)</translation>
     </message>
-    <message>
-        <source>Network Alert</source>
-        <translation>Netwerk waarschuwing</translation>
-    </message>
 </context>
 <context>
     <name>CoinControlDialog</name>
@@ -529,6 +497,10 @@ voor bewijs van Inzet</translation>
     <message>
         <source>Coin Selection</source>
         <translation>Munt Selectie</translation>
+    </message>
+    <message>
+        <source>Select PGO Outputs to Spend</source>
+        <translation>Selecteer PGO Outputs om te besteden</translation>
     </message>
     <message>
         <source>Dust:</source>
@@ -553,14 +525,6 @@ voor bewijs van Inzet</translation>
     <message>
         <source>Amount</source>
         <translation>Bedrag</translation>
-    </message>
-    <message>
-        <source>Transaction Details</source>
-        <translation>Transactie details</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
     </message>
     <message>
         <source>0.00 PGO</source>
@@ -631,34 +595,6 @@ voor bewijs van Inzet</translation>
         <translation>Unlock niet besteed</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Kopieer kwantiteit</translation>
-    </message>
-    <message>
-        <source>Copy fee</source>
-        <translation>Kopieer fee</translation>
-    </message>
-    <message>
-        <source>Copy after fee</source>
-        <translation>Kopieer na fee</translation>
-    </message>
-    <message>
-        <source>Copy bytes</source>
-        <translation>Kopieer bytes</translation>
-    </message>
-    <message>
-        <source>Copy priority</source>
-        <translation>Kopieer prioriteit</translation>
-    </message>
-    <message>
-        <source>Copy dust</source>
-        <translation>Kopieer dust</translation>
-    </message>
-    <message>
-        <source>Copy change</source>
-        <translation>Kopieer wisselgeld</translation>
-    </message>
-    <message>
         <source>Unselect all</source>
         <translation>Deselecteer alles</translation>
     </message>
@@ -667,52 +603,52 @@ voor bewijs van Inzet</translation>
         <translation>Schakel alsjeblieft over naar "Lijst modus" om deze functie te gebruiken.</translation>
     </message>
     <message>
-        <source>highest</source>
-        <translation>hoogste</translation>
+        <source>Quantity Copied</source>
+        <translation>Aantal gekopieerd</translation>
     </message>
     <message>
-        <source>higher</source>
-        <translation>hoger</translation>
+        <source>Amount Copied</source>
+        <translation>Hoeveelheid gekopieerd</translation>
     </message>
     <message>
-        <source>high</source>
-        <translation>hoog</translation>
+        <source>Fee Copied</source>
+        <translation>Kost gekopieerd</translation>
     </message>
     <message>
-        <source>medium-high</source>
-        <translation>medium-hoog</translation>
+        <source>After Fee Copied</source>
+        <translation>Na Vergoeding Gekopieerd</translation>
     </message>
     <message>
-        <source>medium</source>
-        <translation>medium</translation>
+        <source>Bytes Copied</source>
+        <translation>Bytes gekopieerd</translation>
     </message>
     <message>
-        <source>low-medium</source>
-        <translation>laag-medium</translation>
+        <source>Dust Copied</source>
+        <translation>Dust Gekopieerd</translation>
     </message>
     <message>
-        <source>low</source>
-        <translation>laag</translation>
-    </message>
-    <message>
-        <source>lower</source>
-        <translation>lager</translation>
-    </message>
-    <message>
-        <source>lowest</source>
-        <translation>laagst</translation>
+        <source>Change Copied</source>
+        <translation>Wissel Gekopieerd</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
         <translation>(%1 vergrendeld)</translation>
     </message>
     <message>
-        <source>none</source>
-        <translation>geen</translation>
-    </message>
-    <message>
         <source>yes</source>
         <translation>ja</translation>
+    </message>
+    <message>
+        <source>Can vary +/- %1 u%2 per input.</source>
+        <translation>Kan +/- %1 u%2 per invoer verschillen.</translation>
+    </message>
+    <message>
+        <source>delegated to %1 for cold staking</source>
+        <translation>gedelegeerd naar %1 voor cold staking</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Selecteer Alles</translation>
     </message>
     <message>
         <source>no</source>
@@ -731,115 +667,12 @@ voor bewijs van Inzet</translation>
         <translation>Kan variëren van +/- 1 byte per invoer.</translation>
     </message>
     <message>
-        <source>Transactions with higher priority are more likely to get included into a block.</source>
-        <translation>Transacties met hogere prioriteit zullen waarschijnlijk eerder in een blok opgenomen worden.</translation>
-    </message>
-    <message>
-        <source>This label turns red, if the priority is smaller than "medium".</source>
-        <translation>Dit label wordt rood, als de prioriteit lager is dan "medium".</translation>
-    </message>
-    <message>
-        <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
-        <translation>Dit label wordt rood, als een ontvanger een hoeveelheid kleiner dan %1 ontvangt.</translation>
-    </message>
-    <message>
-        <source>Can vary +/- %1 upgo per input.</source>
-        <translation>Kan +/-%1 upgo per invoer variëren.</translation>
-    </message>
-    <message>
         <source>(no label)</source>
         <translation>(geen label)</translation>
     </message>
     <message>
-        <source>change from %1 (%2)</source>
-        <translation>wijzig van %1 (%2)</translation>
-    </message>
-    <message>
         <source>(change)</source>
         <translation>(wijzig)</translation>
-    </message>
-</context>
-<context>
-    <name>CoinControlPgoWidget</name>
-    <message>
-        <source>Dialog</source>
-        <translation>Dialoog</translation>
-    </message>
-    <message>
-        <source>Transaction Details</source>
-        <translation>Transactie details</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
-    </message>
-    <message>
-        <source>PGO:</source>
-        <translation>PGO:</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Kwantiteit:</translation>
-    </message>
-    <message>
-        <source>Fee:</source>
-        <translation>Fee:</translation>
-    </message>
-    <message>
-        <source>Amount</source>
-        <translation>Bedrag</translation>
-    </message>
-    <message>
-        <source>Label</source>
-        <translation>Label</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Adres</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Type</translation>
-    </message>
-    <message>
-        <source>Date</source>
-        <translation>Datum</translation>
-    </message>
-    <message>
-        <source>Confirmations</source>
-        <translation>Bevestigingen</translation>
-    </message>
-    <message>
-        <source>CheckBox</source>
-        <translation>Selectievakje</translation>
-    </message>
-    <message>
-        <source>Bytes:</source>
-        <translation>Bytes:</translation>
-    </message>
-    <message>
-        <source>Dust:</source>
-        <translation>Dust:</translation>
-    </message>
-    <message>
-        <source>Change:</source>
-        <translation>Wisselgeld:</translation>
-    </message>
-    <message>
-        <source>After Fee: </source>
-        <translation>Na kosten</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>Annuleren</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>Akkoord</translation>
     </message>
 </context>
 <context>
@@ -849,36 +682,12 @@ voor bewijs van Inzet</translation>
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>Title</source>
-        <translation>Tietel</translation>
+        <source>Owner address (optional, if empty a new address will be created)</source>
+        <translation>Eigenaarsadres (optioneel, indien leeg wordt er een nieuw adres aangemaakt)</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
-    </message>
-    <message>
-        <source>Owner Address (optional, if empty a new address will be created)</source>
-        <translation>Eigenaarsadres (optioneel, indien leeg zal er een nieuw adres aangemaakt worden)</translation>
-    </message>
-    <message>
-        <source>List of delegated balance by address</source>
-        <translation>Lijst van gedelegeerde balans gesorteerd op adres</translation>
-    </message>
-    <message>
-        <source>Total</source>
-        <translation>Totaal</translation>
-    </message>
-    <message>
-        <source>Unconfirmed balance will not be shown</source>
-        <translation>Onbevestigde saldi zal niet getoond worden</translation>
-    </message>
-    <message>
-        <source>No balance delegated</source>
-        <translation>Geen balans gedelegeerd</translation>
+        <source>Total Staking:</source>
+        <translation>Totaal Staking:</translation>
     </message>
     <message>
         <source>Cold Staking</source>
@@ -893,30 +702,12 @@ voor bewijs van Inzet</translation>
         <translation>Delegatie</translation>
     </message>
     <message>
-        <source>You can delegate your PGOs and let a hot node (24/7 online node)
-stake in your behalf, keeping the keys in a secure place offline.</source>
-        <translation>Je kan jouw PGOs delegeren en een hot node (24/7 online node)
-laten staken in jouw naam, waardoor de sleutels in een veilige offline opslag bewaard worden.</translation>
-    </message>
-    <message>
-        <source>Add owner address</source>
-        <translation>Eigenaarsadres toevoegen</translation>
-    </message>
-    <message>
-        <source>Delegate or Accept PGO delegation</source>
-        <translation>Delegeer of Accepteer PGO delegatie</translation>
-    </message>
-    <message>
         <source>Delegate</source>
         <translation>Delegeer</translation>
     </message>
     <message>
         <source>Clear All</source>
         <translation>Alles wissen</translation>
-    </message>
-    <message>
-        <source>Add the staking address</source>
-        <translation>Staking-adres toevoegen</translation>
     </message>
     <message>
         <source>Delegated balance history</source>
@@ -935,20 +726,72 @@ laten staken in jouw naam, waardoor de sleutels in een veilige offline opslag be
         <translation>Fout bij laden delegaties: %1</translation>
     </message>
     <message>
+        <source>You can delegate your PGOs, letting a hot node (24/7 online node)
+stake on your behalf, while you keep the keys securely offline.</source>
+        <translation>Je kan jouw PGOs delegeren en een hot node (24/7 online node)
+voor je laten staken, terwijl je de sleutels veilig offline opslag bewaart.</translation>
+    </message>
+    <message>
+        <source>Enter owner address</source>
+        <translation>Voer eigenaarsadres in</translation>
+    </message>
+    <message>
+        <source>Accept PGO delegation / Delegate PGO</source>
+        <translation>Accepteer PGO delegatie / Delegeer PGO</translation>
+    </message>
+    <message>
+        <source>Cold Staking address</source>
+        <translation>Cold Staking adres</translation>
+    </message>
+    <message>
+        <source>No receive addresses available, you can go to the receive screen and create some there!</source>
+        <translation>Geen ontvangstadressen beschikbare, je kan naar het ontvangstscherm gaan en daar enkele toevoegen!</translation>
+    </message>
+    <message>
         <source>No contacts available, you can go to the contacts screen and add some there!</source>
         <translation>Geen beschikbare contacten, je kan naar het contactscherm gaan en daar enkele toevoegen!</translation>
+    </message>
+    <message>
+        <source>Cannot send delegation, wallet locked</source>
+        <translation>Kan delegatie niet versturen, portemonnee vergrendeld</translation>
     </message>
     <message>
         <source>Cold staking is networkely disabled</source>
         <translation>Cold staking is uitgeschakeld</translation>
     </message>
     <message>
+        <source>Coin Control</source>
+        <translation>Munt Controle</translation>
+    </message>
+    <message>
+        <source>Select %1 outputs to delegate.</source>
+        <translation>Selecteer %1 uitvoeren om te delegeren.</translation>
+    </message>
+    <message>
+        <source>Create Cold Staking Address</source>
+        <translation>Cold Staking Adres aanmaken</translation>
+    </message>
+    <message>
+        <source>Creates an address to receive delegated coins
+and stake them on their owner's behalf.</source>
+        <translation>Maak een adres aan om muntdelegaties te ontvangen
+en deze te kunnen staken namens hun eigenaar.</translation>
+    </message>
+    <message>
+        <source>My Cold Staking Addresses</source>
+        <translation>Mijn Cold Staking Adressen</translation>
+    </message>
+    <message>
+        <source>List your own cold staking addresses.</source>
+        <translation>Oplijsten van uw cold staking adressen.</translation>
+    </message>
+    <message>
         <source>Invalid entry</source>
         <translation>Ongeldige invoer</translation>
     </message>
     <message>
-        <source>Invalid entry, minimum delegable amount is 10 PGO</source>
-        <translation>Ongeldige invoer, de minimum gedelegeerde hoeveelheid is 10 PGO</translation>
+        <source>Invalid entry, minimum delegable amount is </source>
+        <translation>Ongeldige invoer, minimaal te delegeren bedrag is</translation>
     </message>
     <message>
         <source>Owner address invalid</source>
@@ -987,8 +830,12 @@ Wil je verdergaan?</translation>
         <translation>Gedelegeerde Munten</translation>
     </message>
     <message>
-        <source>You don't have any PGO to select.</source>
-        <translation>Je hebt geen PGO om te selecteren</translation>
+        <source>You don't have any %1 to select.</source>
+        <translation>Je hebt geen %1 om te selecteren.</translation>
+    </message>
+    <message>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation>Kan deze actie niet uitvoeren, portemonnee vergrendeld</translation>
     </message>
     <message>
         <source>URI copied to clipboard</source>
@@ -1070,14 +917,6 @@ address</source>
         <source>Form</source>
         <translation>Formulier</translation>
     </message>
-    <message>
-        <source>Bob Allen</source>
-        <translation>Bob Allen</translation>
-    </message>
-    <message>
-        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
-        <translation>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</translation>
-    </message>
 </context>
 <context>
     <name>DashboardWidget</name>
@@ -1090,40 +929,20 @@ address</source>
         <translation>Transacties</translation>
     </message>
     <message>
-        <source>You can see here the history of your account</source>
-        <translation>U kunt hier de geschiedenis van uw account bekijken</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>Waarschuwing</translation>
-    </message>
-    <message>
-        <source>No transactions</source>
-        <translation>Geen transacties</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
-    </message>
-    <message>
         <source>Staking Rewards</source>
         <translation>Staking Beloningen</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
     </message>
     <message>
         <source>Staking statistics</source>
         <translation>Staking statistieken</translation>
     </message>
     <message>
-        <source>PGO</source>
-        <translation>PGO</translation>
+        <source>View your account's history</source>
+        <translation>Bekijk de geschiedenis van uw account</translation>
     </message>
     <message>
-        <source>zPGO</source>
-        <translation>zPGO</translation>
+        <source>How to get PGO</source>
+        <translation>Hoe PGO verkrijgen</translation>
     </message>
     <message>
         <source>Sort by</source>
@@ -1146,60 +965,8 @@ address</source>
         <translation>Filter volgens</translation>
     </message>
     <message>
-        <source>LabelText</source>
-        <translation>LabelText</translation>
-    </message>
-    <message>
-        <source>You can view your account's history</source>
-        <translation>U kunt de geschiedenis van uw account bekijken</translation>
-    </message>
-    <message>
         <source>Amount of PGO and zPGO staked.</source>
         <translation>Hoeveelheid aan gestaked PGO en zPGO.</translation>
-    </message>
-    <message>
-        <source>All</source>
-        <translation>Alle</translation>
-    </message>
-    <message>
-        <source>Received</source>
-        <translation>Ontvangen</translation>
-    </message>
-    <message>
-        <source>Sent</source>
-        <translation>Verstuurd</translation>
-    </message>
-    <message>
-        <source>Mined</source>
-        <translation>Mined</translation>
-    </message>
-    <message>
-        <source>Minted</source>
-        <translation>Minted</translation>
-    </message>
-    <message>
-        <source>MN reward</source>
-        <translation>MN beloning</translation>
-    </message>
-    <message>
-        <source>To yourself</source>
-        <translation>Naar jezelf</translation>
-    </message>
-    <message>
-        <source>Cold stakes</source>
-        <translation>Cold stakes</translation>
-    </message>
-    <message>
-        <source>Hot stakes</source>
-        <translation>Hot stakes</translation>
-    </message>
-    <message>
-        <source>Delegated</source>
-        <translation>Gedelegeerd</translation>
-    </message>
-    <message>
-        <source>Delegations</source>
-        <translation>Delegaties</translation>
     </message>
     <message>
         <source>Please wait until the wallet is fully synced to see your correct balance</source>
@@ -1208,10 +975,6 @@ address</source>
     <message>
         <source>No transactions yet</source>
         <translation>Nog geen transacties</translation>
-    </message>
-    <message>
-        <source>How to get PGO or zPGO</source>
-        <translation>Hoe PGO of zPGO verkrijgen</translation>
     </message>
     <message>
         <source>You can verify the staking activity in the status bar at the top right of the wallet.
@@ -1251,83 +1014,12 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>Transaction Details</source>
-        <translation>Transactie details</translation>
-    </message>
-    <message>
-        <source>Text Label</source>
-        <translation>Text Label</translation>
+        <source>OK</source>
+        <translation>Akkoord</translation>
     </message>
     <message>
         <source>CANCEL</source>
         <translation>Annuleren</translation>
-    </message>
-    <message>
-        <source>SAVE</source>
-        <translation>Opslaan</translation>
-    </message>
-</context>
-<context>
-    <name>DenomGenerationDialog</name>
-    <message>
-        <source>Form</source>
-        <translation>Formulier</translation>
-    </message>
-    <message>
-        <source>Transaction Details</source>
-        <translation>Transactie details</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
-    </message>
-    <message>
-        <source>This will unlock your wallet fully, so that anyone with access to it can spend until the wallet is closed or locked again.</source>
-        <translation>Hiermee wordt uw portemonnee volledig ontgrendeld, zodat iedereen die er toegang toe heeft, deze kan uitgeven totdat de portemonnee weer wordt gesloten of vergrendeld.</translation>
-    </message>
-    <message>
-        <source>5000</source>
-        <translation>5000</translation>
-    </message>
-    <message>
-        <source>100</source>
-        <translation>100</translation>
-    </message>
-    <message>
-        <source>10</source>
-        <translation>10</translation>
-    </message>
-    <message>
-        <source>1000</source>
-        <translation>1000</translation>
-    </message>
-    <message>
-        <source>50</source>
-        <translation>50</translation>
-    </message>
-    <message>
-        <source>500</source>
-        <translation>500</translation>
-    </message>
-    <message>
-        <source>5</source>
-        <translation>5</translation>
-    </message>
-    <message>
-        <source>1</source>
-        <translation>1</translation>
-    </message>
-    <message>
-        <source>Select All</source>
-        <translation>Selecteer Alles</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>Annuleren</translation>
-    </message>
-    <message>
-        <source>SAVE</source>
-        <translation>Opslaan</translation>
     </message>
 </context>
 <context>
@@ -1416,49 +1108,6 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
     </message>
 </context>
 <context>
-    <name>GovernancePage</name>
-    <message>
-        <source>Form</source>
-        <translation>Formulier</translation>
-    </message>
-    <message>
-        <source>GOVERNANCE</source>
-        <translation>BESTUUR</translation>
-    </message>
-    <message>
-        <source>Update Proposals</source>
-        <translation>Voorstellen Bijwerken</translation>
-    </message>
-    <message>
-        <source>Next super block:</source>
-        <translation>Volgende superblok:</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>Blocks to next super block:</source>
-        <translation>Blokken tot de volgende superblok:</translation>
-    </message>
-    <message>
-        <source>Days to budget payout (estimate):</source>
-        <translation>Dagen tot budgetuitbetaling (schatting):</translation>
-    </message>
-    <message>
-        <source>Allotted budget:</source>
-        <translation>Toegewezen budget:</translation>
-    </message>
-    <message>
-        <source>Budget left:</source>
-        <translation>Resterend budget:</translation>
-    </message>
-    <message>
-        <source>Masternodes count:</source>
-        <translation>Masternodes aantal:</translation>
-    </message>
-</context>
-<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
@@ -1499,6 +1148,10 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
     <message>
         <source>Show splash screen on startup (default: %u)</source>
         <translation>Toon splash scherm bij opstarten (standaard: %u)</translation>
+    </message>
+    <message>
+        <source>Hide QT staking charts on startup (default: %u)</source>
+        <translation>Verberg QT stakinggrafieken bij opstarten (standaard: %u)</translation>
     </message>
     <message>
         <source>Set language, for example "de_DE" (default: system locale)</source>
@@ -1617,16 +1270,12 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>user_masternode</source>
-        <translation>user_masternode</translation>
+        <source>Collateral tx not found</source>
+        <translation>Terugbetalingstransactie niet gevonden</translation>
     </message>
     <message>
-        <source>Address: 88.26.164.88:33003</source>
-        <translation>Adres: 88.26.164.88:33003</translation>
-    </message>
-    <message>
-        <source>Jan. 19, 2019</source>
-        <translation>Jan. 19, 2019</translation>
+        <source>Status: %1</source>
+        <translation>Status: %1</translation>
     </message>
 </context>
 <context>
@@ -1660,28 +1309,32 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
         <translation>Adres</translation>
     </message>
     <message>
-        <source>Create New Master Node Controller</source>
-        <translation>Creëer een Nieuwe Masternode Controller</translation>
+        <source>Create New Masternode Controller</source>
+        <translation>Creëer Nieuwe Masternode Controller</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100,000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Om een PENGOLINCOIN Masternode te maken moet u 100,000 PGO (de eenheid van PENGOLINCOIN) aan het netwerk wijden (deze munten zijn echter nog steeds van u en zullen nooit uw bezit verlaten). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;U kunt de node op elk gewenst moment deactiveren en de munten ontgrendelen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Om een PENGOLINCOIN Masternode te creëren moet u 10.000 PGO (de eenheid van PENGOLINCOIN) aan het netwerk wijden (deze munten zijn echter nog steeds van u en zullen nooit uw bezit verlaten). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;U kunt de node op elk gewenst moment deactiveren en de munten ontgrendelen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Set Masternode Name</source>
+        <translation>Stel de naam voor de Masternode in</translation>
+    </message>
+    <message>
+        <source>Set Masternode IP and Port</source>
+        <translation>Stel het IP-adres en de Poort voor de Masternode in</translation>
+    </message>
+    <message>
+        <source>Enter port</source>
+        <translation>Voer poort in</translation>
     </message>
     <message>
         <source>Make sure you have this amount of coins.</source>
         <translation>Zorg ervoor dat je deze hoeveelheid munten hebt.</translation>
     </message>
     <message>
-        <source>Set Master Node’s Name</source>
-        <translation>Masternode's Naam instellen</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 100,000 PGO will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Een transactie van 100,000 PGO zal gemaakt worden&lt;/p&gt;&lt;p&gt;naar een nieuw leeg adres in uw portemonnee.&lt;/p&gt;&lt;p&gt;Het adres is gelabeld onder de masternode's naam.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Set Master Node’s IP and port</source>
-        <translation>Masternode's IP en poort instellen</translation>
     </message>
     <message>
         <source>Address of the node that must always be online running the actual master node.</source>
@@ -1690,22 +1343,6 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
     <message>
         <source>Enter IP address</source>
         <translation>Voer IP-adres in</translation>
-    </message>
-    <message>
-        <source>Enter Port</source>
-        <translation>Voer Poort In</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>Annuleren</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>Akkoord</translation>
-    </message>
-    <message>
-        <source>e.g user_masternode</source>
-        <translation>e.g user_masternode</translation>
     </message>
     <message>
         <source>NEXT</source>
@@ -1724,12 +1361,42 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
         <translation>IP of poort kan niet leeg zijn</translation>
     </message>
     <message>
-        <source>Invalid port number</source>
-        <translation>Ongeldige poortnummer</translation>
+        <source>Invalid IP address</source>
+        <translation>Ongeldig IP-adres</translation>
     </message>
     <message>
-        <source>Prepare master node failed..</source>
-        <translation>Voorbereiden masternode mislukt..</translation>
+        <source>Unknown error</source>
+        <translation>Ongekend probleem</translation>
+    </message>
+    <message>
+        <source>Prepare master node failed.
+
+%1
+</source>
+        <translation>Voorbereiden masternode mislukt.
+
+%1
+</translation>
+    </message>
+    <message>
+        <source>Invalid collateral output index</source>
+        <translation>Ongeldige Collaterale Outputindex</translation>
+    </message>
+    <message>
+        <source>Master node created! Wait %1 confirmations before starting it.</source>
+        <translation>Masternode gecreëerd! Wacht op %1 bevestigingen vooraleer je het start. </translation>
+    </message>
+    <message>
+        <source>Cannot send collateral transaction.
+
+%1</source>
+        <translation>Kan geen collaterale transactie versturen.
+
+%1</translation>
+    </message>
+    <message>
+        <source>walletModel not set</source>
+        <translation>walletModel niet ingesteld</translation>
     </message>
     <message>
         <source>Invalid masternode.conf file</source>
@@ -1740,56 +1407,8 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
         <translation>Fout opgelopen bij het parsen van het masternode.conf bestand</translation>
     </message>
     <message>
-        <source>Invalid collaterall output index</source>
-        <translation>Ongeldige Collaterale Outputindex</translation>
-    </message>
-    <message>
-        <source>Master node created!</source>
-        <translation>Masternode aangemaakt!</translation>
-    </message>
-    <message>
         <source>masternode.conf file doesn't exists</source>
         <translation>masternode.conf bestand bestaat niet</translation>
-    </message>
-    <message>
-        <source>The recipient address is not valid, please recheck.</source>
-        <translation>Het ontvangstadres is niet geldig, controleer deze.</translation>
-    </message>
-    <message>
-        <source>The amount to pay must be larger than 0.</source>
-        <translation>Het te betalen bedrag moet groter zijn dan 0.</translation>
-    </message>
-    <message>
-        <source>The amount exceeds your balance.</source>
-        <translation>Het bedrag overschrijdt uw saldo.</translation>
-    </message>
-    <message>
-        <source>The total exceeds your balance when the %1 transaction fee is included.</source>
-        <translation>Het totaal overschrijdt uw saldo wanneer de transactievergoeding %1 is inbegrepen.</translation>
-    </message>
-    <message>
-        <source>Duplicate address found, can only send to each address once per send operation.</source>
-        <translation>Dubbel adres gevonden, kan alleen per keer per verzendoperatie naar elk adres versturen.</translation>
-    </message>
-    <message>
-        <source>Transaction creation failed!</source>
-        <translation>Transactie creatie mislukt!</translation>
-    </message>
-    <message>
-        <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>De transactie is afgewezen! Dit kan gebeuren als sommige munten in je portemonnee al waren uitgegeven, zoals als je een kopie van de wallet.dat en munten in de kopie waren besteed maar niet gemarkeerd zoals hier besteed.</translation>
-    </message>
-    <message>
-        <source>Error: The wallet was unlocked only to anonymize coins.</source>
-        <translation>Fout: De portemonnee was alleen geopend om munten te anonimiseren.</translation>
-    </message>
-    <message>
-        <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
-        <translation>Een vergoeding %1 keer hoger dan %2 per kB wordt beschouwd als een zwaar hoge vergoeding.</translation>
-    </message>
-    <message>
-        <source>Error: The wallet was unlocked only to anonymize coins. Unlock canceled.</source>
-        <translation>Fout: De portemonnee was alleen geopend om munten te anonimiseren. Ontgrendelen geannuleerd.</translation>
     </message>
 </context>
 <context>
@@ -1799,16 +1418,12 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
+        <source>Start All</source>
+        <translation>Alles starten</translation>
     </message>
     <message>
-        <source>No active Master Node yet</source>
-        <translation>Nog geen actieve Master Node</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
+        <source>Start Inactive/s</source>
+        <translation>Start Inactieve/s</translation>
     </message>
     <message>
         <source>Masternodes</source>
@@ -1841,6 +1456,10 @@ en stemmen over het treasury systeem met een periodieke beloning.</translation>
         <translation>Info</translation>
     </message>
     <message>
+        <source>Please wait until the node is fully synced</source>
+        <translation>Wacht tot de node volledig gesynchroniseerd is</translation>
+    </message>
+    <message>
         <source>Start Masternode</source>
         <translation>Start Masternode</translation>
     </message>
@@ -1851,14 +1470,70 @@ en stemmen over het treasury systeem met een periodieke beloning.</translation>
 </translation>
     </message>
     <message>
-        <source>Cannot start masternode, the collateral transaction has not been accepted by the network.
-Please wait few more minutes.</source>
-        <translation>Kan de masternode niet starten, de collaterale transactie is niet geaccepteerd door het netwerk.
-Gelieve nog enkele minuten te wachten.</translation>
+        <source>Cannot edit masternode, wallet locked</source>
+        <translation>Kan de masternode niet bewerken, portemonnee vergrendeld</translation>
+    </message>
+    <message>
+        <source>Cannot start masternode, the collateral transaction has not been confirmed by the network yet.
+Please wait few more minutes (masternode collaterals require %1 confirmations).</source>
+        <translation>Kan de masternode niet starten, de collaterale transactie is nog niet bevestigd door het netwerk.
+Gelieve nog enkele minuten te wachten (het onderpand van een masternode vereist %1 bevestigingen).</translation>
+    </message>
+    <message>
+        <source>Background task is being executed, please wait</source>
+        <translation>Achtergrondopdracht wordt nu uitgevoerd, even geduld</translation>
+    </message>
+    <message>
+        <source>Start ALL masternodes failed</source>
+        <translation>Opstarten van ALLE masternodes mislukt</translation>
+    </message>
+    <message>
+        <source>Wallet unlock cancelled</source>
+        <translation>Portemonnee ontgrendeling geannuleerd </translation>
+    </message>
+    <message>
+        <source>Cannot perform Masternodes start</source>
+        <translation>Kan geen Masternode opstart uitvoeren</translation>
+    </message>
+    <message>
+        <source>%1 Masternodes failed to start, %2 started</source>
+        <translation>%1 Masternodes niet succesvol opgestart, %2 opgestart</translation>
+    </message>
+    <message>
+        <source>All Masternodes started!</source>
+        <translation>Alle Masternodes zijn opgestart!</translation>
+    </message>
+    <message>
+        <source>Cannot show Masternode information, wallet locked</source>
+        <translation>Kan geen Masternode-informatie tonen, portemonnee vergrendeld</translation>
+    </message>
+    <message>
+        <source>Masternode data copied to the clipboard.</source>
+        <translation>Masternodegegevens gekopieerd naar het klembord</translation>
+    </message>
+    <message>
+        <source>Not enough balance to create a masternode, 100,000 %1 required.</source>
+        <translation>Niet genoeg balans om een masternode te creëren, 100,000 %1 vereist.</translation>
     </message>
     <message>
         <source>Remote Masternode Data</source>
         <translation>Remote Masternodegegevens</translation>
+    </message>
+    <message>
+        <source>What is a Masternode?</source>
+        <translation>Wat is een Masternode?</translation>
+    </message>
+    <message>
+        <source>FAQ explaining what Masternodes are</source>
+        <translation>FAQ legt uit wat Masternodes zijn</translation>
+    </message>
+    <message>
+        <source>What is a Controller?</source>
+        <translation>Wat is een Controller?</translation>
+    </message>
+    <message>
+        <source>FAQ explaining what is a Masternode Controller</source>
+        <translation>FAQ legt uit wat een Masternode Controller is</translation>
     </message>
     <message>
         <source>You are just about to export the required data to run a Masternode
@@ -1875,11 +1550,8 @@ op een externe server aan uw klembord.
 
 U hoeft alleen de gegevens in het pengolincoin.conf bestand te plakken
 van uw externe server en start deze vervolgens de Masternode met
-deze controller portemonnee (selecteer de Masternode in de lijst en druk op "start").</translation>
-    </message>
-    <message>
-        <source>Masternode exported!, check your clipboard</source>
-        <translation>Masternode geëxporteerd, controleer uw klembord</translation>
+deze controller portemonnee (selecteer de Masternode in de lijst en druk op "start").
+</translation>
     </message>
     <message>
         <source>Delete Masternode</source>
@@ -1908,8 +1580,8 @@ Weet je het zeker?</translation>
         <translation>masternode.conf bestand bestaat niet</translation>
     </message>
     <message>
-        <source>Not enough balance to create a masternode, 100,000 PGO required.</source>
-        <translation>Niet genoeg balans om een masternode te creëren, 100,000 PGO vereist.</translation>
+        <source>Cannot create Masternode controller, wallet locked</source>
+        <translation>Kan geen Masternode controller aanmaken, portemonnee vergrendeld</translation>
     </message>
     <message>
         <source>Error creating masternode</source>
@@ -1923,24 +1595,16 @@ Weet je het zeker?</translation>
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>Master Node Information</source>
-        <translation>Masternode Informatie</translation>
+        <source>Masternode Information</source>
+        <translation>Masternode informatie</translation>
     </message>
     <message>
         <source>Public Key:</source>
         <translation>Publieke Sleutel:</translation>
     </message>
     <message>
-        <source>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</source>
-        <translation>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</translation>
-    </message>
-    <message>
         <source>Address: </source>
         <translation>Adres:</translation>
-    </message>
-    <message>
-        <source>127.0.0.2:43223</source>
-        <translation>127.0.0.2:43223</translation>
     </message>
     <message>
         <source>Collaterall tx id:</source>
@@ -1959,12 +1623,16 @@ Weet je het zeker?</translation>
         <translation>Status:</translation>
     </message>
     <message>
-        <source>MISSING</source>
-        <translation>ONTBREKEND</translation>
+        <source>Export data to run the Masternode on a remote server</source>
+        <translation>Exporteer gegevens om de Masternode op een externe server uit te voeren</translation>
     </message>
     <message>
-        <source>Export data to run the Master Node on a remote server</source>
-        <translation>Exporteer data om de Masternode uit te voeren op een externe server</translation>
+        <source>Masternode public key copied</source>
+        <translation>Masternode publieke sleutel gekopieerd</translation>
+    </message>
+    <message>
+        <source>Collateral tx id copied</source>
+        <translation>ID terugbetalingstransactie gekopieerd</translation>
     </message>
 </context>
 <context>
@@ -1973,24 +1641,54 @@ Weet je het zeker?</translation>
         <source>Form</source>
         <translation>Formulier</translation>
     </message>
-    <message>
-        <source>Savings</source>
-        <translation>Besparingen</translation>
-    </message>
-    <message>
-        <source>Jan. 19, 2019</source>
-        <translation>Jan. 19, 2019</translation>
-    </message>
-    <message>
-        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
-        <translation>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</translation>
-    </message>
 </context>
 <context>
     <name>NavMenuWidget</name>
     <message>
         <source>Form</source>
         <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>HOME
+</source>
+        <translation>THUIS
+</translation>
+    </message>
+    <message>
+        <source>SEND
+</source>
+        <translation>VERSTUREN
+</translation>
+    </message>
+    <message>
+        <source>RECEIVE
+</source>
+        <translation>ONTVANGEN
+</translation>
+    </message>
+    <message>
+        <source>CONTACTS
+</source>
+        <translation>CONTACTEN
+</translation>
+    </message>
+    <message>
+        <source>MASTER
+NODES</source>
+        <translation>MASTER
+NODES</translation>
+    </message>
+    <message>
+        <source>COLD
+STAKING</source>
+        <translation>COLD
+STAKING</translation>
+    </message>
+    <message>
+        <source>SETTINGS
+</source>
+        <translation>INSTELLINGEN
+</translation>
     </message>
     <message>
         <source>V 1.0.0</source>
@@ -2049,10 +1747,6 @@ Weet je het zeker?</translation>
     <message>
         <source>Form</source>
         <translation>Formulier</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
@@ -2189,7 +1883,7 @@ https://www.transifex.com/pengolincoin-project/pengolincoin-project-translations
     </message>
     <message>
         <source>Stake split threshold:</source>
-        <translation>Inzet splitdrempel:</translation>
+        <translation>Stake splitsdrempel:</translation>
     </message>
     <message>
         <source>Connect to the PENGOLINCOIN network through a SOCKS5 proxy.</source>
@@ -2410,17 +2104,6 @@ Type: %3
 Adres: %4
 </translation>
     </message>
-    <message>
-        <source>A fatal error occurred. PENGOLINCOIN can no longer continue safely and will quit.</source>
-        <translation>Een kritieke fout is opgelopen. PENGOLINCOIN kan niet langer veilig uitgevoerd worden en zal afsluiten.</translation>
-    </message>
-</context>
-<context>
-    <name>PWidget</name>
-    <message>
-        <source>Wallet locked, you need to unlock it to perform this action</source>
-        <translation>Portemonnee vergrendeld, je moet deze ontgrendelen om deze actie te kunnen uitvoeren</translation>
-    </message>
 </context>
 <context>
     <name>PaymentServer</name>
@@ -2527,199 +2210,9 @@ Adres: %4
         <source>Ping Time</source>
         <translation>Pingtijd</translation>
     </message>
-</context>
-<context>
-    <name>PrivacyWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Formulier</translation>
-    </message>
-    <message>
-        <source>Title</source>
-        <translation>Tietel</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
-    </message>
-    <message>
-        <source>No active Master Node yet</source>
-        <translation>Nog geen actieve Master Node</translation>
-    </message>
-    <message>
-        <source>Privacy</source>
-        <translation>Privacy</translation>
-    </message>
-    <message>
-        <source>Convert</source>
-        <translation>Converteren</translation>
-    </message>
-    <message>
-        <source>Mint</source>
-        <translation>Munt</translation>
-    </message>
-    <message>
-        <source>Minting zPGO anonymizes your PGO by removing any
-transaction history, making transactions untraceable </source>
-        <translation>Munten van zPGO anonimiseert uw PGO door het verwijderen van eender welke
-transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</translation>
-    </message>
-    <message>
-        <source>Mint new zPGO or convert back to PGO</source>
-        <translation>Munt nieuwe zPGO of converteer deze terug in PGO</translation>
-    </message>
-    <message>
-        <source>Last Zerocoin Movements</source>
-        <translation>Laatste Zerocoin Bewegingen</translation>
-    </message>
-    <message>
-        <source>No transactions yet</source>
-        <translation>Nog geen transacties</translation>
-    </message>
-    <message>
-        <source>Mint zPGO</source>
-        <translation>Munt zPGO</translation>
-    </message>
-    <message>
-        <source>Enter amount of PGO to mint into zPGO</source>
-        <translation>Vul de hoeveelheid PGO in die u omslaan in zPGO</translation>
-    </message>
-    <message>
-        <source>Convert back to PGO</source>
-        <translation>Converteer terug naar PGO</translation>
-    </message>
-    <message>
-        <source>Enter amount of zPGO to convert back into PGO</source>
-        <translation>Voer de hoeveelheed zPGO in om terug te converteren naar PGO</translation>
-    </message>
-    <message>
-        <source>Zerocoin</source>
-        <translation>Zerocoin</translation>
-    </message>
-    <message>
-        <source>zPGO is currently undergoing maintenance</source>
-        <translation>zPGO ondergaat momenteel onderhoud</translation>
-    </message>
-    <message>
-        <source>You need to unlock the wallet to be able to %1 zPGO</source>
-        <translation>Je moet de portemonnee ontgrendelen om in staat zijn om %1 zPGO</translation>
-    </message>
-    <message>
-        <source>convert</source>
-        <translation>converteer</translation>
-    </message>
-    <message>
-        <source>mint</source>
-        <translation>munt</translation>
-    </message>
-    <message>
-        <source>Invalid value</source>
-        <translation>Ongeldige waarde</translation>
-    </message>
-    <message>
-        <source>zPGO minted successfully</source>
-        <translation>zPGO munting succesvol</translation>
-    </message>
-    <message>
-        <source>zPGO converted back to PGO</source>
-        <translation>zPGO terug geconverteerd naar PGO</translation>
-    </message>
-    <message>
-        <source>You don't have any PGO to select.</source>
-        <translation>Je hebt geen PGO om te selecteren</translation>
-    </message>
-    <message>
-        <source>Rescan Mints</source>
-        <translation>Muntingen opnieuw scannen</translation>
-    </message>
-    <message>
-        <source>Your zerocoin mints are going to be scanned from the blockchain from scratch</source>
-        <translation>Uw zerocoin muntingen zullen van de blockchain vanaf nul worden gescanned</translation>
-    </message>
-    <message>
-        <source>Reset Spent Zerocoins</source>
-        <translation>Bestede Zerocoins Resetten</translation>
-    </message>
-    <message>
-        <source>Your zerocoin spends are going to be scanned from the blockchain from scratch</source>
-        <translation>Uw zerocoin bestedingen zullen van de blockchain vanaf nul worden gescanned</translation>
-    </message>
-    <message>
-        <source>Total %1</source>
-        <translation>Totaal %1</translation>
-    </message>
-</context>
-<context>
-    <name>ProposalFrame</name>
-    <message>
-        <source>Open proposal page in browser</source>
-        <translation>Voorstelpagina in browser openen</translation>
-    </message>
-    <message>
-        <source> remaining payment(s).</source>
-        <translation>resterende betaling(en).</translation>
-    </message>
-    <message>
-        <source>Yes:</source>
-        <translation>Voor:</translation>
-    </message>
-    <message>
-        <source>Abstain:</source>
-        <translation>Onthouden:</translation>
-    </message>
-    <message>
-        <source>No:</source>
-        <translation>Tegen:</translation>
-    </message>
-    <message>
-        <source>A proposal URL can be used for phishing, scams and computer viruses. Open this link only if you trust the following URL.
-</source>
-        <translation>Een voorstel-URL kan worden gebruikt voor phishing, oplichting en computervirussen. Open deze link alleen als u de volgende URL vertrouwt.
-</translation>
-    </message>
-    <message>
-        <source>Open link</source>
-        <translation>Link openen</translation>
-    </message>
-    <message>
-        <source>Copy link</source>
-        <translation>Link kopiëren</translation>
-    </message>
-    <message>
-        <source>Wallet Locked</source>
-        <translation>Portemonnee Vergrendeld</translation>
-    </message>
-    <message>
-        <source>You must unlock your wallet to vote.</source>
-        <translation>Je moet uw portemonnee ontgrendelen om te stemmen.</translation>
-    </message>
-    <message>
-        <source>Do you want to vote %1 on</source>
-        <translation>Wil je stemmen op %1</translation>
-    </message>
-    <message>
-        <source>using all your masternodes?</source>
-        <translation>al je masternodes gebruiken?</translation>
-    </message>
-    <message>
-        <source>Proposal Hash:</source>
-        <translation>Voorstel Hash:</translation>
-    </message>
-    <message>
-        <source>Proposal URL:</source>
-        <translation>Voorstel URL:</translation>
-    </message>
-    <message>
-        <source>Confirm Vote</source>
-        <translation>Stem bevestigen</translation>
-    </message>
-    <message>
-        <source>Vote Results</source>
-        <translation>Stemresultaten</translation>
+        <source>NodeID</source>
+        <translation>NodeID</translation>
     </message>
 </context>
 <context>
@@ -2729,7 +2222,7 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <translation>Bedrag</translation>
     </message>
     <message>
-        <source>Enter a PENGOLINCOIN address (e.g. %1)</source>
+        <source>Enter PENGOLINCOIN address (e.g. %1)</source>
         <translation>Voer een PENGOLINCOIN adres in (b.v. %1)</translation>
     </message>
     <message>
@@ -2757,10 +2250,6 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <translation>BLOOM</translation>
     </message>
     <message>
-        <source>ZK_BLOOM</source>
-        <translation>ZK_BLOOM</translation>
-    </message>
-    <message>
         <source>UNKNOWN</source>
         <translation>ONBEKEND</translation>
     </message>
@@ -2775,6 +2264,10 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
     <message>
         <source>%1 ms</source>
         <translation>%1 ms</translation>
+    </message>
+    <message>
+        <source>A fatal error occurred. PENGOLINCOIN can no longer continue safely and will quit.</source>
+        <translation>Een kritieke fout is opgelopen. PENGOLINCOIN kan niet langer veilig uitgevoerd worden en zal afsluiten.</translation>
     </message>
     <message>
         <source>PENGOLINCOIN Core</source>
@@ -2799,6 +2292,170 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
     <message>
         <source>PENGOLINCOIN Core didn't yet exit safely...</source>
         <translation>PENGOLINCOIN Core is nog niet veilig afgesloten...</translation>
+    </message>
+    <message>
+        <source>Contact</source>
+        <translation>Contacteer</translation>
+    </message>
+    <message>
+        <source>Receiving</source>
+        <translation>Ontvangen</translation>
+    </message>
+    <message>
+        <source>Delegator</source>
+        <translation>Delegator</translation>
+    </message>
+    <message>
+        <source>Delegable</source>
+        <translation>Delegeerbaar</translation>
+    </message>
+    <message>
+        <source>Cold Staking</source>
+        <translation>Cold Staking</translation>
+    </message>
+    <message>
+        <source>Cold Staking Contact</source>
+        <translation>Cold Staking Contact</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Verborgen</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Ongekend</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation>Contacten</translation>
+    </message>
+    <message>
+        <source>Staking Contacts</source>
+        <translation>Staking Contacten</translation>
+    </message>
+    <message>
+        <source>Date desc</source>
+        <translation>Datum aflopend</translation>
+    </message>
+    <message>
+        <source>Date asc</source>
+        <translation>Datum oplopend</translation>
+    </message>
+    <message>
+        <source>Amount desc</source>
+        <translation>Aantal aflopend</translation>
+    </message>
+    <message>
+        <source>Amount asc</source>
+        <translation>Aantal oplopend</translation>
+    </message>
+    <message>
+        <source>Received</source>
+        <translation>Ontvangen</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>Verstuurd</translation>
+    </message>
+    <message>
+        <source>Mined</source>
+        <translation>Mined</translation>
+    </message>
+    <message>
+        <source>Minted</source>
+        <translation>Minted</translation>
+    </message>
+    <message>
+        <source>MN reward</source>
+        <translation>MN beloning</translation>
+    </message>
+    <message>
+        <source>To yourself</source>
+        <translation>Naar jezelf</translation>
+    </message>
+    <message>
+        <source>Cold stakes</source>
+        <translation>Cold stakes</translation>
+    </message>
+    <message>
+        <source>Hot stakes</source>
+        <translation>Hot stakes</translation>
+    </message>
+    <message>
+        <source>Delegated</source>
+        <translation>Gedelegeerd</translation>
+    </message>
+    <message>
+        <source>Delegations</source>
+        <translation>Delegaties</translation>
+    </message>
+    <message>
+        <source>by Label</source>
+        <translation>per Label</translation>
+    </message>
+    <message>
+        <source>by Address</source>
+        <translation>per Adres</translation>
+    </message>
+    <message>
+        <source>by Date</source>
+        <translation>per Datum</translation>
+    </message>
+    <message>
+        <source>Jan</source>
+        <translation>Jan</translation>
+    </message>
+    <message>
+        <source>Feb</source>
+        <translation>Feb</translation>
+    </message>
+    <message>
+        <source>Mar</source>
+        <translation>Mrt</translation>
+    </message>
+    <message>
+        <source>Apr</source>
+        <translation>Apr</translation>
+    </message>
+    <message>
+        <source>May</source>
+        <translation>Mei</translation>
+    </message>
+    <message>
+        <source>Jun</source>
+        <translation>Jun</translation>
+    </message>
+    <message>
+        <source>Jul</source>
+        <translation>Jul</translation>
+    </message>
+    <message>
+        <source>Aug</source>
+        <translation>Aug</translation>
+    </message>
+    <message>
+        <source>Sep</source>
+        <translation>Sep</translation>
+    </message>
+    <message>
+        <source>Oct</source>
+        <translation>Okt</translation>
+    </message>
+    <message>
+        <source>Nov</source>
+        <translation>Nov</translation>
+    </message>
+    <message>
+        <source>Dec</source>
+        <translation>Dec</translation>
+    </message>
+    <message>
+        <source>Address with no label</source>
+        <translation>Adres zonder label</translation>
     </message>
 </context>
 <context>
@@ -3215,24 +2872,16 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <translation>Dialoog</translation>
     </message>
     <message>
-        <source>Transaction Details</source>
-        <translation>Transactie details</translation>
+        <source>My Address</source>
+        <translation>Mijn Adres</translation>
     </message>
     <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
-    </message>
-    <message>
-        <source>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
+        <source>COPY</source>
+        <translation>KOPIEER</translation>
     </message>
     <message>
         <source>CANCEL</source>
         <translation>Annuleren</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>Akkoord</translation>
     </message>
 </context>
 <context>
@@ -3242,12 +2891,8 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
-        <source>No address</source>
-        <translation>Geen adres</translation>
+        <source>Scan the QR code or copy the address to receive PGO</source>
+        <translation>Scan de QR code of kopieer het adres om PGO te ontvangen</translation>
     </message>
     <message>
         <source>Add Label</source>
@@ -3266,24 +2911,28 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <translation>Ontvangen</translation>
     </message>
     <message>
-        <source>Scan the QR code or copy the address to receive PGO.</source>
-        <translation>Scan de QR code of kopieer het adres om PGO te ontvangen.</translation>
+        <source>My Addresses</source>
+        <translation>Mijn Adressen</translation>
     </message>
     <message>
-        <source>No address </source>
-        <translation>Geen adres</translation>
+        <source>List your own addresses</source>
+        <translation>Oplijsten van uw adressen</translation>
     </message>
     <message>
-        <source>No available address, try unlocking the wallet</source>
-        <translation>Geen beschikbaar adres, probeer de portemonnee te ontgrendelen</translation>
+        <source>Create Request</source>
+        <translation>Verzoek aanmaken</translation>
+    </message>
+    <message>
+        <source>Request payment with a fixed amount</source>
+        <translation>Verzoek tot betaling met een vaste waarde</translation>
     </message>
     <message>
         <source>Error generating address</source>
         <translation>Genereren van adres misgelopen</translation>
     </message>
     <message>
-        <source>Change Label</source>
-        <translation>Wijzig Label</translation>
+        <source>Edit Label</source>
+        <translation>Label wijzigen</translation>
     </message>
     <message>
         <source>Edit Address Label</source>
@@ -3298,12 +2947,20 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <translation>Fout bij bewaren adreslabel</translation>
     </message>
     <message>
+        <source>Cannot create new address, wallet locked</source>
+        <translation>Kan geen nieuw adres aanmaken, portemonnee vergrendeld</translation>
+    </message>
+    <message>
         <source>New address created</source>
         <translation>Nieuw adres gecreëerd</translation>
     </message>
     <message>
         <source>Address copied</source>
         <translation>Adres gekopieerd</translation>
+    </message>
+    <message>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation>Kan deze actie niet uitvoeren, portemonnee vergrendeld</translation>
     </message>
     <message>
         <source>URI copied to clipboard</source>
@@ -3356,14 +3013,6 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <translation>Dialoog</translation>
     </message>
     <message>
-        <source>New Request Payment</source>
-        <translation>Nieuw Betalingsverzoek</translation>
-    </message>
-    <message>
-        <source>Lorem ipsum dolor sit amet, consectur cling elit, sed do </source>
-        <translation>Lorem ipsum dolor sit amet, consectur cling elit, sed do </translation>
-    </message>
-    <message>
         <source>Amount</source>
         <translation>Bedrag</translation>
     </message>
@@ -3372,12 +3021,12 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <translation>PGO</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
+        <source>Instead of sharing only a PENGOLINCOIN address, you can create a payment request, bundling up more information</source>
+        <translation>In plaats van een PENGOLINCOIN-adres te delen, kunt u een betalingsverzoek creëren dat meer informatie bundelt.</translation>
     </message>
     <message>
-        <source>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
+        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
     </message>
     <message>
         <source>COPY ADDRESS</source>
@@ -3392,28 +3041,24 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <translation>Annuleren</translation>
     </message>
     <message>
-        <source>REQUEST</source>
-        <translation>VERZOEK</translation>
-    </message>
-    <message>
-        <source>Instead of only sharing a PENGOLINCOIN address, you can create a Payment Request message which bundles up more information than is contained in just a PENGOLINCOIN address.</source>
-        <translation>In plaats van een PENGOLINCOIN-adres te delen, kunt u een bericht voor een betalingsverzoek maken dat meer informatie bundelt dan alleen in een PENGOLINCOIN-adres.</translation>
-    </message>
-    <message>
         <source>Label</source>
         <translation>Label</translation>
-    </message>
-    <message>
-        <source>Enter a label to be saved within the address</source>
-        <translation>Voer een label in dat bij het adres moet worden opgeslagen</translation>
     </message>
     <message>
         <source>Description (optional)</source>
         <translation>Omschrijving (optioneel)</translation>
     </message>
     <message>
-        <source>Add description </source>
-        <translation>Voeg beschrijving toe</translation>
+        <source>New Payment Request</source>
+        <translation>Nieuw Betalingsverzoek</translation>
+    </message>
+    <message>
+        <source>Enter a label for the address</source>
+        <translation>Voer een label in voor het adres</translation>
+    </message>
+    <message>
+        <source>Enter description</source>
+        <translation>Beschrijving toevoegen</translation>
     </message>
     <message>
         <source>Error</source>
@@ -3431,6 +3076,26 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <source>New Cold Staking Address</source>
         <translation>Nieuw Cold Staking Adres</translation>
     </message>
+    <message>
+        <source>Amount (optional)</source>
+        <translation>Bedrag (optioneel)</translation>
+    </message>
+    <message>
+        <source>Address label cannot be empty</source>
+        <translation>Adreslabel kan niet leeg zijn</translation>
+    </message>
+    <message>
+        <source>Invalid amount</source>
+        <translation>Ongeldige hoeveelheid</translation>
+    </message>
+    <message>
+        <source>Request for </source>
+        <translation>Verzoek voor</translation>
+    </message>
+    <message>
+        <source>Cold Staking Address Generated</source>
+        <translation>Colg Staking Adres gegenereerd</translation>
+    </message>
 </context>
 <context>
     <name>SendChangeAddressDialog</name>
@@ -3439,24 +3104,8 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <translation>Dialoog</translation>
     </message>
     <message>
-        <source>Transaction Details</source>
-        <translation>Transactie details</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
-    </message>
-    <message>
-        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</source>
-        <translation>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</translation>
-    </message>
-    <message>
         <source>CANCEL</source>
         <translation>Annuleren</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>Akkoord</translation>
     </message>
     <message>
         <source>Custom Change Address</source>
@@ -3466,6 +3115,22 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" PENGOLINCOIN address</source>
         <translation>De rest van de waarde die resulteert uit de ingangen minus de waarde van de uitgangen gaat naar het "wijzig" PENGOLINCOIN-adres</translation>
     </message>
+    <message>
+        <source>SAVE</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>RESET</source>
+        <translation>RESETTEN</translation>
+    </message>
+    <message>
+        <source>Invalid address</source>
+        <translation>Ongeldig adres</translation>
+    </message>
+    <message>
+        <source>Cannot use cold staking addresses for change</source>
+        <translation>Kan geen colg staking adressen gebruiken voor specie</translation>
+    </message>
 </context>
 <context>
     <name>SendCustomFeeDialog</name>
@@ -3474,44 +3139,32 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>Transaction Details</source>
-        <translation>Transactie details</translation>
-    </message>
-    <message>
-        <source>Customize the transaction fee at your to your liking, depending on the fee value your transaction will be included or not in the blockchain.</source>
-        <translation>Pas de transactiekosten naar wens aan, afhankelijk van de kostenwaarde die uw transactie wel of niet in de blockchain zal opnemen.</translation>
-    </message>
-    <message>
-        <source>Recomended</source>
+        <source>Recommended</source>
         <translation>Aanbevolen</translation>
+    </message>
+    <message>
+        <source>PGO/kilobyte</source>
+        <translation>PGO/kilobyte</translation>
     </message>
     <message>
         <source>0.00 KB</source>
         <translation>0.00 KB</translation>
     </message>
     <message>
-        <source>Custom</source>
-        <translation>Aangepast</translation>
+        <source>Customize the transaction fee, depending on the fee value your transaction might be included faster in the blockchain</source>
+        <translation>Pas de transactie aan, afhankelijk van de kostenwaarde zal uw transactie mogelijks sneller opgenomen worden in de blockchain</translation>
     </message>
     <message>
-        <source>Per kilobyte</source>
-        <translation>Per kilobyte</translation>
+        <source>Custom</source>
+        <translation>Aangepast</translation>
     </message>
     <message>
         <source>CANCEL</source>
         <translation>Annuleren</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>Akkoord</translation>
-    </message>
-    <message>
         <source>Customize Fee</source>
         <translation>Kost Aanpassen</translation>
-    </message>
-    <message>
-        <source>Customize the transaction fee, depending on the fee value your transaction will be included or not in the blockchain.</source>
-        <translation>Pas de transactiekosten aan, afhankelijk van de kostenwaarde die uw transactie wel of niet in de blockchain zal opnemen.</translation>
     </message>
     <message>
         <source>Normal</source>
@@ -3529,6 +3182,33 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <source>SAVE</source>
         <translation>Opslaan</translation>
     </message>
+    <message>
+        <source>Fee too high. Must be below: %1</source>
+        <translation>Kost te hoog. Moet lager zijn dan: %1</translation>
+    </message>
+    <message>
+        <source>Fee too low. Must be at least: %1</source>
+        <translation>Kost te laag. Moet minstens: %1 zijn</translation>
+    </message>
+</context>
+<context>
+    <name>SendMemoDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialoog</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>RESET</source>
+        <translation>RESETTEN</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
+    </message>
 </context>
 <context>
     <name>SendMultiRow</name>
@@ -3537,75 +3217,35 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
+        <source>Enter address</source>
+        <translation>Voeg adres toe</translation>
     </message>
     <message>
-        <source>Add address</source>
-        <translation>Adres toevoegen</translation>
+        <source>Address label (optional)</source>
+        <translation>Adreslabel (optioneel)</translation>
     </message>
     <message>
-        <source>Add description</source>
-        <translation>Beschrijving toevoegen</translation>
+        <source>Enter label</source>
+        <translation>Label toevoegen</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>SendWidget</name>
-    <message>
-        <source>Send</source>
-        <translation>Zenden</translation>
-    </message>
-    <message>
-        <source>You can transfer public coins (PGO) or private coins (zPGO)</source>
-        <translation>Je kan publieke munten (PGO) of private munten (zPGO) overdragen</translation>
-    </message>
-    <message>
-        <source>Select coin type to spend</source>
-        <translation>Selecteer munttype om te spenderen</translation>
-    </message>
-    <message>
-        <source>Enter a PENGOLINCOIN address or contact label</source>
-        <translation>Voer een PENGOLINCOIN-adres of contactlabel in</translation>
-    </message>
-    <message>
-        <source>Amount</source>
-        <translation>Bedrag</translation>
-    </message>
-    <message>
-        <source>Customize fee</source>
-        <translation>Kosten aanpassen</translation>
-    </message>
-    <message>
-        <source>Clear all</source>
-        <translation>Alles wissen</translation>
-    </message>
-    <message>
-        <source>Add recipient</source>
-        <translation>Voeg bestemmeling toe</translation>
-    </message>
-    <message>
-        <source>Reset to default</source>
-        <translation>Terugzetten naar standaardinstelling</translation>
-    </message>
-    <message>
-        <source>Total to send</source>
-        <translation>Totaal te versturen</translation>
-    </message>
-    <message>
-        <source>Send PGO</source>
-        <translation>PGO Versturen</translation>
-    </message>
-    <message>
-        <source>Send zPGO</source>
-        <translation>zPGO Versturen</translation>
-    </message>
     <message>
         <source>Total remaining from the selected UTXO</source>
         <translation>Totaal resterende van de geselecteerde UTXO</translation>
     </message>
     <message>
-        <source>Total remaining</source>
-        <translation>Totaal resterende</translation>
+        <source>Warning!</source>
+        <translation>Waarschuwing!</translation>
+    </message>
+    <message>
+        <source>The change address doesn't belong to this wallet.
+
+Do you want to continue?</source>
+        <translation>Het wisseladres behoort niet toe tot deze portemonnee.
+
+Wilt u verdergaan?</translation>
     </message>
     <message>
         <source>Customize Fee</source>
@@ -3620,6 +3260,10 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
         <translation>Ongeldige invoer, vorige invoeren moeten geldig zijn voordat je een nieuwe kan toevoegen</translation>
     </message>
     <message>
+        <source>Possibly spend coins delegated for cold-staking (currently available: %1</source>
+        <translation>Mogelijks besteedde munten gedelegeerd voor cold-staking (momenteel beschikbaar: %1</translation>
+    </message>
+    <message>
         <source>Invalid entry</source>
         <translation>Ongeldige invoer</translation>
     </message>
@@ -3630,10 +3274,6 @@ transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</transla
     <message>
         <source>Cannot send, wallet locked</source>
         <translation>Kan niet verzenden, portemonnee vergrendeld</translation>
-    </message>
-    <message>
-        <source>Cannot create transaction.</source>
-        <translation>Kan geen transactie aanmaken.</translation>
     </message>
     <message>
         <source>WARNING:
@@ -3648,60 +3288,8 @@ Deze munten zullen niet langer cold-staked zijn.</translation>
         <translation>Transactie verstuurd</translation>
     </message>
     <message>
-        <source>Spend Zerocoin</source>
-        <translation>Besteed Zerocoin</translation>
-    </message>
-    <message>
-        <source>zPGO is currently undergoing maintenance.</source>
-        <translation>zPGO wordt momenteel onderhouden.</translation>
-    </message>
-    <message>
-        <source>Coin control mint not found</source>
-        <translation>Muntcontrole munting niet gevonden</translation>
-    </message>
-    <message>
-        <source>Sending %1 to address %2
-</source>
-        <translation>Versturen van %1 naar adres %2
-</translation>
-    </message>
-    <message>
-        <source>Sending %1 to addresses:
-%2</source>
-        <translation>Versturen van %1 naar adressen:
-%2</translation>
-    </message>
-    <message>
-        <source>zPGO transaction sent!</source>
-        <translation>zPGO transactie verzonden!</translation>
-    </message>
-    <message>
-        <source>Version 1 zPGO require a security level of 100 to successfully spend.</source>
-        <translation>Versie 1 zPGO vereist een beveiligingsniveau van 100 om succesvol te besteden.</translation>
-    </message>
-    <message>
-        <source>Too much inputs (</source>
-        <translation>Teveel invoer (</translation>
-    </message>
-    <message>
-        <source>) needed.
-Maximum allowed: </source>
-        <translation>) vereist.
-Maximaal toegestaan:</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>
-Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te besteden bedrag verminderen.</translation>
-    </message>
-    <message>
         <source>Address label update failed for address: %1</source>
         <translation>Adreslabel bijwerken mislukt voor adres: %1</translation>
-    </message>
-    <message>
-        <source>Invalid change address</source>
-        <translation>Ongeldig wisseladres</translation>
     </message>
     <message>
         <source>Invalid URI</source>
@@ -3716,12 +3304,36 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Aangepaste Kost %1</translation>
     </message>
     <message>
-        <source>You don't have any PGO to select.</source>
-        <translation>Je hebt geen PGO om te selecteren</translation>
+        <source>Coin Control</source>
+        <translation>Munt Controle</translation>
     </message>
     <message>
-        <source>You don't have any zPGO in your balance to select.</source>
-        <translation>Je hebt geen zPGO in je balans om te selecteren.</translation>
+        <source>Select the source of the coins</source>
+        <translation>Selecteer de herkomst van de munten</translation>
+    </message>
+    <message>
+        <source>Change Address</source>
+        <translation>Wijzig adres</translation>
+    </message>
+    <message>
+        <source>Customize the change address</source>
+        <translation>Aangepast wisselgeldadres</translation>
+    </message>
+    <message>
+        <source>Open URI</source>
+        <translation>URI openen</translation>
+    </message>
+    <message>
+        <source>Parse a payment request</source>
+        <translation>Verwerk een betalingsverzoek</translation>
+    </message>
+    <message>
+        <source>Unlocked remaining</source>
+        <translation>Ontgrendeld resterende</translation>
+    </message>
+    <message>
+        <source>You don't have any %1 to select.</source>
+        <translation>Je hebt geen %1 om te selecteren.</translation>
     </message>
     <message>
         <source>No contacts available, you can go to the contacts screen and add some there!</source>
@@ -3767,44 +3379,28 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
-    </message>
-    <message>
-        <source>Backup Wallet </source>
-        <translation>Wallet Back-uppen</translation>
-    </message>
-    <message>
         <source>Change Wallet Passphrase</source>
         <translation>Wijzig Portemonnee Wachtwoord</translation>
-    </message>
-    <message>
-        <source>Keep your wallet safe doing regular backups, store your backup file externally.
-This option creates a wallet.dat file that can be used to recover your whole balance (transactions and addresses) from another device.</source>
-        <translation>Bewaar uw portemonnee veilig door middel van regelmatige back-ups, bewaar uw back-upbestand extern.
-Deze optie maakt een portemonnee.datbbestand aan dat kan worden gebruikt om uw volledige saldo (transacties en adressen) van een ander apparaat terug te krijgen.</translation>
-    </message>
-    <message>
-        <source>This will decrypt the whole wallet data and encrypt it back with the new passphrase.
-Remember to write it down and store it safely, otherwise you might lose access to your funds.</source>
-        <translation>Dit zal de gehele portemonneegegevens decrypteren en zal opnieuw encrypteren met een nieuwe wachtwoordzin.
-Vergeet deze niet op te schrijven en veilig te bewaren, anders verlies je mogelijks de toegang tot uw geld.</translation>
     </message>
     <message>
         <source>Where</source>
         <translation>Waar</translation>
     </message>
     <message>
-        <source>Set a folder location</source>
-        <translation>Maplocatie instellen</translation>
+        <source>Keep your wallet safe by doing regular backups and storing your backup file externally.
+This option creates a wallet.dat file that can be used to recover your whole balance (transactions and addresses) on another device</source>
+        <translation>Bewaar uw portemonnee veilig door middel van regelmatige back-ups, bewaar uw back-upbestand extern.
+Deze optie maakt een wallet.dat bestand aan dat gebruikt kan worden om uw volledige saldo (transacties en adressen) van een ander apparaat terug te krijgen</translation>
     </message>
     <message>
-        <source>Backup</source>
-        <translation>Back-up</translation>
+        <source>Select folder...</source>
+        <translation>Map Selecteren...</translation>
+    </message>
+    <message>
+        <source>This will decrypt the whole wallet data and encrypt it back with the new passphrase.
+Remember to write it down and store it safely, otherwise you might lose access to your funds</source>
+        <translation>Dit zal de gehele portemonneegegevens decrypteren en zal opnieuw encrypteren met een nieuwe wachtwoordzin.
+Vergeet deze niet op te schrijven en veilig te bewaren, anders verlies je mogelijks de toegang tot uw geld</translation>
     </message>
     <message>
         <source>Change Passphrase</source>
@@ -3838,28 +3434,18 @@ Vergeet deze niet op te schrijven en veilig te bewaren, anders verlies je mogeli
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
-    </message>
-    <message>
-        <source>Decrypt Address Result</source>
-        <translation>Decrypteer Adresresultaat</translation>
-    </message>
-    <message>
         <source>Import Address</source>
         <translation>Adres Importeren</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Leegmaken</translation>
-    </message>
-    <message>
         <source>BIP38 Tool</source>
         <translation>BIP38 Tool</translation>
+    </message>
+    <message>
+        <source>Encrypt your PENGOLINCOIN addresses (key pair actually) using BIP38 encryption.
+Using this mechanism you can share your keys without middle-man risk, only need to store your passphrase safely</source>
+        <translation>Encrypteer uw PENGOLINCOIN-adressen (met key pair) gebruikmakende van BIP38 versleuteling.
+Door gebruik te maken van dit mechanisme kan je jouw sleutels delen zonder het risico van een tussenpersoon, je moet enkel je wachtwoordzin veilig opbergen</translation>
     </message>
     <message>
         <source>Encrypt</source>
@@ -3882,10 +3468,6 @@ Vergeet deze niet op te schrijven en veilig te bewaren, anders verlies je mogeli
         <translation>Wachtwoord</translation>
     </message>
     <message>
-        <source>Enter a passphrase </source>
-        <translation>Voer wachtwoord in</translation>
-    </message>
-    <message>
         <source>Decrypted address result</source>
         <translation>Gedecrypteerd Adresresultaat</translation>
     </message>
@@ -3898,16 +3480,16 @@ Vergeet deze niet op te schrijven en veilig te bewaren, anders verlies je mogeli
         <translation>DECRYPTEER SLEUTEL</translation>
     </message>
     <message>
-        <source>Enter a PENGOLINCOIN address</source>
-        <translation>Voeg een PENGOLINCOIN adres toe</translation>
+        <source>PENGOLINCOIN address</source>
+        <translation>PENGOLINCOIN adres</translation>
     </message>
     <message>
-        <source>Add address</source>
-        <translation>Adres toevoegen</translation>
+        <source>Enter address</source>
+        <translation>Voeg adres toe</translation>
     </message>
     <message>
-        <source>Write a message</source>
-        <translation>Schrijf een bericht</translation>
+        <source>Enter passphrase</source>
+        <translation>Voer wachtwoordzin in</translation>
     </message>
     <message>
         <source>Encrypted Key</source>
@@ -3920,6 +3502,10 @@ Vergeet deze niet op te schrijven en veilig te bewaren, anders verlies je mogeli
     <message>
         <source>CLEAR ALL</source>
         <translation>WIS ALLES</translation>
+    </message>
+    <message>
+        <source>Enter a passphrase</source>
+        <translation>Voer wachtwoordzin in</translation>
     </message>
     <message>
         <source>CLEAR</source>
@@ -3990,8 +3576,8 @@ Vergeet deze niet op te schrijven en veilig te bewaren, anders verlies je mogeli
         <translation>Fout bij toevoegen van sleutel aan de portemonnee</translation>
     </message>
     <message>
-        <source>Successfully added pgoate key to the wallet</source>
-        <translation>Geheime sleutel succesvol toegevoegd aan de portemonnee</translation>
+        <source>Successfully added private key to the wallet</source>
+        <translation>Privésleutel succesvol toegevoegd aan de portemonnee</translation>
     </message>
 </context>
 <context>
@@ -3999,10 +3585,6 @@ Vergeet deze niet op te schrijven en veilig te bewaren, anders verlies je mogeli
     <message>
         <source>Form</source>
         <translation>Formulier</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
     </message>
     <message>
         <source>Console</source>
@@ -4013,12 +3595,16 @@ Vergeet deze niet op te schrijven en veilig te bewaren, anders verlies je mogeli
         <translation>Console invoer</translation>
     </message>
     <message>
-        <source>Command Line Options </source>
+        <source>Open Debug File</source>
+        <translation>Open debugbestand</translation>
+    </message>
+    <message>
+        <source>Command Line Options</source>
         <translation>Command Line Opties</translation>
     </message>
     <message>
-        <source>Open Debug File</source>
-        <translation>Open debugbestand</translation>
+        <source>Clear history</source>
+        <translation>Geschiedenis verwijderen</translation>
     </message>
     <message>
         <source>Cannot open debug file.
@@ -4050,12 +3636,8 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
+        <source>Hide stake charts in the dashboard</source>
+        <translation>Verberg stakegrafieken in het dashboard</translation>
     </message>
     <message>
         <source>Reset to default</source>
@@ -4107,18 +3689,113 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
     </message>
 </context>
 <context>
-    <name>SettingsFaqWidget</name>
+    <name>SettingsExportCSV</name>
     <message>
         <source>Form</source>
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
+        <source>Export Accounting</source>
+        <translation>Exporteer Accounting</translation>
     </message>
     <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
+        <source>Export your wallet's accounting data to a csv file.</source>
+        <translation>Exporteer je portemonnee's accountinggegevens naar een csv bestand.</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Waar</translation>
+    </message>
+    <message>
+        <source>Select folder...</source>
+        <translation>Map Selecteren...</translation>
+    </message>
+    <message>
+        <source>Export Address Book</source>
+        <translation>Adreslijst Exporteren</translation>
+    </message>
+    <message>
+        <source>Export CSV</source>
+        <translation>CSV Exporteren</translation>
+    </message>
+    <message>
+        <source>Export Address List</source>
+        <translation>Exporteer Adreslijst</translation>
+    </message>
+    <message>
+        <source>PENGOLINCOIN_tx_csv_export(*.csv)</source>
+        <translation>PENGOLINCOIN_tx_csv_export(*.csv)</translation>
+    </message>
+    <message>
+        <source>PENGOLINCOIN_addresses_csv_export(*.csv)</source>
+        <translation>PENGOLINCOIN_addresses_csv_export(*.csv)</translation>
+    </message>
+    <message>
+        <source>Please select a folder to export the csv file first.</source>
+        <translation>Selecteer eerst een map om het csv te exporteren te exporteren.</translation>
+    </message>
+    <message>
+        <source>Confirmed</source>
+        <translation>Bevestigd</translation>
+    </message>
+    <message>
+        <source>Watch-only</source>
+        <translation>Watch-only</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Label</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Exporting Successful
+The transaction history was successfully saved to %1.</source>
+        <translation>Export Succesvol
+De transactiegeschiedenis is succesvol bewaard in %1.</translation>
+    </message>
+    <message>
+        <source>Exporting Failed
+There was an error trying to save the transaction history to %1.</source>
+        <translation>Export Mislukt
+Er is een fout opgetreden om de transactiegeschiedenis te bewaren naar %1.</translation>
+    </message>
+    <message>
+        <source>No available addresses to export under the selected filter</source>
+        <translation>Geen beschikbare adressen om te exporteren onder de geselecteerde filter</translation>
+    </message>
+    <message>
+        <source>Exporting Successful
+The address book was successfully saved to %1.</source>
+        <translation>Export Succesvol
+Het adresboek is succesvol bewaard in %1.</translation>
+    </message>
+    <message>
+        <source>Exporting Failed
+There was an error trying to save the address list to %1. Please try again.</source>
+        <translation>Export Mislukt
+Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Probeer het nogmaals.</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsFaqWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>1) What is PENGOLINCOIN?</source>
@@ -4129,38 +3806,8 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
         <translation>2) Waarom is mijn PGO niet besteedbaar?</translation>
     </message>
     <message>
-        <source>3) PENGOLINCOIN privacy? What is Zerocoin (zPGO)?</source>
-        <translation>3) PENGOLINCOIN privacy? Wat is Zerocoin (zPGO)?</translation>
-    </message>
-    <message>
-        <source>4) Why are my zPGO unspendable?</source>
-        <translation>4) Waarom is mijn zPGO niet besteedbaar?</translation>
-    </message>
-    <message>
-        <source>5) Why did my wallet convert the balance
-    into zPGO automatically?</source>
-        <translation>5) Waarom heeft mijn portemonnee mijn balans
-    automatisch naar zPGO geconverteerd?</translation>
-    </message>
-    <message>
-        <source>6) How do I receive PGO/zPGO?</source>
-        <translation>6) Hoe ontvang ik PGO/zPGO?</translation>
-    </message>
-    <message>
-        <source>7) How do I stake PGO/zPGO?</source>
-        <translation>7) Hoe stake ik PGO/zPGO?</translation>
-    </message>
-    <message>
-        <source>8) Where I should go if I need support?</source>
-        <translation>8) Waar moet ik heen gaan als ik ondersteuning nodig heb?</translation>
-    </message>
-    <message>
-        <source>9) What is a Master Node?</source>
-        <translation>9) Wat is een Masternode?</translation>
-    </message>
-    <message>
-        <source>10) What is a Master Node Controller?</source>
-        <translation>10) Wat is een Master Node Controller?</translation>
+        <source>https://pengolincoin.xyz/</source>
+        <translation>https://pengolincoin.xyz/</translation>
     </message>
     <message>
         <source>1</source>
@@ -4169,36 +3816,6 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
     <message>
         <source>What is PENGOLINCOIN?</source>
         <translation>Wat is PENGOLINCOIN?</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           PENGOLINCOIN is a form of digital online money using blockchain technology
-                           that can be easily transferred globally, instantly, and with near
-                           zero fees.  PENGOLINCOIN incorporates market leading security &amp;
-                           privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement ZeroCoin(zPGO) and Zerocoin staking.
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           PENGOLINCOIN utilizes a Proof of Stake (PoS) consensus system algorithm,
-                           allowing all owners of PENGOLINCOIN to participate in earning block rewards
-                           while securing the network with full node wallets, as well as to
-                           run Masternodes to create and vote on proposals.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           PENGOLINCOIN is een vorm van digitaal online geld dat gebruik maakt van blockchain technologie.
-                           die gemakkelijk wereldwijd kan worden overgebracht, onmiddellijk en met bijna
-                           geen kosten.  PENGOLINCOIN omvat marktleidende beveiliging &amp;
-                           privacy en is ook de eerste PoS (Proof of Stake) Cryptovaluta
-                           om ZeroCoin (zPGO) en Zerocoin staking te implementeren.
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           PENGOLINCOIN gebruikt een Proof of Stake (PoS) consensussysteemalgoritme,
-                           waardoor alle eigenaren van PENGOLINCOIN kunnen deelnemen aan het verdienen van blokbeloningen
-                           en tegelijkertijd het netwerk te beveiligen met volledige node portemonnees, en ook om
-                           Masternodes uit te voeren en om voorstellen op te stellen en daarover te stemmen.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </translation>
     </message>
     <message>
         <source>2</source>
@@ -4233,226 +3850,62 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
         <translation>3</translation>
     </message>
     <message>
-        <source>PENGOLINCOIN privacy? What is Zerocoin (zPGO)?</source>
-        <translation>PENGOLINCOIN privacy? Wat is Zerocoin (zPGO)?</translation>
+        <source>How do I stake PGO?</source>
+        <translation>Hoe stake ik PGO?</translation>
     </message>
     <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           zPGO is an optional privacy-centric method of coin mixing on the
-                           PENGOLINCOIN blockchain. Basically all your transactions cannot be tracked
-                           on to any block explorer. You can read more about the technicals in the
-                           &lt;a style='color: #88edff' href='https://pengolincoin.xyz/zpgo/'&gt;
-                           "PENGOLINCOIN Zerocoin (zPGO) Technical Paper"&lt;/a&gt;.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           zPGO is een optionele privacy-gerichte methode om munten te mengen op de
-                           PENGOLINCOIN blockchain. In principe kunnen al uw transacties niet worden gevolgd
-                           op enige block explorer. U kunt meer lezen over de technische gegevens in de
-                           &lt;a style='color: #88edff' href='https://pengolincoin.xyz/zpgo/'&gt;
-                           "PENGOLINCOIN Zerocoin (zPGO) Technische Paper"&lt;/a&gt;.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li align="justify" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You must have a balance of PENGOLINCOIN with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (pengolincoin-cli); the command &lt;span style=" font-style:italic;"&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li align="justify" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Zorg ervoor dat uw portemonnee volledig gesynchroniseerd is en je op de juiste versie zit. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Je moet een balans van PENGOLINCOIN hebben met een minimum van 600 bevestigingen. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Uw portemonnee moet steeds online en ontgrendeld blijven voor stakingsdoeleinden. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Van zodra al deze stappen gevolgd zijn, zou staking ingeschakeld moeten zijn. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Je kan de stakingsstatus controleren door over het pakketicoontje te gaan gaan met je muis. Deze staat op de linker van de portemonnee interface. Dit pakketje zal oplichten en zal &amp;quot;Staking Inschakeld&amp;quot; vermelden om aan te geven dat staking actief is. Als je gebruik maakt van de command line interface (pengolincoin-cli); het commando &lt;span style=" font-style:italic;"&gt;getstakingstatus&lt;/span&gt; zal bevestigen dat staking actief is. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>4</source>
         <translation>4</translation>
     </message>
     <message>
-        <source>Why are my zPGO unspendable?</source>
-        <translation>Waarom is mijn zPGO niet besteedbaar?</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           After minting, zPGO will require 20 confirmations as well as 1
-                           additional mint of the same denomination on the network to
-                           become eligible for spending.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           Na het muntenheeft zPGO 20 bevestigingen nodig, evenals 1
-                          extra munt van dezelfde denominatie op het netwerk om
-                           in aanmerking komen voor uitgaven.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </translation>
-    </message>
-    <message>
         <source>5</source>
         <translation>5</translation>
-    </message>
-    <message>
-        <source>Why did my wallet convert the balance into zPGO automatically?</source>
-        <translation>Waarom heeft mijn portemonnee mijn balans automatisch naar zPGO geconverteerd?</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           By default the PENGOLINCOIN wallet will convert 10% of your entire PGO
-                           balance to zPGO to assist the network. If you do not wish to
-                           stake zPGO or take advantage of the privacy benefit it brings,
-                           you can disable the automatic minting in your PENGOLINCOIN wallet by
-                           going to Settings-&gt;Options and deselecting “Enable zPGO Automint”.
-                           If you are not making use of the PENGOLINCOIN-QT or GUI you can simply open
-                           your pengolincoin.conf file and add &lt;i&gt;enablezeromint=0&lt;/i&gt; Without the quotation
-                           marks and restart your wallet to disable automint.&lt;/p&gt;
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           You can read more about zPGO in the
-                           &lt;a style='color: #88edff' href='https://pengolincoin.xyz/zpgo/'&gt; "PENGOLINCOIN Zerocoin (zPGO) Technical Paper"&lt;/a&gt;.
-                           If you would like to keep and stake your zPGO, please read the "How do I stake"
-                           section of the FAQ below.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           Standaard zal de PENGOLINCOIN portemonnee 10% van uw gehele PGO-balans omzetten
-                          naar zPGO om het netwerk te helpen. Als u niet wenst om
-                           zPGO te staken of voordeel te halen uit het privacyvoordeel dat dit oplevert,
-                           kan je deze automatische omzetting uitschakelen in je PENGOLINCOIN portemonnee door
-                           naar Instellingen &gt; Opties te gaan en dan “Schakel zPGO Automuntering in” te deselecteren.
-                           Als je geen gebruik maakt van de PENGOLINCOIN-QT of GUI kan je simpelweg
-                           je pengolincoin.conf bestand openen en er &lt;i&gt;"enablezeromint=0" aan toevoegen&lt;/i&gt; Zonder de aanhaling
-                           en je portemonnee herstarten om automuntering uit te schakelen.&lt;/p&gt;
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           Je kan meer lezen over zPGO in de
-                           &lt;a style='color: #88edff' href='https://pengolincoin.xyz/zpgo/'&gt; "PENGOLINCOIN Zerocoin (zPGO) Technische Paper"&lt;/a&gt;.
-                           Als u uw zPGO wilt behouden en staken, lees dan de "Hoe stake ik"
-                           sectie in onderstaande FAQ.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </translation>
     </message>
     <message>
         <source>6</source>
         <translation>6</translation>
     </message>
     <message>
-        <source>How do I receive PGO/zPGO?</source>
-        <translation>Hoe ontvang ik PGO/zPGO?</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           zPGO can be spent and sent to any PENGOLINCOIN address. The receiver will
-                           receive standard PENGOLINCOIN but the origin of the PENGOLINCOIN is anonymized by the zPGO Protocol.
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           If you want more zPGO you will need to mint your balance in the “Privacy” tab.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           zPGO kan worden uitgegeven en verzonden naar elk PENGOLINCOIN-adres. De ontvanger zal
-                           gewone PENGOLINCOIN ontvangen, maar de oorsprong van de PENGOLINCOIN is geanonimiseerd door het zPGO-protocol
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           Als u meer zPGO wilt, moet u uw balans op mint zetten in de "Privacy" tab.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </translation>
-    </message>
-    <message>
-        <source>7</source>
-        <translation>7</translation>
-    </message>
-    <message>
-        <source>How do I stake PGO/zPGO?</source>
-        <translation>Hoe stakz ik PGO/zPGO?</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           To Stake PENGOLINCOIN:
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           &lt;ol&gt;&lt;li&gt;
-                           Make sure your wallet is completely synchronized and you are using the latest release.
-                           &lt;li&gt;
-                           You must have a balance of PENGOLINCOIN with a minimum of 21 confirmations.
-                           &lt;li&gt;
-                           Your wallet must stay online and be unlocked for anonymization and staking purposes.
-                           &lt;li&gt;
-                           Once all those steps are followed staking should be enabled.
-                           &lt;li&gt;
-                           You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state "Staking Enabled" to indicate it is staking.  Using the command line interface (pengolincoin-cli); the command &lt;i&gt;getstakingstatus&lt;/i&gt; will confirm that staking is active.
-                           &lt;/li&gt;&lt;/ol&gt;
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           To Stake zPGO:
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           &lt;ol&gt;&lt;li&gt;
-                           Make sure your wallet is completely synchronized and you are using the latest release.
-                           &lt;li&gt;
-                           Your newly minted or existing zPGO balance must have a minimum of 200 confirmations.
-                           &lt;li&gt;
-                           Your wallet must stay online and be unlocked for anonymization and staking purposes.
-                           Staking should now be enabled.
-                           &lt;/li&gt;&lt;/ol&gt;
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           Om PENGOLINCOIN te Staken:
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           &lt;ol&gt;&lt;li&gt;
-                           Zorg ervoor dat uw portemonnee volledig gesynchroniseerd is en dat u de laatste versie gebruikt.
-                           &lt;li&gt;
-                           U moet een saldo van PENGOLINCOIN hebben met een minimum van 21 bevestigingen.
-                           &lt;li&gt;
-                           Uw portemonnee moet online blijven en worden ontgrendeld voor anonimisering en staking-doeleinden.
-                           &lt;li&gt;
-                           Zodra al deze stappen zijn gevolgd, zal het staken worden ingeschakeld.
-                           &lt;li&gt;
-                           U kunt de status van de staking in de portemonnee zien door op het pictogram in de rij linksboven in de portemonnee-interface te bewegen. Het pakket zal oplichten en zal "Staking Ingeschakeld" aangeven om aan te geven dat het pakket in de portemonnee is geplaatst. Met behulp van de opdrachtregel-interface (pengolincoin-cli); het commando &lt;i&gt;getstakingstatus&lt;/i&gt; zal bevestigen dat de staking actief is.
-                           &lt;/li&gt;&lt;/ol&gt;
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           Om zPGO te Staken:
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           &lt;ol&gt;&lt;li&gt;
-                            Zorg ervoor dat uw portemonnee volledig gesynchroniseerd is en dat u de laatste versie gebruikt.
-                           &lt;li&gt;
-                           Uw nieuw gemunte of bestaande zPGO balans moet minimaal 200 bevestigingen hebben.
-                           &lt;li&gt;
-                           Uw portemonnee moet online blijven en worden ontgrendeld voor anonimisering en staking-doeleinden.
-                           Het Staken zou nu ingeschakeld moeten zijn
-                           &lt;/li&gt;&lt;/ol&gt;
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </translation>
-    </message>
-    <message>
-        <source>8</source>
-        <translation>8</translation>
-    </message>
-    <message>
-        <source>Where I should go if I need support?</source>
+        <source>Where should I go if I need support?</source>
         <translation>Waar moet ik heen gaan als ik ondersteuning nodig heb?</translation>
     </message>
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #88edff' href='https://Discord.pengolincoin.xyz'&gt;
+                           &lt;a style='color: #b088ff' href='https://discord.pengolincoin.xyz'&gt;
                            #support in our Discord&lt;/a&gt;.
-                           If you prefer to submit a ticket, One can be
-                           &lt;a style='color: #88edff' href='https://PENGOLINCOIN.FreshDesk.com'&gt;
+                           If you prefer to submit a ticket, You can do so at
+                           &lt;a style='color: #b088ff' href='https://PENGOLINCOIN.freshdesk.com'&gt;
                            our Freshdesk support site&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            We hebben ondersteuningskanalen in de meeste van onze officiële chatgroepen, bijvoorbeeld
-                           &lt;a style='color: #88edff' href='https://Discord.pengolincoin.xyz'&gt;
+                           &lt;a style='color: #b088ff' href='https://discord.pengolincoin.xyz'&gt;
                            #support in onze Discord&lt;/a&gt;.
-                           Als u liever een ticket indient, kan men dat
-                           &lt;a style='color: #88edff' href='https://PENGOLINCOIN.FreshDesk.com'&gt;
-                           op onze Freshdesk support site&lt;/a&gt;.
+                           Als u liever een ticket indient, kan jedat
+                           &lt;a style='color: #b088ff' href='https://PENGOLINCOIN.freshdesk.com'&gt;
+                           op onze Freshdesk ondersteuningssite.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </translation>
     </message>
     <message>
-        <source>9</source>
-        <translation>9</translation>
+        <source>What is a Masternode?</source>
+        <translation>Wat is een Masternode?</translation>
     </message>
     <message>
-        <source>What is a Master Node?</source>
-        <translation>Wat is een Masternode</translation>
+        <source>What is a Masternode Controller?</source>
+        <translation>Wat is een Masternode Controller</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the 100,000 PGO collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet(s) and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Een Masternode Controller portemonnee is waar de 10.000 PGO onderpand zich kan bevinden tijdens een Controller-Remote masternode setup. Het is een portemonnee die de remote masternode portemonnee(s) kan activeren en waarmee u uw ondergepande munten offline kunt houden terwijl de remote masternode online blijft. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>
@@ -4500,7 +3953,7 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            Een masternode is een computer met een volledige node PENGOLINCOIN core portemonnee met een
-                           vereiste van 100,000 PGO onderpand om extra diensten te kunnen verlenen
+                           vereiste van 10.000 PGO onderpand om extra diensten te kunnen verlenen
                            aan het netwerk en in ruil daarvoor ontvangt u regelmatig een deel van de blokbeloning.
                            Deze diensten omvatten::
                            &lt;/p&gt;&lt;p align="justify"&gt;
@@ -4541,28 +3994,28 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
                          </translation>
     </message>
     <message>
-        <source>10</source>
-        <translation>10</translation>
-    </message>
-    <message>
-        <source>What is a Master Node Controller?</source>
-        <translation>Wat is een Masternode Controller?</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the 100,000 PGO collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet/s and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Een Masternode Controller portemonnee is waar de 100,000 PGO onderpand zich kan bevinden tijdens een Controller-Remote masternode setup. Het is een portemonnee die de remote masternode portemonnee(s) kan activeren en waarmee u uw ondergepande munten offline kunt houden terwijl de remote masternode online blijft. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Frequently Asked Questions</source>
         <translation>Frequently Asked Questions</translation>
     </message>
     <message>
-        <source>You can read more here</source>
-        <translation>Je kan er hier meer over lezen</translation>
+        <source>3) How do I stake PGO?</source>
+        <translation>3) Hoe stake ik PGO?</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>Sluit</translation>
+        <source>4) Where I should go if I need support?</source>
+        <translation>4) Waar moet ik heen gaan als ik ondersteuning nodig heb?</translation>
+    </message>
+    <message>
+        <source>5) What is a Masternode?</source>
+        <translation>5) Wat is een Masternode?</translation>
+    </message>
+    <message>
+        <source>6) What is a Masternode Controller?</source>
+        <translation>6) Wat is een Masternode Controller?</translation>
+    </message>
+    <message>
+        <source>You can read more here</source>
+        <translation>Je kan er hier meer over lezen</translation>
     </message>
 </context>
 <context>
@@ -4570,10 +4023,6 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
     <message>
         <source>Form</source>
         <translation>Formulier</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
     </message>
     <message>
         <source>Network Monitor</source>
@@ -4588,24 +4037,48 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
         <translation>Algemeen</translation>
     </message>
     <message>
-        <source>Client Version: </source>
+        <source>Client Version:</source>
         <translation>Client Versie:</translation>
+    </message>
+    <message>
+        <source>BerkeleyDB version:</source>
+        <translation>BerkeleyDB versie:</translation>
+    </message>
+    <message>
+        <source>Datadir:</source>
+        <translation>Datadir:</translation>
+    </message>
+    <message>
+        <source>Startup time:</source>
+        <translation>Opstarttijd:</translation>
+    </message>
+    <message>
+        <source>Connections:</source>
+        <translation>Verbindingen:</translation>
+    </message>
+    <message>
+        <source>Number of Masternodes:</source>
+        <translation>Aantal Masternodes:</translation>
+    </message>
+    <message>
+        <source>Current number of blocks:</source>
+        <translation>Huidige aantal blocks:</translation>
+    </message>
+    <message>
+        <source>Last block time:</source>
+        <translation>Laatste blocktijd:</translation>
+    </message>
+    <message>
+        <source>Last block hash:</source>
+        <translation>Laatste blockhash:</translation>
+    </message>
+    <message>
+        <source>Current number of transactions:</source>
+        <translation>Huidig aantal transacties:</translation>
     </message>
     <message>
         <source>User Agent:</source>
         <translation>User Agent:</translation>
-    </message>
-    <message>
-        <source>Using BerkeleyDB version:</source>
-        <translation>Gebruikt BerkeleyDB versie:</translation>
-    </message>
-    <message>
-        <source>Datadir: </source>
-        <translation>Datadir: </translation>
-    </message>
-    <message>
-        <source>Startup Time:  </source>
-        <translation>Starttijd:</translation>
     </message>
     <message>
         <source>Network</source>
@@ -4616,28 +4089,12 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
         <translation>Naam:</translation>
     </message>
     <message>
-        <source>Number Connections:</source>
-        <translation>Nummer Verbindingen:</translation>
-    </message>
-    <message>
         <source>Blockchain</source>
         <translation>Blockchain</translation>
     </message>
     <message>
-        <source>Current Number of Blocks:</source>
-        <translation>Huidige nummer van blokken:</translation>
-    </message>
-    <message>
-        <source>Last Block Time:</source>
-        <translation>Laatste Bloktijd:</translation>
-    </message>
-    <message>
         <source>Memory Pool</source>
         <translation>Geheugenpool</translation>
-    </message>
-    <message>
-        <source>Current Number of Transactions:</source>
-        <translation>Huidige nummer van transacties:</translation>
     </message>
     <message>
         <source>Main</source>
@@ -4671,16 +4128,12 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
         <source>Out:</source>
         <translation>Uit:</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>SettingsMainOptionsWidget</name>
     <message>
         <source>Form</source>
         <translation>Formulier</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
     </message>
     <message>
         <source>Window</source>
@@ -4689,10 +4142,6 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
     <message>
         <source>Customize the application window options</source>
         <translation>De opties van het toepassingsvenster aanpassen</translation>
-    </message>
-    <message>
-        <source>CheckBox</source>
-        <translation>Selectievakje</translation>
     </message>
     <message>
         <source>Reset to default</source>
@@ -4709,6 +4158,10 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
     <message>
         <source>Main</source>
         <translation>Hoofd</translation>
+    </message>
+    <message>
+        <source>Customize the main application options</source>
+        <translation>De opties van de hoofdtoepassing aanpassen</translation>
     </message>
     <message>
         <source>Size of database cache</source>
@@ -4776,12 +4229,12 @@ Weet u het zeker?
         <translation>Nieuwe ontvanger voor multisend</translation>
     </message>
     <message>
-        <source>Label (optional)</source>
-        <translation>Label (optioneel)</translation>
+        <source>Address Label (optional)</source>
+        <translation>Adreslabel (optioneel)</translation>
     </message>
     <message>
-        <source>Enter a label to add this address in your address book</source>
-        <translation>Voer een label in om dit adres toe te voegen aan uw adresboek.</translation>
+        <source>Enter label to be saved with this address</source>
+        <translation>Voer een label in dat bij het adres opgeslagen moet worden </translation>
     </message>
     <message>
         <source>Percentage</source>
@@ -4799,8 +4252,8 @@ Weet u het zeker?
         <translation>TextLabel</translation>
     </message>
     <message>
-        <source>No active Master Node yet</source>
-        <translation>Nog geen actieve Master Node</translation>
+        <source>N/A</source>
+        <translation>NB</translation>
     </message>
     <message>
         <source>CheckBox</source>
@@ -4839,12 +4292,20 @@ Weet u het zeker?
         <translation>WIS ALLES</translation>
     </message>
     <message>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation>Kan deze actie niet uitvoeren, portemonnee vergrendeld</translation>
+    </message>
+    <message>
         <source>Clear succeed</source>
         <translation>Wissen geslaagd</translation>
     </message>
     <message>
         <source>Clear all failed, could not locate address in wallet file</source>
         <translation>Alles wissen mislukt, kon geen adres terugvinden in het portemonnee bestand</translation>
+    </message>
+    <message>
+        <source>Cannot add multisend recipient, wallet locked</source>
+        <translation>Kan geen multisendontvanger toevoegen, portemonnee vergrendeld</translation>
     </message>
     <message>
         <source>The entered address: %1 is invalid.
@@ -4902,28 +4363,8 @@ Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternod
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Leegmaken</translation>
-    </message>
-    <message>
         <source>Sign/Verify Message</source>
         <translation>Onderteken/Verifiëer Bericht</translation>
-    </message>
-    <message>
-        <source>Enter a PENGOLINCOIN address or contact label</source>
-        <translation>Voer een PENGOLINCOIN-adres of contactlabel in</translation>
-    </message>
-    <message>
-        <source>Add address</source>
-        <translation>Adres toevoegen</translation>
     </message>
     <message>
         <source>Sign</source>
@@ -4934,6 +4375,10 @@ Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternod
         <translation>Verifiëer</translation>
     </message>
     <message>
+        <source>Write message here...</source>
+        <translation>Schrijf hier een bericht...</translation>
+    </message>
+    <message>
         <source>Select mode</source>
         <translation>Selecteer mode</translation>
     </message>
@@ -4942,8 +4387,12 @@ Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternod
         <translation>Bericht</translation>
     </message>
     <message>
-        <source>Write a message</source>
-        <translation>Schrijf een bericht</translation>
+        <source>PENGOLINCOIN address or contact label</source>
+        <translation>PENGOLINCOIN adres of contactlabel</translation>
+    </message>
+    <message>
+        <source>Enter address</source>
+        <translation>Voeg adres toe</translation>
     </message>
     <message>
         <source>Signature</source>
@@ -5029,28 +4478,12 @@ Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternod
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
-        <source>CheckBox</source>
-        <translation>Selectievakje</translation>
-    </message>
-    <message>
-        <source>RadioButton</source>
-        <translation>RadioButton</translation>
-    </message>
-    <message>
         <source>Reset to default</source>
         <translation>Terugzetten naar standaardinstelling</translation>
     </message>
     <message>
         <source>Discard changes</source>
         <translation>Wijzigingen ongedaan maken</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -5061,8 +4494,8 @@ Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternod
         <translation>Pas de interne portemonnee-opties aan</translation>
     </message>
     <message>
-        <source>Stake split threshold:</source>
-        <translation>Inzet splitdrempel:</translation>
+        <source>Stake split threshold</source>
+        <translation>Stake splitsdrempel</translation>
     </message>
     <message>
         <source>Spend unconfirmed change</source>
@@ -5077,16 +4510,24 @@ Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternod
         <translation>Pas de nodenetwerkopties aan</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
-        <translation>Proxy IP:</translation>
+        <source>Connect through SOCKS5 proxy (default proxy)</source>
+        <translation>Connecteer via SOCKS5 proxy (standaardproxy)</translation>
+    </message>
+    <message>
+        <source>Proxy IP</source>
+        <translation>Proxy IP</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Poort</translation>
+    </message>
+    <message>
+        <source>Enter port</source>
+        <translation>Voer poort in</translation>
     </message>
     <message>
         <source>Enter proxy IP</source>
         <translation>Proxy IP invoeren</translation>
-    </message>
-    <message>
-        <source>Port:</source>
-        <translation>Poort:</translation>
     </message>
     <message>
         <source>Map port using UPnP</source>
@@ -5095,10 +4536,6 @@ Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternod
     <message>
         <source>Allow incoming connections</source>
         <translation>Sta inkomende connecties toe</translation>
-    </message>
-    <message>
-        <source>Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>Connecteer via SOCKS5 proxy (standaardproxy):</translation>
     </message>
     <message>
         <source>SAVE</source>
@@ -5116,64 +4553,48 @@ Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternod
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
-    </message>
-    <message>
         <source>Wallet Repair</source>
         <translation>Portemonnee Herstel</translation>
-    </message>
-    <message>
-        <source>The buttons below will restart the wallet with command-line options to repair this wallet, fix issues with corrupt blockchain files or missing/obsolete transactions.</source>
-        <translation>De knoppen hieronder herstarten de portemonnee met commandoregelopties om deze portemonnee te repareren, problemen met corrupte blockchain bestanden of ontbrekende/verouderde transacties op te lossen.</translation>
-    </message>
-    <message>
-        <source>Attempt to recover private keys from a corrupt wallet.dat.</source>
-        <translation>Poog om privé sleutels terug te halen uit een corrupte wallet.dat.</translation>
-    </message>
-    <message>
-        <source>Rescan the blockchain for missing wallet transactions.</source>
-        <translation>Scan de blockchain opnieuw voor ontbrekende portemonneetransacties.</translation>
-    </message>
-    <message>
-        <source>Recover transactions from blockchain (keep-meta-data, e.g. account owner).</source>
-        <translation>Herstel transacties uit de blockchain (keep-meta-data, bijvoorbeeld van de rekeninghouder).</translation>
-    </message>
-    <message>
-        <source>Recover transactions from blockchain (drop meta-data).</source>
-        <translation>Herstel transacties van blockchain (laat meta-data vallen).</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format on startup. (Note: this is NOT an update of the wallet itself)</source>
         <translation>Upgrade de portemonnee naar het laatste formaat bij het opstarten. (Opmerking: dit is GEEN update van de portemonnee zelf).</translation>
     </message>
     <message>
-        <source>Rebuild blockchain index from current blk000???.dat files.</source>
-        <translation>Bouw de blockchain index opnieuw vanuit huidige blk000???.dat bestanden.</translation>
-    </message>
-    <message>
-        <source>Deletes all local blockchain folders so the wallet synchronizes from scratch.</source>
-        <translation>Verwijder alle lokale blockchain mappen zodat de portemonnee alles opnieuw kan hersynchroniseren.</translation>
+        <source>The buttons below will restart the wallet with command-line options to repair this wallet, fix issues with corrupt blockchain files or missing/obsolete transactions</source>
+        <translation>De knoppen hieronder herstarten de portemonnee met commandoregelopties om deze portemonnee te repareren, problemen met beschadigde blockchain bestanden of ontbrekende/verouderde transacties op te lossen</translation>
     </message>
     <message>
         <source>Salvage wallet</source>
         <translation>Red portemonnee</translation>
     </message>
     <message>
+        <source>Attempt to recover private keys from a corrupt wallet.dat</source>
+        <translation>Poog om privé sleutels te herstellen van een corrupte wallet.dat</translation>
+    </message>
+    <message>
         <source>Rescan blockchain file</source>
         <translation>Blockchainbestand opnieuw scannen</translation>
+    </message>
+    <message>
+        <source>Rescan the blockchain for missing wallet transactions</source>
+        <translation>Scan de blockchain opnieuw voor ontbrekende portemonneetransacties</translation>
     </message>
     <message>
         <source>Recover transactions 1</source>
         <translation>Herstel transacties 1</translation>
     </message>
     <message>
+        <source>Recover transactions from blockchain (keep-meta-data, e.g. account owner)</source>
+        <translation>Herstel transacties uit de blockchain (keep-meta-data, bijvoorbeeld van de rekeninghouder)</translation>
+    </message>
+    <message>
         <source>Recover transactions 2</source>
         <translation>Herstel transacties 2</translation>
+    </message>
+    <message>
+        <source>Recover transactions from blockchain (drop meta-data)</source>
+        <translation>Herstel transacties van blockchain (laat meta-data vallen)</translation>
     </message>
     <message>
         <source>Upgrade wallet format</source>
@@ -5184,8 +4605,16 @@ Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternod
         <translation>Herbouw index</translation>
     </message>
     <message>
-        <source>Delete local blockchain </source>
+        <source>Rebuild blockchain index from current blk000???.dat files</source>
+        <translation>Bouw de blockchain index opnieuw vanuit huidige blk000???.dat bestanden</translation>
+    </message>
+    <message>
+        <source>Delete local blockchain</source>
         <translation>Verwijder lokale blockchain</translation>
+    </message>
+    <message>
+        <source>Deletes all local blockchain folders so the wallet synchronizes from scratch</source>
+        <translation>Verwijder alle lokale blockchain mappen zodat de portemonnee alles opnieuw kan hersynchroniseren</translation>
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
@@ -5215,10 +4644,6 @@ Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternod
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
         <source>Wallet Data</source>
         <translation>Portemonnee Data</translation>
     </message>
@@ -5229,6 +4654,10 @@ Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternod
     <message>
         <source>Multisend</source>
         <translation>Multisend</translation>
+    </message>
+    <message>
+        <source>Export Accounting</source>
+        <translation>Exporteer Accounting</translation>
     </message>
     <message>
         <source>Tools</source>
@@ -5268,7 +4697,7 @@ Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternod
     </message>
     <message>
         <source>Wallet Repair</source>
-        <translation>Portemonnee Herstellen</translation>
+        <translation>Portemonnee Herstel</translation>
     </message>
     <message>
         <source>Help</source>
@@ -5297,6 +4726,10 @@ Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternod
     <message>
         <source>Client will be shutdown, do you want to proceed?</source>
         <translation>Client wordt uitgeschakeld, wil je doorgaan?</translation>
+    </message>
+    <message>
+        <source>Stake Split too low, it shall be either &gt;= %1 or equal to 0 (to disable stake splitting)</source>
+        <translation>Stake split te laag, het moet ofwel &gt;= %1 of gelijk zijn aan 0 (om stake splitsing uit te schakelen)</translation>
     </message>
     <message>
         <source>Restart required</source>
@@ -5383,26 +4816,6 @@ Weet je zeker dat?
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>PENGOLINCOIN Core</source>
-        <translation>PENGOLINCOIN Core</translation>
-    </message>
-    <message>
-        <source>Version %1</source>
-        <translation>Versie %1</translation>
-    </message>
-    <message>
-        <source>The Bitcoin Core developers</source>
-        <translation>De Bitcoin Kernontwikkelaars</translation>
-    </message>
-    <message>
-        <source>The Dash Core developers</source>
-        <translation>De Dash Kernontwikkelaars</translation>
-    </message>
-    <message>
-        <source>The PENGOLINCOIN Core developers</source>
-        <translation>De PENGOLINCOIN Kernontwikkelaars</translation>
-    </message>
-    <message>
         <source>[testnet]</source>
         <translation>[testnet]</translation>
     </message>
@@ -5437,14 +4850,6 @@ Weet je zeker dat?
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>480.0685 PGO</source>
-        <translation>480.0685 PGO</translation>
-    </message>
-    <message>
-        <source>1,000 zPGO</source>
-        <translation>1,000 zPGO</translation>
-    </message>
-    <message>
         <source>Available</source>
         <translation>Beschikbaar</translation>
     </message>
@@ -5453,24 +4858,8 @@ Weet je zeker dat?
         <translation>In afwachting</translation>
     </message>
     <message>
-        <source>6.943 PGO</source>
-        <translation>6.943 PGO</translation>
-    </message>
-    <message>
         <source>Immature</source>
         <translation>Onverwerkt</translation>
-    </message>
-    <message>
-        <source>10 PGO</source>
-        <translation>10 PGO</translation>
-    </message>
-    <message>
-        <source>60 zPGO</source>
-        <translation>60 zPGO</translation>
-    </message>
-    <message>
-        <source>10 zPGO</source>
-        <translation>10 zPGO</translation>
     </message>
     <message>
         <source>Wallet Unlocked for staking</source>
@@ -5485,14 +4874,6 @@ Weet je zeker dat?
         <translation>Adres Gekopieerd</translation>
     </message>
     <message>
-        <source>Automint enabled</source>
-        <translation>Automunt ingeschakeld</translation>
-    </message>
-    <message>
-        <source>Automint disabled</source>
-        <translation>Automunt uitgeschakeld</translation>
-    </message>
-    <message>
         <source>Staking active</source>
         <translation>Staking actief</translation>
     </message>
@@ -5500,33 +4881,145 @@ Weet je zeker dat?
         <source>Staking not active</source>
         <translation>Staking niet actief</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s)</source>
-        <translation><numerusform>%n actieve verbinding</numerusform><numerusform>%n actieve verbindingen</numerusform></translation>
-    </message>
     <message>
-        <source>Synchronized</source>
-        <translation>Gesynchroniseerd</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n uur</numerusform><numerusform>%n uren</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n dag</numerusform><numerusform>%n dagen</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n week</numerusform><numerusform>%n weken</numerusform></translation>
+        <source>Synchronized - Block: %1</source>
+        <translation>Gesynchroniseerd - Block: %1</translation>
     </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 en %2</translation>
     </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n jaar</numerusform><numerusform>%n jaren</numerusform></translation>
+    <message>
+        <source>Wallet Upgrade</source>
+        <translation>Portemonneeupgrade</translation>
+    </message>
+    <message>
+        <source>Upgrading to HD wallet will improve
+the wallet's reliability and security.
+
+
+NOTE: after the upgrade, a new
+backup will be created.
+</source>
+        <translation>Upgrade naar HD portemonnee zal
+de portemonnee's betrouwbaarheid en veiligheid verbeteren.
+
+
+OPMERKING: na de upgrade, zal een
+nieuwe back-up aangemaakt worden.
+</translation>
+    </message>
+    <message>
+        <source>Upgrade Wallet</source>
+        <translation>Portemonnee upgraden</translation>
+    </message>
+    <message>
+        <source>Wallet unlock cancelled</source>
+        <translation>Portemonnee ontgrendeling geannuleerd </translation>
+    </message>
+    <message>
+        <source>Tor Active: %1</source>
+        <translation>Tor Actief: %1</translation>
+    </message>
+    <message>
+        <source>Tor Disabled</source>
+        <translation>Tor Uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>FAQ</source>
+        <translation>Veelgestelde vragen</translation>
+    </message>
+    <message>
+        <source>Upgrade to HD Wallet</source>
+        <translation>Naar HD Portemonnee upgraden</translation>
+    </message>
+    <message>
+        <source>No Connection</source>
+        <translation>Geen Verbinding</translation>
+    </message>
+    <message>
+        <source>Staking Disabled</source>
+        <translation>Staking uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>Cold Staking Disabled</source>
+        <translation>Cold Staking uitgeschakeld</translation>
+    </message>
+    <message>
+        <source> %54 Synchronizing..</source>
+        <translation>%54 Synchroniseren..</translation>
+    </message>
+    <message>
+        <source>Light Theme</source>
+        <translation>Light Thema</translation>
+    </message>
+    <message>
+        <source>Dark Theme</source>
+        <translation>Donker Thema</translation>
+    </message>
+    <message>
+        <source>Wallet Locked </source>
+        <translation>Portemonnee Vergrendeld</translation>
+    </message>
+    <message>
+        <source>Wallet Locked</source>
+        <translation>Portemonnee Vergrendeld</translation>
+    </message>
+    <message>
+        <source>Wallet Unlocked</source>
+        <translation>Portemonnee Ontgrendeld</translation>
+    </message>
+    <message>
+        <source>Wallet Unencrypted</source>
+        <translation>Portemonnee Onversleuteld</translation>
+    </message>
+    <message>
+        <source>Available (Locked included)</source>
+        <translation>Beschikbaar (inclusief vergrendelde)</translation>
+    </message>
+    <message>
+        <source>The wallet has been successfully upgraded to HD.</source>
+        <translation>De portemonnee is succesvol geüpgraded naar HD.</translation>
+    </message>
+    <message>
+        <source>It is advised to make a backup.</source>
+        <translation>Het is geadviseerd om een back-up te maken.</translation>
+    </message>
+    <message>
+        <source>Do you wish to backup now?</source>
+        <translation>Wilt u nu een back-up maken?</translation>
+    </message>
+    <message>
+        <source>Backup Wallet</source>
+        <translation>Backup portemonnee</translation>
+    </message>
+    <message>
+        <source>Wallet Data (*.dat)</source>
+        <translation>Portemonneegegevens (*.dat)</translation>
+    </message>
+    <message>
+        <source>Backup created</source>
+        <translation>Back-up aangemaakt</translation>
+    </message>
+    <message>
+        <source>Backup creation failed</source>
+        <translation>Aanmaak back-up mislukt</translation>
+    </message>
+    <message>
+        <source>no file selected</source>
+        <translation>geen bestand geselecteerd</translation>
+    </message>
+    <message>
+        <source>Wallet upgraded successfully, but no backup created.</source>
+        <translation>Portemonnee succesvol geüpgraded, maar geen back-up aangemaakt.</translation>
+    </message>
+    <message>
+        <source>WARNING: remember to make a copy of your wallet file!</source>
+        <translation>WAARSCHUWING: vergeet niet om je wallet.dat bestand te kopiëren!</translation>
+    </message>
+    <message>
+        <source>Upgrade Wallet Error</source>
+        <translation>Upgrade Portemonnee Error</translation>
     </message>
 </context>
 <context>
@@ -5534,189 +5027,6 @@ Weet je zeker dat?
     <message>
         <source>KB/s</source>
         <translation>KB/s</translation>
-    </message>
-</context>
-<context>
-    <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Open voor nog %n blok</numerusform><numerusform>Open voor nog %n blokken</numerusform></translation>
-    </message>
-    <message>
-        <source>Open until %1</source>
-        <translation>Open tot %1</translation>
-    </message>
-    <message>
-        <source>conflicted</source>
-        <translation>conflicteert</translation>
-    </message>
-    <message>
-        <source>%1/offline</source>
-        <translation>%1/offline</translation>
-    </message>
-    <message>
-        <source>%1/unconfirmed</source>
-        <translation>%1/onbevestigd</translation>
-    </message>
-    <message>
-        <source>%1 confirmations</source>
-        <translation>%1 bevestigingen</translation>
-    </message>
-    <message>
-        <source>%1/offline (verified via SwiftX)</source>
-        <translation>%1/offline (gecontroleerd via SwiftX)</translation>
-    </message>
-    <message>
-        <source>%1/confirmed (verified via SwiftX)</source>
-        <translation>%1/bevestigd (gecontroleerd via swifttx)</translation>
-    </message>
-    <message>
-        <source>%1 confirmations (verified via SwiftX)</source>
-        <translation>%1 bevestigingen (gecontroleerd via swifttx)</translation>
-    </message>
-    <message>
-        <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1/offline (SwiftTX controle in uitvoering - %2 van %3 handtekeningen)</translation>
-    </message>
-    <message>
-        <source>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</source>
-        <translation>%1/bevestigd (SwiftTX controle in uitvoering - %2 van %3 handtekeningen)</translation>
-    </message>
-    <message>
-        <source>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 bevestigingen (SwiftTX controle in uitvoering -%2 van %3 handtekeningen)</translation>
-    </message>
-    <message>
-        <source>%1/offline (SwiftX verification failed)</source>
-        <translation>%1/offline (SwiftTX verificatie mislukt)</translation>
-    </message>
-    <message>
-        <source>%1/confirmed (SwiftX verification failed)</source>
-        <translation>%1/bevestigd (SwiftTX verificatie mislukt)</translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation>Status</translation>
-    </message>
-    <message>
-        <source>, has not been successfully broadcast yet</source>
-        <translation>, is nog niet succesvol uitgezonden</translation>
-    </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, broadcast via %n node</numerusform><numerusform>, broadcast via %n nodes</numerusform></translation>
-    </message>
-    <message>
-        <source>Date</source>
-        <translation>Datum</translation>
-    </message>
-    <message>
-        <source>Source</source>
-        <translation>Bron</translation>
-    </message>
-    <message>
-        <source>Generated</source>
-        <translation>Gegeneerd</translation>
-    </message>
-    <message>
-        <source>From</source>
-        <translation>Van</translation>
-    </message>
-    <message>
-        <source>unknown</source>
-        <translation>ongekend</translation>
-    </message>
-    <message>
-        <source>To</source>
-        <translation>Naar</translation>
-    </message>
-    <message>
-        <source>own address</source>
-        <translation>eigen adres</translation>
-    </message>
-    <message>
-        <source>watch-only</source>
-        <translation>watch-only</translation>
-    </message>
-    <message>
-        <source>label</source>
-        <translation>label</translation>
-    </message>
-    <message>
-        <source>Pgo</source>
-        <translation>Pgo</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>Volgroeid in %n blok</numerusform><numerusform>volgroeid in %n blokken</numerusform></translation>
-    </message>
-    <message>
-        <source>not accepted</source>
-        <translation>niet geaccepteerd</translation>
-    </message>
-    <message>
-        <source>Debit</source>
-        <translation>Debet</translation>
-    </message>
-    <message>
-        <source>Total debit</source>
-        <translation>Totaal debet</translation>
-    </message>
-    <message>
-        <source>Total pgo</source>
-        <translation>Totaal pgo</translation>
-    </message>
-    <message>
-        <source>Transaction fee</source>
-        <translation>Transactiekosten</translation>
-    </message>
-    <message>
-        <source>Net amount</source>
-        <translation>Netto bedrag</translation>
-    </message>
-    <message>
-        <source>Message</source>
-        <translation>Bericht</translation>
-    </message>
-    <message>
-        <source>Comment</source>
-        <translation>Reactie</translation>
-    </message>
-    <message>
-        <source>Transaction ID</source>
-        <translation>Transactie ID</translation>
-    </message>
-    <message>
-        <source>Output index</source>
-        <translation>Output index</translation>
-    </message>
-    <message>
-        <source>Merchant</source>
-        <translation>Winkelier</translation>
-    </message>
-    <message>
-        <source>Debug information</source>
-        <translation>Debug informatie</translation>
-    </message>
-    <message>
-        <source>Transaction</source>
-        <translation>Transactie</translation>
-    </message>
-    <message>
-        <source>Inputs</source>
-        <translation>Inputs</translation>
-    </message>
-    <message>
-        <source>Amount</source>
-        <translation>Bedrag</translation>
-    </message>
-    <message>
-        <source>true</source>
-        <translation>waar</translation>
-    </message>
-    <message>
-        <source>false</source>
-        <translation>onwaar</translation>
     </message>
 </context>
 <context>
@@ -5733,17 +5043,9 @@ Weet je zeker dat?
         <source>Address</source>
         <translation>Adres</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Open voor nog %n blok</numerusform><numerusform>Open voor nog %n blokken</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Open tot %1</translation>
-    </message>
-    <message>
-        <source>Offline</source>
-        <translation>Offline</translation>
     </message>
     <message>
         <source>Unconfirmed</source>
@@ -5766,10 +5068,6 @@ Weet je zeker dat?
         <translation>Onvolwassen (%1 bevestigingen, zullen beschikbaar zijn na %2)</translation>
     </message>
     <message>
-        <source>This block was not received by any other nodes and will probably not be accepted!</source>
-        <translation>Dit blok is niet ontvangen door andere noden en wordt waarschijnlijk niet geaccepteerd!</translation>
-    </message>
-    <message>
         <source>Received with</source>
         <translation>Ontvangen met</translation>
     </message>
@@ -5782,64 +5080,24 @@ Weet je zeker dat?
         <translation>Ontvangen van</translation>
     </message>
     <message>
-        <source>Received via Obfuscation</source>
-        <translation>Verkregen via verduistering</translation>
+        <source>%1 Stake</source>
+        <translation>%1 Stake</translation>
     </message>
     <message>
-        <source>PGO Stake</source>
-        <translation>PGO Stake</translation>
+        <source>z%1 Stake</source>
+        <translation>z%1 Stake</translation>
     </message>
     <message>
-        <source>zPGO Stake</source>
-        <translation>zPGO Stake</translation>
+        <source>%1 Cold Stake</source>
+        <translation>%1 Cold Stake</translation>
     </message>
     <message>
-        <source>PGO Cold Stake</source>
-        <translation>PGO Cold Stake</translation>
-    </message>
-    <message>
-        <source>PGO Stake in behalf of</source>
-        <translation>PGO Stake in naam van</translation>
+        <source>%1 Stake on behalf of</source>
+        <translation>%1 Stake in naam van</translation>
     </message>
     <message>
         <source>Stake delegation</source>
         <translation>Stake delegatie</translation>
-    </message>
-    <message>
-        <source>Obfuscation Denominate</source>
-        <translation>Verduistering denominatie</translation>
-    </message>
-    <message>
-        <source>Obfuscation Collateral Payment</source>
-        <translation>Verduistering zijdelingse betaling</translation>
-    </message>
-    <message>
-        <source>Obfuscation Make Collateral Inputs</source>
-        <translation>Verduistering maakt zijdelingse inputs</translation>
-    </message>
-    <message>
-        <source>Obfuscation Create Denominations</source>
-        <translation>Verduistering creëert denominaties</translation>
-    </message>
-    <message>
-        <source>Converted PGO to zPGO</source>
-        <translation>Geconverteerde PGO naar zPGO</translation>
-    </message>
-    <message>
-        <source>Spent zPGO</source>
-        <translation>Bestede zPGO</translation>
-    </message>
-    <message>
-        <source>Received PGO from zPGO</source>
-        <translation>Ontvangen PGO van zPGO</translation>
-    </message>
-    <message>
-        <source>Minted Change as zPGO from zPGO Spend</source>
-        <translation>Gemint wisselgeld als zPGO van bestede zPGO</translation>
-    </message>
-    <message>
-        <source>Converted zPGO to PGO</source>
-        <translation>Geconverteerde zPGO naar PGO</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -5854,12 +5112,32 @@ Weet je zeker dat?
         <translation>Betaling naar jezelf</translation>
     </message>
     <message>
+        <source>Stake delegation spent by</source>
+        <translation>Stake delegatie gespendeerd door</translation>
+    </message>
+    <message>
         <source>Mined</source>
         <translation>Mined</translation>
     </message>
     <message>
-        <source>Obfuscated</source>
-        <translation>Verduisterd</translation>
+        <source>Converted %1 to z%1</source>
+        <translation>Geconverteerde %1 naar z%1</translation>
+    </message>
+    <message>
+        <source>Spent z%1</source>
+        <translation>Beste z%1</translation>
+    </message>
+    <message>
+        <source>Received %1 from z%1</source>
+        <translation>Ontvangen %1 van z%1</translation>
+    </message>
+    <message>
+        <source>Minted Change as z%1 from z%1 Spend</source>
+        <translation>Gemunt wisselgeld als z%1 van bestede z%1</translation>
+    </message>
+    <message>
+        <source>Converted z%1 to %1</source>
+        <translation>Geconverteerde z%1 naar %1</translation>
     </message>
     <message>
         <source>watch-only</source>
@@ -5913,36 +5191,8 @@ Weet je zeker dat?
         <translation>Transactie details</translation>
     </message>
     <message>
-        <source>ID:</source>
-        <translation>ID:</translation>
-    </message>
-    <message>
-        <source>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</source>
-        <translation>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</translation>
-    </message>
-    <message>
-        <source>Sending to: </source>
-        <translation>Versturen naar:</translation>
-    </message>
-    <message>
-        <source>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>E7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
-    </message>
-    <message>
         <source>Total amount</source>
         <translation>Totale hoeveelheid</translation>
-    </message>
-    <message>
-        <source>2 PGO</source>
-        <translation>2 PGO</translation>
-    </message>
-    <message>
-        <source>Coin inputs:</source>
-        <translation>Munt invoeren:</translation>
-    </message>
-    <message>
-        <source>1 Inputs</source>
-        <translation>1 Invoer</translation>
     </message>
     <message>
         <source>Previous Transaction</source>
@@ -5953,52 +5203,52 @@ Weet je zeker dat?
         <translation>Outputindex</translation>
     </message>
     <message>
-        <source>Fee:</source>
-        <translation>Fee:</translation>
-    </message>
-    <message>
-        <source>0.0001 PGO</source>
-        <translation>0.0001 PGO</translation>
-    </message>
-    <message>
-        <source>Change address:</source>
-        <translation>Wijzig adres:</translation>
-    </message>
-    <message>
         <source>D7VFR83SQbie…BhjcWJtcfip5krte2Z </source>
         <translation>D7VFR83SQbie…BhjcWJtcfip5krte2Z </translation>
-    </message>
-    <message>
-        <source>Confirmations:</source>
-        <translation>Bevestigingen:</translation>
-    </message>
-    <message>
-        <source>12</source>
-        <translation>12</translation>
-    </message>
-    <message>
-        <source>Size:</source>
-        <translation>Grootte:</translation>
-    </message>
-    <message>
-        <source>2 kB</source>
-        <translation>2 kB</translation>
-    </message>
-    <message>
-        <source>Date:</source>
-        <translation>Datum:</translation>
     </message>
     <message>
         <source>May 25, 2017</source>
         <translation>25 Mei, 2017</translation>
     </message>
     <message>
-        <source>Status:</source>
-        <translation>Status:</translation>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Sending to</source>
+        <translation>Versturen naar:</translation>
+    </message>
+    <message>
+        <source>Coin inputs</source>
+        <translation>Munt invoeringen</translation>
+    </message>
+    <message>
+        <source>Fee</source>
+        <translation>Onkost</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Grootte</translation>
+    </message>
+    <message>
+        <source>Change address</source>
+        <translation>Wijzig adres</translation>
     </message>
     <message>
         <source>Spendable</source>
         <translation>Uitgeefbaar</translation>
+    </message>
+    <message>
+        <source>Confirmations</source>
+        <translation>Bevestigingen</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
     </message>
     <message>
         <source>TextLabel</source>
@@ -6025,6 +5275,10 @@ Weet je zeker dat?
         <translation>ID gekopieerd</translation>
     </message>
     <message>
+        <source>Delegating to</source>
+        <translation>Gedelegeerd naar</translation>
+    </message>
+    <message>
         <source>Unknown</source>
         <translation>Ongekend</translation>
     </message>
@@ -6036,18 +5290,10 @@ Weet je zeker dat?
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>Received from Bob</source>
-        <translation>Ontvangen van Bob</translation>
-    </message>
-    <message>
-        <source>18/05/18</source>
-        <translation>18/05/18</translation>
-    </message>
-    <message>
         <source>+0.000585 PGO</source>
         <translation>+0.000585 PGO</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>WalletModel</name>
     <message>
@@ -6055,43 +5301,20 @@ Weet je zeker dat?
         <translation>Verzend Munten</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 PGO.</source>
-        <translation>SwiftTX ondersteunt geen verzendwaarden die zo hoog zijn. Transacties zijn momenteel beperkt tot %1 PGO.</translation>
-    </message>
-</context>
-<context>
-    <name>WalletPasswordDialog</name>
-    <message>
-        <source>Dialog</source>
-        <translation>Dialoog</translation>
+        <source>Transaction creation failed!
+%1</source>
+        <translation>Transactie creatie mislukt!
+%1</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
-    </message>
-    <message>
-        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</source>
-        <translation>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>Annuleren</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>Akkoord</translation>
+        <source>The size of the transaction is too big.
+Select fewer inputs with coin control.</source>
+        <translation>De grootte van de transactie is te groot.
+Selecteer minder invoeren met muntcontrole.</translation>
     </message>
 </context>
 <context>
     <name>WelcomeContentWidget</name>
-    <message>
-        <source>Dialog</source>
-        <translation>Dialoog</translation>
-    </message>
     <message>
         <source>1</source>
         <translation>1</translation>
@@ -6160,54 +5383,7 @@ PENGOLINCOIN Core Portemonnee</translation>
     </message>
 </context>
 <context>
-    <name>ZPgoControlDialog</name>
-    <message>
-        <source>Select zPGO to Spend</source>
-        <translation>Selecteer zPGO om te besteden</translation>
-    </message>
-    <message>
-        <source>Coin Control</source>
-        <translation>Munt Controle</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
-    </message>
-    <message>
-        <source>zPgo</source>
-        <translation>zPgo</translation>
-    </message>
-    <message>
-        <source>0.00 </source>
-        <translation>0.00 </translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Kwantiteit:</translation>
-    </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Is Uitgeefbaar</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>Select/Deselect All</source>
-        <translation>Selecteer/Deselecteer Alles</translation>
-    </message>
-    <message>
-        <source>Select zPGO Denominations to Spend</source>
-        <translation>Selecteer zPGO Denominaties om te Besteden</translation>
-    </message>
-</context>
-<context>
     <name>pengolincoin-core</name>
-    <message>
-        <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
-        <translation>(1 = houd tx meta data, bijvoorbeeld account eigenaar en betalingsverzoek informatie, 2 = drop tx meta data)</translation>
-    </message>
     <message>
         <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
         <translation>Sta JSON-RPC connecties toe van de opgegeven bron. Geldig voor&lt;ip&gt;zijn een enkel IP (bijvoorbeeld 1.2.3.4), een netwerk/netmask (bijvoorbeeld 1.2.3.4/255.255.255.0) of een netwerk/CIDR (bijvoorbeeld 1.2.3.4/24). Deze optie kan meerdere keren worden opgegeven</translation>
@@ -6223,10 +5399,6 @@ PENGOLINCOIN Core Portemonnee</translation>
     <message>
         <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
         <translation>Bind naar het opgegeven adres om te luisteren naar JSON-RPC verbindingen. Gebruik [host]:poort notatie voor IPv6. Deze optie kan meerdere keren worden opgegeven (standaard: bind aan alle interfaces)</translation>
-    </message>
-    <message>
-        <source>Calculated accumulator checkpoint is not what is recorded by block index</source>
-        <translation>Het berekende accumulatie controlepunt is niet wat wordt geregistreerd door de blokindex</translation>
     </message>
     <message>
         <source>Cannot obtain a lock on data directory %s. PENGOLINCOIN Core is probably already running.</source>
@@ -6249,32 +5421,12 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Verwijder alle portemonnee transacties en herstel alleen die delen van de blockchain via -rescan bij opstarten</translation>
     </message>
     <message>
-        <source>Delete all zerocoin spends and mints that have been recorded to the blockchain database and reindex them (0-1, default: %u)</source>
-        <translation>Verwijder alle bestede Zerocoin en mints die zijn geregistreerd in de blockchain database en her-indexeer ze (0-1, standaard: %u)</translation>
-    </message>
-    <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
         <translation>Gedistribueerd onder de MIT software licentie, zie het bijgevoegde bestand COPYING of &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
-        <source>Enable automatic Zerocoin minting from specific addresses (0-1, default: %u)</source>
-        <translation>Schakel automatische Zerocoin munting vanuit specifieke adressen in (0-1, standaard %u) </translation>
-    </message>
-    <message>
-        <source>Enable automatic wallet backups triggered after each zPGO minting (0-1, default: %u)</source>
-        <translation>Schakel automatische portemonnee back-ups in geactiveerd na elke geminte zPGO (0-1, standaard: %u)</translation>
-    </message>
-    <message>
         <source>Enable cold staking functionality (0-1, default: %u). Disabled if staking=0</source>
         <translation>Activeer cold staking functionaliteit (0-1, standaard: %u). Uitgeschakeld als staking=0</translation>
-    </message>
-    <message>
-        <source>Enable or disable staking functionality for PGO inputs (0-1, default: %u)</source>
-        <translation>In- of uitschakelen staking functionaliteit voor PGO inputs (0-1, standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Enable or disable staking functionality for zPGO inputs (0-1, default: %u)</source>
-        <translation>In- of uitschakelen staking functionaliteit voor zPGO inputs (0-1, standaard: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -6289,12 +5441,12 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Fout: het luisteren naar inkomende verbindingen is mislukt (luister terug fout %s)</translation>
     </message>
     <message>
-        <source>Error: The transaction is larger than the maximum allowed transaction size!</source>
-        <translation>Fout: de transactie is groter dan de maximaal toegestane transactiegrootte!</translation>
-    </message>
-    <message>
         <source>Error: Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
         <translation>Fout: Niet ondersteund argument -socks gevonden. Het instellen van SOCKS versie is niet meer mogelijk, alleen SOCKS5 proxy's worden ondersteund.</translation>
+    </message>
+    <message>
+        <source>Exclude debugging information for a category. Can be used in conjunction with -debug=1 to output debug logs for all categories except one or more specified categories.</source>
+        <translation>Sluit informatie voor een categorie uit. Kan worden gebruikt in combinatie met -debug=1 om foutopsporingslogboeken uit te voeren voor alle categorieën behalve een of meer gespecificeerde categorieën.</translation>
     </message>
     <message>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
@@ -6309,14 +5461,6 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Uitvoeren commando wanneer het beste blok verandert (%s in cmd is vervangen door block hash)</translation>
     </message>
     <message>
-        <source>Fees (in PGO/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Kosten (in PGO/Kb) kleiner dan dit worden beschouwd als zero fee voor heruitzending (standaard: %s)</translation>
-    </message>
-    <message>
-        <source>Fees (in PGO/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Kosten (in PGO/Kb) kleiner dan dit worden beschouwd als zero fee voor transactie verrichting (standaard: %s)</translation>
-    </message>
-    <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation>Leeg database activiteit uit geheugen pool naar schijf log elke keer&lt;n&gt;megabytes (default: %u)</translation>
     </message>
@@ -6329,16 +5473,8 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>In deze modus controleert -genproclimit hoeveel blokken er onmiddellijk worden gegenereerd.</translation>
     </message>
     <message>
-        <source>Insufficient or insufficient confirmed funds, you might need to wait a few minutes and try again.</source>
-        <translation>Onvoldoende of onvoldoende bevestigd geld, u moet mogelijk een paar minuten wachten en het opnieuw proberen.</translation>
-    </message>
-    <message>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
         <translation>Ongeldige hoeveelheid voor -maxtxfee=&lt;amount&gt;: '%s' (moet ten minste de minimale vergoeding van %s zijn om hangende transacties te voorkomen)</translation>
-    </message>
-    <message>
-        <source>Keep the specified amount available for spending at all times (default: 0)</source>
-        <translation>Houd het gespecificeerde bedrag altijd beschikbaar voor uitgaven te allen tijde (standaard: 0)</translation>
     </message>
     <message>
         <source>Log transaction priority and fee per kB when mining blocks (default: %u)</source>
@@ -6369,16 +5505,8 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Aantal seconden om te voorkomen dat misdragende peers opnieuw connectoren (standaard: %u)</translation>
     </message>
     <message>
-        <source>Obfuscation uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
-        <translation>Verduistering maakt gebruik van exacte gedenomineerde bedragen om fondsen te verzenden, je zou misschien nog wat munten moeten anonimiseren.</translation>
-    </message>
-    <message>
         <source>Output debugging information (default: %u, supplying &lt;category&gt; is optional)</source>
         <translation>Output debugging informatie (default: %u, verschaffen &lt;category&gt; is optioneel)</translation>
-    </message>
-    <message>
-        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
-        <translation>Query voor peer adressen via DNS lookup, als er weinig adressen zijn (standaard: 1 tenzij -connect)</translation>
     </message>
     <message>
         <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
@@ -6397,20 +5525,12 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Stel maximale grootte van transacties met hoge prioriteit/low-fee in bytes in (standaard: %d)</translation>
     </message>
     <message>
-        <source>Set the number of included blocks to precompute per cycle. (minimum: %d) (maximum: %d) (default: %d)</source>
-        <translation>Stel het aantal ingesloten blokken in om vooraf te berekenen per cyclus. (minimum: %d) (maximum: %d) (standaard: %d)</translation>
-    </message>
-    <message>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
         <translation>Stel het aantal script verificatie threads (%u tot %d, 0 = auto, &lt;0 = laat dat aantal kernen vrij, standaard: %d)</translation>
     </message>
     <message>
         <source>Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)</source>
         <translation>Stel het aantal threads voor munt generatie in indien geactiveerd (-1 = alle kernen, standaard: %d)</translation>
-    </message>
-    <message>
-        <source>Show N confirmations for a successfully locked transaction (0-9999, default: %u)</source>
-        <translation>Toon N bevestigingen voor een succesvol opgesloten transactie (0-9999, standaard: %u)</translation>
     </message>
     <message>
         <source>Support filtering of blocks and transaction with bloom filters (default: %u)</source>
@@ -6433,18 +5553,6 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Niet mogelijk te binden aan %s op deze computer. PENGOLINCOIN Core loopt waarschijnlijk al.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
-        <translation>Kan niet genoeg verduistering gedenomineerde fondsen voor deze transactie vinden.</translation>
-    </message>
-    <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 100000 PGO.</source>
-        <translation>Kan niet genoeg verduistering niet gedenomineerde fondsen voor deze transactie vinden die niet gelijk zijn aan 100000 PGO.</translation>
-    </message>
-    <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 100000 PGO.</source>
-        <translation>Kan niet genoeg fondsen voor deze transactie vinden die niet gelijk zijn aan 100000 PGO.</translation>
-    </message>
-    <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
         <translation>Gebruik aparte SOCKS5 proxy om peers via Tor verborgen services te bereiken (standaard: %s)</translation>
     </message>
@@ -6455,10 +5563,6 @@ PENGOLINCOIN Core Portemonnee</translation>
     <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>Waarschuwing: -paytxfee is zeer hoog ingesteld! Dit zijn de transactie kosten die je betaalt als je een transactie verstuurt.</translation>
-    </message>
-    <message>
-        <source>Warning: Peers are being disconnected due time differences. Please check that your computer's date and time are correct! If your clock is wrong PENGOLINCOIN Core will not work properly.</source>
-        <translation>Waarschuwing: Peers zijn afgesloten als gevolg van tijdsverschillen. Controleer of de datum en tijd van je computer juist zijn! Als je klok verkeerd staat, werkt PENGOLINCOIN Core niet goed.</translation>
     </message>
     <message>
         <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong PENGOLINCOIN Core will not work properly.</source>
@@ -6473,14 +5577,6 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Waarschuwing: Wij lijken het er niet helemaal eens te zijn met onze peers! Mogelijk moet je upgraden, of andere nodes moeten mogelijk upgraden.</translation>
     </message>
     <message>
-        <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
-        <translation>Waarschuwing: fout lezen wallet.dat! Alle sleutels lezen correct, maar transactie gegevens of adresboek invoeringen kunnen missen of niet correct zijn.</translation>
-    </message>
-    <message>
-        <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
-        <translation>Waarschuwing: wallet.dat corrupt, data gered! Originele wallet.dat opgeslagen als wallet.{timestamp}.bak in %s; als je saldo of transacties onjuist zijn, moet je een back-up herstellen.</translation>
-    </message>
-    <message>
         <source>Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</source>
         <translation>Whitelist peers verbinden van het opgegeven netmask of IP adres. Kan meerdere keren worden opgegeven.</translation>
     </message>
@@ -6489,32 +5585,12 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Whitelisted peers kunnen niet DoS banned worden en hun transacties worden altijd doorgestuurd, zelfs als ze al in de mempool zijn, nuttig bijv. voor een gateway</translation>
     </message>
     <message>
-        <source>You must specify a masternodeprivkey in the configuration. Please see documentation for help.</source>
-        <translation>Je moet een masternodeprivkey opgeven in de configuratie. Raadpleeg de documentatie voor hulp.</translation>
-    </message>
-    <message>
-        <source>(33001 could be used only on mainnet)</source>
-        <translation>(33001 kan alleen op mainnet worden gebruikt)</translation>
-    </message>
-    <message>
         <source>(default: %s)</source>
         <translation>(standaard: %s)</translation>
     </message>
     <message>
-        <source>(default: 1)</source>
-        <translation>(standaard: 1)</translation>
-    </message>
-    <message>
-        <source>(must be 33001 for mainnet)</source>
-        <translation>(moet 33001 voor mainnet zijn)</translation>
-    </message>
-    <message>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Accepteer command line en JSON-RPC commando's</translation>
-    </message>
-    <message>
-        <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
-        <translation>Accepteer verbindingen van buitenaf (standaard: 1 als geen -proxy of -connect)</translation>
     </message>
     <message>
         <source>Accept public REST requests (default: %u)</source>
@@ -6525,14 +5601,6 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Voeg een node toe om verbinding mee te maken en probeer de verbinding open te houden</translation>
     </message>
     <message>
-        <source>Adding Wrapped Serials supply...</source>
-        <translation>Toevoegen van Wrapped Serialvoorraad...</translation>
-    </message>
-    <message>
-        <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
-        <translation>DNS lookups toestaan voor -addnode, -seednode en -connect</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Vraag altijd naar peer adressen via DNS lookup (standaard: %u)</translation>
     </message>
@@ -6541,44 +5609,12 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Voeg opmerking toe aan de user agent string</translation>
     </message>
     <message>
-        <source>Attempt to recover private keys from a corrupt wallet.dat</source>
-        <translation>Poog om privé sleutels te herstellen van een corrupte wallet.dat</translation>
-    </message>
-    <message>
         <source>Automatically create Tor hidden service (default: %d)</source>
         <translation>Creëer automatisch de Tor verborgen service (standaard: %d)</translation>
     </message>
     <message>
         <source>Block creation options:</source>
         <translation>Block creatie opties:</translation>
-    </message>
-    <message>
-        <source>Calculating missing accumulators...</source>
-        <translation>Calculeren van ontbrekende accumulators...</translation>
-    </message>
-    <message>
-        <source>Cannot downgrade wallet</source>
-        <translation>Kan de portemonnee niet downgraden</translation>
-    </message>
-    <message>
-        <source>Cannot resolve -bind address: '%s'</source>
-        <translation>Kan -bind adres niet oplossen: '%s'</translation>
-    </message>
-    <message>
-        <source>Cannot resolve -externalip address: '%s'</source>
-        <translation>Kan -externalip adres niet oplossen: '%s'</translation>
-    </message>
-    <message>
-        <source>Cannot resolve -whitebind address: '%s'</source>
-        <translation>Kan -whitebind adres niet oplossen: '%s'</translation>
-    </message>
-    <message>
-        <source>CoinSpend: failed check</source>
-        <translation>CoinSpend: controle mislukt</translation>
-    </message>
-    <message>
-        <source>Connect only to the specified node(s)</source>
-        <translation>Verbind alleen met de opgegeven node(s)</translation>
     </message>
     <message>
         <source>Connect through SOCKS5 proxy</source>
@@ -6613,10 +5649,6 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Kan masternode.conf niet parsen</translation>
     </message>
     <message>
-        <source>Couldn't generate the accumulator witness</source>
-        <translation>Kon de accumulator witness niet genereren</translation>
-    </message>
-    <message>
         <source>Debugging/Testing options:</source>
         <translation>Debugging/Test opties:</translation>
     </message>
@@ -6627,10 +5659,6 @@ PENGOLINCOIN Core Portemonnee</translation>
     <message>
         <source>Disable OS notifications for incoming transactions (default: %u)</source>
         <translation>Schakel OS notificaties uit voor inkomende transacties (standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Disable safemode, override a real safe mode event (default: %u)</source>
-        <translation>Schakel safe mode uit, override een echte safe mode gebeurtenis (standaard: %u)</translation>
     </message>
     <message>
         <source>Discover own IP address (default: 1 when listening and no -externalip)</source>
@@ -6649,22 +5677,6 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Klaar met laden</translation>
     </message>
     <message>
-        <source>Enable automatic Zerocoin minting (0-1, default: %u)</source>
-        <translation>Zet automatische Zerocoin minting aan (0-1, standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Enable precomputation of zPGO spends and stakes (0-1, default %u)</source>
-        <translation>Schakel de precomputatie van zPGO-uitgaven en stakes in (0-1, standaard %u) </translation>
-    </message>
-    <message>
-        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
-        <translation>Activeer publicatie hash transactie (vergrendeld via SwiftTX) in &lt;address&gt;</translation>
-    </message>
-    <message>
-        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
-        <translation>Activeer publicatie raw transactie (vergrendeld via SwiftTX) in &lt;address&gt;</translation>
-    </message>
-    <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
         <translation>Schakel de client in als masternode (0-1, standaard: %u)</translation>
     </message>
@@ -6673,24 +5685,8 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Fout bij het initialiseren van blok database</translation>
     </message>
     <message>
-        <source>Error initializing wallet database environment %s!</source>
-        <translation>Fout bij het initialiseren van de wallet database omgeving %s!</translation>
-    </message>
-    <message>
         <source>Error loading block database</source>
         <translation>Error tijdens het laden van de block database</translation>
-    </message>
-    <message>
-        <source>Error loading wallet.dat</source>
-        <translation>Error tijdens het laden van wallet.dat</translation>
-    </message>
-    <message>
-        <source>Error loading wallet.dat: Wallet corrupted</source>
-        <translation>Error tijdens het laden van wallet.dat: Portemonnee corrupt</translation>
-    </message>
-    <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of PENGOLINCOIN Core</source>
-        <translation>Fout bij het laden van wallet.dat: Portemonnee vereist een nieuwere versie van PENGOLINCOIN Core</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -6699,10 +5695,6 @@ PENGOLINCOIN Core Portemonnee</translation>
     <message>
         <source>Error reading from database, shutting down.</source>
         <translation>Error tijdens het lezen van de database, aan het afsluiten.</translation>
-    </message>
-    <message>
-        <source>Error writing zerocoinDB to disk</source>
-        <translation>Fout bij het schrijven van zerocoinDB naar schijf</translation>
     </message>
     <message>
         <source>Error</source>
@@ -6721,28 +5713,12 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Fout: Niet ondersteunde argument -tor gevonden, gebruik -onion.</translation>
     </message>
     <message>
-        <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>Fout: Portemonnee vergrendeld, niet in staat om transactie te creëren!</translation>
-    </message>
-    <message>
-        <source>Failed to calculate accumulator checkpoint</source>
-        <translation>Kon het controlepunt van de accumulator niet berekenen</translation>
-    </message>
-    <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Niet gelukt om te luisteren op een poort. Gebruik -listen=0 als je dit wilt.</translation>
     </message>
     <message>
         <source>Failed to parse host:port string</source>
         <translation>Kan host: poortreeks niet parseren</translation>
-    </message>
-    <message>
-        <source>Failed to read block</source>
-        <translation>Mislukt om block te lezen</translation>
-    </message>
-    <message>
-        <source>Fee (in PGO/kB) to add to transactions you send (default: %s)</source>
-        <translation>Fee (in PGO/kB) om toe te voegen aan transacties die je verzendt (standaard: %s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
@@ -6785,10 +5761,6 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Initialisatie saniteitscontrole mislukt. PENGOLINCOIN Core wordt afgesloten.</translation>
     </message>
     <message>
-        <source>Insufficient funds</source>
-        <translation>Onvoldoende saldo.</translation>
-    </message>
-    <message>
         <source>Insufficient funds.</source>
         <translation>Onvoldoende saldo.</translation>
     </message>
@@ -6797,120 +5769,16 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Ongeldig -onion adres of hostnaam: '%s'</translation>
     </message>
     <message>
-        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Ongeldige hoeveelheid voor -maxtxfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -minrelaytxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Ongeldige hoeveelheid voor -minrelaytxfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -mintxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Ongeldige hoeveelheid voor -mintxfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s' (must be at least %s)</source>
         <translation>Ongeldige hoeveelheid voor -paytxfee=&lt;amount&gt;: '%s' (moet tenminste %s zijn)</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Ongeldige hoeveelheid voor -paytxfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -reservebalance=&lt;amount&gt;</source>
-        <translation>Ongeldige hoeveelheid voor -reservebalance=&lt;amount&gt;</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>Ongeldige hoeveelheid</translation>
-    </message>
-    <message>
-        <source>Invalid masternodeprivkey. Please see documenation.</source>
-        <translation>Ongeldige masternodeprivkey. Zie documentatie.</translation>
     </message>
     <message>
         <source>Invalid netmask specified in -whitelist: '%s'</source>
         <translation>Ongeldige netmask opgegeven in -whitelist: '%s'</translation>
     </message>
     <message>
-        <source>Invalid port detected in masternode.conf</source>
-        <translation>Ongeldige poort gedetecteerd in masternode.conf</translation>
-    </message>
-    <message>
-        <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
-        <translation>Percentage automatisch geminte Zerocoin (10-100, standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Recalculating PGO supply...</source>
-        <translation>Hercalculatie van PGO aanbod...</translation>
-    </message>
-    <message>
-        <source>Recalculating minted ZPGO...</source>
-        <translation>Herberekenen van gemunte ZPGO....</translation>
-    </message>
-    <message>
-        <source>Recalculating spent ZPGO...</source>
-        <translation>Herberekenen van bestede ZPGO....</translation>
-    </message>
-    <message>
-        <source>Reindex the PGO and zPGO money supply statistics</source>
-        <translation>Indexeer de PGO- en zPGO-geldvoorraadstatistieken opnieuw</translation>
-    </message>
-    <message>
-        <source>Reindexing zerocoin database...</source>
-        <translation>Her-indexeren Zerocoin database...</translation>
-    </message>
-    <message>
-        <source>Reindexing zerocoin failed</source>
-        <translation>Her-indexeren Zerocoin database mislukt</translation>
-    </message>
-    <message>
-        <source>Selected coins value is less than payment target</source>
-        <translation>Geselecteerde munt waarde is minder dan het betalingsdoel</translation>
-    </message>
-    <message>
-        <source>Support the zerocoin light node protocol (default: %u)</source>
-        <translation>Ondersteuning van het zerocoin light node protocol (standaard: %u)</translation>
-    </message>
-    <message>
-        <source>SwiftX options:</source>
-        <translation>SwiftTX opties:</translation>
-    </message>
-    <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
         <translation>Dit is een pre-release test build - gebruik op eigen risico - niet gebruiken voor staking of handel applicaties!</translation>
-    </message>
-    <message>
-        <source> mints deleted
-</source>
-        <translation>mints verwijderd
-</translation>
-    </message>
-    <message>
-        <source> mints updated, </source>
-        <translation>mints bijgewerkt,</translation>
-    </message>
-    <message>
-        <source> unconfirmed transactions removed
-</source>
-        <translation>onbevestigde transacties verwijderd
-</translation>
-    </message>
-    <message>
-        <source>Disable all PENGOLINCOIN specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>Schakel alle specifieke PENGOLINCOIN functionaliteit uit (Masternodes, Zerocoin, SwiftTX, Budgeting) (0-1, standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>Schakel SwiftX in, toon bevestigingen voor vergrendelde transacties (bool, standaard: %s)</translation>
-    </message>
-    <message>
-        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Fout: De transactie is afgewezen! Dit kan gebeuren als sommige munten in je portemonnee al waren uitgegeven, bijvoorbeeld als je een kopie van wallet.dat gebruikt en munten in de kopie waren besteed maar hier niet als zodanig gemarkeerd.</translation>
-    </message>
-    <message>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
-        <translation>Fout: Deze transactie vereist transactiekosten van ten minste %s vanwege de hoeveelheid, de complexiteit of het gebruik van recent ontvangen fondsen!</translation>
     </message>
     <message>
         <source>Error: Unsupported argument -checklevel found. Checklevel must be level 4.</source>
@@ -6921,28 +5789,8 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Voer het commando uit als het beste blok verandert en de grootte ervan voorbij is (%s in cmd wordt vervangen door blokhash, %d met de blokgrootte)</translation>
     </message>
     <message>
-        <source>Failed to find coin set amongst held coins with less than maxNumber of Spends</source>
-        <translation>Het is niet gelukt om muntstukken te vinden onder de aangehouden munten met minder dan max. Aantal uitgaven</translation>
-    </message>
-    <message>
-        <source>In rare cases, a spend with 7 coins exceeds our maximum allowable transaction size, please retry spend using 6 or less coins</source>
-        <translation>In zeldzame gevallen overschrijdt een besteding met 7 munten uw maximaal toegestane transactiegrootte. Probeer het opnieuw met 6 of minder munten</translation>
-    </message>
-    <message>
-        <source>Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)</source>
-        <translation>Voorkeur denominatie voor automatisch minted Zerocoin (1/5/10/50/100/500/1000/5000), 0 voor geen voorkeur. standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Specify custom backup path to add a copy of any automatic zPGO backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Specificeer aangepast back-up pad om een kopie van elke automatische zPGO back-up toe te voegen. Indien ingesteld als dir zal elke back-up een bestand genereren met een tijdstempel. Indien ingesteld als file zal elke back-up herschreven worden naar dat bestand. Indien backuppath ook is ingesteld zullen 4 back-ups gedaan worden.</translation>
-    </message>
-    <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
         <translation>Specificeer aangepast back-up pad om een kopie van elke portemonnee back-up toe te voegen. Indien ingesteld als dir zal elke back-up een bestand genereren met een tijdstempel. Indien ingesteld als file zal elke back-up herschreven worden naar dat bestand.</translation>
-    </message>
-    <message>
-        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>SwiftTX vereist invoer van tenminste 6 bevestigingen, je dient wellicht een paar minuten te wachten en het opnieuw proberen.</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
@@ -6951,14 +5799,6 @@ PENGOLINCOIN Core Portemonnee</translation>
     <message>
         <source>Attempt to force blockchain corruption recovery</source>
         <translation>Poging om blockchain corruptie herstel te forceren</translation>
-    </message>
-    <message>
-        <source>Cannot create public spend input</source>
-        <translation>Kon geen publiek besteedadres aanmaken</translation>
-    </message>
-    <message>
-        <source>CoinSpend: Accumulator witness does not verify</source>
-        <translation>CoinSpend: Accumulator witness controleert niet</translation>
     </message>
     <message>
         <source>Display the stake modifier calculations in the debug.log file.</source>
@@ -6993,40 +5833,58 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Fout: Er is een fatale interne fout opgetreden, zie debug.log voor meer informatie</translation>
     </message>
     <message>
-        <source>Error: No valid utxo!</source>
-        <translation>Fout: geen geldige utxo!</translation>
+        <source>Accept connections from outside (default: %u if no -proxy or -connect/-noconnect)</source>
+        <translation>Accepteer verbindingen van buitenaf (standaard: %u als geen -proxy of -connect/noconnect)</translation>
     </message>
     <message>
-        <source>Failed to create mint</source>
-        <translation>Het is niet gelukt om mint te maken</translation>
+        <source>Cannot find the Sapling parameters in the following directory:
+%s
+Please run 'sapling-fetch-params' or './util/fetch-params.sh' and then restart.</source>
+        <translation>Kan de Sapling parameters niet terugvinden op de volgende locatie:
+%s
+Voer alstublieft 'sapling-fetch-params' of './util/fetch-params.sh' uit en herstart daarna.</translation>
     </message>
     <message>
-        <source>Failed to find Zerocoins in wallet.dat</source>
-        <translation>Niet gelukt om Zerocoins in wallet.dat te vinden.</translation>
+        <source>Cannot upgrade to Sapling wallet (already running Sapling support). Version: %d</source>
+        <translation>Kan niet upgraden naar Sapling portemonnee (alreeds uitvoerende Sapling ondersteuning). Versie: %d</translation>
     </message>
     <message>
-        <source>Failed to parse public spend</source>
-        <translation>Parsen van publieke uitgaven mislukt</translation>
+        <source>Warning: error reading %s! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
+        <translation>Waarschuwing: fout bij het lezen van %s! Alle sleutels lezen correct in, maar transactiegegevens of adresboekgegevens kunnen ontbreken of incorrect zijn.</translation>
     </message>
     <message>
-        <source>Failed to select a zerocoin</source>
-        <translation>Het is niet gelukt om een zerocoin te selecteren</translation>
+        <source>Allow DNS lookups for -addnode, -seednode and -connect (default: %u)</source>
+        <translation>DNS lookups toestaan voor -addnode, -seednode en -connect (standaard: %u)</translation>
     </message>
     <message>
-        <source>Failed to wipe zerocoinDB</source>
-        <translation>Mislukt om zerocoinDB te legen.</translation>
+        <source>Attempt to recover private keys from a corrupt wallet file</source>
+        <translation>Poging om privésleutels te herstellen van een corrupt wallet bestand</translation>
     </message>
     <message>
-        <source>Failed to write coin serial number into wallet</source>
-        <translation>Het serienummer van het muntstuk kan niet in de portemonnee worden geschreven</translation>
+        <source>Error loading %s: Wallet corrupted</source>
+        <translation>Error bij het laden van %s: Portemonnee beschadigd</translation>
+    </message>
+    <message>
+        <source>Error loading %s: Wallet requires newer version of PENGOLINCOIN Core</source>
+        <translation>Error bij het laden van %s: Portemonnee vereist een nieuwere versie van PENGOLINCOIN Core</translation>
+    </message>
+    <message>
+        <source>Error loading %s
+</source>
+        <translation>Error bij het laden van %s
+</translation>
+    </message>
+    <message>
+        <source>Error upgrading chainstate database</source>
+        <translation>Milsukt om de chainstate database te upgraden</translation>
+    </message>
+    <message>
+        <source>Invalid amount for -%s=&lt;amount&gt;: '%s'</source>
+        <translation>Ongeldige hoeveelheid voor -%s=&lt;amount&gt;: '%s'</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>Houd maximaal &lt;n&gt;niet te verbinden transacties in het geheugen (standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
-        <translation>Limiet grootte van signature cache naar &lt;n&gt; invoer (standaard: %u)</translation>
     </message>
     <message>
         <source>Line: %d</source>
@@ -7043,6 +5901,10 @@ PENGOLINCOIN Core Portemonnee</translation>
     <message>
         <source>Loading addresses...</source>
         <translation>Adressen laden...</translation>
+    </message>
+    <message>
+        <source>Loading banlist...</source>
+        <translation>Banlijst aan het laden...</translation>
     </message>
     <message>
         <source>Loading block index...</source>
@@ -7065,10 +5927,6 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Sporks laden...</translation>
     </message>
     <message>
-        <source>Loading wallet... (%3.2f %%)</source>
-        <translation>Portemonnee laden... (%3.2f %%)</translation>
-    </message>
-    <message>
         <source>Loading wallet...</source>
         <translation>Portemonnee aan het laden...</translation>
     </message>
@@ -7083,6 +5941,10 @@ PENGOLINCOIN Core Portemonnee</translation>
     <message>
         <source>Lookup(): Invalid -proxy address or hostname: '%s'</source>
         <translation>Lookup (): ongeldig -proxy-adres of hostnaam: '%s'</translation>
+    </message>
+    <message>
+        <source>MNs synchronization pending...</source>
+        <translation>Synchronisatie van MN's in afwachting...</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: %u)</source>
@@ -7101,8 +5963,12 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Maximaal per connectie verstuur buffer, &lt;n&gt;*1000 bytes (standaard: %u)</translation>
     </message>
     <message>
-        <source>Mint did not make it into blockchain</source>
-        <translation>Mint heeft de blockchain niet gehaald</translation>
+        <source>Mining/Staking options:</source>
+        <translation>Mining/Staking opties:</translation>
+    </message>
+    <message>
+        <source>Specify zk params directory (default: %s)</source>
+        <translation>Specifieer zk params locatie (standaard: %s)</translation>
     </message>
     <message>
         <source>Need to specify a port with -whitebind: '%s'</source>
@@ -7117,12 +5983,12 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Niet genoeg bestandsbeschrijvingen beschikbaar.</translation>
     </message>
     <message>
-        <source>Number of automatic wallet backups (default: 10)</source>
-        <translation>Aantal automatische portemonnee backups (standaard: 10)</translation>
-    </message>
-    <message>
         <source>Number of custom location backups to retain (default: %d)</source>
         <translation>Aantal aangepaste locatie back-ups om te behouden (standaard: %d)</translation>
+    </message>
+    <message>
+        <source>On first run, create a legacy wallet instead of a HD wallet</source>
+        <translation>Bij de initiële uitvoering, maak een legacy portemonnee aan in plaats van een HD portemonnee</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -7141,20 +6007,16 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Wachtwoord voor JSON-RPC connecties</translation>
     </message>
     <message>
-        <source>Unable to find transaction containing mint %s</source>
-        <translation>Kan geen transactie terugvinden die munting %s bevat</translation>
-    </message>
-    <message>
-        <source>Unable to find transaction containing mint, txHash: %s</source>
-        <translation>Kan geen transactie terugvinden die munting, txHash %s bevat</translation>
+        <source>Peers are being disconnected due time differences.</source>
+        <translation>Peers worden verbroken vanwege tijdsverschillen.</translation>
     </message>
     <message>
         <source>Use block spam filter (default: %u)</source>
         <translation>Gebruik block-spamfilter (standaard: %u)</translation>
     </message>
     <message>
-        <source>could not get lock on cs_spendcache</source>
-        <translation>kon niet op cs_spendcache terecht komen</translation>
+        <source>Wallet debugging/testing options:</source>
+        <translation>Portemonnee's debugging/test opties:</translation>
     </message>
     <message>
         <source>isValid(): Invalid -proxy address or hostname: '%s'</source>
@@ -7165,8 +6027,134 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Voorbereiden van hersynchronisatie...</translation>
     </message>
     <message>
-        <source>Need destination or change address because change is not exact</source>
-        <translation>Bestemmings- of wisseladres nodig omdat wissel niet exact is</translation>
+        <source>Connect only to the specified node(s); -noconnect or -connect=0 alone to disable automatic connections</source>
+        <translation>Connecteer enkel naar specifieke node(s); -noconnect of -connect=0 enkel om de automatische verbindingen uit te schakelen</translation>
+    </message>
+    <message>
+        <source>Do not accept transactions if any ancestor would have &lt;n&gt; or more in-mempool descendants (default: %u)</source>
+        <translation>Accepteer geen transacties als een voorouder &lt;n&gt; of meer nazaten in mempool zou hebben (standaard: %u)</translation>
+    </message>
+    <message>
+        <source>Do not accept transactions if any ancestor would have more than &lt;n&gt; kilobytes of in-mempool descendants (default: %u).</source>
+        <translation>Accepteer geen transacties als een voorouder &lt;n&gt; of meer nazaten van kilobytes in mempool zou hebben (standaard: %u)</translation>
+    </message>
+    <message>
+        <source>Do not accept transactions if number of in-mempool ancestors is &lt;n&gt; or more (default: %u)</source>
+        <translation>Accepteer geen transacties als het nummer &lt;n&gt; of meer aan afkomsten van in-mempool is (standaard: %u)</translation>
+    </message>
+    <message>
+        <source>Do not accept transactions whose size with all in-mempool ancestors exceeds &lt;n&gt; kilobytes (default: %u)</source>
+        <translation>Accepteer geen transacties als de grootte van alle in-mempool afkomsten &lt;n&gt;kilobytes overschrijdt (standaard: %u)</translation>
+    </message>
+    <message>
+        <source>Do not keep transactions in the mempool longer than &lt;n&gt; hours (default: %u)</source>
+        <translation>Bewaar geen transacties in de mempool langer dan &lt;n&gt; uren (standaard: %u)</translation>
+    </message>
+    <message>
+        <source>Fees (in %s/Kb) smaller than this are considered zero fee for relaying, mining and transaction creation (default: %s)</source>
+        <translation>Kosten (in %s/Kb) kleiner dan dit worden beschouwd als zero fee voor het heruitzenden, minen en een transactie te verrichting (standaard: %s)</translation>
+    </message>
+    <message>
+        <source>Fees (in %s/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Kosten (in %s/Kb) kleiner dan dit worden beschouwd als zero fee voor transactie verrichting (standaard: %s)</translation>
+    </message>
+    <message>
+        <source>Minimum positive amount (in PGO) allowed by GUI and RPC for the stake split threshold (default: %s)</source>
+        <translation>Minimum geldige waarde (in PGO) toegestaan bij GUI en RPC voor de staking splitsdrempel (standaard: %s)</translation>
+    </message>
+    <message>
+        <source>Please check that your computer's date and time are correct! If your clock is wrong PENGOLINCOIN Core will not work properly.</source>
+        <translation>Controleer of de datum en tijd van je computer juist zijn! Als je klok verkeerd ingesteld staat, werkt PENGOLINCOIN Core niet goed.</translation>
+    </message>
+    <message>
+        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect/-noconnect)</source>
+        <translation>Query voor peer adressen via DNS lookup, als er weinig adressen zijn (standaard: 1 tenzij -connect/-noconnect)</translation>
+    </message>
+    <message>
+        <source>Specify location of debug log file: this can be an absolute path or a path relative to the data directory (default: %s)</source>
+        <translation>Geef de locatie van het foutopsporingslogboek op: dit kan een absoluut pad zijn of een pad ten opzichte van de gegevensmap (standaard: %s)</translation>
+    </message>
+    <message>
+        <source>WARNING: The transaction has been signed and recorded, so the wallet will try to re-send it. Use 'abandontransaction' to cancel it. (txid: %s)</source>
+        <translation>WAARSCHUWING: De transactie is ondertekend en opgenomen, dus de portemonnee zal deze opnieuw proberen te versturen. Gebruik 'abandontransaction' om deze te annuleren. (txid: %s)</translation>
+    </message>
+    <message>
+        <source>(must be %d for %s-net)</source>
+        <translation>(moet %d voor %s-net zijn)</translation>
+    </message>
+    <message>
+        <source>Active Masternode not initialized.</source>
+        <translation>Actieve Masternode niet geïnitialiseerd.</translation>
+    </message>
+    <message>
+        <source>Allows deprecated RPC method(s) to be used</source>
+        <translation>Sta verouderde RPC methode(s) toe om gebruikt te worden</translation>
+    </message>
+    <message>
+        <source>Can't generate a change-address key. Please call keypoolrefill first.</source>
+        <translation>Kan geen wisselgeldadressleutel genereren. Roep eerst de keypoolrefill op.</translation>
+    </message>
+    <message>
+        <source>Cannot resolve -%s address: '%s'</source>
+        <translation>Kan oplossing -%s niet voltooien voor adres: '%s'</translation>
+    </message>
+    <message>
+        <source>Change index out of range</source>
+        <translation>Wissel buiten het bereik</translation>
+    </message>
+    <message>
+        <source>Error: -listen must be true if -masternode is set.</source>
+        <translation>Error: -listen moet op true staan als de -masternode is ingesteld.</translation>
+    </message>
+    <message>
+        <source>Error: -maxmempool must be at least %d MB</source>
+        <translation>Error: -maxmempool moet minsten %d MB groot zijn</translation>
+    </message>
+    <message>
+        <source>Failed to accept tx in the memory pool (reason: %s)
+</source>
+        <translation>Mislukt om transactie in memorypool te accepteren (reden: %s)
+</translation>
+    </message>
+    <message>
+        <source>Fee (in %s/kB) to add to transactions you send (default: %s)</source>
+        <translation>Kosten (in %s/kB) om toe te voegen aan de transactie die je verstuurd (standaard: %s)</translation>
+    </message>
+    <message>
+        <source>Invalid -masternodeaddr address: %s</source>
+        <translation>Ongeldig -masternodeaddr adres: %s</translation>
+    </message>
+    <message>
+        <source>Invalid -masternodeaddr port %d, only %d is supported on %s-net.</source>
+        <translation>Ongeldig -masternodeaddr poort %d, enkel %d is ondersteund op %s-net.</translation>
+    </message>
+    <message>
+        <source>Invalid port %d detected in masternode.conf</source>
+        <translation>Ongeldige poort %d gedetecteerd in masternode.conf</translation>
+    </message>
+    <message>
+        <source>Invalid status error.</source>
+        <translation>Ongeldige statuserror.</translation>
+    </message>
+    <message>
+        <source>Keep the transaction memory pool below &lt;n&gt; megabytes (default: %u)</source>
+        <translation>Hou de transactiememorypool lager dan &lt;n&gt; megabytes (standaard: %u)</translation>
+    </message>
+    <message>
+        <source>Keypool ran out, please call keypoolrefill first, or unlock the wallet.</source>
+        <translation>Keypool is opgeraakt, roep eerst keypoolrefill op of ontgrendel de portemonnee.</translation>
+    </message>
+    <message>
+        <source>Limit size of signature cache to &lt;n&gt; MiB (default: %u)</source>
+        <translation>Limietgrootte van signature cache naar &lt;n&gt; MiB (standaard: %u)</translation>
+    </message>
+    <message>
+        <source>No error</source>
+        <translation>Geen error</translation>
+    </message>
+    <message>
+        <source>Number of automatic wallet backups (default: %d)</source>
+        <translation>Aantal automatische portemonnee back-ups (standaard: %d)</translation>
     </message>
     <message>
         <source>Prepend debug output with timestamp (default: %u)</source>
@@ -7175,10 +6163,6 @@ PENGOLINCOIN Core Portemonnee</translation>
     <message>
         <source>Print version and exit</source>
         <translation>Print versie en verlaat</translation>
-    </message>
-    <message>
-        <source>Pubcoin not found in mint tx</source>
-        <translation>Pubcoin niet gevonden in mint tx</translation>
     </message>
     <message>
         <source>RPC server options:</source>
@@ -7197,14 +6181,6 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Herstel blockchain index van huidige blk000??.dat bestanden</translation>
     </message>
     <message>
-        <source>Receive and display P2P network alerts (default: %u)</source>
-        <translation>Ontvang en laat P2P netwerkmeldingen zien (standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Reindex the accumulator database</source>
-        <translation>Herindexeer de verzameldatabase</translation>
-    </message>
-    <message>
         <source>Relay and mine data carrier transactions (default: %u)</source>
         <translation>Relay en mine data carrier transacties (standaard: %u)</translation>
     </message>
@@ -7221,28 +6197,12 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Opnieuw scannen...</translation>
     </message>
     <message>
-        <source>ResetMintZerocoin finished: </source>
-        <translation>ResetMintZerocoin voltooid: </translation>
-    </message>
-    <message>
-        <source>ResetSpentZerocoin finished: </source>
-        <translation>ResetSpentZerocoin voltooid: </translation>
-    </message>
-    <message>
         <source>Run a thread to flush wallet periodically (default: %u)</source>
         <translation>Voer regelmatig een thread om de portemonnee te spoelen uit (standaard: %u)</translation>
     </message>
     <message>
         <source>Run in the background as a daemon and accept commands</source>
         <translation>Voer op de achtergrond uit als een daemon en accepteer commando's</translation>
-    </message>
-    <message>
-        <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
-        <translation>Zend transacties als zero fee transacties indien mogelijk (standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Session timed out.</source>
-        <translation>Sessie verlopen.</translation>
     </message>
     <message>
         <source>Set database cache size in megabytes (%d to %d, default: %d)</source>
@@ -7289,8 +6249,8 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Krimp debug.log bestand bij client startup (standaard: 1 wanneer geen -debug)</translation>
     </message>
     <message>
-        <source>Signing timed out.</source>
-        <translation>Ondertekening time out.</translation>
+        <source>Shutdown requested over the txs scan. Exiting.</source>
+        <translation>Afsluiting verzoekt door de txs scan. Afsluiten.</translation>
     </message>
     <message>
         <source>Signing transaction failed</source>
@@ -7325,16 +6285,8 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Specificeer je eigen publieke addres</translation>
     </message>
     <message>
-        <source>Spend Valid</source>
-        <translation>Besteed geldig</translation>
-    </message>
-    <message>
         <source>Spend unconfirmed change when sending transactions (default: %u)</source>
         <translation>Onbevestigd wisselgeld besteden bij het verzenden van transacties (standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Staking options:</source>
-        <translation>Staking opties:</translation>
     </message>
     <message>
         <source>Stop running after importing blocks from disk (default: %u)</source>
@@ -7347,10 +6299,6 @@ PENGOLINCOIN Core Portemonnee</translation>
     <message>
         <source>Synchronization finished</source>
         <translation>Synchronisatie voltooid</translation>
-    </message>
-    <message>
-        <source>Synchronization pending...</source>
-        <translation>Synchronisatie in afwachting...</translation>
     </message>
     <message>
         <source>Synchronizing budgets...</source>
@@ -7369,16 +6317,8 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Synchroniseren sporks...</translation>
     </message>
     <message>
-        <source>Syncing zPGO wallet...</source>
-        <translation>Synchroniseren zPGO portemonnee...</translation>
-    </message>
-    <message>
-        <source>The coin spend has been used</source>
-        <translation>De muntuitgaven zijn gebruikt</translation>
-    </message>
-    <message>
-        <source>The transaction did not verify</source>
-        <translation>De transactie heeft niet geverifieerd</translation>
+        <source>The threshold value cannot be less than %s</source>
+        <translation>De drempelwaarde kan niet lager zijn dan %s</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -7393,12 +6333,16 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Dit is bedoeld voor regressie test tools en app ontwikkeling.</translation>
     </message>
     <message>
-        <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
-        <translation>Drempel voor het verbreken van misdragende peers (standaard: %u)</translation>
+        <source>This is not a masternode. 'local' option disabled.</source>
+        <translation>Dit is geen masternode. 'Lokaal' optie uitgeschakeld.</translation>
     </message>
     <message>
-        <source>Too many spends needed</source>
-        <translation>Te veel uitgaven nodig</translation>
+        <source>This is not a masternode.</source>
+        <translation>Dit is geen Masternode.</translation>
+    </message>
+    <message>
+        <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
+        <translation>Drempel voor het verbreken van misdragende peers (standaard: %u)</translation>
     </message>
     <message>
         <source>Tor control port password (default: empty)</source>
@@ -7409,20 +6353,16 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Tor controle poort om te gebruiken als onion listening geactiveerd is (standaard: %s)</translation>
     </message>
     <message>
-        <source>Transaction Created</source>
-        <translation>Transactie gemaakt</translation>
-    </message>
-    <message>
-        <source>Transaction Mint Started</source>
-        <translation>Transactie startte met Mint</translation>
-    </message>
-    <message>
         <source>Transaction amount too small</source>
         <translation>Transactie bedrag te klein</translation>
     </message>
     <message>
         <source>Transaction amounts must be positive</source>
         <translation>Transactie bedragen moeten positief zijn</translation>
+    </message>
+    <message>
+        <source>Transaction canceled.</source>
+        <translation>Transactie geannuleerd.</translation>
     </message>
     <message>
         <source>Transaction too large for fee policy</source>
@@ -7433,16 +6373,12 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Transactie te groot</translation>
     </message>
     <message>
-        <source>Trying to spend an already spent serial #, try again.</source>
-        <translation>Probeer een reeds bestaand serienummer nog een keer uit te geven, probeer het opnieuw.</translation>
-    </message>
-    <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Niet mogelijk te binden aan %s op deze computer (bind stuurt fout %s terug)</translation>
     </message>
     <message>
-        <source>Unable to generate initial key</source>
-        <translation>Niet mogelijke om de initiële sleutel te genereren.</translation>
+        <source>Unable to generate keys</source>
+        <translation>Niet mogelijke om sleutels te genereren.</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
@@ -7457,20 +6393,20 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Onbekend netwerk gespecificeerd in -onlynet: '%s'</translation>
     </message>
     <message>
+        <source>Unsupported logging category %s=%s.</source>
+        <translation>Niet-ondersteunde logboekcategorie %s=%s.</translation>
+    </message>
+    <message>
         <source>Upgrade wallet to latest format</source>
         <translation>Upgrade portemonnee naar nieuwste formaat</translation>
     </message>
     <message>
+        <source>Upgrading coins database...</source>
+        <translation>Upgraden van munten database...</translation>
+    </message>
+    <message>
         <source>Use UPnP to map the listening port (default: %u)</source>
         <translation>Gebruik UPnP om de luisterpoort te mappen (standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 1 when listening)</source>
-        <translation>Gebruik UPnP om de luisterpoort te mappen (standaard: 1 bij het luisteren)</translation>
-    </message>
-    <message>
-        <source>Use a custom max chain reorganization depth (default: %u)</source>
-        <translation>Gebruik een aangepaste max chain reorganisatie diepte (standaard: %u)</translation>
     </message>
     <message>
         <source>Use the test network</source>
@@ -7485,20 +6421,12 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Gebruikersnaam voor JSON-RPC verbindingen</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zPGO</source>
-        <translation>Waarde is minder dan de kleinst beschikbare denominatie (=1) van zPGO</translation>
-    </message>
-    <message>
         <source>Verifying blocks...</source>
         <translation>Blokken verifiëren...</translation>
     </message>
     <message>
         <source>Verifying wallet...</source>
         <translation>Portemonnee verifiëren...</translation>
-    </message>
-    <message>
-        <source>Wallet %s resides outside data directory %s</source>
-        <translation>Portemonnee %s verblijft buiten de data directory %s</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart PENGOLINCOIN Core to complete</source>
@@ -7529,10 +6457,6 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Waarschuwing: Niet ondersteunde argument -debugnet genegeerd, gebruik -debug=net.</translation>
     </message>
     <message>
-        <source>You don't have enough Zerocoins in your wallet</source>
-        <translation>Je hebt niet genoeg Zerocoins in je portemonnee</translation>
-    </message>
-    <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>Je moet de database herbouwen met -reindex om -txindex te wijzigen</translation>
     </message>
@@ -7545,16 +6469,8 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>ZeroMQ notificatie opties:</translation>
     </message>
     <message>
-        <source>Zerocoin options:</source>
-        <translation>Zerocoin opties:</translation>
-    </message>
-    <message>
         <source>on startup</source>
         <translation>tijdens het opstarten</translation>
-    </message>
-    <message>
-        <source>wallet.dat corrupt, salvage failed</source>
-        <translation>wallet.dat corrupt, redding mislukt</translation>
     </message>
 </context>
 <context>
@@ -7568,12 +6484,36 @@ PENGOLINCOIN Core Portemonnee</translation>
         <translation>Zenden</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>TextLabel</translation>
+        <source>PENGOLINCOIN address or contact label</source>
+        <translation>PENGOLINCOIN adres of contactlabel</translation>
     </message>
     <message>
-        <source>PushButton</source>
-        <translation>Druk Knop</translation>
+        <source>Amount</source>
+        <translation>Bedrag</translation>
+    </message>
+    <message>
+        <source>Customize fee</source>
+        <translation>Kosten aanpassen</translation>
+    </message>
+    <message>
+        <source>Clear all</source>
+        <translation>Alles wissen</translation>
+    </message>
+    <message>
+        <source>Add recipient</source>
+        <translation>Voeg bestemmeling toe</translation>
+    </message>
+    <message>
+        <source>Total to send</source>
+        <translation>Totaal te versturen</translation>
+    </message>
+    <message>
+        <source>Reset to default</source>
+        <translation>Terugzetten naar standaardinstelling</translation>
+    </message>
+    <message>
+        <source>Include delegated</source>
+        <translation>Reken delegatie mee</translation>
     </message>
 </context>
 </TS>

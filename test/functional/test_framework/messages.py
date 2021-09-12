@@ -13,7 +13,9 @@ CBlock, CTransaction, CBlockHeader, CTxIn, CTxOut, etc....:
 msg_block, msg_tx, msg_headers, etc.:
     data structures that represent network messages
 
-ser_*, deser_*: functions that handle serialization/deserialization."""
+ser_*, deser_*: functions that handle serialization/deserialization.
+"""
+
 from codecs import encode
 import copy
 import hashlib
@@ -23,22 +25,27 @@ import socket
 import struct
 import time
 
-from test_framework.siphash import siphash256
-from test_framework.util import hex_str_to_bytes, bytes_to_hex_str
+from .siphash import siphash256
+from .util import hex_str_to_bytes, bytes_to_hex_str
 
 MIN_VERSION_SUPPORTED = 60001
 MY_VERSION = 30001
-MY_SUBVERSION = b"/python-mininode-tester:0.0.3/"
+MY_SUBVERSION = "/python-mininode-tester:0.0.3/"
 MY_RELAY = 1 # from version 70001 onwards, fRelay should be appended to version messages (BIP37)
 
 MAX_INV_SZ = 50000
-MAX_BLOCK_BASE_SIZE = 1000000
+MAX_BLOCK_BASE_SIZE = 2000000
+CURRENT_BLK_VERSION = 10
 
 COIN = 100000000 # 1 btc in satoshis
 
 NODE_NETWORK = (1 << 0)
 # NODE_GETUTXO = (1 << 1)
 NODE_BLOOM = (1 << 2)
+
+MSG_TX = 1
+MSG_BLOCK = 2
+MSG_TYPE_MASK = 0xffffffff >> 2
 
 # Serialization/deserialization tools
 def sha256(s):
@@ -208,7 +215,6 @@ class CAddress():
         return "CAddress(nServices=%i ip=%s port=%i)" % (self.nServices,
                                                          self.ip, self.port)
 
-
 class CInv():
     typemap = {
         0: "MSG_ERROR",
@@ -288,9 +294,23 @@ class COutPoint():
         r += struct.pack("<I", self.n)
         return r
 
+    def serialize_uniqueness(self):
+        r = b""
+        r += struct.pack("<I", self.n)
+        r += ser_uint256(self.hash)
+        return r
+
+    def deserialize_uniqueness(self, f):
+        self.n = struct.unpack("<I", f.read(4))[0]
+        self.hash = deser_uint256(f)
+
     def __repr__(self):
         return "COutPoint(hash=%064x n=%i)" % (self.hash, self.n)
 
+    def to_json(self):
+        return {"txid": "%064x" % self.hash, "vout": self.n}
+
+NullOutPoint = COutPoint(0, 0xffffffff)
 
 class CTxIn():
     def __init__(self, outpoint=None, scriptSig=b"", nSequence=0):
@@ -318,6 +338,9 @@ class CTxIn():
         return "CTxIn(prevout=%s scriptSig=%s nSequence=%i)" \
             % (repr(self.prevout), bytes_to_hex_str(self.scriptSig),
                self.nSequence)
+
+    def is_zerocoinspend(self):
+        return bytes_to_hex_str(self.scriptSig)[:2] == "c2"
 
 
 class CTxOut():
@@ -347,6 +370,7 @@ class CTransaction():
             self.nVersion = 1
             self.vin = []
             self.vout = []
+            self.sapData = b""
             self.nLockTime = 0
             self.sha256 = None
             self.hash = None
@@ -355,23 +379,17 @@ class CTransaction():
             self.vin = copy.deepcopy(tx.vin)
             self.vout = copy.deepcopy(tx.vout)
             self.nLockTime = tx.nLockTime
+            self.sapData = tx.sapData
             self.sha256 = tx.sha256
             self.hash = tx.hash
 
     def deserialize(self, f):
         self.nVersion = struct.unpack("<i", f.read(4))[0]
         self.vin = deser_vector(f, CTxIn)
-        flags = 0
-        if len(self.vin) == 0:
-            flags = struct.unpack("<B", f.read(1))[0]
-            # Not sure why flags can't be zero, but this
-            # matches the implementation in bitcoind
-            if (flags != 0):
-                self.vin = deser_vector(f, CTxIn)
-                self.vout = deser_vector(f, CTxOut)
-        else:
-            self.vout = deser_vector(f, CTxOut)
+        self.vout = deser_vector(f, CTxOut)
         self.nLockTime = struct.unpack("<I", f.read(4))[0]
+        if self.nVersion >= 2:
+            self.sapData = deser_string(f)
         self.sha256 = None
         self.hash = None
 
@@ -381,6 +399,8 @@ class CTransaction():
         r += ser_vector(self.vin)
         r += ser_vector(self.vout)
         r += struct.pack("<I", self.nLockTime)
+        if self.nVersion >= 2:
+            r += ser_string(self.sapData)
         return r
 
     # Regular serialization is with witness -- must explicitly
@@ -407,6 +427,28 @@ class CTransaction():
                 return False
         return True
 
+    def is_coinbase(self):
+        return (
+                len(self.vin) == 1 and
+                self.vin[0].prevout == NullOutPoint and
+                (not self.vin[0].is_zerocoinspend())
+        )
+
+    def is_coinstake(self):
+        return (
+                len(self.vin) == 1 and
+                len(self.vout) >= 2 and
+                self.vout[0] == CTxOut()
+        )
+
+    def from_hex(self, hexstring):
+        f = BytesIO(hex_str_to_bytes(hexstring))
+        self.deserialize(f)
+
+    def spends(self, outpoint):
+        return len([x for x in self.vin if
+                    x.prevout.hash == outpoint.hash and x.prevout.n == outpoint.n]) > 0
+
     def __repr__(self):
         return "CTransaction(nVersion=%i vin=%s vout=%s nLockTime=%i)" \
             % (self.nVersion, repr(self.vin), repr(self.vout), self.nLockTime)
@@ -423,19 +465,19 @@ class CBlockHeader():
             self.nTime = header.nTime
             self.nBits = header.nBits
             self.nNonce = header.nNonce
-            self.nAccumulatorCheckpoint = header.nAccumulatorCheckpoint
+            self.hashFinalSaplingRoot = header.hashFinalSaplingRoot
             self.sha256 = header.sha256
             self.hash = header.hash
             self.calc_sha256()
 
     def set_null(self):
-        self.nVersion = 4
+        self.nVersion = CURRENT_BLK_VERSION
         self.hashPrevBlock = 0
         self.hashMerkleRoot = 0
         self.nTime = 0
         self.nBits = 0
         self.nNonce = 0
-        self.nAccumulatorCheckpoint = 0
+        self.hashFinalSaplingRoot = 0
         self.sha256 = None
         self.hash = None
 
@@ -446,7 +488,8 @@ class CBlockHeader():
         self.nTime = struct.unpack("<I", f.read(4))[0]
         self.nBits = struct.unpack("<I", f.read(4))[0]
         self.nNonce = struct.unpack("<I", f.read(4))[0]
-        self.nAccumulatorCheckpoint = deser_uint256(f)
+        if self.nVersion >= 8:
+            self.hashFinalSaplingRoot = deser_uint256(f)
         self.sha256 = None
         self.hash = None
 
@@ -458,7 +501,8 @@ class CBlockHeader():
         r += struct.pack("<I", self.nTime)
         r += struct.pack("<I", self.nBits)
         r += struct.pack("<I", self.nNonce)
-        r += ser_uint256(self.nAccumulatorCheckpoint)
+        if self.nVersion >= 8:
+            r += ser_uint256(self.hashFinalSaplingRoot)
         return r
 
     def calc_sha256(self):
@@ -470,7 +514,8 @@ class CBlockHeader():
             r += struct.pack("<I", self.nTime)
             r += struct.pack("<I", self.nBits)
             r += struct.pack("<I", self.nNonce)
-            r += ser_uint256(self.nAccumulatorCheckpoint)
+            if self.nVersion >= 8:
+                r += ser_uint256(self.hashFinalSaplingRoot)
             self.sha256 = uint256_from_str(hash256(r))
             self.hash = encode(hash256(r)[::-1], 'hex_codec').decode('ascii')
 
@@ -479,36 +524,24 @@ class CBlockHeader():
         self.calc_sha256()
         return self.sha256
 
-    # PGO Uniqueness
-    def get_uniqueness(self, prevout):
-        r = b""
-        r += struct.pack("<I", prevout.n)
-        r += ser_uint256(prevout.hash)
-        return r
-
-    def solve_stake(self, prevouts, isModifierV2=False):
+    # PENGOLINCOIN
+    def solve_stake(self, stakeInputs, prevModifier):
         target0 = uint256_from_compact(self.nBits)
         loop = True
         while loop:
-            for prevout in prevouts:
-                nvalue, txBlockTime, hashStake = prevouts[prevout]
+            for uniqueness in stakeInputs:
+                nvalue, _, prevTime = stakeInputs[uniqueness]
                 target = int(target0 * nvalue / 100) % 2**256
                 data = b""
-                if isModifierV2:
-                    data += ser_uint256(0)
-                else:
-                    data += ser_uint64(0)
-                #data += ser_uint64(stakeModifier)
-                data += struct.pack("<I", txBlockTime)
-                # prevout for zPoS is serial hashes hex strings
-                if isinstance(prevout, COutPoint):
-                    data += self.get_uniqueness(prevout)
-                else:
-                    data += ser_uint256(uint256_from_str(bytes.fromhex(hashStake)[::-1]))
+                # always modifier V2 (256 bits) on regtest
+                data += ser_uint256(prevModifier)
+                data += struct.pack("<I", prevTime)
+                # prevout is CStake uniqueness
+                data += uniqueness
                 data += struct.pack("<I", self.nTime)
                 posHash = uint256_from_str(hash256(data))
                 if posHash <= target:
-                    self.prevoutStake = prevout
+                    self.prevoutStake = uniqueness
                     loop = False
                     break
             if loop:
@@ -525,10 +558,12 @@ class CBlock(CBlockHeader):
     def __init__(self, header=None):
         super(CBlock, self).__init__(header)
         self.vtx = []
+        self.sig_key = None     # not serialized / used only to re_sign
 
     def deserialize(self, f):
         super(CBlock, self).deserialize(f)
         self.vtx = deser_vector(f, CTransaction)
+        self.sig_key = None
 
     def serialize(self, with_witness=False):
         r = b""
@@ -597,9 +632,17 @@ class CBlock(CBlockHeader):
         data += struct.pack("<I", self.nTime)
         data += struct.pack("<I", self.nBits)
         data += struct.pack("<I", self.nNonce)
-        data += ser_uint256(self.nAccumulatorCheckpoint)
+        if self.nVersion >= 8:
+            data += ser_uint256(self.hashFinalSaplingRoot)
         sha256NoSig = hash256(data)
         self.vchBlockSig = key.sign(sha256NoSig, low_s=low_s)
+        self.sig_key = key
+        self.low_s = low_s
+
+    def re_sign_block(self):
+        if self.sig_key is None:
+            raise Exception("Unable to re-sign block. Key Not present, use 'sign_block' first.")
+        return self.sign_block(self.sig_key, self.low_s)
 
     def __repr__(self):
         return "CBlock(nVersion=%i hashPrevBlock=%064x hashMerkleRoot=%064x nTime=%s nBits=%08x nNonce=%08x vtx=%s)" \
@@ -696,7 +739,7 @@ class HeaderAndShortIDs():
         self.prefilled_txn = []
         self.use_witness = False
 
-        if p2pheaders_and_shortids != None:
+        if p2pheaders_and_shortids is not None:
             self.header = p2pheaders_and_shortids.header
             self.nonce = p2pheaders_and_shortids.nonce
             self.shortids = p2pheaders_and_shortids.shortids
@@ -753,7 +796,7 @@ class BlockTransactionsRequest():
 
     def __init__(self, blockhash=0, indexes = None):
         self.blockhash = blockhash
-        self.indexes = indexes if indexes != None else []
+        self.indexes = indexes if indexes is not None else []
 
     def deserialize(self, f):
         self.blockhash = deser_uint256(f)
@@ -793,7 +836,7 @@ class BlockTransactions():
 
     def __init__(self, blockhash=0, transactions = None):
         self.blockhash = blockhash
-        self.transactions = transactions if transactions != None else []
+        self.transactions = transactions if transactions is not None else []
 
     def deserialize(self, f):
         self.blockhash = deser_uint256(f)
@@ -886,7 +929,7 @@ class msg_version():
             self.addrFrom = CAddress()
             self.addrFrom.deserialize(f)
             self.nNonce = struct.unpack("<Q", f.read(8))[0]
-            self.strSubVer = deser_string(f)
+            self.strSubVer = deser_string(f).decode('utf-8')
         else:
             self.addrFrom = None
             self.nNonce = None
@@ -915,7 +958,7 @@ class msg_version():
         r += self.addrTo.serialize()
         r += self.addrFrom.serialize()
         r += struct.pack("<Q", self.nNonce)
-        r += ser_string(self.strSubVer)
+        r += ser_string(self.strSubVer.encode('utf-8'))
         r += struct.pack("<i", self.nStartingHeight)
         r += struct.pack("<b", self.nRelay)
         return r
@@ -982,7 +1025,7 @@ class msg_getdata():
     command = b"getdata"
 
     def __init__(self, inv=None):
-        self.inv = inv if inv != None else []
+        self.inv = inv if inv is not None else []
 
     def deserialize(self, f):
         self.inv = deser_vector(f, CInv)
@@ -1206,38 +1249,6 @@ class msg_headers():
     def __repr__(self):
         return "msg_headers(headers=%s)" % repr(self.headers)
 
-
-class msg_reject():
-    command = b"reject"
-    REJECT_MALFORMED = 1
-
-    def __init__(self):
-        self.message = b""
-        self.code = 0
-        self.reason = b""
-        self.data = 0
-
-    def deserialize(self, f):
-        self.message = deser_string(f)
-        self.code = struct.unpack("<B", f.read(1))[0]
-        self.reason = deser_string(f)
-        if (self.code != self.REJECT_MALFORMED and
-                (self.message == b"block" or self.message == b"tx")):
-            self.data = deser_uint256(f)
-
-    def serialize(self):
-        r = ser_string(self.message)
-        r += struct.pack("<B", self.code)
-        r += ser_string(self.reason)
-        if (self.code != self.REJECT_MALFORMED and
-                (self.message == b"block" or self.message == b"tx")):
-            r += ser_uint256(self.data)
-        return r
-
-    def __repr__(self):
-        return "msg_reject: %s %d %s [%064x]" \
-            % (self.message, self.code, self.reason, self.data)
-
 class msg_feefilter():
     command = b"feefilter"
 
@@ -1334,3 +1345,30 @@ class msg_witness_blocktxn(msg_blocktxn):
         r += self.block_transactions.serialize(with_witness=True)
         return r
 
+
+# PENGOLINCOIN Classes
+class Masternode(object):
+    def __init__(self, idx, owner_addr, operator_addr, voting_addr, ipport, payout_addr, operator_key):
+        self.idx = idx
+        self.owner = owner_addr
+        self.operator = operator_addr
+        self.voting = voting_addr
+        self.ipport = ipport
+        self.payee = payout_addr
+        self.operator_key = operator_key
+        self.proTx = None
+        self.collateral = None
+
+    def revoked(self):
+        self.ipport = "[::]:0"
+        self.operator = ""
+        self.operator_key = None
+
+    def __repr__(self):
+        return "Masternode(idx=%d, owner=%s, operator=%s, voting=%s, ip=%s, payee=%s, opkey=%s, protx=%s, collateral=%s)" % (
+            self.idx, str(self.owner), str(self.operator), str(self.voting), str(self.ipport),
+            str(self.payee), str(self.operator_key), str(self.proTx), str(self.collateral)
+        )
+
+    def __str__(self):
+        return self.__repr__()

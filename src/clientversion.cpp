@@ -1,5 +1,6 @@
 // Copyright (c) 2012-2017 The Bitcoin Core developers
-// Copyright (c) 2016-2019 The PENGOLINCOIN developers
+// Copyright (c) 2016-2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -45,8 +46,8 @@ const std::string CLIENT_NAME("PENGOLINCOIN Core");
 //! git will put "#define GIT_ARCHIVE 1" on the next line inside archives. 
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
-#define GIT_COMMIT_ID "b005d840a8e694a9e0726131a580fc72dcab2b53"
-#define GIT_COMMIT_DATE "Sun, 15 Dec 2019 03:51:34 -0800"
+#define GIT_COMMIT_ID "1e4fa87279d63cf14ac31a7f6040c811a3bbfcd5"
+#define GIT_COMMIT_DATE "Wed, 28 Jul 2021 14:09:09 +0200"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \

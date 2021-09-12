@@ -107,7 +107,7 @@ git merge commit are mentioned.
 - #166 `d37b4aa` [Utils] Add ExecStop= to example systemd service
 - #167 `a6becee` [Utils] makeseeds script update
 
-Pgos
+Credits
 =======
 
 Thanks to everyone who directly contributed to this release:

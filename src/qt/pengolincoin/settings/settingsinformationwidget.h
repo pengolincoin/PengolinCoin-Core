@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PENGOLINCOIN developers
+// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,14 +20,22 @@ class SettingsInformationWidget : public PWidget
 
 public:
     explicit SettingsInformationWidget(PENGOLINCOINGUI* _window, QWidget *parent = nullptr);
-    ~SettingsInformationWidget();
+    ~SettingsInformationWidget() override;
 
     void loadClientModel() override;
 
-private slots:
+    void run(int type) override;
+    void onError(QString error, int type) override;
+
+private Q_SLOTS:
     void setNumConnections(int count);
     void setNumBlocks(int count);
+    void showEvent(QShowEvent* event) override;
+    void hideEvent(QHideEvent* event) override;
+
+public Q_SLOTS:
     void openNetworkMonitor();
+    void setMasternodeCount(const QString& strMasternodes);
 
 private:
     Ui::SettingsInformationWidget *ui;

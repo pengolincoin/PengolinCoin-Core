@@ -202,7 +202,7 @@ git merge commit are mentioned.
 - #240 `1957445` [Debug Log] Increase verbosity of error-message (Mrs-X)
 - #241 #249 `b60118b` `7405e31` Nullpointer reference fixed (Mrs-X)
 
-Pgos
+Credits
 =======
 
 Thanks to everyone who directly contributed to this release:
