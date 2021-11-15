@@ -322,6 +322,12 @@ def initialize_datadir(dirname, n):
 def get_datadir_path(dirname, n):
     return os.path.join(dirname, "node" + str(n))
 
+def append_config(dirname, n, options):
+    datadir = get_datadir_path(dirname, n)
+    with open(os.path.join(datadir, "pengolincoin.conf"), 'a', encoding='utf8') as f:
+        for option in options:
+            f.write(option + "\n")
+
 def get_auth_cookie(datadir):
     user = None
     password = None
@@ -335,7 +341,7 @@ def get_auth_cookie(datadir):
                     assert password is None  # Ensure that there is only one rpcpassword line
                     password = line.split("=")[1].strip("\n")
     if os.path.isfile(os.path.join(datadir, "regtest", ".cookie")):
-        with open(os.path.join(datadir, "regtest", ".cookie"), 'r') as f:
+        with open(os.path.join(datadir, "regtest", ".cookie"), 'r', encoding="utf8") as f:
             userpass = f.read()
             split_userpass = userpass.split(':')
             user = split_userpass[0]

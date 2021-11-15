@@ -1,4 +1,4 @@
-// Copyright (c) 2020 PIVX developers
+// Copyright (c) 2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
@@ -11,10 +11,6 @@
 #include "operationresult.h"
 #include "primitives/transaction.h"
 #include "wallet/wallet.h"
-
-// transaction.h comment: spending taddr output requires CTxIn >= 148 bytes and typical taddr txout is 34 bytes
-#define CTXIN_SPEND_DUST_SIZE   148
-#define CTXOUT_REGULAR_SIZE     34
 
 class CCoinControl;
 struct TxValues;

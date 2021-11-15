@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2016 The Dash developers
-// Copyright (c) 2017-2020 PIVX developers
+// Copyright (c) 2017-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -15,10 +15,8 @@
 #include "interfaces/wallet.h"
 
 #include "key.h"
-#include "key_io.h"
 #include "operationresult.h"
 #include "support/allocators/zeroafterfree.h"
-#include "pairresult.h"
 
 #include <map>
 #include <vector>
@@ -274,14 +272,14 @@ public:
     int64_t getKeyCreationTime(const CTxDestination& address);
     int64_t getKeyCreationTime(const std::string& address);
     int64_t getKeyCreationTime(const libzcash::SaplingPaymentAddress& address);
-    PairResult getNewAddress(Destination& ret, std::string label = "") const;
+    CallResult<Destination> getNewAddress(const std::string& label = "") const;
     /**
      * Return a new address used to receive for delegated cold stake purpose.
      */
-    PairResult getNewStakingAddress(Destination& ret, std::string label = "") const;
+    CallResult<Destination> getNewStakingAddress(const std::string& label = "") const;
 
     //! Return a new shielded address.
-    PairResult getNewShieldedAddress(QString& shieldedAddrRet, std::string strLabel = "");
+    CallResult<Destination> getNewShieldedAddress(std::string strLabel = "");
 
     //! Return new wallet rescan reserver
     WalletRescanReserver getRescanReserver() const { return WalletRescanReserver(wallet); }
@@ -316,7 +314,8 @@ public:
         }
 
         bool operator<(const ListCoinsKey& key2) const {
-            return this->address < key2.address;
+            return this->address < key2.address ||
+                    (this->address == key2.address && this->stakerAddress < key2.stakerAddress);
         }
     };
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -107,12 +107,7 @@ QVariant MNModel::data(const QModelIndex &index, int role) const
                 return "Not available";
             }
             case WAS_COLLATERAL_ACCEPTED:{
-                if (!isAvailable) return false;
-                std::string txHash = rec->vin.prevout.hash.GetHex();
-                if (!collateralTxAccepted.value(txHash) && walletModel) {
-                    return walletModel->getWalletTxDepth(rec->vin.prevout.hash) > 0;
-                }
-                return true;
+                return isAvailable && collateralTxAccepted.value(rec->vin.prevout.hash.GetHex());
             }
         }
     }

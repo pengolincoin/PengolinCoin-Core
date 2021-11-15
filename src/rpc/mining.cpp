@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
@@ -691,7 +691,7 @@ UniValue getblocktemplate(const JSONRPCRequest& request)
     }
 
     UniValue aux(UniValue::VOBJ);
-    aux.pushKV("flags", HexStr(COINBASE_FLAGS.begin(), COINBASE_FLAGS.end()));
+    aux.pushKV("flags", HexStr(COINBASE_FLAGS));
 
     arith_uint256& hashTarget = arith_uint256().SetCompact(pblock->nBits);
 

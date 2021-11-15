@@ -79,7 +79,7 @@ class NotificationsTest(PengolinCoinTestFramework):
         self.nodes[1].generate(51)
         self.sync_all()
 
-        # Give bitcoind 10 seconds to write the alert notification
+        # Give pengolincoind 10 seconds to write the alert notification
         wait_until(lambda: len(os.listdir(self.alertnotify_dir)), timeout=10)
 
         for notify_file in os.listdir(self.alertnotify_dir):

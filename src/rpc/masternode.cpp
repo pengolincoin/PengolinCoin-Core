@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -234,7 +234,7 @@ UniValue listmasternodes(const JSONRPCRequest& request)
         LookupHost(strHost.c_str(), node, false);
         std::string strNetwork = GetNetworkName(node.GetNetwork());
 
-        obj.pushKV("rank", (strStatus == "ENABLED" ? pos : 0));
+        obj.pushKV("rank", (strStatus == "ENABLED" ? pos : -1));
         obj.pushKV("type", "legacy");
         obj.pushKV("network", strNetwork);
         obj.pushKV("txhash", strTxHash);
@@ -346,7 +346,7 @@ bool StartMasternodeEntry(UniValue& statusObjRet, CMasternodeBroadcast& mnbRet, 
         if (strCommand == "disabled" && pmn->IsEnabled()) return false;
     }
 
-    fSuccessRet = CMasternodeBroadcast::Create(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), errorMessage, mnbRet);
+    fSuccessRet = CMasternodeBroadcast::Create(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), errorMessage, mnbRet, false, mnodeman.GetBestHeight());
 
     statusObjRet.pushKV("alias", mne.getAlias());
     statusObjRet.pushKV("result", fSuccessRet ? "success" : "failed");
@@ -378,7 +378,7 @@ void SerializeMNB(UniValue& statusObjRet, const CMasternodeBroadcast& mnb, const
         successful++;
         CDataStream ssMnb(SER_NETWORK, PROTOCOL_VERSION);
         ssMnb << mnb;
-        statusObjRet.pushKV("hex", HexStr(ssMnb.begin(), ssMnb.end()));
+        statusObjRet.pushKV("hex", HexStr(ssMnb));
     } else {
         failed++;
     }

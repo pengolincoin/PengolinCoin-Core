@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2019 PIVX developers
+// Copyright (c) 2015-2019 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
@@ -38,7 +38,7 @@ bool CMasternodeConfig::read(std::string& strErr)
     LOCK(cs_entries);
     int linenumber = 1;
     fs::path pathMasternodeConfigFile = GetMasternodeConfigFile();
-    fs::ifstream streamConfig(pathMasternodeConfigFile);
+    fsbridge::ifstream streamConfig(pathMasternodeConfigFile);
 
     if (!streamConfig.good()) {
         FILE* configFile = fsbridge::fopen(pathMasternodeConfigFile, "a");

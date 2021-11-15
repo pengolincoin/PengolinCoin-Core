@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -8,13 +8,11 @@
 
 #include "qt/pengolincoin/pwidget.h"
 #include "addresstablemodel.h"
-#include "qt/pengolincoin/tooltipmenu.h"
 #include "furabstractlistitemdelegate.h"
-#include "qt/pengolincoin/addressfilterproxymodel.h"
 
 #include <QWidget>
 
-class AddressViewDelegate;
+class AddressFilterProxyModel;
 class TooltipMenu;
 class PENGOLINCOINGUI;
 class WalletModel;
@@ -36,7 +34,6 @@ public:
     ~AddressesWidget();
 
     void loadWalletModel() override;
-    void onNewContactClicked();
 
 private Q_SLOTS:
     void handleAddressClicked(const QModelIndex &index);
@@ -56,7 +53,6 @@ private:
     AddressTableModel* addressTablemodel = nullptr;
     AddressFilterProxyModel *filter = nullptr;
 
-    bool isOnMyAddresses = true;
     TooltipMenu* menu = nullptr;
 
     // Cached index

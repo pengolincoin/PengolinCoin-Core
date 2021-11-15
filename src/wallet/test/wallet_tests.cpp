@@ -1,5 +1,5 @@
 // Copyright (c) 2012-2014 The Bitcoin Core developers
-// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -578,8 +578,9 @@ BOOST_AUTO_TEST_CASE(cached_balances_tests)
     wallet.SetLastBlockProcessed(chainActive.Tip());
 
     // Receive balance from an external source
-    CTxDestination receivingAddr;
-    BOOST_ASSERT(wallet.getNewAddress(receivingAddr, "receiving_address").result);
+    auto res = wallet.getNewAddress("receiving_address");
+    BOOST_ASSERT(res);
+    CTxDestination receivingAddr = *res.getObjResult();
     CTxOut creditOut(nCredit/2, GetScriptForDestination(receivingAddr));
     CWalletTx& wtxCredit = ReceiveBalanceWith({creditOut, creditOut},wallet);
 

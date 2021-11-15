@@ -792,9 +792,10 @@ rpc/libbitcoin_server_a-blockchain.o: rpc/blockchain.cpp \
  /usr/include/boost/filesystem/fstream.hpp /usr/include/c++/9/fstream \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
- /usr/include/c++/9/bits/fstream.tcc streams.h addrman.h netaddress.h \
- config/pengolincoin-config.h compat.h /usr/include/arpa/inet.h \
- /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/sys/socket.h \
+ /usr/include/c++/9/bits/fstream.tcc streams.h addrman.h \
+ config/pengolincoin-config.h clientversion.h netaddress.h compat.h \
+ /usr/include/arpa/inet.h /usr/include/netinet/in.h \
+ /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
  /usr/include/x86_64-linux-gnu/bits/socket.h \
  /usr/include/x86_64-linux-gnu/bits/socket_type.h \
@@ -825,13 +826,13 @@ rpc/libbitcoin_server_a-blockchain.o: rpc/blockchain.cpp \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h protocol.h random.h \
- crypto/chacha20.h sync.h threadsafety.h util/macros.h \
- /usr/include/c++/9/condition_variable /usr/include/c++/9/thread \
- timedata.h util/system.h fs.h logging.h tinyformat.h \
- /usr/include/c++/9/iostream compat.h sync.h tinyformat.h utiltime.h \
- util/threadnames.h /usr/include/boost/signals2/signal.hpp \
- /usr/include/boost/function.hpp \
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h tinyformat.h \
+ /usr/include/c++/9/iostream utilstrencodings.h util/string.h \
+ attributes.h protocol.h random.h crypto/chacha20.h sync.h threadsafety.h \
+ util/macros.h /usr/include/c++/9/condition_variable \
+ /usr/include/c++/9/thread timedata.h util/system.h fs.h logging.h \
+ compat.h sync.h tinyformat.h utiltime.h util/threadnames.h \
+ /usr/include/boost/signals2/signal.hpp /usr/include/boost/function.hpp \
  /usr/include/boost/function/detail/prologue.hpp \
  /usr/include/boost/function/function_base.hpp \
  /usr/include/boost/integer.hpp /usr/include/boost/integer_traits.hpp \
@@ -1172,9 +1173,10 @@ rpc/libbitcoin_server_a-blockchain.o: rpc/blockchain.cpp \
  /usr/include/boost/thread/pthread/condition_variable_fwd.hpp \
  /usr/include/boost/thread/cv_status.hpp \
  /usr/include/boost/enable_shared_from_this.hpp \
- /usr/include/boost/smart_ptr/enable_shared_from_this.hpp bloom.h \
- limitedmap.h utilstrencodings.h threadinterrupt.h \
- budget/finalizedbudget.h budget/finalizedbudgetvote.h checkpoints.h \
+ /usr/include/boost/smart_ptr/enable_shared_from_this.hpp hash.h bloom.h \
+ limitedmap.h threadinterrupt.h budget/finalizedbudget.h \
+ budget/finalizedbudgetvote.h validationinterface.h \
+ sapling/incrementalmerkletree.h sapling/sapling_util.h checkpoints.h \
  clientversion.h core_io.h consensus/upgrades.h consensus/params.h \
  libzerocoin/Params.h libzerocoin/bignum.h \
  /usr/include/x86_64-linux-gnu/gmp.h arith_uint256.h version.h random.h \
@@ -1184,18 +1186,18 @@ rpc/libbitcoin_server_a-blockchain.o: rpc/blockchain.cpp \
  sapling/zip32.h key.h support/allocators/zeroafterfree.h flatfile.h \
  pow.h key_io.h script/standard.h chainparams.h script/interpreter.h \
  script/script_error.h masternodeman.h activemasternode.h init.h \
- evo/deterministicmns.h dbwrapper.h clientversion.h \
- /usr/include/c++/9/typeindex leveldb/include/leveldb/db.h \
- leveldb/include/leveldb/export.h leveldb/include/leveldb/iterator.h \
- leveldb/include/leveldb/slice.h leveldb/include/leveldb/status.h \
- leveldb/include/leveldb/options.h leveldb/include/leveldb/write_batch.h \
- evo/evodb.h evo/providertx.h consensus/validation.h netaddress.h \
- saltedhasher.h immer/map.hpp immer/memory_policy.hpp \
- immer/heap/cpp_heap.hpp immer/heap/heap_policy.hpp \
- immer/heap/debug_size_heap.hpp immer/config.hpp \
- immer/heap/identity_heap.hpp immer/heap/free_list_heap.hpp \
- immer/heap/with_data.hpp immer/heap/free_list_node.hpp \
- immer/heap/split_heap.hpp immer/heap/thread_local_free_list_heap.hpp \
+ evo/deterministicmns.h dbwrapper.h /usr/include/c++/9/typeindex \
+ leveldb/include/leveldb/db.h leveldb/include/leveldb/export.h \
+ leveldb/include/leveldb/iterator.h leveldb/include/leveldb/slice.h \
+ leveldb/include/leveldb/status.h leveldb/include/leveldb/options.h \
+ leveldb/include/leveldb/write_batch.h evo/evodb.h evo/providertx.h \
+ consensus/validation.h netaddress.h saltedhasher.h immer/map.hpp \
+ immer/memory_policy.hpp immer/heap/cpp_heap.hpp \
+ immer/heap/heap_policy.hpp immer/heap/debug_size_heap.hpp \
+ immer/config.hpp immer/heap/identity_heap.hpp \
+ immer/heap/free_list_heap.hpp immer/heap/with_data.hpp \
+ immer/heap/free_list_node.hpp immer/heap/split_heap.hpp \
+ immer/heap/thread_local_free_list_heap.hpp \
  immer/heap/unsafe_free_list_heap.hpp immer/refcount/refcount_policy.hpp \
  immer/refcount/no_refcount_policy.hpp \
  immer/refcount/unsafe_refcount_policy.hpp \
@@ -1206,16 +1208,15 @@ rpc/libbitcoin_server_a-blockchain.o: rpc/blockchain.cpp \
  immer/detail/type_traits.hpp immer/detail/hamts/bits.hpp \
  immer/detail/hamts/champ_iterator.hpp immer/detail/iterator_facade.hpp \
  immer/map_transient.hpp masternode.h key_io.h messagesigner.h net.h \
- operationresult.h validationinterface.h sapling/incrementalmerkletree.h \
- sapling/sapling_util.h wallet/wallet.h addressbook.h \
- consensus/tx_verify.h crypter.h keystore.h destination_io.h pairresult.h \
- policy/feerate.h primitives/block.h guiinterface.h \
+ operationresult.h validationinterface.h wallet/wallet.h addressbook.h \
+ consensus/tx_verify.h crypter.h keystore.h destination_io.h \
+ operationresult.h policy/feerate.h primitives/block.h guiinterface.h \
  /usr/include/boost/signals2/last_value.hpp util/system.h \
- utilstrencodings.h validationinterface.h script/ismine.h \
- script/standard.h /usr/include/c++/9/bitset wallet/scriptpubkeyman.h \
- wallet/hdchain.h wallet/wallet.h wallet/walletdb.h wallet/db.h \
- /usr/include/db_cxx.h /usr/include/db.h /usr/include/inttypes.h \
- script/keyorigin.h sapling/saplingscriptpubkeyman.h sapling/note.h \
+ utilstrencodings.h script/ismine.h script/standard.h \
+ /usr/include/c++/9/bitset wallet/scriptpubkeyman.h wallet/hdchain.h \
+ wallet/wallet.h wallet/walletdb.h wallet/db.h /usr/include/db_cxx.h \
+ /usr/include/db.h /usr/include/inttypes.h script/keyorigin.h \
+ sapling/saplingscriptpubkeyman.h sapling/note.h \
  sapling/incrementalmerkletree.h validation.h amount.h coins.h \
  compressor.h script/script.h consensus/consensus.h memusage.h \
  consensus/validation.h moneysupply.h policy/feerate.h \
@@ -1399,7 +1400,7 @@ rpc/libbitcoin_server_a-blockchain.o: rpc/blockchain.cpp \
  policy/policy.h policy/feerate.h rpc/server.h rpc/protocol.h txdb.h \
  dbwrapper.h libzerocoin/Coin.h libzerocoin/Denominations.h \
  libzerocoin/Params.h libzerocoin/CoinSpend.h libzerocoin/Coin.h \
- libzerocoin/Commitment.h libzerocoin/SpendType.h utilmoneystr.h hash.h \
+ libzerocoin/Commitment.h libzerocoin/SpendType.h utilmoneystr.h \
  warnings.h /usr/include/c++/9/numeric \
  /usr/include/c++/9/bits/stl_numeric.h \
  /usr/include/boost/thread/thread.hpp \
@@ -3315,9 +3316,11 @@ streams.h:
 
 addrman.h:
 
-netaddress.h:
-
 config/pengolincoin-config.h:
+
+clientversion.h:
+
+netaddress.h:
 
 compat.h:
 
@@ -3401,6 +3404,16 @@ compat.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+util/string.h:
+
+attributes.h:
+
 protocol.h:
 
 random.h:
@@ -3424,10 +3437,6 @@ util/system.h:
 fs.h:
 
 logging.h:
-
-tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 compat.h:
 
@@ -4167,17 +4176,23 @@ util/threadnames.h:
 
 /usr/include/boost/smart_ptr/enable_shared_from_this.hpp:
 
+hash.h:
+
 bloom.h:
 
 limitedmap.h:
-
-utilstrencodings.h:
 
 threadinterrupt.h:
 
 budget/finalizedbudget.h:
 
 budget/finalizedbudgetvote.h:
+
+validationinterface.h:
+
+sapling/incrementalmerkletree.h:
+
+sapling/sapling_util.h:
 
 checkpoints.h:
 
@@ -4254,8 +4269,6 @@ init.h:
 evo/deterministicmns.h:
 
 dbwrapper.h:
-
-clientversion.h:
 
 /usr/include/c++/9/typeindex:
 
@@ -4351,10 +4364,6 @@ operationresult.h:
 
 validationinterface.h:
 
-sapling/incrementalmerkletree.h:
-
-sapling/sapling_util.h:
-
 wallet/wallet.h:
 
 addressbook.h:
@@ -4367,7 +4376,7 @@ keystore.h:
 
 destination_io.h:
 
-pairresult.h:
+operationresult.h:
 
 policy/feerate.h:
 
@@ -4380,8 +4389,6 @@ guiinterface.h:
 util/system.h:
 
 utilstrencodings.h:
-
-validationinterface.h:
 
 script/ismine.h:
 
@@ -4824,8 +4831,6 @@ libzerocoin/Commitment.h:
 libzerocoin/SpendType.h:
 
 utilmoneystr.h:
-
-hash.h:
 
 warnings.h:
 

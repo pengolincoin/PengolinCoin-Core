@@ -48,7 +48,7 @@ Build PENGOLINCOIN Core
 
 1. Clone the PENGOLINCOIN Core source code:
 
-        git clone https://github.com/pengolincoin-project/pengolincoin
+        git clone https://github.com/pengolincoin/PengolinCoin-Core
         cd pengolincoin
 
 2.  Build PENGOLINCOIN Core:

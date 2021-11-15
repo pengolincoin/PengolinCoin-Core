@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2016 The Dash developers
-// Copyright (c) 2016-2020 PIVX developers
+// Copyright (c) 2016-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -89,8 +89,9 @@ public:
     int64_t GetSporkValue(SporkId nSporkID);
     // Create/Sign/Relay the spork message, and update the maps
     bool UpdateSpork(SporkId nSporkID, int64_t nValue);
-    // Add spork message to mapSporks and mapSporksActive
-    void AddOrUpdateSporkMessage(const CSporkMessage& spork);
+    // Add spork message to mapSporks and mapSporksActive.
+    // if flush=true, save to DB as well
+    void AddOrUpdateSporkMessage(const CSporkMessage& spork, bool flush = false);
 
     bool IsSporkActive(SporkId nSporkID);
     std::string GetSporkNameByID(SporkId id);

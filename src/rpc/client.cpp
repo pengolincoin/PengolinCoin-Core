@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -29,8 +29,10 @@ public:
 static const CRPCConvertParam vRPCConvertParams[] = {
     { "addmultisigaddress", 0, "nrequired" },
     { "addmultisigaddress", 1, "keys" },
+    { "addpeeraddress", 1, "port" },
     { "autocombinerewards", 0, "enable" },
     { "autocombinerewards", 1, "threshold" },
+    { "cleanbudget", 0, "try_sync" },
     { "createmultisig", 0, "nrequired" },
     { "createmultisig", 1, "keys" },
     { "createrawtransaction", 0, "inputs" },
@@ -63,6 +65,7 @@ static const CRPCConvertParam vRPCConvertParams[] = {
     { "getshieldbalance", 2, "include_watchonly" },
     { "getnetworkhashps", 0, "nblocks" },
     { "getnetworkhashps", 1, "height" },
+    { "getnodeaddresses", 0, "count" },
     { "getrawmempool", 0, "verbose" },
     { "getrawtransaction", 1, "verbose" },
     { "getreceivedbyaddress", 1, "minconf" },

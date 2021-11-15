@@ -2,7 +2,7 @@
 # Copyright (c) 2015-2017 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test bitcoind with different proxy configuration.
+"""Test pengolincoind with different proxy configuration.
 
 Test plan:
 - Start pengolincoind's with different proxy configurations
@@ -25,6 +25,8 @@ addnode connect to IPv4
 addnode connect to IPv6
 addnode connect to onion
 addnode connect to generic DNS name
+
+- Test getnetworkinfo for each node
 """
 
 import os
@@ -41,6 +43,16 @@ from test_framework.util import (
 
 
 RANGE_BEGIN = PORT_MIN + 2 * PORT_RANGE  # Start after p2p and rpc ports
+
+# Networks returned by RPC getpeerinfo, defined in src/netbase.cpp::GetNetworkName()
+NET_UNROUTABLE = "unroutable"
+NET_IPV4 = "ipv4"
+NET_IPV6 = "ipv6"
+NET_ONION = "onion"
+
+# Networks returned by RPC getnetworkinfo, defined in src/rpc/net.cpp::GetNetworksInfo()
+NETWORKS = frozenset({NET_IPV4, NET_IPV6, NET_ONION})
+
 
 class ProxyTest(PengolinCoinTestFramework):
     def set_test_params(self):
@@ -77,14 +89,14 @@ class ProxyTest(PengolinCoinTestFramework):
             self.serv3 = Socks5Server(self.conf3)
             self.serv3.start()
 
-        # Note: proxies are not used to connect to local nodes
-        # this is because the proxy to use is based on CService.GetNetwork(), which return NET_UNROUTABLE for localhost
+        # Note: proxies are not used to connect to local nodes. This is because the proxy to
+        # use is based on CService.GetNetwork(), which returns NET_UNROUTABLE for localhost.
         args = [
             ['-listen', '-proxy=%s:%i' % (self.conf1.addr),'-proxyrandomize=1'],
             ['-listen', '-proxy=%s:%i' % (self.conf1.addr),'-onion=%s:%i' % (self.conf2.addr),'-proxyrandomize=0'],
             ['-listen', '-proxy=%s:%i' % (self.conf2.addr),'-proxyrandomize=1'],
             []
-            ]
+        ]
         if self.have_ipv6:
             args[3] = ['-listen', '-proxy=[%s]:%i' % (self.conf3.addr),'-proxyrandomize=0', '-noonion']
         self.add_nodes(self.num_nodes, extra_args=args)
@@ -96,7 +108,7 @@ class ProxyTest(PengolinCoinTestFramework):
         node.addnode("15.61.23.23:1234", "onetry")
         cmd = proxies[0].queue.get()
         assert(isinstance(cmd, Socks5Command))
-        # Note: bitcoind's SOCKS5 implementation only sends atyp DOMAINNAME, even if connecting directly to IPv4/IPv6
+        # Note: pengolincoind's SOCKS5 implementation only sends atyp DOMAINNAME, even if connecting directly to IPv4/IPv6
         assert_equal(cmd.atyp, AddressType.DOMAINNAME)
         assert_equal(cmd.addr, b"15.61.23.23")
         assert_equal(cmd.port, 1234)
@@ -110,7 +122,7 @@ class ProxyTest(PengolinCoinTestFramework):
             node.addnode("[1233:3432:2434:2343:3234:2345:6546:4534]:5443", "onetry")
             cmd = proxies[1].queue.get()
             assert(isinstance(cmd, Socks5Command))
-            # Note: bitcoind's SOCKS5 implementation only sends atyp DOMAINNAME, even if connecting directly to IPv4/IPv6
+            # Note: pengolincoind's SOCKS5 implementation only sends atyp DOMAINNAME, even if connecting directly to IPv4/IPv6
             assert_equal(cmd.atyp, AddressType.DOMAINNAME)
             assert_equal(cmd.addr, b"1233:3432:2434:2343:3234:2345:6546:4534")
             assert_equal(cmd.port, 5443)
@@ -169,15 +181,17 @@ class ProxyTest(PengolinCoinTestFramework):
                 r[x['name']] = x
             return r
 
-        # test RPC getnetworkinfo
+        self.log.info("Test RPC getnetworkinfo")
         n0 = networks_dict(self.nodes[0].getnetworkinfo())
-        for net in ['ipv4','ipv6','onion']:
+        assert_equal(NETWORKS, n0.keys())
+        for net in NETWORKS:
             assert_equal(n0[net]['proxy'], '%s:%i' % (self.conf1.addr))
             assert_equal(n0[net]['proxy_randomize_credentials'], True)
         assert_equal(n0['onion']['reachable'], True)
 
         n1 = networks_dict(self.nodes[1].getnetworkinfo())
-        for net in ['ipv4','ipv6']:
+        assert_equal(NETWORKS, n1.keys())
+        for net in ['ipv4', 'ipv6']:
             assert_equal(n1[net]['proxy'], '%s:%i' % (self.conf1.addr))
             assert_equal(n1[net]['proxy_randomize_credentials'], False)
         assert_equal(n1['onion']['proxy'], '%s:%i' % (self.conf2.addr))
@@ -185,14 +199,16 @@ class ProxyTest(PengolinCoinTestFramework):
         assert_equal(n1['onion']['reachable'], True)
 
         n2 = networks_dict(self.nodes[2].getnetworkinfo())
-        for net in ['ipv4','ipv6','onion']:
+        assert_equal(NETWORKS, n2.keys())
+        for net in NETWORKS:
             assert_equal(n2[net]['proxy'], '%s:%i' % (self.conf2.addr))
             assert_equal(n2[net]['proxy_randomize_credentials'], True)
         assert_equal(n2['onion']['reachable'], True)
 
         if self.have_ipv6:
             n3 = networks_dict(self.nodes[3].getnetworkinfo())
-            for net in ['ipv4','ipv6']:
+            assert_equal(NETWORKS, n3.keys())
+            for net in NETWORKS:
                 assert_equal(n3[net]['proxy'], '[%s]:%i' % (self.conf3.addr))
                 assert_equal(n3[net]['proxy_randomize_credentials'], False)
             assert_equal(n3['onion']['reachable'], False)

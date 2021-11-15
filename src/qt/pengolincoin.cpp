@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -546,6 +546,10 @@ WId BitcoinApplication::getMainWinId() const
 #ifndef BITCOIN_QT_TEST
 int main(int argc, char* argv[])
 {
+#ifdef WIN32
+    util::WinCmdLineArgs winArgs;
+    std::tie(argc, argv) = winArgs.get();
+#endif
     SetupEnvironment();
 
     /// 1. Parse command-line options. These take precedence over anything else.
@@ -605,14 +609,14 @@ int main(int argc, char* argv[])
     /// 6. Determine availability of data and blocks directory and parse pengolincoin.conf
     /// - Do not call GetDataDir(true) before this step finishes
     if (!fs::is_directory(GetDataDir(false))) {
-        QMessageBox::critical(0, QObject::tr("PENGOLINCOIN Core"),
+        QMessageBox::critical(nullptr, PACKAGE_NAME,
             QObject::tr("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(gArgs.GetArg("-datadir", ""))));
         return 1;
     }
     try {
         gArgs.ReadConfigFile(gArgs.GetArg("-conf", PENGOLINCOIN_CONF_FILENAME));
     } catch (const std::exception& e) {
-        QMessageBox::critical(0, QObject::tr("PENGOLINCOIN Core"),
+        QMessageBox::critical(nullptr, PACKAGE_NAME,
             QObject::tr("Error: Cannot parse configuration file: %1. Only use key=value syntax.").arg(e.what()));
         return 0;
     }
@@ -627,7 +631,7 @@ int main(int argc, char* argv[])
     try {
         SelectParams(gArgs.GetChainName());
     } catch(const std::exception& e) {
-        QMessageBox::critical(0, QObject::tr("PENGOLINCOIN Core"), QObject::tr("Error: %1").arg(e.what()));
+        QMessageBox::critical(nullptr, PACKAGE_NAME, QObject::tr("Error: %1").arg(e.what()));
         return 1;
     }
 #ifdef ENABLE_WALLET
@@ -646,7 +650,7 @@ int main(int argc, char* argv[])
     /// 7a. parse masternode.conf
     std::string strErr;
     if (!masternodeConfig.read(strErr)) {
-        QMessageBox::critical(0, QObject::tr("PENGOLINCOIN Core"),
+        QMessageBox::critical(nullptr, PACKAGE_NAME,
             QObject::tr("Error reading masternode configuration file: %1").arg(strErr.c_str()));
         return 0;
     }
@@ -687,20 +691,19 @@ int main(int argc, char* argv[])
     // Check if at least one wallet exists, otherwise prompt tutorial
     bool createTutorial{true};
     const fs::path wallet_dir = GetWalletDir();
-    std::string wallet_name = gArgs.GetArg("-wallet", DEFAULT_WALLET_DAT);
-
-    auto opRes = VerifyWalletPath(wallet_name);
-    if (!opRes) throw std::runtime_error(opRes.getError());
-    fs::path wallet_path = fs::absolute(wallet_name, wallet_dir);
-    if (!fs::is_regular_file(wallet_path)) {
-        wallet_path /= "wallet.dat";
+    gArgs.SoftSetArg("-wallet", "");
+    for (const std::string& wallet_name : gArgs.GetArgs("-wallet")) {
+        auto opRes = VerifyWalletPath(wallet_name);
+        if (!opRes) throw std::runtime_error(opRes.getError());
+        fs::path wallet_path = fs::absolute(wallet_name, wallet_dir);
+        if (!fs::is_regular_file(wallet_path)) {
+            wallet_path /= "wallet.dat";
+        }
+        if (createTutorial && fs::exists(wallet_path)) {
+            // some wallet already exists, don't create tutorial
+            createTutorial = false;
+        }
     }
-    LogPrint(BCLog::QT, "CreateTutorialScreen - wallet file path = %s\n", wallet_path);
-    if (createTutorial && fs::exists(wallet_path)) {
-        // some wallet already exists, don't create tutorial
-        createTutorial = false;
-    }
-
     if (createTutorial) {
         ret = app.createTutorialScreen();
     }
@@ -717,7 +720,7 @@ int main(int argc, char* argv[])
         app.createWindow(networkStyle.data());
         app.requestInitialize();
 #if defined(Q_OS_WIN)
-        WinShutdownMonitor::registerShutdownBlockReason(QObject::tr("%1 didn't yet exit safely...").arg(QObject::tr(PACKAGE_NAME)), (HWND)app.getMainWinId());
+        WinShutdownMonitor::registerShutdownBlockReason(QObject::tr("%1 didn't yet exit safely...").arg(PACKAGE_NAME), (HWND)app.getMainWinId());
 #endif
         app.exec();
         app.requestShutdown();
@@ -726,7 +729,7 @@ int main(int argc, char* argv[])
         PrintExceptionContinue(&e, "Runaway exception");
         app.handleRunawayException(QString::fromStdString(GetWarnings("gui")));
     } catch (...) {
-        PrintExceptionContinue(NULL, "Runaway exception");
+        PrintExceptionContinue(nullptr, "Runaway exception");
         app.handleRunawayException(QString::fromStdString(GetWarnings("gui")));
     }
     return app.getReturnValue();

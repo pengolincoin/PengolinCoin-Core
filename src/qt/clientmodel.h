@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -83,7 +83,6 @@ public:
     QString getStatusBarWarnings() const;
 
     QString formatFullVersion() const;
-    QString formatBuildDate() const;
     bool isReleaseVersion() const;
     QString clientName() const;
     QString formatClientStartupTime() const;

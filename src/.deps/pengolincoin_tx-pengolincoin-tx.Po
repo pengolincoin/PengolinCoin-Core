@@ -1,5 +1,5 @@
 pengolincoin_tx-pengolincoin-tx.o: pengolincoin-tx.cpp \
- /usr/include/stdc-predef.h clientversion.h config/pengolincoin-config.h \
+ /usr/include/stdc-predef.h config/pengolincoin-config.h clientversion.h \
  /usr/include/c++/9/string \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
@@ -923,12 +923,13 @@ pengolincoin_tx-pengolincoin-tx.o: pengolincoin-tx.cpp \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h script/interpreter.h \
- script/script_error.h uint256.h core_io.h keystore.h key_io.h \
- chainparams.h key.h pubkey.h policy/policy.h policy/feerate.h \
- script/standard.h script/sign.h univalue/include/univalue.h \
- util/system.h logging.h fs.h tinyformat.h /usr/include/c++/9/iostream \
- compat.h sync.h tinyformat.h utiltime.h util/threadnames.h \
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h tinyformat.h \
+ /usr/include/c++/9/iostream utilstrencodings.h util/string.h \
+ attributes.h streams.h script/interpreter.h script/script_error.h \
+ uint256.h core_io.h keystore.h key_io.h chainparams.h key.h pubkey.h \
+ policy/policy.h policy/feerate.h script/standard.h script/sign.h \
+ univalue/include/univalue.h util/system.h logging.h fs.h compat.h sync.h \
+ tinyformat.h utiltime.h util/threadnames.h \
  /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
@@ -1184,8 +1185,7 @@ pengolincoin_tx-pengolincoin-tx.o: pengolincoin-tx.cpp \
  /usr/include/boost/thread/cv_status.hpp \
  /usr/include/boost/enable_shared_from_this.hpp \
  /usr/include/boost/smart_ptr/enable_shared_from_this.hpp utilmoneystr.h \
- amount.h utilstrencodings.h support/allocators/secure.h \
- /usr/include/boost/algorithm/string.hpp \
+ amount.h utilstrencodings.h /usr/include/boost/algorithm/string.hpp \
  /usr/include/boost/algorithm/string/std_containers_traits.hpp \
  /usr/include/boost/algorithm/string/std/string_traits.hpp \
  /usr/include/boost/algorithm/string/yes_no_type.hpp \
@@ -1301,9 +1301,9 @@ pengolincoin_tx-pengolincoin-tx.o: pengolincoin-tx.cpp \
 
 /usr/include/stdc-predef.h:
 
-clientversion.h:
-
 config/pengolincoin-config.h:
+
+clientversion.h:
 
 /usr/include/c++/9/string:
 
@@ -3529,6 +3529,18 @@ compat.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 script/interpreter.h:
 
 script/script_error.h:
@@ -3562,10 +3574,6 @@ util/system.h:
 logging.h:
 
 fs.h:
-
-tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 compat.h:
 
@@ -4116,8 +4124,6 @@ utilmoneystr.h:
 amount.h:
 
 utilstrencodings.h:
-
-support/allocators/secure.h:
 
 /usr/include/boost/algorithm/string.hpp:
 

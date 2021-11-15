@@ -217,7 +217,7 @@
 <context>
     <name>AddressTableModel</name>
     <message>
-        <location filename="../addresstablemodel.cpp" line="+316"/>
+        <location filename="../addresstablemodel.cpp" line="+317"/>
         <source>Label</source>
         <translation>Label</translation>
     </message>
@@ -237,7 +237,7 @@
         <translation type="unfinished">Type</translation>
     </message>
     <message>
-        <location line="+39"/>
+        <location line="+40"/>
         <source>(no label)</source>
         <translation>(no label)</translation>
     </message>
@@ -280,7 +280,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/addresseswidget.cpp" line="+90"/>
+        <location filename="../pengolincoin/addresseswidget.cpp" line="+89"/>
         <source>Add new contact</source>
         <translation type="unfinished"></translation>
     </message>
@@ -330,7 +330,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>You are just about to remove the contact:
 
 %1
@@ -375,7 +375,7 @@ Are you sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../askpassphrasedialog.cpp" line="+86"/>
+        <location filename="../askpassphrasedialog.cpp" line="+90"/>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</translation>
     </message>
@@ -447,12 +447,7 @@ for staking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+161"/>
-        <source>PENGOLINCOIN will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PGOs from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-162"/>
+        <location line="-1"/>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Are you sure you wish to encrypt your wallet?</translation>
     </message>
@@ -478,7 +473,12 @@ for staking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+18"/>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PGOs from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
         <translation>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</translation>
     </message>
@@ -762,12 +762,12 @@ for staking</source>
     </message>
     <message>
         <location line="+42"/>
-        <location line="+719"/>
+        <location line="+718"/>
         <source>Unselect all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-595"/>
+        <location line="-594"/>
         <source>Please switch to &quot;List mode&quot; to use this function.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -812,12 +812,12 @@ for staking</source>
         <translation>(%1 locked)</translation>
     </message>
     <message>
-        <location line="+144"/>
+        <location line="+142"/>
         <source>yes</source>
         <translation>yes</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+13"/>
         <source>This label turns red, if recipient receives an amount smaller than %1 (transparent) / %2 (shield).</source>
         <translation type="unfinished"></translation>
     </message>
@@ -827,7 +827,7 @@ for staking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+51"/>
         <source>change in %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -837,33 +837,23 @@ for staking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+117"/>
+        <location line="+47"/>
+        <source>Delegated to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+77"/>
         <source>Select All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/coincontroldialog.ui" line="+77"/>
-        <location filename="../coincontroldialog.cpp" line="-240"/>
+        <location filename="../coincontroldialog.cpp" line="-241"/>
         <source>no</source>
         <translation>no</translation>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="+14"/>
-        <source>This label turns red, if the transaction size is greater than 1000 bytes.</source>
-        <translation>This label turns red, if the transaction size is greater than 1000 bytes.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>This means a fee of at least %1 per kB is required.</source>
-        <translation>This means a fee of at least %1 per kB is required.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Can vary +/- 1 byte per input.</source>
-        <translation>Can vary +/- 1 byte per input.</translation>
-    </message>
-    <message>
-        <location line="+137"/>
+        <location filename="../coincontroldialog.cpp" line="+147"/>
         <source>(no label)</source>
         <translation>(no label)</translation>
     </message>
@@ -926,12 +916,12 @@ for staking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/coldstakingwidget.cpp" line="+797"/>
+        <location filename="../pengolincoin/coldstakingwidget.cpp" line="+801"/>
         <source>Total Staking: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-507"/>
+        <location line="-508"/>
         <source>Error loading delegations: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -977,7 +967,7 @@ stake on your behalf, while you keep the keys securely offline.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-290"/>
+        <location line="-293"/>
         <source>Coin Control</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1008,7 +998,7 @@ and stake them on their owner&apos;s behalf.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+254"/>
+        <location line="+257"/>
         <source>Invalid entry</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1054,7 +1044,7 @@ Do you wish to proceed?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+27"/>
         <source>You don&apos;t have any %1 to select.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1243,23 +1233,23 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location filename="../pengolincoin/dashboardwidget.cpp" line="+36"/>
-        <location line="+278"/>
+        <location line="+274"/>
         <source>You have no staking rewards</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-276"/>
+        <location line="-272"/>
         <source>No charts library</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+276"/>
+        <location line="+272"/>
         <source>Loading chart..</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+123"/>
-        <location line="+220"/>
+        <location line="+128"/>
+        <location line="+222"/>
         <location line="+88"/>
         <source>Error loading chart, invalid show option</source>
         <translation type="unfinished"></translation>
@@ -1270,7 +1260,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+133"/>
+        <location line="+150"/>
         <source>Error loading chart: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1372,7 +1362,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
 <context>
     <name>FreespaceChecker</name>
     <message>
-        <location filename="../intro.cpp" line="+69"/>
+        <location filename="../intro.cpp" line="+73"/>
         <source>A new data directory will be created.</source>
         <translation>A new data directory will be created.</translation>
     </message>
@@ -1400,78 +1390,28 @@ It will start automatically as soon as the wallet has enough confirmations on an
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <location filename="../utilitydialog.cpp" line="+37"/>
+        <location filename="../utilitydialog.cpp" line="+41"/>
         <source>version</source>
         <translation>version</translation>
     </message>
     <message>
-        <location line="+0"/>
-        <source>PENGOLINCOIN Core</source>
+        <location line="+13"/>
+        <source>About %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-8"/>
         <location line="+2"/>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>About PENGOLINCOIN Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+20"/>
+        <location line="+26"/>
         <source>Command-line options</source>
         <translation>Command-line options</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Usage:</source>
-        <translation>Usage:</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>command-line options</source>
-        <translation>command-line options</translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>UI Options:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Choose data directory on startup (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Show splash screen on startup (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Hide QT staking charts on startup (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-4"/>
-        <source>Set language, for example &quot;de_DE&quot; (default: system locale)</source>
-        <translation>Set language, for example &quot;de_DE&quot; (default: system locale)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Start minimized</source>
-        <translation>Start minimized</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Set SSL root certificates for payment request (default: -system-)</source>
-        <translation>Set SSL root certificates for payment request (default: -system-)</translation>
-    </message>
-    <message>
-        <location filename="../forms/helpmessagedialog.ui" line="+239"/>
+        <location filename="../forms/helpmessagedialog.ui" line="+236"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1485,17 +1425,17 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+90"/>
-        <source>Welcome to PENGOLINCOIN Core.</source>
+        <source>Welcome to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+35"/>
-        <source>As this is the first time the program is launched, you can choose where PENGOLINCOIN Core will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where %1 will store its data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>PENGOLINCOIN Core will download and store a copy of the PENGOLINCOIN block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>%1 will download and store a copy of the PENGOLINCOIN block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1519,12 +1459,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../intro.cpp" line="+100"/>
-        <source>PENGOLINCOIN Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location filename="../intro.cpp" line="+106"/>
         <source>Error: Specified data directory &quot;%1&quot; cannot be created.</source>
         <translation>Error: Specified data directory &quot;%1&quot; cannot be created.</translation>
     </message>
@@ -1598,7 +1533,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation type="unfinished">Form</translation>
     </message>
     <message>
-        <location filename="../pengolincoin/mnrow.cpp" line="+24"/>
+        <location filename="../pengolincoin/mnrow.cpp" line="+25"/>
         <source>Collateral tx not found</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1651,17 +1586,12 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+23"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a PENGOLINCOIN Masternode you must dedicate 100,000 PGO (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+89"/>
+        <location line="+109"/>
         <source>Set Masternode Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+87"/>
+        <location line="+84"/>
         <source>Set Masternode IP and Port</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1671,17 +1601,12 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-226"/>
+        <location line="-223"/>
         <source>Make sure you have this amount of coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+97"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 100,000 PGO will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node&apos;s name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+51"/>
+        <location line="+145"/>
         <source>Address of the node that must always be online running the actual master node.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1701,7 +1626,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/masternodewizarddialog.cpp" line="+171"/>
+        <location filename="../pengolincoin/masternodewizarddialog.cpp" line="+192"/>
         <source>address label cannot be empty</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1716,7 +1641,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+42"/>
         <source>Unknown error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1746,12 +1671,37 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-101"/>
+        <location line="-210"/>
+        <source>To create a PENGOLINCOIN Masternode you must dedicate %1 (the unit of PENGOLINCOIN) to the network (however, these coins are still yours and will never leave your possession).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>You can deactivate the node and unlock the coins at any time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>A transaction of %1 will be made</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>to a new empty address in your wallet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The Address is labeled under the master node&apos;s name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+100"/>
         <source>walletModel not set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+142"/>
+        <location line="+140"/>
         <source>Invalid masternode.conf file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1805,7 +1755,7 @@ and vote on the treasury system receiving a periodic reward.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/masternodeswidget.cpp" line="+174"/>
+        <location filename="../pengolincoin/masternodeswidget.cpp" line="+168"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1847,7 +1797,7 @@ Please wait few more minutes (masternode collaterals require %1 confirmations).<
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+47"/>
         <source>Background task is being executed, please wait</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1887,17 +1837,12 @@ Please wait few more minutes (masternode collaterals require %1 confirmations).<
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+118"/>
-        <source>Not enough balance to create a masternode, 100,000 %1 required.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-129"/>
+        <location line="-11"/>
         <source>Remote Masternode Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-246"/>
+        <location line="-250"/>
         <source>What is a Masternode?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1917,7 +1862,7 @@ Please wait few more minutes (masternode collaterals require %1 confirmations).<
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+244"/>
+        <location line="+248"/>
         <source>You are just about to export the required data to run a Masternode
 on a remote server to your clipboard.
 
@@ -1962,7 +1907,12 @@ Are you sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+6"/>
+        <source>Not enough balance to create a masternode, %1 required.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
         <source>Error creating masternode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2015,7 +1965,7 @@ Are you sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/mninfodialog.cpp" line="+27"/>
+        <location filename="../pengolincoin/mninfodialog.cpp" line="+25"/>
         <source>Masternode public key copied</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2102,47 +2052,17 @@ STAKING</source>
     </message>
     <message>
         <location line="+45"/>
-        <source>Open payment request from URI or file</source>
-        <translation>Open payment request from URI or file</translation>
-    </message>
-    <message>
-        <location line="+26"/>
-        <source>TextLabel</source>
+        <source>Open PENGOLINCOIN URI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+90"/>
+        <location line="+91"/>
         <source>CANCEL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-75"/>
-        <source>Select payment request file</source>
-        <translation>Select payment request file</translation>
-    </message>
-    <message>
-        <location filename="../openuridialog.cpp" line="+64"/>
-        <source>Select payment request file to open</source>
-        <translation>Select payment request file to open</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>File not found</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Parsed data too large</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Invalid URI, not starting with &quot;pengolincoin&quot; prefix</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2155,369 +2075,9 @@ STAKING</source>
     </message>
 </context>
 <context>
-    <name>OptionsDialog</name>
-    <message>
-        <location filename="../forms/optionsdialog.ui" line="+14"/>
-        <source>Options</source>
-        <translation>Options</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>&amp;Main</source>
-        <translation>&amp;Main</translation>
-    </message>
-    <message>
-        <location line="+18"/>
-        <source>Size of &amp;database cache</source>
-        <translation>Size of &amp;database cache</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>MB</source>
-        <translation>MB</translation>
-    </message>
-    <message>
-        <location line="+27"/>
-        <source>Number of script &amp;verification threads</source>
-        <translation>Number of script &amp;verification threads</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>(0 = auto, &lt;0 = leave that many cores free)</source>
-        <translation>(0 = auto, &lt;0 = leave that many cores free)</translation>
-    </message>
-    <message>
-        <location line="+141"/>
-        <source>W&amp;allet</source>
-        <translation>W&amp;allet</translation>
-    </message>
-    <message>
-        <location line="+53"/>
-        <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
-        <translation>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</translation>
-    </message>
-    <message>
-        <location line="+33"/>
-        <source>Automatically open the PENGOLINCOIN client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Accept connections from outside</source>
-        <translation>Accept connections from outside</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Allow incoming connections</source>
-        <translation>Allow incoming connections</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>&amp;Connect through SOCKS5 proxy (default proxy):</translation>
-    </message>
-    <message>
-        <location line="-82"/>
-        <source>Expert</source>
-        <translation>Expert</translation>
-    </message>
-    <message>
-        <location line="-236"/>
-        <source>Automatically start PENGOLINCOIN after logging in to the system.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Start PENGOLINCOIN on system login</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+239"/>
-        <source>Whether to show coin control features or not.</source>
-        <translation>Whether to show coin control features or not.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Enable coin &amp;control features</source>
-        <translation>Enable coin &amp;control features</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Show Masternodes Tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>&amp;Spend unconfirmed change</source>
-        <translation>&amp;Spend unconfirmed change</translation>
-    </message>
-    <message>
-        <location line="+24"/>
-        <source>&amp;Network</source>
-        <translation>&amp;Network</translation>
-    </message>
-    <message>
-        <location line="+192"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting PENGOLINCOIN.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+21"/>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/pengolincoin-project/pengolincoin-project-translations</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-204"/>
-        <source>Map port using &amp;UPnP</source>
-        <translation>Map port using &amp;UPnP</translation>
-    </message>
-    <message>
-        <location line="-187"/>
-        <source>Enable automatic minting of PGO units to zPGO</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Enable zPGO Automint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Enable automatic zPGO minting from specific addresses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Enable Automint Addresses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Percentage of incoming PGO which get automatically converted to zPGO via Zerocoin Protocol (min: 10%)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Percentage of autominted zPGO</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+30"/>
-        <location line="+16"/>
-        <source>Wait with automatic conversion to Zerocoin until enough PGO for this denomination is available</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-13"/>
-        <source>Preferred Automint zPGO Denomination</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+40"/>
-        <source>Stake split threshold:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+98"/>
-        <source>Connect to the PENGOLINCOIN network through a SOCKS5 proxy.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+12"/>
-        <source>Proxy &amp;IP:</source>
-        <translation>Proxy &amp;IP:</translation>
-    </message>
-    <message>
-        <location line="+25"/>
-        <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
-        <translation>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>&amp;Port:</source>
-        <translation>&amp;Port:</translation>
-    </message>
-    <message>
-        <location line="+25"/>
-        <source>Port of the proxy (e.g. 9050)</source>
-        <translation>Port of the proxy (e.g. 9050)</translation>
-    </message>
-    <message>
-        <location line="+36"/>
-        <source>&amp;Window</source>
-        <translation>&amp;Window</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Show only a tray icon after minimizing the window.</source>
-        <translation>Show only a tray icon after minimizing the window.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Minimize to the tray instead of the taskbar</source>
-        <translation>&amp;Minimize to the tray instead of the taskbar</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
-        <translation>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>M&amp;inimize on close</source>
-        <translation>M&amp;inimize on close</translation>
-    </message>
-    <message>
-        <location line="+21"/>
-        <source>&amp;Display</source>
-        <translation>&amp;Display</translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>User Interface &amp;language:</source>
-        <translation>User Interface &amp;language:</translation>
-    </message>
-    <message>
-        <location line="+53"/>
-        <source>User Interface Theme:</source>
-        <translation>User Interface Theme:</translation>
-    </message>
-    <message>
-        <location line="+27"/>
-        <source>Unit to show amounts in:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Choose the default subdivision unit to show in the interface and when sending coins.</translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Decimal digits</source>
-        <translation>Decimal digits</translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <location line="+6"/>
-        <source>Hide empty balances</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Hide orphan stakes in transaction lists</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Hide orphan stakes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+24"/>
-        <location line="+10"/>
-        <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
-        <translation>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</translation>
-    </message>
-    <message>
-        <location line="-7"/>
-        <source>Third party transaction URLs</source>
-        <translation>Third party transaction URLs</translation>
-    </message>
-    <message>
-        <location line="+41"/>
-        <source>Active command-line options that override above options:</source>
-        <translation>Active command-line options that override above options:</translation>
-    </message>
-    <message>
-        <location line="+43"/>
-        <source>Reset all client options to default.</source>
-        <translation>Reset all client options to default.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Reset Options</source>
-        <translation>&amp;Reset Options</translation>
-    </message>
-    <message>
-        <location line="+61"/>
-        <source>&amp;OK</source>
-        <translation>&amp;OK</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Cancel</translation>
-    </message>
-    <message>
-        <location filename="../optionsdialog.cpp" line="+87"/>
-        <source>Any</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+23"/>
-        <source>default</source>
-        <translation>default</translation>
-    </message>
-    <message>
-        <location line="+46"/>
-        <source>none</source>
-        <translation>none</translation>
-    </message>
-    <message>
-        <location line="+95"/>
-        <source>Confirm options reset</source>
-        <translation>Confirm options reset</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <location line="+29"/>
-        <source>Client restart required to activate changes.</source>
-        <translation>Client restart required to activate changes.</translation>
-    </message>
-    <message>
-        <location line="-29"/>
-        <source>Client will be shutdown, do you want to proceed?</source>
-        <translation>Client will be shutdown, do you want to proceed?</translation>
-    </message>
-    <message>
-        <location line="+31"/>
-        <source>This change would require a client restart.</source>
-        <translation>This change would require a client restart.</translation>
-    </message>
-    <message>
-        <location line="+29"/>
-        <source>The supplied proxy address is invalid.</source>
-        <translation>The supplied proxy address is invalid.</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>The supplied proxy port is invalid.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>The supplied proxy settings are invalid.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>PENGOLINCOINGUI</name>
     <message>
-        <location filename="../pengolincoin/pengolincoingui.cpp" line="+69"/>
-        <location line="+301"/>
-        <location line="+69"/>
-        <source>PENGOLINCOIN Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-369"/>
+        <location filename="../pengolincoin/pengolincoingui.cpp" line="+70"/>
         <source>Wallet</source>
         <translation type="unfinished">Wallet</translation>
     </message>
@@ -2548,16 +2108,16 @@ https://www.transifex.com/pengolincoin-project/pengolincoin-project-translations
     </message>
     <message>
         <location line="+39"/>
-        <source>PENGOLINCOIN Core client</source>
+        <source>%1 client</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+47"/>
         <source>Alert!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+123"/>
+        <location line="+130"/>
         <source>Error</source>
         <translation type="unfinished">Error</translation>
     </message>
@@ -2578,11 +2138,6 @@ https://www.transifex.com/pengolincoin-project/pengolincoin-project-translations
     </message>
     <message>
         <location line="+262"/>
-        <source>Sent MultiSend transaction</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+0"/>
         <source>Sent transaction</source>
         <translation type="unfinished">Sent transaction</translation>
     </message>
@@ -2608,123 +2163,30 @@ Address: %4
 <context>
     <name>PaymentServer</name>
     <message>
-        <location filename="../paymentserver.cpp" line="+286"/>
-        <location line="+201"/>
-        <location line="+33"/>
-        <location line="+95"/>
-        <location line="+12"/>
-        <location line="+14"/>
+        <location filename="../paymentserver.cpp" line="+150"/>
         <source>Payment request error</source>
         <translation>Payment request error</translation>
     </message>
     <message>
-        <location line="-264"/>
-        <location line="+11"/>
+        <location line="+55"/>
         <location line="+5"/>
         <source>URI handling</source>
         <translation>URI handling</translation>
     </message>
     <message>
-        <location line="-15"/>
-        <source>Payment request fetch URL is invalid: %1</source>
-        <translation>Payment request fetch URL is invalid: %1</translation>
-    </message>
-    <message>
-        <location line="+28"/>
-        <source>Payment request file handling</source>
-        <translation>Payment request file handling</translation>
-    </message>
-    <message>
-        <location line="-18"/>
+        <location line="-5"/>
         <source>Invalid payment address %1</source>
         <translation>Invalid payment address %1</translation>
     </message>
     <message>
-        <location line="-101"/>
+        <location line="-54"/>
         <source>Cannot start pengolincoin: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+107"/>
+        <location line="+60"/>
         <source>URI cannot be parsed! This can be caused by an invalid PENGOLINCOIN address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
-        <translation>Payment request file cannot be read! This can be caused by an invalid payment request file.</translation>
-    </message>
-    <message>
-        <location line="+66"/>
-        <location line="+8"/>
-        <location line="+30"/>
-        <source>Payment request rejected</source>
-        <translation>Payment request rejected</translation>
-    </message>
-    <message>
-        <location line="-38"/>
-        <source>Payment request network doesn&apos;t match client network.</source>
-        <translation>Payment request network doesn&apos;t match client network.</translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>Payment request has expired.</source>
-        <translation>Payment request has expired.</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Payment request is not initialized.</source>
-        <translation>Payment request is not initialized.</translation>
-    </message>
-    <message>
-        <location line="+25"/>
-        <source>Unverified payment requests to custom payment scripts are unsupported.</source>
-        <translation>Unverified payment requests to custom payment scripts are unsupported.</translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>Requested payment amount of %1 is too small (considered dust).</source>
-        <translation>Requested payment amount of %1 is too small (considered dust).</translation>
-    </message>
-    <message>
-        <location line="+51"/>
-        <source>Refund from %1</source>
-        <translation>Refund from %1</translation>
-    </message>
-    <message>
-        <location line="+28"/>
-        <source>Payment request %1 is too large (%2 bytes, allowed %3 bytes).</source>
-        <translation>Payment request %1 is too large (%2 bytes, allowed %3 bytes).</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Payment request DoS protection</source>
-        <translation>Payment request DoS protection</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Error communicating with %1: %2</source>
-        <translation>Error communicating with %1: %2</translation>
-    </message>
-    <message>
-        <location line="+18"/>
-        <source>Payment request cannot be parsed!</source>
-        <translation>Payment request cannot be parsed!</translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>Bad response from server %1</source>
-        <translation>Bad response from server %1</translation>
-    </message>
-    <message>
-        <location line="+20"/>
-        <source>Network request error</source>
-        <translation>Network request error</translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Payment acknowledged</source>
-        <translation>Payment acknowledged</translation>
     </message>
 </context>
 <context>
@@ -2758,12 +2220,12 @@ Address: %4
         <translation>Amount</translation>
     </message>
     <message>
-        <location filename="../guiutil.cpp" line="+141"/>
+        <location filename="../guiutil.cpp" line="+127"/>
         <source>Enter PENGOLINCOIN address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+787"/>
+        <location line="+559"/>
         <source>%1 d</source>
         <translation>%1 d</translation>
     </message>
@@ -2814,20 +2276,12 @@ Address: %4
         <translation>%1 ms</translation>
     </message>
     <message>
-        <location filename="../pengolincoin.cpp" line="+530"/>
+        <location filename="../pengolincoin.cpp" line="+533"/>
         <source>A fatal error occurred. PENGOLINCOIN can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+73"/>
-        <location line="+7"/>
-        <location line="+15"/>
-        <location line="+19"/>
-        <source>PENGOLINCOIN Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-40"/>
+        <location line="+79"/>
         <source>Error: Specified data directory &quot;%1&quot; does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2842,23 +2296,23 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+84"/>
+        <location line="+89"/>
         <source>%1 didn&apos;t yet exit safely...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-64"/>
+        <location line="-69"/>
         <source>Error reading masternode configuration file: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../addresstablemodel.cpp" line="-246"/>
+        <location filename="../addresstablemodel.cpp" line="-248"/>
         <source>Contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <location filename="../pengolincoin/qtutils.cpp" line="+136"/>
+        <location filename="../pengolincoin/qtutils.cpp" line="+135"/>
         <source>Receiving</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3007,7 +2461,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+84"/>
+        <location line="+74"/>
         <source>by Label</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3022,7 +2476,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/dashboardwidget.cpp" line="-507"/>
+        <location filename="../pengolincoin/dashboardwidget.cpp" line="-531"/>
         <source>Jan</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3082,7 +2536,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/coldstakingwidget.cpp" line="-707"/>
+        <location filename="../pengolincoin/coldstakingwidget.cpp" line="-711"/>
         <source>Address with no label</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3105,12 +2559,12 @@ Address: %4
         <translation>General</translation>
     </message>
     <message>
-        <location line="+152"/>
+        <location line="+129"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location line="-145"/>
+        <location line="-122"/>
         <source>Client name</source>
         <translation>Client name</translation>
     </message>
@@ -3118,7 +2572,6 @@ Address: %4
         <location line="+10"/>
         <location line="+23"/>
         <location line="+26"/>
-        <location line="+23"/>
         <location line="+23"/>
         <location line="+20"/>
         <location line="+30"/>
@@ -3145,14 +2598,11 @@ Address: %4
         <location line="+26"/>
         <location line="+23"/>
         <location line="+78"/>
-        <location line="+29"/>
-        <location line="+29"/>
-        <location line="+29"/>
         <source>N/A</source>
         <translation>N/A</translation>
     </message>
     <message>
-        <location line="-1164"/>
+        <location line="-1077"/>
         <source>Number of connections</source>
         <translation>Number of connections</translation>
     </message>
@@ -3182,17 +2632,12 @@ Address: %4
         <translation>Debug log file</translation>
     </message>
     <message>
-        <location line="-234"/>
-        <source>Build date</source>
-        <translation>Build date</translation>
-    </message>
-    <message>
-        <location line="+155"/>
+        <location line="-79"/>
         <source>Current number of blocks</source>
         <translation>Current number of blocks</translation>
     </message>
     <message>
-        <location line="-204"/>
+        <location line="-181"/>
         <source>Client version</source>
         <translation>Client version</translation>
     </message>
@@ -3202,7 +2647,7 @@ Address: %4
         <translation>Using BerkeleyDB version</translation>
     </message>
     <message>
-        <location line="+174"/>
+        <location line="+151"/>
         <source>Block chain</source>
         <translation>Block chain</translation>
     </message>
@@ -3273,8 +2718,8 @@ Address: %4
     </message>
     <message>
         <location line="+59"/>
-        <location filename="../rpcconsole.cpp" line="+317"/>
-        <location line="+725"/>
+        <location filename="../rpcconsole.cpp" line="+109"/>
+        <location line="+717"/>
         <source>Select a peer to view detailed information.</source>
         <translation>Select a peer to view detailed information.</translation>
     </message>
@@ -3344,12 +2789,12 @@ Address: %4
         <translation>&amp;Wallet Repair</translation>
     </message>
     <message>
-        <location line="+347"/>
+        <location line="+260"/>
         <source>Delete local Blockchain Folders</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-309"/>
+        <location line="-222"/>
         <source>Wallet In Use:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3384,22 +2829,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+104"/>
-        <source>Custom Backup Path:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+29"/>
-        <source>Custom zPGO Backup Path:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+29"/>
-        <source>Custom Backups Threshold:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+45"/>
+        <location line="+120"/>
         <source>Salvage wallet</source>
         <translation>Salvage wallet</translation>
     </message>
@@ -3459,7 +2889,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-333"/>
+        <location line="-246"/>
         <source>The buttons below will restart the wallet with command-line options to repair the wallet, fix issues with corrupt blockhain files or missing/obsolete transactions.</source>
         <translation>The buttons below will restart the wallet with command-line options to repair the wallet, fix issues with corrupt blockhain files or missing/obsolete transactions.</translation>
     </message>
@@ -3469,7 +2899,7 @@ Address: %4
         <translation>Wallet repair options.</translation>
     </message>
     <message>
-        <location line="+286"/>
+        <location line="+199"/>
         <source>Upgrade wallet to latest format on startup. (Note: this is NOT an update of the wallet itself!)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3489,12 +2919,12 @@ Address: %4
         <translation>Out:</translation>
     </message>
     <message>
-        <location line="-39"/>
+        <location line="-40"/>
         <source>Welcome to the PENGOLINCOIN RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-212"/>
+        <location line="-203"/>
         <source>&amp;Disconnect Node</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3532,7 +2962,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+99"/>
+        <location line="+90"/>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3563,8 +2993,13 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
-        <translation>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</translation>
+        <source>Type %1 for an overview of available commands.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>For more information on using this console type %1.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
@@ -3686,7 +3121,7 @@ Address: %4
     </message>
     <message>
         <location line="+179"/>
-        <location filename="../pengolincoin/receivewidget.cpp" line="+183"/>
+        <location filename="../pengolincoin/receivewidget.cpp" line="+185"/>
         <source>Add Label</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3701,12 +3136,17 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-329"/>
+        <location line="+134"/>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-463"/>
         <source>Receive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/receivewidget.cpp" line="-123"/>
+        <location filename="../pengolincoin/receivewidget.cpp" line="-127"/>
         <source>My Addresses</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3726,7 +3166,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+85"/>
+        <location line="+89"/>
         <location line="+16"/>
         <source>No available address
 try unlocking the wallet</source>
@@ -3744,7 +3184,7 @@ try unlocking the wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+36"/>
         <source>Edit Address Label</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3759,12 +3199,12 @@ try unlocking the wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+14"/>
         <source>Cannot create new address, wallet locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+14"/>
         <source>New address created</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3900,7 +3340,7 @@ try unlocking the wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/requestdialog.cpp" line="+49"/>
+        <location filename="../pengolincoin/requestdialog.cpp" line="+48"/>
         <source>Error</source>
         <translation type="unfinished">Error</translation>
     </message>
@@ -3935,7 +3375,7 @@ try unlocking the wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+16"/>
         <source>Request for </source>
         <translation type="unfinished"></translation>
     </message>
@@ -4032,7 +3472,7 @@ try unlocking the wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/sendcustomfeedialog.cpp" line="+35"/>
+        <location filename="../pengolincoin/sendcustomfeedialog.cpp" line="+36"/>
         <source>Normal</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4052,12 +3492,12 @@ try unlocking the wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/sendcustomfeedialog.cpp" line="+89"/>
+        <location filename="../pengolincoin/sendcustomfeedialog.cpp" line="+90"/>
         <source>Fee too high. Must be below: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+10"/>
         <source>Fee too low. Must be at least: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4122,7 +3562,17 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/sendmultirow.cpp" line="+92"/>
+        <location line="+38"/>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less PGO than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Subtract fee from amount</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pengolincoin/sendmultirow.cpp" line="+94"/>
         <source>Update memo</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4140,13 +3590,13 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>SendWidget</name>
     <message>
-        <location filename="../pengolincoin/send.cpp" line="+157"/>
+        <location filename="../pengolincoin/send.cpp" line="+159"/>
         <source>Total remaining from the selected UTXO</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+219"/>
-        <location line="+227"/>
+        <location line="+228"/>
+        <location line="+234"/>
         <source>Warning!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4158,22 +3608,27 @@ Do you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+368"/>
+        <location line="+373"/>
         <source>Customize Fee</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-688"/>
+        <location line="-694"/>
         <source>Maximum amount of outputs reached</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="-225"/>
+        <source>Parse a PENGOLINCOIN URI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+253"/>
         <source>Invalid entry, previous entries must be valid before add a new one</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+36"/>
         <source>Possibly spend coins delegated for cold-staking (currently available: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4188,24 +3643,24 @@ Do you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+22"/>
         <source>Cannot send, wallet locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+84"/>
+        <location line="+86"/>
         <source>WARNING:
 Transaction spends a cold-stake delegation, voiding it.
 These coins will no longer be cold-staked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+20"/>
         <source>Transaction sent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+50"/>
+        <location line="+63"/>
         <source>Address label update failed for address: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4220,17 +3675,17 @@ These coins will no longer be cold-staked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+290"/>
+        <location line="+288"/>
         <source>Memo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+60"/>
         <source>Custom Fee %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-905"/>
+        <location line="-927"/>
         <source>Coin Control</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4255,28 +3710,23 @@ These coins will no longer be cold-staked.</source>
         <translation type="unfinished">Open URI</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Parse a payment request</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <location line="+637"/>
+        <location line="+4"/>
+        <location line="+656"/>
         <source>Shield Coins</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-636"/>
+        <location line="-655"/>
         <source>Convert all transparent coins into shielded coins</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+83"/>
+        <location line="+92"/>
         <source>Unlocked remaining</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+215"/>
+        <location line="+216"/>
         <source>Cannot send memo to address
 %1
 
@@ -4288,18 +3738,12 @@ Do you wish to proceed without memo?
     </message>
     <message>
         <location line="+31"/>
-        <location line="+273"/>
-        <location line="+92"/>
-        <source>Cannot perform shielded operations, v5 upgrade isn&apos;t being enforced yet!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-360"/>
+        <location line="+282"/>
         <source>Sapling Protocol temporarily in maintenance. Shielded transactions disabled (SPORK 20)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="-265"/>
         <source>On going process being executed, please wait until it&apos;s finished to create a new transaction</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4309,7 +3753,12 @@ Do you wish to proceed without memo?
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+236"/>
+        <location line="+135"/>
+        <source>Processing full, refreshing amounts later</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+115"/>
         <source>You don&apos;t have any %1 to select.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4327,7 +3776,7 @@ Do you want to continue?
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+12"/>
         <source>Error generating address to shield PGOs</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4337,7 +3786,7 @@ Do you want to continue?
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+48"/>
         <source>No contacts available, you can go to the contacts screen and add some there!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4352,7 +3801,12 @@ Do you want to continue?
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+2"/>
+        <source>Subtract fee</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+21"/>
         <source>Address field is empty</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4587,12 +4041,12 @@ Using this mechanism you can share your keys without middle-man risk, only need 
     </message>
     <message>
         <location line="+7"/>
-        <location line="+113"/>
+        <location line="+120"/>
         <source>Wallet unlock was cancelled.</source>
         <translation type="unfinished">Wallet unlock was cancelled.</translation>
     </message>
     <message>
-        <location line="-106"/>
+        <location line="-113"/>
         <source>Private key for the entered address is not available.</source>
         <translation type="unfinished">Private key for the entered address is not available.</translation>
     </message>
@@ -4617,7 +4071,12 @@ Using this mechanism you can share your keys without middle-man risk, only need 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+16"/>
+        <source>Wallet is currently rescanning. Abort existing rescan or wait.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+15"/>
         <source>Data Not Valid.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4632,17 +4091,17 @@ Using this mechanism you can share your keys without middle-man risk, only need 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+7"/>
         <source>Cannot import address, key already held by the wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+6"/>
         <source>Error adding key to the wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+6"/>
         <source>Successfully added private key to the wallet</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4660,7 +4119,7 @@ Using this mechanism you can share your keys without middle-man risk, only need 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/settings/settingsconsolewidget.cpp" line="+264"/>
+        <location filename="../pengolincoin/settings/settingsconsolewidget.cpp" line="+72"/>
         <source>Console input</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4686,7 +4145,7 @@ Verify that you have installed a predetermined text editor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+151"/>
+        <location line="+138"/>
         <source>Welcome to the PENGOLINCOIN RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4697,8 +4156,13 @@ Verify that you have installed a predetermined text editor.</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
-        <translation type="unfinished">Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</translation>
+        <source>Type %1 for an overview of available commands.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>For more information on using this console type %1.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4939,7 +4403,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+85"/>
+        <location line="+72"/>
         <source>2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4949,20 +4413,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+26"/>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           Newly received PENGOLINCOIN requires 6 confirmations on the network
-                           to become eligible for spending which can take ~6 minutes.
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           Your PENGOLINCOIN wallet also needs to be completely synchronized
-                           to see and spend balances on the network.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+54"/>
+        <location line="+72"/>
         <source>3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4972,121 +4423,37 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+26"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You must have a balance of PENGOLINCOIN with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (pengolincoin-cli); the command &lt;span style=&quot; font-style:italic;&quot;&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+46"/>
+        <location line="+72"/>
         <source>4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+44"/>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           We have support channels in most of our official chat groups, for example
-                           &lt;a style=&apos;color: #b088ff&apos; href=&apos;https://discord.pengolincoin.xyz&apos;&gt;
-                           #support in our Discord&lt;/a&gt;.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+52"/>
+        <location line="+90"/>
         <source>5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+44"/>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           A masternode is a computer running a full node PENGOLINCOIN core wallet with a
-                           requirement of 100,000 PGO secured collateral to provide extra services
-                           to the network and in return, receive a portion of the block reward
-                           regularly.  These services include:
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-
-                           &lt;ul&gt;
-                           &lt;li&gt;A decentralized governance (Proposal Voting)&lt;/li&gt;
-                           &lt;li&gt;A decentralized budgeting system (Treasury)&lt;/li&gt;
-                           &lt;li&gt;Validation of transactions within each block&lt;/li&gt;
-                           &lt;li&gt;Act as an additional full node in the network&lt;/li&gt;
-                           &lt;/ul&gt;
-
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           For providing such services, masternodes are also paid a certain portion
-                           of reward for each block. This can serve as a passive income to the
-                           masternode owners minus their running cost.
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-
-                           Masternode Perks:
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           &lt;ul&gt;
-                           &lt;li&gt;Participate in PENGOLINCOIN Governance&lt;/li&gt;
-                           &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
-                           &lt;li&gt;Commodity option for future sale&lt;/li&gt;
-                           &lt;li&gt;Help secure the PENGOLINCOIN network&lt;/li&gt;
-                           &lt;/ul&gt;
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-
-                           Requirements:
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           &lt;ul&gt;
-                           &lt;li&gt;100,000 PGO per single Masternode instance&lt;/li&gt;
-                           &lt;li&gt;Must be stored in a core wallet&lt;/li&gt;
-                           &lt;li&gt;Need dedicated IP address&lt;/li&gt;
-                           &lt;li&gt;Masternode wallet to remain online&lt;/li&gt;
-                           &lt;/ul&gt;
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+86"/>
+        <location line="+90"/>
         <source>6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-208"/>
+        <location line="-162"/>
         <source>Where should I go if I need support?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-268"/>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           PENGOLINCOIN is a form of digital online money using blockchain technology
-                           that can be easily transferred globally, instantly, and with near
-                           zero fees.  PENGOLINCOIN incorporates market leading security &amp;
-                           privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.
-                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           PENGOLINCOIN utilizes a Proof of Stake (PoS) consensus system algorithm,
-                           allowing all owners of PENGOLINCOIN to participate in earning block rewards
-                           while securing the network with full node wallets, as well as to
-                           run Masternodes to create and vote on proposals.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+364"/>
+        <location line="+90"/>
         <source>What is a Masternode?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+130"/>
+        <location line="+90"/>
         <source>What is a Masternode Controller?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+26"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;A Masternode Controller wallet is where the 100,000 PGO collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet(s) and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-983"/>
+        <location line="-890"/>
         <source>Frequently Asked Questions</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5118,6 +4485,146 @@ There was an error trying to save the address list to %1. Please try again.</sou
     <message>
         <location line="+34"/>
         <source>You can read more here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pengolincoin/settings/settingsfaqwidget.cpp" line="+78"/>
+        <source>PENGOLINCOIN is a form of digital online money using blockchain technology that can be easily transferred globally, instantly, and with near zero fees. PENGOLINCOIN incorporates market leading security &amp; privacy and is also the first PoS (Proof of Stake) Cryptocurrency to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>PENGOLINCOIN utilizes a Proof of Stake (PoS) consensus system algorithm, allowing all owners of PENGOLINCOIN to participate in earning block rewards while securing the network with full node wallets, as well as to run Masternodes to create and vote on proposals.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Newly received PENGOLINCOIN requires 6 confirmations on the network to become eligible for spending which can take ~6 minutes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Your PENGOLINCOIN wallet also needs to be completely synchronized to see and spend balances on the network.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Make sure your wallet is completely synchronized and you are using the latest release.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>You must have a balance of PENGOLINCOIN with a minimum of 600 confirmations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Your wallet must stay online and be unlocked for staking purposes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Once all those steps are followed staking should be enabled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. The package will be lit up and will state &quot;Staking Enabled&quot; to indicate it is staking. Using the command line interface (%1); the command %2 will confirm that staking is active.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>We have support channels in most of our official chat groups, for example %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>#support in our Discord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>%1 per single Masternode instance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>A Masternode Controller wallet is where the %1 collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet(s) and allows you to keep your collateral coins offline while the remote masternode remains online.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-27"/>
+        <source>A decentralized governance (Proposal Voting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-7"/>
+        <source>A masternode is a computer running a full node %1 wallet with a requirement of %2 secured collateral to provide extra services to the network and in return, receive a portion of the block reward regularly. These services include:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>A decentralized budgeting system (Treasury)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Validation of transactions within each block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Act as an additional full node in the network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>For providing such services, masternodes are also paid a certain portion of reward for each block. This can serve as a passive income to the masternode owners minus their running cost.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Masternode Perks:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Participate in PENGOLINCOIN Governance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Earn Masternode Rewards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Commodity option for future sale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Help secure the PENGOLINCOIN network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Requirements:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Must be stored in a core wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Need dedicated IP address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Masternode wallet to remain online</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5234,7 +4741,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/settings/settingsinformationwidget.cpp" line="+22"/>
+        <location filename="../pengolincoin/settings/settingsinformationwidget.cpp" line="+21"/>
         <source>No information</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5249,7 +4756,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+32"/>
         <source>In:</source>
         <translation type="unfinished">In:</translation>
     </message>
@@ -5259,7 +4766,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation type="unfinished">Out:</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+60"/>
         <source>No available data</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5317,12 +4824,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/settings/settingsmainoptionswidget.cpp" line="+54"/>
-        <source>Start PENGOLINCOIN on system login</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pengolincoin/settings/forms/settingsmainoptionswidget.ui" line="+130"/>
+        <location line="+130"/>
         <source>Minimize to the tray instead of the taskbar</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5332,7 +4834,12 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/settings/settingsmainoptionswidget.cpp" line="+30"/>
+        <location filename="../pengolincoin/settings/settingsmainoptionswidget.cpp" line="+54"/>
+        <source>Start %1 on system login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+35"/>
         <source>Reset Options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5347,198 +4854,6 @@ Are you sure?
     <message>
         <location line="+9"/>
         <source>Options reset succeed</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsMultisendDialog</name>
-    <message>
-        <location filename="../pengolincoin/settings/forms/settingsmultisenddialog.ui" line="+14"/>
-        <source>Form</source>
-        <translation type="unfinished">Form</translation>
-    </message>
-    <message>
-        <location line="+81"/>
-        <source>Transaction Details</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+110"/>
-        <location line="+64"/>
-        <location line="+58"/>
-        <source>TextLabel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+71"/>
-        <source>CANCEL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+22"/>
-        <source>SAVE</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pengolincoin/settings/settingsmultisenddialog.cpp" line="+24"/>
-        <source>New recipient for multisend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Address Label (optional)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Enter label to be saved with this address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Percentage</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsMultisendWidget</name>
-    <message>
-        <location filename="../pengolincoin/settings/forms/settingsmultisendwidget.ui" line="+14"/>
-        <source>Form</source>
-        <translation type="unfinished">Form</translation>
-    </message>
-    <message>
-        <location line="+64"/>
-        <location line="+7"/>
-        <source>TextLabel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+228"/>
-        <source>N/A</source>
-        <translation type="unfinished">N/A</translation>
-    </message>
-    <message>
-        <location line="+50"/>
-        <location line="+29"/>
-        <source>CheckBox</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pengolincoin/settings/settingsmultisendwidget.cpp" line="+164"/>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other PENGOLINCOIN addresses after it matures.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Active</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Disable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>No active recipient yet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Send stakes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Send masternode rewards</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>ADD RECIPIENT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>CLEAR ALL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+51"/>
-        <source>Cannot perform operation, wallet locked</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>Clear succeed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>Clear all failed, could not locate address in wallet file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Cannot add multisend recipient, wallet locked</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+22"/>
-        <source>The entered address: %1 is invalid.
-Please check the address and try again.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Invalid percentage, please enter values from 1 to 100.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+17"/>
-        <source>Error saving  MultiSend, failed saving properties to the database.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>Unable to activate MultiSend, no available recipients</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Unable to activate MultiSend
-Check one or both of the check boxes to send on stake and/or masternode rewards</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>MultiSend activated but writing settings to DB failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>MultiSend activated</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>First multiSend address invalid</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+12"/>
-        <source>MultiSend deactivated but writing settings to DB failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>MultiSend deactivated</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5701,7 +5016,7 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation type="unfinished">Form</translation>
     </message>
     <message>
-        <location line="+440"/>
+        <location line="+450"/>
         <source>Reset to default</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5711,7 +5026,7 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-405"/>
+        <location line="-415"/>
         <source>Wallet</source>
         <translation type="unfinished">Wallet</translation>
     </message>
@@ -5732,7 +5047,7 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
     </message>
     <message>
         <location line="+71"/>
-        <location filename="../pengolincoin/settings/settingswalletoptionswidget.cpp" line="+38"/>
+        <location filename="../pengolincoin/settings/settingswalletoptionswidget.cpp" line="+43"/>
         <source>Network</source>
         <translation type="unfinished">Network</translation>
     </message>
@@ -5742,7 +5057,17 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+65"/>
+        <location line="+58"/>
+        <source>Automatically open the PENGOLINCOIN client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Map port using NAT-PMP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
         <source>Connect through SOCKS5 proxy (default proxy)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5767,12 +5092,12 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="-79"/>
         <source>Map port using UPnP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+17"/>
         <source>Allow incoming connections</source>
         <translation type="unfinished">Allow incoming connections</translation>
     </message>
@@ -5784,6 +5109,11 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
     <message>
         <location filename="../pengolincoin/settings/settingswalletoptionswidget.cpp" line="+28"/>
         <source>Options reset succeed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+46"/>
+        <source>Stake Split too low, it shall be either &gt;= %1 or equal to 0 (to disable stake splitting)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5915,17 +5245,12 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
     </message>
     <message>
         <location line="+55"/>
-        <location line="+321"/>
+        <location line="+293"/>
         <source>Wallet</source>
         <translation type="unfinished">Wallet</translation>
     </message>
     <message>
-        <location line="-293"/>
-        <source>Multisend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+28"/>
+        <location line="-265"/>
         <source>Export Accounting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5995,12 +5320,12 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-870"/>
+        <location line="-842"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/settings/settingswidget.cpp" line="+222"/>
+        <location filename="../pengolincoin/settings/settingswidget.cpp" line="+211"/>
         <source>Confirm options reset</source>
         <translation type="unfinished">Confirm options reset</translation>
     </message>
@@ -6015,12 +5340,7 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation type="unfinished">Client will be shutdown, do you want to proceed?</translation>
     </message>
     <message>
-        <location line="+16"/>
-        <source>Stake Split too low, it shall be either &gt;= %1 or equal to 0 (to disable stake splitting)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
+        <location line="+22"/>
         <source>Restart required</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6056,7 +5376,7 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+155"/>
+        <location line="+149"/>
         <source>Discard Unsaved Changes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6072,8 +5392,8 @@ Are you sure?
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <location filename="../utilitydialog.cpp" line="+71"/>
-        <source>PENGOLINCOIN Core is shutting down...</source>
+        <location filename="../utilitydialog.cpp" line="+83"/>
+        <source>%1 is shutting down...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6105,11 +5425,6 @@ Are you sure?
     <message>
         <location line="+143"/>
         <source>Loading…</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pengolincoin/splash.cpp" line="+31"/>
-        <source>PENGOLINCOIN Core</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6168,7 +5483,7 @@ Are you sure?
     </message>
     <message>
         <location line="+213"/>
-        <location filename="../pengolincoin/topbar.cpp" line="+689"/>
+        <location filename="../pengolincoin/topbar.cpp" line="+668"/>
         <source>Available</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6183,13 +5498,13 @@ Are you sure?
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/topbar.cpp" line="-388"/>
-        <location line="+360"/>
+        <location filename="../pengolincoin/topbar.cpp" line="-369"/>
+        <location line="+341"/>
         <source>Wallet Unlocked for staking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-330"/>
+        <location line="-311"/>
         <source>Error generating address</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6217,7 +5532,7 @@ Are you sure?
         </translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+15"/>
         <source>Synchronized - Block: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6286,18 +5601,13 @@ backup will be created.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+63"/>
-        <source>Tor Active: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-527"/>
-        <location line="+532"/>
+        <location line="-445"/>
+        <location line="+513"/>
         <source>Tor Disabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-542"/>
+        <location line="-523"/>
         <source>FAQ</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6345,13 +5655,13 @@ backup will be created.
     </message>
     <message>
         <location line="+119"/>
-        <location line="+395"/>
+        <location line="+376"/>
         <source>Wallet Locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-379"/>
-        <location line="+387"/>
+        <location line="-360"/>
+        <location line="+368"/>
         <source>Wallet Unlocked</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6372,7 +5682,12 @@ backup will be created.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+62"/>
+        <location line="+41"/>
+        <source>Tor Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+21"/>
         <source>Wallet Unencrypted</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6450,7 +5765,7 @@ backup will be created.
 <context>
     <name>TransactionTableModel</name>
     <message>
-        <location filename="../transactiontablemodel.cpp" line="+335"/>
+        <location filename="../transactiontablemodel.cpp" line="+298"/>
         <source>Date</source>
         <translation>Date</translation>
     </message>
@@ -6465,7 +5780,7 @@ backup will be created.
         <translation>Address</translation>
     </message>
     <message numerus="yes">
-        <location line="+69"/>
+        <location line="+65"/>
         <source>Open for %n more block(s)</source>
         <translation>
             <numerusform>Open for %n more block</numerusform>
@@ -6814,7 +6129,7 @@ backup will be created.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+35"/>
+        <location line="+39"/>
         <source>Delegating to</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6824,7 +6139,7 @@ backup will be created.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+150"/>
+        <location line="+153"/>
         <source>Unknown</source>
         <translation type="unfinished">Unknown</translation>
     </message>
@@ -6850,7 +6165,7 @@ backup will be created.
 <context>
     <name>WalletModel</name>
     <message>
-        <location filename="../walletmodel.cpp" line="+456"/>
+        <location filename="../walletmodel.cpp" line="+539"/>
         <source>Send Coins</source>
         <translation>Send Coins</translation>
     </message>
@@ -6915,13 +6230,7 @@ Select fewer inputs with coin control.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+89"/>
-        <source>Welcome to
-PENGOLINCOIN Core Wallet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+27"/>
+        <location line="+116"/>
         <source>PENGOLINCOIN is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6941,12 +6250,18 @@ PENGOLINCOIN Core Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+80"/>
+        <location line="-100"/>
+        <source>Welcome to
+%1 Wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+180"/>
         <source>What is a Masternode?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pengolincoin/welcomecontentwidget.cpp" line="+178"/>
+        <location filename="../pengolincoin/welcomecontentwidget.cpp" line="+183"/>
         <source>default</source>
         <translation type="unfinished">default</translation>
     </message>
@@ -6954,297 +6269,77 @@ PENGOLINCOIN Core Wallet</source>
 <context>
     <name>pengolincoin-core</name>
     <message>
-        <location filename="../pengolincoinstrings.cpp" line="+18"/>
-        <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
-        <translation type="unfinished">Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
-        <translation type="unfinished">Bind to given address and always listen on it. Use [host]:port notation for IPv6</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Bind to given address and whitelist peers connecting to it. Use [host]:port notation for IPv6</source>
-        <translation type="unfinished">Bind to given address and whitelist peers connecting to it. Use [host]:port notation for IPv6</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
-        <translation type="unfinished">Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
-        <translation type="unfinished">Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Continuously rate-limit free transactions to &lt;n&gt;*1000 bytes per minute (default:%u)</source>
-        <translation type="unfinished">Continuously rate-limit free transactions to &lt;n&gt;*1000 bytes per minute (default:%u)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</source>
-        <translation type="unfinished">Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</source>
-        <translation type="unfinished">Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</translation>
-    </message>
-    <message>
-        <location line="+6"/>
+        <location filename="../pengolincoinstrings.cpp" line="+25"/>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
         <translation type="unfinished">Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
-        <location line="+17"/>
-        <source>Enable cold staking functionality (0-1, default: %u). Disabled if staking=0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Enable spork administration functionality with the appropriate private key.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="+6"/>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
         <translation type="unfinished">Error: Listening for incoming connections failed (listen returned error %s)</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <source>Error: Unsupported argument -socks found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</source>
-        <translation type="unfinished">Error: Unsupported argument -socks found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Exclude debugging information for a category. Can be used in conjunction with -debug=1 to output debug logs for all categories except one or more specified categories.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
-        <translation type="unfinished">Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
-        <translation type="unfinished">Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
-        <translation type="unfinished">Execute command when the best block changes (%s in cmd is replaced by block hash)</translation>
-    </message>
-    <message>
-        <location line="+12"/>
-        <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
-        <translation type="unfinished">Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
-        <translation type="unfinished">If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
-        <translation type="unfinished">Invalid amount for -maxtxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least the minrelay fee of %s to prevent stuck transactions)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Log transaction priority and fee per kB when mining blocks (default: %u)</source>
-        <translation type="unfinished">Log transaction priority and fee per kB when mining blocks (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Maintain a full transaction index, used by the getrawtransaction rpc call (default: %u)</source>
-        <translation type="unfinished">Maintain a full transaction index, used by the getrawtransaction rpc call (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Maximum average size of an index occurrence in the block spam filter (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
-        <translation type="unfinished">Maximum size of data in data carrier transactions we relay and mine (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Maximum size of the list of indexes in the block spam filter (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</source>
-        <translation type="unfinished">Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Number of seconds to keep misbehaving peers from reconnecting (default: %u)</source>
-        <translation type="unfinished">Number of seconds to keep misbehaving peers from reconnecting (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Output debugging information (default: %u, supplying &lt;category&gt; is optional)</source>
-        <translation type="unfinished">Output debugging information (default: %u, supplying &lt;category&gt; is optional)</translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Require high priority for relaying free or low-fee transactions (default:%u)</source>
-        <translation type="unfinished">Require high priority for relaying free or low-fee transactions (default:%u)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Send trace/debug info to console instead of debug.log file (default: %u)</source>
-        <translation type="unfinished">Send trace/debug info to console instead of debug.log file (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</source>
-        <translation type="unfinished">Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
-        <translation type="unfinished">Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)</source>
-        <translation type="unfinished">Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Support filtering of blocks and transaction with bloom filters (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
+        <location line="+26"/>
         <source>The block database contains a block which appears to be from the future. This may be due to your computer&apos;s date and time being set incorrectly. Only rebuild the block database if you are sure that your computer&apos;s date and time are correct</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+11"/>
-        <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
-        <translation type="unfinished">This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of uacomments.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Unable to bind to %s on this computer. PENGOLINCOIN Core is probably already running.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
-        <translation type="unfinished">Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Warning: -maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
-        <translation type="unfinished">Warning: -maxtxfee is set very high! Fees this large could be paid on a single transaction.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
-        <translation type="unfinished">Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong PENGOLINCOIN Core will not work properly.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+28"/>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
         <translation type="unfinished">Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</translation>
     </message>
     <message>
         <location line="+3"/>
+        <source>Warning: Wallet file corrupt, data salvaged! Original %s saved as %s in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Warning: We do not appear to fully agree with our peers! You may need to upgrade, or other nodes may need to upgrade.</source>
         <translation type="unfinished">Warning: We do not appear to fully agree with our peers! You may need to upgrade, or other nodes may need to upgrade.</translation>
     </message>
     <message>
-        <location line="+8"/>
-        <source>Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</source>
-        <translation type="unfinished">Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</translation>
+        <location line="+6"/>
+        <source>&quot;local&quot; vote is no longer available with DMNs. Use &quot;alias&quot; from the wallet with the voting key.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</source>
-        <translation type="unfinished">Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>(default: %s)</source>
-        <translation type="unfinished">(default: %s)</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Accept command line and JSON-RPC commands</source>
-        <translation type="unfinished">Accept command line and JSON-RPC commands</translation>
+        <source>%s Invalid %s address or hostname: &apos;%s&apos;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Accept public REST requests (default: %u)</source>
-        <translation type="unfinished">Accept public REST requests (default: %u)</translation>
+        <source>%s corrupt, salvage failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>%s is not allowed in combination with enabled wallet functionality</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>%s is only allowed with a single wallet file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Cannot downgrade wallet.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Add a node to connect to and attempt to keep the connection open</source>
-        <translation type="unfinished">Add a node to connect to and attempt to keep the connection open</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Always query for peer addresses via DNS lookup (default: %u)</source>
-        <translation type="unfinished">Always query for peer addresses via DNS lookup (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Append comment to the user agent string</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Automatically create Tor hidden service (default: %d)</source>
+        <source>Cannot set %s or %s together with %s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Block creation options:</source>
-        <translation type="unfinished">Block creation options:</translation>
+        <source>Cannot upgrade a locked wallet.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Connect through SOCKS5 proxy</source>
-        <translation type="unfinished">Connect through SOCKS5 proxy</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Connect to a node to retrieve peer addresses, and disconnect</source>
-        <translation type="unfinished">Connect to a node to retrieve peer addresses, and disconnect</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Connection options:</source>
-        <translation type="unfinished">Connection options:</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
         <translation type="unfinished">Copyright (C) 2009-%i The Bitcoin Core Developers</translation>
     </message>
@@ -7254,44 +6349,24 @@ PENGOLINCOIN Core Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Copyright (C) 2015-%i The PENGOLINCOIN Core Developers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Corrupted block database detected</source>
         <translation type="unfinished">Corrupted block database detected</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
+        <source>Could not open debug log file %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Could not parse masternode.conf</source>
         <translation type="unfinished">Could not parse masternode.conf</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Debugging/Testing options:</source>
-        <translation type="unfinished">Debugging/Testing options:</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Delete blockchain folders and resync from scratch</source>
+        <source>Deterministic masternodes are not enforced yet</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Disable OS notifications for incoming transactions (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Discover own IP address (default: 1 when listening and no -externalip)</source>
-        <translation type="unfinished">Discover own IP address (default: 1 when listening and no -externalip)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Do not load the wallet and disable wallet RPC calls</source>
-        <translation type="unfinished">Do not load the wallet and disable wallet RPC calls</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7304,9 +6379,9 @@ PENGOLINCOIN Core Wallet</source>
         <translation type="unfinished">Done loading</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>Enable the client to act as a masternode (0-1, default: %u)</source>
-        <translation type="unfinished">Enable the client to act as a masternode (0-1, default: %u)</translation>
+        <location line="+1"/>
+        <source>Elliptic curve cryptography sanity check failure. Aborting.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7314,12 +6389,17 @@ PENGOLINCOIN Core Wallet</source>
         <translation type="unfinished">Error initializing block database</translation>
     </message>
     <message>
+        <location line="+1"/>
+        <source>Error initializing wallet database environment %s!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+4"/>
         <source>Error loading block database</source>
         <translation type="unfinished">Error loading block database</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Error opening block database</source>
         <translation type="unfinished">Error opening block database</translation>
     </message>
@@ -7339,59 +6419,19 @@ PENGOLINCOIN Core Wallet</source>
         <translation type="unfinished">Error: A fatal internal error occured, see debug.log for details</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Error: Disk space is low!</source>
         <translation type="unfinished">Error: Disk space is low!</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Error: Unsupported argument -tor found, use -onion.</source>
-        <translation type="unfinished">Error: Unsupported argument -tor found, use -onion.</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
-        <translation type="unfinished">Failed to listen on any port. Use -listen=0 if you want this.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+7"/>
         <source>Failed to parse host:port string</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Force safe mode (default: %u)</source>
-        <translation type="unfinished">Force safe mode (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Generate coins (default: %u)</source>
-        <translation type="unfinished">Generate coins (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>How many blocks to check at startup (default: %u, 0 = all)</source>
-        <translation type="unfinished">How many blocks to check at startup (default: %u, 0 = all)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>If &lt;category&gt; is not supplied, output all debugging information.</source>
-        <translation type="unfinished">If &lt;category&gt; is not supplied, output all debugging information.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Importing...</source>
         <translation type="unfinished">Importing...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Imports blocks from external blk000??.dat file</source>
-        <translation type="unfinished">Imports blocks from external blk000??.dat file</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Include IP addresses in debug output (default: %u)</source>
-        <translation type="unfinished">Include IP addresses in debug output (default: %u)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7414,202 +6454,132 @@ PENGOLINCOIN Core Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Invalid -onion address or hostname: &apos;%s&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least %s)</source>
-        <translation type="unfinished">Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least %s)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Invalid netmask specified in -whitelist: &apos;%s&apos;</source>
-        <translation type="unfinished">Invalid netmask specified in -whitelist: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <location line="-129"/>
+        <location line="-94"/>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-100"/>
-        <source>Error: Unsupported argument -checklevel found. Checklevel must be level 4.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+18"/>
-        <source>Execute command when the best block changes and its size is over (%s in cmd is replaced by block hash, %d with the block size)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+62"/>
-        <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+69"/>
-        <source>&lt;category&gt; can be:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Attempt to force blockchain corruption recovery</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+22"/>
-        <source>Display the stake modifier calculations in the debug.log file.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Display verbose coin stake messages in the debug.log file.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Enable publish hash block in &lt;address&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Enable publish hash transaction in &lt;address&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Enable publish raw block in &lt;address&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Enable publish raw transaction in &lt;address&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Enable staking functionality (0-1, default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+14"/>
+        <location line="+77"/>
         <source>Error: A fatal internal error occurred, see debug.log for details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-275"/>
-        <source>(1 = keep tx meta data e.g. payment request information, 2 = drop tx meta data)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Accept connections from outside (default: %u if no -proxy or -connect/-noconnect)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+17"/>
+        <location line="-130"/>
         <source>Cannot find the Sapling parameters in the following directory:
 %s
 Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos; and then restart.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+10"/>
         <source>Cannot upgrade to Sapling wallet (already running Sapling support). Version: %d</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+18"/>
-        <source>Disable all PENGOLINCOIN specific functionality (Masternodes, Budgeting) (0-1, default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+123"/>
+        <location line="+40"/>
         <source>This file contains all of your private keys in plain text. DO NOT send this file to anyone!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+39"/>
+        <location line="+6"/>
+        <source>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of %s.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Unable to replay blocks. You will need to rebuild the database using %s.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Warning: %s is set very high! Fees this large could be paid on a single transaction.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Warning: %s is set very high! This is the transaction fee you will pay if you send a transaction.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
         <source>Warning: error reading %s! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+11"/>
         <source>A fatal internal error occurred, see debug.log for details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>Allow DNS lookups for -addnode, -seednode and -connect (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Attempt to recover private keys from a corrupt wallet file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>Calculating money supply...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Cannot set -bind or -whitebind together with -listen=0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+27"/>
+        <location line="+22"/>
         <source>Error loading %s: Wallet corrupted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Error loading %s: Wallet requires newer version of PENGOLINCOIN Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Error loading %s
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+2"/>
+        <source>Error loading wallet %s. Duplicate %s filename specified.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Error upgrading chainstate database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+27"/>
-        <source>Invalid amount for -%s=&lt;amount&gt;: &apos;%s&apos;</source>
+        <location line="+2"/>
+        <source>Error: %s must be at least %d MB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Error: %s must be true if %s is set.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Error: Disk space is low for %s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
+        <source>Error: Initializing networking failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Error: Unsupported argument %s found, use %s.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Error: Unsupported argument %s found. Checklevel must be level 4.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Invalid amount for -%s=&lt;amount&gt;: &apos;%s&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Invalid masternodeprivkey. Please see the documentation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
-        <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
-        <translation type="unfinished">Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+4"/>
+        <location line="+8"/>
         <source>Line: %d</source>
         <translation type="unfinished">Line: %d</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: %u or testnet: %u)</source>
-        <translation type="unfinished">Listen for JSON-RPC connections on &lt;port&gt; (default: %u or testnet: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Listen for connections on &lt;port&gt; (default: %u or testnet: %u)</source>
-        <translation type="unfinished">Listen for connections on &lt;port&gt; (default: %u or testnet: %u)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7652,248 +6622,118 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
         <translation type="unfinished">Loading wallet...</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Location of the auth cookie (default: data dir)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Lock masternodes from masternode configuration file (default: %u)</source>
-        <translation type="unfinished">Lock masternodes from masternode configuration file (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Lookup(): Invalid -proxy address or hostname: &apos;%s&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>MNs synchronization pending...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Maintain at most &lt;n&gt; connections to peers (default: %u)</source>
-        <translation type="unfinished">Maintain at most &lt;n&gt; connections to peers (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Masternode options:</source>
-        <translation type="unfinished">Masternode options:</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
-        <translation type="unfinished">Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
-        <translation type="unfinished">Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Mining/Staking options:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+47"/>
-        <source>Specify zk params directory (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-46"/>
-        <source>Need to specify a port with -whitebind: &apos;%s&apos;</source>
-        <translation type="unfinished">Need to specify a port with -whitebind: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Node relay options:</source>
-        <translation type="unfinished">Node relay options:</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+5"/>
         <source>Not enough file descriptors available.</source>
         <translation type="unfinished">Not enough file descriptors available.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Number of custom location backups to retain (default: %d)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>On first run, create a legacy wallet instead of a HD wallet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
-        <translation type="unfinished">Only accept block chain matching built-in checkpoints (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Only connect to nodes in network &lt;net&gt; (ipv4, ipv6 or onion)</source>
-        <translation type="unfinished">Only connect to nodes in network &lt;net&gt; (ipv4, ipv6 or onion)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Options:</source>
-        <translation type="unfinished">Options:</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Password for JSON-RPC connections</source>
-        <translation type="unfinished">Password for JSON-RPC connections</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Peers are being disconnected due time differences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+64"/>
+        <location line="+10"/>
+        <source>Specified blocks directory &quot;%s&quot; does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Unknown network specified in %s: &apos;%s&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Upgrading coins database if needed...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Use block spam filter (default: %u)</source>
+        <location line="+3"/>
+        <source>Verifying wallet(s)...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Use the test chain</source>
+        <source>Wallet %s resides outside data directory %s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>Wallet debugging/testing options:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>isValid(): Invalid -proxy address or hostname: &apos;%s&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-82"/>
+        <location line="-40"/>
         <source>Preparing for resync...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-314"/>
+        <location line="-173"/>
         <source>Cannot obtain a lock on data directory %s. %s is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+8"/>
-        <source>Connect only to the specified node(s); -noconnect or -connect=0 alone to disable automatic connections</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+18"/>
-        <source>Do not accept transactions if any ancestor would have &lt;n&gt; or more in-mempool descendants (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Do not accept transactions if any ancestor would have more than &lt;n&gt; kilobytes of in-mempool descendants (default: %u).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Do not accept transactions if number of in-mempool ancestors is &lt;n&gt; or more (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Do not accept transactions whose size with all in-mempool ancestors exceeds &lt;n&gt; kilobytes (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Do not keep transactions in the mempool longer than &lt;n&gt; hours (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+29"/>
-        <source>Fees (in %s/Kb) smaller than this are considered zero fee for relaying, mining and transaction creation (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Fees (in %s/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+28"/>
-        <source>Minimum positive amount (in PGO) allowed by GUI and RPC for the stake split threshold (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Please check that your computer&apos;s date and time are correct! If your clock is wrong PENGOLINCOIN Core will not work properly.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect/-noconnect)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+22"/>
-        <source>Specify location of debug log file: this can be an absolute path or a path relative to the data directory (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>System error while flushing the chainstate after pruning invalid entries. Possible corrupt database.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+23"/>
-        <source>Unable to replay blocks. You will need to rebuild the database using -reindex.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>WARNING: The transaction has been signed and recorded, so the wallet will try to re-send it. Use &apos;abandontransaction&apos; to cancel it. (txid: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+21"/>
-        <source>Whether to save the mempool on shutdown and load on restart (default: %u)</source>
+        <location line="+2"/>
+        <source>Cannot start deterministic masternode before enforcement. Remove %s to start as legacy masternode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>(must be %d for %s-net)</source>
+        <source>Enabling Masternode support requires turning on transaction indexing.Please add %s to your configuration and start with %s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Active Masternode not initialized.</source>
+        <source>Error: Unsupported argument %s found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Allows deprecated RPC method(s) to be used</source>
+        <source>Failed to create backup, file already exists! This could happen if you restarted wallet in less than 60 seconds. You can continue if you are ok with this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+8"/>
-        <source>Can&apos;t generate a change-address key. Please call keypoolrefill first.</source>
+        <location line="+9"/>
+        <source>Invalid amount for %s: &apos;%s&apos; (must be at least the minimum relay fee of %s to prevent stuck transactions)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Cannot resolve -%s address: &apos;%s&apos;</source>
+        <location line="+3"/>
+        <source>Legacy masternode system disabled. Use %s to start as deterministic masternode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>System error while flushing the chainstate after pruning invalid entries. Possible corrupt database.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>WARNING: The transaction has been signed and recorded, so the wallet will try to re-send it. Use &apos;abandontransaction&apos; to cancel it. (txid: %s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>(must be %d for %s-net)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Chain selection options:</source>
+        <source>Active Masternode not initialized.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Can&apos;t generate a change-address key. Please call keypoolrefill first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Cannot resolve -%s address: &apos;%s&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Cannot write to data directory &apos;%s&apos;; check permissions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7903,27 +6743,27 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
     </message>
     <message>
         <location line="+33"/>
-        <source>Error: -listen must be true if -masternode is set.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Error: -maxmempool must be at least %d MB</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
         <source>Failed to accept tx in the memory pool (reason: %s)
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Fee (in %s/kB) to add to transactions you send (default: %s)</source>
+        <location line="+1"/>
+        <source>Failed to delete backup, error: %s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+1"/>
+        <source>Failed to listen on any port. Use %s if you want this.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Failed to rescan the wallet during initialization</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Initialization sanity check failed. %s is shutting down.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7938,7 +6778,32 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+1"/>
+        <source>Invalid activation height (%s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Invalid amount for %s: &apos;%s&apos; (must be at least %s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Invalid mnoperatorprivatekey. Please see the documentation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Invalid netmask specified in %s: &apos;%s&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Invalid network upgrade (%s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Invalid port %d detected in masternode.conf</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7948,69 +6813,49 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Keep the transaction memory pool below &lt;n&gt; megabytes (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location line="+1"/>
         <source>Keypool ran out, please call keypoolrefill first, or unlock the wallet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Limit size of signature cache to &lt;n&gt; MiB (default: %u)</source>
+        <source>Legacy Masternode is obsolete.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+10"/>
+        <source>Loading/Pruning invalid outputs...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Need to specify a port with %s: &apos;%s&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Network upgrade parameters malformed, expecting %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Network upgrade parameters may only be overridden on regtest.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>No error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+2"/>
+        <source>OS cryptographic RNG sanity check failure. Aborting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+3"/>
-        <source>Number of automatic wallet backups (default: %d)</source>
+        <source>Reaccepting wallet transactions...</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>Prepend debug output with timestamp (default: %u)</source>
-        <translation type="unfinished">Prepend debug output with timestamp (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Print version and exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>RPC server options:</source>
-        <translation type="unfinished">RPC server options:</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Randomly drop 1 of every &lt;n&gt; network messages</source>
-        <translation type="unfinished">Randomly drop 1 of every &lt;n&gt; network messages</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Randomly fuzz 1 of every &lt;n&gt; network messages</source>
-        <translation type="unfinished">Randomly fuzz 1 of every &lt;n&gt; network messages</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Rebuild block chain index from current blk000??.dat files</source>
-        <translation type="unfinished">Rebuild block chain index from current blk000??.dat files</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Relay and mine data carrier transactions (default: %u)</source>
-        <translation type="unfinished">Relay and mine data carrier transactions (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Relay non-P2SH multisig (default: %u)</source>
-        <translation type="unfinished">Relay non-P2SH multisig (default: %u)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -8019,78 +6864,8 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
     </message>
     <message>
         <location line="+1"/>
-        <source>Rescan the block chain for missing wallet transactions</source>
-        <translation type="unfinished">Rescan the block chain for missing wallet transactions</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Rescanning...</source>
         <translation type="unfinished">Rescanning...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Run a thread to flush wallet periodically (default: %u)</source>
-        <translation type="unfinished">Run a thread to flush wallet periodically (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Run in the background as a daemon and accept commands</source>
-        <translation type="unfinished">Run in the background as a daemon and accept commands</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Set database cache size in megabytes (%d to %d, default: %d)</source>
-        <translation type="unfinished">Set database cache size in megabytes (%d to %d, default: %d)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Set external address:port to get to this masternode (example: %s)</source>
-        <translation type="unfinished">Set external address:port to get to this masternode (example: %s)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Set key pool size to &lt;n&gt; (default: %u)</source>
-        <translation type="unfinished">Set key pool size to &lt;n&gt; (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Set maximum block size in bytes (default: %d)</source>
-        <translation type="unfinished">Set maximum block size in bytes (default: %d)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Set minimum block size in bytes (default: %u)</source>
-        <translation type="unfinished">Set minimum block size in bytes (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Set the Maximum reorg depth (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Set the masternode private key</source>
-        <translation type="unfinished">Set the masternode private key</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Set the number of threads to service RPC calls (default: %d)</source>
-        <translation type="unfinished">Set the number of threads to service RPC calls (default: %d)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Sets the DB_PRIVATE flag in the wallet db environment (default: %u)</source>
-        <translation type="unfinished">Sets the DB_PRIVATE flag in the wallet db environment (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show all debugging options (usage: --help -help-debug)</source>
-        <translation type="unfinished">Show all debugging options (usage: --help -help-debug)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
-        <translation type="unfinished">Shrink debug.log file on client startup (default: 1 when no -debug)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -8103,52 +6878,7 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
         <translation type="unfinished">Signing transaction failed</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Specify configuration file (default: %s)</source>
-        <translation type="unfinished">Specify configuration file (default: %s)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Specify connection timeout in milliseconds (minimum: 1, default: %d)</source>
-        <translation type="unfinished">Specify connection timeout in milliseconds (minimum: 1, default: %d)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Specify data directory</source>
-        <translation type="unfinished">Specify data directory</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Specify masternode configuration file (default: %s)</source>
-        <translation type="unfinished">Specify masternode configuration file (default: %s)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Specify pid file (default: %s)</source>
-        <translation type="unfinished">Specify pid file (default: %s)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Specify wallet file (within data directory)</source>
-        <translation type="unfinished">Specify wallet file (within data directory)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Specify your own public address</source>
-        <translation type="unfinished">Specify your own public address</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Spend unconfirmed change when sending transactions (default: %u)</source>
-        <translation type="unfinished">Spend unconfirmed change when sending transactions (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Stop running after importing blocks from disk (default: %u)</source>
-        <translation type="unfinished">Stop running after importing blocks from disk (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+5"/>
         <source>Synchronization failed</source>
         <translation type="unfinished">Synchronization failed</translation>
     </message>
@@ -8184,13 +6914,13 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
     </message>
     <message>
         <location line="+1"/>
-        <source>This help message</source>
-        <translation type="unfinished">This help message</translation>
+        <source>This is experimental software.</source>
+        <translation type="unfinished">This is experimental software.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>This is experimental software.</source>
-        <translation type="unfinished">This is experimental software.</translation>
+        <source>This is not a deterministic masternode. &apos;local&apos; option disabled.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -8204,21 +6934,61 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
     </message>
     <message>
         <location line="+1"/>
-        <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
-        <translation type="unfinished">Threshold for disconnecting misbehaving peers (default: %u)</translation>
+        <source>This product includes UPnP software written by Thomas Bernard.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Tor control port password (default: empty)</source>
+        <location line="-171"/>
+        <source>Invalid -wallet path &apos;%s&apos;. -wallet path should point to a directory where wallet.dat and database/log.?????????? files can be stored, a location where such a directory could be created or (for backwards compatibility) the name of an existing data file in -walletdir (%s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Please check that your computer&apos;s date and time are correct! If your clock is wrong %s will not work properly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong %s will not work properly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+36"/>
+        <source>Copyright (C) 2015-%i The %s Developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Could not find asmap file %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Could not parse asmap file %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Error loading %s: Wallet requires newer version of %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+65"/>
+        <source>Specified -walletdir &quot;%s&quot; does not exist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Tor control port to use if onion listening enabled (default: %s)</source>
+        <source>Specified -walletdir &quot;%s&quot; is a relative path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>Specified -walletdir &quot;%s&quot; is not a directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
         <source>Transaction amount too small</source>
         <translation type="unfinished">Transaction amount too small</translation>
     </message>
@@ -8230,6 +7000,11 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
     <message>
         <location line="+1"/>
         <source>Transaction canceled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Transaction must have at least one recipient</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8249,6 +7024,16 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
     </message>
     <message>
         <location line="+1"/>
+        <source>Unable to bind to %s on this computer. %s is probably already running.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Unable to generate initial key!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Unable to generate keys</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8263,34 +7048,39 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Unknown network specified in -onlynet: &apos;%s&apos;</source>
-        <translation type="unfinished">Unknown network specified in -onlynet: &apos;%s&apos;</translation>
+        <location line="+8"/>
+        <source>Wallet needed to be rewritten: restart %s to complete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Warning: Unsupported argument %s ignored, use %s</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>Warning: Unsupported argument %s ignored, use %s.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>You can not start a masternode in litemode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>You need to rebuild the database using %s to change %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-12"/>
         <source>Unsupported logging category %s=%s.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Upgrade wallet to latest format</source>
-        <translation type="unfinished">Upgrade wallet to latest format</translation>
-    </message>
-    <message>
         <location line="+2"/>
-        <source>Use UPnP to map the listening port (default: %u)</source>
-        <translation type="unfinished">Use UPnP to map the listening port (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
         <source>User Agent comment (%s) contains unsafe characters.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Username for JSON-RPC connections</source>
-        <translation type="unfinished">Username for JSON-RPC connections</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -8298,27 +7088,7 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
         <translation type="unfinished">Verifying blocks...</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Verifying wallet...</source>
-        <translation type="unfinished">Verifying wallet...</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Wallet needed to be rewritten: restart PENGOLINCOIN Core to complete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Wallet options:</source>
-        <translation type="unfinished">Wallet options:</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Wallet window title</source>
-        <translation type="unfinished">Wallet window title</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+4"/>
         <source>Warning</source>
         <translation type="unfinished">Warning</translation>
     </message>
@@ -8328,34 +7098,9 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
         <translation type="unfinished">Warning: This version is obsolete, upgrade required!</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Warning: Unsupported argument -benchmark ignored, use -debug=bench.</source>
-        <translation type="unfinished">Warning: Unsupported argument -benchmark ignored, use -debug=bench.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Warning: Unsupported argument -debugnet ignored, use -debug=net.</source>
-        <translation type="unfinished">Warning: Unsupported argument -debugnet ignored, use -debug=net.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>You need to rebuild the database using -reindex to change -txindex</source>
-        <translation type="unfinished">You need to rebuild the database using -reindex to change -txindex</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+5"/>
         <source>Zapping all transactions from wallet...</source>
         <translation type="unfinished">Zapping all transactions from wallet...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>ZeroMQ notification options:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>on startup</source>
-        <translation type="unfinished">on startup</translation>
     </message>
 </context>
 <context>
@@ -8393,7 +7138,7 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
     </message>
     <message>
         <location line="+53"/>
-        <source>PENGOLINCOIN address or contact label</source>
+        <source>Recipient address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

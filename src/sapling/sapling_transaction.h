@@ -1,5 +1,5 @@
 // Copyright (c) 2016-2020 The ZCash developers
-// Copyright (c) 2020 PIVX developers
+// Copyright (c) 2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -18,7 +18,7 @@
 #include <boost/variant.hpp>
 
 // transaction.h comment: spending taddr output requires CTxIn >= 148 bytes and typical taddr txout is 34 bytes
-#define CTXIN_SPEND_DUST_SIZE   148
+#define CTXIN_SPEND_DUST_SIZE   149
 #define CTXOUT_REGULAR_SIZE     34
 
 // These constants are defined in the protocol § 7.1:

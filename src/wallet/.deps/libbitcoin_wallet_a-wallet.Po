@@ -1,6 +1,6 @@
 wallet/libbitcoin_wallet_a-wallet.o: wallet/wallet.cpp \
- /usr/include/stdc-predef.h wallet/wallet.h addressbook.h \
- /usr/include/c++/9/map /usr/include/c++/9/bits/stl_tree.h \
+ /usr/include/stdc-predef.h config/pengolincoin-config.h wallet/wallet.h \
+ addressbook.h /usr/include/c++/9/map /usr/include/c++/9/bits/stl_tree.h \
  /usr/include/c++/9/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
@@ -189,15 +189,15 @@ wallet/libbitcoin_wallet_a-wallet.o: wallet/wallet.cpp \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h crypto/common.h \
- config/pengolincoin-config.h compat/endian.h compat/byteswap.h \
- /usr/include/byteswap.h prevector.h pubkey.h hash.h arith_uint256.h \
- /usr/include/c++/9/cstring crypto/ripemd160.h crypto/sha256.h \
- serialize.h /usr/include/c++/9/list /usr/include/c++/9/bits/stl_list.h \
- /usr/include/c++/9/bits/list.tcc compat/endian.h \
- libzerocoin/Denominations.h libzerocoin/SpendType.h optional.h \
- /usr/include/boost/optional.hpp /usr/include/boost/optional/optional.hpp \
- /usr/include/boost/assert.hpp /usr/include/boost/core/addressof.hpp \
- /usr/include/boost/config.hpp /usr/include/boost/config/user.hpp \
+ compat/endian.h compat/byteswap.h /usr/include/byteswap.h prevector.h \
+ pubkey.h hash.h arith_uint256.h /usr/include/c++/9/cstring \
+ crypto/ripemd160.h crypto/sha256.h serialize.h /usr/include/c++/9/list \
+ /usr/include/c++/9/bits/stl_list.h /usr/include/c++/9/bits/list.tcc \
+ compat/endian.h libzerocoin/Denominations.h libzerocoin/SpendType.h \
+ optional.h /usr/include/boost/optional.hpp \
+ /usr/include/boost/optional/optional.hpp /usr/include/boost/assert.hpp \
+ /usr/include/boost/core/addressof.hpp /usr/include/boost/config.hpp \
+ /usr/include/boost/config/user.hpp \
  /usr/include/boost/config/detail/select_compiler_config.hpp \
  /usr/include/boost/config/compiler/gcc.hpp \
  /usr/include/boost/config/detail/select_stdlib_config.hpp \
@@ -890,9 +890,11 @@ wallet/libbitcoin_wallet_a-wallet.o: wallet/wallet.cpp \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h script/interpreter.h \
- script/script_error.h kernel.h stakeinput.h chain.h chainparams.h \
- flatfile.h fs.h /usr/include/boost/filesystem.hpp \
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h tinyformat.h \
+ /usr/include/c++/9/iostream utilstrencodings.h util/string.h \
+ attributes.h script/interpreter.h script/script_error.h kernel.h \
+ stakeinput.h chain.h chainparams.h flatfile.h fs.h \
+ /usr/include/boost/filesystem.hpp \
  /usr/include/boost/filesystem/config.hpp \
  /usr/include/boost/system/api_config.hpp \
  /usr/include/boost/config/auto_link.hpp \
@@ -924,9 +926,8 @@ wallet/libbitcoin_wallet_a-wallet.o: wallet/wallet.cpp \
  /usr/include/boost/filesystem/fstream.hpp /usr/include/c++/9/fstream \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
- /usr/include/c++/9/bits/fstream.tcc pow.h timedata.h tinyformat.h \
- /usr/include/c++/9/iostream util/system.h fs.h logging.h compat.h sync.h \
- tinyformat.h utiltime.h util/threadnames.h \
+ /usr/include/c++/9/bits/fstream.tcc pow.h timedata.h util/system.h fs.h \
+ logging.h compat.h sync.h tinyformat.h utiltime.h util/threadnames.h \
  /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
@@ -1182,7 +1183,7 @@ wallet/libbitcoin_wallet_a-wallet.o: wallet/wallet.cpp \
  /usr/include/boost/thread/cv_status.hpp \
  /usr/include/boost/enable_shared_from_this.hpp \
  /usr/include/boost/smart_ptr/enable_shared_from_this.hpp key_io.h \
- pairresult.h policy/feerate.h primitives/block.h guiinterface.h \
+ operationresult.h policy/feerate.h primitives/block.h guiinterface.h \
  /usr/include/boost/signals2/last_value.hpp util/system.h \
  utilstrencodings.h validationinterface.h sapling/incrementalmerkletree.h \
  sapling/sapling_util.h primitives/transaction.h script/ismine.h \
@@ -1372,19 +1373,19 @@ wallet/libbitcoin_wallet_a-wallet.o: wallet/wallet.cpp \
  /usr/include/boost/multi_index/sequenced_index_fwd.hpp \
  budget/budgetmanager.h budget/budgetproposal.h budget/budgetvote.h \
  messagesigner.h univalue/include/univalue.h net.h addrdb.h addrman.h \
- bloom.h limitedmap.h utilstrencodings.h threadinterrupt.h \
+ clientversion.h hash.h bloom.h limitedmap.h threadinterrupt.h \
  budget/finalizedbudget.h budget/finalizedbudgetvote.h coincontrol.h \
- evo/deterministicmns.h dbwrapper.h clientversion.h \
- leveldb/include/leveldb/db.h leveldb/include/leveldb/export.h \
- leveldb/include/leveldb/iterator.h leveldb/include/leveldb/slice.h \
- leveldb/include/leveldb/status.h leveldb/include/leveldb/options.h \
- leveldb/include/leveldb/write_batch.h evo/evodb.h evo/providertx.h \
- netaddress.h saltedhasher.h immer/map.hpp immer/memory_policy.hpp \
- immer/heap/cpp_heap.hpp immer/heap/heap_policy.hpp \
- immer/heap/debug_size_heap.hpp immer/config.hpp \
- immer/heap/identity_heap.hpp immer/heap/free_list_heap.hpp \
- immer/heap/with_data.hpp immer/heap/free_list_node.hpp \
- immer/heap/split_heap.hpp immer/heap/thread_local_free_list_heap.hpp \
+ evo/deterministicmns.h dbwrapper.h leveldb/include/leveldb/db.h \
+ leveldb/include/leveldb/export.h leveldb/include/leveldb/iterator.h \
+ leveldb/include/leveldb/slice.h leveldb/include/leveldb/status.h \
+ leveldb/include/leveldb/options.h leveldb/include/leveldb/write_batch.h \
+ evo/evodb.h evo/providertx.h netaddress.h saltedhasher.h immer/map.hpp \
+ immer/memory_policy.hpp immer/heap/cpp_heap.hpp \
+ immer/heap/heap_policy.hpp immer/heap/debug_size_heap.hpp \
+ immer/config.hpp immer/heap/identity_heap.hpp \
+ immer/heap/free_list_heap.hpp immer/heap/with_data.hpp \
+ immer/heap/free_list_node.hpp immer/heap/split_heap.hpp \
+ immer/heap/thread_local_free_list_heap.hpp \
  immer/heap/unsafe_free_list_heap.hpp immer/refcount/refcount_policy.hpp \
  immer/refcount/no_refcount_policy.hpp \
  immer/refcount/unsafe_refcount_policy.hpp \
@@ -1395,9 +1396,8 @@ wallet/libbitcoin_wallet_a-wallet.o: wallet/wallet.cpp \
  immer/detail/type_traits.hpp immer/detail/hamts/bits.hpp \
  immer/detail/hamts/champ_iterator.hpp immer/detail/iterator_facade.hpp \
  immer/map_transient.hpp guiinterfaceutil.h guiinterface.h masternode.h \
- key_io.h messagesigner.h net.h masternode-payments.h masternode.h \
- policy/policy.h policy/feerate.h sapling/key_io_sapling.h \
- sapling/zip32.h script/sign.h scheduler.h \
+ key_io.h messagesigner.h net.h policy/policy.h policy/feerate.h \
+ sapling/key_io_sapling.h sapling/zip32.h script/sign.h scheduler.h \
  /usr/include/boost/chrono/chrono.hpp /usr/include/boost/thread.hpp \
  /usr/include/boost/thread/thread.hpp \
  /usr/include/boost/thread/thread_only.hpp \
@@ -1621,6 +1621,8 @@ wallet/libbitcoin_wallet_a-wallet.o: wallet/wallet.cpp \
  /usr/include/boost/algorithm/string/detail/util.hpp
 
 /usr/include/stdc-predef.h:
+
+config/pengolincoin-config.h:
 
 wallet/wallet.h:
 
@@ -2119,8 +2121,6 @@ script/script.h:
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
 crypto/common.h:
-
-config/pengolincoin-config.h:
 
 compat/endian.h:
 
@@ -3766,6 +3766,16 @@ compat.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+util/string.h:
+
+attributes.h:
+
 script/interpreter.h:
 
 script/script_error.h:
@@ -3859,10 +3869,6 @@ fs.h:
 pow.h:
 
 timedata.h:
-
-tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 util/system.h:
 
@@ -4416,7 +4422,7 @@ util/threadnames.h:
 
 key_io.h:
 
-pairresult.h:
+operationresult.h:
 
 policy/feerate.h:
 
@@ -4870,11 +4876,13 @@ addrdb.h:
 
 addrman.h:
 
+clientversion.h:
+
+hash.h:
+
 bloom.h:
 
 limitedmap.h:
-
-utilstrencodings.h:
 
 threadinterrupt.h:
 
@@ -4887,8 +4895,6 @@ coincontrol.h:
 evo/deterministicmns.h:
 
 dbwrapper.h:
-
-clientversion.h:
 
 leveldb/include/leveldb/db.h:
 
@@ -4979,10 +4985,6 @@ key_io.h:
 messagesigner.h:
 
 net.h:
-
-masternode-payments.h:
-
-masternode.h:
 
 policy/policy.h:
 

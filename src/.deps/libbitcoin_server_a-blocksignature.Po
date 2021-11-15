@@ -886,8 +886,10 @@ libbitcoin_server_a-blocksignature.o: blocksignature.cpp \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h span.h version.h \
- script/interpreter.h script/script_error.h zpgochain.h chain.h \
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h span.h tinyformat.h \
+ /usr/include/c++/9/iostream utilstrencodings.h \
+ support/allocators/secure.h util/string.h attributes.h streams.h \
+ version.h script/interpreter.h script/script_error.h zpgochain.h chain.h \
  chainparams.h flatfile.h fs.h /usr/include/boost/filesystem.hpp \
  /usr/include/boost/filesystem/config.hpp \
  /usr/include/boost/system/api_config.hpp \
@@ -921,8 +923,8 @@ libbitcoin_server_a-blocksignature.o: blocksignature.cpp \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
  /usr/include/c++/9/bits/fstream.tcc pow.h timedata.h tinyformat.h \
- /usr/include/c++/9/iostream util/system.h fs.h logging.h fs.h \
- tinyformat.h compat.h sync.h tinyformat.h utiltime.h util/threadnames.h \
+ util/system.h fs.h logging.h fs.h compat.h sync.h tinyformat.h \
+ utiltime.h util/threadnames.h \
  /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
@@ -1180,8 +1182,8 @@ libbitcoin_server_a-blocksignature.o: blocksignature.cpp \
  /usr/include/boost/smart_ptr/enable_shared_from_this.hpp \
  libzerocoin/Coin.h libzerocoin/Denominations.h libzerocoin/Params.h \
  libzerocoin/bignum.h util/system.h libzerocoin/CoinSpend.h \
- utilstrencodings.h support/allocators/secure.h libzerocoin/Coin.h \
- libzerocoin/Commitment.h libzerocoin/SpendType.h
+ utilstrencodings.h libzerocoin/Coin.h libzerocoin/Commitment.h \
+ libzerocoin/SpendType.h
 
 /usr/include/stdc-predef.h:
 
@@ -3333,6 +3335,20 @@ compat.h:
 
 span.h:
 
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+support/allocators/secure.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 version.h:
 
 script/interpreter.h:
@@ -3429,8 +3445,6 @@ timedata.h:
 
 tinyformat.h:
 
-/usr/include/c++/9/iostream:
-
 util/system.h:
 
 fs.h:
@@ -3438,8 +3452,6 @@ fs.h:
 logging.h:
 
 fs.h:
-
-tinyformat.h:
 
 compat.h:
 
@@ -3998,8 +4010,6 @@ util/system.h:
 libzerocoin/CoinSpend.h:
 
 utilstrencodings.h:
-
-support/allocators/secure.h:
 
 libzerocoin/Coin.h:
 

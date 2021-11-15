@@ -888,8 +888,10 @@ libbitcoin_common_a-base58.o: base58.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
  /usr/include/x86_64-linux-gnu/bits/mman-shared.h serialize.h span.h \
+ prevector.h tinyformat.h /usr/include/c++/9/iostream utilstrencodings.h \
+ support/allocators/secure.h util/string.h attributes.h streams.h \
  version.h key.h pubkey.h script/standard.h chainparams.h \
- script/interpreter.h script/script_error.h hash.h util/string.h
+ script/interpreter.h script/script_error.h hash.h
 
 /usr/include/stdc-predef.h:
 
@@ -3031,6 +3033,22 @@ serialize.h:
 
 span.h:
 
+prevector.h:
+
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+support/allocators/secure.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 version.h:
 
 key.h:
@@ -3046,5 +3064,3 @@ script/interpreter.h:
 script/script_error.h:
 
 hash.h:
-
-util/string.h:

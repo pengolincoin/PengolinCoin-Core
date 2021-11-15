@@ -1077,7 +1077,7 @@ rpc/libbitcoin_util_a-protocol.o: rpc/protocol.cpp \
  /usr/include/boost/enable_shared_from_this.hpp \
  /usr/include/boost/smart_ptr/enable_shared_from_this.hpp \
  utilstrencodings.h support/allocators/secure.h support/lockedpool.h \
- support/cleanse.h span.h version.h
+ support/cleanse.h span.h
 
 /usr/include/stdc-predef.h:
 
@@ -3532,5 +3532,3 @@ support/lockedpool.h:
 support/cleanse.h:
 
 span.h:
-
-version.h:

@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2017-2020 PIVX developers
+// Copyright (c) 2017-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -41,13 +41,14 @@ std::string FormatScript(const CScript& script)
                 }
             }
             if (vch.size() > 0) {
-                ret += strprintf("0x%x 0x%x ", HexStr(it2, it - vch.size()), HexStr(it - vch.size(), it));
+                ret += strprintf("0x%x 0x%x ", HexStr(std::vector<uint8_t>(it2, it - vch.size())),
+                                 HexStr(std::vector<uint8_t>(it - vch.size(), it)));
             } else {
-                ret += strprintf("0x%x", HexStr(it2, it));
+                ret += strprintf("0x%x ", HexStr(std::vector<uint8_t>(it2, it)));
             }
             continue;
         }
-        ret += strprintf("0x%x ", HexStr(it2, script.end()));
+        ret += strprintf("0x%x ", HexStr(std::vector<uint8_t>(it2, script.end())));
         break;
     }
     return ret.substr(0, ret.size() - 1);
@@ -117,7 +118,7 @@ std::string EncodeHexTx(const CTransaction& tx)
 {
     CDataStream ssTx(SER_NETWORK, PROTOCOL_VERSION);
     ssTx << tx;
-    return HexStr(ssTx.begin(), ssTx.end());
+    return HexStr(ssTx);
 }
 
 void ScriptPubKeyToUniv(const CScript& scriptPubKey,
@@ -130,7 +131,7 @@ void ScriptPubKeyToUniv(const CScript& scriptPubKey,
 
     out.pushKV("asm", ScriptToAsmStr(scriptPubKey));
     if (fIncludeHex)
-        out.pushKV("hex", HexStr(scriptPubKey.begin(), scriptPubKey.end()));
+        out.pushKV("hex", HexStr(scriptPubKey));
 
     if (!ExtractDestinations(scriptPubKey, type, addresses, nRequired)) {
         if (!scriptPubKey.empty() && scriptPubKey.IsZerocoinMint()) {
@@ -175,13 +176,13 @@ void TxToUniv(const CTransaction& tx, const uint256& hashBlock, UniValue& entry)
     for (const CTxIn& txin : tx.vin) {
         UniValue in(UniValue::VOBJ);
         if (tx.IsCoinBase())
-            in.pushKV("coinbase", HexStr(txin.scriptSig.begin(), txin.scriptSig.end()));
+            in.pushKV("coinbase", HexStr(txin.scriptSig));
         else {
             in.pushKV("txid", txin.prevout.hash.GetHex());
             in.pushKV("vout", (int64_t)txin.prevout.n);
             UniValue o(UniValue::VOBJ);
             o.pushKV("asm", ScriptToAsmStr(txin.scriptSig, true));
-            o.pushKV("hex", HexStr(txin.scriptSig.begin(), txin.scriptSig.end()));
+            o.pushKV("hex", HexStr(txin.scriptSig));
             in.pushKV("scriptSig", o);
         }
         in.pushKV("sequence", (int64_t)txin.nSequence);

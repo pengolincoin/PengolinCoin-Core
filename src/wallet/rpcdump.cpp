@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -20,7 +20,6 @@
 #include "wallet.h"
 #include "validation.h"
 
-#include <fstream>
 #include <secp256k1.h>
 #include <stdint.h>
 
@@ -49,7 +48,7 @@ std::string static EncodeDumpString(const std::string& str)
     std::stringstream ret;
     for (unsigned char c : str) {
         if (c <= 32 || c >= 128 || c == '%') {
-            ret << '%' << HexStr(&c, &c + 1);
+            ret << '%' << HexStr(Span<const unsigned char>(&c, 1));
         } else {
             ret << c;
         }
@@ -351,10 +350,11 @@ UniValue importwallet(const JSONRPCRequest& request)
             "\nImport using the json rpc call\n" +
             HelpExampleRpc("importwallet", "\"test\""));
 
-    std::ifstream file;
-    file.open(request.params[0].get_str().c_str(), std::ios::in | std::ios::ate);
-    if (!file.is_open())
+    fsbridge::ifstream file;
+    file.open(request.params[0].get_str(), std::ios::in | std::ios::ate);
+    if (!file.is_open()) {
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Cannot open wallet dump file");
+    }
 
     WalletRescanReserver reserver(pwallet);
     if (!reserver.reserve()) {
@@ -548,8 +548,8 @@ UniValue dumpwallet(const JSONRPCRequest& request)
         throw JSONRPCError(RPC_INVALID_PARAMETER, filepath.string() + " already exists. If you are sure this is what you want, move it out of the way first");
     }
 
-    std::ofstream file;
-    file.open(request.params[0].get_str().c_str());
+    fsbridge::ofstream file;
+    file.open(filepath);
     if (!file.is_open())
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Cannot open wallet dump file");
 
@@ -568,7 +568,7 @@ UniValue dumpwallet(const JSONRPCRequest& request)
 
     CBlockIndex* tip = chainActive.Tip();
     // produce output
-    file << strprintf("# Wallet dump created by PENGOLINCOIN %s (%s)\n", CLIENT_BUILD, CLIENT_DATE);
+    file << strprintf("# Wallet dump created by PENGOLINCOIN %s\n", CLIENT_BUILD);
     file << strprintf("# * Created on %s\n", FormatISO8601DateTime(GetTime()));
     if (tip) {
         file << strprintf("# * Best block at time of backup was %i (%s),\n", tip->nHeight,

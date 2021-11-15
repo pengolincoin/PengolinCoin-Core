@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2016-2020 PIVX developers
+// Copyright (c) 2016-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -15,6 +15,7 @@
 
 #include "netaddress.h"
 #include "serialize.h"
+#include "streams.h"
 #include "uint256.h"
 #include "version.h"
 
@@ -84,6 +85,18 @@ extern const char* VERACK;
  * @see https://bitcoin.org/en/developer-reference#addr
  */
 extern const char* ADDR;
+/**
+ * The addrv2 message relays connection information for peers on the network just
+ * like the addr message, but is extended to allow gossiping of longer node
+ * addresses (see BIP155).
+ */
+extern const char *ADDRV2;
+/**
+ * The sendaddrv2 message signals support for receiving ADDRV2 messages (BIP155).
+ * It also implies that its sender can encode as ADDRV2 and would send ADDRV2
+ * instead of ADDR to a peer that has signaled ADDRV2 support by sending SENDADDRV2.
+ */
+extern const char *SENDADDRV2;
 /**
  * The inv message (inventory message) transmits one or more inventories of
  * objects known to the transmitting peer.
@@ -220,6 +233,11 @@ extern const char* GETSPORKS;
  */
 extern const char* MNBROADCAST;
 /**
+ * The mnbroadcast2 message is used to broadcast masternode startup data to connected peers
+ * Supporting BIP155 node addresses.
+ */
+extern const char* MNBROADCAST2;
+/**
  * The mnping message is used to ensure a masternode is still active
  */
 extern const char* MNPING;
@@ -278,8 +296,6 @@ enum ServiceFlags : uint64_t {
     NODE_NETWORK = (1 << 0),
 
     // NODE_BLOOM means the node is capable and willing to handle bloom-filtered connections.
-    // Bitcoin Core nodes used to support this by default, without advertising this bit,
-    // but no longer do as of protocol version 70011 (= NO_BLOOM_VERSION)
     NODE_BLOOM = (1 << 2),
 
     // NODE_BLOOM_WITHOUT_MN means the node has the same features as NODE_BLOOM with the only difference
@@ -298,33 +314,98 @@ enum ServiceFlags : uint64_t {
 /** A CService with information about it as peer */
 class CAddress : public CService
 {
-public:
-    CAddress();
-    explicit CAddress(CService ipIn, ServiceFlags nServicesIn);
+    static constexpr uint32_t TIME_INIT{100000000};
 
-    void Init();
+    /** Historically, CAddress disk serialization stored the CLIENT_VERSION, optionally OR'ed with
+     *  the ADDRV2_FORMAT flag to indicate V2 serialization. The first field has since been
+     *  disentangled from client versioning, and now instead:
+     *  - The low bits (masked by DISK_VERSION_IGNORE_MASK) store the fixed value DISK_VERSION_INIT,
+     *    (in case any code exists that treats it as a client version) but are ignored on
+     *    deserialization.
+     *  - The high bits (masked by ~DISK_VERSION_IGNORE_MASK) store actual serialization information.
+     *    Only 0 or DISK_VERSION_ADDRV2 (equal to the historical ADDRV2_FORMAT) are valid now, and
+     *    any other value triggers a deserialization failure. Other values can be added later if
+     *    needed.
+     *
+     *  For disk deserialization, ADDRV2_FORMAT in the stream version signals that ADDRV2
+     *  deserialization is permitted, but the actual format is determined by the high bits in the
+     *  stored version field. For network serialization, the stream version having ADDRV2_FORMAT or
+     *  not determines the actual format used (as it has no embedded version number).
+     */
+    static constexpr uint32_t DISK_VERSION_INIT{220000};
+    static constexpr uint32_t DISK_VERSION_IGNORE_MASK{0b00000000'00000111'11111111'11111111};
+    /** The version number written in disk serialized addresses to indicate V2 serializations.
+     * It must be exactly 1<<29, as that is the value that historical versions used for this
+     * (they used their internal ADDRV2_FORMAT flag here). */
+    static constexpr uint32_t DISK_VERSION_ADDRV2{1 << 29};
+    static_assert((DISK_VERSION_INIT & ~DISK_VERSION_IGNORE_MASK) == 0, "DISK_VERSION_INIT must be covered by DISK_VERSION_IGNORE_MASK");
+    static_assert((DISK_VERSION_ADDRV2 & DISK_VERSION_IGNORE_MASK) == 0, "DISK_VERSION_ADDRV2 must not be covered by DISK_VERSION_IGNORE_MASK");
+
+public:
+    CAddress() : CService{} {};
+    CAddress(CService ipIn, ServiceFlags nServicesIn) : CService{ipIn}, nServices{nServicesIn} {};
+    CAddress(CService ipIn, ServiceFlags nServicesIn, uint32_t nTimeIn) : CService{ipIn}, nTime{nTimeIn}, nServices{nServicesIn} {};
 
     SERIALIZE_METHODS(CAddress, obj)
     {
-        SER_READ(obj, obj.Init());
-        int nVersion = s.GetVersion();
+        // CAddress has a distinct network serialization and a disk serialization, but it should never
+        // be hashed (except through CHashWriter in addrdb.cpp, which sets SER_DISK), and it's
+        // ambiguous what that would mean. Make sure no code relying on that is introduced:
+        assert(!(s.GetType() & SER_GETHASH));
+        bool use_v2;
+        bool store_time;
         if (s.GetType() & SER_DISK) {
-            READWRITE(nVersion);
+            // In the disk serialization format, the encoding (v1 or v2) is determined by a flag version
+            // that's part of the serialization itself. ADDRV2_FORMAT in the stream version only determines
+            // whether V2 is chosen/permitted at all.
+            uint32_t stored_format_version = DISK_VERSION_INIT;
+            if (s.GetVersion() & ADDRV2_FORMAT) stored_format_version |= DISK_VERSION_ADDRV2;
+            READWRITE(stored_format_version);
+            stored_format_version &= ~DISK_VERSION_IGNORE_MASK; // ignore low bits
+            if (stored_format_version == 0) {
+                use_v2 = false;
+            } else if (stored_format_version == DISK_VERSION_ADDRV2 && (s.GetVersion() & ADDRV2_FORMAT)) {
+                // Only support v2 deserialization if ADDRV2_FORMAT is set.
+                use_v2 = true;
+            } else {
+                throw std::ios_base::failure("Unsupported CAddress disk format version");
+            }
+            store_time = true;
+        } else {
+            // In the network serialization format, the encoding (v1 or v2) is determined directly by
+            // the value of ADDRV2_FORMAT in the stream version, as no explicitly encoded version
+            // exists in the stream.
+            assert(s.GetType() & SER_NETWORK);
+            use_v2 = s.GetVersion() & ADDRV2_FORMAT;
+            // The only time we serialize a CAddress object without nTime is in
+            // the initial VERSION messages which contain two CAddress records.
+            // At that point, the serialization version is INIT_PROTO_VERSION.
+            // After the version handshake, serialization version is >=
+            // MIN_PEER_PROTO_VERSION and all ADDR messages are serialized with
+            // nTime.
+            store_time = s.GetVersion() != INIT_PROTO_VERSION;
         }
-        if ((s.GetType() & SER_DISK) ||
-            (nVersion >= CADDR_TIME_VERSION && !(s.GetType() & SER_GETHASH))) {
-            READWRITE(obj.nTime);
+
+        SER_READ(obj, obj.nTime = TIME_INIT);
+        if (store_time) READWRITE(obj.nTime);
+        // nServices is serialized as CompactSize in V2; as uint64_t in V1.
+        if (use_v2) {
+            uint64_t services_tmp;
+            SER_WRITE(obj, services_tmp = obj.nServices);
+            READWRITE(Using<CompactSizeFormatter<false>>(services_tmp));
+            SER_READ(obj, obj.nServices = static_cast<ServiceFlags>(services_tmp));
+        } else {
+            READWRITE(Using<CustomUintFormatter<8>>(obj.nServices));
         }
-        READWRITE(Using<CustomUintFormatter<8>>(obj.nServices));
-        READWRITEAS(CService, obj);
+        // Invoke V1/V2 serializer for CService parent object.
+        OverrideStream<Stream> os(&s, s.GetType(), use_v2 ? ADDRV2_FORMAT : 0);
+        SerReadWriteMany(os, ser_action, ReadWriteAsHelper<CService>(obj));
     }
 
-    // TODO: make private (improves encapsulation)
-public:
-    ServiceFlags nServices;
-
-    // disk and network only
-    unsigned int nTime;
+    //! Always included in serialization, except in the network format on INIT_PROTO_VERSION.
+    uint32_t nTime{TIME_INIT};
+    //! Serialized as uint64_t in V1, and as CompactSize in V2.
+    ServiceFlags nServices{NODE_NONE};
 };
 
 /** getdata message types */

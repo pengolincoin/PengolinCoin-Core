@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -744,14 +744,12 @@ void SendWidget::onShieldCoinsClicked()
 
         // Process spending
         ProcessSend(recipients, true, [this](QList<SendCoinsRecipient>& recipients) {
-            QString strAddress;
-            auto res = walletModel->getNewShieldedAddress(strAddress, "");
-            // Check for generation errors
-            if (!res.result) {
+            auto res = walletModel->getNewShieldedAddress("");
+            if (!res) {
                 inform(tr("Error generating address to shield PGOs"));
                 return false;
             }
-            recipients.back().address = strAddress;
+            recipients.back().address = QString::fromStdString(res.getObjResult()->ToString());
             resetCoinControl();
             return true;
         });

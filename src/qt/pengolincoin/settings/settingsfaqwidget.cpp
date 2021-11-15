@@ -1,7 +1,11 @@
-// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2019 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+#if defined(HAVE_CONFIG_H)
+#include "config/pengolincoin-config.h"
+#endif
 
 #include "qt/pengolincoin/settings/settingsfaqwidget.h"
 #include "qt/pengolincoin/settings/forms/ui_settingsfaqwidget.h"
@@ -105,21 +109,22 @@ SettingsFaqWidget::SettingsFaqWidget(PENGOLINCOINGUI* parent, ClientModel* _mode
                "package will be lit up and will state \"Staking Enabled\" to indicate "
                "it is staking. Using the command line interface (%1); the command %2 "
                "will confirm that staking is active.")
-                .arg("pengolincoin-core", "<span style=\"font-style:italic\">getstakingstatus</span>")));
+                .arg("pengolincoin-cli", "<span style=\"font-style:italic\">getstakingstatus</span>")));
     ui->labelContent_Stake->setText(stakeContent);
 
     QString supportContent = formatFAQContent(
         formatFAQParagraph(
             tr("We have support channels in most of our official chat groups, for example %1")
-                .arg("<a style='color: #b088ff' href='https://discord.gg/XTk8u4w'>" + tr("#support in our Discord") + "</a>.")));
+                .arg("<a style='color: #b088ff' href='https://discord.pengolincoin.xyz'>" + tr("#support in our Discord") + "</a>.")));
     ui->labelContent_Support->setText(supportContent);
 
     QString masternodeContent = formatFAQContent(
         formatFAQParagraph(
-            tr("A masternode is a computer running a full node PENGOLINCOIN core wallet with a "
-               "requirement of %1 secured collateral to provide extra services "
+            tr("A masternode is a computer running a full node %1 wallet with a "
+               "requirement of %2 secured collateral to provide extra services "
                "to the network and in return, receive a portion of the block reward "
                "regularly. These services include:")
+                .arg(PACKAGE_NAME)
                 .arg(GUIUtil::formatBalance(clientModel->getMNCollateralRequiredAmount(), BitcoinUnits::PGO)) +
             formatFAQUnorderedList(
                 formatFAQListItem(tr("A decentralized governance (Proposal Voting)")) +

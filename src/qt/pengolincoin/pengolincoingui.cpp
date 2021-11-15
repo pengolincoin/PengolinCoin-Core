@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -67,7 +67,7 @@ PENGOLINCOINGUI::PENGOLINCOINGUI(const NetworkStyle* networkStyle, QWidget* pare
 
     QString windowTitle = QString::fromStdString(gArgs.GetArg("-windowtitle", ""));
     if (windowTitle.isEmpty()) {
-        windowTitle = tr("PENGOLINCOIN Core") + " - ";
+        windowTitle = QString{PACKAGE_NAME} + " - ";
         windowTitle += ((enableWallet) ? tr("Wallet") : tr("Node"));
     }
     windowTitle += " " + networkStyle->getTitleAddText();
@@ -211,7 +211,7 @@ void PENGOLINCOINGUI::createTrayIcon(const NetworkStyle* networkStyle)
 {
 #ifndef Q_OS_MAC
     trayIcon = new QSystemTrayIcon(this);
-    QString toolTip = tr("PENGOLINCOIN Core client") + " " + networkStyle->getTitleAddText();
+    QString toolTip = tr("%1 client").arg(PACKAGE_NAME) + " " + networkStyle->getTitleAddText();
     trayIcon->setToolTip(toolTip);
     trayIcon->setIcon(networkStyle->getAppIcon());
     trayIcon->hide();
@@ -376,7 +376,7 @@ void PENGOLINCOINGUI::messageInfo(const QString& text)
 
 void PENGOLINCOINGUI::message(const QString& title, const QString& message, unsigned int style, bool* ret)
 {
-    QString strTitle =  tr("PENGOLINCOIN Core"); // default title
+    QString strTitle = QString{PACKAGE_NAME}; // default title
     // Default to information icon
     int nNotifyIcon = Notificator::Information;
 
@@ -445,7 +445,7 @@ bool PENGOLINCOINGUI::openStandardDialog(QString title, QString body, QString ok
     } else {
         dialog = new DefaultDialog();
         dialog->setText(title, body, okBtn);
-        dialog->setWindowTitle(tr("PENGOLINCOIN Core"));
+        dialog->setWindowTitle(PACKAGE_NAME);
         dialog->adjustSize();
         dialog->raise();
         dialog->exec();

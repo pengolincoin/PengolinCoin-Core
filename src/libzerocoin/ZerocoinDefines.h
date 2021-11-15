@@ -9,7 +9,7 @@
 * @copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
 * @license    This project is released under the MIT license.
 **/
-// Copyright (c) 2017 PIVX developers
+// Copyright (c) 2017 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 
 #ifndef ZEROCOIN_DEFINES_H_

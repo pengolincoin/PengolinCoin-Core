@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -16,8 +16,7 @@
 #include "sync.h"
 #include "util/system.h"
 
-#define MASTERNODES_DUMP_SECONDS (15 * 60)
-#define MASTERNODES_DSEG_SECONDS (3 * 60 * 60)
+#define MASTERNODES_REQUEST_SECONDS (60 * 60) // One hour.
 
 /** Maximum number of block hashes to cache */
 static const unsigned int CACHED_BLOCK_HASHES = 200;
@@ -84,6 +83,9 @@ private:
     int ProcessMNPing(CNode* pfrom, CMasternodePing& mnp);
     int ProcessMessageInner(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
 
+    // Relay a MN
+    void BroadcastInvMN(CMasternode* mn, CNode* pfrom);
+
 public:
     // Keep track of all broadcasts I've seen
     std::map<uint256, CMasternodeBroadcast> mapSeenMasternodeBroadcast;
@@ -129,7 +131,7 @@ public:
     /// Count the number of nodes with a specific proto version for each network. Return the total.
     int CountNetworks(int& ipv4, int& ipv6, int& onion) const;
 
-    void DsegUpdate(CNode* pnode);
+    bool RequestMnList(CNode* pnode);
 
     /// Find an entry
     CMasternode* Find(const COutPoint& collateralOut);

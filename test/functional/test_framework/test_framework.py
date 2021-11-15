@@ -100,6 +100,7 @@ class PengolinCoinTestFramework():
         self.mocktime = 0
         self.rpc_timewait = 600  # Wait for up to 600 seconds for the RPC server to respond
         self.supports_cli = False
+        self.bind_to_localhost_only = True
         self.set_test_params()
 
         assert hasattr(self, "num_nodes"), "Test must set self.num_nodes in set_test_params()"
@@ -272,7 +273,10 @@ class PengolinCoinTestFramework():
 
     def add_nodes(self, num_nodes, extra_args=None, *, rpchost=None, binary=None):
         """Instantiate TestNode objects"""
-
+        if self.bind_to_localhost_only:
+            extra_confs = [["bind=127.0.0.1"]] * num_nodes
+        else:
+            extra_confs = [[]] * num_nodes
         if extra_args is None:
             extra_args = [[]] * num_nodes
         # Check wallet version
@@ -282,10 +286,11 @@ class PengolinCoinTestFramework():
             self.log.info("Running test with legacy (pre-HD) wallet")
         if binary is None:
             binary = [None] * num_nodes
+            assert_equal(len(extra_confs), num_nodes)
         assert_equal(len(extra_args), num_nodes)
         assert_equal(len(binary), num_nodes)
         for i in range(num_nodes):
-            self.nodes.append(TestNode(i, self.options.tmpdir, extra_args[i], rpchost, timewait=self.rpc_timewait, binary=binary[i], stderr=None, mocktime=self.mocktime, coverage_dir=self.options.coveragedir, use_cli=self.options.usecli))
+            self.nodes.append(TestNode(i, self.options.tmpdir, rpchost=rpchost, timewait=self.rpc_timewait, binary=binary[i], stderr=None, mocktime=self.mocktime, coverage_dir=self.options.coveragedir, extra_conf=extra_confs[i], extra_args=extra_args[i], use_cli=self.options.usecli))
 
     def start_node(self, i, *args, **kwargs):
         """Start a pengolincoind"""
@@ -342,28 +347,6 @@ class PengolinCoinTestFramework():
         """Stop and start a test node"""
         self.stop_node(i)
         self.start_node(i, extra_args)
-
-    def assert_start_raises_init_error(self, i, extra_args=None, expected_msg=None, *args, **kwargs):
-        with tempfile.SpooledTemporaryFile(max_size=2**16) as log_stderr:
-            try:
-                self.start_node(i, extra_args, stderr=log_stderr, *args, **kwargs)
-                self.nodes[i].wait_for_rpc_connection()
-                self.stop_node(i)
-            except Exception as e:
-                assert 'pengolincoind exited' in str(e)  # node must have shutdown
-                self.nodes[i].running = False
-                self.nodes[i].process = None
-                if expected_msg is not None:
-                    log_stderr.seek(0)
-                    stderr = log_stderr.read().decode('utf-8')
-                    if expected_msg not in stderr:
-                        raise AssertionError("Expected error \"" + expected_msg + "\" not found in:\n" + stderr)
-            else:
-                if expected_msg is None:
-                    assert_msg = "pengolincoind should have exited with an error"
-                else:
-                    assert_msg = "pengolincoind should have exited with expected error " + expected_msg
-                raise AssertionError(assert_msg)
 
     def wait_for_node_exit(self, i, timeout):
         self.nodes[i].process.wait(timeout)
@@ -549,11 +532,11 @@ class PengolinCoinTestFramework():
                 if i == 0:
                     # Add .incomplete flagfile
                     # (removed at the end during clean_cache_subdir)
-                    open(os.path.join(datadir, ".incomplete"), 'a').close()
+                    open(os.path.join(datadir, ".incomplete"), 'a', encoding="utf8").close()
                 args = [os.getenv("BITCOIND", "pengolincoind"), "-spendzeroconfchange=1", "-server", "-keypool=1",
                         "-datadir=" + datadir, "-discover=0"]
                 self.nodes.append(
-                    TestNode(i, ddir, extra_args=[], rpchost=None, timewait=self.rpc_timewait, binary=None, stderr=None,
+                    TestNode(i, ddir, extra_conf=["bind=127.0.0.1"], extra_args=[], rpchost=None, timewait=self.rpc_timewait, binary=None, stderr=None,
                              mocktime=self.mocktime, coverage_dir=None))
                 self.nodes[i].args = args
                 self.start_node(i)
@@ -1169,7 +1152,7 @@ class PengolinCoinTestFramework():
                                                  collateralTxId,
                                                  collateralTxId_n)
         destPath = os.path.join(mnOwnerDirPath, "masternode.conf")
-        with open(destPath, "a+") as file_object:
+        with open(destPath, "a+", encoding="utf8") as file_object:
             file_object.write("\n")
             file_object.write(confData)
 

@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2021 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2021 PIVX developers
+// Copyright (c) 2015-2021 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -19,7 +19,7 @@
 #include "key.h"
 #include "key_io.h"
 #include "keystore.h"
-#include "pairresult.h"
+#include "operationresult.h"
 #include "policy/feerate.h"
 #include "primitives/block.h"
 #include "primitives/transaction.h"
@@ -82,8 +82,6 @@ static const unsigned int DEFAULT_CREATEWALLETBACKUPS = 10;
 static const bool DEFAULT_DISABLE_WALLET = false;
 
 static const int64_t TIMESTAMP_MIN = 0;
-
-extern const char * DEFAULT_WALLET_DAT;
 
 class CAddressBookIterator;
 class CCoinControl;
@@ -888,10 +886,10 @@ public:
     void LockIfMyCollateral(const CTransactionRef& ptx);
 
     //  keystore implementation
-    PairResult getNewAddress(CTxDestination& ret, const std::string addressLabel, const std::string purpose,
-                                           const CChainParams::Base58Type addrType = CChainParams::PUBKEY_ADDRESS);
-    PairResult getNewAddress(CTxDestination& ret, std::string label);
-    PairResult getNewStakingAddress(CTxDestination& ret, std::string label);
+    CallResult<CTxDestination> getNewAddress(const std::string& addressLabel, const std::string purpose,
+                                             const CChainParams::Base58Type addrType = CChainParams::PUBKEY_ADDRESS);
+    CallResult<CTxDestination> getNewAddress(const std::string& label);
+    CallResult<CTxDestination> getNewStakingAddress(const std::string& label);
     int64_t GetKeyCreationTime(const CWDestination& dest);
     int64_t GetKeyCreationTime(CPubKey pubkey);
     int64_t GetKeyCreationTime(const CTxDestination& address);
@@ -1057,7 +1055,8 @@ public:
         CAmount nFeePay = 0,
         bool fIncludeDelegated = false,
         bool* fStakeDelegationVoided = nullptr,
-        int nExtraSize = 0);
+        int nExtraSize = 0,
+        int nMinDepth = 0);
 
     bool CreateTransaction(CScript scriptPubKey, const CAmount& nValue, CTransactionRef& tx, CReserveKey& reservekey, CAmount& nFeeRet, std::string& strFailReason, const CCoinControl* coinControl = NULL, CAmount nFeePay = 0, bool fIncludeDelegated = false);
 

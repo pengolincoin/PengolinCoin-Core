@@ -888,6 +888,8 @@ libbitcoin_server_a-chain.o: chain.cpp /usr/include/stdc-predef.h chain.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
  /usr/include/x86_64-linux-gnu/bits/mman-shared.h serialize.h span.h \
+ prevector.h tinyformat.h /usr/include/c++/9/iostream utilstrencodings.h \
+ support/allocators/secure.h util/string.h attributes.h streams.h \
  version.h flatfile.h fs.h /usr/include/boost/filesystem.hpp \
  /usr/include/boost/filesystem/config.hpp \
  /usr/include/boost/system/api_config.hpp \
@@ -921,9 +923,9 @@ libbitcoin_server_a-chain.o: chain.cpp /usr/include/stdc-predef.h chain.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
  /usr/include/c++/9/bits/fstream.tcc optional.h pow.h timedata.h \
- tinyformat.h /usr/include/c++/9/iostream util/system.h fs.h logging.h \
- fs.h tinyformat.h compat.h sync.h tinyformat.h utiltime.h \
- util/threadnames.h /usr/include/boost/thread/condition_variable.hpp \
+ util/system.h fs.h logging.h fs.h tinyformat.h compat.h sync.h \
+ tinyformat.h utiltime.h util/threadnames.h \
+ /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
  /usr/include/boost/thread/pthread/condition_variable.hpp \
@@ -3319,6 +3321,22 @@ serialize.h:
 
 span.h:
 
+prevector.h:
+
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+support/allocators/secure.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 version.h:
 
 flatfile.h:
@@ -3404,10 +3422,6 @@ optional.h:
 pow.h:
 
 timedata.h:
-
-tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 util/system.h:
 

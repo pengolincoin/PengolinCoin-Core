@@ -1,4 +1,4 @@
-// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2019 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -46,10 +46,8 @@ private:
     // Cached last address
     SendCoinsRecipient *info{nullptr};
 
-    QPixmap *qrImage{nullptr};
-
-    void updateQr(QString str);
-    void inform(QString text);
+    void updateQr(const QString& str);
+    void inform(const QString& text);
 };
 
 #endif // REQUESTDIALOG_H

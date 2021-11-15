@@ -195,7 +195,6 @@ BITCOIN_CORE_H = \
   evo/evonotificationinterface.h \
   evo/providertx.h \
   evo/specialtx.h \
-  pairresult.h \
   addressbook.h \
   wallet/db.h \
   flatfile.h \
@@ -293,6 +292,7 @@ BITCOIN_CORE_H = \
   guiinterfaceutil.h \
   uint256.h \
   undo.h \
+  util/asmap.h \
   util/blockstatecatcher.h \
   util/system.h \
   util/macros.h \
@@ -448,6 +448,8 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/skein.c \
   crypto/common.h \
   crypto/sha256.h \
+  crypto/sha3.h \
+  crypto/sha3.cpp \
   crypto/sha512.h \
   crypto/hmac_sha256.h \
   crypto/rfc6979_hmac_sha256.h \
@@ -561,6 +563,7 @@ libbitcoin_util_a_SOURCES = \
   support/lockedpool.cpp \
   sync.cpp \
   threadinterrupt.cpp \
+  util/asmap.cpp \
   uint256.cpp \
   util/system.cpp \
   utilmoneystr.cpp \

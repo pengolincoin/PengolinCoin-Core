@@ -1,4 +1,4 @@
-// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2019 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -52,7 +52,7 @@ SettingsMainOptionsWidget::SettingsMainOptionsWidget(PENGOLINCOINGUI* _window, Q
     setCssProperty({ui->labelTitleSizeDb, ui->labelTitleThreads}, "text-main-settings");
 
     // Switch
-    ui->pushSwitchStart->setText(tr("Start PENGOLINCOIN on system login"));
+    ui->pushSwitchStart->setText(tr("Start %1 on system login").arg(PACKAGE_NAME));
     ui->pushSwitchStart->setProperty("cssClass", "btn-switch");
 
 #ifdef Q_OS_MAC

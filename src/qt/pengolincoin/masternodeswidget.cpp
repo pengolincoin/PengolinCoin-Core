@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -19,7 +19,6 @@
 #include "masternode-sync.h"
 #include "masternodeconfig.h"
 #include "masternodeman.h"
-#include "wallet/wallet.h"
 #include "util/system.h"
 #include "qt/pengolincoin/optionbutton.h"
 #include <fstream>
@@ -32,8 +31,6 @@
 class MNHolder : public FurListRow<QWidget*>
 {
 public:
-    MNHolder();
-
     explicit MNHolder(bool _isLightTheme) : FurListRow(), isLightTheme(_isLightTheme) {}
 
     MNRow* createHolder(int pos) override
@@ -75,7 +72,6 @@ MasterNodesWidget::MasterNodesWidget(PENGOLINCOINGUI *parent) :
             new MNHolder(isLightTheme()),
             this
     );
-    mnModel = new MNModel(this, walletModel);
 
     this->setStyleSheet(parent->styleSheet());
 
@@ -146,6 +142,7 @@ void MasterNodesWidget::hideEvent(QHideEvent *event)
 void MasterNodesWidget::loadWalletModel()
 {
     if (walletModel) {
+        mnModel = new MNModel(this, walletModel);
         ui->listMn->setModel(mnModel);
         ui->listMn->setModelColumn(AddressTableModel::Label);
         updateListState();
@@ -220,12 +217,12 @@ void MasterNodesWidget::onEditMNClicked()
     }
 }
 
-void MasterNodesWidget::startAlias(QString strAlias)
+void MasterNodesWidget::startAlias(const QString& strAlias)
 {
     QString strStatusHtml;
     strStatusHtml += "Alias: " + strAlias + " ";
 
-    for (CMasternodeConfig::CMasternodeEntry mne : masternodeConfig.getEntries()) {
+    for (const auto& mne : masternodeConfig.getEntries()) {
         if (mne.getAlias() == strAlias.toStdString()) {
             std::string strError;
             strStatusHtml += (!startMN(mne, strError)) ? ("failed to start.\nError: " + QString::fromStdString(strError)) : "successfully started.";
@@ -236,7 +233,7 @@ void MasterNodesWidget::startAlias(QString strAlias)
     updateModelAndInform(strStatusHtml);
 }
 
-void MasterNodesWidget::updateModelAndInform(QString informText)
+void MasterNodesWidget::updateModelAndInform(const QString& informText)
 {
     mnModel->updateMNList();
     inform(informText);
@@ -245,10 +242,13 @@ void MasterNodesWidget::updateModelAndInform(QString informText)
 bool MasterNodesWidget::startMN(const CMasternodeConfig::CMasternodeEntry& mne, std::string& strError)
 {
     CMasternodeBroadcast mnb;
-    if (!CMasternodeBroadcast::Create(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), strError, mnb))
+    if (!CMasternodeBroadcast::Create(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), strError, mnb, false, walletModel->getLastBlockProcessedNum()))
         return false;
 
     mnodeman.UpdateMasternodeList(mnb);
+    if (activeMasternode.pubKeyMasternode == mnb.GetPubKey()) {
+        activeMasternode.EnableHotColdMasterNode(mnb.vin, mnb.addr);
+    }
     mnb.Relay();
     return true;
 }
@@ -277,7 +277,7 @@ bool MasterNodesWidget::startAll(QString& failText, bool onlyMissing)
 {
     int amountOfMnFailed = 0;
     int amountOfMnStarted = 0;
-    for (CMasternodeConfig::CMasternodeEntry mne : masternodeConfig.getEntries()) {
+    for (const auto& mne : masternodeConfig.getEntries()) {
         // Check for missing only
         QString mnAlias = QString::fromStdString(mne.getAlias());
         if (onlyMissing && !mnModel->isMNInactive(mnAlias)) {
@@ -384,7 +384,7 @@ void MasterNodesWidget::onDeleteMNClicked()
     fs::path pathBootstrap = GetDataDir() / strConfFile;
     if (fs::exists(pathBootstrap)) {
         fs::path pathMasternodeConfigFile = GetMasternodeConfigFile();
-        fs::ifstream streamConfig(pathMasternodeConfigFile);
+        fsbridge::ifstream streamConfig(pathMasternodeConfigFile);
 
         if (!streamConfig.good()) {
             inform(tr("Invalid masternode.conf file"));

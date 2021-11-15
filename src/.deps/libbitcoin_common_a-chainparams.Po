@@ -888,9 +888,9 @@ libbitcoin_common_a-chainparams.o: chainparams.cpp \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
  /usr/include/x86_64-linux-gnu/bits/mman-shared.h serialize.h span.h \
- version.h chainparamsseeds.h consensus/merkle.h primitives/block.h \
- tinyformat.h /usr/include/c++/9/iostream utilstrencodings.h \
- support/allocators/secure.h
+ prevector.h tinyformat.h /usr/include/c++/9/iostream utilstrencodings.h \
+ support/allocators/secure.h util/string.h attributes.h streams.h \
+ version.h chainparamsseeds.h consensus/merkle.h primitives/block.h
 
 /usr/include/stdc-predef.h:
 
@@ -3028,13 +3028,7 @@ serialize.h:
 
 span.h:
 
-version.h:
-
-chainparamsseeds.h:
-
-consensus/merkle.h:
-
-primitives/block.h:
+prevector.h:
 
 tinyformat.h:
 
@@ -3043,3 +3037,17 @@ tinyformat.h:
 utilstrencodings.h:
 
 support/allocators/secure.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
+version.h:
+
+chainparamsseeds.h:
+
+consensus/merkle.h:
+
+primitives/block.h:

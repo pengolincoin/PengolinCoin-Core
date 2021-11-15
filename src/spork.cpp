@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2016 The Dash developers
-// Copyright (c) 2016-2020 PIVX developers
+// Copyright (c) 2016-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -16,7 +16,6 @@
 #define MAKE_SPORK_DEF(name, defaultValue) CSporkDef(name, defaultValue, #name)
 
 std::vector<CSporkDef> sporkDefs = {
-    MAKE_SPORK_DEF(SPORK_5_MAX_VALUE,                       1000),          // 1000 PGO
     MAKE_SPORK_DEF(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT,  4070908800ULL), // OFF
     MAKE_SPORK_DEF(SPORK_9_MASTERNODE_BUDGET_ENFORCEMENT,   4070908800ULL), // OFF
     MAKE_SPORK_DEF(SPORK_13_ENABLE_SUPERBLOCKS,             4070908800ULL), // OFF
@@ -169,11 +168,9 @@ int CSporkManager::ProcessSporkMsg(CSporkMessage& spork)
     LogPrintf("%s : got %s spork %d (%s) with value %d (signed at %d)\n", __func__,
               strStatus, spork.nSporkID, sporkName, spork.nValue, spork.nTimeSigned);
 
-    AddOrUpdateSporkMessage(spork);
+    AddOrUpdateSporkMessage(spork, true);
     spork.Relay();
 
-    // PENGOLINCOIN: add to spork database.
-    pSporkDB->WriteSpork(spork.nSporkID, spork);
     // All good.
     return 0;
 }
@@ -203,18 +200,24 @@ bool CSporkManager::UpdateSpork(SporkId nSporkID, int64_t nValue)
 
     if (spork.Sign(strMasterPrivKey)) {
         spork.Relay();
-        AddOrUpdateSporkMessage(spork);
+        AddOrUpdateSporkMessage(spork, true);
         return true;
     }
 
     return false;
 }
 
-void CSporkManager::AddOrUpdateSporkMessage(const CSporkMessage& spork)
+void CSporkManager::AddOrUpdateSporkMessage(const CSporkMessage& spork, bool flush)
 {
-    LOCK(cs);
-    mapSporks[spork.GetHash()] = spork;
-    mapSporksActive[spork.nSporkID] = spork;
+    {
+        LOCK(cs);
+        mapSporks[spork.GetHash()] = spork;
+        mapSporksActive[spork.nSporkID] = spork;
+    }
+    if (flush) {
+        // add to spork database.
+        pSporkDB->WriteSpork(spork.nSporkID, spork);
+    }
 }
 
 // grab the spork value, and see if it's off

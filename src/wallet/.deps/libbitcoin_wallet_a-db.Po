@@ -503,7 +503,7 @@ wallet/libbitcoin_wallet_a-db.o: wallet/db.cpp /usr/include/stdc-predef.h \
  threadsafety.h util/macros.h /usr/include/c++/9/condition_variable \
  /usr/include/c++/9/thread version.h /usr/include/db_cxx.h \
  /usr/include/c++/9/iostream /usr/include/db.h /usr/include/inttypes.h \
- addrman.h netaddress.h compat.h /usr/include/arpa/inet.h \
+ addrman.h clientversion.h netaddress.h compat.h /usr/include/arpa/inet.h \
  /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
  /usr/include/x86_64-linux-gnu/bits/socket.h \
@@ -543,12 +543,14 @@ wallet/libbitcoin_wallet_a-db.o: wallet/db.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h protocol.h uint256.h \
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h tinyformat.h \
+ /usr/include/c++/9/sstream /usr/include/c++/9/bits/sstream.tcc \
+ utilstrencodings.h support/allocators/secure.h support/lockedpool.h \
+ util/string.h attributes.h protocol.h streams.h uint256.h \
  crypto/common.h compat/endian.h version.h random.h crypto/chacha20.h \
- sync.h timedata.h util/system.h logging.h fs.h tinyformat.h \
- /usr/include/c++/9/sstream /usr/include/c++/9/bits/sstream.tcc compat.h \
- tinyformat.h utiltime.h util/threadnames.h \
- /usr/include/c++/9/unordered_set /usr/include/c++/9/bits/hashtable.h \
+ sync.h timedata.h util/system.h logging.h fs.h compat.h tinyformat.h \
+ utiltime.h util/threadnames.h /usr/include/c++/9/unordered_set \
+ /usr/include/c++/9/bits/hashtable.h \
  /usr/include/c++/9/bits/hashtable_policy.h \
  /usr/include/c++/9/bits/unordered_set.h \
  /usr/include/boost/signals2/signal.hpp /usr/include/boost/function.hpp \
@@ -1080,11 +1082,9 @@ wallet/libbitcoin_wallet_a-db.o: wallet/db.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/thread/pthread/condition_variable_fwd.hpp \
  /usr/include/boost/thread/cv_status.hpp \
  /usr/include/boost/enable_shared_from_this.hpp \
- /usr/include/boost/smart_ptr/enable_shared_from_this.hpp \
- guiinterfaceutil.h guiinterface.h \
- /usr/include/boost/signals2/last_value.hpp hash.h arith_uint256.h \
- crypto/ripemd160.h crypto/sha256.h crypto/sph_blake.h crypto/sph_types.h \
- crypto/sph_bmw.h crypto/sph_groestl.h crypto/sph_jh.h \
+ /usr/include/boost/smart_ptr/enable_shared_from_this.hpp hash.h \
+ arith_uint256.h crypto/ripemd160.h crypto/sha256.h crypto/sph_blake.h \
+ crypto/sph_types.h crypto/sph_bmw.h crypto/sph_groestl.h crypto/sph_jh.h \
  crypto/sph_keccak.h crypto/sph_skein.h crypto/sha512.h \
  /usr/include/c++/9/iomanip /usr/include/c++/9/bits/quoted_string.h \
  /usr/include/sodium.h /usr/include/sodium/version.h \
@@ -1161,9 +1161,9 @@ wallet/libbitcoin_wallet_a-db.o: wallet/db.cpp /usr/include/stdc-predef.h \
  /usr/include/sodium/crypto_pwhash_scryptsalsa208sha256.h \
  /usr/include/sodium/crypto_stream_salsa2012.h \
  /usr/include/sodium/crypto_stream_salsa208.h \
- /usr/include/sodium/crypto_stream_xchacha20.h protocol.h util/system.h \
- utilstrencodings.h support/allocators/secure.h support/lockedpool.h \
- wallet/walletutil.h operationresult.h \
+ /usr/include/sodium/crypto_stream_xchacha20.h guiinterfaceutil.h \
+ guiinterface.h /usr/include/boost/signals2/last_value.hpp protocol.h \
+ util/system.h utilstrencodings.h wallet/walletutil.h operationresult.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/bits/statx.h /usr/include/linux/stat.h \
  /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
@@ -2539,6 +2539,8 @@ version.h:
 
 addrman.h:
 
+clientversion.h:
+
 netaddress.h:
 
 compat.h:
@@ -2641,7 +2643,25 @@ compat.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
+tinyformat.h:
+
+/usr/include/c++/9/sstream:
+
+/usr/include/c++/9/bits/sstream.tcc:
+
+utilstrencodings.h:
+
+support/allocators/secure.h:
+
+support/lockedpool.h:
+
+util/string.h:
+
+attributes.h:
+
 protocol.h:
+
+streams.h:
 
 uint256.h:
 
@@ -2664,12 +2684,6 @@ util/system.h:
 logging.h:
 
 fs.h:
-
-tinyformat.h:
-
-/usr/include/c++/9/sstream:
-
-/usr/include/c++/9/bits/sstream.tcc:
 
 compat.h:
 
@@ -3819,12 +3833,6 @@ util/threadnames.h:
 
 /usr/include/boost/smart_ptr/enable_shared_from_this.hpp:
 
-guiinterfaceutil.h:
-
-guiinterface.h:
-
-/usr/include/boost/signals2/last_value.hpp:
-
 hash.h:
 
 arith_uint256.h:
@@ -4013,15 +4021,17 @@ crypto/sha512.h:
 
 /usr/include/sodium/crypto_stream_xchacha20.h:
 
+guiinterfaceutil.h:
+
+guiinterface.h:
+
+/usr/include/boost/signals2/last_value.hpp:
+
 protocol.h:
 
 util/system.h:
 
 utilstrencodings.h:
-
-support/allocators/secure.h:
-
-support/lockedpool.h:
 
 wallet/walletutil.h:
 

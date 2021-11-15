@@ -889,10 +889,11 @@ wallet/libbitcoin_wallet_a-rpcwallet.o: wallet/rpcwallet.cpp \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h script/interpreter.h \
- script/script_error.h core_io.h destination_io.h httpserver.h key_io.h \
- chainparams.h masternode-sync.h net.h addrdb.h fs.h \
- /usr/include/boost/filesystem.hpp \
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h tinyformat.h \
+ /usr/include/c++/9/iostream utilstrencodings.h util/string.h \
+ attributes.h streams.h script/interpreter.h script/script_error.h \
+ core_io.h destination_io.h httpserver.h key_io.h chainparams.h \
+ masternode-sync.h net.h addrdb.h fs.h /usr/include/boost/filesystem.hpp \
  /usr/include/boost/filesystem/config.hpp \
  /usr/include/boost/system/api_config.hpp \
  /usr/include/boost/config/auto_link.hpp \
@@ -924,10 +925,10 @@ wallet/libbitcoin_wallet_a-rpcwallet.o: wallet/rpcwallet.cpp \
  /usr/include/boost/filesystem/fstream.hpp /usr/include/c++/9/fstream \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
- /usr/include/c++/9/bits/fstream.tcc streams.h addrman.h random.h \
- timedata.h util/system.h fs.h logging.h tinyformat.h \
- /usr/include/c++/9/iostream compat.h sync.h tinyformat.h utiltime.h \
- util/threadnames.h /usr/include/boost/thread/condition_variable.hpp \
+ /usr/include/c++/9/bits/fstream.tcc addrman.h clientversion.h random.h \
+ timedata.h util/system.h fs.h logging.h compat.h sync.h tinyformat.h \
+ utiltime.h util/threadnames.h \
+ /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
  /usr/include/boost/thread/pthread/condition_variable.hpp \
@@ -1181,16 +1182,16 @@ wallet/libbitcoin_wallet_a-rpcwallet.o: wallet/rpcwallet.cpp \
  /usr/include/boost/thread/pthread/condition_variable_fwd.hpp \
  /usr/include/boost/thread/cv_status.hpp \
  /usr/include/boost/enable_shared_from_this.hpp \
- /usr/include/boost/smart_ptr/enable_shared_from_this.hpp bloom.h \
- limitedmap.h utilstrencodings.h threadinterrupt.h net.h policy/feerate.h \
- rpc/server.h rpc/protocol.h univalue/include/univalue.h \
- sapling/sapling_operation.h sapling/transaction_builder.h coins.h \
- compressor.h script/script.h consensus/consensus.h memusage.h \
- sapling/incrementalmerkletree.h sapling/sapling_util.h \
- consensus/params.h script/standard.h sapling/incrementalmerkletree.h \
- sapling/note.h operationresult.h wallet/wallet.h consensus/tx_verify.h \
- consensus/validation.h crypter.h keystore.h kernel.h stakeinput.h \
- chain.h flatfile.h pow.h pairresult.h primitives/block.h guiinterface.h \
+ /usr/include/boost/smart_ptr/enable_shared_from_this.hpp hash.h bloom.h \
+ limitedmap.h threadinterrupt.h net.h policy/feerate.h rpc/server.h \
+ rpc/protocol.h univalue/include/univalue.h sapling/sapling_operation.h \
+ sapling/transaction_builder.h coins.h compressor.h script/script.h \
+ consensus/consensus.h memusage.h sapling/incrementalmerkletree.h \
+ sapling/sapling_util.h consensus/params.h script/standard.h \
+ sapling/incrementalmerkletree.h sapling/note.h operationresult.h \
+ wallet/wallet.h consensus/tx_verify.h consensus/validation.h crypter.h \
+ keystore.h kernel.h stakeinput.h chain.h flatfile.h pow.h \
+ primitives/block.h guiinterface.h \
  /usr/include/boost/signals2/last_value.hpp util/system.h \
  utilstrencodings.h validationinterface.h script/ismine.h \
  /usr/include/c++/9/bitset wallet/scriptpubkeyman.h wallet/hdchain.h \
@@ -3520,6 +3521,18 @@ compat.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 script/interpreter.h:
 
 script/script_error.h:
@@ -3616,9 +3629,9 @@ fs.h:
 
 /usr/include/c++/9/bits/fstream.tcc:
 
-streams.h:
-
 addrman.h:
+
+clientversion.h:
 
 random.h:
 
@@ -3629,10 +3642,6 @@ util/system.h:
 fs.h:
 
 logging.h:
-
-tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 compat.h:
 
@@ -4178,11 +4187,11 @@ util/threadnames.h:
 
 /usr/include/boost/smart_ptr/enable_shared_from_this.hpp:
 
+hash.h:
+
 bloom.h:
 
 limitedmap.h:
-
-utilstrencodings.h:
 
 threadinterrupt.h:
 
@@ -4243,8 +4252,6 @@ chain.h:
 flatfile.h:
 
 pow.h:
-
-pairresult.h:
 
 primitives/block.h:
 

@@ -922,9 +922,10 @@ rpc/libbitcoin_server_a-mining.o: rpc/mining.cpp \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h script/interpreter.h \
- script/script_error.h policy/feerate.h random.h \
- /usr/include/boost/multi_index_container.hpp \
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h tinyformat.h \
+ /usr/include/c++/9/iostream utilstrencodings.h util/string.h \
+ attributes.h streams.h script/interpreter.h script/script_error.h \
+ policy/feerate.h random.h /usr/include/boost/multi_index_container.hpp \
  /usr/include/boost/mpl/at.hpp /usr/include/boost/mpl/at_fwd.hpp \
  /usr/include/boost/mpl/aux_/at_impl.hpp \
  /usr/include/boost/mpl/contains.hpp \
@@ -1115,10 +1116,10 @@ rpc/libbitcoin_server_a-mining.o: rpc/mining.cpp \
  /usr/include/boost/multi_index/detail/seq_index_node.hpp \
  /usr/include/boost/multi_index/detail/seq_index_ops.hpp \
  /usr/include/boost/multi_index/sequenced_index_fwd.hpp core_io.h init.h \
- key_io.h chainparams.h miner.h net.h addrdb.h fs.h streams.h addrman.h \
- timedata.h util/system.h logging.h tinyformat.h \
- /usr/include/c++/9/iostream compat.h sync.h tinyformat.h utiltime.h \
- util/threadnames.h /usr/include/boost/thread/condition_variable.hpp \
+ key_io.h chainparams.h miner.h net.h addrdb.h fs.h addrman.h \
+ clientversion.h timedata.h util/system.h logging.h compat.h sync.h \
+ tinyformat.h utiltime.h util/threadnames.h \
+ /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
  /usr/include/boost/thread/pthread/condition_variable.hpp \
@@ -1358,16 +1359,16 @@ rpc/libbitcoin_server_a-mining.o: rpc/mining.cpp \
  /usr/include/boost/thread/pthread/condition_variable_fwd.hpp \
  /usr/include/boost/thread/cv_status.hpp \
  /usr/include/boost/enable_shared_from_this.hpp \
- /usr/include/boost/smart_ptr/enable_shared_from_this.hpp bloom.h \
- limitedmap.h utilstrencodings.h threadinterrupt.h rpc/server.h \
- rpc/protocol.h univalue/include/univalue.h util/blockstatecatcher.h \
- validation.h chain.h flatfile.h pow.h consensus/validation.h \
- moneysupply.h script/script_error.h validationinterface.h \
- wallet/rpcwallet.h wallet/db.h clientversion.h /usr/include/db_cxx.h \
- /usr/include/db.h /usr/include/inttypes.h wallet/wallet.h addressbook.h \
+ /usr/include/boost/smart_ptr/enable_shared_from_this.hpp hash.h bloom.h \
+ limitedmap.h threadinterrupt.h rpc/server.h rpc/protocol.h \
+ univalue/include/univalue.h util/blockstatecatcher.h validation.h \
+ chain.h flatfile.h pow.h consensus/validation.h moneysupply.h \
+ script/script_error.h validationinterface.h wallet/rpcwallet.h \
+ wallet/db.h clientversion.h /usr/include/db_cxx.h /usr/include/db.h \
+ /usr/include/inttypes.h wallet/wallet.h addressbook.h \
  consensus/tx_verify.h consensus/validation.h crypter.h keystore.h \
- destination_io.h kernel.h stakeinput.h pairresult.h policy/feerate.h \
- primitives/block.h guiinterface.h \
+ destination_io.h kernel.h stakeinput.h operationresult.h \
+ policy/feerate.h primitives/block.h guiinterface.h \
  /usr/include/boost/signals2/last_value.hpp util/system.h \
  utilstrencodings.h script/ismine.h script/standard.h \
  wallet/scriptpubkeyman.h wallet/hdchain.h wallet/walletdb.h \
@@ -3602,6 +3603,18 @@ compat.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 script/interpreter.h:
 
 script/script_error.h:
@@ -4020,19 +4033,15 @@ addrdb.h:
 
 fs.h:
 
-streams.h:
-
 addrman.h:
+
+clientversion.h:
 
 timedata.h:
 
 util/system.h:
 
 logging.h:
-
-tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 compat.h:
 
@@ -4546,11 +4555,11 @@ util/threadnames.h:
 
 /usr/include/boost/smart_ptr/enable_shared_from_this.hpp:
 
+hash.h:
+
 bloom.h:
 
 limitedmap.h:
-
-utilstrencodings.h:
 
 threadinterrupt.h:
 
@@ -4608,7 +4617,7 @@ kernel.h:
 
 stakeinput.h:
 
-pairresult.h:
+operationresult.h:
 
 policy/feerate.h:
 

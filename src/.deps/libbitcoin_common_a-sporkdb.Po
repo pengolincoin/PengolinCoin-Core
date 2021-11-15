@@ -1185,10 +1185,11 @@ libbitcoin_common_a-sporkdb.o: sporkdb.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/variant/bad_visit.hpp keystore.h key.h pubkey.h \
  sapling/address.h sapling/zip32.h key.h \
  support/allocators/zeroafterfree.h sync.h protocol.h netaddress.h \
- compat.h script/standard.h chainparams.h script/interpreter.h \
+ compat.h tinyformat.h utilstrencodings.h util/string.h attributes.h \
+ script/standard.h chainparams.h script/interpreter.h \
  script/script_error.h messagesigner.h primitives/transaction.h net.h \
- addrdb.h addrman.h random.h sync.h timedata.h bloom.h limitedmap.h \
- utilstrencodings.h threadinterrupt.h
+ addrdb.h addrman.h random.h sync.h timedata.h hash.h bloom.h \
+ limitedmap.h threadinterrupt.h
 
 /usr/include/stdc-predef.h:
 
@@ -3990,6 +3991,14 @@ netaddress.h:
 
 compat.h:
 
+tinyformat.h:
+
+utilstrencodings.h:
+
+util/string.h:
+
+attributes.h:
+
 script/standard.h:
 
 chainparams.h:
@@ -4014,10 +4023,10 @@ sync.h:
 
 timedata.h:
 
+hash.h:
+
 bloom.h:
 
 limitedmap.h:
-
-utilstrencodings.h:
 
 threadinterrupt.h:

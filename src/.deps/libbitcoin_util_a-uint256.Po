@@ -165,7 +165,23 @@ libbitcoin_util_a-uint256.o: uint256.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/9/algorithm /usr/include/c++/9/bits/stl_algo.h \
  /usr/include/c++/9/bits/algorithmfwd.h \
  /usr/include/c++/9/bits/stl_heap.h \
- /usr/include/c++/9/bits/uniform_int_dist.h
+ /usr/include/c++/9/bits/uniform_int_dist.h /usr/include/c++/9/iterator \
+ /usr/include/c++/9/ostream /usr/include/c++/9/ios \
+ /usr/include/c++/9/bits/ios_base.h \
+ /usr/include/c++/9/bits/locale_classes.h \
+ /usr/include/c++/9/bits/locale_classes.tcc /usr/include/c++/9/streambuf \
+ /usr/include/c++/9/bits/streambuf.tcc \
+ /usr/include/c++/9/bits/basic_ios.h \
+ /usr/include/c++/9/bits/locale_facets.h /usr/include/c++/9/cwctype \
+ /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/ctype_base.h \
+ /usr/include/c++/9/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/ctype_inline.h \
+ /usr/include/c++/9/bits/locale_facets.tcc \
+ /usr/include/c++/9/bits/basic_ios.tcc \
+ /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/istream \
+ /usr/include/c++/9/bits/istream.tcc \
+ /usr/include/c++/9/bits/stream_iterator.h
 
 /usr/include/stdc-predef.h:
 
@@ -608,3 +624,47 @@ span.h:
 /usr/include/c++/9/bits/stl_heap.h:
 
 /usr/include/c++/9/bits/uniform_int_dist.h:
+
+/usr/include/c++/9/iterator:
+
+/usr/include/c++/9/ostream:
+
+/usr/include/c++/9/ios:
+
+/usr/include/c++/9/bits/ios_base.h:
+
+/usr/include/c++/9/bits/locale_classes.h:
+
+/usr/include/c++/9/bits/locale_classes.tcc:
+
+/usr/include/c++/9/streambuf:
+
+/usr/include/c++/9/bits/streambuf.tcc:
+
+/usr/include/c++/9/bits/basic_ios.h:
+
+/usr/include/c++/9/bits/locale_facets.h:
+
+/usr/include/c++/9/cwctype:
+
+/usr/include/wctype.h:
+
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+
+/usr/include/x86_64-linux-gnu/c++/9/bits/ctype_base.h:
+
+/usr/include/c++/9/bits/streambuf_iterator.h:
+
+/usr/include/x86_64-linux-gnu/c++/9/bits/ctype_inline.h:
+
+/usr/include/c++/9/bits/locale_facets.tcc:
+
+/usr/include/c++/9/bits/basic_ios.tcc:
+
+/usr/include/c++/9/bits/ostream.tcc:
+
+/usr/include/c++/9/istream:
+
+/usr/include/c++/9/bits/istream.tcc:
+
+/usr/include/c++/9/bits/stream_iterator.h:

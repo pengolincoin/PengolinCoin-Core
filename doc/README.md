@@ -28,7 +28,7 @@ Drag PENGOLINCOIN-Qt to your applications folder, and then run PENGOLINCOIN-Qt.
 
 ### Need Help?
 
-* See the documentation at the [PENGOLINCOIN Wiki](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/wiki)
+* See the documentation at the [PENGOLINCOIN Wiki](https://github.com/pengolincoin/PengolinCoin-Core/wiki)
 for help and more information.
 * Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [PENGOLINCOIN Forum](http://forum.pengolincoin.xyz/).
 * Join our Discord server [Discord Server](https://discord.pengolincoin.xyz)

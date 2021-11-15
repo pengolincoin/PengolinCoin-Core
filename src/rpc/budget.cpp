@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -951,6 +951,30 @@ UniValue checkbudgets(const JSONRPCRequest& request)
     return NullUniValue;
 }
 
+UniValue cleanbudget(const JSONRPCRequest& request)
+{
+    if (request.fHelp || request.params.size() > 1)
+        throw std::runtime_error(
+                "cleanbudget ( try_sync )\n"
+                "\nCleans the budget data manually\n"
+                "\nArguments:\n"
+                "1. try_sync          (boolean, optional, default=false) resets tier two sync to a pre-budget data request\n"
+                "\nExamples:\n" +
+                HelpExampleCli("cleanbudget", "") + HelpExampleRpc("cleanbudget", ""));
+
+    g_budgetman.Clear();
+    LogPrintf("Budget data cleaned\n");
+
+    // reset sync if requested
+    bool reset = request.params.size() > 0 ? request.params[0].get_bool() : false;
+    if (reset) {
+        masternodeSync.ClearFulfilledRequest();
+        masternodeSync.Reset();
+        LogPrintf("Masternode sync restarted\n");
+    }
+    return NullUniValue;
+}
+
 static const CRPCCommand commands[] =
 { //  category              name                      actor (function)         okSafe argNames
   //  --------------------- ------------------------  -----------------------  ------ --------
@@ -967,7 +991,8 @@ static const CRPCCommand commands[] =
 
     /* Not shown in help */
     { "hidden",             "mnfinalbudgetsuggest",   &mnfinalbudgetsuggest,   true,  {} },
-    { "hidden",             "createrawmnfinalbudget", &createrawmnfinalbudget,   true,  {"budgetname", "blockstart", "proposals", "feetxid"} },
+    { "hidden",             "createrawmnfinalbudget", &createrawmnfinalbudget, true,  {"budgetname", "blockstart", "proposals", "feetxid"} },
+    { "hidden",             "cleanbudget",            &cleanbudget,            true,  {"try_sync"} },
 
 };
 

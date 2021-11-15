@@ -921,10 +921,11 @@ libbitcoin_server_a-txdb.o: txdb.cpp /usr/include/stdc-predef.h txdb.h \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h script/interpreter.h \
- script/script_error.h uint256.h chain.h chainparams.h flatfile.h fs.h \
- optional.h pow.h primitives/block.h timedata.h tinyformat.h \
- /usr/include/c++/9/iostream util/system.h logging.h fs.h tinyformat.h \
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h tinyformat.h \
+ /usr/include/c++/9/iostream utilstrencodings.h util/string.h \
+ attributes.h streams.h script/interpreter.h script/script_error.h \
+ uint256.h chain.h chainparams.h flatfile.h fs.h optional.h pow.h \
+ primitives/block.h timedata.h tinyformat.h util/system.h logging.h fs.h \
  compat.h sync.h tinyformat.h utiltime.h util/threadnames.h \
  /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
@@ -3577,6 +3578,18 @@ compat.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 script/interpreter.h:
 
 script/script_error.h:
@@ -3601,15 +3614,11 @@ timedata.h:
 
 tinyformat.h:
 
-/usr/include/c++/9/iostream:
-
 util/system.h:
 
 logging.h:
 
 fs.h:
-
-tinyformat.h:
 
 compat.h:
 

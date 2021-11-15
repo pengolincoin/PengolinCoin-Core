@@ -1176,13 +1176,15 @@ libbitcoin_server_a-init.o: init.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/variant/detail/element_index.hpp \
  /usr/include/boost/variant/visitor_ptr.hpp \
  /usr/include/boost/variant/bad_visit.hpp consensus/validation.h \
- netaddress.h compat.h span.h univalue/include/univalue.h saltedhasher.h \
- hash.h uint256.h immer/map.hpp immer/memory_policy.hpp \
- immer/heap/cpp_heap.hpp immer/heap/heap_policy.hpp \
- immer/heap/debug_size_heap.hpp immer/config.hpp \
- immer/heap/identity_heap.hpp immer/heap/free_list_heap.hpp \
- immer/heap/with_data.hpp immer/heap/free_list_node.hpp \
- immer/heap/split_heap.hpp immer/heap/thread_local_free_list_heap.hpp \
+ netaddress.h compat.h span.h utilstrencodings.h \
+ support/allocators/secure.h util/string.h attributes.h \
+ univalue/include/univalue.h saltedhasher.h hash.h uint256.h \
+ immer/map.hpp immer/memory_policy.hpp immer/heap/cpp_heap.hpp \
+ immer/heap/heap_policy.hpp immer/heap/debug_size_heap.hpp \
+ immer/config.hpp immer/heap/identity_heap.hpp \
+ immer/heap/free_list_heap.hpp immer/heap/with_data.hpp \
+ immer/heap/free_list_node.hpp immer/heap/split_heap.hpp \
+ immer/heap/thread_local_free_list_heap.hpp \
  immer/heap/unsafe_free_list_heap.hpp immer/refcount/refcount_policy.hpp \
  immer/refcount/no_refcount_policy.hpp \
  immer/refcount/unsafe_refcount_policy.hpp \
@@ -1198,17 +1200,17 @@ libbitcoin_server_a-init.o: init.cpp /usr/include/stdc-predef.h \
  random.h crypto/chacha20.h crypto/common.h libzerocoin/ZerocoinDefines.h \
  primitives/block.h keystore.h key.h pubkey.h sapling/address.h \
  sapling/zip32.h key.h support/allocators/zeroafterfree.h sync.h \
- protocol.h netaddress.h script/standard.h chainparams.h \
+ protocol.h netaddress.h streams.h script/standard.h chainparams.h \
  script/interpreter.h script/script_error.h messagesigner.h \
- primitives/transaction.h net.h addrdb.h fs.h streams.h addrman.h \
- random.h sync.h timedata.h util/system.h bloom.h compat.h limitedmap.h \
- utilstrencodings.h threadinterrupt.h operationresult.h \
- validationinterface.h sapling/incrementalmerkletree.h \
+ primitives/transaction.h net.h addrdb.h fs.h addrman.h clientversion.h \
+ random.h sync.h timedata.h tinyformat.h util/system.h hash.h bloom.h \
+ compat.h limitedmap.h utilstrencodings.h threadinterrupt.h \
+ operationresult.h validationinterface.h sapling/incrementalmerkletree.h \
  sapling/sapling_util.h wallet/wallet.h addressbook.h \
  consensus/tx_verify.h crypter.h keystore.h destination_io.h \
  script/standard.h kernel.h stakeinput.h chain.h chainparams.h flatfile.h \
  optional.h pow.h primitives/block.h timedata.h \
- libzerocoin/Denominations.h key_io.h pairresult.h policy/feerate.h \
+ libzerocoin/Denominations.h key_io.h operationresult.h policy/feerate.h \
  primitives/block.h guiinterface.h \
  /usr/include/boost/signals2/last_value.hpp util/system.h \
  utilstrencodings.h validationinterface.h script/ismine.h \
@@ -1552,7 +1554,7 @@ libbitcoin_server_a-init.o: init.cpp /usr/include/stdc-predef.h \
  libzerocoin/Coin.h libzerocoin/Denominations.h libzerocoin/Params.h \
  libzerocoin/bignum.h libzerocoin/CoinSpend.h libzerocoin/Coin.h \
  libzerocoin/Commitment.h libzerocoin/SpendType.h torcontrol.h \
- guiinterface.h guiinterfaceutil.h tinyformat.h utilmoneystr.h \
+ guiinterface.h guiinterfaceutil.h util/asmap.h utilmoneystr.h \
  util/threadnames.h validation.h zpgochain.h warnings.h wallet/init.h \
  wallet/rpcwallet.h /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum.h \
@@ -1573,6 +1575,13 @@ libbitcoin_server_a-init.o: init.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
  /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
+ /usr/include/x86_64-linux-gnu/sys/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/statx.h /usr/include/linux/stat.h \
+ /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
+ /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
+ /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
  /usr/include/boost/algorithm/string.hpp \
  /usr/include/boost/algorithm/string/std_containers_traits.hpp \
  /usr/include/boost/algorithm/string/std/string_traits.hpp \
@@ -1670,32 +1679,7 @@ libbitcoin_server_a-init.o: init.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/algorithm/string/detail/find_format_all.hpp \
  /usr/include/boost/algorithm/string/formatter.hpp \
  /usr/include/boost/algorithm/string/detail/formatter.hpp \
- /usr/include/boost/algorithm/string/erase.hpp \
- /usr/include/boost/interprocess/sync/file_lock.hpp \
- /usr/include/boost/interprocess/detail/config_begin.hpp \
- /usr/include/boost/interprocess/detail/workaround.hpp \
- /usr/include/boost/interprocess/exceptions.hpp \
- /usr/include/boost/interprocess/errors.hpp \
- /usr/include/boost/interprocess/detail/config_end.hpp \
- /usr/include/boost/interprocess/detail/os_file_functions.hpp \
- /usr/include/boost/interprocess/permissions.hpp \
- /usr/include/boost/interprocess/interprocess_fwd.hpp \
- /usr/include/boost/interprocess/detail/std_fwd.hpp \
- /usr/include/x86_64-linux-gnu/sys/stat.h \
- /usr/include/x86_64-linux-gnu/bits/statx.h /usr/include/linux/stat.h \
- /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
- /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
- /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
- /usr/include/dirent.h /usr/include/x86_64-linux-gnu/bits/dirent.h \
- /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
- /usr/include/boost/interprocess/detail/os_thread_functions.hpp \
- /usr/include/boost/interprocess/streams/bufferstream.hpp \
- /usr/include/boost/interprocess/detail/posix_time_types_wrk.hpp \
- /usr/include/boost/interprocess/sync/detail/common_algorithms.hpp \
- /usr/include/boost/interprocess/sync/spin/wait.hpp \
- /usr/include/boost/interprocess/sync/detail/locks.hpp
+ /usr/include/boost/algorithm/string/erase.hpp
 
 /usr/include/stdc-predef.h:
 
@@ -4461,6 +4445,14 @@ compat.h:
 
 span.h:
 
+utilstrencodings.h:
+
+support/allocators/secure.h:
+
+util/string.h:
+
+attributes.h:
+
 univalue/include/univalue.h:
 
 saltedhasher.h:
@@ -4575,6 +4567,8 @@ protocol.h:
 
 netaddress.h:
 
+streams.h:
+
 script/standard.h:
 
 chainparams.h:
@@ -4593,9 +4587,9 @@ addrdb.h:
 
 fs.h:
 
-streams.h:
-
 addrman.h:
+
+clientversion.h:
 
 random.h:
 
@@ -4603,7 +4597,11 @@ sync.h:
 
 timedata.h:
 
+tinyformat.h:
+
 util/system.h:
+
+hash.h:
 
 bloom.h:
 
@@ -4659,7 +4657,7 @@ libzerocoin/Denominations.h:
 
 key_io.h:
 
-pairresult.h:
+operationresult.h:
 
 policy/feerate.h:
 
@@ -5491,7 +5489,7 @@ guiinterface.h:
 
 guiinterfaceutil.h:
 
-tinyformat.h:
+util/asmap.h:
 
 utilmoneystr.h:
 
@@ -5544,6 +5542,26 @@ wallet/rpcwallet.h:
 /usr/include/x86_64-linux-gnu/bits/sigthread.h:
 
 /usr/include/x86_64-linux-gnu/bits/signal_ext.h:
+
+/usr/include/x86_64-linux-gnu/sys/stat.h:
+
+/usr/include/x86_64-linux-gnu/bits/statx.h:
+
+/usr/include/linux/stat.h:
+
+/usr/include/linux/types.h:
+
+/usr/include/x86_64-linux-gnu/asm/types.h:
+
+/usr/include/asm-generic/types.h:
+
+/usr/include/asm-generic/int-ll64.h:
+
+/usr/include/x86_64-linux-gnu/bits/statx-generic.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_statx.h:
 
 /usr/include/boost/algorithm/string.hpp:
 
@@ -5748,61 +5766,3 @@ wallet/rpcwallet.h:
 /usr/include/boost/algorithm/string/detail/formatter.hpp:
 
 /usr/include/boost/algorithm/string/erase.hpp:
-
-/usr/include/boost/interprocess/sync/file_lock.hpp:
-
-/usr/include/boost/interprocess/detail/config_begin.hpp:
-
-/usr/include/boost/interprocess/detail/workaround.hpp:
-
-/usr/include/boost/interprocess/exceptions.hpp:
-
-/usr/include/boost/interprocess/errors.hpp:
-
-/usr/include/boost/interprocess/detail/config_end.hpp:
-
-/usr/include/boost/interprocess/detail/os_file_functions.hpp:
-
-/usr/include/boost/interprocess/permissions.hpp:
-
-/usr/include/boost/interprocess/interprocess_fwd.hpp:
-
-/usr/include/boost/interprocess/detail/std_fwd.hpp:
-
-/usr/include/x86_64-linux-gnu/sys/stat.h:
-
-/usr/include/x86_64-linux-gnu/bits/statx.h:
-
-/usr/include/linux/stat.h:
-
-/usr/include/linux/types.h:
-
-/usr/include/x86_64-linux-gnu/asm/types.h:
-
-/usr/include/asm-generic/types.h:
-
-/usr/include/asm-generic/int-ll64.h:
-
-/usr/include/x86_64-linux-gnu/bits/statx-generic.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_statx.h:
-
-/usr/include/dirent.h:
-
-/usr/include/x86_64-linux-gnu/bits/dirent.h:
-
-/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
-
-/usr/include/boost/interprocess/detail/os_thread_functions.hpp:
-
-/usr/include/boost/interprocess/streams/bufferstream.hpp:
-
-/usr/include/boost/interprocess/detail/posix_time_types_wrk.hpp:
-
-/usr/include/boost/interprocess/sync/detail/common_algorithms.hpp:
-
-/usr/include/boost/interprocess/sync/spin/wait.hpp:
-
-/usr/include/boost/interprocess/sync/detail/locks.hpp:

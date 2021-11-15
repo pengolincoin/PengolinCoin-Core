@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Copyright (c) 2017 The Bitcoin Core developers
-# Copyright (c) 2020 PIVX developers
+# Copyright (c) 2020 The PIVX developers
 # Copyright (c) 2020-2021 The PENGOLINCOIN developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -9,6 +9,7 @@
 import os
 
 from test_framework.test_framework import PengolinCoinTestFramework
+from test_framework.test_node import ErrorMatch
 
 
 class LoggingTest(PengolinCoinTestFramework):
@@ -36,8 +37,8 @@ class LoggingTest(PengolinCoinTestFramework):
         invdir = os.path.join(self.nodes[0].datadir, "regtest", "foo")
         invalidname = os.path.join("foo", "foo.log")
         self.stop_node(0)
-        self.assert_start_raises_init_error(0, ["-debuglogfile=%s" % (invalidname)],
-                                                "Error: Could not open debug log file")
+        exp_stderr = r"Error: Could not open debug log file \S+$"
+        self.nodes[0].assert_start_raises_init_error(["-debuglogfile=%s" % (invalidname)], exp_stderr, match=ErrorMatch.FULL_REGEX)
         assert not os.path.isfile(os.path.join(invdir, "foo.log"))
         self.log.info("Invalid relative filename throws")
 
@@ -51,8 +52,7 @@ class LoggingTest(PengolinCoinTestFramework):
         self.stop_node(0)
         invdir = os.path.join(self.options.tmpdir, "foo")
         invalidname = os.path.join(invdir, "foo.log")
-        self.assert_start_raises_init_error(0, ["-debuglogfile=%s" % invalidname],
-                                               "Error: Could not open debug log file")
+        self.nodes[0].assert_start_raises_init_error(["-debuglogfile=%s" % invalidname], exp_stderr, match=ErrorMatch.FULL_REGEX)
         assert not os.path.isfile(os.path.join(invdir, "foo.log"))
         self.log.info("Invalid absolute filename throws")
 

@@ -2,12 +2,12 @@
 # Copyright (c) 2019 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://www.opensource.org/licenses/mit-license.php.
-"""Test bitcoind aborts if can't disconnect a block.
+"""Test pengolincoind aborts if can't disconnect a block.
 
 - Start a single node and generate 3 blocks.
 - Delete the undo data.
 - Mine a fork that requires disconnecting the tip.
-- Verify that bitcoind AbortNode's.
+- Verify that pengolincoind AbortNode's.
 """
 
 import os
@@ -44,7 +44,7 @@ class AbortNodeTest(PengolinCoinTestFramework):
             self.log.info("Waiting for crash")
             wait_until(lambda: self.nodes[0].is_node_stopped(), timeout=60)
         self.log.info("Node crashed - now verifying restart fails")
-        self.assert_start_raises_init_error(0)
+        self.nodes[0].assert_start_raises_init_error()
 
 if __name__ == '__main__':
     AbortNodeTest().main()

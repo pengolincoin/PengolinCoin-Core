@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -9,11 +9,9 @@
 #include "qt/pengolincoin/addnewcontactdialog.h"
 #include "qt/pengolincoin/qtutils.h"
 #include "qt/pengolincoin/myaddressrow.h"
-#include "qt/pengolincoin/furlistrow.h"
 #include "qt/pengolincoin/addressholder.h"
 #include "walletmodel.h"
 #include "guiutil.h"
-#include "pairresult.h"
 
 #include <QModelIndex>
 #include <QColor>
@@ -147,11 +145,10 @@ void ReceiveWidget::refreshView(const QModelIndex& tl, const QModelIndex& br)
     return refreshView(index.data(Qt::DisplayRole).toString());
 }
 
-void ReceiveWidget::refreshView(QString refreshAddress)
+void ReceiveWidget::refreshView(const QString& refreshAddress)
 {
     try {
-        QString latestAddress = (refreshAddress.isEmpty()) ? this->addressTableModel->getAddressToShow(shieldedMode) : refreshAddress;
-
+        const QString& latestAddress = (refreshAddress.isEmpty()) ? addressTableModel->getAddressToShow(shieldedMode) : refreshAddress;
         if (latestAddress.isEmpty()) {
             // Check for generation errors
             ui->labelQrImg->setText(tr("No available address\ntry unlocking the wallet"));
@@ -191,7 +188,7 @@ void ReceiveWidget::updateLabel()
     }
 }
 
-void ReceiveWidget::updateQr(QString& address)
+void ReceiveWidget::updateQr(const QString& address)
 {
     info->address = address;
     QString uri = GUIUtil::formatBitcoinURI(*info);
@@ -201,8 +198,7 @@ void ReceiveWidget::updateQr(QString& address)
     QColor qrColor("#382d4d");
     QPixmap pixmap = encodeToQr(uri, error, qrColor);
     if (!pixmap.isNull()) {
-        qrImage = &pixmap;
-        ui->labelQrImg->setPixmap(qrImage->scaled(ui->labelQrImg->width(), ui->labelQrImg->height()));
+        ui->labelQrImg->setPixmap(pixmap.scaled(ui->labelQrImg->width(), ui->labelQrImg->height()));
     } else {
         ui->labelQrImg->setText(!error.isEmpty() ? error : "Error encoding address");
     }
@@ -238,6 +234,7 @@ void ReceiveWidget::onLabelClicked()
                 inform(tr("Error storing address label"));
             }
         }
+        dialog->deleteLater();
         isShowingDialog = false;
     }
 }
@@ -252,23 +249,16 @@ void ReceiveWidget::onNewAddressClicked()
             return;
         }
 
-        QString strAddress;
-        PairResult r(false);
-        if (!shieldedMode) {
-            Destination address;
-            r = walletModel->getNewAddress(address, "");
-            strAddress = QString::fromStdString(address.ToString());
-        } else {
-            r = walletModel->getNewShieldedAddress(strAddress, "");
-        }
+        CallResult<Destination> r = !shieldedMode ? walletModel->getNewAddress("") :
+                walletModel->getNewShieldedAddress("");
 
         // Check validity
-        if (!r.result) {
-            inform(r.status->c_str());
+        if (!r) {
+            inform(r.getError().c_str());
             return;
         }
 
-        refreshView(strAddress);
+        refreshView(QString::fromStdString(r.getObjResult()->ToString()));
         inform(tr("New address created"));
     } catch (const std::runtime_error& error) {
         // Error generating address

@@ -1,4 +1,4 @@
-// Copyright (c) 2018-2020 PIVX developers
+// Copyright (c) 2018-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -137,7 +137,7 @@ BOOST_FIXTURE_TEST_CASE(block_value_undermint, RegTestingSetup)
     CAmount nBudgetAmtRet = 0;
     // under-minting blocks are invalid after v6
     BOOST_CHECK(IsBlockValueValid(nHeight, nExpectedRet, -1, nBudgetAmtRet));
-    UpdateNetworkUpgradeParameters(Consensus::UPGRADE_V6_0, Consensus::NetworkUpgrade::ALWAYS_ACTIVE);
+    UpdateNetworkUpgradeParameters(Consensus::UPGRADE_V5_3, Consensus::NetworkUpgrade::ALWAYS_ACTIVE);
     BOOST_CHECK(!IsBlockValueValid(nHeight, nExpectedRet, -1, nBudgetAmtRet));
 }
 
@@ -345,7 +345,6 @@ BOOST_FIXTURE_TEST_CASE(IsCoinbaseValueValid_test, TestingSetup)
     CAmount nBlockValue = GetBlockValue(nHeight);
     CAmount nDevFundValue = GetDevFundPayment(nHeight, nBlockValue);
     CAmount mnAmt = GetMasternodePayment(nHeight, nBlockValue);
-    
     const CScript& cbaseScript = GetRandomP2PKH();
     CValidationState state;
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2019 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -7,7 +7,6 @@
 #define RECEIVEDIALOG_H
 
 #include "qt/pengolincoin/focuseddialog.h"
-#include <QPixmap>
 
 class SendCoinsRecipient;
 
@@ -23,13 +22,12 @@ public:
     explicit ReceiveDialog(QWidget *parent = nullptr);
     ~ReceiveDialog();
 
-    void updateQr(QString address);
+    void updateQr(const QString& address);
 
 private Q_SLOTS:
     void onCopy();
 private:
     Ui::ReceiveDialog *ui{nullptr};
-    QPixmap *qrImage{nullptr};
     SendCoinsRecipient *info{nullptr};
 };
 

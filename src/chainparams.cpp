@@ -73,6 +73,7 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
 static Checkpoints::MapCheckpoints mapCheckpoints = {
     { 0, uint256S("00000865fddb23c371506db1692c393b7f4c5813f9139ea20b808b325aa96316")},
     { 1100, uint256S("a32107ba6b3fd2a48d89a9825889c014a2479d8f17211fc7125874eb781c5286")},
+    { 712312, uint256S("b0bbf31b151267e61bc8d64672df3bd331ffb9a39e96dbe0c028b0ea2fabb065")},
 };
 
 static const Checkpoints::CCheckpointData data = {
@@ -85,7 +86,7 @@ static const Checkpoints::CCheckpointData data = {
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet = {
     {0, uint256S("0x000001f6742d9291290bba1058d68321b85e5a88f16b4334b68997a678972dc8")},
-    // {899, uint256S("0x000001f6742d9291290bba1058d68321b85e5a88f16b4334b68997a678972dc8")},
+    //{    201, uint256S("6ae7d52092fd918c8ac8d9b1334400387d3057997e6e927a88e57186dc395231")},     // v5 activation (PoS/Sapling)
 };
 
 static const Checkpoints::CCheckpointData dataTestnet = {
@@ -166,7 +167,7 @@ public:
         consensus.ZC_MinMintFee = 1 * CENT;
         consensus.ZC_MinStakeDepth = 200;
         consensus.ZC_TimeStart = 1508214600;        // October 17, 2017 4:30:00 AM
-        consensus.ZC_HeightStart = 999999999;
+        consensus.ZC_HeightStart = 863735;
 
         // Network upgrades
         consensus.vUpgrades[Consensus::BASE_NETWORK].nActivationHeight =
@@ -183,6 +184,7 @@ public:
         consensus.vUpgrades[Consensus::UPGRADE_V4_0].nActivationHeight          = Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
         consensus.vUpgrades[Consensus::UPGRADE_V5_0].nActivationHeight          = 700001;
         consensus.vUpgrades[Consensus::UPGRADE_V5_2].nActivationHeight          = 700001;
+        consensus.vUpgrades[Consensus::UPGRADE_V5_3].nActivationHeight          = 740001;
         consensus.vUpgrades[Consensus::UPGRADE_V6_0].nActivationHeight =
                 Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
 
@@ -218,8 +220,8 @@ public:
         vSeeds.emplace_back("seed05.pengolincoin.xyz", true);
         vSeeds.emplace_back("seed06.pengolincoin.xyz", true);
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 57);     // starting with 'P' or 'Q'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18);     // starting with '8'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 57);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18);
         base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 63);     // starting with 'S'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 205);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x03, 0x2E, 0x26, 0x34};
@@ -227,7 +229,7 @@ public:
         // BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
         base58Prefixes[EXT_COIN_TYPE] = {0x81, 0x00, 0x00, 0x78};
 
-        vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
+        vFixedSeeds = std::vector<uint8_t>(std::begin(chainparams_seed_main), std::end(chainparams_seed_main));
 
         // Reject non-standard transactions by default
         fRequireStandard = true;
@@ -327,6 +329,7 @@ public:
         consensus.vUpgrades[Consensus::UPGRADE_V4_0].nActivationHeight          = Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
         consensus.vUpgrades[Consensus::UPGRADE_V5_0].nActivationHeight          = 6001;
         consensus.vUpgrades[Consensus::UPGRADE_V5_2].nActivationHeight          = 1501;
+        consensus.vUpgrades[Consensus::UPGRADE_V5_3].nActivationHeight          = Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
         consensus.vUpgrades[Consensus::UPGRADE_V6_0].nActivationHeight =
                 Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
 
@@ -349,9 +352,9 @@ public:
         vSeeds.emplace_back("seed05.pengolincoin.xyz", true);
         vSeeds.emplace_back("seed06.pengolincoin.xyz", true);
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 117); // Testnet pengolincoin addresses start with 'p'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 10);  // Testnet pengolincoin script addresses start with '5'
-        base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 125);     // starting with 's'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 117); // Testnet pengolincoin addresses start with 'x' or 'y'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 10);  // Testnet pengolincoin script addresses start with '8' or '9'
+        base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 125);     // starting with 'W'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         // Testnet pengolincoin BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = {0x3a, 0x80, 0x61, 0xa0};
@@ -360,7 +363,7 @@ public:
         // Testnet pengolincoin BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = {0x80, 0x00, 0x00, 0x01};
 
-        vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
+        vFixedSeeds = std::vector<uint8_t>(std::begin(chainparams_seed_test), std::end(chainparams_seed_test));
 
         fRequireStandard = false;
 
@@ -413,7 +416,7 @@ public:
         consensus.nTargetSpacing = 1 * 60;
         consensus.nTimeSlotLength = 15;
         consensus.nMaxProposalPayments = 20;
-        consensus.strDevPubKeyID = "16ae4d2197a90ccddbc8093f9b4a5882213f760a";
+        consensus.strDevPubKeyID = "1e5308c8cc3740a2b70b1677f7dceaff36192640";
 
         /* Spork Key for RegTest:
         WIF private key: 932HEevBSujW2ud7RfB1YF91AFygbBRQj3de3LyaCRqNzKKgWXi
@@ -463,6 +466,7 @@ public:
                 Consensus::NetworkUpgrade::ALWAYS_ACTIVE;
         consensus.vUpgrades[Consensus::UPGRADE_V5_0].nActivationHeight          = 300;
         consensus.vUpgrades[Consensus::UPGRADE_V5_2].nActivationHeight          = 300;
+        consensus.vUpgrades[Consensus::UPGRADE_V5_3].nActivationHeight          = 251;
         consensus.vUpgrades[Consensus::UPGRADE_V6_0].nActivationHeight =
                 Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
 

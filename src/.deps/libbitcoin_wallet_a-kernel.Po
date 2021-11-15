@@ -888,6 +888,8 @@ libbitcoin_wallet_a-kernel.o: kernel.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
  /usr/include/x86_64-linux-gnu/bits/mman-shared.h serialize.h span.h \
+ prevector.h tinyformat.h /usr/include/c++/9/iostream utilstrencodings.h \
+ support/allocators/secure.h util/string.h attributes.h streams.h \
  version.h flatfile.h fs.h /usr/include/boost/filesystem.hpp \
  /usr/include/boost/filesystem/config.hpp \
  /usr/include/boost/system/api_config.hpp \
@@ -921,9 +923,9 @@ libbitcoin_wallet_a-kernel.o: kernel.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
  /usr/include/c++/9/bits/fstream.tcc optional.h pow.h timedata.h \
- tinyformat.h /usr/include/c++/9/iostream util/system.h fs.h logging.h \
- fs.h tinyformat.h compat.h sync.h tinyformat.h utiltime.h \
- util/threadnames.h /usr/include/boost/thread/condition_variable.hpp \
+ util/system.h fs.h logging.h fs.h tinyformat.h compat.h sync.h \
+ tinyformat.h utiltime.h util/threadnames.h \
+ /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
  /usr/include/boost/thread/pthread/condition_variable.hpp \
@@ -1178,16 +1180,16 @@ libbitcoin_wallet_a-kernel.o: kernel.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/thread/cv_status.hpp \
  /usr/include/boost/enable_shared_from_this.hpp \
  /usr/include/boost/smart_ptr/enable_shared_from_this.hpp \
- libzerocoin/Denominations.h streams.h /usr/include/db.h \
- /usr/include/inttypes.h legacy/stakemodifier.h chain.h stakeinput.h \
- policy/policy.h policy/feerate.h script/interpreter.h \
- script/script_error.h script/standard.h chainparams.h \
- script/interpreter.h utilmoneystr.h amount.h validation.h coins.h \
- compressor.h primitives/transaction.h script/script.h \
- consensus/consensus.h memusage.h sapling/incrementalmerkletree.h \
- sapling/sapling_util.h script/standard.h consensus/validation.h \
- moneysupply.h sync.h policy/feerate.h script/script_error.h txmempool.h \
- indirectmap.h random.h /usr/include/boost/multi_index_container.hpp \
+ libzerocoin/Denominations.h /usr/include/db.h /usr/include/inttypes.h \
+ legacy/stakemodifier.h chain.h stakeinput.h policy/policy.h \
+ policy/feerate.h script/interpreter.h script/script_error.h \
+ script/standard.h chainparams.h script/interpreter.h utilmoneystr.h \
+ amount.h validation.h coins.h compressor.h primitives/transaction.h \
+ script/script.h consensus/consensus.h memusage.h \
+ sapling/incrementalmerkletree.h sapling/sapling_util.h script/standard.h \
+ consensus/validation.h moneysupply.h sync.h policy/feerate.h \
+ script/script_error.h txmempool.h indirectmap.h random.h \
+ /usr/include/boost/multi_index_container.hpp \
  /usr/include/boost/mpl/at.hpp /usr/include/boost/mpl/at_fwd.hpp \
  /usr/include/boost/mpl/aux_/at_impl.hpp \
  /usr/include/boost/mpl/contains.hpp \
@@ -3517,6 +3519,22 @@ serialize.h:
 
 span.h:
 
+prevector.h:
+
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+support/allocators/secure.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 version.h:
 
 flatfile.h:
@@ -3602,10 +3620,6 @@ optional.h:
 pow.h:
 
 timedata.h:
-
-tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 util/system.h:
 
@@ -4162,8 +4176,6 @@ util/threadnames.h:
 /usr/include/boost/smart_ptr/enable_shared_from_this.hpp:
 
 libzerocoin/Denominations.h:
-
-streams.h:
 
 /usr/include/db.h:
 

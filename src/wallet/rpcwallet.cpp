@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -118,11 +118,10 @@ static CTxDestination GetNewAddressFromLabel(CWallet* const pwallet, const std::
     if (!params.isNull() && params.size() > 0)
         label = LabelFromValue(params[0]);
 
-    CTxDestination address;
-    PairResult r = pwallet->getNewAddress(address, label, purpose, addrType);
-    if(!r.result)
-        throw JSONRPCError(RPC_WALLET_KEYPOOL_RAN_OUT, *r.status);
-    return address;
+    auto r = pwallet->getNewAddress(label, purpose, addrType);
+    if(!r)
+        throw JSONRPCError(RPC_WALLET_KEYPOOL_RAN_OUT, r.getError());
+    return *r.getObjResult();
 }
 
 /** Convert CAddressBookData to JSON record.  */
@@ -249,7 +248,7 @@ UniValue getaddressinfo(const JSONRPCRequest& request)
         if (meta->HasKeyOrigin()) {
             ret.pushKV("hdkeypath", meta->key_origin.pathToString());
             ret.pushKV("hdseedid", meta->hd_seed_id.GetHex());
-            ret.pushKV("hdmasterfingerprint", HexStr(meta->key_origin.fingerprint, meta->key_origin.fingerprint + 4));
+            ret.pushKV("hdmasterfingerprint", HexStr(meta->key_origin.fingerprint));
         }
     }
 
@@ -575,6 +574,11 @@ UniValue getnewshieldaddress(const JSONRPCRequest& request)
     EnsureWalletIsUnlocked(pwallet);
 
     return KeyIO::EncodePaymentAddress(pwallet->GenerateNewSaplingZKey());
+}
+
+static inline std::string HexStrTrimmed(std::array<unsigned char, ZC_MEMO_SIZE> vch)
+{
+    return HexStr(std::vector<unsigned char>(vch.begin(), FindFirstNonZero(vch.rbegin(), vch.rend()).base()));
 }
 
 UniValue listshieldunspent(const JSONRPCRequest& request)
@@ -1531,12 +1535,12 @@ UniValue viewshieldtransaction(const JSONRPCRequest& request)
         // empty memo
         if (!static_cast<bool>(optMemo)) {
             const std::array<unsigned char, 1> memo {0xF6};
-            entry.pushKV("memo", HexStr(memo.begin(), memo.end()));
+            entry.pushKV("memo", HexStr(memo));
             return;
         }
         const auto& memo = *optMemo;
         auto end = FindFirstNonZero(memo.rbegin(), memo.rend());
-        entry.pushKV("memo", HexStr(memo.begin(), end.base()));
+        entry.pushKV("memo", HexStr(std::vector<unsigned char>(memo.begin(), end.base())));
         // If the leading byte is 0xF4 or lower, the memo field should be interpreted as a
         // UTF-8-encoded text string.
         if (memo[0] <= 0xf4) {
@@ -2345,7 +2349,10 @@ static UniValue legacy_sendmany(CWallet* const pwallet, const UniValue& sendTo, 
                                                nullptr,     // coinControl
                                                true,        // sign
                                                0,           // nFeePay
-                                               fIncludeDelegated);
+                                               fIncludeDelegated,
+                                               nullptr, // fStakeDelegationVoided
+                                               0, // default extra size
+                                               nMinDepth);
     if (!fCreated)
         throw JSONRPCError(RPC_WALLET_INSUFFICIENT_FUNDS, strFailReason);
     const CWallet::CommitResult& res = pwallet->CommitTransaction(txNew, keyChange, g_connman.get());
@@ -2438,7 +2445,7 @@ UniValue sendmany(const JSONRPCRequest& request)
     bool fShieldSend = false;
     for (const std::string& key : sendTo.getKeys()) {
         bool isStaking = false, isShielded = false;
-        const CWDestination& dest = Standard::DecodeDestination(key, isStaking, isShielded);
+        Standard::DecodeDestination(key, isStaking, isShielded);
         if (isShielded) {
             fShieldSend = true;
             break;
@@ -3828,14 +3835,14 @@ UniValue listunspent(const JSONRPCRequest& request)
                 entry.pushKV("label", pwallet->GetNameForAddressBookEntry(address));
             }
         }
-        entry.pushKV("scriptPubKey", HexStr(pk.begin(), pk.end()));
+        entry.pushKV("scriptPubKey", HexStr(pk));
         if (pk.IsPayToScriptHash()) {
             CTxDestination address;
             if (ExtractDestination(pk, address)) {
                 const CScriptID& hash = boost::get<CScriptID>(address);
                 CScript redeemScript;
                 if (pwallet->GetCScript(hash, redeemScript))
-                    entry.pushKV("redeemScript", HexStr(redeemScript.begin(), redeemScript.end()));
+                    entry.pushKV("redeemScript", HexStr(redeemScript));
             }
         }
         entry.pushKV("amount", ValueFromAmount(nValue));
@@ -4516,7 +4523,7 @@ UniValue setautocombinethreshold(const JSONRPCRequest& request)
             "}\n"
 
             "\nExamples:\n" +
-            HelpExampleCli("setautocombinethreshold", "500.12") + HelpExampleRpc("setautocombinethreshold", "500.12"));
+            HelpExampleCli("setautocombinethreshold", "true 500.12") + HelpExampleRpc("setautocombinethreshold", "true, 500.12"));
 
     RPCTypeCheck(request.params, {UniValue::VBOOL, UniValue::VNUM});
 

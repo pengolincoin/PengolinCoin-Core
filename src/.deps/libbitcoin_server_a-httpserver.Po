@@ -1075,7 +1075,9 @@ libbitcoin_server_a-httpserver.o: httpserver.cpp \
  netaddress.h serialize.h compat/endian.h compat/byteswap.h \
  /usr/include/byteswap.h libzerocoin/Denominations.h \
  libzerocoin/SpendType.h optional.h prevector.h \
- /usr/include/c++/9/stdlib.h span.h sporkid.h rpc/protocol.h \
+ /usr/include/c++/9/stdlib.h span.h sporkid.h tinyformat.h \
+ utilstrencodings.h support/allocators/secure.h support/lockedpool.h \
+ support/cleanse.h util/string.h attributes.h rpc/protocol.h \
  univalue/include/univalue.h sync.h guiinterface.h \
  /usr/include/boost/signals2/last_value.hpp \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
@@ -3566,6 +3568,20 @@ prevector.h:
 span.h:
 
 sporkid.h:
+
+tinyformat.h:
+
+utilstrencodings.h:
+
+support/allocators/secure.h:
+
+support/lockedpool.h:
+
+support/cleanse.h:
+
+util/string.h:
+
+attributes.h:
 
 rpc/protocol.h:
 

@@ -60,7 +60,8 @@ JSON_TEST_FILES = \
   test/data/merkle_commitments_sapling.json \
   test/data/sapling_key_components.json
 
-RAW_TEST_FILES =
+RAW_TEST_FILES = \
+  test/data/asmap.raw
 
 GENERATED_TEST_FILES = $(JSON_TEST_FILES:.json=.json.h) $(RAW_TEST_FILES:.raw=.raw.h)
 
@@ -83,7 +84,9 @@ BITCOIN_TEST_SUITE = \
 if ENABLE_WALLET
 BITCOIN_TEST_SUITE += \
   wallet/test/wallet_test_fixture.cpp \
-  wallet/test/wallet_test_fixture.h
+  wallet/test/wallet_test_fixture.h \
+  wallet/test/pos_test_fixture.cpp \
+  wallet/test/pos_test_fixture.h
 endif
 
 # test_pengolincoin binary #
@@ -108,6 +111,7 @@ BITCOIN_TESTS =\
   test/evo_deterministicmns_tests.cpp \
   test/evo_specialtx_tests.cpp \
   test/flatfile_tests.cpp \
+  test/fs_tests.cpp \
   test/getarg_tests.cpp \
   test/hash_tests.cpp \
   test/key_tests.cpp \
@@ -148,7 +152,8 @@ BITCOIN_TESTS =\
   test/util_tests.cpp \
   test/sha256compress_tests.cpp \
   test/upgrades_tests.cpp \
-  test/validation_block_tests.cpp
+  test/validation_block_tests.cpp \
+  test/zerocoindb_tests.cpp
 
 SAPLING_TESTS =\
     test/librust/libsapling_utils_tests.cpp \
@@ -171,7 +176,8 @@ SAPLING_TESTS +=\
   test/librust/sapling_rpc_wallet_tests.cpp \
   test/librust/sapling_wallet_tests.cpp \
   wallet/test/wallet_shielded_balances_tests.cpp \
-  wallet/test/wallet_sapling_transactions_validations_tests.cpp
+  wallet/test/wallet_sapling_transactions_validations_tests.cpp \
+  wallet/test/pos_validations_tests.cpp
 endif
 
 test_test_pengolincoin_SOURCES = $(BITCOIN_TEST_SUITE) $(BITCOIN_TESTS) $(SAPLING_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
@@ -421,5 +427,14 @@ check-local: check-sapling check-standard
 	 echo "static unsigned const char $(*F)[] = {" && \
 	 $(HEXDUMP) -v -e '8/1 "0x%02x, "' -e '"\n"' $< | $(SED) -e 's/0x  ,//g' && \
 	 echo "};};"; \
+	} > "$@.new" && mv -f "$@.new" "$@"
+	@echo "Generated $@"
+
+%.raw.h: %.raw
+	@$(MKDIR_P) $(@D)
+	@{ \
+	 echo "static unsigned const char $(*F)_raw[] = {" && \
+	 $(HEXDUMP) -v -e '8/1 "0x%02x, "' -e '"\n"' $< | $(SED) -e 's/0x  ,//g' && \
+	 echo "};"; \
 	} > "$@.new" && mv -f "$@.new" "$@"
 	@echo "Generated $@"

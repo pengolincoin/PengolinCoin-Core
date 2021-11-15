@@ -1,4 +1,4 @@
-// Copyright (c) 2020 PIVX developers
+// Copyright (c) 2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
@@ -12,6 +12,6 @@
 #include "validationinterface.h"
 
 bool DisconnectZerocoinTx(const CTransaction& tx);
-void DataBaseAccChecksum(const CBlockIndex* pindex, bool fWrite);
+void CacheAccChecksum(const CBlockIndex* pindex, bool fWrite);
 
 #endif //VALIDATION_ZEROCOIN_LEGACY_H

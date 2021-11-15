@@ -1177,8 +1177,9 @@ rpc/libbitcoin_server_a-budget.o: rpc/budget.cpp \
  /usr/include/boost/variant/detail/element_index.hpp \
  /usr/include/boost/variant/visitor_ptr.hpp \
  /usr/include/boost/variant/bad_visit.hpp consensus/validation.h \
- netaddress.h compat.h univalue/include/univalue.h saltedhasher.h \
- immer/map.hpp immer/memory_policy.hpp immer/heap/cpp_heap.hpp \
+ netaddress.h compat.h utilstrencodings.h util/string.h attributes.h \
+ univalue/include/univalue.h saltedhasher.h immer/map.hpp \
+ immer/memory_policy.hpp immer/heap/cpp_heap.hpp \
  immer/heap/heap_policy.hpp immer/heap/debug_size_heap.hpp \
  immer/config.hpp immer/heap/identity_heap.hpp \
  immer/heap/free_list_heap.hpp immer/heap/with_data.hpp \
@@ -1201,13 +1202,12 @@ rpc/libbitcoin_server_a-budget.o: rpc/budget.cpp \
  support/allocators/zeroafterfree.h sync.h protocol.h netaddress.h \
  script/standard.h chainparams.h script/interpreter.h \
  script/script_error.h messagesigner.h primitives/transaction.h net.h \
- addrdb.h addrman.h random.h timedata.h bloom.h limitedmap.h \
- utilstrencodings.h threadinterrupt.h operationresult.h \
- validationinterface.h sapling/incrementalmerkletree.h \
- sapling/sapling_util.h wallet/wallet.h addressbook.h \
- consensus/tx_verify.h crypter.h keystore.h destination_io.h kernel.h \
- stakeinput.h chain.h flatfile.h pow.h key_io.h pairresult.h \
- policy/feerate.h primitives/block.h guiinterface.h \
+ addrdb.h addrman.h random.h timedata.h hash.h bloom.h limitedmap.h \
+ threadinterrupt.h operationresult.h validationinterface.h \
+ sapling/incrementalmerkletree.h sapling/sapling_util.h wallet/wallet.h \
+ addressbook.h consensus/tx_verify.h crypter.h keystore.h \
+ destination_io.h kernel.h stakeinput.h chain.h flatfile.h pow.h key_io.h \
+ operationresult.h policy/feerate.h primitives/block.h guiinterface.h \
  /usr/include/boost/signals2/last_value.hpp util/system.h \
  utilstrencodings.h validationinterface.h script/ismine.h \
  script/standard.h /usr/include/c++/9/bitset wallet/scriptpubkeyman.h \
@@ -4156,6 +4156,12 @@ netaddress.h:
 
 compat.h:
 
+utilstrencodings.h:
+
+util/string.h:
+
+attributes.h:
+
 univalue/include/univalue.h:
 
 saltedhasher.h:
@@ -4282,11 +4288,11 @@ random.h:
 
 timedata.h:
 
+hash.h:
+
 bloom.h:
 
 limitedmap.h:
-
-utilstrencodings.h:
 
 threadinterrupt.h:
 
@@ -4322,7 +4328,7 @@ pow.h:
 
 key_io.h:
 
-pairresult.h:
+operationresult.h:
 
 policy/feerate.h:
 

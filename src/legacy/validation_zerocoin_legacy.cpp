@@ -1,4 +1,4 @@
-// Copyright (c) 2020 PIVX developers
+// Copyright (c) 2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
@@ -47,10 +47,10 @@ bool DisconnectZerocoinTx(const CTransaction& tx)
 
 // Legacy Zerocoin DB: used for performance during IBD
 // (between Zerocoin_Block_V2_Start and Zerocoin_Block_Last_Checkpoint)
-void DataBaseAccChecksum(const CBlockIndex* pindex, bool fWrite)
+void CacheAccChecksum(const CBlockIndex* pindex, bool fWrite)
 {
     const Consensus::Params& consensus = Params().GetConsensus();
-    if (!pindex ||
+    if (!pindex || accumulatorCache == nullptr ||
         !consensus.NetworkUpgradeActive(pindex->nHeight, Consensus::UPGRADE_ZC_V2) ||
         pindex->nHeight > consensus.height_last_ZC_AccumCheckpoint ||
         pindex->nAccumulatorCheckpoint == pindex->pprev->nAccumulatorCheckpoint)
@@ -58,13 +58,13 @@ void DataBaseAccChecksum(const CBlockIndex* pindex, bool fWrite)
 
     arith_uint256 accCurr = UintToArith256(pindex->nAccumulatorCheckpoint);
     arith_uint256 accPrev = UintToArith256(pindex->pprev->nAccumulatorCheckpoint);
-    // add/remove changed checksums to/from DB
+    // add/remove changed checksums to/from cache
     for (int i = (int)libzerocoin::zerocoinDenomList.size()-1; i >= 0; i--) {
         const uint32_t nChecksum = accCurr.Get32();
         if (nChecksum != accPrev.Get32()) {
             fWrite ?
-            zerocoinDB->WriteAccChecksum(nChecksum, libzerocoin::zerocoinDenomList[i], pindex->nHeight) :
-            zerocoinDB->EraseAccChecksum(nChecksum, libzerocoin::zerocoinDenomList[i]);
+            accumulatorCache->Set(nChecksum, libzerocoin::zerocoinDenomList[i], pindex->nHeight) :
+            accumulatorCache->Erase(nChecksum, libzerocoin::zerocoinDenomList[i]);
         }
         accCurr >>= 32;
         accPrev >>= 32;

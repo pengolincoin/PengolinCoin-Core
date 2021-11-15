@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2020 PIVX developers
+// Copyright (c) 2017-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
@@ -9,23 +9,44 @@
 #include "txdb.h"
 #include "wallet/wallet.h"
 
-CPgoStake* CPgoStake::NewPgoStake(const CTxIn& txin)
+static bool HasStakeMinAgeOrDepth(int nHeight, uint32_t nTime, const CBlockIndex* pindex)
+{
+    const Consensus::Params& consensus = Params().GetConsensus();
+    if (consensus.NetworkUpgradeActive(nHeight + 1, Consensus::UPGRADE_ZC_PUBLIC) &&
+            !consensus.HasStakeMinAgeOrDepth(nHeight, nTime, pindex->nHeight, pindex->nTime)) {
+        return error("%s : min age violation - height=%d - time=%d, nHeightBlockFrom=%d, nTimeBlockFrom=%d",
+                     __func__, nHeight, nTime, pindex->nHeight, pindex->nTime);
+    }
+    return true;
+}
+
+CPgoStake* CPgoStake::NewPgoStake(const CTxIn& txin, int nHeight, uint32_t nTime)
 {
     if (txin.IsZerocoinSpend()) {
         error("%s: unable to initialize CPgoStake from zerocoin spend", __func__);
         return nullptr;
     }
 
-    // Find the previous transaction in database
+    // Look for the stake input in the coins cache first
+    const Coin& coin = pcoinsTip->AccessCoin(txin.prevout);
+    if (!coin.IsSpent()) {
+        const CBlockIndex* pindexFrom = mapBlockIndex.at(chainActive[coin.nHeight]->GetBlockHash());
+        // Check that the stake has the required depth/age
+        if (!HasStakeMinAgeOrDepth(nHeight, nTime, pindexFrom)) {
+            return nullptr;
+        }
+        // All good
+        return new CPgoStake(coin.out, txin.prevout, pindexFrom);
+    }
+
+    // Otherwise find the previous transaction in database
     uint256 hashBlock;
     CTransactionRef txPrev;
     if (!GetTransaction(txin.prevout.hash, txPrev, hashBlock, true)) {
         error("%s : INFO: read txPrev failed, tx id prev: %s", __func__, txin.prevout.hash.GetHex());
         return nullptr;
     }
-
     const CBlockIndex* pindexFrom = nullptr;
-    // Find the index of the block of the previous transaction
     if (mapBlockIndex.count(hashBlock)) {
         CBlockIndex* pindex = mapBlockIndex.at(hashBlock);
         if (chainActive.Contains(pindex)) pindexFrom = pindex;
@@ -35,10 +56,12 @@ CPgoStake* CPgoStake::NewPgoStake(const CTxIn& txin)
         error("%s : Failed to find the block index for stake origin", __func__);
         return nullptr;
     }
-
-    return new CPgoStake(txPrev->vout[txin.prevout.n],
-                         txin.prevout,
-                         pindexFrom);
+    // Check that the stake has the required depth/age
+    if (!HasStakeMinAgeOrDepth(nHeight, nTime, pindexFrom)) {
+        return nullptr;
+    }
+    // All good
+    return new CPgoStake(txPrev->vout[txin.prevout.n], txin.prevout, pindexFrom);
 }
 
 bool CPgoStake::GetTxOutFrom(CTxOut& out) const
@@ -109,25 +132,5 @@ const CBlockIndex* CPgoStake::GetIndexFrom() const
     // Sanity check, pindexFrom is set on the constructor.
     if (!pindexFrom) throw std::runtime_error("CPgoStake: uninitialized pindexFrom");
     return pindexFrom;
-}
-
-// Verify stake contextual checks
-bool CPgoStake::ContextCheck(int nHeight, uint32_t nTime)
-{
-    const Consensus::Params& consensus = Params().GetConsensus();
-    // Get Stake input block time/height
-    const CBlockIndex* pindexFrom = GetIndexFrom();
-    if (!pindexFrom)
-        return error("%s: unable to get previous index for stake input", __func__);
-    const int nHeightBlockFrom = pindexFrom->nHeight;
-    const uint32_t nTimeBlockFrom = pindexFrom->nTime;
-
-    // Check that the stake has the required depth/age
-    if (consensus.NetworkUpgradeActive(nHeight + 1, Consensus::UPGRADE_ZC_PUBLIC) &&
-            !consensus.HasStakeMinAgeOrDepth(nHeight, nTime, nHeightBlockFrom, nTimeBlockFrom))
-        return error("%s : min age violation - height=%d - time=%d, nHeightBlockFrom=%d, nTimeBlockFrom=%d",
-                         __func__, nHeight, nTime, nHeightBlockFrom, nTimeBlockFrom);
-    // All good
-    return true;
 }
 

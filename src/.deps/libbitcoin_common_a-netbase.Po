@@ -357,101 +357,19 @@ libbitcoin_common_a-netbase.o: netbase.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/9/stdlib.h /usr/include/c++/9/iterator \
  /usr/include/c++/9/ostream /usr/include/c++/9/bits/ostream.tcc \
  /usr/include/c++/9/istream /usr/include/c++/9/bits/istream.tcc \
- /usr/include/c++/9/bits/stream_iterator.h span.h sporkid.h hash.h \
- arith_uint256.h crypto/ripemd160.h crypto/sha256.h uint256.h \
- crypto/common.h compat/endian.h version.h crypto/sph_blake.h \
- crypto/sph_types.h crypto/sph_bmw.h crypto/sph_groestl.h crypto/sph_jh.h \
- crypto/sph_keccak.h crypto/sph_skein.h crypto/sha512.h \
- /usr/include/c++/9/iomanip /usr/include/c++/9/locale \
- /usr/include/c++/9/bits/locale_facets_nonio.h /usr/include/c++/9/ctime \
- /usr/include/x86_64-linux-gnu/c++/9/bits/time_members.h \
- /usr/include/x86_64-linux-gnu/c++/9/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/9/bits/codecvt.h \
- /usr/include/c++/9/bits/locale_facets_nonio.tcc \
- /usr/include/c++/9/bits/locale_conv.h \
- /usr/include/c++/9/bits/quoted_string.h /usr/include/c++/9/sstream \
- /usr/include/c++/9/bits/sstream.tcc /usr/include/sodium.h \
- /usr/include/sodium/version.h /usr/include/sodium/export.h \
- /usr/include/sodium/core.h /usr/include/sodium/crypto_aead_aes256gcm.h \
- /usr/include/sodium/crypto_aead_chacha20poly1305.h \
- /usr/include/sodium/crypto_aead_xchacha20poly1305.h \
- /usr/include/sodium/crypto_auth.h \
- /usr/include/sodium/crypto_auth_hmacsha512256.h \
- /usr/include/sodium/crypto_auth_hmacsha512.h \
- /usr/include/sodium/crypto_hash_sha512.h \
- /usr/include/sodium/crypto_auth_hmacsha256.h \
- /usr/include/sodium/crypto_hash_sha256.h \
- /usr/include/sodium/crypto_auth_hmacsha512.h \
- /usr/include/sodium/crypto_auth_hmacsha512256.h \
- /usr/include/sodium/crypto_box.h \
- /usr/include/sodium/crypto_box_curve25519xsalsa20poly1305.h \
- /usr/include/sodium/crypto_stream_xsalsa20.h \
- /usr/include/sodium/crypto_box_curve25519xsalsa20poly1305.h \
- /usr/include/sodium/crypto_core_hsalsa20.h \
- /usr/include/sodium/crypto_core_hchacha20.h \
- /usr/include/sodium/crypto_core_salsa20.h \
- /usr/include/sodium/crypto_core_salsa2012.h \
- /usr/include/sodium/crypto_core_salsa208.h \
- /usr/include/sodium/crypto_generichash.h \
- /usr/include/sodium/crypto_generichash_blake2b.h \
- /usr/include/sodium/crypto_generichash_blake2b.h \
- /usr/include/sodium/crypto_hash.h \
- /usr/include/sodium/crypto_hash_sha256.h \
- /usr/include/sodium/crypto_hash_sha512.h \
- /usr/include/sodium/crypto_kdf.h \
- /usr/include/sodium/crypto_kdf_blake2b.h \
- /usr/include/sodium/crypto_kdf_blake2b.h /usr/include/sodium/crypto_kx.h \
- /usr/include/sodium/crypto_onetimeauth.h \
- /usr/include/sodium/crypto_onetimeauth_poly1305.h \
- /usr/include/sodium/crypto_onetimeauth_poly1305.h \
- /usr/include/sodium/crypto_pwhash.h \
- /usr/include/sodium/crypto_pwhash_argon2i.h \
- /usr/include/sodium/crypto_pwhash_argon2id.h \
- /usr/include/sodium/crypto_pwhash_argon2i.h \
- /usr/include/sodium/crypto_scalarmult.h \
- /usr/include/sodium/crypto_scalarmult_curve25519.h \
- /usr/include/sodium/crypto_scalarmult_curve25519.h \
- /usr/include/sodium/crypto_secretbox.h \
- /usr/include/sodium/crypto_secretbox_xsalsa20poly1305.h \
- /usr/include/sodium/crypto_secretbox_xsalsa20poly1305.h \
- /usr/include/sodium/crypto_secretstream_xchacha20poly1305.h \
- /usr/include/sodium/crypto_aead_xchacha20poly1305.h \
- /usr/include/sodium/crypto_stream_chacha20.h \
- /usr/include/sodium/crypto_shorthash.h \
- /usr/include/sodium/crypto_shorthash_siphash24.h \
- /usr/include/sodium/crypto_shorthash_siphash24.h \
- /usr/include/sodium/crypto_sign.h \
- /usr/include/sodium/crypto_sign_ed25519.h \
- /usr/include/sodium/crypto_sign_ed25519.h \
- /usr/include/sodium/crypto_stream.h \
- /usr/include/sodium/crypto_stream_chacha20.h \
- /usr/include/sodium/crypto_stream_salsa20.h \
- /usr/include/sodium/crypto_stream_xsalsa20.h \
- /usr/include/sodium/crypto_verify_16.h \
- /usr/include/sodium/crypto_verify_32.h \
- /usr/include/sodium/crypto_verify_64.h /usr/include/sodium/randombytes.h \
- /usr/include/sodium/randombytes_internal_random.h \
- /usr/include/sodium/randombytes.h \
- /usr/include/sodium/randombytes_sysrandom.h \
- /usr/include/sodium/runtime.h /usr/include/sodium/utils.h \
- /usr/include/sodium/crypto_box_curve25519xchacha20poly1305.h \
- /usr/include/sodium/crypto_stream_xchacha20.h \
- /usr/include/sodium/crypto_core_ed25519.h \
- /usr/include/sodium/crypto_core_ristretto255.h \
- /usr/include/sodium/crypto_scalarmult_ed25519.h \
- /usr/include/sodium/crypto_scalarmult_ristretto255.h \
- /usr/include/sodium/crypto_secretbox_xchacha20poly1305.h \
- /usr/include/sodium/crypto_pwhash_scryptsalsa208sha256.h \
- /usr/include/sodium/crypto_stream_salsa2012.h \
- /usr/include/sodium/crypto_stream_salsa208.h \
- /usr/include/sodium/crypto_stream_xchacha20.h sync.h threadsafety.h \
- util/macros.h /usr/include/c++/9/condition_variable \
- /usr/include/c++/9/chrono /usr/include/c++/9/ratio \
+ /usr/include/c++/9/bits/stream_iterator.h span.h sporkid.h tinyformat.h \
+ /usr/include/c++/9/cassert /usr/include/c++/9/iostream \
+ /usr/include/c++/9/sstream /usr/include/c++/9/bits/sstream.tcc \
+ utilstrencodings.h support/allocators/secure.h support/lockedpool.h \
+ /usr/include/c++/9/mutex /usr/include/c++/9/chrono \
+ /usr/include/c++/9/ratio /usr/include/c++/9/ctime \
  /usr/include/c++/9/bits/parse_numbers.h \
  /usr/include/c++/9/bits/std_mutex.h \
- /usr/include/c++/9/bits/unique_lock.h /usr/include/c++/9/thread \
- /usr/include/c++/9/mutex random.h crypto/chacha20.h util/system.h fs.h \
- /usr/include/boost/filesystem.hpp \
+ /usr/include/c++/9/bits/unique_lock.h support/cleanse.h util/string.h \
+ attributes.h sync.h threadsafety.h util/macros.h \
+ /usr/include/c++/9/condition_variable /usr/include/c++/9/thread random.h \
+ crypto/chacha20.h crypto/common.h compat/endian.h uint256.h \
+ util/system.h fs.h /usr/include/boost/filesystem.hpp \
  /usr/include/boost/filesystem/config.hpp \
  /usr/include/boost/system/api_config.hpp \
  /usr/include/boost/config/auto_link.hpp \
@@ -463,9 +381,15 @@ libbitcoin_common_a-netbase.o: netbase.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/system/detail/generic_category.hpp \
  /usr/include/boost/system/detail/system_category_posix.hpp \
  /usr/include/boost/system/detail/std_interoperability.hpp \
+ /usr/include/c++/9/locale /usr/include/c++/9/bits/locale_facets_nonio.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/9/bits/codecvt.h \
+ /usr/include/c++/9/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/9/bits/locale_conv.h \
  /usr/include/boost/config/abi_prefix.hpp \
  /usr/include/boost/config/abi_suffix.hpp \
- /usr/include/boost/system/system_error.hpp /usr/include/c++/9/cassert \
+ /usr/include/boost/system/system_error.hpp \
  /usr/include/boost/iterator/iterator_facade.hpp \
  /usr/include/boost/iterator/interoperable.hpp \
  /usr/include/boost/mpl/bool.hpp /usr/include/boost/mpl/bool_fwd.hpp \
@@ -617,10 +541,9 @@ libbitcoin_common_a-netbase.o: netbase.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/filesystem/fstream.hpp /usr/include/c++/9/fstream \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
- /usr/include/c++/9/bits/fstream.tcc logging.h fs.h tinyformat.h \
- /usr/include/c++/9/iostream compat.h sync.h tinyformat.h utiltime.h \
- util/threadnames.h /usr/include/c++/9/unordered_set \
- /usr/include/c++/9/bits/hashtable.h \
+ /usr/include/c++/9/bits/fstream.tcc logging.h fs.h tinyformat.h compat.h \
+ sync.h tinyformat.h utiltime.h util/threadnames.h \
+ /usr/include/c++/9/unordered_set /usr/include/c++/9/bits/hashtable.h \
  /usr/include/c++/9/bits/hashtable_policy.h \
  /usr/include/c++/9/bits/unordered_set.h \
  /usr/include/boost/signals2/signal.hpp /usr/include/boost/function.hpp \
@@ -1152,9 +1075,7 @@ libbitcoin_common_a-netbase.o: netbase.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/thread/pthread/condition_variable_fwd.hpp \
  /usr/include/boost/thread/cv_status.hpp \
  /usr/include/boost/enable_shared_from_this.hpp \
- /usr/include/boost/smart_ptr/enable_shared_from_this.hpp \
- utilstrencodings.h support/allocators/secure.h support/lockedpool.h \
- support/cleanse.h
+ /usr/include/boost/smart_ptr/enable_shared_from_this.hpp
 
 /usr/include/stdc-predef.h:
 
@@ -2034,223 +1955,41 @@ span.h:
 
 sporkid.h:
 
-hash.h:
+tinyformat.h:
 
-arith_uint256.h:
+/usr/include/c++/9/cassert:
 
-crypto/ripemd160.h:
-
-crypto/sha256.h:
-
-uint256.h:
-
-crypto/common.h:
-
-compat/endian.h:
-
-version.h:
-
-crypto/sph_blake.h:
-
-crypto/sph_types.h:
-
-crypto/sph_bmw.h:
-
-crypto/sph_groestl.h:
-
-crypto/sph_jh.h:
-
-crypto/sph_keccak.h:
-
-crypto/sph_skein.h:
-
-crypto/sha512.h:
-
-/usr/include/c++/9/iomanip:
-
-/usr/include/c++/9/locale:
-
-/usr/include/c++/9/bits/locale_facets_nonio.h:
-
-/usr/include/c++/9/ctime:
-
-/usr/include/x86_64-linux-gnu/c++/9/bits/time_members.h:
-
-/usr/include/x86_64-linux-gnu/c++/9/bits/messages_members.h:
-
-/usr/include/libintl.h:
-
-/usr/include/c++/9/bits/codecvt.h:
-
-/usr/include/c++/9/bits/locale_facets_nonio.tcc:
-
-/usr/include/c++/9/bits/locale_conv.h:
-
-/usr/include/c++/9/bits/quoted_string.h:
+/usr/include/c++/9/iostream:
 
 /usr/include/c++/9/sstream:
 
 /usr/include/c++/9/bits/sstream.tcc:
 
-/usr/include/sodium.h:
+utilstrencodings.h:
 
-/usr/include/sodium/version.h:
+support/allocators/secure.h:
 
-/usr/include/sodium/export.h:
+support/lockedpool.h:
 
-/usr/include/sodium/core.h:
+/usr/include/c++/9/mutex:
 
-/usr/include/sodium/crypto_aead_aes256gcm.h:
+/usr/include/c++/9/chrono:
 
-/usr/include/sodium/crypto_aead_chacha20poly1305.h:
+/usr/include/c++/9/ratio:
 
-/usr/include/sodium/crypto_aead_xchacha20poly1305.h:
+/usr/include/c++/9/ctime:
 
-/usr/include/sodium/crypto_auth.h:
+/usr/include/c++/9/bits/parse_numbers.h:
 
-/usr/include/sodium/crypto_auth_hmacsha512256.h:
+/usr/include/c++/9/bits/std_mutex.h:
 
-/usr/include/sodium/crypto_auth_hmacsha512.h:
+/usr/include/c++/9/bits/unique_lock.h:
 
-/usr/include/sodium/crypto_hash_sha512.h:
+support/cleanse.h:
 
-/usr/include/sodium/crypto_auth_hmacsha256.h:
+util/string.h:
 
-/usr/include/sodium/crypto_hash_sha256.h:
-
-/usr/include/sodium/crypto_auth_hmacsha512.h:
-
-/usr/include/sodium/crypto_auth_hmacsha512256.h:
-
-/usr/include/sodium/crypto_box.h:
-
-/usr/include/sodium/crypto_box_curve25519xsalsa20poly1305.h:
-
-/usr/include/sodium/crypto_stream_xsalsa20.h:
-
-/usr/include/sodium/crypto_box_curve25519xsalsa20poly1305.h:
-
-/usr/include/sodium/crypto_core_hsalsa20.h:
-
-/usr/include/sodium/crypto_core_hchacha20.h:
-
-/usr/include/sodium/crypto_core_salsa20.h:
-
-/usr/include/sodium/crypto_core_salsa2012.h:
-
-/usr/include/sodium/crypto_core_salsa208.h:
-
-/usr/include/sodium/crypto_generichash.h:
-
-/usr/include/sodium/crypto_generichash_blake2b.h:
-
-/usr/include/sodium/crypto_generichash_blake2b.h:
-
-/usr/include/sodium/crypto_hash.h:
-
-/usr/include/sodium/crypto_hash_sha256.h:
-
-/usr/include/sodium/crypto_hash_sha512.h:
-
-/usr/include/sodium/crypto_kdf.h:
-
-/usr/include/sodium/crypto_kdf_blake2b.h:
-
-/usr/include/sodium/crypto_kdf_blake2b.h:
-
-/usr/include/sodium/crypto_kx.h:
-
-/usr/include/sodium/crypto_onetimeauth.h:
-
-/usr/include/sodium/crypto_onetimeauth_poly1305.h:
-
-/usr/include/sodium/crypto_onetimeauth_poly1305.h:
-
-/usr/include/sodium/crypto_pwhash.h:
-
-/usr/include/sodium/crypto_pwhash_argon2i.h:
-
-/usr/include/sodium/crypto_pwhash_argon2id.h:
-
-/usr/include/sodium/crypto_pwhash_argon2i.h:
-
-/usr/include/sodium/crypto_scalarmult.h:
-
-/usr/include/sodium/crypto_scalarmult_curve25519.h:
-
-/usr/include/sodium/crypto_scalarmult_curve25519.h:
-
-/usr/include/sodium/crypto_secretbox.h:
-
-/usr/include/sodium/crypto_secretbox_xsalsa20poly1305.h:
-
-/usr/include/sodium/crypto_secretbox_xsalsa20poly1305.h:
-
-/usr/include/sodium/crypto_secretstream_xchacha20poly1305.h:
-
-/usr/include/sodium/crypto_aead_xchacha20poly1305.h:
-
-/usr/include/sodium/crypto_stream_chacha20.h:
-
-/usr/include/sodium/crypto_shorthash.h:
-
-/usr/include/sodium/crypto_shorthash_siphash24.h:
-
-/usr/include/sodium/crypto_shorthash_siphash24.h:
-
-/usr/include/sodium/crypto_sign.h:
-
-/usr/include/sodium/crypto_sign_ed25519.h:
-
-/usr/include/sodium/crypto_sign_ed25519.h:
-
-/usr/include/sodium/crypto_stream.h:
-
-/usr/include/sodium/crypto_stream_chacha20.h:
-
-/usr/include/sodium/crypto_stream_salsa20.h:
-
-/usr/include/sodium/crypto_stream_xsalsa20.h:
-
-/usr/include/sodium/crypto_verify_16.h:
-
-/usr/include/sodium/crypto_verify_32.h:
-
-/usr/include/sodium/crypto_verify_64.h:
-
-/usr/include/sodium/randombytes.h:
-
-/usr/include/sodium/randombytes_internal_random.h:
-
-/usr/include/sodium/randombytes.h:
-
-/usr/include/sodium/randombytes_sysrandom.h:
-
-/usr/include/sodium/runtime.h:
-
-/usr/include/sodium/utils.h:
-
-/usr/include/sodium/crypto_box_curve25519xchacha20poly1305.h:
-
-/usr/include/sodium/crypto_stream_xchacha20.h:
-
-/usr/include/sodium/crypto_core_ed25519.h:
-
-/usr/include/sodium/crypto_core_ristretto255.h:
-
-/usr/include/sodium/crypto_scalarmult_ed25519.h:
-
-/usr/include/sodium/crypto_scalarmult_ristretto255.h:
-
-/usr/include/sodium/crypto_secretbox_xchacha20poly1305.h:
-
-/usr/include/sodium/crypto_pwhash_scryptsalsa208sha256.h:
-
-/usr/include/sodium/crypto_stream_salsa2012.h:
-
-/usr/include/sodium/crypto_stream_salsa208.h:
-
-/usr/include/sodium/crypto_stream_xchacha20.h:
+attributes.h:
 
 sync.h:
 
@@ -2260,23 +1999,17 @@ util/macros.h:
 
 /usr/include/c++/9/condition_variable:
 
-/usr/include/c++/9/chrono:
-
-/usr/include/c++/9/ratio:
-
-/usr/include/c++/9/bits/parse_numbers.h:
-
-/usr/include/c++/9/bits/std_mutex.h:
-
-/usr/include/c++/9/bits/unique_lock.h:
-
 /usr/include/c++/9/thread:
-
-/usr/include/c++/9/mutex:
 
 random.h:
 
 crypto/chacha20.h:
+
+crypto/common.h:
+
+compat/endian.h:
+
+uint256.h:
 
 util/system.h:
 
@@ -2308,13 +2041,27 @@ fs.h:
 
 /usr/include/boost/system/detail/std_interoperability.hpp:
 
+/usr/include/c++/9/locale:
+
+/usr/include/c++/9/bits/locale_facets_nonio.h:
+
+/usr/include/x86_64-linux-gnu/c++/9/bits/time_members.h:
+
+/usr/include/x86_64-linux-gnu/c++/9/bits/messages_members.h:
+
+/usr/include/libintl.h:
+
+/usr/include/c++/9/bits/codecvt.h:
+
+/usr/include/c++/9/bits/locale_facets_nonio.tcc:
+
+/usr/include/c++/9/bits/locale_conv.h:
+
 /usr/include/boost/config/abi_prefix.hpp:
 
 /usr/include/boost/config/abi_suffix.hpp:
 
 /usr/include/boost/system/system_error.hpp:
-
-/usr/include/c++/9/cassert:
 
 /usr/include/boost/iterator/iterator_facade.hpp:
 
@@ -2657,8 +2404,6 @@ logging.h:
 fs.h:
 
 tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 compat.h:
 
@@ -3809,11 +3554,3 @@ util/threadnames.h:
 /usr/include/boost/enable_shared_from_this.hpp:
 
 /usr/include/boost/smart_ptr/enable_shared_from_this.hpp:
-
-utilstrencodings.h:
-
-support/allocators/secure.h:
-
-support/lockedpool.h:
-
-support/cleanse.h:

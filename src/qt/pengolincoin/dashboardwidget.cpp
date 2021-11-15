@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -54,9 +54,9 @@ DashboardWidget::DashboardWidget(PENGOLINCOINGUI* parent) :
     // Staking Information
     setCssSubtitleScreen(ui->labelMessage);
     setCssProperty(ui->labelSquarePgo, "square-chart-pgo");
-    // setCssProperty(ui->labelSquarezPgo, "square-chart-zpgo");
+    setCssProperty(ui->labelSquarezPgo, "square-chart-zpgo");
     setCssProperty(ui->labelPgo, "text-chart-pgo");
-    // setCssProperty(ui->labelZpgo, "text-chart-zpgo");
+    setCssProperty(ui->labelZpgo, "text-chart-zpgo");
 
     // Staking Amount
     QFont fontBold;
@@ -64,7 +64,7 @@ DashboardWidget::DashboardWidget(PENGOLINCOINGUI* parent) :
 
     setCssProperty(ui->labelChart, "legend-chart");
     setCssProperty(ui->labelAmountPgo, "text-stake-pgo-disable");
-    // setCssProperty(ui->labelAmountZpgo, "text-stake-zpgo-disable");
+    setCssProperty(ui->labelAmountZpgo, "text-stake-zpgo-disable");
 
     setCssProperty({ui->pushButtonAll,  ui->pushButtonMonth, ui->pushButtonYear}, "btn-check-time");
     setCssProperty({ui->comboBoxMonths,  ui->comboBoxYears}, "btn-combo-chart-selected");
@@ -470,7 +470,7 @@ void DashboardWidget::changeChartColors()
     } else {
         gridY = QColor("#40ffffff");
         axisY->setGridLineColor(gridY);
-        gridLineColorX = QColor(11,15,22);
+        gridLineColorX = QColor(15,11,22);
         linePenColorY =  gridLineColorX;
         backgroundColor = linePenColorY;
     }
@@ -493,9 +493,10 @@ void DashboardWidget::updateStakeFilter()
         if (yearFilter != 0) {
             if (filterByMonth) {
                 QDate monthFirst = QDate(yearFilter, monthFilter, 1);
+                QDate monthLast = QDate(yearFilter, monthFilter, monthFirst.daysInMonth());
                 stakesFilter->setDateRange(
                         QDateTime(monthFirst),
-                        QDateTime(QDate(yearFilter, monthFilter, monthFirst.daysInMonth()))
+                        QDateTime(monthLast).addSecs(86399) // last second of the day
                 );
             } else {
                 stakesFilter->setDateRange(
@@ -667,8 +668,8 @@ void DashboardWidget::onChartRefreshed()
     // init sets
     set0 = new QBarSet(CURRENCY_UNIT.c_str());
     set1 = new QBarSet("z" + QString(CURRENCY_UNIT.c_str()));
-    set0->setColor(QColor(75,92,125));
-    set1->setColor(QColor(136,176,255));
+    set0->setColor(QColor(92,75,125));
+    set1->setColor(QColor(176,136,255));
 
     if (!series) {
         series = new QBarSeries();
@@ -684,14 +685,14 @@ void DashboardWidget::onChartRefreshed()
     nDisplayUnit = walletModel->getOptionsModel()->getDisplayUnit();
     if (chartData->totalPgo > 0 || chartData->totalZpgo > 0) {
         setCssProperty(ui->labelAmountPgo, "text-stake-pgo");
-        // setCssProperty(ui->labelAmountZpgo, "text-stake-zpgo");
+        setCssProperty(ui->labelAmountZpgo, "text-stake-zpgo");
     } else {
         setCssProperty(ui->labelAmountPgo, "text-stake-pgo-disable");
-        // setCssProperty(ui->labelAmountZpgo, "text-stake-zpgo-disable");
+        setCssProperty(ui->labelAmountZpgo, "text-stake-zpgo-disable");
     }
-    // forceUpdateStyle({ui->labelAmountPgo, ui->labelAmountZpgo});
+    forceUpdateStyle({ui->labelAmountPgo, ui->labelAmountZpgo});
     ui->labelAmountPgo->setText(GUIUtil::formatBalance(chartData->totalPgo, nDisplayUnit));
-    // ui->labelAmountZpgo->setText(GUIUtil::formatBalance(chartData->totalZpgo, nDisplayUnit, true));
+    ui->labelAmountZpgo->setText(GUIUtil::formatBalance(chartData->totalZpgo, nDisplayUnit, true));
 
     series->append(set0);
     if (hasZpgoStakes)

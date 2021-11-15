@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2021 The Bitcoin developers
-// Copyright (c) 2017-2021 PIVX developers
+// Copyright (c) 2017-2021 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -9,7 +9,6 @@
 
 #include "utilstrencodings.h"
 
-#include <stdio.h>
 #include <string.h>
 
 template <unsigned int BITS>
@@ -22,7 +21,11 @@ base_blob<BITS>::base_blob(const std::vector<unsigned char>& vch)
 template <unsigned int BITS>
 std::string base_blob<BITS>::GetHex() const
 {
-    return HexStr(std::reverse_iterator<const uint8_t*>(m_data + sizeof(m_data)), std::reverse_iterator<const uint8_t*>(m_data));
+    uint8_t m_data_rev[WIDTH];
+    for (int i = 0; i < WIDTH; ++i) {
+        m_data_rev[i] = m_data[WIDTH - 1 - i];
+    }
+    return HexStr(m_data_rev);
 }
 
 template <unsigned int BITS>

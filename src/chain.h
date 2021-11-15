@@ -3,7 +3,7 @@
 // Copyright (c) 2011-2013 The PPCoin developers
 // Copyright (c) 2013-2014 The NovaCoin Developers
 // Copyright (c) 2014-2018 The BlackCoin Developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -333,11 +333,11 @@ public:
             READWRITE(nMoneySupply);
             READWRITE(obj.nFlags);
             if (!Params().GetConsensus().NetworkUpgradeActive(obj.nHeight, Consensus::UPGRADE_V3_4)) {
-                uint64_t nStakeModifier = obj.GetStakeModifierV1();
+                uint64_t nStakeModifier = 0;
                 READWRITE(nStakeModifier);
                 SER_READ(obj, obj.SetStakeModifier(nStakeModifier, obj.GeneratedStakeModifier()));
             } else {
-                uint256 nStakeModifierV2 =  obj.GetStakeModifierV2();
+                uint256 nStakeModifierV2;
                 READWRITE(nStakeModifierV2);
                 SER_READ(obj, obj.SetStakeModifier(nStakeModifierV2));
             }

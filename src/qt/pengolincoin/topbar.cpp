@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
@@ -609,8 +609,8 @@ void TopBar::updateTorIcon()
             ui->pushButtonTor->setChecked(true);
             ui->pushButtonTor->setButtonClassStyle("cssClass", "btn-check-tor", true);
         }
-        QString ip_port_q = QString::fromStdString(ip_port);
-        ui->pushButtonTor->setButtonText(tr("Tor Active: %1").arg(ip_port_q));
+        ui->pushButtonTor->setButtonText(tr("Tor Active"));
+        ui->pushButtonTor->setToolTip("Address: " + QString::fromStdString(ip_port));
     } else {
         if (ui->pushButtonTor->isChecked()) {
             ui->pushButtonTor->setChecked(false);
@@ -714,7 +714,6 @@ void TopBar::updateHDState(const bool upgraded, const QString& upgradeError)
                                                 tr("Backup Wallet"), QString(),
                                                 tr("Wallet Data (*.dat)"), NULL);
             if (!filename.isEmpty()) {
-                LogPrint(BCLog::DB, "updateHDState : filename = %s\n", filename.toLocal8Bit().data());
                 inform(walletModel->backupWallet(filename) ? tr("Backup created") : tr("Backup creation failed"));
             } else {
                 warn(tr("Backup creation failed"), tr("no file selected"));

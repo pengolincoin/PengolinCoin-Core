@@ -156,30 +156,33 @@ am__append_28 = -DLEVELDB_IS_BIG_ENDIAN=0
 am__append_30 = -DLEVELDB_PLATFORM_POSIX
 #am__append_31 = leveldb/util/env_windows.cc
 am__append_32 = leveldb/util/env_posix.cc
-#am__append_33 = $(FUZZ_TARGETS:=)
-am__append_34 = test/test_pengolincoin
-am__append_35 = \
-  wallet/test/wallet_test_fixture.cpp \
-  wallet/test/wallet_test_fixture.h
+##am__append_33 = $(FUZZ_TARGETS:=)
+#am__append_34 = test/test_pengolincoin
+#am__append_35 = \
+#  wallet/test/wallet_test_fixture.cpp \
+#  wallet/test/wallet_test_fixture.h \
+#  wallet/test/pos_test_fixture.cpp \
+#  wallet/test/pos_test_fixture.h
 
-am__append_36 = \
-  wallet/test/wallet_tests.cpp \
-  wallet/test/crypto_tests.cpp
+#am__append_36 = \
+#  wallet/test/wallet_tests.cpp \
+#  wallet/test/crypto_tests.cpp
 
-am__append_37 = \
-  test/librust/sapling_rpc_wallet_tests.cpp \
-  test/librust/sapling_wallet_tests.cpp \
-  wallet/test/wallet_shielded_balances_tests.cpp \
-  wallet/test/wallet_sapling_transactions_validations_tests.cpp
+#am__append_37 = \
+#  test/librust/sapling_rpc_wallet_tests.cpp \
+#  test/librust/sapling_wallet_tests.cpp \
+#  wallet/test/wallet_shielded_balances_tests.cpp \
+#  wallet/test/wallet_sapling_transactions_validations_tests.cpp \
+#  wallet/test/pos_validations_tests.cpp
 
-am__append_38 = $(LIBBITCOIN_WALLET)
-#am__append_39 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
-##am__append_40 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
-#am__append_41 = $(LIBBITCOIN_WALLET)
-am__append_42 = $(CLEAN_BITCOIN_TEST)
-am__append_43 = bench/bench_pengolincoin
-#am__append_44 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
-am__append_45 = $(CLEAN_BITCOIN_BENCH)
+#am__append_38 = $(LIBBITCOIN_WALLET)
+##am__append_39 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+###am__append_40 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+##am__append_41 = $(LIBBITCOIN_WALLET)
+#am__append_42 = $(CLEAN_BITCOIN_TEST)
+#am__append_43 = bench/bench_pengolincoin
+##am__append_44 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+#am__append_45 = $(CLEAN_BITCOIN_BENCH)
 am__append_46 = qt/pengolincoin-qt
 am__append_47 = qt/libbitcoinqt.a
 #am__append_48 = $(BITCOIN_QT_WINDOWS_CPP)
@@ -193,11 +196,11 @@ am__append_54 = $(CLEAN_QT)
 # Copyright (c) 2013-2016 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-am__append_55 = qt/test/test_pengolincoin-qt
-am__append_56 = qt/test/test_pengolincoin-qt
-am__append_57 = $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
-#am__append_58 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
-am__append_59 = $(CLEAN_BITCOIN_QT_TEST)
+#am__append_55 = qt/test/test_pengolincoin-qt
+#am__append_56 = qt/test/test_pengolincoin-qt
+#am__append_57 = $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+##am__append_58 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+#am__append_59 = $(CLEAN_BITCOIN_QT_TEST)
 subdir = src
 SUBDIRS =
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -236,43 +239,43 @@ CONFIG_CLEAN_VPATH_FILES =
 am__EXEEXT_1 = pengolincoind$(EXEEXT)
 am__EXEEXT_2 = pengolincoin-cli$(EXEEXT) \
 	pengolincoin-tx$(EXEEXT)
-am__EXEEXT_3 = test/test_pengolincoin$(EXEEXT)
-am__EXEEXT_4 = bench/bench_pengolincoin$(EXEEXT)
+#am__EXEEXT_3 = test/test_pengolincoin$(EXEEXT)
+#am__EXEEXT_4 = bench/bench_pengolincoin$(EXEEXT)
 am__EXEEXT_5 = qt/pengolincoin-qt$(EXEEXT)
-am__EXEEXT_6 =  \
-	qt/test/test_pengolincoin-qt$(EXEEXT)
+#am__EXEEXT_6 =  \
+#	qt/test/test_pengolincoin-qt$(EXEEXT)
 am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libdir)" \
 	"$(DESTDIR)$(includedir)"
-am__EXEEXT_7 =  \
-	test/fuzz/addr_info_deserialize$(EXEEXT) \
-	test/fuzz/address_deserialize$(EXEEXT) \
-	test/fuzz/addrman_deserialize$(EXEEXT) \
-	test/fuzz/banentry_deserialize$(EXEEXT) \
-	test/fuzz/block_deserialize$(EXEEXT) \
-	test/fuzz/block_file_info_deserialize$(EXEEXT) \
-	test/fuzz/blockheader_deserialize$(EXEEXT) \
-	test/fuzz/blocklocator_deserialize$(EXEEXT) \
-	test/fuzz/blockmerkleroot$(EXEEXT) \
-	test/fuzz/blockundo_deserialize$(EXEEXT) \
-	test/fuzz/bloomfilter_deserialize$(EXEEXT) \
-	test/fuzz/coins_deserialize$(EXEEXT) \
-	test/fuzz/diskblockindex_deserialize$(EXEEXT) \
-	test/fuzz/fee_rate_deserialize$(EXEEXT) \
-	test/fuzz/inv_deserialize$(EXEEXT) \
-	test/fuzz/key_origin_info_deserialize$(EXEEXT) \
-	test/fuzz/merkle_block_deserialize$(EXEEXT) \
-	test/fuzz/messageheader_deserialize$(EXEEXT) \
-	test/fuzz/netaddr_deserialize$(EXEEXT) \
-	test/fuzz/out_point_deserialize$(EXEEXT) \
-	test/fuzz/pub_key_deserialize$(EXEEXT) \
-	test/fuzz/script_deserialize$(EXEEXT) \
-	test/fuzz/service_deserialize$(EXEEXT) \
-	test/fuzz/sub_net_deserialize$(EXEEXT) \
-	test/fuzz/transaction$(EXEEXT) \
-	test/fuzz/tx_in_deserialize$(EXEEXT) \
-	test/fuzz/txoutcompressor_deserialize$(EXEEXT) \
-	test/fuzz/txundo_deserialize$(EXEEXT)
-#am__EXEEXT_8 = $(am__EXEEXT_7)
+#am__EXEEXT_7 =  \
+#	test/fuzz/addr_info_deserialize$(EXEEXT) \
+#	test/fuzz/address_deserialize$(EXEEXT) \
+#	test/fuzz/addrman_deserialize$(EXEEXT) \
+#	test/fuzz/banentry_deserialize$(EXEEXT) \
+#	test/fuzz/block_deserialize$(EXEEXT) \
+#	test/fuzz/block_file_info_deserialize$(EXEEXT) \
+#	test/fuzz/blockheader_deserialize$(EXEEXT) \
+#	test/fuzz/blocklocator_deserialize$(EXEEXT) \
+#	test/fuzz/blockmerkleroot$(EXEEXT) \
+#	test/fuzz/blockundo_deserialize$(EXEEXT) \
+#	test/fuzz/bloomfilter_deserialize$(EXEEXT) \
+#	test/fuzz/coins_deserialize$(EXEEXT) \
+#	test/fuzz/diskblockindex_deserialize$(EXEEXT) \
+#	test/fuzz/fee_rate_deserialize$(EXEEXT) \
+#	test/fuzz/inv_deserialize$(EXEEXT) \
+#	test/fuzz/key_origin_info_deserialize$(EXEEXT) \
+#	test/fuzz/merkle_block_deserialize$(EXEEXT) \
+#	test/fuzz/messageheader_deserialize$(EXEEXT) \
+#	test/fuzz/netaddr_deserialize$(EXEEXT) \
+#	test/fuzz/out_point_deserialize$(EXEEXT) \
+#	test/fuzz/pub_key_deserialize$(EXEEXT) \
+#	test/fuzz/script_deserialize$(EXEEXT) \
+#	test/fuzz/service_deserialize$(EXEEXT) \
+#	test/fuzz/sub_net_deserialize$(EXEEXT) \
+#	test/fuzz/transaction$(EXEEXT) \
+#	test/fuzz/tx_in_deserialize$(EXEEXT) \
+#	test/fuzz/txoutcompressor_deserialize$(EXEEXT) \
+#	test/fuzz/txundo_deserialize$(EXEEXT)
+##am__EXEEXT_8 = $(am__EXEEXT_7)
 PROGRAMS = $(bin_PROGRAMS) $(noinst_PROGRAMS)
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
 am__vpath_adj = case $$p in \
@@ -351,7 +354,8 @@ am_crypto_libbitcoin_crypto_a_OBJECTS =  \
 	crypto/libbitcoin_crypto_a-groestl.$(OBJEXT) \
 	crypto/libbitcoin_crypto_a-jh.$(OBJEXT) \
 	crypto/libbitcoin_crypto_a-keccak.$(OBJEXT) \
-	crypto/libbitcoin_crypto_a-skein.$(OBJEXT)
+	crypto/libbitcoin_crypto_a-skein.$(OBJEXT) \
+	crypto/libbitcoin_crypto_a-sha3.$(OBJEXT)
 crypto_libbitcoin_crypto_a_OBJECTS =  \
 	$(am_crypto_libbitcoin_crypto_a_OBJECTS)
 leveldb_libleveldb_a_AR = $(AR) $(ARFLAGS)
@@ -575,24 +579,25 @@ am__libbitcoin_util_a_SOURCES_DIST = arith_uint256.cpp \
 	compat/glibcxx_sanity.cpp compat/strnlen.cpp fs.cpp \
 	interfaces/handler.cpp logging.cpp random.cpp randomenv.cpp \
 	rpc/protocol.cpp support/cleanse.cpp support/lockedpool.cpp \
-	sync.cpp threadinterrupt.cpp uint256.cpp util/system.cpp \
-	utilmoneystr.cpp util/threadnames.cpp utilstrencodings.cpp \
-	util/string.cpp utiltime.cpp activemasternode.h addrdb.h \
-	addrman.h attributes.h arith_uint256.h amount.h base58.h \
-	bip38.h bloom.h blocksignature.h chain.h chainparams.h \
-	chainparamsbase.h chainparamsseeds.h checkpoints.h \
-	checkqueue.h clientversion.h coincontrol.h coins.h compat.h \
-	compat/byteswap.h compat/cpuid.h compat/endian.h \
-	compat/sanity.h compressor.h consensus/consensus.h \
-	consensus/merkle.h consensus/validation.h \
-	consensus/tx_verify.h consensus/zerocoin_verify.h \
-	consensus/params.h consensus/upgrades.h primitives/block.h \
+	sync.cpp threadinterrupt.cpp util/asmap.cpp uint256.cpp \
+	util/system.cpp utilmoneystr.cpp util/threadnames.cpp \
+	utilstrencodings.cpp util/string.cpp utiltime.cpp \
+	activemasternode.h addrdb.h addrman.h attributes.h \
+	arith_uint256.h amount.h base58.h bip38.h bloom.h \
+	blocksignature.h chain.h chainparams.h chainparamsbase.h \
+	chainparamsseeds.h checkpoints.h checkqueue.h clientversion.h \
+	coincontrol.h coins.h compat.h compat/byteswap.h \
+	compat/cpuid.h compat/endian.h compat/sanity.h compressor.h \
+	consensus/consensus.h consensus/merkle.h \
+	consensus/validation.h consensus/tx_verify.h \
+	consensus/zerocoin_verify.h consensus/params.h \
+	consensus/upgrades.h primitives/block.h \
 	primitives/transaction.h core_io.h cuckoocache.h crypter.h \
 	cyclingvector.h evo/deterministicmns.h evo/evodb.h \
 	evo/evonotificationinterface.h evo/providertx.h \
-	evo/specialtx.h pairresult.h addressbook.h wallet/db.h \
-	flatfile.h fs.h hash.h httprpc.h httpserver.h indirectmap.h \
-	init.h interfaces/handler.h interfaces/wallet.h invalid.h \
+	evo/specialtx.h addressbook.h wallet/db.h flatfile.h fs.h \
+	hash.h httprpc.h httpserver.h indirectmap.h init.h \
+	interfaces/handler.h interfaces/wallet.h invalid.h \
 	invalid_outpoints.json.h legacy/stakemodifier.h kernel.h key.h \
 	key_io.h keystore.h dbwrapper.h limitedmap.h logging.h \
 	legacy/validation_zerocoin_legacy.h \
@@ -617,10 +622,10 @@ am__libbitcoin_util_a_SOURCES_DIST = arith_uint256.cpp \
 	support/lockedpool.h sync.h threadsafety.h threadinterrupt.h \
 	timedata.h tinyformat.h torcontrol.h txdb.h txmempool.h \
 	guiinterface.h guiinterfaceutil.h uint256.h undo.h \
-	util/blockstatecatcher.h util/system.h util/macros.h \
-	util/string.h util/threadnames.h utilstrencodings.h \
-	utilmoneystr.h utiltime.h util/vector.h validation.h \
-	validationinterface.h version.h wallet/hdchain.h \
+	util/asmap.h util/blockstatecatcher.h util/system.h \
+	util/macros.h util/string.h util/threadnames.h \
+	utilstrencodings.h utilmoneystr.h utiltime.h util/vector.h \
+	validation.h validationinterface.h version.h wallet/hdchain.h \
 	wallet/rpcwallet.h wallet/scriptpubkeyman.h destination_io.h \
 	wallet/fees.h wallet/init.h wallet/wallet.h wallet/walletdb.h \
 	wallet/walletutil.h warnings.h zpgochain.h zpgo/zpos.h \
@@ -652,6 +657,7 @@ am_libbitcoin_util_a_OBJECTS =  \
 	support/libbitcoin_util_a-lockedpool.$(OBJEXT) \
 	libbitcoin_util_a-sync.$(OBJEXT) \
 	libbitcoin_util_a-threadinterrupt.$(OBJEXT) \
+	util/libbitcoin_util_a-asmap.$(OBJEXT) \
 	libbitcoin_util_a-uint256.$(OBJEXT) \
 	util/libbitcoin_util_a-system.$(OBJEXT) \
 	libbitcoin_util_a-utilmoneystr.$(OBJEXT) \
@@ -917,12 +923,10 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/pengolincoin/forms/splash.ui qt/pengolincoin.qrc \
 	qt/pengolincoin_locale.qrc qt/locale/pengolincoin_de.ts \
 	qt/locale/pengolincoin_en.ts qt/locale/pengolincoin_en_US.ts \
-	qt/locale/pengolincoin_es.ts qt/locale/pengolincoin_es_ES.ts \
-	qt/locale/pengolincoin_fr_FR.ts \
+	qt/locale/pengolincoin_es.ts qt/locale/pengolincoin_fr_FR.ts \
 	qt/locale/pengolincoin_hr_HR.ts qt/locale/pengolincoin_it.ts \
 	qt/locale/pengolincoin_ko_KR.ts qt/locale/pengolincoin_nl.ts \
 	qt/locale/pengolincoin_pl.ts qt/locale/pengolincoin_ru.ts \
-	qt/locale/pengolincoin_tr.ts qt/locale/pengolincoin_zh_CN.ts \
 	qt/res/icons/bitcoin.ico qt/res/icons/bitcoin.png \
 	qt/res/icons/bitcoin_testnet.ico \
 	qt/res/icons/bitcoin_testnet.png \
@@ -1383,24 +1387,24 @@ am__bench_bench_pengolincoin_SOURCES_DIST =  \
 	bench/data.h bench/data.cpp bench/chacha20.cpp \
 	bench/crypto_hash.cpp bench/lockedpool.cpp bench/perf.cpp \
 	bench/perf.h bench/prevector.cpp bench/util_time.cpp
-am_bench_bench_pengolincoin_OBJECTS =  \
-	$(am__objects_3) \
-	bench/bench_pengolincoin-bench_pengolincoin.$(OBJEXT) \
-	bench/bench_pengolincoin-bench.$(OBJEXT) \
-	bench/bench_pengolincoin-Examples.$(OBJEXT) \
-	bench/bench_pengolincoin-base58.$(OBJEXT) \
-	bench/bench_pengolincoin-checkblock.$(OBJEXT) \
-	bench/bench_pengolincoin-checkqueue.$(OBJEXT) \
-	bench/bench_pengolincoin-data.$(OBJEXT) \
-	bench/bench_pengolincoin-chacha20.$(OBJEXT) \
-	bench/bench_pengolincoin-crypto_hash.$(OBJEXT) \
-	bench/bench_pengolincoin-lockedpool.$(OBJEXT) \
-	bench/bench_pengolincoin-perf.$(OBJEXT) \
-	bench/bench_pengolincoin-prevector.$(OBJEXT) \
-	bench/bench_pengolincoin-util_time.$(OBJEXT)
-am__objects_16 = $(am__objects_3)
-nodist_bench_bench_pengolincoin_OBJECTS =  \
-	$(am__objects_16)
+#am_bench_bench_pengolincoin_OBJECTS =  \
+#	$(am__objects_3) \
+#	bench/bench_pengolincoin-bench_pengolincoin.$(OBJEXT) \
+#	bench/bench_pengolincoin-bench.$(OBJEXT) \
+#	bench/bench_pengolincoin-Examples.$(OBJEXT) \
+#	bench/bench_pengolincoin-base58.$(OBJEXT) \
+#	bench/bench_pengolincoin-checkblock.$(OBJEXT) \
+#	bench/bench_pengolincoin-checkqueue.$(OBJEXT) \
+#	bench/bench_pengolincoin-data.$(OBJEXT) \
+#	bench/bench_pengolincoin-chacha20.$(OBJEXT) \
+#	bench/bench_pengolincoin-crypto_hash.$(OBJEXT) \
+#	bench/bench_pengolincoin-lockedpool.$(OBJEXT) \
+#	bench/bench_pengolincoin-perf.$(OBJEXT) \
+#	bench/bench_pengolincoin-prevector.$(OBJEXT) \
+#	bench/bench_pengolincoin-util_time.$(OBJEXT)
+#am__objects_16 = $(am__objects_3)
+#nodist_bench_bench_pengolincoin_OBJECTS =  \
+#	$(am__objects_16)
 bench_bench_pengolincoin_OBJECTS =  \
 	$(am_bench_bench_pengolincoin_OBJECTS) \
 	$(nodist_bench_bench_pengolincoin_OBJECTS)
@@ -1409,21 +1413,21 @@ am__DEPENDENCIES_2 = $(am__append_25)
 am__DEPENDENCIES_3 =
 #am__DEPENDENCIES_4 = $(am__DEPENDENCIES_3)
 am__DEPENDENCIES_4 = univalue/libunivalue.la
-#am__DEPENDENCIES_5 =  \
-#	$(LIBBITCOIN_ZMQ) \
-#	$(am__DEPENDENCIES_3)
-bench_bench_pengolincoin_DEPENDENCIES =  \
-	$(LIBBITCOIN_SERVER) $(LIBBITCOIN_WALLET) \
-	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-	$(LIBBITCOIN_CRYPTO) $(am__DEPENDENCIES_1) \
-	$(am__DEPENDENCIES_2) $(LIBSECP256K1) \
-	$(am__DEPENDENCIES_4) \
-	$(LIBBITCOIN_ZEROCOIN) $(LIBSAPLING) \
-	$(LIBRUSTZCASH) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_5) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(BLS_LIBS)
+##am__DEPENDENCIES_5 =  \
+##	$(LIBBITCOIN_ZMQ) \
+##	$(am__DEPENDENCIES_3)
+#bench_bench_pengolincoin_DEPENDENCIES =  \
+#	$(LIBBITCOIN_SERVER) $(LIBBITCOIN_WALLET) \
+#	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
+#	$(LIBBITCOIN_CRYPTO) $(am__DEPENDENCIES_1) \
+#	$(am__DEPENDENCIES_2) $(LIBSECP256K1) \
+#	$(am__DEPENDENCIES_4) \
+#	$(LIBBITCOIN_ZEROCOIN) $(LIBSAPLING) \
+#	$(LIBRUSTZCASH) $(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_5) $(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_3) $(BLS_LIBS)
 bench_bench_pengolincoin_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(bench_bench_pengolincoin_CXXFLAGS) $(CXXFLAGS) \
@@ -1513,147 +1517,147 @@ qt_pengolincoin_qt_LINK = $(LIBTOOL) $(AM_V_lt) \
 	$(qt_pengolincoin_qt_LDFLAGS) $(LDFLAGS) -o $@
 am__qt_test_test_pengolincoin_qt_SOURCES_DIST = qt/test/test_main.cpp \
 	qt/test/uritests.cpp qt/test/uritests.h
-am_qt_test_test_pengolincoin_qt_OBJECTS = qt/test/test_pengolincoin_qt-test_main.$(OBJEXT) \
-	qt/test/test_pengolincoin_qt-uritests.$(OBJEXT) \
-	$(am__objects_3)
-am__objects_24 = qt/test/test_pengolincoin_qt-moc_uritests.$(OBJEXT)
-nodist_qt_test_test_pengolincoin_qt_OBJECTS =  \
-	$(am__objects_24)
+#am_qt_test_test_pengolincoin_qt_OBJECTS = qt/test/test_pengolincoin_qt-test_main.$(OBJEXT) \
+#	qt/test/test_pengolincoin_qt-uritests.$(OBJEXT) \
+#	$(am__objects_3)
+#am__objects_24 = qt/test/test_pengolincoin_qt-moc_uritests.$(OBJEXT)
+#nodist_qt_test_test_pengolincoin_qt_OBJECTS =  \
+#	$(am__objects_24)
 qt_test_test_pengolincoin_qt_OBJECTS =  \
 	$(am_qt_test_test_pengolincoin_qt_OBJECTS) \
 	$(nodist_qt_test_test_pengolincoin_qt_OBJECTS)
-#am__DEPENDENCIES_7 =  \
-#	$(LIBBITCOIN_ZMQ) \
-#	$(am__DEPENDENCIES_3)
-qt_test_test_pengolincoin_qt_DEPENDENCIES =  \
-	$(LIBBITCOINQT) $(LIBBITCOIN_SERVER) \
-	$(am__append_57) $(am__DEPENDENCIES_7) \
-	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
-	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
-	$(am__DEPENDENCIES_4) \
-	$(LIBBITCOIN_ZEROCOIN) \
-	$(am__DEPENDENCIES_1) $(LIBSAPLING) \
-	$(LIBRUSTZCASH) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_2) \
-	$(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(LIBSECP256K1) \
-	$(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(BLS_LIBS)
+##am__DEPENDENCIES_7 =  \
+##	$(LIBBITCOIN_ZMQ) \
+##	$(am__DEPENDENCIES_3)
+#qt_test_test_pengolincoin_qt_DEPENDENCIES =  \
+#	$(LIBBITCOINQT) $(LIBBITCOIN_SERVER) \
+#	$(am__append_57) $(am__DEPENDENCIES_7) \
+#	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
+#	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
+#	$(am__DEPENDENCIES_4) \
+#	$(LIBBITCOIN_ZEROCOIN) \
+#	$(am__DEPENDENCIES_1) $(LIBSAPLING) \
+#	$(LIBRUSTZCASH) $(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_2) \
+#	$(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_3) $(LIBSECP256K1) \
+#	$(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_3) $(BLS_LIBS)
 qt_test_test_pengolincoin_qt_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(qt_test_test_pengolincoin_qt_CXXFLAGS) $(CXXFLAGS) \
 	$(qt_test_test_pengolincoin_qt_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_addr_info_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_25 = test/fuzz/addr_info_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_addr_info_deserialize_OBJECTS =  \
-#	$(am__objects_25) \
-#	test/fuzz/addr_info_deserialize-deserialize.$(OBJEXT)
+#am__objects_25 = test/fuzz/addr_info_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_addr_info_deserialize_OBJECTS =  \
+##	$(am__objects_25) \
+##	test/fuzz/addr_info_deserialize-deserialize.$(OBJEXT)
 test_fuzz_addr_info_deserialize_OBJECTS =  \
 	$(am_test_fuzz_addr_info_deserialize_OBJECTS)
-##am__DEPENDENCIES_8 = $(LIBBITCOIN_ZMQ) \
+###am__DEPENDENCIES_8 = $(LIBBITCOIN_ZMQ) \
+###	$(am__DEPENDENCIES_3)
+##am__DEPENDENCIES_9 =  \
+##	$(am__DEPENDENCIES_8) \
+##	$(LIBBITCOIN_SERVER) \
+##	$(LIBBITCOIN_CLI) \
+##	$(LIBBITCOIN_COMMON) \
+##	$(LIBBITCOIN_ZEROCOIN) \
+##	$(LIBBITCOIN_UTIL) \
+##	$(am__DEPENDENCIES_4) \
+##	$(am__DEPENDENCIES_1) \
+##	$(am__DEPENDENCIES_2) \
+##	$(am__DEPENDENCIES_3) \
+##	$(LIBSECP256K1) \
+##	$(am__DEPENDENCIES_3) \
+##	$(am__DEPENDENCIES_3) \
+##	$(BLS_LIBS) \
+##	$(am__append_41) \
+##	$(LIBSAPLING) \
+##	$(LIBBITCOIN_CRYPTO) \
+##	$(LIBRUSTZCASH) \
+##	$(am__DEPENDENCIES_3) \
+##	$(am__DEPENDENCIES_3) \
 ##	$(am__DEPENDENCIES_3)
-#am__DEPENDENCIES_9 =  \
-#	$(am__DEPENDENCIES_8) \
-#	$(LIBBITCOIN_SERVER) \
-#	$(LIBBITCOIN_CLI) \
-#	$(LIBBITCOIN_COMMON) \
-#	$(LIBBITCOIN_ZEROCOIN) \
-#	$(LIBBITCOIN_UTIL) \
-#	$(am__DEPENDENCIES_4) \
-#	$(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_2) \
-#	$(am__DEPENDENCIES_3) \
-#	$(LIBSECP256K1) \
-#	$(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) \
-#	$(BLS_LIBS) \
-#	$(am__append_41) \
-#	$(LIBSAPLING) \
-#	$(LIBBITCOIN_CRYPTO) \
-#	$(LIBRUSTZCASH) \
-#	$(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3) \
-#	$(am__DEPENDENCIES_3)
-#test_fuzz_addr_info_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_addr_info_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_addr_info_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_addr_info_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_addr_info_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_address_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_26 = test/fuzz/address_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_address_deserialize_OBJECTS =  \
-#	$(am__objects_26) \
-#	test/fuzz/address_deserialize-deserialize.$(OBJEXT)
+#am__objects_26 = test/fuzz/address_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_address_deserialize_OBJECTS =  \
+##	$(am__objects_26) \
+##	test/fuzz/address_deserialize-deserialize.$(OBJEXT)
 test_fuzz_address_deserialize_OBJECTS =  \
 	$(am_test_fuzz_address_deserialize_OBJECTS)
-#test_fuzz_address_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_address_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_address_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_address_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_address_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_addrman_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_27 = test/fuzz/addrman_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_addrman_deserialize_OBJECTS =  \
-#	$(am__objects_27) \
-#	test/fuzz/addrman_deserialize-deserialize.$(OBJEXT)
+#am__objects_27 = test/fuzz/addrman_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_addrman_deserialize_OBJECTS =  \
+##	$(am__objects_27) \
+##	test/fuzz/addrman_deserialize-deserialize.$(OBJEXT)
 test_fuzz_addrman_deserialize_OBJECTS =  \
 	$(am_test_fuzz_addrman_deserialize_OBJECTS)
-#test_fuzz_addrman_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_addrman_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_addrman_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_addrman_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_addrman_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_banentry_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_28 = test/fuzz/banentry_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_banentry_deserialize_OBJECTS =  \
-#	$(am__objects_28) \
-#	test/fuzz/banentry_deserialize-deserialize.$(OBJEXT)
+#am__objects_28 = test/fuzz/banentry_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_banentry_deserialize_OBJECTS =  \
+##	$(am__objects_28) \
+##	test/fuzz/banentry_deserialize-deserialize.$(OBJEXT)
 test_fuzz_banentry_deserialize_OBJECTS =  \
 	$(am_test_fuzz_banentry_deserialize_OBJECTS)
-#test_fuzz_banentry_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_banentry_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_banentry_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_banentry_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_banentry_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_block_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_29 =  \
-	test/fuzz/block_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_block_deserialize_OBJECTS =  \
-#	$(am__objects_29) \
-#	test/fuzz/block_deserialize-deserialize.$(OBJEXT)
+#am__objects_29 =  \
+#	test/fuzz/block_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_block_deserialize_OBJECTS =  \
+##	$(am__objects_29) \
+##	test/fuzz/block_deserialize-deserialize.$(OBJEXT)
 test_fuzz_block_deserialize_OBJECTS =  \
 	$(am_test_fuzz_block_deserialize_OBJECTS)
-#test_fuzz_block_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_block_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_block_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_block_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_block_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_block_file_info_deserialize_SOURCES_DIST =  \
 	test/fuzz/fuzz.cpp test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_30 = test/fuzz/block_file_info_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_block_file_info_deserialize_OBJECTS =  \
-#	$(am__objects_30) \
-#	test/fuzz/block_file_info_deserialize-deserialize.$(OBJEXT)
+#am__objects_30 = test/fuzz/block_file_info_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_block_file_info_deserialize_OBJECTS =  \
+##	$(am__objects_30) \
+##	test/fuzz/block_file_info_deserialize-deserialize.$(OBJEXT)
 test_fuzz_block_file_info_deserialize_OBJECTS =  \
 	$(am_test_fuzz_block_file_info_deserialize_OBJECTS)
-#test_fuzz_block_file_info_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_block_file_info_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_block_file_info_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	--tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
 	$(CXXLD) $(test_fuzz_block_file_info_deserialize_CXXFLAGS) \
@@ -1661,14 +1665,14 @@ test_fuzz_block_file_info_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	$(LDFLAGS) -o $@
 am__test_fuzz_blockheader_deserialize_SOURCES_DIST =  \
 	test/fuzz/fuzz.cpp test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_31 = test/fuzz/blockheader_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_blockheader_deserialize_OBJECTS =  \
-#	$(am__objects_31) \
-#	test/fuzz/blockheader_deserialize-deserialize.$(OBJEXT)
+#am__objects_31 = test/fuzz/blockheader_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_blockheader_deserialize_OBJECTS =  \
+##	$(am__objects_31) \
+##	test/fuzz/blockheader_deserialize-deserialize.$(OBJEXT)
 test_fuzz_blockheader_deserialize_OBJECTS =  \
 	$(am_test_fuzz_blockheader_deserialize_OBJECTS)
-#test_fuzz_blockheader_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_blockheader_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_blockheader_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	--tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
 	$(CXXLD) $(test_fuzz_blockheader_deserialize_CXXFLAGS) \
@@ -1676,14 +1680,14 @@ test_fuzz_blockheader_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	$(LDFLAGS) -o $@
 am__test_fuzz_blocklocator_deserialize_SOURCES_DIST =  \
 	test/fuzz/fuzz.cpp test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_32 = test/fuzz/blocklocator_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_blocklocator_deserialize_OBJECTS =  \
-#	$(am__objects_32) \
-#	test/fuzz/blocklocator_deserialize-deserialize.$(OBJEXT)
+#am__objects_32 = test/fuzz/blocklocator_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_blocklocator_deserialize_OBJECTS =  \
+##	$(am__objects_32) \
+##	test/fuzz/blocklocator_deserialize-deserialize.$(OBJEXT)
 test_fuzz_blocklocator_deserialize_OBJECTS =  \
 	$(am_test_fuzz_blocklocator_deserialize_OBJECTS)
-#test_fuzz_blocklocator_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_blocklocator_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_blocklocator_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	--tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
 	$(CXXLD) $(test_fuzz_blocklocator_deserialize_CXXFLAGS) \
@@ -1691,43 +1695,43 @@ test_fuzz_blocklocator_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	$(LDFLAGS) -o $@
 am__test_fuzz_blockmerkleroot_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_33 =  \
-	test/fuzz/blockmerkleroot-fuzz.$(OBJEXT)
-#am_test_fuzz_blockmerkleroot_OBJECTS =  \
-#	$(am__objects_33) \
-#	test/fuzz/blockmerkleroot-deserialize.$(OBJEXT)
+#am__objects_33 =  \
+#	test/fuzz/blockmerkleroot-fuzz.$(OBJEXT)
+##am_test_fuzz_blockmerkleroot_OBJECTS =  \
+##	$(am__objects_33) \
+##	test/fuzz/blockmerkleroot-deserialize.$(OBJEXT)
 test_fuzz_blockmerkleroot_OBJECTS =  \
 	$(am_test_fuzz_blockmerkleroot_OBJECTS)
-#test_fuzz_blockmerkleroot_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_blockmerkleroot_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_blockmerkleroot_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_blockmerkleroot_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_blockmerkleroot_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_blockundo_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_34 = test/fuzz/blockundo_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_blockundo_deserialize_OBJECTS =  \
-#	$(am__objects_34) \
-#	test/fuzz/blockundo_deserialize-deserialize.$(OBJEXT)
+#am__objects_34 = test/fuzz/blockundo_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_blockundo_deserialize_OBJECTS =  \
+##	$(am__objects_34) \
+##	test/fuzz/blockundo_deserialize-deserialize.$(OBJEXT)
 test_fuzz_blockundo_deserialize_OBJECTS =  \
 	$(am_test_fuzz_blockundo_deserialize_OBJECTS)
-#test_fuzz_blockundo_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_blockundo_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_blockundo_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_blockundo_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_blockundo_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_bloomfilter_deserialize_SOURCES_DIST =  \
 	test/fuzz/fuzz.cpp test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_35 = test/fuzz/bloomfilter_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_bloomfilter_deserialize_OBJECTS =  \
-#	$(am__objects_35) \
-#	test/fuzz/bloomfilter_deserialize-deserialize.$(OBJEXT)
+#am__objects_35 = test/fuzz/bloomfilter_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_bloomfilter_deserialize_OBJECTS =  \
+##	$(am__objects_35) \
+##	test/fuzz/bloomfilter_deserialize-deserialize.$(OBJEXT)
 test_fuzz_bloomfilter_deserialize_OBJECTS =  \
 	$(am_test_fuzz_bloomfilter_deserialize_OBJECTS)
-#test_fuzz_bloomfilter_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_bloomfilter_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_bloomfilter_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	--tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
 	$(CXXLD) $(test_fuzz_bloomfilter_deserialize_CXXFLAGS) \
@@ -1735,29 +1739,29 @@ test_fuzz_bloomfilter_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	$(LDFLAGS) -o $@
 am__test_fuzz_coins_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_36 =  \
-	test/fuzz/coins_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_coins_deserialize_OBJECTS =  \
-#	$(am__objects_36) \
-#	test/fuzz/coins_deserialize-deserialize.$(OBJEXT)
+#am__objects_36 =  \
+#	test/fuzz/coins_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_coins_deserialize_OBJECTS =  \
+##	$(am__objects_36) \
+##	test/fuzz/coins_deserialize-deserialize.$(OBJEXT)
 test_fuzz_coins_deserialize_OBJECTS =  \
 	$(am_test_fuzz_coins_deserialize_OBJECTS)
-#test_fuzz_coins_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_coins_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_coins_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_coins_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_coins_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_diskblockindex_deserialize_SOURCES_DIST =  \
 	test/fuzz/fuzz.cpp test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_37 = test/fuzz/diskblockindex_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_diskblockindex_deserialize_OBJECTS =  \
-#	$(am__objects_37) \
-#	test/fuzz/diskblockindex_deserialize-deserialize.$(OBJEXT)
+#am__objects_37 = test/fuzz/diskblockindex_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_diskblockindex_deserialize_OBJECTS =  \
+##	$(am__objects_37) \
+##	test/fuzz/diskblockindex_deserialize-deserialize.$(OBJEXT)
 test_fuzz_diskblockindex_deserialize_OBJECTS =  \
 	$(am_test_fuzz_diskblockindex_deserialize_OBJECTS)
-#test_fuzz_diskblockindex_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_diskblockindex_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_diskblockindex_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	--tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
 	$(CXXLD) $(test_fuzz_diskblockindex_deserialize_CXXFLAGS) \
@@ -1765,43 +1769,43 @@ test_fuzz_diskblockindex_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	$(LDFLAGS) -o $@
 am__test_fuzz_fee_rate_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_38 = test/fuzz/fee_rate_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_fee_rate_deserialize_OBJECTS =  \
-#	$(am__objects_38) \
-#	test/fuzz/fee_rate_deserialize-deserialize.$(OBJEXT)
+#am__objects_38 = test/fuzz/fee_rate_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_fee_rate_deserialize_OBJECTS =  \
+##	$(am__objects_38) \
+##	test/fuzz/fee_rate_deserialize-deserialize.$(OBJEXT)
 test_fuzz_fee_rate_deserialize_OBJECTS =  \
 	$(am_test_fuzz_fee_rate_deserialize_OBJECTS)
-#test_fuzz_fee_rate_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_fee_rate_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_fee_rate_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_fee_rate_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_fee_rate_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_inv_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_39 =  \
-	test/fuzz/inv_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_inv_deserialize_OBJECTS =  \
-#	$(am__objects_39) \
-#	test/fuzz/inv_deserialize-deserialize.$(OBJEXT)
+#am__objects_39 =  \
+#	test/fuzz/inv_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_inv_deserialize_OBJECTS =  \
+##	$(am__objects_39) \
+##	test/fuzz/inv_deserialize-deserialize.$(OBJEXT)
 test_fuzz_inv_deserialize_OBJECTS =  \
 	$(am_test_fuzz_inv_deserialize_OBJECTS)
-#test_fuzz_inv_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_inv_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_inv_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_inv_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_inv_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_key_origin_info_deserialize_SOURCES_DIST =  \
 	test/fuzz/fuzz.cpp test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_40 = test/fuzz/key_origin_info_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_key_origin_info_deserialize_OBJECTS =  \
-#	$(am__objects_40) \
-#	test/fuzz/key_origin_info_deserialize-deserialize.$(OBJEXT)
+#am__objects_40 = test/fuzz/key_origin_info_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_key_origin_info_deserialize_OBJECTS =  \
+##	$(am__objects_40) \
+##	test/fuzz/key_origin_info_deserialize-deserialize.$(OBJEXT)
 test_fuzz_key_origin_info_deserialize_OBJECTS =  \
 	$(am_test_fuzz_key_origin_info_deserialize_OBJECTS)
-#test_fuzz_key_origin_info_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_key_origin_info_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_key_origin_info_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	--tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
 	$(CXXLD) $(test_fuzz_key_origin_info_deserialize_CXXFLAGS) \
@@ -1809,14 +1813,14 @@ test_fuzz_key_origin_info_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	$(LDFLAGS) -o $@
 am__test_fuzz_merkle_block_deserialize_SOURCES_DIST =  \
 	test/fuzz/fuzz.cpp test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_41 = test/fuzz/merkle_block_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_merkle_block_deserialize_OBJECTS =  \
-#	$(am__objects_41) \
-#	test/fuzz/merkle_block_deserialize-deserialize.$(OBJEXT)
+#am__objects_41 = test/fuzz/merkle_block_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_merkle_block_deserialize_OBJECTS =  \
+##	$(am__objects_41) \
+##	test/fuzz/merkle_block_deserialize-deserialize.$(OBJEXT)
 test_fuzz_merkle_block_deserialize_OBJECTS =  \
 	$(am_test_fuzz_merkle_block_deserialize_OBJECTS)
-#test_fuzz_merkle_block_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_merkle_block_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_merkle_block_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	--tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
 	$(CXXLD) $(test_fuzz_merkle_block_deserialize_CXXFLAGS) \
@@ -1824,14 +1828,14 @@ test_fuzz_merkle_block_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	$(LDFLAGS) -o $@
 am__test_fuzz_messageheader_deserialize_SOURCES_DIST =  \
 	test/fuzz/fuzz.cpp test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_42 = test/fuzz/messageheader_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_messageheader_deserialize_OBJECTS =  \
-#	$(am__objects_42) \
-#	test/fuzz/messageheader_deserialize-deserialize.$(OBJEXT)
+#am__objects_42 = test/fuzz/messageheader_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_messageheader_deserialize_OBJECTS =  \
+##	$(am__objects_42) \
+##	test/fuzz/messageheader_deserialize-deserialize.$(OBJEXT)
 test_fuzz_messageheader_deserialize_OBJECTS =  \
 	$(am_test_fuzz_messageheader_deserialize_OBJECTS)
-#test_fuzz_messageheader_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_messageheader_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_messageheader_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	--tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
 	$(CXXLD) $(test_fuzz_messageheader_deserialize_CXXFLAGS) \
@@ -1839,127 +1843,127 @@ test_fuzz_messageheader_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	$(LDFLAGS) -o $@
 am__test_fuzz_netaddr_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_43 = test/fuzz/netaddr_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_netaddr_deserialize_OBJECTS =  \
-#	$(am__objects_43) \
-#	test/fuzz/netaddr_deserialize-deserialize.$(OBJEXT)
+#am__objects_43 = test/fuzz/netaddr_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_netaddr_deserialize_OBJECTS =  \
+##	$(am__objects_43) \
+##	test/fuzz/netaddr_deserialize-deserialize.$(OBJEXT)
 test_fuzz_netaddr_deserialize_OBJECTS =  \
 	$(am_test_fuzz_netaddr_deserialize_OBJECTS)
-#test_fuzz_netaddr_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_netaddr_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_netaddr_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_netaddr_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_netaddr_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_out_point_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_44 = test/fuzz/out_point_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_out_point_deserialize_OBJECTS =  \
-#	$(am__objects_44) \
-#	test/fuzz/out_point_deserialize-deserialize.$(OBJEXT)
+#am__objects_44 = test/fuzz/out_point_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_out_point_deserialize_OBJECTS =  \
+##	$(am__objects_44) \
+##	test/fuzz/out_point_deserialize-deserialize.$(OBJEXT)
 test_fuzz_out_point_deserialize_OBJECTS =  \
 	$(am_test_fuzz_out_point_deserialize_OBJECTS)
-#test_fuzz_out_point_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_out_point_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_out_point_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_out_point_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_out_point_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_pub_key_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_45 = test/fuzz/pub_key_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_pub_key_deserialize_OBJECTS =  \
-#	$(am__objects_45) \
-#	test/fuzz/pub_key_deserialize-deserialize.$(OBJEXT)
+#am__objects_45 = test/fuzz/pub_key_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_pub_key_deserialize_OBJECTS =  \
+##	$(am__objects_45) \
+##	test/fuzz/pub_key_deserialize-deserialize.$(OBJEXT)
 test_fuzz_pub_key_deserialize_OBJECTS =  \
 	$(am_test_fuzz_pub_key_deserialize_OBJECTS)
-#test_fuzz_pub_key_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_pub_key_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_pub_key_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_pub_key_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_pub_key_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_script_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_46 = test/fuzz/script_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_script_deserialize_OBJECTS =  \
-#	$(am__objects_46) \
-#	test/fuzz/script_deserialize-deserialize.$(OBJEXT)
+#am__objects_46 = test/fuzz/script_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_script_deserialize_OBJECTS =  \
+##	$(am__objects_46) \
+##	test/fuzz/script_deserialize-deserialize.$(OBJEXT)
 test_fuzz_script_deserialize_OBJECTS =  \
 	$(am_test_fuzz_script_deserialize_OBJECTS)
-#test_fuzz_script_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_script_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_script_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_script_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_script_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_service_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_47 = test/fuzz/service_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_service_deserialize_OBJECTS =  \
-#	$(am__objects_47) \
-#	test/fuzz/service_deserialize-deserialize.$(OBJEXT)
+#am__objects_47 = test/fuzz/service_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_service_deserialize_OBJECTS =  \
+##	$(am__objects_47) \
+##	test/fuzz/service_deserialize-deserialize.$(OBJEXT)
 test_fuzz_service_deserialize_OBJECTS =  \
 	$(am_test_fuzz_service_deserialize_OBJECTS)
-#test_fuzz_service_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_service_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_service_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_service_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_service_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_sub_net_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_48 = test/fuzz/sub_net_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_sub_net_deserialize_OBJECTS =  \
-#	$(am__objects_48) \
-#	test/fuzz/sub_net_deserialize-deserialize.$(OBJEXT)
+#am__objects_48 = test/fuzz/sub_net_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_sub_net_deserialize_OBJECTS =  \
+##	$(am__objects_48) \
+##	test/fuzz/sub_net_deserialize-deserialize.$(OBJEXT)
 test_fuzz_sub_net_deserialize_OBJECTS =  \
 	$(am_test_fuzz_sub_net_deserialize_OBJECTS)
-#test_fuzz_sub_net_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_sub_net_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_sub_net_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_sub_net_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_sub_net_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_transaction_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/transaction.cpp
-am__objects_49 =  \
-	test/fuzz/transaction-fuzz.$(OBJEXT)
-#am_test_fuzz_transaction_OBJECTS =  \
-#	$(am__objects_49) \
-#	test/fuzz/transaction-transaction.$(OBJEXT)
+#am__objects_49 =  \
+#	test/fuzz/transaction-fuzz.$(OBJEXT)
+##am_test_fuzz_transaction_OBJECTS =  \
+##	$(am__objects_49) \
+##	test/fuzz/transaction-transaction.$(OBJEXT)
 test_fuzz_transaction_OBJECTS = $(am_test_fuzz_transaction_OBJECTS)
-#test_fuzz_transaction_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_transaction_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_transaction_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_transaction_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_transaction_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_tx_in_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_50 =  \
-	test/fuzz/tx_in_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_tx_in_deserialize_OBJECTS =  \
-#	$(am__objects_50) \
-#	test/fuzz/tx_in_deserialize-deserialize.$(OBJEXT)
+#am__objects_50 =  \
+#	test/fuzz/tx_in_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_tx_in_deserialize_OBJECTS =  \
+##	$(am__objects_50) \
+##	test/fuzz/tx_in_deserialize-deserialize.$(OBJEXT)
 test_fuzz_tx_in_deserialize_OBJECTS =  \
 	$(am_test_fuzz_tx_in_deserialize_OBJECTS)
-#test_fuzz_tx_in_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_tx_in_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_tx_in_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_tx_in_deserialize_CXXFLAGS) $(CXXFLAGS) \
 	$(test_fuzz_tx_in_deserialize_LDFLAGS) $(LDFLAGS) -o $@
 am__test_fuzz_txoutcompressor_deserialize_SOURCES_DIST =  \
 	test/fuzz/fuzz.cpp test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_51 = test/fuzz/txoutcompressor_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_txoutcompressor_deserialize_OBJECTS =  \
-#	$(am__objects_51) \
-#	test/fuzz/txoutcompressor_deserialize-deserialize.$(OBJEXT)
+#am__objects_51 = test/fuzz/txoutcompressor_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_txoutcompressor_deserialize_OBJECTS =  \
+##	$(am__objects_51) \
+##	test/fuzz/txoutcompressor_deserialize-deserialize.$(OBJEXT)
 test_fuzz_txoutcompressor_deserialize_OBJECTS =  \
 	$(am_test_fuzz_txoutcompressor_deserialize_OBJECTS)
-#test_fuzz_txoutcompressor_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_txoutcompressor_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_txoutcompressor_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	--tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
 	$(CXXLD) $(test_fuzz_txoutcompressor_deserialize_CXXFLAGS) \
@@ -1967,14 +1971,14 @@ test_fuzz_txoutcompressor_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) \
 	$(LDFLAGS) -o $@
 am__test_fuzz_txundo_deserialize_SOURCES_DIST = test/fuzz/fuzz.cpp \
 	test/fuzz/fuzz.h test/fuzz/deserialize.cpp
-am__objects_52 = test/fuzz/txundo_deserialize-fuzz.$(OBJEXT)
-#am_test_fuzz_txundo_deserialize_OBJECTS =  \
-#	$(am__objects_52) \
-#	test/fuzz/txundo_deserialize-deserialize.$(OBJEXT)
+#am__objects_52 = test/fuzz/txundo_deserialize-fuzz.$(OBJEXT)
+##am_test_fuzz_txundo_deserialize_OBJECTS =  \
+##	$(am__objects_52) \
+##	test/fuzz/txundo_deserialize-deserialize.$(OBJEXT)
 test_fuzz_txundo_deserialize_OBJECTS =  \
 	$(am_test_fuzz_txundo_deserialize_OBJECTS)
-#test_fuzz_txundo_deserialize_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_9)
+##test_fuzz_txundo_deserialize_DEPENDENCIES =  \
+##	$(am__DEPENDENCIES_9)
 test_fuzz_txundo_deserialize_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_fuzz_txundo_deserialize_CXXFLAGS) $(CXXFLAGS) \
@@ -1985,7 +1989,9 @@ am__test_test_pengolincoin_SOURCES_DIST = test/test_pengolincoin.h \
 	test/librust/sapling_test_fixture.cpp test/librust/utiltest.h \
 	test/librust/utiltest.cpp test/util/blocksutil.h \
 	test/util/blocksutil.cpp wallet/test/wallet_test_fixture.cpp \
-	wallet/test/wallet_test_fixture.h test/arith_uint256_tests.cpp \
+	wallet/test/wallet_test_fixture.h \
+	wallet/test/pos_test_fixture.cpp \
+	wallet/test/pos_test_fixture.h test/arith_uint256_tests.cpp \
 	test/addrman_tests.cpp test/allocator_tests.cpp \
 	test/base32_tests.cpp test/base58_tests.cpp \
 	test/base64_tests.cpp test/bech32_tests.cpp \
@@ -1996,26 +2002,27 @@ am__test_test_pengolincoin_SOURCES_DIST = test/test_pengolincoin.h \
 	test/cuckoocache_tests.cpp test/DoS_tests.cpp \
 	test/evo_deterministicmns_tests.cpp \
 	test/evo_specialtx_tests.cpp test/flatfile_tests.cpp \
-	test/getarg_tests.cpp test/hash_tests.cpp test/key_tests.cpp \
-	test/dbwrapper_tests.cpp test/validation_tests.cpp \
-	test/main_tests.cpp test/mempool_tests.cpp \
-	test/merkle_tests.cpp test/multisig_tests.cpp \
-	test/miner_tests.cpp test/net_tests.cpp test/netbase_tests.cpp \
-	test/pmt_tests.cpp test/policyestimator_tests.cpp \
-	test/prevector_tests.cpp test/random_tests.cpp \
-	test/reverselock_tests.cpp test/rpc_tests.cpp \
-	test/sanity_tests.cpp test/scheduler_tests.cpp \
-	test/script_P2SH_tests.cpp test/script_tests.cpp \
-	test/script_standard_tests.cpp test/scriptnum_tests.cpp \
-	test/serialize_tests.cpp test/sighash_tests.cpp \
-	test/script_P2CS_tests.cpp test/sigopcount_tests.cpp \
-	test/skiplist_tests.cpp test/sync_tests.cpp \
-	test/streams_tests.cpp test/timedata_tests.cpp \
-	test/torcontrol_tests.cpp test/transaction_tests.cpp \
-	test/txvalidationcache_tests.cpp test/uint256_tests.cpp \
-	test/univalue_tests.cpp test/util_tests.cpp \
-	test/sha256compress_tests.cpp test/upgrades_tests.cpp \
-	test/validation_block_tests.cpp wallet/test/wallet_tests.cpp \
+	test/fs_tests.cpp test/getarg_tests.cpp test/hash_tests.cpp \
+	test/key_tests.cpp test/dbwrapper_tests.cpp \
+	test/validation_tests.cpp test/main_tests.cpp \
+	test/mempool_tests.cpp test/merkle_tests.cpp \
+	test/multisig_tests.cpp test/miner_tests.cpp \
+	test/net_tests.cpp test/netbase_tests.cpp test/pmt_tests.cpp \
+	test/policyestimator_tests.cpp test/prevector_tests.cpp \
+	test/random_tests.cpp test/reverselock_tests.cpp \
+	test/rpc_tests.cpp test/sanity_tests.cpp \
+	test/scheduler_tests.cpp test/script_P2SH_tests.cpp \
+	test/script_tests.cpp test/script_standard_tests.cpp \
+	test/scriptnum_tests.cpp test/serialize_tests.cpp \
+	test/sighash_tests.cpp test/script_P2CS_tests.cpp \
+	test/sigopcount_tests.cpp test/skiplist_tests.cpp \
+	test/sync_tests.cpp test/streams_tests.cpp \
+	test/timedata_tests.cpp test/torcontrol_tests.cpp \
+	test/transaction_tests.cpp test/txvalidationcache_tests.cpp \
+	test/uint256_tests.cpp test/univalue_tests.cpp \
+	test/util_tests.cpp test/sha256compress_tests.cpp \
+	test/upgrades_tests.cpp test/validation_block_tests.cpp \
+	test/zerocoindb_tests.cpp wallet/test/wallet_tests.cpp \
 	wallet/test/crypto_tests.cpp \
 	test/librust/libsapling_utils_tests.cpp \
 	test/librust/sapling_key_tests.cpp \
@@ -2031,6 +2038,7 @@ am__test_test_pengolincoin_SOURCES_DIST = test/test_pengolincoin.h \
 	test/librust/sapling_wallet_tests.cpp \
 	wallet/test/wallet_shielded_balances_tests.cpp \
 	wallet/test/wallet_sapling_transactions_validations_tests.cpp \
+	wallet/test/pos_validations_tests.cpp \
 	test/data/script_valid.json test/data/base58_keys_valid.json \
 	test/data/sig_canonical.json test/data/sig_noncanonical.json \
 	test/data/base58_encode_decode.json \
@@ -2042,118 +2050,122 @@ am__test_test_pengolincoin_SOURCES_DIST = test/test_pengolincoin.h \
 	test/data/merkle_witness_serialization_sapling.json \
 	test/data/merkle_path_sapling.json \
 	test/data/merkle_commitments_sapling.json \
-	test/data/sapling_key_components.json
-am__objects_53 = wallet/test/test_test_pengolincoin-wallet_test_fixture.$(OBJEXT)
-am__objects_54 = test/test_pengolincoin-test_pengolincoin.$(OBJEXT) \
-	test/librust/test_pengolincoin-sapling_test_fixture.$(OBJEXT) \
-	test/librust/test_pengolincoin-utiltest.$(OBJEXT) \
-	test/util/test_pengolincoin-blocksutil.$(OBJEXT) \
-	$(am__objects_53)
-am__objects_55 = wallet/test/test_test_pengolincoin-wallet_tests.$(OBJEXT) \
-	wallet/test/test_test_pengolincoin-crypto_tests.$(OBJEXT)
-am__objects_56 = test/test_pengolincoin-arith_uint256_tests.$(OBJEXT) \
-	test/test_pengolincoin-addrman_tests.$(OBJEXT) \
-	test/test_pengolincoin-allocator_tests.$(OBJEXT) \
-	test/test_pengolincoin-base32_tests.$(OBJEXT) \
-	test/test_pengolincoin-base58_tests.$(OBJEXT) \
-	test/test_pengolincoin-base64_tests.$(OBJEXT) \
-	test/test_pengolincoin-bech32_tests.$(OBJEXT) \
-	test/test_pengolincoin-bip32_tests.$(OBJEXT) \
-	test/test_pengolincoin-budget_tests.$(OBJEXT) \
-	test/test_pengolincoin-checkblock_tests.$(OBJEXT) \
-	test/test_pengolincoin-Checkpoints_tests.$(OBJEXT) \
-	test/test_pengolincoin-coins_tests.$(OBJEXT) \
-	test/test_pengolincoin-convertbits_tests.$(OBJEXT) \
-	test/test_pengolincoin-compress_tests.$(OBJEXT) \
-	test/test_pengolincoin-crypto_tests.$(OBJEXT) \
-	test/test_pengolincoin-cuckoocache_tests.$(OBJEXT) \
-	test/test_pengolincoin-DoS_tests.$(OBJEXT) \
-	test/test_pengolincoin-evo_deterministicmns_tests.$(OBJEXT) \
-	test/test_pengolincoin-evo_specialtx_tests.$(OBJEXT) \
-	test/test_pengolincoin-flatfile_tests.$(OBJEXT) \
-	test/test_pengolincoin-getarg_tests.$(OBJEXT) \
-	test/test_pengolincoin-hash_tests.$(OBJEXT) \
-	test/test_pengolincoin-key_tests.$(OBJEXT) \
-	test/test_pengolincoin-dbwrapper_tests.$(OBJEXT) \
-	test/test_pengolincoin-validation_tests.$(OBJEXT) \
-	test/test_pengolincoin-main_tests.$(OBJEXT) \
-	test/test_pengolincoin-mempool_tests.$(OBJEXT) \
-	test/test_pengolincoin-merkle_tests.$(OBJEXT) \
-	test/test_pengolincoin-multisig_tests.$(OBJEXT) \
-	test/test_pengolincoin-miner_tests.$(OBJEXT) \
-	test/test_pengolincoin-net_tests.$(OBJEXT) \
-	test/test_pengolincoin-netbase_tests.$(OBJEXT) \
-	test/test_pengolincoin-pmt_tests.$(OBJEXT) \
-	test/test_pengolincoin-policyestimator_tests.$(OBJEXT) \
-	test/test_pengolincoin-prevector_tests.$(OBJEXT) \
-	test/test_pengolincoin-random_tests.$(OBJEXT) \
-	test/test_pengolincoin-reverselock_tests.$(OBJEXT) \
-	test/test_pengolincoin-rpc_tests.$(OBJEXT) \
-	test/test_pengolincoin-sanity_tests.$(OBJEXT) \
-	test/test_pengolincoin-scheduler_tests.$(OBJEXT) \
-	test/test_pengolincoin-script_P2SH_tests.$(OBJEXT) \
-	test/test_pengolincoin-script_tests.$(OBJEXT) \
-	test/test_pengolincoin-script_standard_tests.$(OBJEXT) \
-	test/test_pengolincoin-scriptnum_tests.$(OBJEXT) \
-	test/test_pengolincoin-serialize_tests.$(OBJEXT) \
-	test/test_pengolincoin-sighash_tests.$(OBJEXT) \
-	test/test_pengolincoin-script_P2CS_tests.$(OBJEXT) \
-	test/test_pengolincoin-sigopcount_tests.$(OBJEXT) \
-	test/test_pengolincoin-skiplist_tests.$(OBJEXT) \
-	test/test_pengolincoin-sync_tests.$(OBJEXT) \
-	test/test_pengolincoin-streams_tests.$(OBJEXT) \
-	test/test_pengolincoin-timedata_tests.$(OBJEXT) \
-	test/test_pengolincoin-torcontrol_tests.$(OBJEXT) \
-	test/test_pengolincoin-transaction_tests.$(OBJEXT) \
-	test/test_pengolincoin-txvalidationcache_tests.$(OBJEXT) \
-	test/test_pengolincoin-uint256_tests.$(OBJEXT) \
-	test/test_pengolincoin-univalue_tests.$(OBJEXT) \
-	test/test_pengolincoin-util_tests.$(OBJEXT) \
-	test/test_pengolincoin-sha256compress_tests.$(OBJEXT) \
-	test/test_pengolincoin-upgrades_tests.$(OBJEXT) \
-	test/test_pengolincoin-validation_block_tests.$(OBJEXT) \
-	$(am__objects_55)
-am__objects_57 = test/librust/test_pengolincoin-sapling_rpc_wallet_tests.$(OBJEXT) \
-	test/librust/test_pengolincoin-sapling_wallet_tests.$(OBJEXT) \
-	wallet/test/test_test_pengolincoin-wallet_shielded_balances_tests.$(OBJEXT) \
-	wallet/test/test_test_pengolincoin-wallet_sapling_transactions_validations_tests.$(OBJEXT)
-am__objects_58 = test/librust/test_pengolincoin-libsapling_utils_tests.$(OBJEXT) \
-	test/librust/test_pengolincoin-sapling_key_tests.$(OBJEXT) \
-	test/librust/test_pengolincoin-pedersen_hash_tests.$(OBJEXT) \
-	test/librust/test_pengolincoin-noteencryption_tests.$(OBJEXT) \
-	test/librust/test_pengolincoin-sapling_note_tests.$(OBJEXT) \
-	test/librust/test_pengolincoin-sapling_keystore_tests.$(OBJEXT) \
-	test/librust/test_pengolincoin-zip32_tests.$(OBJEXT) \
-	test/librust/test_pengolincoin-wallet_zkeys_tests.$(OBJEXT) \
-	test/librust/test_pengolincoin-merkletree_tests.$(OBJEXT) \
-	test/librust/test_pengolincoin-transaction_builder_tests.$(OBJEXT) \
-	$(am__objects_57)
-am_test_test_pengolincoin_OBJECTS =  \
-	$(am__objects_54) $(am__objects_56) \
-	$(am__objects_58) $(am__objects_3) \
-	$(am__objects_3)
-am__objects_59 = $(am__objects_3) $(am__objects_3)
-nodist_test_test_pengolincoin_OBJECTS =  \
-	$(am__objects_59)
+	test/data/sapling_key_components.json test/data/asmap.raw
+#am__objects_53 = wallet/test/test_test_pengolincoin-wallet_test_fixture.$(OBJEXT) \
+#	wallet/test/test_test_pengolincoin-pos_test_fixture.$(OBJEXT)
+#am__objects_54 = test/test_pengolincoin-test_pengolincoin.$(OBJEXT) \
+#	test/librust/test_pengolincoin-sapling_test_fixture.$(OBJEXT) \
+#	test/librust/test_pengolincoin-utiltest.$(OBJEXT) \
+#	test/util/test_pengolincoin-blocksutil.$(OBJEXT) \
+#	$(am__objects_53)
+#am__objects_55 = wallet/test/test_test_pengolincoin-wallet_tests.$(OBJEXT) \
+#	wallet/test/test_test_pengolincoin-crypto_tests.$(OBJEXT)
+#am__objects_56 = test/test_pengolincoin-arith_uint256_tests.$(OBJEXT) \
+#	test/test_pengolincoin-addrman_tests.$(OBJEXT) \
+#	test/test_pengolincoin-allocator_tests.$(OBJEXT) \
+#	test/test_pengolincoin-base32_tests.$(OBJEXT) \
+#	test/test_pengolincoin-base58_tests.$(OBJEXT) \
+#	test/test_pengolincoin-base64_tests.$(OBJEXT) \
+#	test/test_pengolincoin-bech32_tests.$(OBJEXT) \
+#	test/test_pengolincoin-bip32_tests.$(OBJEXT) \
+#	test/test_pengolincoin-budget_tests.$(OBJEXT) \
+#	test/test_pengolincoin-checkblock_tests.$(OBJEXT) \
+#	test/test_pengolincoin-Checkpoints_tests.$(OBJEXT) \
+#	test/test_pengolincoin-coins_tests.$(OBJEXT) \
+#	test/test_pengolincoin-convertbits_tests.$(OBJEXT) \
+#	test/test_pengolincoin-compress_tests.$(OBJEXT) \
+#	test/test_pengolincoin-crypto_tests.$(OBJEXT) \
+#	test/test_pengolincoin-cuckoocache_tests.$(OBJEXT) \
+#	test/test_pengolincoin-DoS_tests.$(OBJEXT) \
+#	test/test_pengolincoin-evo_deterministicmns_tests.$(OBJEXT) \
+#	test/test_pengolincoin-evo_specialtx_tests.$(OBJEXT) \
+#	test/test_pengolincoin-flatfile_tests.$(OBJEXT) \
+#	test/test_pengolincoin-fs_tests.$(OBJEXT) \
+#	test/test_pengolincoin-getarg_tests.$(OBJEXT) \
+#	test/test_pengolincoin-hash_tests.$(OBJEXT) \
+#	test/test_pengolincoin-key_tests.$(OBJEXT) \
+#	test/test_pengolincoin-dbwrapper_tests.$(OBJEXT) \
+#	test/test_pengolincoin-validation_tests.$(OBJEXT) \
+#	test/test_pengolincoin-main_tests.$(OBJEXT) \
+#	test/test_pengolincoin-mempool_tests.$(OBJEXT) \
+#	test/test_pengolincoin-merkle_tests.$(OBJEXT) \
+#	test/test_pengolincoin-multisig_tests.$(OBJEXT) \
+#	test/test_pengolincoin-miner_tests.$(OBJEXT) \
+#	test/test_pengolincoin-net_tests.$(OBJEXT) \
+#	test/test_pengolincoin-netbase_tests.$(OBJEXT) \
+#	test/test_pengolincoin-pmt_tests.$(OBJEXT) \
+#	test/test_pengolincoin-policyestimator_tests.$(OBJEXT) \
+#	test/test_pengolincoin-prevector_tests.$(OBJEXT) \
+#	test/test_pengolincoin-random_tests.$(OBJEXT) \
+#	test/test_pengolincoin-reverselock_tests.$(OBJEXT) \
+#	test/test_pengolincoin-rpc_tests.$(OBJEXT) \
+#	test/test_pengolincoin-sanity_tests.$(OBJEXT) \
+#	test/test_pengolincoin-scheduler_tests.$(OBJEXT) \
+#	test/test_pengolincoin-script_P2SH_tests.$(OBJEXT) \
+#	test/test_pengolincoin-script_tests.$(OBJEXT) \
+#	test/test_pengolincoin-script_standard_tests.$(OBJEXT) \
+#	test/test_pengolincoin-scriptnum_tests.$(OBJEXT) \
+#	test/test_pengolincoin-serialize_tests.$(OBJEXT) \
+#	test/test_pengolincoin-sighash_tests.$(OBJEXT) \
+#	test/test_pengolincoin-script_P2CS_tests.$(OBJEXT) \
+#	test/test_pengolincoin-sigopcount_tests.$(OBJEXT) \
+#	test/test_pengolincoin-skiplist_tests.$(OBJEXT) \
+#	test/test_pengolincoin-sync_tests.$(OBJEXT) \
+#	test/test_pengolincoin-streams_tests.$(OBJEXT) \
+#	test/test_pengolincoin-timedata_tests.$(OBJEXT) \
+#	test/test_pengolincoin-torcontrol_tests.$(OBJEXT) \
+#	test/test_pengolincoin-transaction_tests.$(OBJEXT) \
+#	test/test_pengolincoin-txvalidationcache_tests.$(OBJEXT) \
+#	test/test_pengolincoin-uint256_tests.$(OBJEXT) \
+#	test/test_pengolincoin-univalue_tests.$(OBJEXT) \
+#	test/test_pengolincoin-util_tests.$(OBJEXT) \
+#	test/test_pengolincoin-sha256compress_tests.$(OBJEXT) \
+#	test/test_pengolincoin-upgrades_tests.$(OBJEXT) \
+#	test/test_pengolincoin-validation_block_tests.$(OBJEXT) \
+#	test/test_pengolincoin-zerocoindb_tests.$(OBJEXT) \
+#	$(am__objects_55)
+#am__objects_57 = test/librust/test_pengolincoin-sapling_rpc_wallet_tests.$(OBJEXT) \
+#	test/librust/test_pengolincoin-sapling_wallet_tests.$(OBJEXT) \
+#	wallet/test/test_test_pengolincoin-wallet_shielded_balances_tests.$(OBJEXT) \
+#	wallet/test/test_test_pengolincoin-wallet_sapling_transactions_validations_tests.$(OBJEXT) \
+#	wallet/test/test_test_pengolincoin-pos_validations_tests.$(OBJEXT)
+#am__objects_58 = test/librust/test_pengolincoin-libsapling_utils_tests.$(OBJEXT) \
+#	test/librust/test_pengolincoin-sapling_key_tests.$(OBJEXT) \
+#	test/librust/test_pengolincoin-pedersen_hash_tests.$(OBJEXT) \
+#	test/librust/test_pengolincoin-noteencryption_tests.$(OBJEXT) \
+#	test/librust/test_pengolincoin-sapling_note_tests.$(OBJEXT) \
+#	test/librust/test_pengolincoin-sapling_keystore_tests.$(OBJEXT) \
+#	test/librust/test_pengolincoin-zip32_tests.$(OBJEXT) \
+#	test/librust/test_pengolincoin-wallet_zkeys_tests.$(OBJEXT) \
+#	test/librust/test_pengolincoin-merkletree_tests.$(OBJEXT) \
+#	test/librust/test_pengolincoin-transaction_builder_tests.$(OBJEXT) \
+#	$(am__objects_57)
+#am_test_test_pengolincoin_OBJECTS =  \
+#	$(am__objects_54) $(am__objects_56) \
+#	$(am__objects_58) $(am__objects_3) \
+#	$(am__objects_3)
+#am__objects_59 = $(am__objects_3) $(am__objects_3)
+#nodist_test_test_pengolincoin_OBJECTS =  \
+#	$(am__objects_59)
 test_test_pengolincoin_OBJECTS = $(am_test_test_pengolincoin_OBJECTS) \
 	$(nodist_test_test_pengolincoin_OBJECTS)
-#am__DEPENDENCIES_10 =  \
-#	$(LIBBITCOIN_ZMQ) \
-#	$(am__DEPENDENCIES_3)
-test_test_pengolincoin_DEPENDENCIES =  \
-	$(am__append_38) $(LIBBITCOIN_SERVER) \
-	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
-	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
-	$(am__DEPENDENCIES_4) \
-	$(LIBBITCOIN_ZEROCOIN) \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-	$(LIBSECP256K1) $(LIBSAPLING) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-	$(LIBRUSTZCASH) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(BLS_LIBS) \
-	$(am__DEPENDENCIES_10)
+##am__DEPENDENCIES_10 =  \
+##	$(LIBBITCOIN_ZMQ) \
+##	$(am__DEPENDENCIES_3)
+#test_test_pengolincoin_DEPENDENCIES =  \
+#	$(am__append_38) $(LIBBITCOIN_SERVER) \
+#	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
+#	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
+#	$(am__DEPENDENCIES_4) \
+#	$(LIBBITCOIN_ZEROCOIN) \
+#	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
+#	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+#	$(LIBSECP256K1) $(LIBSAPLING) \
+#	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+#	$(LIBRUSTZCASH) $(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+#	$(am__DEPENDENCIES_3) $(BLS_LIBS) \
+#	$(am__DEPENDENCIES_10)
 test_test_pengolincoin_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) \
@@ -2308,6 +2320,7 @@ am__depfiles_remade =  \
 	crypto/$(DEPDIR)/libbitcoin_crypto_a-scrypt.Po \
 	crypto/$(DEPDIR)/libbitcoin_crypto_a-sha1.Po \
 	crypto/$(DEPDIR)/libbitcoin_crypto_a-sha256.Po \
+	crypto/$(DEPDIR)/libbitcoin_crypto_a-sha3.Po \
 	crypto/$(DEPDIR)/libbitcoin_crypto_a-sha512.Po \
 	crypto/$(DEPDIR)/libbitcoin_crypto_a-skein.Po \
 	crypto/$(DEPDIR)/libbitcoinconsensus_la-hmac_sha512.Plo \
@@ -2621,6 +2634,7 @@ am__depfiles_remade =  \
 	test/$(DEPDIR)/test_pengolincoin-evo_deterministicmns_tests.Po \
 	test/$(DEPDIR)/test_pengolincoin-evo_specialtx_tests.Po \
 	test/$(DEPDIR)/test_pengolincoin-flatfile_tests.Po \
+	test/$(DEPDIR)/test_pengolincoin-fs_tests.Po \
 	test/$(DEPDIR)/test_pengolincoin-getarg_tests.Po \
 	test/$(DEPDIR)/test_pengolincoin-hash_tests.Po \
 	test/$(DEPDIR)/test_pengolincoin-key_tests.Po \
@@ -2662,6 +2676,7 @@ am__depfiles_remade =  \
 	test/$(DEPDIR)/test_pengolincoin-util_tests.Po \
 	test/$(DEPDIR)/test_pengolincoin-validation_block_tests.Po \
 	test/$(DEPDIR)/test_pengolincoin-validation_tests.Po \
+	test/$(DEPDIR)/test_pengolincoin-zerocoindb_tests.Po \
 	test/fuzz/$(DEPDIR)/addr_info_deserialize-deserialize.Po \
 	test/fuzz/$(DEPDIR)/addr_info_deserialize-fuzz.Po \
 	test/fuzz/$(DEPDIR)/address_deserialize-deserialize.Po \
@@ -2733,6 +2748,7 @@ am__depfiles_remade =  \
 	test/librust/$(DEPDIR)/test_pengolincoin-wallet_zkeys_tests.Po \
 	test/librust/$(DEPDIR)/test_pengolincoin-zip32_tests.Po \
 	test/util/$(DEPDIR)/test_pengolincoin-blocksutil.Po \
+	util/$(DEPDIR)/libbitcoin_util_a-asmap.Po \
 	util/$(DEPDIR)/libbitcoin_util_a-string.Po \
 	util/$(DEPDIR)/libbitcoin_util_a-system.Po \
 	util/$(DEPDIR)/libbitcoin_util_a-threadnames.Po \
@@ -2747,6 +2763,8 @@ am__depfiles_remade =  \
 	wallet/$(DEPDIR)/libbitcoin_wallet_a-walletdb.Po \
 	wallet/$(DEPDIR)/libbitcoin_wallet_a-walletutil.Po \
 	wallet/test/$(DEPDIR)/test_test_pengolincoin-crypto_tests.Po \
+	wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_test_fixture.Po \
+	wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_validations_tests.Po \
 	wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_sapling_transactions_validations_tests.Po \
 	wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_shielded_balances_tests.Po \
 	wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_test_fixture.Po \
@@ -3164,17 +3182,17 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-ACLOCAL = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/build-aux/missing aclocal-1.16
+ACLOCAL = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/pengolincoin-3.1.0/build-aux/missing aclocal-1.16
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = /usr/bin/ar
 ARFLAGS = cr
 ARM_CRC_CXXFLAGS = 
-AUTOCONF = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/build-aux/missing automake-1.16
+AUTOCONF = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/pengolincoin-3.1.0/build-aux/missing autoconf
+AUTOHEADER = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/pengolincoin-3.1.0/build-aux/missing autoheader
+AUTOMAKE = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/pengolincoin-3.1.0/build-aux/missing automake-1.16
 AVX2_CXXFLAGS = -mavx -mavx2
-AWK = mawk
+AWK = gawk
 BDB_CFLAGS = 
 BDB_CPPFLAGS = 
 BDB_LIBS = /usr/lib/libdb_cxx-4.8.a
@@ -3182,14 +3200,14 @@ BITCOIN_CLI_NAME = pengolincoin-cli
 BITCOIN_DAEMON_NAME = pengolincoind
 BITCOIN_GUI_NAME = pengolincoin-qt
 BITCOIN_TX_NAME = pengolincoin-tx
-BOOST_CHRONO_LIB = -lboost_chrono
+BOOST_CHRONO_LIB = /usr/lib/x86_64-linux-gnu/libboost_chrono.a
 BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -pthread -I/usr/include
-BOOST_FILESYSTEM_LIB = -lboost_filesystem
+BOOST_FILESYSTEM_LIB = /usr/lib/x86_64-linux-gnu/libboost_filesystem.a
 BOOST_LDFLAGS = -L/usr/lib/x86_64-linux-gnu
 BOOST_LIBS = -L/usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/libboost_system.a /usr/lib/x86_64-linux-gnu/libboost_filesystem.a /usr/lib/x86_64-linux-gnu/libboost_thread.a /usr/lib/x86_64-linux-gnu/libboost_chrono.a
-BOOST_SYSTEM_LIB = -lboost_system
-BOOST_THREAD_LIB = -lboost_thread
-BOOST_UNIT_TEST_FRAMEWORK_LIB = -lboost_unit_test_framework
+BOOST_SYSTEM_LIB = /usr/lib/x86_64-linux-gnu/libboost_system.a
+BOOST_THREAD_LIB = /usr/lib/x86_64-linux-gnu/libboost_thread.a
+BOOST_UNIT_TEST_FRAMEWORK_LIB = 
 BREW = 
 CARGO = /usr/bin/cargo
 CC = gcc
@@ -3198,10 +3216,10 @@ CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
 CHARTS_CFLAGS = -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
 CHARTS_LIBS = -lQt5Charts -lQt5Widgets -lQt5Gui -lQt5Core
-CLIENT_VERSION_BUILD = 1
+CLIENT_VERSION_BUILD = 0
 CLIENT_VERSION_IS_RELEASE = true
 CLIENT_VERSION_MAJOR = 3
-CLIENT_VERSION_MINOR = 0
+CLIENT_VERSION_MINOR = 1
 CLIENT_VERSION_REVISION = 0
 COMPAT_LDFLAGS = 
 COPYRIGHT_YEAR = 2021
@@ -3271,7 +3289,7 @@ LIBOBJS =
 LIBS =  /usr/lib/x86_64-linux-gnu/libgmp.a
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_APP_LDFLAGS = 
-LIBZCASH_LIBS = -lboost_system /usr/lib/x86_64-linux-gnu/libsodium.a  -ldl
+LIBZCASH_LIBS = /usr/lib/x86_64-linux-gnu/libboost_system.a /usr/lib/x86_64-linux-gnu/libsodium.a  -ldl
 LIPO = 
 LN_S = ln -s
 LRELEASE = /usr/lib/x86_64-linux-gnu/qt5/bin/lrelease
@@ -3279,7 +3297,7 @@ LTLIBOBJS =
 LT_SYS_LIBRARY_PATH = 
 LUPDATE = /usr/lib/x86_64-linux-gnu/qt5/bin/lupdate
 MAINT = 
-MAKEINFO = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/build-aux/missing makeinfo
+MAKEINFO = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/pengolincoin-3.1.0/build-aux/missing makeinfo
 MAKENSIS = 
 MANIFEST_TOOL = :
 MINIUPNPC_CPPFLAGS = 
@@ -3301,12 +3319,12 @@ OBJEXT = o
 OTOOL = 
 OTOOL64 = 
 PACKAGE = pengolincoin
-PACKAGE_BUGREPORT = https://github.com/pengolincoin-project/pengolincoin/issues
+PACKAGE_BUGREPORT = https://github.com/pengolincoin/PengolinCoin-Core/issues
 PACKAGE_NAME = PENGOLINCOIN Core
-PACKAGE_STRING = PENGOLINCOIN Core 3.0.0.1
+PACKAGE_STRING = PENGOLINCOIN Core 3.1.0
 PACKAGE_TARNAME = pengolincoin
 PACKAGE_URL = https://www.pengolincoin.xyz/
-PACKAGE_VERSION = 3.0.0.1
+PACKAGE_VERSION = 3.1.0
 PATH_SEPARATOR = :
 PIC_FLAGS = -fPIC
 PIE_FLAGS = -fPIE
@@ -3380,23 +3398,23 @@ SODIUM_LIBS = /usr/lib/x86_64-linux-gnu/libsodium.a
 SSE41_CXXFLAGS = -msse4.1
 SSE42_CXXFLAGS = -msse4.2
 STRIP = /usr/bin/strip
-TESTDEFS =  -DBOOST_TEST_DYN_LINK
+TESTDEFS = 
 TIFFCP = 
 UIC = /usr/lib/x86_64-linux-gnu/qt5/bin/uic
 UNIVALUE_CFLAGS = -I$(srcdir)/univalue/include
 UNIVALUE_LIBS = univalue/libunivalue.la
 USE_QTCHARTS = 
 USE_UPNP = 
-VERSION = 3.0.0.1
+VERSION = 3.1.0
 WARN_CXXFLAGS =  -Wall -Wextra -Wformat -Wvla -Wformat-security -Wredundant-decls
 WINDRES = 
-XGETTEXT = /usr/bin/xgettext
+XGETTEXT = 
 ZMQ_CFLAGS = 
 ZMQ_LIBS = 
-abs_builddir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/src
-abs_srcdir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/src
-abs_top_builddir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master
-abs_top_srcdir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master
+abs_builddir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/pengolincoin-3.1.0/src
+abs_srcdir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/pengolincoin-3.1.0/src
+abs_top_builddir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/pengolincoin-3.1.0
+abs_top_srcdir = /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/pengolincoin-3.1.0
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -3428,7 +3446,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/PengolinCoin-src-master/build-aux/install-sh
+install_sh = ${SHELL} /home/ksk/Works/2020/2020-06/2020-06-23_PengolinCoin/works/Ubuntu_works/pengolincoin-3.1.0/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -3559,7 +3577,6 @@ BITCOIN_CORE_H = \
   evo/evonotificationinterface.h \
   evo/providertx.h \
   evo/specialtx.h \
-  pairresult.h \
   addressbook.h \
   wallet/db.h \
   flatfile.h \
@@ -3657,6 +3674,7 @@ BITCOIN_CORE_H = \
   guiinterfaceutil.h \
   uint256.h \
   undo.h \
+  util/asmap.h \
   util/blockstatecatcher.h \
   util/system.h \
   util/macros.h \
@@ -3807,6 +3825,8 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/skein.c \
   crypto/common.h \
   crypto/sha256.h \
+  crypto/sha3.h \
+  crypto/sha3.cpp \
   crypto/sha512.h \
   crypto/hmac_sha256.h \
   crypto/rfc6979_hmac_sha256.h \
@@ -3911,10 +3931,10 @@ libbitcoin_util_a_SOURCES = arith_uint256.cpp chainparamsbase.cpp \
 	compat/glibcxx_sanity.cpp compat/strnlen.cpp fs.cpp \
 	interfaces/handler.cpp logging.cpp random.cpp randomenv.cpp \
 	rpc/protocol.cpp support/cleanse.cpp support/lockedpool.cpp \
-	sync.cpp threadinterrupt.cpp uint256.cpp util/system.cpp \
-	utilmoneystr.cpp util/threadnames.cpp utilstrencodings.cpp \
-	util/string.cpp utiltime.cpp $(BITCOIN_CORE_H) $(LIBSAPLING_H) \
-	$(am__append_5)
+	sync.cpp threadinterrupt.cpp util/asmap.cpp uint256.cpp \
+	util/system.cpp utilmoneystr.cpp util/threadnames.cpp \
+	utilstrencodings.cpp util/string.cpp utiltime.cpp \
+	$(BITCOIN_CORE_H) $(LIBSAPLING_H) $(am__append_5)
 
 # sapling protocol primitives #
 libsapling_a_CPPFLAGS = $(AM_CPPFLAGS) $(PIC_FLAGS) $(BITCOIN_INCLUDES)
@@ -4161,383 +4181,382 @@ leveldb_libmemenv_a_CXXFLAGS = $(leveldb_libleveldb_a_CXXFLAGS)
 leveldb_libmemenv_a_SOURCES =  \
 	leveldb/helpers/memenv/memenv.cc \
 	leveldb/helpers/memenv/memenv.h
-FUZZ_TARGETS = \
-  test/fuzz/addr_info_deserialize \
-  test/fuzz/address_deserialize \
-  test/fuzz/addrman_deserialize \
-  test/fuzz/banentry_deserialize \
-  test/fuzz/block_deserialize \
-  test/fuzz/block_file_info_deserialize \
-  test/fuzz/blockheader_deserialize \
-  test/fuzz/blocklocator_deserialize \
-  test/fuzz/blockmerkleroot \
-  test/fuzz/blockundo_deserialize \
-  test/fuzz/bloomfilter_deserialize \
-  test/fuzz/coins_deserialize \
-  test/fuzz/diskblockindex_deserialize \
-  test/fuzz/fee_rate_deserialize \
-  test/fuzz/inv_deserialize \
-  test/fuzz/key_origin_info_deserialize \
-  test/fuzz/merkle_block_deserialize \
-  test/fuzz/messageheader_deserialize \
-  test/fuzz/netaddr_deserialize \
-  test/fuzz/out_point_deserialize \
-  test/fuzz/pub_key_deserialize \
-  test/fuzz/script_deserialize \
-  test/fuzz/service_deserialize \
-  test/fuzz/sub_net_deserialize \
-  test/fuzz/transaction \
-  test/fuzz/tx_in_deserialize \
-  test/fuzz/txoutcompressor_deserialize \
-  test/fuzz/txundo_deserialize
+#FUZZ_TARGETS = \
+#  test/fuzz/addr_info_deserialize \
+#  test/fuzz/address_deserialize \
+#  test/fuzz/addrman_deserialize \
+#  test/fuzz/banentry_deserialize \
+#  test/fuzz/block_deserialize \
+#  test/fuzz/block_file_info_deserialize \
+#  test/fuzz/blockheader_deserialize \
+#  test/fuzz/blocklocator_deserialize \
+#  test/fuzz/blockmerkleroot \
+#  test/fuzz/blockundo_deserialize \
+#  test/fuzz/bloomfilter_deserialize \
+#  test/fuzz/coins_deserialize \
+#  test/fuzz/diskblockindex_deserialize \
+#  test/fuzz/fee_rate_deserialize \
+#  test/fuzz/inv_deserialize \
+#  test/fuzz/key_origin_info_deserialize \
+#  test/fuzz/merkle_block_deserialize \
+#  test/fuzz/messageheader_deserialize \
+#  test/fuzz/netaddr_deserialize \
+#  test/fuzz/out_point_deserialize \
+#  test/fuzz/pub_key_deserialize \
+#  test/fuzz/script_deserialize \
+#  test/fuzz/service_deserialize \
+#  test/fuzz/sub_net_deserialize \
+#  test/fuzz/transaction \
+#  test/fuzz/tx_in_deserialize \
+#  test/fuzz/txoutcompressor_deserialize \
+#  test/fuzz/txundo_deserialize
 
-TEST_SRCDIR = test
-TEST_BINARY = test/test_pengolincoin$(EXEEXT)
-JSON_TEST_FILES = \
-  test/data/script_valid.json \
-  test/data/base58_keys_valid.json \
-  test/data/sig_canonical.json \
-  test/data/sig_noncanonical.json \
-  test/data/base58_encode_decode.json \
-  test/data/base58_keys_invalid.json \
-  test/data/script_invalid.json \
-  test/data/tx_invalid.json \
-  test/data/tx_valid.json \
-  test/data/sighash.json \
-  test/data/merkle_roots_sapling.json \
-  test/data/merkle_serialization_sapling.json \
-  test/data/merkle_witness_serialization_sapling.json \
-  test/data/merkle_path_sapling.json \
-  test/data/merkle_commitments_sapling.json \
-  test/data/sapling_key_components.json
+#TEST_SRCDIR = test
+#TEST_BINARY = test/test_pengolincoin$(EXEEXT)
+#JSON_TEST_FILES = \
+#  test/data/script_valid.json \
+#  test/data/base58_keys_valid.json \
+#  test/data/sig_canonical.json \
+#  test/data/sig_noncanonical.json \
+#  test/data/base58_encode_decode.json \
+#  test/data/base58_keys_invalid.json \
+#  test/data/script_invalid.json \
+#  test/data/tx_invalid.json \
+#  test/data/tx_valid.json \
+#  test/data/sighash.json \
+#  test/data/merkle_roots_sapling.json \
+#  test/data/merkle_serialization_sapling.json \
+#  test/data/merkle_witness_serialization_sapling.json \
+#  test/data/merkle_path_sapling.json \
+#  test/data/merkle_commitments_sapling.json \
+#  test/data/sapling_key_components.json
 
-RAW_TEST_FILES = 
-GENERATED_TEST_FILES = $(JSON_TEST_FILES:.json=.json.h) $(RAW_TEST_FILES:.raw=.raw.h)
-FUZZ_SUITE = \
-  test/fuzz/fuzz.cpp \
-  test/fuzz/fuzz.h
+#RAW_TEST_FILES = \
+#  test/data/asmap.raw
 
+#GENERATED_TEST_FILES = $(JSON_TEST_FILES:.json=.json.h) $(RAW_TEST_FILES:.raw=.raw.h)
+#FUZZ_SUITE = \
+#  test/fuzz/fuzz.cpp \
+#  test/fuzz/fuzz.h
 
-# test_pengolincoin binary #
-BITCOIN_TEST_SUITE = test/test_pengolincoin.h \
-	test/test_pengolincoin.cpp \
-	test/librust/json_test_vectors.h \
-	test/librust/sapling_test_fixture.h \
-	test/librust/sapling_test_fixture.cpp \
-	test/librust/utiltest.h \
-	test/librust/utiltest.cpp \
-	test/util/blocksutil.h \
-	test/util/blocksutil.cpp $(am__append_35)
 
 # test_pengolincoin binary #
-BITCOIN_TESTS = test/arith_uint256_tests.cpp \
-	test/addrman_tests.cpp \
-	test/allocator_tests.cpp \
-	test/base32_tests.cpp test/base58_tests.cpp \
-	test/base64_tests.cpp test/bech32_tests.cpp \
-	test/bip32_tests.cpp test/budget_tests.cpp \
-	test/checkblock_tests.cpp \
-	test/Checkpoints_tests.cpp \
-	test/coins_tests.cpp \
-	test/convertbits_tests.cpp \
-	test/compress_tests.cpp \
-	test/crypto_tests.cpp \
-	test/cuckoocache_tests.cpp \
-	test/DoS_tests.cpp \
-	test/evo_deterministicmns_tests.cpp \
-	test/evo_specialtx_tests.cpp \
-	test/flatfile_tests.cpp \
-	test/getarg_tests.cpp test/hash_tests.cpp \
-	test/key_tests.cpp test/dbwrapper_tests.cpp \
-	test/validation_tests.cpp \
-	test/main_tests.cpp test/mempool_tests.cpp \
-	test/merkle_tests.cpp \
-	test/multisig_tests.cpp \
-	test/miner_tests.cpp test/net_tests.cpp \
-	test/netbase_tests.cpp test/pmt_tests.cpp \
-	test/policyestimator_tests.cpp \
-	test/prevector_tests.cpp \
-	test/random_tests.cpp \
-	test/reverselock_tests.cpp \
-	test/rpc_tests.cpp test/sanity_tests.cpp \
-	test/scheduler_tests.cpp \
-	test/script_P2SH_tests.cpp \
-	test/script_tests.cpp \
-	test/script_standard_tests.cpp \
-	test/scriptnum_tests.cpp \
-	test/serialize_tests.cpp \
-	test/sighash_tests.cpp \
-	test/script_P2CS_tests.cpp \
-	test/sigopcount_tests.cpp \
-	test/skiplist_tests.cpp test/sync_tests.cpp \
-	test/streams_tests.cpp \
-	test/timedata_tests.cpp \
-	test/torcontrol_tests.cpp \
-	test/transaction_tests.cpp \
-	test/txvalidationcache_tests.cpp \
-	test/uint256_tests.cpp \
-	test/univalue_tests.cpp test/util_tests.cpp \
-	test/sha256compress_tests.cpp \
-	test/upgrades_tests.cpp \
-	test/validation_block_tests.cpp \
-	$(am__append_36)
-SAPLING_TESTS =  \
-	test/librust/libsapling_utils_tests.cpp \
-	test/librust/sapling_key_tests.cpp \
-	test/librust/pedersen_hash_tests.cpp \
-	test/librust/noteencryption_tests.cpp \
-	test/librust/sapling_note_tests.cpp \
-	test/librust/sapling_keystore_tests.cpp \
-	test/librust/zip32_tests.cpp \
-	test/librust/wallet_zkeys_tests.cpp \
-	test/librust/merkletree_tests.cpp \
-	test/librust/transaction_builder_tests.cpp \
-	$(am__append_37)
-test_test_pengolincoin_SOURCES = $(BITCOIN_TEST_SUITE) $(BITCOIN_TESTS) $(SAPLING_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
-test_test_pengolincoin_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -I$(builddir)/test/ $(TESTDEFS) $(EVENT_FLAGS)
-test_test_pengolincoin_LDADD = $(am__append_38) \
-	$(LIBBITCOIN_SERVER) $(LIBBITCOIN_CLI) \
-	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-	$(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) \
-	$(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) \
-	$(LIBLEVELDB_SSE42) $(LIBMEMENV) \
-	$(BOOST_LIBS) \
-	$(BOOST_UNIT_TEST_FRAMEWORK_LIB) \
-	$(LIBSECP256K1) $(LIBSAPLING) $(EVENT_LIBS) \
-	$(EVENT_PTHREADS_LIBS) $(LIBRUSTZCASH) \
-	$(LIBBITCOIN_CONSENSUS) $(BDB_LIBS) \
-	$(MINIUPNPC_LIBS) $(NATPMP_LIBS) \
-	$(LIBZCASH_LIBS) $(BLS_LIBS) \
-	$(am__append_39)
-test_test_pengolincoin_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-test_test_pengolincoin_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) -static
+#BITCOIN_TEST_SUITE = test/test_pengolincoin.h \
+#	test/test_pengolincoin.cpp \
+#	test/librust/json_test_vectors.h \
+#	test/librust/sapling_test_fixture.h \
+#	test/librust/sapling_test_fixture.cpp \
+#	test/librust/utiltest.h \
+#	test/librust/utiltest.cpp \
+#	test/util/blocksutil.h \
+#	test/util/blocksutil.cpp $(am__append_35)
+
+# test_pengolincoin binary #
+#BITCOIN_TESTS = test/arith_uint256_tests.cpp \
+#	test/addrman_tests.cpp \
+#	test/allocator_tests.cpp \
+#	test/base32_tests.cpp test/base58_tests.cpp \
+#	test/base64_tests.cpp test/bech32_tests.cpp \
+#	test/bip32_tests.cpp test/budget_tests.cpp \
+#	test/checkblock_tests.cpp \
+#	test/Checkpoints_tests.cpp \
+#	test/coins_tests.cpp \
+#	test/convertbits_tests.cpp \
+#	test/compress_tests.cpp \
+#	test/crypto_tests.cpp \
+#	test/cuckoocache_tests.cpp \
+#	test/DoS_tests.cpp \
+#	test/evo_deterministicmns_tests.cpp \
+#	test/evo_specialtx_tests.cpp \
+#	test/flatfile_tests.cpp test/fs_tests.cpp \
+#	test/getarg_tests.cpp test/hash_tests.cpp \
+#	test/key_tests.cpp test/dbwrapper_tests.cpp \
+#	test/validation_tests.cpp \
+#	test/main_tests.cpp test/mempool_tests.cpp \
+#	test/merkle_tests.cpp \
+#	test/multisig_tests.cpp \
+#	test/miner_tests.cpp test/net_tests.cpp \
+#	test/netbase_tests.cpp test/pmt_tests.cpp \
+#	test/policyestimator_tests.cpp \
+#	test/prevector_tests.cpp \
+#	test/random_tests.cpp \
+#	test/reverselock_tests.cpp \
+#	test/rpc_tests.cpp test/sanity_tests.cpp \
+#	test/scheduler_tests.cpp \
+#	test/script_P2SH_tests.cpp \
+#	test/script_tests.cpp \
+#	test/script_standard_tests.cpp \
+#	test/scriptnum_tests.cpp \
+#	test/serialize_tests.cpp \
+#	test/sighash_tests.cpp \
+#	test/script_P2CS_tests.cpp \
+#	test/sigopcount_tests.cpp \
+#	test/skiplist_tests.cpp test/sync_tests.cpp \
+#	test/streams_tests.cpp \
+#	test/timedata_tests.cpp \
+#	test/torcontrol_tests.cpp \
+#	test/transaction_tests.cpp \
+#	test/txvalidationcache_tests.cpp \
+#	test/uint256_tests.cpp \
+#	test/univalue_tests.cpp test/util_tests.cpp \
+#	test/sha256compress_tests.cpp \
+#	test/upgrades_tests.cpp \
+#	test/validation_block_tests.cpp \
+#	test/zerocoindb_tests.cpp $(am__append_36)
+#SAPLING_TESTS =  \
+#	test/librust/libsapling_utils_tests.cpp \
+#	test/librust/sapling_key_tests.cpp \
+#	test/librust/pedersen_hash_tests.cpp \
+#	test/librust/noteencryption_tests.cpp \
+#	test/librust/sapling_note_tests.cpp \
+#	test/librust/sapling_keystore_tests.cpp \
+#	test/librust/zip32_tests.cpp \
+#	test/librust/wallet_zkeys_tests.cpp \
+#	test/librust/merkletree_tests.cpp \
+#	test/librust/transaction_builder_tests.cpp \
+#	$(am__append_37)
+#test_test_pengolincoin_SOURCES = $(BITCOIN_TEST_SUITE) $(BITCOIN_TESTS) $(SAPLING_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
+#test_test_pengolincoin_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -I$(builddir)/test/ $(TESTDEFS) $(EVENT_FLAGS)
+#test_test_pengolincoin_LDADD = $(am__append_38) \
+#	$(LIBBITCOIN_SERVER) $(LIBBITCOIN_CLI) \
+#	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
+#	$(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) \
+#	$(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) \
+#	$(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+#	$(BOOST_LIBS) \
+#	$(BOOST_UNIT_TEST_FRAMEWORK_LIB) \
+#	$(LIBSECP256K1) $(LIBSAPLING) $(EVENT_LIBS) \
+#	$(EVENT_PTHREADS_LIBS) $(LIBRUSTZCASH) \
+#	$(LIBBITCOIN_CONSENSUS) $(BDB_LIBS) \
+#	$(MINIUPNPC_LIBS) $(NATPMP_LIBS) \
+#	$(LIBZCASH_LIBS) $(BLS_LIBS) \
+#	$(am__append_39)
+#test_test_pengolincoin_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+#test_test_pengolincoin_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) -static
 
 # base dependencies #
-#test_test_pengolincoin_fuzzy_LDADD =  \
-#	$(am__append_40) \
-#	$(LIBBITCOIN_SERVER) \
-#	$(LIBBITCOIN_CLI) \
-#	$(LIBBITCOIN_COMMON) \
-#	$(LIBBITCOIN_ZEROCOIN) \
-#	$(LIBBITCOIN_UTIL) \
-#	$(LIBUNIVALUE) \
-#	$(LIBLEVELDB) \
-#	$(LIBLEVELDB_SSE42) \
-#	$(LIBMEMENV) \
-#	$(BOOST_LIBS) \
-#	$(LIBSECP256K1) \
-#	$(EVENT_LIBS) \
-#	$(EVENT_PTHREADS_LIBS) \
-#	$(BLS_LIBS) \
-#	$(am__append_41) \
-#	$(LIBSAPLING) \
-#	$(LIBBITCOIN_CRYPTO) \
-#	$(LIBRUSTZCASH) \
-#	$(LIBBITCOIN_CONSENSUS) \
-#	$(BDB_LIBS) $(SSL_LIBS) \
-#	$(CRYPTO_LIBS) \
-#	$(MINIUPNPC_LIBS) \
-#	$(LIBZCASH_LIBS)
+##test_test_pengolincoin_fuzzy_LDADD =  \
+##	$(am__append_40) \
+##	$(LIBBITCOIN_SERVER) \
+##	$(LIBBITCOIN_CLI) \
+##	$(LIBBITCOIN_COMMON) \
+##	$(LIBBITCOIN_ZEROCOIN) \
+##	$(LIBBITCOIN_UTIL) \
+##	$(LIBUNIVALUE) \
+##	$(LIBLEVELDB) \
+##	$(LIBLEVELDB_SSE42) \
+##	$(LIBMEMENV) \
+##	$(BOOST_LIBS) \
+##	$(LIBSECP256K1) \
+##	$(EVENT_LIBS) \
+##	$(EVENT_PTHREADS_LIBS) \
+##	$(BLS_LIBS) \
+##	$(am__append_41) \
+##	$(LIBSAPLING) \
+##	$(LIBBITCOIN_CRYPTO) \
+##	$(LIBRUSTZCASH) \
+##	$(LIBBITCOIN_CONSENSUS) \
+##	$(BDB_LIBS) $(SSL_LIBS) \
+##	$(CRYPTO_LIBS) \
+##	$(MINIUPNPC_LIBS) \
+##	$(LIBZCASH_LIBS)
 # end base dependencies #
-#test_fuzz_block_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_block_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBLOCK_DESERIALIZE=1
-#test_fuzz_block_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_block_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_block_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_blocklocator_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_blocklocator_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBLOCKLOCATOR_DESERIALIZE=1
-#test_fuzz_blocklocator_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_blocklocator_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_blocklocator_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_blockmerkleroot_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_blockmerkleroot_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBLOCKMERKLEROOT=1
-#test_fuzz_blockmerkleroot_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_blockmerkleroot_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_blockmerkleroot_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_addrman_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_addrman_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DADDRMAN_DESERIALIZE=1
-#test_fuzz_addrman_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_addrman_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_addrman_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_blockheader_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_blockheader_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBLOCKHEADER_DESERIALIZE=1
-#test_fuzz_blockheader_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_blockheader_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_blockheader_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_banentry_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_banentry_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBANENTRY_DESERIALIZE=1
-#test_fuzz_banentry_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_banentry_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_banentry_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_txundo_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_txundo_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DTXUNDO_DESERIALIZE=1
-#test_fuzz_txundo_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_txundo_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_txundo_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_blockundo_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_blockundo_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBLOCKUNDO_DESERIALIZE=1
-#test_fuzz_blockundo_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_blockundo_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_blockundo_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_coins_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_coins_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DCOINS_DESERIALIZE=1
-#test_fuzz_coins_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_coins_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_coins_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_netaddr_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_netaddr_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DNETADDR_DESERIALIZE=1
-#test_fuzz_netaddr_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_netaddr_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_netaddr_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_service_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_service_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DSERVICE_DESERIALIZE=1
-#test_fuzz_service_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_service_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_service_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_messageheader_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_messageheader_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DMESSAGEHEADER_DESERIALIZE=1
-#test_fuzz_messageheader_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_messageheader_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_messageheader_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_address_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_address_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DADDRESS_DESERIALIZE=1
-#test_fuzz_address_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_address_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_address_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_inv_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_inv_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DINV_DESERIALIZE=1
-#test_fuzz_inv_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_inv_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_inv_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_bloomfilter_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_bloomfilter_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBLOOMFILTER_DESERIALIZE=1
-#test_fuzz_bloomfilter_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_bloomfilter_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_bloomfilter_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_diskblockindex_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_diskblockindex_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DDISKBLOCKINDEX_DESERIALIZE=1
-#test_fuzz_diskblockindex_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_diskblockindex_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_diskblockindex_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_txoutcompressor_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_txoutcompressor_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DTXOUTCOMPRESSOR_DESERIALIZE=1
-#test_fuzz_txoutcompressor_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_txoutcompressor_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_txoutcompressor_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_transaction_SOURCES = $(FUZZ_SUITE) test/fuzz/transaction.cpp
-#test_fuzz_transaction_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-#test_fuzz_transaction_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_transaction_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_transaction_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_addr_info_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_addr_info_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DADDR_INFO_DESERIALIZE=1
-#test_fuzz_addr_info_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_addr_info_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_addr_info_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_block_file_info_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_block_file_info_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBLOCK_FILE_INFO_DESERIALIZE=1
-#test_fuzz_block_file_info_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_block_file_info_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_block_file_info_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_fee_rate_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_fee_rate_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DFEE_RATE_DESERIALIZE=1
-#test_fuzz_fee_rate_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_fee_rate_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_fee_rate_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_key_origin_info_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_key_origin_info_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DKEY_ORIGIN_INFO_DESERIALIZE=1
-#test_fuzz_key_origin_info_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_key_origin_info_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_key_origin_info_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_merkle_block_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_merkle_block_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DMERKLE_BLOCK_DESERIALIZE=1
-#test_fuzz_merkle_block_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_merkle_block_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_merkle_block_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_out_point_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_out_point_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DOUT_POINT_DESERIALIZE=1
-#test_fuzz_out_point_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_out_point_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_out_point_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_pub_key_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_pub_key_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DPUB_KEY_DESERIALIZE=1
-#test_fuzz_pub_key_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_pub_key_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_pub_key_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_script_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_script_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DSCRIPT_DESERIALIZE=1
-#test_fuzz_script_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_script_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_script_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_sub_net_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_sub_net_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DSUB_NET_DESERIALIZE=1
-#test_fuzz_sub_net_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_sub_net_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_sub_net_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-#test_fuzz_tx_in_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
-#test_fuzz_tx_in_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DTX_IN_DESERIALIZE=1
-#test_fuzz_tx_in_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_fuzz_tx_in_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#test_fuzz_tx_in_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
-nodist_test_test_pengolincoin_SOURCES = $(GENERATED_TEST_FILES)
-CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno $(GENERATED_TEST_FILES)
-BENCH_SRCDIR = bench
-BENCH_BINARY = bench/bench_pengolincoin$(EXEEXT)
-RAW_BENCH_FILES = \
-  bench/data/block2680960.raw
+##test_fuzz_block_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_block_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBLOCK_DESERIALIZE=1
+##test_fuzz_block_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_block_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_block_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_blocklocator_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_blocklocator_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBLOCKLOCATOR_DESERIALIZE=1
+##test_fuzz_blocklocator_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_blocklocator_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_blocklocator_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_blockmerkleroot_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_blockmerkleroot_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBLOCKMERKLEROOT=1
+##test_fuzz_blockmerkleroot_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_blockmerkleroot_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_blockmerkleroot_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_addrman_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_addrman_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DADDRMAN_DESERIALIZE=1
+##test_fuzz_addrman_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_addrman_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_addrman_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_blockheader_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_blockheader_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBLOCKHEADER_DESERIALIZE=1
+##test_fuzz_blockheader_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_blockheader_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_blockheader_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_banentry_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_banentry_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBANENTRY_DESERIALIZE=1
+##test_fuzz_banentry_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_banentry_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_banentry_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_txundo_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_txundo_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DTXUNDO_DESERIALIZE=1
+##test_fuzz_txundo_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_txundo_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_txundo_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_blockundo_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_blockundo_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBLOCKUNDO_DESERIALIZE=1
+##test_fuzz_blockundo_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_blockundo_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_blockundo_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_coins_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_coins_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DCOINS_DESERIALIZE=1
+##test_fuzz_coins_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_coins_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_coins_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_netaddr_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_netaddr_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DNETADDR_DESERIALIZE=1
+##test_fuzz_netaddr_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_netaddr_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_netaddr_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_service_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_service_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DSERVICE_DESERIALIZE=1
+##test_fuzz_service_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_service_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_service_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_messageheader_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_messageheader_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DMESSAGEHEADER_DESERIALIZE=1
+##test_fuzz_messageheader_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_messageheader_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_messageheader_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_address_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_address_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DADDRESS_DESERIALIZE=1
+##test_fuzz_address_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_address_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_address_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_inv_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_inv_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DINV_DESERIALIZE=1
+##test_fuzz_inv_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_inv_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_inv_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_bloomfilter_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_bloomfilter_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBLOOMFILTER_DESERIALIZE=1
+##test_fuzz_bloomfilter_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_bloomfilter_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_bloomfilter_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_diskblockindex_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_diskblockindex_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DDISKBLOCKINDEX_DESERIALIZE=1
+##test_fuzz_diskblockindex_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_diskblockindex_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_diskblockindex_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_txoutcompressor_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_txoutcompressor_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DTXOUTCOMPRESSOR_DESERIALIZE=1
+##test_fuzz_txoutcompressor_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_txoutcompressor_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_txoutcompressor_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_transaction_SOURCES = $(FUZZ_SUITE) test/fuzz/transaction.cpp
+##test_fuzz_transaction_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+##test_fuzz_transaction_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_transaction_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_transaction_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_addr_info_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_addr_info_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DADDR_INFO_DESERIALIZE=1
+##test_fuzz_addr_info_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_addr_info_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_addr_info_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_block_file_info_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_block_file_info_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DBLOCK_FILE_INFO_DESERIALIZE=1
+##test_fuzz_block_file_info_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_block_file_info_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_block_file_info_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_fee_rate_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_fee_rate_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DFEE_RATE_DESERIALIZE=1
+##test_fuzz_fee_rate_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_fee_rate_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_fee_rate_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_key_origin_info_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_key_origin_info_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DKEY_ORIGIN_INFO_DESERIALIZE=1
+##test_fuzz_key_origin_info_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_key_origin_info_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_key_origin_info_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_merkle_block_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_merkle_block_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DMERKLE_BLOCK_DESERIALIZE=1
+##test_fuzz_merkle_block_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_merkle_block_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_merkle_block_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_out_point_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_out_point_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DOUT_POINT_DESERIALIZE=1
+##test_fuzz_out_point_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_out_point_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_out_point_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_pub_key_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_pub_key_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DPUB_KEY_DESERIALIZE=1
+##test_fuzz_pub_key_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_pub_key_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_pub_key_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_script_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_script_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DSCRIPT_DESERIALIZE=1
+##test_fuzz_script_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_script_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_script_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_sub_net_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_sub_net_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DSUB_NET_DESERIALIZE=1
+##test_fuzz_sub_net_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_sub_net_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_sub_net_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+##test_fuzz_tx_in_deserialize_SOURCES = $(FUZZ_SUITE) test/fuzz/deserialize.cpp
+##test_fuzz_tx_in_deserialize_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DTX_IN_DESERIALIZE=1
+##test_fuzz_tx_in_deserialize_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+##test_fuzz_tx_in_deserialize_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+##test_fuzz_tx_in_deserialize_LDADD = $(test_test_pengolincoin_fuzzy_LDADD)
+#nodist_test_test_pengolincoin_SOURCES = $(GENERATED_TEST_FILES)
+#CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno $(GENERATED_TEST_FILES)
+#BENCH_SRCDIR = bench
+#BENCH_BINARY = bench/bench_pengolincoin$(EXEEXT)
+#RAW_BENCH_FILES = \
+#  bench/data/block2680960.raw
 
-GENERATED_BENCH_FILES = $(RAW_BENCH_FILES:.raw=.raw.h)
-bench_bench_pengolincoin_SOURCES = \
-  $(RAW_BENCH_FILES) \
-  bench/bench_pengolincoin.cpp \
-  bench/bench.cpp \
-  bench/bench.h \
-  bench/Examples.cpp \
-  bench/base58.cpp \
-  bench/checkblock.cpp \
-  bench/checkqueue.cpp \
-  bench/data.h \
-  bench/data.cpp \
-  bench/chacha20.cpp \
-  bench/crypto_hash.cpp \
-  bench/lockedpool.cpp \
-  bench/perf.cpp \
-  bench/perf.h \
-  bench/prevector.cpp \
-  bench/util_time.cpp
+#GENERATED_BENCH_FILES = $(RAW_BENCH_FILES:.raw=.raw.h)
+#bench_bench_pengolincoin_SOURCES = \
+#  $(RAW_BENCH_FILES) \
+#  bench/bench_pengolincoin.cpp \
+#  bench/bench.cpp \
+#  bench/bench.h \
+#  bench/Examples.cpp \
+#  bench/base58.cpp \
+#  bench/checkblock.cpp \
+#  bench/checkqueue.cpp \
+#  bench/data.h \
+#  bench/data.cpp \
+#  bench/chacha20.cpp \
+#  bench/crypto_hash.cpp \
+#  bench/lockedpool.cpp \
+#  bench/perf.cpp \
+#  bench/perf.h \
+#  bench/prevector.cpp \
+#  bench/util_time.cpp
 
-nodist_bench_bench_pengolincoin_SOURCES = $(GENERATED_BENCH_FILES)
-bench_bench_pengolincoin_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
-bench_bench_pengolincoin_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-bench_bench_pengolincoin_LDADD =  \
-	$(LIBBITCOIN_SERVER) $(LIBBITCOIN_WALLET) \
-	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UNIVALUE) \
-	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
-	$(LIBLEVELDB) $(LIBMEMENV) $(LIBSECP256K1) \
-	$(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) \
-	$(LIBSAPLING) $(LIBRUSTZCASH) \
-	$(LIBZCASH_LIBS) $(am__append_44) \
-	$(LIBBITCOIN_CONSENSUS) $(BOOST_LIBS) \
-	$(BDB_LIBS) $(MINIUPNPC_LIBS) \
-	$(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) \
-	$(EVENT_LIBS) $(BLS_LIBS)
-bench_bench_pengolincoin_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-CLEAN_BITCOIN_BENCH = bench/*.gcda bench/*.gcno $(GENERATED_BENCH_FILES)
+#nodist_bench_bench_pengolincoin_SOURCES = $(GENERATED_BENCH_FILES)
+#bench_bench_pengolincoin_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
+#bench_bench_pengolincoin_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+#bench_bench_pengolincoin_LDADD =  \
+#	$(LIBBITCOIN_SERVER) $(LIBBITCOIN_WALLET) \
+#	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UNIVALUE) \
+#	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
+#	$(LIBLEVELDB) $(LIBMEMENV) $(LIBSECP256K1) \
+#	$(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) \
+#	$(LIBSAPLING) $(LIBRUSTZCASH) \
+#	$(LIBZCASH_LIBS) $(am__append_44) \
+#	$(LIBBITCOIN_CONSENSUS) $(BOOST_LIBS) \
+#	$(BDB_LIBS) $(MINIUPNPC_LIBS) \
+#	$(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) \
+#	$(EVENT_LIBS) $(BLS_LIBS)
+#bench_bench_pengolincoin_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+#CLEAN_BITCOIN_BENCH = bench/*.gcda bench/*.gcno $(GENERATED_BENCH_FILES)
 QT_TS = \
   qt/locale/pengolincoin_de.ts \
   qt/locale/pengolincoin_en.ts \
   qt/locale/pengolincoin_en_US.ts \
   qt/locale/pengolincoin_es.ts \
-  qt/locale/pengolincoin_es_ES.ts \
   qt/locale/pengolincoin_fr_FR.ts \
   qt/locale/pengolincoin_hr_HR.ts \
   qt/locale/pengolincoin_it.ts \
   qt/locale/pengolincoin_ko_KR.ts \
   qt/locale/pengolincoin_nl.ts \
   qt/locale/pengolincoin_pl.ts \
-  qt/locale/pengolincoin_ru.ts \
-  qt/locale/pengolincoin_tr.ts \
-  qt/locale/pengolincoin_zh_CN.ts
+  qt/locale/pengolincoin_ru.ts
 
 
 # pengolincoin qt core #
@@ -5171,37 +5190,37 @@ qt_pengolincoin_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
 #locale/foo.ts -> locale/foo.qm
 QT_QM = $(QT_TS:.ts=.qm)
 CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/pengolincoin/*.gcda qt/pengolincoin/*.gcno qt/pengolincoin/settings/*.gcda qt/pengolincoin/settings/*.gcno qt/temp_pengolincoin_locale.qrc
-TEST_QT_MOC_CPP = qt/test/moc_uritests.cpp
-TEST_QT_H = \
-  qt/test/uritests.h
+#TEST_QT_MOC_CPP = qt/test/moc_uritests.cpp
+#TEST_QT_H = \
+#  qt/test/uritests.h
 
-qt_test_test_pengolincoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
-  $(QT_INCLUDES) $(QT_TEST_INCLUDES)
+#qt_test_test_pengolincoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+#  $(QT_INCLUDES) $(QT_TEST_INCLUDES)
 
-qt_test_test_pengolincoin_qt_SOURCES = \
-  qt/test/test_main.cpp \
-  qt/test/uritests.cpp \
-  $(TEST_QT_H)
+#qt_test_test_pengolincoin_qt_SOURCES = \
+#  qt/test/test_main.cpp \
+#  qt/test/uritests.cpp \
+#  $(TEST_QT_H)
 
-nodist_qt_test_test_pengolincoin_qt_SOURCES = $(TEST_QT_MOC_CPP)
-qt_test_test_pengolincoin_qt_LDADD =  \
-	$(LIBBITCOINQT) $(LIBBITCOIN_SERVER) \
-	$(am__append_57) $(am__append_58) \
-	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
-	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
-	$(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) \
-	$(LIBLEVELDB) $(LIBSAPLING) \
-	$(LIBRUSTZCASH) $(LIBZCASH_LIBS) \
-	$(LIBLEVELDB_SSE42) $(LIBMEMENV) \
-	$(BOOST_LIBS) $(QT_DBUS_LIBS) \
-	$(QT_TEST_LIBS) $(QT_LIBS) $(QR_LIBS) \
-	$(BDB_LIBS) $(MINIUPNPC_LIBS) \
-	$(NATPMP_LIBS) $(LIBSECP256K1) \
-	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) \
-	$(BLS_LIBS)
-qt_test_test_pengolincoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_test_test_pengolincoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-CLEAN_BITCOIN_QT_TEST = $(TEST_QT_MOC_CPP) qt/test/*.gcda qt/test/*.gcno
+#nodist_qt_test_test_pengolincoin_qt_SOURCES = $(TEST_QT_MOC_CPP)
+#qt_test_test_pengolincoin_qt_LDADD =  \
+#	$(LIBBITCOINQT) $(LIBBITCOIN_SERVER) \
+#	$(am__append_57) $(am__append_58) \
+#	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
+#	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
+#	$(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) \
+#	$(LIBLEVELDB) $(LIBSAPLING) \
+#	$(LIBRUSTZCASH) $(LIBZCASH_LIBS) \
+#	$(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+#	$(BOOST_LIBS) $(QT_DBUS_LIBS) \
+#	$(QT_TEST_LIBS) $(QT_LIBS) $(QR_LIBS) \
+#	$(BDB_LIBS) $(MINIUPNPC_LIBS) \
+#	$(NATPMP_LIBS) $(LIBSECP256K1) \
+#	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) \
+#	$(BLS_LIBS)
+#qt_test_test_pengolincoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+#qt_test_test_pengolincoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+#CLEAN_BITCOIN_QT_TEST = $(TEST_QT_MOC_CPP) qt/test/*.gcda qt/test/*.gcno
 all: all-recursive
 
 .SUFFIXES:
@@ -5403,6 +5422,8 @@ crypto/libbitcoin_crypto_a-jh.$(OBJEXT): crypto/$(am__dirstamp) \
 crypto/libbitcoin_crypto_a-keccak.$(OBJEXT): crypto/$(am__dirstamp) \
 	crypto/$(DEPDIR)/$(am__dirstamp)
 crypto/libbitcoin_crypto_a-skein.$(OBJEXT): crypto/$(am__dirstamp) \
+	crypto/$(DEPDIR)/$(am__dirstamp)
+crypto/libbitcoin_crypto_a-sha3.$(OBJEXT): crypto/$(am__dirstamp) \
 	crypto/$(DEPDIR)/$(am__dirstamp)
 
 crypto/libbitcoin_crypto.a: $(crypto_libbitcoin_crypto_a_OBJECTS) $(crypto_libbitcoin_crypto_a_DEPENDENCIES) $(EXTRA_crypto_libbitcoin_crypto_a_DEPENDENCIES) crypto/$(am__dirstamp)
@@ -5752,6 +5773,8 @@ util/$(am__dirstamp):
 util/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) util/$(DEPDIR)
 	@: > util/$(DEPDIR)/$(am__dirstamp)
+util/libbitcoin_util_a-asmap.$(OBJEXT): util/$(am__dirstamp) \
+	util/$(DEPDIR)/$(am__dirstamp)
 util/libbitcoin_util_a-system.$(OBJEXT): util/$(am__dirstamp) \
 	util/$(DEPDIR)/$(am__dirstamp)
 util/libbitcoin_util_a-threadnames.$(OBJEXT): util/$(am__dirstamp) \
@@ -6760,6 +6783,9 @@ wallet/test/$(DEPDIR)/$(am__dirstamp):
 wallet/test/test_test_pengolincoin-wallet_test_fixture.$(OBJEXT):  \
 	wallet/test/$(am__dirstamp) \
 	wallet/test/$(DEPDIR)/$(am__dirstamp)
+wallet/test/test_test_pengolincoin-pos_test_fixture.$(OBJEXT):  \
+	wallet/test/$(am__dirstamp) \
+	wallet/test/$(DEPDIR)/$(am__dirstamp)
 test/test_pengolincoin-arith_uint256_tests.$(OBJEXT):  \
 	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
 test/test_pengolincoin-addrman_tests.$(OBJEXT): test/$(am__dirstamp) \
@@ -6799,6 +6825,8 @@ test/test_pengolincoin-evo_deterministicmns_tests.$(OBJEXT):  \
 test/test_pengolincoin-evo_specialtx_tests.$(OBJEXT):  \
 	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
 test/test_pengolincoin-flatfile_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_pengolincoin-fs_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
 test/test_pengolincoin-getarg_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
@@ -6882,6 +6910,8 @@ test/test_pengolincoin-upgrades_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
 test/test_pengolincoin-validation_block_tests.$(OBJEXT):  \
 	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_pengolincoin-zerocoindb_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
 wallet/test/test_test_pengolincoin-wallet_tests.$(OBJEXT):  \
 	wallet/test/$(am__dirstamp) \
 	wallet/test/$(DEPDIR)/$(am__dirstamp)
@@ -6928,6 +6958,9 @@ wallet/test/test_test_pengolincoin-wallet_shielded_balances_tests.$(OBJEXT):  \
 	wallet/test/$(am__dirstamp) \
 	wallet/test/$(DEPDIR)/$(am__dirstamp)
 wallet/test/test_test_pengolincoin-wallet_sapling_transactions_validations_tests.$(OBJEXT):  \
+	wallet/test/$(am__dirstamp) \
+	wallet/test/$(DEPDIR)/$(am__dirstamp)
+wallet/test/test_test_pengolincoin-pos_validations_tests.$(OBJEXT):  \
 	wallet/test/$(am__dirstamp) \
 	wallet/test/$(DEPDIR)/$(am__dirstamp)
 
@@ -7113,6 +7146,7 @@ include crypto/$(DEPDIR)/libbitcoin_crypto_a-ripemd160.Po # am--include-marker
 include crypto/$(DEPDIR)/libbitcoin_crypto_a-scrypt.Po # am--include-marker
 include crypto/$(DEPDIR)/libbitcoin_crypto_a-sha1.Po # am--include-marker
 include crypto/$(DEPDIR)/libbitcoin_crypto_a-sha256.Po # am--include-marker
+include crypto/$(DEPDIR)/libbitcoin_crypto_a-sha3.Po # am--include-marker
 include crypto/$(DEPDIR)/libbitcoin_crypto_a-sha512.Po # am--include-marker
 include crypto/$(DEPDIR)/libbitcoin_crypto_a-skein.Po # am--include-marker
 include crypto/$(DEPDIR)/libbitcoinconsensus_la-hmac_sha512.Plo # am--include-marker
@@ -7426,6 +7460,7 @@ include test/$(DEPDIR)/test_pengolincoin-dbwrapper_tests.Po # am--include-marker
 include test/$(DEPDIR)/test_pengolincoin-evo_deterministicmns_tests.Po # am--include-marker
 include test/$(DEPDIR)/test_pengolincoin-evo_specialtx_tests.Po # am--include-marker
 include test/$(DEPDIR)/test_pengolincoin-flatfile_tests.Po # am--include-marker
+include test/$(DEPDIR)/test_pengolincoin-fs_tests.Po # am--include-marker
 include test/$(DEPDIR)/test_pengolincoin-getarg_tests.Po # am--include-marker
 include test/$(DEPDIR)/test_pengolincoin-hash_tests.Po # am--include-marker
 include test/$(DEPDIR)/test_pengolincoin-key_tests.Po # am--include-marker
@@ -7467,6 +7502,7 @@ include test/$(DEPDIR)/test_pengolincoin-upgrades_tests.Po # am--include-marker
 include test/$(DEPDIR)/test_pengolincoin-util_tests.Po # am--include-marker
 include test/$(DEPDIR)/test_pengolincoin-validation_block_tests.Po # am--include-marker
 include test/$(DEPDIR)/test_pengolincoin-validation_tests.Po # am--include-marker
+include test/$(DEPDIR)/test_pengolincoin-zerocoindb_tests.Po # am--include-marker
 include test/fuzz/$(DEPDIR)/addr_info_deserialize-deserialize.Po # am--include-marker
 include test/fuzz/$(DEPDIR)/addr_info_deserialize-fuzz.Po # am--include-marker
 include test/fuzz/$(DEPDIR)/address_deserialize-deserialize.Po # am--include-marker
@@ -7538,6 +7574,7 @@ include test/librust/$(DEPDIR)/test_pengolincoin-utiltest.Po # am--include-marke
 include test/librust/$(DEPDIR)/test_pengolincoin-wallet_zkeys_tests.Po # am--include-marker
 include test/librust/$(DEPDIR)/test_pengolincoin-zip32_tests.Po # am--include-marker
 include test/util/$(DEPDIR)/test_pengolincoin-blocksutil.Po # am--include-marker
+include util/$(DEPDIR)/libbitcoin_util_a-asmap.Po # am--include-marker
 include util/$(DEPDIR)/libbitcoin_util_a-string.Po # am--include-marker
 include util/$(DEPDIR)/libbitcoin_util_a-system.Po # am--include-marker
 include util/$(DEPDIR)/libbitcoin_util_a-threadnames.Po # am--include-marker
@@ -7552,6 +7589,8 @@ include wallet/$(DEPDIR)/libbitcoin_wallet_a-wallet.Po # am--include-marker
 include wallet/$(DEPDIR)/libbitcoin_wallet_a-walletdb.Po # am--include-marker
 include wallet/$(DEPDIR)/libbitcoin_wallet_a-walletutil.Po # am--include-marker
 include wallet/test/$(DEPDIR)/test_test_pengolincoin-crypto_tests.Po # am--include-marker
+include wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_test_fixture.Po # am--include-marker
+include wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_validations_tests.Po # am--include-marker
 include wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_sapling_transactions_validations_tests.Po # am--include-marker
 include wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_shielded_balances_tests.Po # am--include-marker
 include wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_test_fixture.Po # am--include-marker
@@ -7909,6 +7948,20 @@ crypto/libbitcoin_crypto_a-ripemd160.obj: crypto/ripemd160.cpp
 #	$(AM_V_CXX)source='crypto/ripemd160.cpp' object='crypto/libbitcoin_crypto_a-ripemd160.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(crypto_libbitcoin_crypto_a_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libbitcoin_crypto_a-ripemd160.obj `if test -f 'crypto/ripemd160.cpp'; then $(CYGPATH_W) 'crypto/ripemd160.cpp'; else $(CYGPATH_W) '$(srcdir)/crypto/ripemd160.cpp'; fi`
+
+crypto/libbitcoin_crypto_a-sha3.o: crypto/sha3.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(crypto_libbitcoin_crypto_a_CXXFLAGS) $(CXXFLAGS) -MT crypto/libbitcoin_crypto_a-sha3.o -MD -MP -MF crypto/$(DEPDIR)/libbitcoin_crypto_a-sha3.Tpo -c -o crypto/libbitcoin_crypto_a-sha3.o `test -f 'crypto/sha3.cpp' || echo '$(srcdir)/'`crypto/sha3.cpp
+	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libbitcoin_crypto_a-sha3.Tpo crypto/$(DEPDIR)/libbitcoin_crypto_a-sha3.Po
+#	$(AM_V_CXX)source='crypto/sha3.cpp' object='crypto/libbitcoin_crypto_a-sha3.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(crypto_libbitcoin_crypto_a_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libbitcoin_crypto_a-sha3.o `test -f 'crypto/sha3.cpp' || echo '$(srcdir)/'`crypto/sha3.cpp
+
+crypto/libbitcoin_crypto_a-sha3.obj: crypto/sha3.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(crypto_libbitcoin_crypto_a_CXXFLAGS) $(CXXFLAGS) -MT crypto/libbitcoin_crypto_a-sha3.obj -MD -MP -MF crypto/$(DEPDIR)/libbitcoin_crypto_a-sha3.Tpo -c -o crypto/libbitcoin_crypto_a-sha3.obj `if test -f 'crypto/sha3.cpp'; then $(CYGPATH_W) 'crypto/sha3.cpp'; else $(CYGPATH_W) '$(srcdir)/crypto/sha3.cpp'; fi`
+	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libbitcoin_crypto_a-sha3.Tpo crypto/$(DEPDIR)/libbitcoin_crypto_a-sha3.Po
+#	$(AM_V_CXX)source='crypto/sha3.cpp' object='crypto/libbitcoin_crypto_a-sha3.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(crypto_libbitcoin_crypto_a_CPPFLAGS) $(CPPFLAGS) $(crypto_libbitcoin_crypto_a_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libbitcoin_crypto_a-sha3.obj `if test -f 'crypto/sha3.cpp'; then $(CYGPATH_W) 'crypto/sha3.cpp'; else $(CYGPATH_W) '$(srcdir)/crypto/sha3.cpp'; fi`
 
 leveldb/db/libleveldb_a-builder.o: leveldb/db/builder.cc
 	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(leveldb_libleveldb_a_CPPFLAGS) $(CPPFLAGS) $(leveldb_libleveldb_a_CXXFLAGS) $(CXXFLAGS) -MT leveldb/db/libleveldb_a-builder.o -MD -MP -MF leveldb/db/$(DEPDIR)/libleveldb_a-builder.Tpo -c -o leveldb/db/libleveldb_a-builder.o `test -f 'leveldb/db/builder.cc' || echo '$(srcdir)/'`leveldb/db/builder.cc
@@ -10065,6 +10118,20 @@ libbitcoin_util_a-threadinterrupt.obj: threadinterrupt.cpp
 #	$(AM_V_CXX)source='threadinterrupt.cpp' object='libbitcoin_util_a-threadinterrupt.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_util_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_util_a_CXXFLAGS) $(CXXFLAGS) -c -o libbitcoin_util_a-threadinterrupt.obj `if test -f 'threadinterrupt.cpp'; then $(CYGPATH_W) 'threadinterrupt.cpp'; else $(CYGPATH_W) '$(srcdir)/threadinterrupt.cpp'; fi`
+
+util/libbitcoin_util_a-asmap.o: util/asmap.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_util_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_util_a_CXXFLAGS) $(CXXFLAGS) -MT util/libbitcoin_util_a-asmap.o -MD -MP -MF util/$(DEPDIR)/libbitcoin_util_a-asmap.Tpo -c -o util/libbitcoin_util_a-asmap.o `test -f 'util/asmap.cpp' || echo '$(srcdir)/'`util/asmap.cpp
+	$(AM_V_at)$(am__mv) util/$(DEPDIR)/libbitcoin_util_a-asmap.Tpo util/$(DEPDIR)/libbitcoin_util_a-asmap.Po
+#	$(AM_V_CXX)source='util/asmap.cpp' object='util/libbitcoin_util_a-asmap.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_util_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_util_a_CXXFLAGS) $(CXXFLAGS) -c -o util/libbitcoin_util_a-asmap.o `test -f 'util/asmap.cpp' || echo '$(srcdir)/'`util/asmap.cpp
+
+util/libbitcoin_util_a-asmap.obj: util/asmap.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_util_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_util_a_CXXFLAGS) $(CXXFLAGS) -MT util/libbitcoin_util_a-asmap.obj -MD -MP -MF util/$(DEPDIR)/libbitcoin_util_a-asmap.Tpo -c -o util/libbitcoin_util_a-asmap.obj `if test -f 'util/asmap.cpp'; then $(CYGPATH_W) 'util/asmap.cpp'; else $(CYGPATH_W) '$(srcdir)/util/asmap.cpp'; fi`
+	$(AM_V_at)$(am__mv) util/$(DEPDIR)/libbitcoin_util_a-asmap.Tpo util/$(DEPDIR)/libbitcoin_util_a-asmap.Po
+#	$(AM_V_CXX)source='util/asmap.cpp' object='util/libbitcoin_util_a-asmap.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_util_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_util_a_CXXFLAGS) $(CXXFLAGS) -c -o util/libbitcoin_util_a-asmap.obj `if test -f 'util/asmap.cpp'; then $(CYGPATH_W) 'util/asmap.cpp'; else $(CYGPATH_W) '$(srcdir)/util/asmap.cpp'; fi`
 
 libbitcoin_util_a-uint256.o: uint256.cpp
 	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_util_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_util_a_CXXFLAGS) $(CXXFLAGS) -MT libbitcoin_util_a-uint256.o -MD -MP -MF $(DEPDIR)/libbitcoin_util_a-uint256.Tpo -c -o libbitcoin_util_a-uint256.o `test -f 'uint256.cpp' || echo '$(srcdir)/'`uint256.cpp
@@ -14546,6 +14613,20 @@ wallet/test/test_test_pengolincoin-wallet_test_fixture.obj: wallet/test/wallet_t
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_pengolincoin-wallet_test_fixture.obj `if test -f 'wallet/test/wallet_test_fixture.cpp'; then $(CYGPATH_W) 'wallet/test/wallet_test_fixture.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/wallet_test_fixture.cpp'; fi`
 
+wallet/test/test_test_pengolincoin-pos_test_fixture.o: wallet/test/pos_test_fixture.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/test_test_pengolincoin-pos_test_fixture.o -MD -MP -MF wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_test_fixture.Tpo -c -o wallet/test/test_test_pengolincoin-pos_test_fixture.o `test -f 'wallet/test/pos_test_fixture.cpp' || echo '$(srcdir)/'`wallet/test/pos_test_fixture.cpp
+	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_test_fixture.Tpo wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_test_fixture.Po
+#	$(AM_V_CXX)source='wallet/test/pos_test_fixture.cpp' object='wallet/test/test_test_pengolincoin-pos_test_fixture.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_pengolincoin-pos_test_fixture.o `test -f 'wallet/test/pos_test_fixture.cpp' || echo '$(srcdir)/'`wallet/test/pos_test_fixture.cpp
+
+wallet/test/test_test_pengolincoin-pos_test_fixture.obj: wallet/test/pos_test_fixture.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/test_test_pengolincoin-pos_test_fixture.obj -MD -MP -MF wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_test_fixture.Tpo -c -o wallet/test/test_test_pengolincoin-pos_test_fixture.obj `if test -f 'wallet/test/pos_test_fixture.cpp'; then $(CYGPATH_W) 'wallet/test/pos_test_fixture.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/pos_test_fixture.cpp'; fi`
+	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_test_fixture.Tpo wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_test_fixture.Po
+#	$(AM_V_CXX)source='wallet/test/pos_test_fixture.cpp' object='wallet/test/test_test_pengolincoin-pos_test_fixture.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_pengolincoin-pos_test_fixture.obj `if test -f 'wallet/test/pos_test_fixture.cpp'; then $(CYGPATH_W) 'wallet/test/pos_test_fixture.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/pos_test_fixture.cpp'; fi`
+
 test/test_pengolincoin-arith_uint256_tests.o: test/arith_uint256_tests.cpp
 	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_pengolincoin-arith_uint256_tests.o -MD -MP -MF test/$(DEPDIR)/test_pengolincoin-arith_uint256_tests.Tpo -c -o test/test_pengolincoin-arith_uint256_tests.o `test -f 'test/arith_uint256_tests.cpp' || echo '$(srcdir)/'`test/arith_uint256_tests.cpp
 	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_pengolincoin-arith_uint256_tests.Tpo test/$(DEPDIR)/test_pengolincoin-arith_uint256_tests.Po
@@ -14825,6 +14906,20 @@ test/test_pengolincoin-flatfile_tests.obj: test/flatfile_tests.cpp
 #	$(AM_V_CXX)source='test/flatfile_tests.cpp' object='test/test_pengolincoin-flatfile_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_pengolincoin-flatfile_tests.obj `if test -f 'test/flatfile_tests.cpp'; then $(CYGPATH_W) 'test/flatfile_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/flatfile_tests.cpp'; fi`
+
+test/test_pengolincoin-fs_tests.o: test/fs_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_pengolincoin-fs_tests.o -MD -MP -MF test/$(DEPDIR)/test_pengolincoin-fs_tests.Tpo -c -o test/test_pengolincoin-fs_tests.o `test -f 'test/fs_tests.cpp' || echo '$(srcdir)/'`test/fs_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_pengolincoin-fs_tests.Tpo test/$(DEPDIR)/test_pengolincoin-fs_tests.Po
+#	$(AM_V_CXX)source='test/fs_tests.cpp' object='test/test_pengolincoin-fs_tests.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_pengolincoin-fs_tests.o `test -f 'test/fs_tests.cpp' || echo '$(srcdir)/'`test/fs_tests.cpp
+
+test/test_pengolincoin-fs_tests.obj: test/fs_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_pengolincoin-fs_tests.obj -MD -MP -MF test/$(DEPDIR)/test_pengolincoin-fs_tests.Tpo -c -o test/test_pengolincoin-fs_tests.obj `if test -f 'test/fs_tests.cpp'; then $(CYGPATH_W) 'test/fs_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/fs_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_pengolincoin-fs_tests.Tpo test/$(DEPDIR)/test_pengolincoin-fs_tests.Po
+#	$(AM_V_CXX)source='test/fs_tests.cpp' object='test/test_pengolincoin-fs_tests.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_pengolincoin-fs_tests.obj `if test -f 'test/fs_tests.cpp'; then $(CYGPATH_W) 'test/fs_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/fs_tests.cpp'; fi`
 
 test/test_pengolincoin-getarg_tests.o: test/getarg_tests.cpp
 	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_pengolincoin-getarg_tests.o -MD -MP -MF test/$(DEPDIR)/test_pengolincoin-getarg_tests.Tpo -c -o test/test_pengolincoin-getarg_tests.o `test -f 'test/getarg_tests.cpp' || echo '$(srcdir)/'`test/getarg_tests.cpp
@@ -15400,6 +15495,20 @@ test/test_pengolincoin-validation_block_tests.obj: test/validation_block_tests.c
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_pengolincoin-validation_block_tests.obj `if test -f 'test/validation_block_tests.cpp'; then $(CYGPATH_W) 'test/validation_block_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/validation_block_tests.cpp'; fi`
 
+test/test_pengolincoin-zerocoindb_tests.o: test/zerocoindb_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_pengolincoin-zerocoindb_tests.o -MD -MP -MF test/$(DEPDIR)/test_pengolincoin-zerocoindb_tests.Tpo -c -o test/test_pengolincoin-zerocoindb_tests.o `test -f 'test/zerocoindb_tests.cpp' || echo '$(srcdir)/'`test/zerocoindb_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_pengolincoin-zerocoindb_tests.Tpo test/$(DEPDIR)/test_pengolincoin-zerocoindb_tests.Po
+#	$(AM_V_CXX)source='test/zerocoindb_tests.cpp' object='test/test_pengolincoin-zerocoindb_tests.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_pengolincoin-zerocoindb_tests.o `test -f 'test/zerocoindb_tests.cpp' || echo '$(srcdir)/'`test/zerocoindb_tests.cpp
+
+test/test_pengolincoin-zerocoindb_tests.obj: test/zerocoindb_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_pengolincoin-zerocoindb_tests.obj -MD -MP -MF test/$(DEPDIR)/test_pengolincoin-zerocoindb_tests.Tpo -c -o test/test_pengolincoin-zerocoindb_tests.obj `if test -f 'test/zerocoindb_tests.cpp'; then $(CYGPATH_W) 'test/zerocoindb_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/zerocoindb_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_pengolincoin-zerocoindb_tests.Tpo test/$(DEPDIR)/test_pengolincoin-zerocoindb_tests.Po
+#	$(AM_V_CXX)source='test/zerocoindb_tests.cpp' object='test/test_pengolincoin-zerocoindb_tests.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_pengolincoin-zerocoindb_tests.obj `if test -f 'test/zerocoindb_tests.cpp'; then $(CYGPATH_W) 'test/zerocoindb_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/zerocoindb_tests.cpp'; fi`
+
 wallet/test/test_test_pengolincoin-wallet_tests.o: wallet/test/wallet_tests.cpp
 	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/test_test_pengolincoin-wallet_tests.o -MD -MP -MF wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_tests.Tpo -c -o wallet/test/test_test_pengolincoin-wallet_tests.o `test -f 'wallet/test/wallet_tests.cpp' || echo '$(srcdir)/'`wallet/test/wallet_tests.cpp
 	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_tests.Tpo wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_tests.Po
@@ -15623,6 +15732,20 @@ wallet/test/test_test_pengolincoin-wallet_sapling_transactions_validations_tests
 #	$(AM_V_CXX)source='wallet/test/wallet_sapling_transactions_validations_tests.cpp' object='wallet/test/test_test_pengolincoin-wallet_sapling_transactions_validations_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_pengolincoin-wallet_sapling_transactions_validations_tests.obj `if test -f 'wallet/test/wallet_sapling_transactions_validations_tests.cpp'; then $(CYGPATH_W) 'wallet/test/wallet_sapling_transactions_validations_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/wallet_sapling_transactions_validations_tests.cpp'; fi`
+
+wallet/test/test_test_pengolincoin-pos_validations_tests.o: wallet/test/pos_validations_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/test_test_pengolincoin-pos_validations_tests.o -MD -MP -MF wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_validations_tests.Tpo -c -o wallet/test/test_test_pengolincoin-pos_validations_tests.o `test -f 'wallet/test/pos_validations_tests.cpp' || echo '$(srcdir)/'`wallet/test/pos_validations_tests.cpp
+	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_validations_tests.Tpo wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_validations_tests.Po
+#	$(AM_V_CXX)source='wallet/test/pos_validations_tests.cpp' object='wallet/test/test_test_pengolincoin-pos_validations_tests.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_pengolincoin-pos_validations_tests.o `test -f 'wallet/test/pos_validations_tests.cpp' || echo '$(srcdir)/'`wallet/test/pos_validations_tests.cpp
+
+wallet/test/test_test_pengolincoin-pos_validations_tests.obj: wallet/test/pos_validations_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/test_test_pengolincoin-pos_validations_tests.obj -MD -MP -MF wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_validations_tests.Tpo -c -o wallet/test/test_test_pengolincoin-pos_validations_tests.obj `if test -f 'wallet/test/pos_validations_tests.cpp'; then $(CYGPATH_W) 'wallet/test/pos_validations_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/pos_validations_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_validations_tests.Tpo wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_validations_tests.Po
+#	$(AM_V_CXX)source='wallet/test/pos_validations_tests.cpp' object='wallet/test/test_test_pengolincoin-pos_validations_tests.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_pengolincoin_CPPFLAGS) $(CPPFLAGS) $(test_test_pengolincoin_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_pengolincoin-pos_validations_tests.obj `if test -f 'wallet/test/pos_validations_tests.cpp'; then $(CYGPATH_W) 'wallet/test/pos_validations_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/pos_validations_tests.cpp'; fi`
 
 .cpp.o:
 	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -16056,7 +16179,7 @@ distdir-am: $(DISTFILES)
 	      || exit 1; \
 	  fi; \
 	done
-#check-local:
+check-local:
 check-am: all-am
 	$(MAKE) $(AM_MAKEFLAGS) check-TESTS check-local
 check: check-recursive
@@ -16312,6 +16435,7 @@ distclean: distclean-recursive
 	-rm -f crypto/$(DEPDIR)/libbitcoin_crypto_a-scrypt.Po
 	-rm -f crypto/$(DEPDIR)/libbitcoin_crypto_a-sha1.Po
 	-rm -f crypto/$(DEPDIR)/libbitcoin_crypto_a-sha256.Po
+	-rm -f crypto/$(DEPDIR)/libbitcoin_crypto_a-sha3.Po
 	-rm -f crypto/$(DEPDIR)/libbitcoin_crypto_a-sha512.Po
 	-rm -f crypto/$(DEPDIR)/libbitcoin_crypto_a-skein.Po
 	-rm -f crypto/$(DEPDIR)/libbitcoinconsensus_la-hmac_sha512.Plo
@@ -16625,6 +16749,7 @@ distclean: distclean-recursive
 	-rm -f test/$(DEPDIR)/test_pengolincoin-evo_deterministicmns_tests.Po
 	-rm -f test/$(DEPDIR)/test_pengolincoin-evo_specialtx_tests.Po
 	-rm -f test/$(DEPDIR)/test_pengolincoin-flatfile_tests.Po
+	-rm -f test/$(DEPDIR)/test_pengolincoin-fs_tests.Po
 	-rm -f test/$(DEPDIR)/test_pengolincoin-getarg_tests.Po
 	-rm -f test/$(DEPDIR)/test_pengolincoin-hash_tests.Po
 	-rm -f test/$(DEPDIR)/test_pengolincoin-key_tests.Po
@@ -16666,6 +16791,7 @@ distclean: distclean-recursive
 	-rm -f test/$(DEPDIR)/test_pengolincoin-util_tests.Po
 	-rm -f test/$(DEPDIR)/test_pengolincoin-validation_block_tests.Po
 	-rm -f test/$(DEPDIR)/test_pengolincoin-validation_tests.Po
+	-rm -f test/$(DEPDIR)/test_pengolincoin-zerocoindb_tests.Po
 	-rm -f test/fuzz/$(DEPDIR)/addr_info_deserialize-deserialize.Po
 	-rm -f test/fuzz/$(DEPDIR)/addr_info_deserialize-fuzz.Po
 	-rm -f test/fuzz/$(DEPDIR)/address_deserialize-deserialize.Po
@@ -16737,6 +16863,7 @@ distclean: distclean-recursive
 	-rm -f test/librust/$(DEPDIR)/test_pengolincoin-wallet_zkeys_tests.Po
 	-rm -f test/librust/$(DEPDIR)/test_pengolincoin-zip32_tests.Po
 	-rm -f test/util/$(DEPDIR)/test_pengolincoin-blocksutil.Po
+	-rm -f util/$(DEPDIR)/libbitcoin_util_a-asmap.Po
 	-rm -f util/$(DEPDIR)/libbitcoin_util_a-string.Po
 	-rm -f util/$(DEPDIR)/libbitcoin_util_a-system.Po
 	-rm -f util/$(DEPDIR)/libbitcoin_util_a-threadnames.Po
@@ -16751,6 +16878,8 @@ distclean: distclean-recursive
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-walletdb.Po
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-walletutil.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_pengolincoin-crypto_tests.Po
+	-rm -f wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_test_fixture.Po
+	-rm -f wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_validations_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_sapling_transactions_validations_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_shielded_balances_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_test_fixture.Po
@@ -16939,6 +17068,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f crypto/$(DEPDIR)/libbitcoin_crypto_a-scrypt.Po
 	-rm -f crypto/$(DEPDIR)/libbitcoin_crypto_a-sha1.Po
 	-rm -f crypto/$(DEPDIR)/libbitcoin_crypto_a-sha256.Po
+	-rm -f crypto/$(DEPDIR)/libbitcoin_crypto_a-sha3.Po
 	-rm -f crypto/$(DEPDIR)/libbitcoin_crypto_a-sha512.Po
 	-rm -f crypto/$(DEPDIR)/libbitcoin_crypto_a-skein.Po
 	-rm -f crypto/$(DEPDIR)/libbitcoinconsensus_la-hmac_sha512.Plo
@@ -17252,6 +17382,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f test/$(DEPDIR)/test_pengolincoin-evo_deterministicmns_tests.Po
 	-rm -f test/$(DEPDIR)/test_pengolincoin-evo_specialtx_tests.Po
 	-rm -f test/$(DEPDIR)/test_pengolincoin-flatfile_tests.Po
+	-rm -f test/$(DEPDIR)/test_pengolincoin-fs_tests.Po
 	-rm -f test/$(DEPDIR)/test_pengolincoin-getarg_tests.Po
 	-rm -f test/$(DEPDIR)/test_pengolincoin-hash_tests.Po
 	-rm -f test/$(DEPDIR)/test_pengolincoin-key_tests.Po
@@ -17293,6 +17424,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f test/$(DEPDIR)/test_pengolincoin-util_tests.Po
 	-rm -f test/$(DEPDIR)/test_pengolincoin-validation_block_tests.Po
 	-rm -f test/$(DEPDIR)/test_pengolincoin-validation_tests.Po
+	-rm -f test/$(DEPDIR)/test_pengolincoin-zerocoindb_tests.Po
 	-rm -f test/fuzz/$(DEPDIR)/addr_info_deserialize-deserialize.Po
 	-rm -f test/fuzz/$(DEPDIR)/addr_info_deserialize-fuzz.Po
 	-rm -f test/fuzz/$(DEPDIR)/address_deserialize-deserialize.Po
@@ -17364,6 +17496,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f test/librust/$(DEPDIR)/test_pengolincoin-wallet_zkeys_tests.Po
 	-rm -f test/librust/$(DEPDIR)/test_pengolincoin-zip32_tests.Po
 	-rm -f test/util/$(DEPDIR)/test_pengolincoin-blocksutil.Po
+	-rm -f util/$(DEPDIR)/libbitcoin_util_a-asmap.Po
 	-rm -f util/$(DEPDIR)/libbitcoin_util_a-string.Po
 	-rm -f util/$(DEPDIR)/libbitcoin_util_a-system.Po
 	-rm -f util/$(DEPDIR)/libbitcoin_util_a-threadnames.Po
@@ -17378,6 +17511,8 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-walletdb.Po
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-walletutil.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_pengolincoin-crypto_tests.Po
+	-rm -f wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_test_fixture.Po
+	-rm -f wallet/test/$(DEPDIR)/test_test_pengolincoin-pos_validations_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_sapling_transactions_validations_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_shielded_balances_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_pengolincoin-wallet_test_fixture.Po
@@ -17495,61 +17630,70 @@ check-security: $(bin_PROGRAMS)
 	@echo "Checking binary security..."
 	$(AM_V_at) READELF=$(READELF) OBJDUMP=$(OBJDUMP) $(PYTHON) $(top_srcdir)/contrib/devtools/security-check.py < $(bin_PROGRAMS)
 
-$(BITCOIN_TESTS): $(GENERATED_TEST_FILES)
+#$(BITCOIN_TESTS): $(GENERATED_TEST_FILES)
 
-pengolincoin_test: $(TEST_BINARY)
+#pengolincoin_test: $(TEST_BINARY)
 
-pengolincoin_test_check: $(TEST_BINARY) FORCE
-	$(MAKE) check-TESTS TESTS=$^
+#pengolincoin_test_check: $(TEST_BINARY) FORCE
+#	$(MAKE) check-TESTS TESTS=$^
 
-pengolincoin_test_clean : FORCE
-	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_pengolincoin_OBJECTS) $(TEST_BINARY)
+#pengolincoin_test_clean : FORCE
+#	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_pengolincoin_OBJECTS) $(TEST_BINARY)
 
-check-standard: $(BITCOIN_TESTS:.cpp=.cpp.test)
-	@echo "Running test/util/bitcoin-util-test.py..."
-	$(PYTHON) $(top_builddir)/test/util/bitcoin-util-test.py
-	@echo "Running test/util/rpcauth-test.py..."
-	$(PYTHON) $(top_builddir)/test/util/rpcauth-test.py
-	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C chiabls check
-	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C secp256k1 check
-	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C univalue check
+#check-standard: $(BITCOIN_TESTS:.cpp=.cpp.test)
+#	@echo "Running test/util/bitcoin-util-test.py..."
+#	$(PYTHON) $(top_builddir)/test/util/bitcoin-util-test.py
+#	@echo "Running test/util/rpcauth-test.py..."
+#	$(PYTHON) $(top_builddir)/test/util/rpcauth-test.py
+#	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C chiabls check
+#	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C secp256k1 check
+#	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C univalue check
 
-check-sapling: $(SAPLING_TESTS:.cpp=.cpp.test)
+#check-sapling: $(SAPLING_TESTS:.cpp=.cpp.test)
 
-check-local: check-sapling check-standard
+#check-local: check-sapling check-standard
 
-%.cpp.test: %.cpp
-	@echo Running tests: `cat $< | grep -E "(BOOST_FIXTURE_TEST_SUITE\\(|BOOST_AUTO_TEST_SUITE\\()" | cut -d '(' -f 2 | cut -d ',' -f 1 | cut -d ')' -f 1` from $<
-	$(AM_V_at)$(TEST_BINARY) -l test_suite -t "`cat $< | grep -E "(BOOST_FIXTURE_TEST_SUITE\\(|BOOST_AUTO_TEST_SUITE\\()" | cut -d '(' -f 2 | cut -d ',' -f 1 | cut -d ')' -f 1`" > $<.log 2>&1 || (cat $<.log && false)
+#%.cpp.test: %.cpp
+#	@echo Running tests: `cat $< | grep -E "(BOOST_FIXTURE_TEST_SUITE\\(|BOOST_AUTO_TEST_SUITE\\()" | cut -d '(' -f 2 | cut -d ',' -f 1 | cut -d ')' -f 1` from $<
+#	$(AM_V_at)$(TEST_BINARY) -l test_suite -t "`cat $< | grep -E "(BOOST_FIXTURE_TEST_SUITE\\(|BOOST_AUTO_TEST_SUITE\\()" | cut -d '(' -f 2 | cut -d ',' -f 1 | cut -d ')' -f 1`" > $<.log 2>&1 || (cat $<.log && false)
 
-%.json.h: %.json
-	@$(MKDIR_P) $(@D)
-	@{ \
-	 echo "namespace json_tests{" && \
-	 echo "static unsigned const char $(*F)[] = {" && \
-	 $(HEXDUMP) -v -e '8/1 "0x%02x, "' -e '"\n"' $< | $(SED) -e 's/0x  ,//g' && \
-	 echo "};};"; \
-	} > "$@.new" && mv -f "$@.new" "$@"
-	@echo "Generated $@"
+#%.json.h: %.json
+#	@$(MKDIR_P) $(@D)
+#	@{ \
+#	 echo "namespace json_tests{" && \
+#	 echo "static unsigned const char $(*F)[] = {" && \
+#	 $(HEXDUMP) -v -e '8/1 "0x%02x, "' -e '"\n"' $< | $(SED) -e 's/0x  ,//g' && \
+#	 echo "};};"; \
+#	} > "$@.new" && mv -f "$@.new" "$@"
+#	@echo "Generated $@"
 
-bench/data.cpp: bench/data/block2680960.raw.h
+#%.raw.h: %.raw
+#	@$(MKDIR_P) $(@D)
+#	@{ \
+#	 echo "static unsigned const char $(*F)_raw[] = {" && \
+#	 $(HEXDUMP) -v -e '8/1 "0x%02x, "' -e '"\n"' $< | $(SED) -e 's/0x  ,//g' && \
+#	 echo "};"; \
+#	} > "$@.new" && mv -f "$@.new" "$@"
+#	@echo "Generated $@"
 
-bitcoin_bench: $(BENCH_BINARY)
+#bench/data.cpp: bench/data/block2680960.raw.h
 
-bench: $(BENCH_BINARY) FORCE
-	$(BENCH_BINARY)
+#bitcoin_bench: $(BENCH_BINARY)
 
-bitcoin_bench_clean : FORCE
-	rm -f $(CLEAN_BITCOIN_BENCH) $(bench_bench_pengolincoin_OBJECTS) $(BENCH_BINARY)
+#bench: $(BENCH_BINARY) FORCE
+#	$(BENCH_BINARY)
 
-%.raw.h: %.raw
-	@$(MKDIR_P) $(@D)
-	@{ \
-	 echo "static unsigned const char $(*F)_raw[] = {" && \
-	 $(HEXDUMP) -v -e '8/1 "0x%02x, "' -e '"\n"' $< | $(SED) -e 's/0x  ,//g' && \
-	 echo "};"; \
-	} > "$@.new" && mv -f "$@.new" "$@"
-	@echo "Generated $@"
+#bitcoin_bench_clean : FORCE
+#	rm -f $(CLEAN_BITCOIN_BENCH) $(bench_bench_pengolincoin_OBJECTS) $(BENCH_BINARY)
+
+#%.raw.h: %.raw
+#	@$(MKDIR_P) $(@D)
+#	@{ \
+#	 echo "static unsigned const char $(*F)_raw[] = {" && \
+#	 $(HEXDUMP) -v -e '8/1 "0x%02x, "' -e '"\n"' $< | $(SED) -e 's/0x  ,//g' && \
+#	 echo "};"; \
+#	} > "$@.new" && mv -f "$@.new" "$@"
+#	@echo "Generated $@"
 
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
@@ -17560,7 +17704,7 @@ SECONDARY: $(QT_QM)
 
 $(srcdir)/qt/pengolincoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
-	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
+	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
 translate: $(srcdir)/qt/pengolincoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/pengolincoin.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
@@ -17601,13 +17745,13 @@ moc_%.cpp: %.h
 	@$(MKDIR_P) $(@D)
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LRELEASE) -silent $< -qm $@
 
-test_pengolincoin_qt : qt/test/test_pengolincoin-qt$(EXEEXT)
+#test_pengolincoin_qt : qt/test/test_pengolincoin-qt$(EXEEXT)
 
-test_pengolincoin_qt_check : qt/test/test_pengolincoin-qt$(EXEEXT) FORCE
-	$(MAKE) check-TESTS TESTS=$^
+#test_pengolincoin_qt_check : qt/test/test_pengolincoin-qt$(EXEEXT) FORCE
+#	$(MAKE) check-TESTS TESTS=$^
 
-test_pengolincoin_qt_clean: FORCE
-	rm -f $(CLEAN_BITCOIN_QT_TEST) $(qt_test_test_pengolincoin_qt_OBJECTS)
+#test_pengolincoin_qt_clean: FORCE
+#	rm -f $(CLEAN_BITCOIN_QT_TEST) $(qt_test_test_pengolincoin_qt_OBJECTS)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

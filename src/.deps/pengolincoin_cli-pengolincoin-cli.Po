@@ -1,5 +1,6 @@
 pengolincoin_cli-pengolincoin-cli.o: pengolincoin-cli.cpp \
- /usr/include/stdc-predef.h chainparamsbase.h /usr/include/c++/9/memory \
+ /usr/include/stdc-predef.h config/pengolincoin-config.h \
+ chainparamsbase.h /usr/include/c++/9/memory \
  /usr/include/c++/9/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
@@ -143,8 +144,7 @@ pengolincoin_cli-pengolincoin-cli.o: pengolincoin-cli.cpp \
  /usr/include/c++/9/backward/auto_ptr.h /usr/include/c++/9/vector \
  /usr/include/c++/9/bits/stl_vector.h \
  /usr/include/c++/9/bits/stl_bvector.h /usr/include/c++/9/bits/vector.tcc \
- clientversion.h config/pengolincoin-config.h fs.h \
- /usr/include/boost/filesystem.hpp \
+ clientversion.h fs.h /usr/include/boost/filesystem.hpp \
  /usr/include/boost/filesystem/config.hpp /usr/include/boost/config.hpp \
  /usr/include/boost/config/user.hpp \
  /usr/include/boost/config/detail/select_compiler_config.hpp \
@@ -1085,6 +1085,8 @@ pengolincoin_cli-pengolincoin-cli.o: pengolincoin-cli.cpp \
 
 /usr/include/stdc-predef.h:
 
+config/pengolincoin-config.h:
+
 chainparamsbase.h:
 
 /usr/include/c++/9/memory:
@@ -1444,8 +1446,6 @@ chainparamsbase.h:
 /usr/include/c++/9/bits/vector.tcc:
 
 clientversion.h:
-
-config/pengolincoin-config.h:
 
 fs.h:
 

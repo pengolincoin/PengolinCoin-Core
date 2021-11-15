@@ -1,4 +1,4 @@
-// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2019 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -10,7 +10,6 @@
 #include "qt/pengolincoin/qtutils.h"
 #include "guiutil.h"
 #include "amount.h"
-#include "pairresult.h"
 #include "optionsmodel.h"
 
 RequestDialog::RequestDialog(QWidget *parent) :
@@ -115,23 +114,22 @@ void RequestDialog::accept()
         std::string label = info->label.isEmpty() ? "" : info->label.toStdString();
         QString title;
 
-        Destination address;
-        PairResult r(false);
+        CallResult<Destination> r;
         if (this->isPaymentRequest) {
-            r = walletModel->getNewAddress(address, label);
+            r = walletModel->getNewAddress(label);
             title = tr("Request for ") + BitcoinUnits::format(displayUnit, value, false, BitcoinUnits::separatorAlways) + " " + QString(CURRENCY_UNIT.c_str());
         } else {
-            r = walletModel->getNewStakingAddress(address, label);
+            r = walletModel->getNewStakingAddress(label);
             title = tr("Cold Staking Address Generated");
         }
 
-        if (!r.result) {
+        if (!r) {
             // TODO: notify user about this error
             close();
             return;
         }
 
-        info->address = QString::fromStdString(address.ToString());
+        info->address = QString::fromStdString(r.getObjResult()->ToString());
         ui->labelTitle->setText(title);
 
         updateQr(info->address);
@@ -165,21 +163,20 @@ void RequestDialog::showEvent(QShowEvent *event)
     if (ui->lineEditAmount) ui->lineEditAmount->setFocus();
 }
 
-void RequestDialog::updateQr(QString str)
+void RequestDialog::updateQr(const QString& str)
 {
     QString uri = GUIUtil::formatBitcoinURI(*info);
     ui->labelQrImg->setText("");
     QString error;
     QPixmap pixmap = encodeToQr(uri, error);
     if (!pixmap.isNull()) {
-        qrImage = &pixmap;
-        ui->labelQrImg->setPixmap(qrImage->scaled(ui->labelQrImg->width(), ui->labelQrImg->height()));
+        ui->labelQrImg->setPixmap(pixmap.scaled(ui->labelQrImg->width(), ui->labelQrImg->height()));
     } else {
         ui->labelQrImg->setText(!error.isEmpty() ? error : "Error encoding address");
     }
 }
 
-void RequestDialog::inform(QString text)
+void RequestDialog::inform(const QString& text)
 {
     if (!snackBar)
         snackBar = new SnackBar(nullptr, this);

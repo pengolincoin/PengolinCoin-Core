@@ -937,7 +937,7 @@
                      </property>
                      <property name="text">
                       <string>Welcome to
-PENGOLINCOIN Core Wallet</string>
+%1 Wallet</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>

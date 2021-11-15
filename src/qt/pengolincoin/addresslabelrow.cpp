@@ -1,4 +1,4 @@
-// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2019 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -20,7 +20,7 @@ void AddressLabelRow::init(bool isLightTheme, bool isHover)
     updateState(isLightTheme, isHover, false);
 }
 
-void AddressLabelRow::updateView(QString address, QString label)
+void AddressLabelRow::updateView(const QString& address, const QString& label)
 {
     ui->lblAddress->setText(address);
     ui->lblLabel->setText(label);

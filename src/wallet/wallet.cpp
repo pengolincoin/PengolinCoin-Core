@@ -1,10 +1,14 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2021 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2021 PIVX developers
+// Copyright (c) 2015-2021 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+#if defined(HAVE_CONFIG_H)
+#include "config/pengolincoin-config.h"
+#endif
 
 #include "wallet/wallet.h"
 
@@ -13,7 +17,6 @@
 #include "evo/deterministicmns.h"
 #include "guiinterfaceutil.h"
 #include "masternode.h"
-#include "masternode-payments.h"
 #include "policy/policy.h"
 #include "sapling/key_io_sapling.h"
 #include "script/sign.h"
@@ -38,8 +41,6 @@ unsigned int nTxConfirmTarget = 1;
 bool bdisableSystemnotifications = false; // Those bubbles can be annoying and slow down the UI when you get lots of trx
 bool fPayAtLeastCustomFee = true;
 bool bSpendZeroConfChange = DEFAULT_SPEND_ZEROCONF_CHANGE;
-
-const char * DEFAULT_WALLET_DAT = "wallet.dat";
 
 /**
  * Fees smaller than this (in upgo) are considered zero fee (for transaction creation)
@@ -178,15 +179,17 @@ std::vector<CWalletTx> CWallet::getWalletTxs()
     return result;
 }
 
-PairResult CWallet::getNewAddress(CTxDestination& ret, std::string label){
-    return getNewAddress(ret, label, AddressBook::AddressBookPurpose::RECEIVE);
+CallResult<CTxDestination> CWallet::getNewAddress(const std::string& label)
+{
+    return getNewAddress(label, AddressBook::AddressBookPurpose::RECEIVE);
 }
 
-PairResult CWallet::getNewStakingAddress(CTxDestination& ret, std::string label){
-    return getNewAddress(ret, label, AddressBook::AddressBookPurpose::COLD_STAKING, CChainParams::Base58Type::STAKING_ADDRESS);
+CallResult<CTxDestination> CWallet::getNewStakingAddress(const std::string& label)
+{
+    return getNewAddress(label, AddressBook::AddressBookPurpose::COLD_STAKING, CChainParams::Base58Type::STAKING_ADDRESS);
 }
 
-PairResult CWallet::getNewAddress(CTxDestination& ret, const std::string addressLabel, const std::string purpose,
+CallResult<CTxDestination> CWallet::getNewAddress(const std::string& addressLabel, const std::string purpose,
                                          const CChainParams::Base58Type addrType)
 {
     LOCK(cs_wallet);
@@ -200,7 +203,7 @@ PairResult CWallet::getNewAddress(CTxDestination& ret, const std::string address
     // Get a key
     if (!GetKeyFromPool(newKey, type)) {
         // inform the user to top-up the keypool or unlock the wallet
-        return PairResult(false, new std::string(
+        return CallResult<CTxDestination>(std::string(
                         _("Keypool ran out, please call keypoolrefill first, or unlock the wallet.")));
     }
     CKeyID keyID = newKey.GetID();
@@ -208,8 +211,7 @@ PairResult CWallet::getNewAddress(CTxDestination& ret, const std::string address
     if (!SetAddressBook(keyID, addressLabel, purpose))
         throw std::runtime_error("CWallet::getNewAddress() : SetAddressBook failed");
 
-    ret = CTxDestination(keyID);
-    return PairResult(true);
+    return CallResult<CTxDestination>(CTxDestination(keyID));
 }
 
 int64_t CWallet::GetKeyCreationTime(const CWDestination& dest)
@@ -3004,7 +3006,8 @@ bool CWallet::CreateTransaction(const std::vector<CRecipient>& vecSend,
     CAmount nFeePay,
     bool fIncludeDelegated,
     bool* fStakeDelegationVoided,
-    int nExtraSize)
+    int nExtraSize,
+    int nMinDepth)
 {
     CAmount nValue = 0;
     int nChangePosRequest = nChangePosInOut;
@@ -3029,6 +3032,7 @@ bool CWallet::CreateTransaction(const std::vector<CRecipient>& vecSend,
     CWallet::AvailableCoinsFilter coinFilter;
     coinFilter.fOnlySpendable = true;
     coinFilter.fIncludeDelegated = fIncludeDelegated;
+    coinFilter.minDepth = nMinDepth;
 
     {
         std::set<std::pair<const CWalletTx*,unsigned int> > setCoins;
@@ -4132,10 +4136,10 @@ CWallet* CWallet::CreateWalletFromFile(const std::string& name, const fs::path& 
             UIWarning(strprintf(_("Warning: error reading %s! All keys read correctly, but transaction data"
                          " or address book entries might be missing or incorrect."), walletFile));
         } else if (nLoadWalletRet == DB_TOO_NEW) {
-            UIError(strprintf(_("Error loading %s: Wallet requires newer version of PENGOLINCOIN Core"), walletFile));
+            UIError(strprintf(_("Error loading %s: Wallet requires newer version of %s"), walletFile, PACKAGE_NAME));
             return nullptr;
         } else if (nLoadWalletRet == DB_NEED_REWRITE) {
-            UIError(_("Wallet needed to be rewritten: restart PENGOLINCOIN Core to complete"));
+            UIError(strprintf(_("Wallet needed to be rewritten: restart %s to complete"), PACKAGE_NAME));
             return nullptr;
         } else {
             UIError(strprintf(_("Error loading %s\n"), walletFile));
@@ -4304,7 +4308,6 @@ void CWallet::postInitProcess(CScheduler& scheduler)
 
 bool CWallet::BackupWallet(const std::string& strDest)
 {
-    LogPrint(BCLog::DB, "BackupWallet : strDest = %s\n", strDest);
     return dbw->Backup(strDest);
 }
 
@@ -4368,7 +4371,7 @@ bool CWalletTx::AcceptToMemoryPool(CValidationState& state)
 
 std::string CWallet::GetUniqueWalletBackupName() const
 {
-    return strprintf("%s%s", (!m_name.empty() ? SanitizeString(m_name, SAFE_CHARS_FILENAME) : "wallet.dat"), FormatISO8601DateTimeForBackup(GetTime()));
+    return strprintf("%s%s", (!m_name.empty() ? SanitizeString(m_name, SAFE_CHARS_FILENAME) : "null"), FormatISO8601DateTimeForBackup(GetTime()));
 }
 
 CWallet::CWallet(std::string name, std::unique_ptr<CWalletDBWrapper> dbw) : m_name(std::move(name)), dbw(std::move(dbw))

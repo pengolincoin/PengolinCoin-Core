@@ -1,9 +1,13 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+#if defined(HAVE_CONFIG_H)
+#include "config/pengolincoin-config.h"
+#endif
 
 #include "askpassphrasedialog.h"
 #include "ui_askpassphrasedialog.h"
@@ -348,9 +352,9 @@ void AskPassphraseDialog::warningMessage()
     openStandardDialog(
             tr("Wallet encrypted"),
             "<qt>" +
-            tr("PENGOLINCOIN will close now to finish the encryption process. "
+            tr("%1 will close now to finish the encryption process. "
                "Remember that encrypting your wallet cannot fully protect "
-               "your PGOs from being stolen by malware infecting your computer.") +
+               "your PGOs from being stolen by malware infecting your computer.").arg(PACKAGE_NAME) +
             "<br><br><b>" +
             tr("IMPORTANT: Any previous backups you have made of your wallet file "
                "should be replaced with the newly generated, encrypted wallet file. "

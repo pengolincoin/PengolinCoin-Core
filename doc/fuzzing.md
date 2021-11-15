@@ -125,7 +125,7 @@ example using `brew install llvm`.
 
 Should you run into problems with the address sanitizer, it is possible you
 may need to run `./configure` with `--disable-asm` to avoid errors
-with certain assembly code from PENGOLINCOIN Core's code. See [developer notes on sanitizers](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/blob/master/doc/developer-notes.md#sanitizers)
+with certain assembly code from PENGOLINCOIN Core's code. See [developer notes on sanitizers](https://github.com/pengolincoin/PengolinCoin-Core/blob/master/doc/developer-notes.md#sanitizers)
 for more information.
 
 You may also need to take care of giving the correct path for clang and

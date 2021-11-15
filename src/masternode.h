@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -59,7 +59,7 @@ public:
     const CTxIn GetVin() const { return vin; };
     bool IsNull() const { return blockHash.IsNull() || vin.prevout.IsNull(); }
 
-    bool CheckAndUpdate(int& nDos, bool fRequireAvailable = true, bool fCheckSigTimeOnly = false);
+    bool CheckAndUpdate(int& nDos, int nChainHeight, bool fRequireAvailable = true, bool fCheckSigTimeOnly = false);
     void Relay();
 
     CMasternodePing& operator=(const CMasternodePing& other) = default;
@@ -114,6 +114,7 @@ public:
     uint256 GetSignatureHash() const override;
     std::string GetStrMessage() const override;
     const CTxIn GetVin() const { return vin; };
+    CPubKey GetPubKey() const { return pubKeyMasternode; }
 
     void SetLastPing(const CMasternodePing& _lastPing) { WITH_LOCK(cs, lastPing = _lastPing;); }
 
@@ -150,6 +151,11 @@ public:
         READWRITE(obj.vin, obj.addr, obj.pubKeyCollateralAddress);
         READWRITE(obj.pubKeyMasternode, obj.vchSig, obj.sigTime, obj.protocolVersion);
         READWRITE(obj.lastPing, obj.nScanningErrorCount, obj.nLastScanningErrorBlockHeight);
+
+        if (obj.protocolVersion == MIN_BIP155_PROTOCOL_VERSION) {
+            bool dummyIsBIP155Addr = false;
+            READWRITE(dummyIsBIP155Addr);
+        }
     }
 
     template <typename Stream>
@@ -157,7 +163,7 @@ public:
         Unserialize(s);
     }
 
-    bool UpdateFromNewBroadcast(CMasternodeBroadcast& mnb);
+    bool UpdateFromNewBroadcast(CMasternodeBroadcast& mnb, int chainHeight);
 
     CMasternode::state GetActiveState() const;
 
@@ -244,7 +250,7 @@ public:
     CMasternodeBroadcast(CService newAddr, CTxIn newVin, CPubKey newPubkey, CPubKey newPubkey2, int protocolVersionIn, const CMasternodePing& _lastPing);
     CMasternodeBroadcast(const CMasternode& mn);
 
-    bool CheckAndUpdate(int& nDoS);
+    bool CheckAndUpdate(int& nDoS, int nChainHeight);
     bool CheckInputsAndAdd(int chainHeight, int& nDos);
 
     uint256 GetHash() const;
@@ -253,7 +259,6 @@ public:
 
     // special sign/verify
     bool Sign(const CKey& key, const CPubKey& pubKey);
-    bool Sign(const std::string strSignKey);
     bool CheckSignature() const;
 
     SERIALIZE_METHODS(CMasternodeBroadcast, obj)
@@ -271,7 +276,7 @@ public:
 
     /// Create Masternode broadcast, needs to be relayed manually after that
     static bool Create(const CTxIn& vin, const CService& service, const CKey& keyCollateralAddressNew, const CPubKey& pubKeyCollateralAddressNew, const CKey& keyMasternodeNew, const CPubKey& pubKeyMasternodeNew, std::string& strErrorRet, CMasternodeBroadcast& mnbRet);
-    static bool Create(const std::string& strService, const std::string& strKey, const std::string& strTxHash, const std::string& strOutputIndex, std::string& strErrorRet, CMasternodeBroadcast& mnbRet, bool fOffline = false);
+    static bool Create(const std::string& strService, const std::string& strKey, const std::string& strTxHash, const std::string& strOutputIndex, std::string& strErrorRet, CMasternodeBroadcast& mnbRet, bool fOffline, int chainHeight);
     static bool CheckDefaultPort(CService service, std::string& strErrorRet, const std::string& strContext);
 };
 

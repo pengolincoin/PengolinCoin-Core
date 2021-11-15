@@ -1,10 +1,14 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2019 PIVX developers
+// Copyright (c) 2015-2019 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
+
+#if defined(HAVE_CONFIG_H)
+#include "config/pengolincoin-config.h"
+#endif
 
 #include "chainparams.h"
 #include "clientversion.h"
@@ -36,11 +40,8 @@ static bool fDaemon;
 
 void WaitForShutdown()
 {
-    bool fShutdown = ShutdownRequested();
-    // Tell the main threads to shutdown.
-    while (!fShutdown) {
+    while (!ShutdownRequested()) {
         MilliSleep(200);
-        fShutdown = ShutdownRequested();
     }
     Interrupt();
 }
@@ -61,14 +62,12 @@ bool AppInit(int argc, char* argv[])
 
     // Process help and version before taking care about datadir
     if (gArgs.IsArgSet("-?") || gArgs.IsArgSet("-h") || gArgs.IsArgSet("-help") || gArgs.IsArgSet("-version")) {
-        std::string strUsage = _("PengolinCoin Core Daemon") + " " + _("version") + " " + FormatFullVersion() + "\n";
+        std::string strUsage = PACKAGE_NAME " Daemon version " + FormatFullVersion() + "\n";
 
         if (gArgs.IsArgSet("-version")) {
             strUsage += LicenseInfo();
         } else {
-            strUsage += "\n" + _("Usage:") + "\n" +
-                        "  pengolincoind [options]                     " + _("Start PengolinCoin Core Daemon") + "\n";
-
+            strUsage += "\nUsage:  pengolincoind [options]                     Start " PACKAGE_NAME " Daemon\n";
             strUsage += "\n" + HelpMessage(HMM_BITCOIND);
         }
 
@@ -171,6 +170,10 @@ bool AppInit(int argc, char* argv[])
 
 int main(int argc, char* argv[])
 {
+#ifdef WIN32
+    util::WinCmdLineArgs winArgs;
+    std::tie(argc, argv) = winArgs.get();
+#endif
     SetupEnvironment();
 
     // Connect pengolincoind signal handlers

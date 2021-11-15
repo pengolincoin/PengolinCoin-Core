@@ -890,8 +890,10 @@ libbitcoin_common_a-spork.o: spork.cpp /usr/include/stdc-predef.h spork.h \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h script/standard.h \
- chainparams.h script/interpreter.h script/script_error.h messagesigner.h \
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h tinyformat.h \
+ /usr/include/c++/9/iostream utilstrencodings.h util/string.h \
+ attributes.h streams.h script/standard.h chainparams.h \
+ script/interpreter.h script/script_error.h messagesigner.h \
  primitives/transaction.h net.h addrdb.h fs.h \
  /usr/include/boost/filesystem.hpp \
  /usr/include/boost/filesystem/config.hpp \
@@ -925,10 +927,10 @@ libbitcoin_common_a-spork.o: spork.cpp /usr/include/stdc-predef.h spork.h \
  /usr/include/boost/filesystem/fstream.hpp /usr/include/c++/9/fstream \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
- /usr/include/c++/9/bits/fstream.tcc streams.h addrman.h random.h sync.h \
- timedata.h util/system.h fs.h logging.h fs.h tinyformat.h \
- /usr/include/c++/9/iostream compat.h sync.h tinyformat.h utiltime.h \
- util/threadnames.h /usr/include/boost/thread/condition_variable.hpp \
+ /usr/include/c++/9/bits/fstream.tcc addrman.h clientversion.h random.h \
+ sync.h timedata.h util/system.h fs.h logging.h fs.h tinyformat.h \
+ compat.h sync.h tinyformat.h utiltime.h util/threadnames.h \
+ /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
  /usr/include/boost/thread/pthread/condition_variable.hpp \
@@ -1182,19 +1184,18 @@ libbitcoin_common_a-spork.o: spork.cpp /usr/include/stdc-predef.h spork.h \
  /usr/include/boost/thread/pthread/condition_variable_fwd.hpp \
  /usr/include/boost/thread/cv_status.hpp \
  /usr/include/boost/enable_shared_from_this.hpp \
- /usr/include/boost/smart_ptr/enable_shared_from_this.hpp bloom.h \
- limitedmap.h utilstrencodings.h threadinterrupt.h netmessagemaker.h \
- net_processing.h validationinterface.h sapling/incrementalmerkletree.h \
- sapling/sapling_util.h sporkdb.h dbwrapper.h clientversion.h \
+ /usr/include/boost/smart_ptr/enable_shared_from_this.hpp hash.h bloom.h \
+ limitedmap.h threadinterrupt.h netmessagemaker.h net_processing.h \
+ validationinterface.h sapling/incrementalmerkletree.h \
+ sapling/sapling_util.h sporkdb.h dbwrapper.h \
  /usr/include/c++/9/typeindex leveldb/include/leveldb/db.h \
  leveldb/include/leveldb/export.h leveldb/include/leveldb/iterator.h \
  leveldb/include/leveldb/slice.h leveldb/include/leveldb/status.h \
  leveldb/include/leveldb/options.h leveldb/include/leveldb/write_batch.h \
- validation.h amount.h chain.h flatfile.h pow.h tinyformat.h coins.h \
- compressor.h script/script.h consensus/consensus.h memusage.h \
- consensus/validation.h moneysupply.h policy/feerate.h \
- script/script_error.h txmempool.h indirectmap.h \
- /usr/include/boost/multi_index_container.hpp \
+ validation.h amount.h chain.h flatfile.h pow.h coins.h compressor.h \
+ script/script.h consensus/consensus.h memusage.h consensus/validation.h \
+ moneysupply.h policy/feerate.h script/script_error.h txmempool.h \
+ indirectmap.h /usr/include/boost/multi_index_container.hpp \
  /usr/include/boost/mpl/at.hpp /usr/include/boost/mpl/at_fwd.hpp \
  /usr/include/boost/mpl/aux_/at_impl.hpp \
  /usr/include/boost/mpl/contains.hpp \
@@ -3516,6 +3517,18 @@ compat.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 script/standard.h:
 
 chainparams.h:
@@ -3608,9 +3621,9 @@ fs.h:
 
 /usr/include/c++/9/bits/fstream.tcc:
 
-streams.h:
-
 addrman.h:
+
+clientversion.h:
 
 random.h:
 
@@ -3627,8 +3640,6 @@ logging.h:
 fs.h:
 
 tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 compat.h:
 
@@ -4174,11 +4185,11 @@ util/threadnames.h:
 
 /usr/include/boost/smart_ptr/enable_shared_from_this.hpp:
 
+hash.h:
+
 bloom.h:
 
 limitedmap.h:
-
-utilstrencodings.h:
 
 threadinterrupt.h:
 
@@ -4195,8 +4206,6 @@ sapling/sapling_util.h:
 sporkdb.h:
 
 dbwrapper.h:
-
-clientversion.h:
 
 /usr/include/c++/9/typeindex:
 
@@ -4223,8 +4232,6 @@ chain.h:
 flatfile.h:
 
 pow.h:
-
-tinyformat.h:
 
 coins.h:
 

@@ -1,6 +1,7 @@
 pengolincoind-pengolincoind.o: pengolincoind.cpp \
- /usr/include/stdc-predef.h chainparams.h chainparamsbase.h \
- /usr/include/c++/9/memory /usr/include/c++/9/bits/stl_algobase.h \
+ /usr/include/stdc-predef.h config/pengolincoin-config.h chainparams.h \
+ chainparamsbase.h /usr/include/c++/9/memory \
+ /usr/include/c++/9/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -854,8 +855,7 @@ pengolincoind-pengolincoind.o: pengolincoind.cpp \
  /usr/include/boost/signals2/detail/variadic_slot_invoker.hpp \
  /usr/include/boost/type_traits/function_traits.hpp \
  /usr/include/boost/signals2/detail/signal_template.hpp protocol.h \
- netaddress.h config/pengolincoin-config.h compat.h \
- /usr/include/arpa/inet.h /usr/include/netinet/in.h \
+ netaddress.h compat.h /usr/include/arpa/inet.h /usr/include/netinet/in.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
  /usr/include/x86_64-linux-gnu/bits/socket.h \
@@ -888,6 +888,8 @@ pengolincoind-pengolincoind.o: pengolincoind.cpp \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
  /usr/include/x86_64-linux-gnu/bits/mman-shared.h serialize.h span.h \
+ prevector.h tinyformat.h /usr/include/c++/9/iostream utilstrencodings.h \
+ support/allocators/secure.h util/string.h attributes.h streams.h \
  version.h clientversion.h fs.h /usr/include/boost/filesystem.hpp \
  /usr/include/boost/filesystem/config.hpp \
  /usr/include/boost/system/api_config.hpp \
@@ -921,9 +923,9 @@ pengolincoind-pengolincoind.o: pengolincoind.cpp \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
  /usr/include/c++/9/bits/fstream.tcc init.h masternodeconfig.h sync.h \
- noui.h util/system.h fs.h logging.h fs.h tinyformat.h \
- /usr/include/c++/9/iostream compat.h sync.h tinyformat.h utiltime.h \
- util/threadnames.h /usr/include/boost/thread/condition_variable.hpp \
+ noui.h util/system.h fs.h logging.h fs.h tinyformat.h compat.h sync.h \
+ tinyformat.h utiltime.h util/threadnames.h \
+ /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
  /usr/include/boost/thread/pthread/condition_variable.hpp \
@@ -1180,6 +1182,8 @@ pengolincoind-pengolincoind.o: pengolincoind.cpp \
  /usr/include/boost/smart_ptr/enable_shared_from_this.hpp
 
 /usr/include/stdc-predef.h:
+
+config/pengolincoin-config.h:
 
 chainparams.h:
 
@@ -3227,8 +3231,6 @@ protocol.h:
 
 netaddress.h:
 
-config/pengolincoin-config.h:
-
 compat.h:
 
 /usr/include/arpa/inet.h:
@@ -3314,6 +3316,22 @@ compat.h:
 serialize.h:
 
 span.h:
+
+prevector.h:
+
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+support/allocators/secure.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
 
 version.h:
 
@@ -3412,8 +3430,6 @@ logging.h:
 fs.h:
 
 tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 compat.h:
 

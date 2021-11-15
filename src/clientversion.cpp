@@ -1,5 +1,5 @@
 // Copyright (c) 2012-2017 The Bitcoin Core developers
-// Copyright (c) 2016-2019 PIVX developers
+// Copyright (c) 2016-2019 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -14,7 +14,7 @@
  * for both pengolincoind and pengolincoin-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("PENGOLINCOIN Core");
+const std::string CLIENT_NAME(PACKAGE_NAME);
 
 /**
  * Client version number
@@ -46,8 +46,8 @@ const std::string CLIENT_NAME("PENGOLINCOIN Core");
 //! git will put "#define GIT_ARCHIVE 1" on the next line inside archives. 
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
-#define GIT_COMMIT_ID "1e4fa87279d63cf14ac31a7f6040c811a3bbfcd5"
-#define GIT_COMMIT_DATE "Wed, 28 Jul 2021 14:09:09 +0200"
+#define GIT_COMMIT_ID "d54e77871fcf694837f35dfc51fe6c1b9b3685f1"
+#define GIT_COMMIT_DATE "Tue, 2 Nov 2021 08:40:36 -0300"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \
@@ -69,16 +69,7 @@ const std::string CLIENT_NAME("PENGOLINCOIN Core");
 #endif
 #endif
 
-#ifndef BUILD_DATE
-#ifdef GIT_COMMIT_DATE
-#define BUILD_DATE GIT_COMMIT_DATE
-#else
-#define BUILD_DATE __DATE__ ", " __TIME__
-#endif
-#endif
-
 const std::string CLIENT_BUILD(BUILD_DESC CLIENT_VERSION_SUFFIX);
-const std::string CLIENT_DATE(BUILD_DATE);
 
 static std::string FormatVersion(int nVersion)
 {

@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2014 The Bitcoin Core developers
-// Copyright (c) 2017-2020 PIVX developers
+// Copyright (c) 2017-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -7,7 +7,6 @@
 #include "util/system.h"
 
 #include "clientversion.h"
-#include "primitives/transaction.h"
 #include "sync.h"
 #include "utilstrencodings.h"
 #include "util/string.h"
@@ -73,22 +72,25 @@ BOOST_AUTO_TEST_CASE(util_ParseHex)
 BOOST_AUTO_TEST_CASE(util_HexStr)
 {
     BOOST_CHECK_EQUAL(
-        HexStr(ParseHex_expected, ParseHex_expected + sizeof(ParseHex_expected)),
-        "04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f");
+            HexStr(ParseHex_expected),
+            "04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f");
 
     BOOST_CHECK_EQUAL(
-        HexStr(ParseHex_expected, ParseHex_expected + 5, true),
-        "04 67 8a fd b0");
+            HexStr(Span<const unsigned char>(
+                    ParseHex_expected + sizeof(ParseHex_expected),
+                    ParseHex_expected + sizeof(ParseHex_expected))),
+            "");
 
     BOOST_CHECK_EQUAL(
-        HexStr(ParseHex_expected, ParseHex_expected, true),
-        "");
+            HexStr(Span<const unsigned char>(ParseHex_expected, ParseHex_expected)),
+            "");
 
     std::vector<unsigned char> ParseHex_vec(ParseHex_expected, ParseHex_expected + 5);
 
     BOOST_CHECK_EQUAL(
-        HexStr(ParseHex_vec, true),
-        "04 67 8a fd b0");
+            HexStr(ParseHex_vec),
+            "04678afdb0"
+    );
 }
 
 BOOST_AUTO_TEST_CASE(util_Join)
@@ -1092,6 +1094,22 @@ BOOST_AUTO_TEST_CASE(test_LockDirectory)
     // Clean up
     ReleaseDirectoryLocks();
     fs::remove_all(dirname);
+}
+
+BOOST_AUTO_TEST_CASE(test_DirIsWritable)
+{
+    // Should be able to write to the system tmp dir.
+    fs::path tmpdirname = fs::temp_directory_path();
+    BOOST_CHECK_EQUAL(DirIsWritable(tmpdirname), true);
+
+    // Should not be able to write to a non-existent dir.
+    tmpdirname = fs::temp_directory_path() / fs::unique_path();
+    BOOST_CHECK_EQUAL(DirIsWritable(tmpdirname), false);
+
+    fs::create_directory(tmpdirname);
+    // Should be able to write to it now.
+    BOOST_CHECK_EQUAL(DirIsWritable(tmpdirname), true);
+    fs::remove(tmpdirname);
 }
 
 namespace {

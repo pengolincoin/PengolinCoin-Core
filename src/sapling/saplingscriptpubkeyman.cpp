@@ -1,5 +1,5 @@
 // Copyright (c) 2016-2020 The ZCash developers
-// Copyright (c) 2020 PIVX developers
+// Copyright (c) 2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -618,7 +618,7 @@ Optional<std::string> SaplingScriptPubKeyMan::GetOutPointMemo(const CWalletTx& t
         if (IsValidUTF8(memoStr)) return memoStr;
     }
     // non UTF-8 memo. Return as hex encoded raw memo.
-    return HexStr(memo.begin(), end.base());
+    return HexStr(std::vector<unsigned char>(memo.begin(), end.base()));
 }
 
 Optional<std::pair<

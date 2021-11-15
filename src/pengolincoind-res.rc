@@ -17,7 +17,7 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "PENGOLINCOIN"
-            VALUE "FileDescription",    "pengolincoind (OSS daemon/client for PENGOLINCOIN)"
+            VALUE "FileDescription",    "pengolincoind (PENGOLINCOIN node with a JSON-RPC server)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "pengolincoind"
             VALUE "LegalCopyright",     COPYRIGHT_STR

@@ -1340,9 +1340,10 @@ libbitcoin_server_a-validationinterface.o: validationinterface.cpp \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
  /usr/include/x86_64-linux-gnu/bits/mman-shared.h serialize.h span.h \
- version.h flatfile.h fs.h pow.h timedata.h tinyformat.h \
- /usr/include/c++/9/iostream util/system.h logging.h fs.h tinyformat.h \
- compat.h sync.h tinyformat.h utiltime.h util/threadnames.h \
+ prevector.h tinyformat.h /usr/include/c++/9/iostream utilstrencodings.h \
+ support/allocators/secure.h util/string.h attributes.h streams.h \
+ version.h flatfile.h fs.h pow.h timedata.h util/system.h logging.h fs.h \
+ tinyformat.h compat.h sync.h tinyformat.h utiltime.h util/threadnames.h \
  libzerocoin/Denominations.h coins.h compressor.h script/script.h \
  consensus/consensus.h memusage.h script/standard.h chainparams.h \
  script/interpreter.h script/script_error.h consensus/validation.h \
@@ -4602,6 +4603,22 @@ serialize.h:
 
 span.h:
 
+prevector.h:
+
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+support/allocators/secure.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 version.h:
 
 flatfile.h:
@@ -4611,10 +4628,6 @@ fs.h:
 pow.h:
 
 timedata.h:
-
-tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 util/system.h:
 

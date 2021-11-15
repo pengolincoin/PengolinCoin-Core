@@ -1,4 +1,4 @@
-// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2019 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -20,7 +20,7 @@ public:
     explicit MyAddressRow(QWidget *parent = nullptr);
     ~MyAddressRow();
 
-    void updateView(QString address, QString label, QString date);
+    void updateView(const QString& address, const QString& label, const QString& date);
 
 private:
     Ui::MyAddressRow *ui;

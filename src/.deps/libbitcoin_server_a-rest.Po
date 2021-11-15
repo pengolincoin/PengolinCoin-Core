@@ -888,6 +888,8 @@ libbitcoin_server_a-rest.o: rest.cpp /usr/include/stdc-predef.h chain.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
  /usr/include/x86_64-linux-gnu/bits/mman-shared.h serialize.h span.h \
+ prevector.h tinyformat.h /usr/include/c++/9/iostream utilstrencodings.h \
+ support/allocators/secure.h util/string.h attributes.h streams.h \
  version.h flatfile.h fs.h /usr/include/boost/filesystem.hpp \
  /usr/include/boost/filesystem/config.hpp \
  /usr/include/boost/system/api_config.hpp \
@@ -921,9 +923,9 @@ libbitcoin_server_a-rest.o: rest.cpp /usr/include/stdc-predef.h chain.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
  /usr/include/c++/9/bits/fstream.tcc optional.h pow.h timedata.h \
- tinyformat.h /usr/include/c++/9/iostream util/system.h fs.h logging.h \
- fs.h tinyformat.h compat.h sync.h tinyformat.h utiltime.h \
- util/threadnames.h /usr/include/boost/thread/condition_variable.hpp \
+ util/system.h fs.h logging.h fs.h tinyformat.h compat.h sync.h \
+ tinyformat.h utiltime.h util/threadnames.h \
+ /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
  /usr/include/boost/thread/pthread/condition_variable.hpp \
@@ -1180,10 +1182,10 @@ libbitcoin_server_a-rest.o: rest.cpp /usr/include/stdc-predef.h chain.h \
  /usr/include/boost/smart_ptr/enable_shared_from_this.hpp \
  libzerocoin/Denominations.h core_io.h primitives/transaction.h \
  httpserver.h rpc/server.h rpc/protocol.h univalue/include/univalue.h \
- streams.h sync.h txmempool.h amount.h coins.h compressor.h \
- script/script.h consensus/consensus.h memusage.h \
- sapling/incrementalmerkletree.h sapling/sapling_util.h script/standard.h \
- chainparams.h script/interpreter.h script/script_error.h indirectmap.h \
+ sync.h txmempool.h amount.h coins.h compressor.h script/script.h \
+ consensus/consensus.h memusage.h sapling/incrementalmerkletree.h \
+ sapling/sapling_util.h script/standard.h chainparams.h \
+ script/interpreter.h script/script_error.h indirectmap.h \
  policy/feerate.h random.h /usr/include/boost/multi_index_container.hpp \
  /usr/include/boost/mpl/at.hpp /usr/include/boost/mpl/at_fwd.hpp \
  /usr/include/boost/mpl/aux_/at_impl.hpp \
@@ -1360,13 +1362,12 @@ libbitcoin_server_a-rest.o: rest.cpp /usr/include/stdc-predef.h chain.h \
  /usr/include/boost/multi_index/sequenced_index.hpp \
  /usr/include/boost/multi_index/detail/seq_index_node.hpp \
  /usr/include/boost/multi_index/detail/seq_index_ops.hpp \
- /usr/include/boost/multi_index/sequenced_index_fwd.hpp \
- utilstrencodings.h support/allocators/secure.h validation.h \
+ /usr/include/boost/multi_index/sequenced_index_fwd.hpp validation.h \
  consensus/validation.h moneysupply.h script/script_error.h \
  wallet/wallet.h addressbook.h consensus/tx_verify.h \
  consensus/validation.h crypter.h keystore.h streams.h destination_io.h \
  script/standard.h kernel.h stakeinput.h chain.h key_io.h chainparams.h \
- pairresult.h policy/feerate.h primitives/block.h guiinterface.h \
+ operationresult.h policy/feerate.h primitives/block.h guiinterface.h \
  /usr/include/boost/signals2/last_value.hpp util/system.h \
  utilstrencodings.h validationinterface.h sapling/incrementalmerkletree.h \
  primitives/transaction.h script/ismine.h script/standard.h \
@@ -3623,6 +3624,22 @@ serialize.h:
 
 span.h:
 
+prevector.h:
+
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+support/allocators/secure.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 version.h:
 
 flatfile.h:
@@ -3708,10 +3725,6 @@ optional.h:
 pow.h:
 
 timedata.h:
-
-tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 util/system.h:
 
@@ -4281,8 +4294,6 @@ rpc/protocol.h:
 
 univalue/include/univalue.h:
 
-streams.h:
-
 sync.h:
 
 txmempool.h:
@@ -4679,10 +4690,6 @@ random.h:
 
 /usr/include/boost/multi_index/sequenced_index_fwd.hpp:
 
-utilstrencodings.h:
-
-support/allocators/secure.h:
-
 validation.h:
 
 consensus/validation.h:
@@ -4719,7 +4726,7 @@ key_io.h:
 
 chainparams.h:
 
-pairresult.h:
+operationresult.h:
 
 policy/feerate.h:
 

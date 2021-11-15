@@ -1,7 +1,11 @@
-// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2019 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+#if defined(HAVE_CONFIG_H)
+#include "config/pengolincoin-config.h"
+#endif
 
 #include "qt/pengolincoin/welcomecontentwidget.h"
 #include "qt/pengolincoin/forms/ui_welcomecontentwidget.h"
@@ -61,9 +65,9 @@ WelcomeContentWidget::WelcomeContentWidget(QWidget *parent) :
 
     // position
     backButton->move(backX, backY);
-    backButton->setStyleSheet("background: url(://ic-arrow-white-left); background-repeat:no-repeat;background-position:center;border:  0;background-color:#4b6a7d;color: #4b6a7d; border-radius:2px;");
+    backButton->setStyleSheet("background: url(://ic-arrow-white-left); background-repeat:no-repeat;background-position:center;border:  0;background-color:#5c4b7d;color: #5c4b7d; border-radius:2px;");
     nextButton->move(nextX, nextY);
-    nextButton->setStyleSheet("background: url(://ic-arrow-white-right);background-repeat:no-repeat;background-position:center;border:  0;background-color:#4b6a7d;color: #4b6a7d; border-radius:2px;");
+    nextButton->setStyleSheet("background: url(://ic-arrow-white-right);background-repeat:no-repeat;background-position:center;border:  0;background-color:#5c4b7d;color: #5c4b7d; border-radius:2px;");
 
     if (pos == 0) {
         backButton->setVisible(false);
@@ -105,6 +109,7 @@ WelcomeContentWidget::WelcomeContentWidget(QWidget *parent) :
     // Frame 2
     ui->page_2->setProperty("cssClass", "container-welcome-step2");
     ui->labelTitle2->setProperty("cssClass", "text-title-welcome");
+    ui->labelTitle2->setText(ui->labelTitle2->text().arg(PACKAGE_NAME));
     ui->labelMessage2->setProperty("cssClass", "text-main-white");
 
     // Frame 3
@@ -205,6 +210,7 @@ void WelcomeContentWidget::checkLanguage()
         settings.sync();
         Q_EMIT onLanguageSelected();
         ui->retranslateUi(this);
+        ui->labelTitle2->setText(ui->labelTitle2->text().arg(PACKAGE_NAME));
     }
 }
 

@@ -889,6 +889,8 @@ libbitcoin_wallet_a-stakeinput.o: stakeinput.cpp \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
  /usr/include/x86_64-linux-gnu/bits/mman-shared.h serialize.h span.h \
+ prevector.h tinyformat.h /usr/include/c++/9/iostream utilstrencodings.h \
+ support/allocators/secure.h util/string.h attributes.h streams.h \
  version.h flatfile.h fs.h /usr/include/boost/filesystem.hpp \
  /usr/include/boost/filesystem/config.hpp \
  /usr/include/boost/system/api_config.hpp \
@@ -922,9 +924,9 @@ libbitcoin_wallet_a-stakeinput.o: stakeinput.cpp \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
  /usr/include/c++/9/bits/fstream.tcc optional.h pow.h timedata.h \
- tinyformat.h /usr/include/c++/9/iostream util/system.h fs.h logging.h \
- fs.h tinyformat.h compat.h sync.h tinyformat.h utiltime.h \
- util/threadnames.h /usr/include/boost/thread/condition_variable.hpp \
+ util/system.h fs.h logging.h fs.h tinyformat.h compat.h sync.h \
+ tinyformat.h utiltime.h util/threadnames.h \
+ /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
  /usr/include/boost/thread/pthread/condition_variable.hpp \
@@ -1179,7 +1181,7 @@ libbitcoin_wallet_a-stakeinput.o: stakeinput.cpp \
  /usr/include/boost/thread/cv_status.hpp \
  /usr/include/boost/enable_shared_from_this.hpp \
  /usr/include/boost/smart_ptr/enable_shared_from_this.hpp \
- libzerocoin/Denominations.h streams.h txdb.h coins.h compressor.h \
+ libzerocoin/Denominations.h txdb.h coins.h compressor.h \
  primitives/transaction.h script/script.h consensus/consensus.h \
  memusage.h sapling/incrementalmerkletree.h sapling/sapling_util.h \
  script/standard.h chainparams.h script/interpreter.h \
@@ -1194,14 +1196,15 @@ libbitcoin_wallet_a-stakeinput.o: stakeinput.cpp \
  libzerocoin/SpendType.h wallet/wallet.h addressbook.h \
  consensus/tx_verify.h consensus/validation.h crypter.h keystore.h \
  streams.h destination_io.h script/standard.h kernel.h stakeinput.h \
- key_io.h chainparams.h pairresult.h policy/feerate.h primitives/block.h \
- guiinterface.h /usr/include/boost/signals2/last_value.hpp \
- validationinterface.h sapling/incrementalmerkletree.h \
- primitives/transaction.h script/ismine.h script/standard.h \
- /usr/include/c++/9/bitset wallet/scriptpubkeyman.h wallet/hdchain.h \
- wallet/wallet.h wallet/walletdb.h wallet/db.h clientversion.h \
- /usr/include/db_cxx.h /usr/include/db.h /usr/include/inttypes.h \
- script/keyorigin.h sapling/saplingscriptpubkeyman.h sapling/note.h \
+ key_io.h chainparams.h operationresult.h policy/feerate.h \
+ primitives/block.h guiinterface.h \
+ /usr/include/boost/signals2/last_value.hpp validationinterface.h \
+ sapling/incrementalmerkletree.h primitives/transaction.h script/ismine.h \
+ script/standard.h /usr/include/c++/9/bitset wallet/scriptpubkeyman.h \
+ wallet/hdchain.h wallet/wallet.h wallet/walletdb.h wallet/db.h \
+ clientversion.h /usr/include/db_cxx.h /usr/include/db.h \
+ /usr/include/inttypes.h script/keyorigin.h \
+ sapling/saplingscriptpubkeyman.h sapling/note.h \
  sapling/incrementalmerkletree.h validation.h \
  config/pengolincoin-config.h amount.h chain.h coins.h \
  consensus/validation.h moneysupply.h policy/feerate.h \
@@ -3523,6 +3526,22 @@ serialize.h:
 
 span.h:
 
+prevector.h:
+
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+support/allocators/secure.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 version.h:
 
 flatfile.h:
@@ -3608,10 +3627,6 @@ optional.h:
 pow.h:
 
 timedata.h:
-
-tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 util/system.h:
 
@@ -4169,8 +4184,6 @@ util/threadnames.h:
 
 libzerocoin/Denominations.h:
 
-streams.h:
-
 txdb.h:
 
 coins.h:
@@ -4263,7 +4276,7 @@ key_io.h:
 
 chainparams.h:
 
-pairresult.h:
+operationresult.h:
 
 policy/feerate.h:
 

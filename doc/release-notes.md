@@ -1,10 +1,10 @@
 (note: this is a temporary file, to be added-to by anybody, and moved to release-notes at release time)
 
-PENGOLINCOIN Core version *version* is now available from:  <https://github.com/pengolincoin-project/pengolincoin/releases>
+PENGOLINCOIN Core version *version* is now available from:  <https://github.com/pengolincoin/PengolinCoin-Core/releases>
 
 This is a new major version release, including various bug fixes and performance improvements, as well as updated translations.
 
-Please report bugs using the issue tracker at github: <https://github.com/pengolincoin-project/pengolincoin/issues>
+Please report bugs using the issue tracker at github: <https://github.com/pengolincoin/PengolinCoin-Core/issues>
 
 
 How to Upgrade
@@ -38,6 +38,13 @@ From PENGOLINCOIN Core 6.0 onwards, macOS versions earlier than 10.12 are no lon
 
 PENGOLINCOIN Core should also work on most other Unix-like systems but is not frequently tested on them.
 
+The node's known peers are persisted to disk in a file called `peers.dat`. The
+format of this file has been changed in a backwards-incompatible way in order to
+accommodate the storage of Tor v3 and other BIP155 addresses. This means that if
+the file is modified by v5.3 or newer then older versions will not be able to
+read it. Those old versions, in the event of a downgrade, will log an error
+message "Incorrect keysize in addrman deserialization" and will continue normal
+operation as if the file was missing, creating a new empty one. (#2411)
 
 Notable Changes
 ==============
@@ -55,8 +62,8 @@ Deterministic Masternode lists are lists of masternodes, built at every block, r
 All nodes derive (and verify) their masternode lists independently, from the same on-chain transactions, thus they immediately reach consensus on the tier-two state (number of masternodes, properties and status of each one).
 
 Masternodes are "registered" by special transactions called ProTx, and removed only by spending the collateral.
-A ProTx either creates a 100,000 PGO collateral as tx output, or includes a reference to an unspent 100,000 PGO utxo on chain (and a proof of ownership).
-See PR [#2267](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/2267) for more information.
+A ProTx either creates a 10000-PGO collateral as tx output, or includes a reference to an unspent 10000-PGO utxo on chain (and a proof of ownership).
+See PR [#2267](https://github.com/pengolincoin/PengolinCoin-Core/pull/2267) for more information.
 
 Upgrade instructions: !TODO
 
@@ -272,16 +279,29 @@ Upgrade instructions: !TODO
 ### Protocol changes
 
 Starting with the enforcement block, masternode rewards and budget payments are paid as outputs of the coinbase transaction, instead of the coinstake transaction.
-With this rule, a new opcode (`0xd2`) is introduced (see PR [#2275](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/2275)).
+With this rule, a new opcode (`0xd2`) is introduced (see PR [#2275](https://github.com/pengolincoin/PengolinCoin-Core/pull/2275)).
 It enforces the same rules as the legacy cold-staking opcode, but without allowing a "free" script for the last output of the transaction.
 The new opcode takes the name of `OP_CHECKCOLDSTAKEVERIFY`, and the legacy opcode (`0xd1`) is renamed to `OP_CHECKCOLDSTAKEVERIFY_LOF` (last-output-free).
 Scripts with the old opcode are still accepted on the network (the restriction on the last-output is enforced after the script validation in this case), but the client creates new delegations with the new opcode, by default, after the upgrade enforcement.
 
+P2P and network changes
+-----------------------
+
+- The Tor onion service that is automatically created by setting the
+  `-listenonion` configuration parameter will now be created as a Tor v3 service
+  instead of Tor v2. The private key that was used for Tor v2 (if any) will be
+  left untouched in the `onion_private_key` file in the data directory (see
+  `-datadir`) and can be removed if not needed. PENGOLINCOIN Core will no longer
+  attempt to read it. The private key for the Tor v3 service will be saved in a
+  file named `onion_v3_private_key`. To use the deprecated Tor v2 service (not
+  recommended), then `onion_private_key` can be copied over
+  `onion_v3_private_key`, e.g.
+  `cp -f onion_private_key onion_v3_private_key`. (#19954)
 
 Multi-wallet support
 --------------------
 
-PENGOLINCOIN Core now supports loading multiple, separate wallets (See [PR #2337](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/2337)). The wallets are completely separated, with individual balances, keys and received transactions.
+PENGOLINCOIN Core now supports loading multiple, separate wallets (See [PR #2337](https://github.com/pengolincoin/PengolinCoin-Core/pull/2337)). The wallets are completely separated, with individual balances, keys and received transactions.
 
 Multi-wallet is enabled by using more than one `-wallet` argument when starting PENGOLINCOIN client, either on the command line or in the pengolincoin.conf config file.
 
@@ -349,6 +369,30 @@ Low-level RPC changes
   now the empty string `""` instead of `"wallet.dat"`. If PENGOLINCOIN is started
   with any `-wallet=<path>` options, there is no change in behavior, and the
   name of any wallet is just its `<path>` string.
+  
+### New RPC Commands
+
+* `getnodeaddresses`
+    ```
+    getnodeaddresses ( count "network" )
+
+    Return known addresses which can potentially be used to find new nodes in the network
+
+    Arguments:
+    1. count      (numeric, optional) The maximum number of addresses to return. Specify 0 to return all known addresses.
+    2. "network"  (string, optional) Return only addresses of the specified network. Can be one of: ipv4, ipv6, onion.
+    Result:
+    [
+      {
+        "time": ttt,          (numeric) Timestamp in seconds since epoch (Jan 1 1970 GMT) when the node was last seen
+        "services": n,        (numeric) The services offered by the node
+        "address": "host",    (string) The address of the node
+        "port": n,            (numeric) The port number of the node
+        "network": "xxxx"     (string) The network (ipv4, ipv6, onion) the node connected through
+      }
+      ,...
+    ]
+    ```
 
 Database cache memory increased
 --------------------------------
@@ -381,7 +425,7 @@ Removal of Priority Estimation - Coin Age Priority
 --------------------------------------------------
 
 In previous versions of PENGOLINCOIN Core, a portion of each block could be reserved for transactions based on the age and value of UTXOs they spent. This concept (Coin Age Priority) is a policy choice by miners/stakers, and there are no consensus rules around the inclusion of Coin Age Priority transactions in blocks. 
-PENGOLINCOIN Core v6.0.0 removes all remaining support for Coin Age Priority (See [PR #2378](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/2378)). This has the following implications:
+PENGOLINCOIN Core v6.0.0 removes all remaining support for Coin Age Priority (See [PR #2378](https://github.com/pengolincoin/PengolinCoin-Core/pull/2378)). This has the following implications:
 
 - The concept of *free transactions* has been removed. High Coin Age Priority transactions would previously be allowed to be relayed even if they didn't attach a miner fee. This is no longer possible since there is no concept of Coin Age Priority. The `-limitfreerelay` and `-relaypriority` options which controlled relay of free transactions have therefore been removed.
 - The `-blockprioritysize` option has been removed.
@@ -404,7 +448,7 @@ Note: Successful automatic port mapping requires a router that supports either U
 
 ### RPC-Console
 
-The GUI RPC-Console now accepts "parenthesized syntax", nested commands, and simple queries (see [PR #2282](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/2282).
+The GUI RPC-Console now accepts "parenthesized syntax", nested commands, and simple queries (see [PR #2282](https://github.com/pengolincoin/PengolinCoin-Core/pull/2282).
 A new command `help-console` (available only on the GUI console) documents how to use it:
 
 ```
@@ -453,7 +497,7 @@ Low-level RPC changes
 
 ### Query options for listunspent RPC
 
-- The `listunspent` RPC now takes a `query_options` argument (see [PR #2317](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/2317)), which is a JSON object
+- The `listunspent` RPC now takes a `query_options` argument (see [PR #2317](https://github.com/pengolincoin/PengolinCoin-Core/pull/2317)), which is a JSON object
   containing one or more of the following members:
   - `minimumAmount` - a number specifying the minimum value of each UTXO
   - `maximumAmount` - a number specifying the maximum value of each UTXO
@@ -461,7 +505,7 @@ Low-level RPC changes
   - `minimumSumAmount` - a number specifying the minimum sum value of all UTXOs
 
 - The `listunspent` RPC also takes an additional boolean argument `include_unsafe` (true by default) to optionally exclude "unsafe" utxos.
-  An unconfirmed output from outside keys is considered unsafe (see [PR #2351](https://github.com/PENGOLINCOIN-Project/PENGOLINCOIN/pull/2351)).
+  An unconfirmed output from outside keys is considered unsafe (see [PR #2351](https://github.com/pengolincoin/PengolinCoin-Core/pull/2351)).
 
 - The `listunspent` output also shows whether the utxo is considered safe to spend or not.
 
@@ -532,6 +576,13 @@ The `autocombine` RPC command has been replaced with specific set/get commands (
       "threshold": n.nnn         (numeric) the auto-combine threshold amount in PGO
     }
     ```
+
+Updated settings
+----------------
+
+- Netmasks that contain 1-bits after 0-bits (the 1-bits are not contiguous on
+  the left side, e.g. 255.0.255.255) are no longer accepted. They are invalid
+  according to RFC 4632.
 
 Build system changes
 --------------------

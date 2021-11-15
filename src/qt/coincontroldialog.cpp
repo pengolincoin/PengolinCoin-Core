@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -479,6 +479,7 @@ void CoinControlDialog::updateLabelLocked()
         } else
             ui->labelLocked->setVisible(false);
     } else {
+        ui->labelLocked->setVisible(false);
         // TODO: implement locked notes functionality inside the wallet..
     }
 }
@@ -550,9 +551,6 @@ TotalAmounts CoinControlDialog::getTotals() const
             // shielded in/outs len sizes
             t.nBytes += (GetCompactSize(nShieldIns) + GetCompactSize(nShieldOuts));
         }
-
-        // !TODO: ExtraPayload size for special txes. For now 1 byte for nullopt.
-        t.nBytes += 1;
 
         // nVersion, nType, nLockTime
         t.nBytes += 8;
@@ -780,7 +778,14 @@ void CoinControlDialog::updateView()
 
             // address
             itemWalletAddress->setText(COLUMN_ADDRESS, sWalletAddress);
-            itemWalletAddress->setToolTip(COLUMN_ADDRESS, sWalletAddress);
+            if (stakerAddress != nullopt) {
+                itemWalletAddress->setIcon(COLUMN_CONFIRMATIONS, QIcon("://ic-check-cold-staking-off"));
+                QString label = tr("Delegated to %1").arg(*stakerAddress);
+                itemWalletAddress->setToolTip(COLUMN_ADDRESS, label);
+                itemWalletAddress->setToolTip(COLUMN_CONFIRMATIONS, label);
+            } else {
+                itemWalletAddress->setToolTip(COLUMN_ADDRESS, sWalletAddress);
+            }
         }
 
         CAmount nSum = 0;

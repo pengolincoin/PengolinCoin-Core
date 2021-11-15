@@ -330,7 +330,7 @@ static ProRegPL ParseProRegPLParams(const UniValue& params, unsigned int paramId
     // ip and port
     const std::string& strIpPort = params[paramIdx].get_str();
     if (!strIpPort.empty()) {
-        if (!Lookup(strIpPort.c_str(), pl.addr, Params().GetDefaultPort(), false)) {
+        if (!Lookup(strIpPort, pl.addr, Params().GetDefaultPort(), false)) {
             throw JSONRPCError(RPC_INVALID_PARAMETER, strprintf("invalid network address %s", strIpPort));
         }
     }
@@ -993,6 +993,11 @@ static const CRPCCommand commands[] =
 
 void RegisterEvoRPCCommands(CRPCTable &tableRPC)
 {
+    if (!Params().IsRegTestNet()) {
+        // Disabled before PENGOLINCOIN v6.0
+        return;
+    }
+
     for (unsigned int vcidx = 0; vcidx < ARRAYLEN(commands); vcidx++) {
         tableRPC.appendCommand(commands[vcidx].name, &commands[vcidx]);
     }

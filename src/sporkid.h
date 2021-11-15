@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2016 The Dash developers
-// Copyright (c) 2016-2020 PIVX developers
+// Copyright (c) 2016-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -15,7 +15,7 @@
 enum SporkId : int32_t {
     SPORK_2_SWIFTTX                             = 10001,      // Deprecated in v4.3.99
     SPORK_3_SWIFTTX_BLOCK_FILTERING             = 10002,      // Deprecated in v4.3.99
-    SPORK_5_MAX_VALUE                           = 10004,
+    SPORK_5_MAX_VALUE                           = 10004,      // Deprecated in v5.2.99
     SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT      = 10007,
     SPORK_9_MASTERNODE_BUDGET_ENFORCEMENT       = 10008,
     SPORK_13_ENABLE_SUPERBLOCKS                 = 10012,

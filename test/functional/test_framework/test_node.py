@@ -7,16 +7,19 @@
 import contextlib
 import decimal
 import errno
+from enum import Enum
 import http.client
 import json
 import logging
 import os
 import re
 import subprocess
+import tempfile
 import time
 
 from .authproxy import JSONRPCException
 from .util import (
+    append_config,
     assert_equal,
     delete_cookie_file,
     get_rpc_proxy,
@@ -30,6 +33,12 @@ from .messages import MY_SUBVERSION
 JSONDecodeError = getattr(json, "JSONDecodeError", ValueError)
 
 BITCOIND_PROC_WAIT_TIMEOUT = 600
+
+class ErrorMatch(Enum):
+    FULL_TEXT = 1
+    FULL_REGEX = 2
+    PARTIAL_REGEX = 3
+
 
 class TestNode():
     """A class for representing a pengolincoind node under test.
@@ -45,7 +54,7 @@ class TestNode():
     To make things easier for the test writer, any unrecognised messages will
     be dispatched to the RPC connection."""
 
-    def __init__(self, i, dirname, extra_args, rpchost, timewait, binary, stderr, mocktime, coverage_dir, use_cli=False):
+    def __init__(self, i, dirname, rpchost, timewait, binary, stderr, mocktime, coverage_dir, extra_conf=None, extra_args=None, use_cli=False):
         self.index = i
         self.datadir = os.path.join(dirname, "node" + str(i))
         self.rpchost = rpchost
@@ -56,7 +65,11 @@ class TestNode():
             self.binary = binary
         self.stderr = stderr
         self.coverage_dir = coverage_dir
-        # Most callers will just need to add extra args to the standard list below. For those callers that need more flexibity, they can just set the args property directly.
+        if extra_conf is not None:
+            append_config(dirname, i, extra_conf)
+        # Most callers will just need to add extra args to the standard list below.
+        # For those callers that need more flexibity, they can just set the args property directly.
+        # Note that common args are set in the config file (see initialize_datadir)
         self.extra_args = extra_args
         self.args = [
             self.binary,
@@ -83,7 +96,7 @@ class TestNode():
         self.p2ps = []
 
     def __del__(self):
-        # Ensure that we don't leave any bitcoind processes lying around after
+        # Ensure that we don't leave any pengolincoind processes lying around after
         # the test ends
         if self.process and self.cleanup_on_exit:
             # Should only happen on test failure
@@ -107,7 +120,7 @@ class TestNode():
         if stderr is None:
             stderr = self.stderr
         # Delete any existing cookie file -- if such a file exists (eg due to
-        # unclean shutdown), it will get overwritten anyway by bitcoind, and
+        # unclean shutdown), it will get overwritten anyway by pengolincoind, and
         # potentially interfere with our attempt to authenticate
         delete_cookie_file(self.datadir)
         self.process = subprocess.Popen(self.args + extra_args, stderr=stderr, *args, **kwargs)
@@ -159,7 +172,7 @@ class TestNode():
             except JSONRPCException as e:  # Initialization phase
                 if e.error['code'] != -28:  # RPC in warmup?
                     raise  # unknown JSON RPC exception
-            except ValueError as e:  # cookie file not found and no rpcuser or rpcassword. bitcoind still starting
+            except ValueError as e:  # cookie file not found and no rpcuser or rpcassword. pengolincoind still starting
                 if "No RPC credentials" not in str(e):
                     raise
             time.sleep(1.0 / poll_per_s)
@@ -208,6 +221,44 @@ class TestNode():
 
     def wait_until_stopped(self, timeout=BITCOIND_PROC_WAIT_TIMEOUT):
         wait_until(self.is_node_stopped, timeout=timeout)
+
+    def assert_start_raises_init_error(self, extra_args=None, expected_msg=None, match=ErrorMatch.FULL_TEXT, *args, **kwargs):
+        """Attempt to start the node and expect it to raise an error.
+
+        extra_args: extra arguments to pass through to pengolincoind
+        expected_msg: regex that stderr should match when pengolincoind fails
+
+        Will throw if pengolincoind starts without an error.
+        Will throw if an expected_msg is provided and it does not match pengolincoind's stdout."""
+        with tempfile.SpooledTemporaryFile(max_size=2**16) as log_stderr:
+            try:
+                self.start(extra_args, stderr=log_stderr, *args, **kwargs)
+                self.wait_for_rpc_connection()
+                self.stop_node()
+                self.wait_until_stopped()
+            except Exception as e:
+                assert 'pengolincoind exited' in str(e)  # node must have shutdown
+                self.running = False
+                self.process = None
+                # Check stderr for expected message
+                if expected_msg is not None:
+                    log_stderr.seek(0)
+                    stderr = log_stderr.read().decode('utf-8').strip()
+                    if match == ErrorMatch.PARTIAL_REGEX:
+                        if re.search(expected_msg, stderr, flags=re.MULTILINE) is None:
+                            raise AssertionError('Expected message "{}" does not partially match stderr:\n"{}"'.format(expected_msg, stderr))
+                    elif match == ErrorMatch.FULL_REGEX:
+                        if re.fullmatch(expected_msg, stderr) is None:
+                            raise AssertionError('Expected message "{}" does not fully match stderr:\n"{}"'.format(expected_msg, stderr))
+                    elif match == ErrorMatch.FULL_TEXT:
+                        if expected_msg != stderr:
+                            raise AssertionError('Expected message "{}" does not fully match stderr:\n"{}"'.format(expected_msg, stderr))
+            else:
+                if expected_msg is None:
+                    assert_msg = "pengolincoind should have exited with an error"
+                else:
+                    assert_msg = "pengolincoind should have exited with expected error " + expected_msg
+                raise AssertionError(assert_msg)
 
     @contextlib.contextmanager
     def assert_debug_log(self, expected_msgs):

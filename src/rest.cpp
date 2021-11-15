@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
-// Copyright (c) 2017-2019 PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -156,7 +156,7 @@ static bool rest_headers(HTTPRequest* req,
     }
 
     case RF_HEX: {
-        std::string strHex = HexStr(ssHeader.begin(), ssHeader.end()) + "\n";
+        std::string strHex = HexStr(ssHeader) + "\n";
         req->WriteHeader("Content-Type", "text/plain");
         req->WriteReply(HTTP_OK, strHex);
         return true;
@@ -218,7 +218,7 @@ static bool rest_block(HTTPRequest* req,
     }
 
     case RF_HEX: {
-        std::string strHex = HexStr(ssBlock.begin(), ssBlock.end()) + "\n";
+        std::string strHex = HexStr(ssBlock) + "\n";
         req->WriteHeader("Content-Type", "text/plain");
         req->WriteReply(HTTP_OK, strHex);
         return true;
@@ -347,7 +347,7 @@ static bool rest_tx(HTTPRequest* req, const std::string& strURIPart)
     }
 
     case RF_HEX: {
-        std::string strHex = HexStr(ssTx.begin(), ssTx.end()) + "\n";
+        std::string strHex = HexStr(ssTx) + "\n";
         req->WriteHeader("Content-Type", "text/plain");
         req->WriteReply(HTTP_OK, strHex);
         return true;
@@ -508,7 +508,7 @@ static bool rest_getutxos(HTTPRequest* req, const std::string& strURIPart)
     case RF_HEX: {
         CDataStream ssGetUTXOResponse(SER_NETWORK, PROTOCOL_VERSION);
         ssGetUTXOResponse << chainActive.Height() << chainActive.Tip()->GetBlockHash() << bitmap << outs;
-        std::string strHex = HexStr(ssGetUTXOResponse.begin(), ssGetUTXOResponse.end()) + "\n";
+        std::string strHex = HexStr(ssGetUTXOResponse) + "\n";
 
         req->WriteHeader("Content-Type", "text/plain");
         req->WriteReply(HTTP_OK, strHex);

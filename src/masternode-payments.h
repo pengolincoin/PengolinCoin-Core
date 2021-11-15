@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -9,6 +9,7 @@
 
 #include "key.h"
 #include "masternode.h"
+#include "validationinterface.h"
 
 
 extern RecursiveMutex cs_vecPayments;
@@ -25,7 +26,6 @@ extern CMasternodePayments masternodePayments;
 #define MNPAYMENTS_SIGNATURES_REQUIRED 6
 #define MNPAYMENTS_SIGNATURES_TOTAL 10
 
-void ProcessMessageMasternodePayments(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
 bool IsBlockPayeeValid(const CBlock& block, const CBlockIndex* pindexPrev);
 std::string GetRequiredPaymentsString(int nBlockHeight);
 bool IsBlockValueValid(int nHeight, CAmount& nExpectedValue, CAmount nMinted, CAmount& nBudgetAmt);
@@ -178,7 +178,7 @@ public:
     std::string GetStrMessage() const override;
     CTxIn GetVin() const { return vinMasternode; };
 
-    bool IsValid(CNode* pnode, std::string& strError);
+    bool IsValid(CNode* pnode, std::string& strError, int chainHeight);
     void Relay();
 
     void AddPayee(const CScript& payeeIn)
@@ -204,7 +204,7 @@ public:
 // Keeps track of who should get paid for which blocks
 //
 
-class CMasternodePayments
+class CMasternodePayments : public CValidationInterface
 {
 private:
     int nLastBlockHeight;
@@ -225,6 +225,8 @@ public:
         mapMasternodeBlocks.clear();
         mapMasternodePayeeVotes.clear();
     }
+
+    void UpdatedBlockTip(const CBlockIndex *pindexNew, const CBlockIndex *pindexFork, bool fInitialDownload) override;
 
     bool AddWinningMasternode(CMasternodePaymentWinner& winner);
     void ProcessBlock(int nBlockHeight);

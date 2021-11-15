@@ -890,10 +890,12 @@ libbitcoin_wallet_a-bip38.o: bip38.cpp /usr/include/stdc-predef.h bip38.h \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h key.h script/standard.h \
- chainparams.h script/interpreter.h script/script_error.h crypto/aes.h \
- crypto/ctaes/ctaes.h key_io.h utilstrencodings.h \
- support/allocators/secure.h random.h secp256k1/include/secp256k1.h
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h tinyformat.h \
+ /usr/include/c++/9/iostream utilstrencodings.h \
+ support/allocators/secure.h util/string.h attributes.h streams.h key.h \
+ script/standard.h chainparams.h script/interpreter.h \
+ script/script_error.h crypto/aes.h crypto/ctaes/ctaes.h key_io.h \
+ random.h secp256k1/include/secp256k1.h
 
 /usr/include/stdc-predef.h:
 
@@ -3039,6 +3041,20 @@ compat.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+support/allocators/secure.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 key.h:
 
 script/standard.h:
@@ -3054,10 +3070,6 @@ crypto/aes.h:
 crypto/ctaes/ctaes.h:
 
 key_io.h:
-
-utilstrencodings.h:
-
-support/allocators/secure.h:
 
 random.h:
 

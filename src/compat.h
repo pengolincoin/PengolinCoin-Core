@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2017-2018 PIVX developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -93,6 +93,12 @@ typedef u_int SOCKET;
 #if HAVE_DECL_STRNLEN == 0
 size_t strnlen( const char *start, size_t max_len);
 #endif // HAVE_DECL_STRNLEN
+
+#ifndef WIN32
+typedef void* sockopt_arg_type;
+#else
+typedef char* sockopt_arg_type;
+#endif
 
 bool static inline IsSelectableSocket(SOCKET s)
 {

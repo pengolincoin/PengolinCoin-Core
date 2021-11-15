@@ -891,9 +891,11 @@ wallet/libbitcoin_wallet_a-rpcdump.o: wallet/rpcdump.cpp \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h script/standard.h \
- chainparams.h script/interpreter.h script/script_error.h rpc/server.h \
- rpc/protocol.h fs.h /usr/include/boost/filesystem.hpp \
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h tinyformat.h \
+ /usr/include/c++/9/iostream utilstrencodings.h util/string.h \
+ attributes.h streams.h script/standard.h chainparams.h \
+ script/interpreter.h script/script_error.h rpc/server.h rpc/protocol.h \
+ fs.h /usr/include/boost/filesystem.hpp \
  /usr/include/boost/filesystem/config.hpp \
  /usr/include/boost/system/api_config.hpp \
  /usr/include/boost/config/auto_link.hpp \
@@ -927,9 +929,8 @@ wallet/libbitcoin_wallet_a-rpcdump.o: wallet/rpcdump.cpp \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
  /usr/include/c++/9/bits/fstream.tcc univalue/include/univalue.h \
  sapling/key_io_sapling.h sapling/zip32.h script/standard.h sync.h \
- util/system.h logging.h fs.h tinyformat.h /usr/include/c++/9/iostream \
- compat.h tinyformat.h utiltime.h util/threadnames.h \
- /usr/include/boost/thread/condition_variable.hpp \
+ util/system.h logging.h fs.h compat.h tinyformat.h utiltime.h \
+ util/threadnames.h /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
  /usr/include/boost/thread/pthread/condition_variable.hpp \
@@ -1186,8 +1187,8 @@ wallet/libbitcoin_wallet_a-rpcdump.o: wallet/rpcdump.cpp \
  /usr/include/boost/smart_ptr/enable_shared_from_this.hpp \
  utilstrencodings.h wallet/rpcwallet.h wallet/wallet.h addressbook.h \
  consensus/tx_verify.h consensus/validation.h crypter.h keystore.h \
- streams.h destination_io.h kernel.h stakeinput.h chain.h flatfile.h \
- pow.h timedata.h util/system.h pairresult.h policy/feerate.h \
+ destination_io.h kernel.h stakeinput.h chain.h flatfile.h pow.h \
+ timedata.h util/system.h operationresult.h policy/feerate.h \
  primitives/block.h guiinterface.h \
  /usr/include/boost/signals2/last_value.hpp validationinterface.h \
  sapling/incrementalmerkletree.h sapling/sapling_util.h \
@@ -3683,6 +3684,18 @@ compat.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 script/standard.h:
 
 chainparams.h:
@@ -3786,10 +3799,6 @@ util/system.h:
 logging.h:
 
 fs.h:
-
-tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 compat.h:
 
@@ -4349,8 +4358,6 @@ crypter.h:
 
 keystore.h:
 
-streams.h:
-
 destination_io.h:
 
 kernel.h:
@@ -4367,7 +4374,7 @@ timedata.h:
 
 util/system.h:
 
-pairresult.h:
+operationresult.h:
 
 policy/feerate.h:
 

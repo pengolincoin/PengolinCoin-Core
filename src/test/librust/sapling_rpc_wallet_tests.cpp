@@ -1,5 +1,5 @@
 // Copyright (c) 2016-2020 The ZCash developers
-// Copyright (c) 2020 PIVX developers
+// Copyright (c) 2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -422,8 +422,9 @@ BOOST_AUTO_TEST_CASE(rpc_shieldsendmany_taddr_to_sapling)
     UniValue retValue;
 
     // add keys manually
-    CTxDestination taddr;
-    m_wallet.getNewAddress(taddr, "");
+    auto res = m_wallet.getNewAddress("");
+    BOOST_CHECK(res);
+    CTxDestination taddr = *res.getObjResult();
     std::string taddr1 = EncodeDestination(taddr);
     auto zaddr1 = m_wallet.GenerateNewSaplingZKey();
 

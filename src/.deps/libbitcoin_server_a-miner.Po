@@ -922,9 +922,11 @@ libbitcoin_server_a-miner.o: miner.cpp /usr/include/stdc-predef.h miner.h \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h script/interpreter.h \
- script/script_error.h uint256.h indirectmap.h policy/feerate.h sync.h \
- random.h netaddress.h /usr/include/boost/multi_index_container.hpp \
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h tinyformat.h \
+ /usr/include/c++/9/iostream utilstrencodings.h util/string.h \
+ attributes.h streams.h script/interpreter.h script/script_error.h \
+ uint256.h indirectmap.h policy/feerate.h sync.h random.h netaddress.h \
+ /usr/include/boost/multi_index_container.hpp \
  /usr/include/boost/mpl/at.hpp /usr/include/boost/mpl/at_fwd.hpp \
  /usr/include/boost/mpl/aux_/at_impl.hpp \
  /usr/include/boost/mpl/contains.hpp \
@@ -1116,9 +1118,9 @@ libbitcoin_server_a-miner.o: miner.cpp /usr/include/stdc-predef.h miner.h \
  /usr/include/boost/multi_index/detail/seq_index_ops.hpp \
  /usr/include/boost/multi_index/sequenced_index_fwd.hpp \
  consensus/params.h masternode-sync.h net.h addrdb.h fs.h streams.h \
- addrman.h protocol.h timedata.h util/system.h logging.h fs.h \
- tinyformat.h /usr/include/c++/9/iostream compat.h sync.h tinyformat.h \
- utiltime.h util/threadnames.h \
+ addrman.h config/pengolincoin-config.h clientversion.h optional.h \
+ protocol.h timedata.h tinyformat.h util/system.h logging.h fs.h compat.h \
+ sync.h tinyformat.h utiltime.h util/threadnames.h \
  /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
@@ -1359,17 +1361,16 @@ libbitcoin_server_a-miner.o: miner.cpp /usr/include/stdc-predef.h miner.h \
  /usr/include/boost/thread/pthread/condition_variable_fwd.hpp \
  /usr/include/boost/thread/cv_status.hpp \
  /usr/include/boost/enable_shared_from_this.hpp \
- /usr/include/boost/smart_ptr/enable_shared_from_this.hpp bloom.h \
- compat.h hash.h limitedmap.h utilstrencodings.h \
- support/allocators/secure.h threadinterrupt.h util/blockstatecatcher.h \
- validation.h amount.h chain.h chainparams.h flatfile.h pow.h timedata.h \
- util/system.h coins.h consensus/validation.h moneysupply.h \
- policy/feerate.h script/script_error.h txmempool.h validationinterface.h \
- sapling/incrementalmerkletree.h primitives/transaction.h utilmoneystr.h \
- wallet/wallet.h addressbook.h consensus/tx_verify.h \
- consensus/validation.h crypter.h keystore.h streams.h destination_io.h \
- script/standard.h kernel.h stakeinput.h key_io.h pairresult.h \
- policy/feerate.h primitives/block.h guiinterface.h \
+ /usr/include/boost/smart_ptr/enable_shared_from_this.hpp hash.h bloom.h \
+ compat.h hash.h limitedmap.h utilstrencodings.h threadinterrupt.h \
+ util/blockstatecatcher.h validation.h amount.h chain.h chainparams.h \
+ flatfile.h pow.h timedata.h util/system.h coins.h consensus/validation.h \
+ moneysupply.h policy/feerate.h script/script_error.h txmempool.h \
+ validationinterface.h sapling/incrementalmerkletree.h \
+ primitives/transaction.h utilmoneystr.h wallet/wallet.h addressbook.h \
+ consensus/tx_verify.h consensus/validation.h crypter.h keystore.h \
+ destination_io.h script/standard.h kernel.h stakeinput.h key_io.h \
+ operationresult.h policy/feerate.h primitives/block.h guiinterface.h \
  /usr/include/boost/signals2/last_value.hpp util/system.h \
  utilstrencodings.h script/ismine.h script/standard.h \
  wallet/scriptpubkeyman.h wallet/hdchain.h wallet/wallet.h \
@@ -3756,6 +3757,18 @@ compat.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 script/interpreter.h:
 
 script/script_error.h:
@@ -4180,19 +4193,23 @@ streams.h:
 
 addrman.h:
 
+config/pengolincoin-config.h:
+
+clientversion.h:
+
+optional.h:
+
 protocol.h:
 
 timedata.h:
+
+tinyformat.h:
 
 util/system.h:
 
 logging.h:
 
 fs.h:
-
-tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 compat.h:
 
@@ -4706,6 +4723,8 @@ util/threadnames.h:
 
 /usr/include/boost/smart_ptr/enable_shared_from_this.hpp:
 
+hash.h:
+
 bloom.h:
 
 compat.h:
@@ -4715,8 +4734,6 @@ hash.h:
 limitedmap.h:
 
 utilstrencodings.h:
-
-support/allocators/secure.h:
 
 threadinterrupt.h:
 
@@ -4770,8 +4787,6 @@ crypter.h:
 
 keystore.h:
 
-streams.h:
-
 destination_io.h:
 
 script/standard.h:
@@ -4782,7 +4797,7 @@ stakeinput.h:
 
 key_io.h:
 
-pairresult.h:
+operationresult.h:
 
 policy/feerate.h:
 

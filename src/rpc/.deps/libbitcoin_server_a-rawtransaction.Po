@@ -771,17 +771,18 @@ rpc/libbitcoin_server_a-rawtransaction.o: rpc/rawtransaction.cpp \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h \
- univalue/include/univalue.h /usr/include/c++/9/cassert init.h keystore.h \
- key.h support/allocators/secure.h support/lockedpool.h \
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h tinyformat.h \
+ /usr/include/c++/9/cassert /usr/include/c++/9/iostream \
+ utilstrencodings.h support/allocators/secure.h support/lockedpool.h \
  /usr/include/c++/9/mutex /usr/include/c++/9/chrono \
  /usr/include/c++/9/ratio /usr/include/c++/9/bits/parse_numbers.h \
  /usr/include/c++/9/bits/std_mutex.h \
- /usr/include/c++/9/bits/unique_lock.h pubkey.h sapling/address.h \
- sapling/zip32.h key.h support/allocators/zeroafterfree.h sync.h \
- threadsafety.h util/macros.h /usr/include/c++/9/condition_variable \
- /usr/include/c++/9/thread /usr/include/boost/signals2/signal.hpp \
- /usr/include/boost/function.hpp \
+ /usr/include/c++/9/bits/unique_lock.h util/string.h attributes.h \
+ univalue/include/univalue.h init.h keystore.h key.h pubkey.h \
+ sapling/address.h sapling/zip32.h key.h \
+ support/allocators/zeroafterfree.h sync.h threadsafety.h util/macros.h \
+ /usr/include/c++/9/condition_variable /usr/include/c++/9/thread \
+ /usr/include/boost/signals2/signal.hpp /usr/include/boost/function.hpp \
  /usr/include/boost/function/detail/prologue.hpp \
  /usr/include/boost/config/no_tr1/functional.hpp \
  /usr/include/boost/function/function_base.hpp \
@@ -890,7 +891,7 @@ rpc/libbitcoin_server_a-rawtransaction.o: rpc/rawtransaction.cpp \
  libzerocoin/Params.h libzerocoin/bignum.h \
  /usr/include/x86_64-linux-gnu/gmp.h arith_uint256.h random.h \
  crypto/chacha20.h libzerocoin/ZerocoinDefines.h primitives/block.h \
- protocol.h netaddress.h script/standard.h chainparams.h \
+ protocol.h netaddress.h streams.h script/standard.h chainparams.h \
  script/interpreter.h script/script_error.h validationinterface.h \
  sapling/incrementalmerkletree.h sapling/sapling_util.h fs.h \
  /usr/include/boost/filesystem.hpp \
@@ -926,10 +927,9 @@ rpc/libbitcoin_server_a-rawtransaction.o: rpc/rawtransaction.cpp \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
  /usr/include/c++/9/bits/fstream.tcc primitives/transaction.h net.h \
- addrdb.h fs.h streams.h addrman.h random.h timedata.h util/system.h \
- logging.h tinyformat.h /usr/include/c++/9/iostream compat.h sync.h \
- tinyformat.h utiltime.h util/threadnames.h \
- /usr/include/boost/thread/condition_variable.hpp \
+ addrdb.h fs.h addrman.h clientversion.h random.h timedata.h \
+ util/system.h logging.h compat.h sync.h tinyformat.h utiltime.h \
+ util/threadnames.h /usr/include/boost/thread/condition_variable.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
  /usr/include/boost/thread/pthread/condition_variable.hpp \
@@ -1183,14 +1183,14 @@ rpc/libbitcoin_server_a-rawtransaction.o: rpc/rawtransaction.cpp \
  /usr/include/boost/thread/pthread/condition_variable_fwd.hpp \
  /usr/include/boost/thread/cv_status.hpp \
  /usr/include/boost/enable_shared_from_this.hpp \
- /usr/include/boost/smart_ptr/enable_shared_from_this.hpp bloom.h \
- limitedmap.h utilstrencodings.h threadinterrupt.h policy/policy.h \
- policy/feerate.h script/standard.h rpc/server.h rpc/protocol.h \
- script/script_error.h script/sign.h utilmoneystr.h amount.h \
- sapling/key_io_sapling.h sapling/zip32.h wallet/rpcwallet.h \
- wallet/wallet.h addressbook.h consensus/tx_verify.h crypter.h keystore.h \
- destination_io.h kernel.h stakeinput.h chain.h flatfile.h pow.h \
- pairresult.h policy/feerate.h primitives/block.h guiinterface.h \
+ /usr/include/boost/smart_ptr/enable_shared_from_this.hpp hash.h bloom.h \
+ limitedmap.h threadinterrupt.h policy/policy.h policy/feerate.h \
+ script/standard.h rpc/server.h rpc/protocol.h script/script_error.h \
+ script/sign.h utilmoneystr.h amount.h sapling/key_io_sapling.h \
+ sapling/zip32.h wallet/rpcwallet.h wallet/wallet.h addressbook.h \
+ consensus/tx_verify.h crypter.h keystore.h destination_io.h kernel.h \
+ stakeinput.h chain.h flatfile.h pow.h operationresult.h policy/feerate.h \
+ primitives/block.h guiinterface.h \
  /usr/include/boost/signals2/last_value.hpp util/system.h \
  utilstrencodings.h script/ismine.h /usr/include/c++/9/bitset \
  wallet/scriptpubkeyman.h wallet/hdchain.h wallet/walletdb.h wallet/db.h \
@@ -3216,15 +3216,13 @@ compat.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
-univalue/include/univalue.h:
+tinyformat.h:
 
 /usr/include/c++/9/cassert:
 
-init.h:
+/usr/include/c++/9/iostream:
 
-keystore.h:
-
-key.h:
+utilstrencodings.h:
 
 support/allocators/secure.h:
 
@@ -3241,6 +3239,18 @@ support/lockedpool.h:
 /usr/include/c++/9/bits/std_mutex.h:
 
 /usr/include/c++/9/bits/unique_lock.h:
+
+util/string.h:
+
+attributes.h:
+
+univalue/include/univalue.h:
+
+init.h:
+
+keystore.h:
+
+key.h:
 
 pubkey.h:
 
@@ -3522,6 +3532,8 @@ protocol.h:
 
 netaddress.h:
 
+streams.h:
+
 script/standard.h:
 
 chainparams.h:
@@ -3620,9 +3632,9 @@ addrdb.h:
 
 fs.h:
 
-streams.h:
-
 addrman.h:
+
+clientversion.h:
 
 random.h:
 
@@ -3631,10 +3643,6 @@ timedata.h:
 util/system.h:
 
 logging.h:
-
-tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 compat.h:
 
@@ -4180,11 +4188,11 @@ util/threadnames.h:
 
 /usr/include/boost/smart_ptr/enable_shared_from_this.hpp:
 
+hash.h:
+
 bloom.h:
 
 limitedmap.h:
-
-utilstrencodings.h:
 
 threadinterrupt.h:
 
@@ -4234,7 +4242,7 @@ flatfile.h:
 
 pow.h:
 
-pairresult.h:
+operationresult.h:
 
 policy/feerate.h:
 

@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -9,13 +9,14 @@
 
 #include "budget/budgetproposal.h"
 #include "budget/finalizedbudget.h"
+#include "validationinterface.h"
 
 class CValidationState;
 
 //
 // Budget Manager : Contains all proposals for the budget
 //
-class CBudgetManager
+class CBudgetManager : public CValidationInterface
 {
 protected:
     // map budget hash --> CollTx hash.
@@ -37,6 +38,10 @@ protected:
 
     // Memory Only. Updated in NewBlock (blocks arrive in order)
     std::atomic<int> nBestHeight;
+
+    // Spam protection
+    // who's asked for the complete budget sync and the last time
+    std::map<CNetAddr, int64_t> mAskedUsForBudgetSync; // guarded by cs_budgets and cs_proposals.
 
     // Returns a const pointer to the budget with highest vote count
     const CFinalizedBudget* GetBudgetWithHighestVoteCount(int chainHeight) const;
@@ -60,6 +65,8 @@ public:
         WITH_LOCK(cs_votes, mapSeenProposalVotes.clear(); );
         WITH_LOCK(cs_finalizedvotes, mapSeenFinalizedBudgetVotes.clear(); );
     }
+
+    void UpdatedBlockTip(const CBlockIndex *pindexNew, const CBlockIndex *pindexFork, bool fInitialDownload) override;
 
     bool HaveProposal(const uint256& propHash) const { LOCK(cs_proposals); return mapProposals.count(propHash); }
     bool HaveSeenProposalVote(const uint256& voteHash) const { LOCK(cs_votes); return mapSeenProposalVotes.count(voteHash); }
@@ -96,7 +103,7 @@ public:
     void ProcessMessage(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
     /// Process the message and returns the ban score (0 if no banning is needed)
     int ProcessMessageInner(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
-    void NewBlock(int height);
+    void NewBlock();
 
     int ProcessBudgetVoteSync(const uint256& nProp, CNode* pfrom);
     int ProcessProposal(CBudgetProposal& proposal);
@@ -159,6 +166,11 @@ public:
             mapSeenFinalizedBudgetVotes.clear();
             mapOrphanFinalizedBudgetVotes.clear();
         }
+        {
+            LOCK2(cs_budgets, cs_proposals);
+            mAskedUsForBudgetSync.clear();
+        }
+
         LogPrintf("Budget object cleared\n");
     }
     void CheckAndRemove();

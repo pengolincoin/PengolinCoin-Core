@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -28,6 +28,7 @@
 #include <QtConcurrent/QtConcurrent>
 #include <QSet>
 #include <QTimer>
+#include <utility>
 
 
 WalletModel::WalletModel(CWallet* wallet, OptionsModel* optionsModel, QObject* parent) : QObject(parent), wallet(wallet), walletWrapper(*wallet),
@@ -476,14 +477,15 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
                 Destination ownerAdd;
                 if (rcp.ownerAddress.isEmpty()) {
                     // Create new internal owner address
-                    if (!getNewAddress(ownerAdd).result)
-                        return CannotCreateInternalAddress;
+                    auto res = getNewAddress();
+                    if (!res) return CannotCreateInternalAddress;
+                    ownerAdd = *res.getObjResult();
                 } else {
                     ownerAdd = Destination(DecodeDestination(rcp.ownerAddress.toStdString()), false);
                 }
 
                 const CKeyID* stakerId = boost::get<CKeyID>(&out);
-                const CKeyID* ownerId = boost::get<CKeyID>(&ownerAdd.dest);
+                const CKeyID* ownerId = ownerAdd.getKeyID();
                 if (!stakerId || !ownerId) {
                     return InvalidAddress;
                 }
@@ -736,7 +738,6 @@ bool WalletModel::changePassphrase(const SecureString& oldPass, const SecureStri
 
 bool WalletModel::backupWallet(const QString& filename)
 {
-    LogPrint(BCLog::DB, "backupWallet : filename = %s\n", filename.toLocal8Bit().data());
     // Attempt regular backup
     if (!wallet->BackupWallet(filename.toLocal8Bit().data())) {
         return error("ERROR: Failed to backup wallet!");
@@ -928,27 +929,23 @@ int64_t WalletModel::getKeyCreationTime(const libzcash::SaplingPaymentAddress& a
     return 0;
 }
 
-PairResult WalletModel::getNewAddress(Destination& ret, std::string label) const
+CallResult<Destination> WalletModel::getNewAddress(const std::string& label) const
 {
-    CTxDestination dest;
-    PairResult res = wallet->getNewAddress(dest, label);
-    if (res.result) ret = Destination(dest, false);
-    return res;
+    auto res = wallet->getNewAddress(label);
+    return res ? CallResult<Destination>(Destination(*res.getObjResult(), false)) :
+           CallResult<Destination>(res.getError());
 }
 
-PairResult WalletModel::getNewStakingAddress(Destination& ret,std::string label) const
+CallResult<Destination> WalletModel::getNewStakingAddress(const std::string& label) const
 {
-    CTxDestination dest;
-    PairResult res = wallet->getNewStakingAddress(dest, label);
-    if (res.result) ret = Destination(dest, true);
-    return res;
+    auto res = wallet->getNewStakingAddress(label);
+    return res ? CallResult<Destination>(Destination(*res.getObjResult(), true)) :
+           CallResult<Destination>(res.getError());
 }
 
-PairResult WalletModel::getNewShieldedAddress(QString& shieldedAddrRet, std::string strLabel)
+CallResult<Destination> WalletModel::getNewShieldedAddress(std::string strLabel)
 {
-    shieldedAddrRet = QString::fromStdString(
-            KeyIO::EncodePaymentAddress(wallet->GenerateNewSaplingZKey(strLabel)));
-    return PairResult(true);
+    return CallResult<Destination>(Destination(wallet->GenerateNewSaplingZKey(std::move(strLabel))));
 }
 
 bool WalletModel::whitelistAddressFromColdStaking(const QString &addressStr)

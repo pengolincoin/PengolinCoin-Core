@@ -887,9 +887,11 @@ libbitcoin_server_a-bloom.o: bloom.cpp /usr/include/stdc-predef.h bloom.h \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h span.h version.h \
- script/interpreter.h script/script_error.h random.h streams.h \
- /usr/include/c++/9/math.h /usr/include/c++/9/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h span.h tinyformat.h \
+ /usr/include/c++/9/iostream utilstrencodings.h util/string.h \
+ attributes.h streams.h version.h script/interpreter.h \
+ script/script_error.h random.h streams.h /usr/include/c++/9/math.h \
+ /usr/include/c++/9/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
@@ -3048,6 +3050,18 @@ compat.h:
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
 span.h:
+
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
 
 version.h:
 

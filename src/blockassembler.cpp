@@ -46,14 +46,14 @@ public:
 
     bool operator()(const CTxMemPool::txiter a, const CTxMemPool::txiter b)
     {
-        return CompareTxMemPoolEntryByScore()(*b,*a); // Convert to less than
+        return CompareTxMemPoolEntryByScore()(*b, *a); // Convert to less than
     }
 };
 
-int64_t UpdateTime(CBlockHeader* pblock, const Consensus::Params& consensusParams, const CBlockIndex* pindexPrev)
+int64_t UpdateTime(CBlockHeader *pblock, const Consensus::Params &consensusParams, const CBlockIndex *pindexPrev)
 {
     int64_t nOldTime = pblock->nTime;
-    int64_t nNewTime = std::max(pindexPrev->GetMedianTimePast()+1, GetAdjustedTime());
+    int64_t nNewTime = std::max(pindexPrev->GetMedianTimePast() + 1, GetAdjustedTime());
 
     if (nOldTime < nNewTime)
         pblock->nTime = nNewTime;
@@ -65,18 +65,19 @@ int64_t UpdateTime(CBlockHeader* pblock, const Consensus::Params& consensusParam
     return nNewTime - nOldTime;
 }
 
-static CMutableTransaction NewCoinbase(const int nHeight, const CScript* pScriptPubKey = nullptr)
+static CMutableTransaction NewCoinbase(const int nHeight, const CScript *pScriptPubKey = nullptr)
 {
     CMutableTransaction txCoinbase;
     txCoinbase.vout.emplace_back();
     txCoinbase.vout[0].SetEmpty();
-    if (pScriptPubKey) txCoinbase.vout[0].scriptPubKey = *pScriptPubKey;
+    if (pScriptPubKey)
+        txCoinbase.vout[0].scriptPubKey = *pScriptPubKey;
     txCoinbase.vin.emplace_back();
     txCoinbase.vin[0].scriptSig = CScript() << nHeight << OP_0;
     return txCoinbase;
 }
 
-bool SolveProofOfStake(CBlock* pblock, CBlockIndex* pindexPrev, CWallet* pwallet, std::vector<CStakeableOutput>* availableCoins)
+bool SolveProofOfStake(CBlock *pblock, CBlockIndex *pindexPrev, CWallet *pwallet, std::vector<CStakeableOutput> *availableCoins)
 {
     boost::this_thread::interruption_point();
 
@@ -88,7 +89,8 @@ bool SolveProofOfStake(CBlock* pblock, CBlockIndex* pindexPrev, CWallet* pwallet
 
     CMutableTransaction txCoinStake;
     int64_t nTxNewTime = 0;
-    if (!pwallet->CreateCoinStake(pindexPrev, pblock->nBits, txCoinStake, nTxNewTime, availableCoins)) {
+    if (!pwallet->CreateCoinStake(pindexPrev, pblock->nBits, txCoinStake, nTxNewTime, availableCoins))
+    {
         LogPrint(BCLog::STAKING, "%s : stake not found\n", __func__);
         return false;
     }
@@ -99,8 +101,9 @@ bool SolveProofOfStake(CBlock* pblock, CBlockIndex* pindexPrev, CWallet* pwallet
     FillBlockPayee(txCoinbase, txCoinStake, pindexPrev, true);
 
     // Sign coinstake
-    if (!pwallet->SignCoinStake(txCoinStake)) {
-        const COutPoint& stakeIn = txCoinStake.vin[0].prevout;
+    if (!pwallet->SignCoinStake(txCoinStake))
+    {
+        const COutPoint &stakeIn = txCoinStake.vin[0].prevout;
         return error("Unable to sign coinstake with input %s-%d", stakeIn.hash.ToString(), stakeIn.n);
     }
 
@@ -110,7 +113,7 @@ bool SolveProofOfStake(CBlock* pblock, CBlockIndex* pindexPrev, CWallet* pwallet
     return true;
 }
 
-CMutableTransaction CreateCoinbaseTx(const CScript& scriptPubKeyIn, CBlockIndex* pindexPrev)
+CMutableTransaction CreateCoinbaseTx(const CScript &scriptPubKeyIn, CBlockIndex *pindexPrev)
 {
     assert(pindexPrev);
     const int nHeight = pindexPrev->nHeight + 1;
@@ -118,23 +121,27 @@ CMutableTransaction CreateCoinbaseTx(const CScript& scriptPubKeyIn, CBlockIndex*
     // Create coinbase tx
     CMutableTransaction txCoinbase = NewCoinbase(nHeight, &scriptPubKeyIn);
 
-    //Masternode and general budget payments
-    CMutableTransaction txDummy;    // POW blocks have no coinstake
+    // Masternode and general budget payments
+    CMutableTransaction txDummy; // POW blocks have no coinstake
     FillBlockPayee(txCoinbase, txDummy, pindexPrev, false);
 
     // If no payee was detected, then the whole block value goes to the first output.
-    if (txCoinbase.vout.size() == 1) {
+    if (txCoinbase.vout.size() == 1)
+    {
         txCoinbase.vout[0].nValue = GetBlockValue(nHeight);
         txCoinbase.vout.resize(2);
 
-        if (!Params().GetConsensus().NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V5_2) && !Params().IsTestnet()) {
+        if (!Params().GetConsensus().NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V5_2) && !Params().IsTestnet())
+        {
             txCoinbase.vout[1].scriptPubKey = CScript()
-                                         << ParseHex(Params().GetConsensus().strDevpubkey.c_str())
-                                         << OP_CHECKSIG;
-        } else {
+                                              << ParseHex(Params().GetConsensus().strDevpubkey.c_str())
+                                              << OP_CHECKSIG;
+        }
+        else
+        {
             txCoinbase.vout[1].scriptPubKey = CScript() << OP_DUP << OP_HASH160
-                                         << ParseHex(Params().GetConsensus().strDevPubKeyID.c_str())
-                                         << OP_EQUALVERIFY << OP_CHECKSIG;
+                                                        << ParseHex(Params().GetConsensus().strDevPubKeyID.c_str())
+                                                        << OP_EQUALVERIFY << OP_CHECKSIG;
         }
 
         CAmount blockValue = GetBlockValue(nHeight);
@@ -146,14 +153,14 @@ CMutableTransaction CreateCoinbaseTx(const CScript& scriptPubKeyIn, CBlockIndex*
     return txCoinbase;
 }
 
-bool CreateCoinbaseTx(CBlock* pblock, const CScript& scriptPubKeyIn, CBlockIndex* pindexPrev)
+bool CreateCoinbaseTx(CBlock *pblock, const CScript &scriptPubKeyIn, CBlockIndex *pindexPrev)
 {
     pblock->vtx.emplace_back(MakeTransactionRef(CreateCoinbaseTx(scriptPubKeyIn, pindexPrev)));
     return true;
 }
 
-BlockAssembler::BlockAssembler(const CChainParams& _chainparams, const bool _defaultPrintPriority)
-        : chainparams(_chainparams), defaultPrintPriority(_defaultPrintPriority)
+BlockAssembler::BlockAssembler(const CChainParams &_chainparams, const bool _defaultPrintPriority)
+    : chainparams(_chainparams), defaultPrintPriority(_defaultPrintPriority)
 {
     // Largest block you're willing to create:
     nBlockMaxSize = gArgs.GetArg("-blockmaxsize", DEFAULT_BLOCK_MAX_SIZE);
@@ -174,47 +181,52 @@ void BlockAssembler::resetBlock()
     nFees = 0;
 }
 
-std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& scriptPubKeyIn,
-                                               CWallet* pwallet,
-                                               bool fProofOfStake,
-                                               std::vector<CStakeableOutput>* availableCoins,
-                                               bool fNoMempoolTx,
-                                               bool fTestValidity)
+std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript &scriptPubKeyIn,
+                                                               CWallet *pwallet,
+                                                               bool fProofOfStake,
+                                                               std::vector<CStakeableOutput> *availableCoins,
+                                                               bool fNoMempoolTx,
+                                                               bool fTestValidity)
 {
     resetBlock();
 
     pblocktemplate.reset(new CBlockTemplate());
 
-    if(!pblocktemplate) return nullptr;
+    if (!pblocktemplate)
+        return nullptr;
     pblock = &pblocktemplate->block; // pointer for convenience
 
-    pblocktemplate->vTxFees.push_back(-1); // updated at end
+    pblocktemplate->vTxFees.push_back(-1);   // updated at end
     pblocktemplate->vTxSigOps.push_back(-1); // updated at end
 
-    CBlockIndex* pindexPrev = WITH_LOCK(cs_main, return chainActive.Tip());
+    CBlockIndex *pindexPrev = WITH_LOCK(cs_main, return chainActive.Tip());
     assert(pindexPrev);
     nHeight = pindexPrev->nHeight + 1;
 
     pblock->nVersion = ComputeBlockVersion(chainparams.GetConsensus(), nHeight);
     // -regtest only: allow overriding block.nVersion with
     // -blockversion=N to test forking scenarios
-    if (Params().IsRegTestNet()) {
+    if (Params().IsRegTestNet())
+    {
         pblock->nVersion = gArgs.GetArg("-blockversion", pblock->nVersion);
     }
 
     // Depending on the tip height, try to find a coinstake who solves the block or create a coinbase tx.
     if (!(fProofOfStake ? SolveProofOfStake(pblock, pindexPrev, pwallet, availableCoins)
-                        : CreateCoinbaseTx(pblock, scriptPubKeyIn, pindexPrev))) {
+                        : CreateCoinbaseTx(pblock, scriptPubKeyIn, pindexPrev)))
+    {
         return nullptr;
     }
 
-    if (!fNoMempoolTx) {
+    if (!fNoMempoolTx)
+    {
         // Add transactions from mempool
-        LOCK2(cs_main,mempool.cs);
+        LOCK2(cs_main, mempool.cs);
         addPackageTxs();
     }
 
-    if (!fProofOfStake) {
+    if (!fProofOfStake)
+    {
         // Coinbase can get the fees.
         CMutableTransaction txCoinbase(*pblock->vtx[0]);
         txCoinbase.vout[0].nValue += nFees;
@@ -226,19 +238,22 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
     nLastBlockSize = nBlockSize;
     LogPrintf("CreateNewBlock(): total size %u txs: %u fees: %ld sigops %d\n", nBlockSize, nBlockTx, nFees, nBlockSigOps);
 
-    const Consensus::Params& consensus = Params().GetConsensus();
+    const Consensus::Params &consensus = Params().GetConsensus();
     // Fill in header
     pblock->hashPrevBlock = pindexPrev->GetBlockHash();
-    if (!fProofOfStake) UpdateTime(pblock, consensus, pindexPrev);
+    if (!fProofOfStake)
+        UpdateTime(pblock, consensus, pindexPrev);
     pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
     pblock->nNonce = 0;
     pblocktemplate->vTxSigOps[0] = GetLegacySigOpCount(*(pblock->vtx[0]));
     appendSaplingTreeRoot();
 
-    if (fProofOfStake) { // this is only for PoS because the IncrementExtraNonce does it for PoW
+    if (fProofOfStake)
+    { // this is only for PoS because the IncrementExtraNonce does it for PoW
         pblock->hashMerkleRoot = BlockMerkleRoot(*pblock);
         LogPrintf("CPUMiner : proof-of-stake block found %s \n", pblock->GetHash().GetHex());
-        if (!SignBlock(*pblock, *pwallet)) {
+        if (!SignBlock(*pblock, *pwallet))
+        {
             LogPrintf("%s: Signing new block with UTXO key failed \n", __func__);
             return nullptr;
         }
@@ -246,27 +261,32 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
 
     {
         LOCK(cs_main);
-        if (chainActive.Tip() != pindexPrev) return nullptr; // new block came in, move on
+        if (chainActive.Tip() != pindexPrev)
+            return nullptr; // new block came in, move on
 
         CValidationState state;
         if (fTestValidity &&
-            !TestBlockValidity(state, *pblock, pindexPrev, false, false, false)) {
+            !TestBlockValidity(state, *pblock, pindexPrev, false, false, false))
+        {
             throw std::runtime_error(
-                    strprintf("%s: TestBlockValidity failed: %s", __func__, FormatStateMessage(state)));
+                strprintf("%s: TestBlockValidity failed: %s", __func__, FormatStateMessage(state)));
         }
     }
 
     return std::move(pblocktemplate);
 }
 
-void BlockAssembler::onlyUnconfirmed(CTxMemPool::setEntries& testSet)
+void BlockAssembler::onlyUnconfirmed(CTxMemPool::setEntries &testSet)
 {
-    for (CTxMemPool::setEntries::iterator iit = testSet.begin(); iit != testSet.end(); ) {
+    for (CTxMemPool::setEntries::iterator iit = testSet.begin(); iit != testSet.end();)
+    {
         // Only test txs not already in the block
-        if (inBlock.count(*iit)) {
+        if (inBlock.count(*iit))
+        {
             testSet.erase(iit++);
         }
-        else {
+        else
+        {
             iit++;
         }
     }
@@ -283,9 +303,10 @@ bool BlockAssembler::TestPackage(uint64_t packageSize, unsigned int packageSigOp
 
 // Block size and sigops have already been tested.  Check that all transactions
 // are final.
-bool BlockAssembler::TestPackageFinality(const CTxMemPool::setEntries& package)
+bool BlockAssembler::TestPackageFinality(const CTxMemPool::setEntries &package)
 {
-    for (const CTxMemPool::txiter& it : package) {
+    for (const CTxMemPool::txiter &it : package)
+    {
         if (!IsFinalTx(it->GetSharedTx(), nHeight))
             return false;
     }
@@ -304,31 +325,37 @@ void BlockAssembler::AddToBlock(CTxMemPool::txiter iter)
     inBlock.insert(iter);
 
     bool fPrintPriority = gArgs.GetBoolArg("-printpriority", defaultPrintPriority);
-    if (fPrintPriority) {
+    if (fPrintPriority)
+    {
         LogPrintf("feerate %s txid %s\n",
                   CFeeRate(iter->GetModifiedFee(), iter->GetTxSize()).ToString(),
                   iter->GetTx().GetHash().ToString());
     }
 }
 
-void BlockAssembler::UpdatePackagesForAdded(const CTxMemPool::setEntries& alreadyAdded,
-                                            indexed_modified_transaction_set& mapModifiedTx)
+void BlockAssembler::UpdatePackagesForAdded(const CTxMemPool::setEntries &alreadyAdded,
+                                            indexed_modified_transaction_set &mapModifiedTx)
 {
-    for (const CTxMemPool::txiter& it : alreadyAdded) {
+    for (const CTxMemPool::txiter &it : alreadyAdded)
+    {
         CTxMemPool::setEntries descendants;
         mempool.CalculateDescendants(it, descendants);
         // Insert all descendants (not yet in block) into the modified set
-        for (CTxMemPool::txiter desc : descendants) {
+        for (CTxMemPool::txiter desc : descendants)
+        {
             if (alreadyAdded.count(desc))
                 continue;
             modtxiter mit = mapModifiedTx.find(desc);
-            if (mit == mapModifiedTx.end()) {
+            if (mit == mapModifiedTx.end())
+            {
                 CTxMemPoolModifiedEntry modEntry(desc);
                 modEntry.nSizeWithAncestors -= it->GetTxSize();
                 modEntry.nModFeesWithAncestors -= it->GetModifiedFee();
                 modEntry.nSigOpCountWithAncestors -= it->GetSigOpCount();
                 mapModifiedTx.insert(modEntry);
-            } else {
+            }
+            else
+            {
                 mapModifiedTx.modify(mit, update_for_parent_inclusion(it));
             }
         }
@@ -346,13 +373,13 @@ void BlockAssembler::UpdatePackagesForAdded(const CTxMemPool::setEntries& alread
 // cached size/sigops/fee values that are not actually correct.
 bool BlockAssembler::SkipMapTxEntry(CTxMemPool::txiter it, indexed_modified_transaction_set &mapModifiedTx, CTxMemPool::setEntries &failedTx)
 {
-    assert (it != mempool.mapTx.end());
+    assert(it != mempool.mapTx.end());
     if (mapModifiedTx.count(it) || inBlock.count(it) || failedTx.count(it))
         return true;
     return false;
 }
 
-void BlockAssembler::SortForBlock(const CTxMemPool::setEntries& package, CTxMemPool::txiter entry, std::vector<CTxMemPool::txiter>& sortedEntries)
+void BlockAssembler::SortForBlock(const CTxMemPool::setEntries &package, CTxMemPool::txiter entry, std::vector<CTxMemPool::txiter> &sortedEntries)
 {
     // Sort package by ancestor count
     // If a transaction A depends on transaction B, then A's ancestor count
@@ -391,7 +418,8 @@ void BlockAssembler::addPackageTxs()
     {
         // First try to find a new transaction in mapTx to evaluate.
         if (mi != mempool.mapTx.get<ancestor_score>().end() &&
-                SkipMapTxEntry(mempool.mapTx.project<0>(mi), mapModifiedTx, failedTx)) {
+            SkipMapTxEntry(mempool.mapTx.project<0>(mi), mapModifiedTx, failedTx))
+        {
             ++mi;
             continue;
         }
@@ -401,21 +429,27 @@ void BlockAssembler::addPackageTxs()
         bool fUsingModified = false;
 
         modtxscoreiter modit = mapModifiedTx.get<ancestor_score>().begin();
-        if (mi == mempool.mapTx.get<ancestor_score>().end()) {
+        if (mi == mempool.mapTx.get<ancestor_score>().end())
+        {
             // We're out of entries in mapTx; use the entry from mapModifiedTx
             iter = modit->iter;
             fUsingModified = true;
-        } else {
+        }
+        else
+        {
             // Try to compare the mapTx entry to the mapModifiedTx entry
             iter = mempool.mapTx.project<0>(mi);
             if (modit != mapModifiedTx.get<ancestor_score>().end() &&
-                    CompareModifiedEntry()(*modit, CTxMemPoolModifiedEntry(iter))) {
+                CompareModifiedEntry()(*modit, CTxMemPoolModifiedEntry(iter)))
+            {
                 // The best entry in mapModifiedTx has higher score
                 // than the one from mapTx.
                 // Switch which transaction (package) to consider
                 iter = modit->iter;
                 fUsingModified = true;
-            } else {
+            }
+            else
+            {
                 // Either no entry in mapModifiedTx, or it's worse than mapTx.
                 // Increment mi for the next loop iteration.
                 ++mi;
@@ -429,19 +463,23 @@ void BlockAssembler::addPackageTxs()
         uint64_t packageSize = iter->GetSizeWithAncestors();
         CAmount packageFees = iter->GetModFeesWithAncestors();
         unsigned int packageSigOps = iter->GetSigOpCountWithAncestors();
-        if (fUsingModified) {
+        if (fUsingModified)
+        {
             packageSize = modit->nSizeWithAncestors;
             packageFees = modit->nModFeesWithAncestors;
             packageSigOps = modit->nSigOpCountWithAncestors;
         }
 
-        if (packageFees < ::minRelayTxFee.GetFee(packageSize)) {
+        if (packageFees < ::minRelayTxFee.GetFee(packageSize))
+        {
             // Everything else we might consider has a lower fee rate
             return;
         }
 
-        if (!TestPackage(packageSize, packageSigOps)) {
-            if (fUsingModified) {
+        if (!TestPackage(packageSize, packageSigOps))
+        {
+            if (fUsingModified)
+            {
                 // Since we always look at the best entry in mapModifiedTx,
                 // we must erase failed entries so that we can consider the
                 // next best entry on the next loop iteration
@@ -460,8 +498,10 @@ void BlockAssembler::addPackageTxs()
         ancestors.insert(iter);
 
         // Test if all tx's are Final
-        if (!TestPackageFinality(ancestors)) {
-            if (fUsingModified) {
+        if (!TestPackageFinality(ancestors))
+        {
+            if (fUsingModified)
+            {
                 mapModifiedTx.get<ancestor_score>().erase(modit);
                 failedTx.insert(iter);
             }
@@ -472,15 +512,19 @@ void BlockAssembler::addPackageTxs()
         std::vector<CTxMemPool::txiter> sortedEntries;
         SortForBlock(ancestors, iter, sortedEntries);
 
-        for (size_t i = 0; i < sortedEntries.size(); ++i) {
-            CTxMemPool::txiter& iterSortedEntries = sortedEntries[i];
-            if (iterSortedEntries->IsShielded()) {
+        for (size_t i = 0; i < sortedEntries.size(); ++i)
+        {
+            CTxMemPool::txiter &iterSortedEntries = sortedEntries[i];
+            if (iterSortedEntries->IsShielded())
+            {
                 // Don't add SHIELD transactions if in maintenance (SPORK_20)
-                if (sporkManager.IsSporkActive(SPORK_20_SAPLING_MAINTENANCE)) {
+                if (sporkManager.IsSporkActive(SPORK_20_SAPLING_MAINTENANCE))
+                {
                     break;
                 }
                 // Don't add SHIELD transactions if there's no reserved space left in the block
-                if (nSizeShielded + iterSortedEntries->GetTxSize() > MAX_BLOCK_SHIELDED_TXES_SIZE) {
+                if (nSizeShielded + iterSortedEntries->GetTxSize() > MAX_BLOCK_SHIELDED_TXES_SIZE)
+                {
                     break;
                 }
                 // Update cumulative size of SHIELD transactions in this block
@@ -502,16 +546,20 @@ void BlockAssembler::appendSaplingTreeRoot()
     pblock->hashFinalSaplingRoot = CalculateSaplingTreeRoot(pblock, nHeight, chainparams);
 }
 
-uint256 CalculateSaplingTreeRoot(CBlock* pblock, int nHeight, const CChainParams& chainparams)
+uint256 CalculateSaplingTreeRoot(CBlock *pblock, int nHeight, const CChainParams &chainparams)
 {
-    if (NetworkUpgradeActive(nHeight, chainparams.GetConsensus(), Consensus::UPGRADE_V5_0)) {
+    if (NetworkUpgradeActive(nHeight, chainparams.GetConsensus(), Consensus::UPGRADE_V5_0))
+    {
         SaplingMerkleTree sapling_tree;
         assert(pcoinsTip->GetSaplingAnchorAt(pcoinsTip->GetBestAnchor(), sapling_tree));
 
         // Update the Sapling commitment tree.
-        for (const auto &tx : pblock->vtx) {
-            if (tx->IsShieldedTx()) {
-                for (const OutputDescription &odesc : tx->sapData->vShieldedOutput) {
+        for (const auto &tx : pblock->vtx)
+        {
+            if (tx->IsShieldedTx())
+            {
+                for (const OutputDescription &odesc : tx->sapData->vShieldedOutput)
+                {
                     sapling_tree.append(odesc.cmu);
                 }
             }
@@ -521,22 +569,24 @@ uint256 CalculateSaplingTreeRoot(CBlock* pblock, int nHeight, const CChainParams
     return UINT256_ZERO;
 }
 
-bool SolveBlock(std::shared_ptr<CBlock>& pblock, int nHeight)
+bool SolveBlock(std::shared_ptr<CBlock> &pblock, int nHeight)
 {
     unsigned int extraNonce = 0;
     IncrementExtraNonce(pblock, nHeight, extraNonce);
     while (pblock->nNonce < std::numeric_limits<uint32_t>::max() &&
-           !CheckProofOfWork(pblock->GetHash(), pblock->nBits)) {
+           !CheckProofOfWork(pblock->GetHash(), pblock->nBits))
+    {
         ++pblock->nNonce;
     }
     return pblock->nNonce != std::numeric_limits<uint32_t>::max();
 }
 
-void IncrementExtraNonce(std::shared_ptr<CBlock>& pblock, int nHeight, unsigned int& nExtraNonce)
+void IncrementExtraNonce(std::shared_ptr<CBlock> &pblock, int nHeight, unsigned int &nExtraNonce)
 {
     // Update nExtraNonce
     static uint256 hashPrevBlock;
-    if (hashPrevBlock != pblock->hashPrevBlock) {
+    if (hashPrevBlock != pblock->hashPrevBlock)
+    {
         nExtraNonce = 0;
         hashPrevBlock = pblock->hashPrevBlock;
     }
@@ -549,20 +599,30 @@ void IncrementExtraNonce(std::shared_ptr<CBlock>& pblock, int nHeight, unsigned 
     pblock->hashMerkleRoot = BlockMerkleRoot(*pblock);
 }
 
-int32_t ComputeBlockVersion(const Consensus::Params& consensus, int nHeight)
+int32_t ComputeBlockVersion(const Consensus::Params &consensus, int nHeight)
 {
-    if (NetworkUpgradeActive(nHeight, consensus, Consensus::UPGRADE_V5_0)) {
-        return CBlockHeader::CURRENT_VERSION;       // v10 (since 5.1.99)
-    } else if (consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V4_0)) {
+    if (NetworkUpgradeActive(nHeight, consensus, Consensus::UPGRADE_V5_0))
+    {
+        return CBlockHeader::CURRENT_VERSION; // v11 (since 5.2.99)
+    }
+    else if (consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V4_0))
+    {
         return 7;
-    } else if (consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V3_4)) {
+    }
+    else if (consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V3_4))
+    {
         return 6;
-    } else if (consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_BIP65)) {
+    }
+    else if (consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_BIP65))
+    {
         return 5;
-    } else if (consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_ZC)) {
+    }
+    else if (consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_ZC))
+    {
         return 4;
-    } else {
+    }
+    else
+    {
         return 3;
     }
 }
-

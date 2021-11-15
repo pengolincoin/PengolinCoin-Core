@@ -358,7 +358,16 @@ libbitcoin_common_a-protocol.o: protocol.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/9/stdlib.h /usr/include/c++/9/iterator \
  /usr/include/c++/9/ostream /usr/include/c++/9/bits/ostream.tcc \
  /usr/include/c++/9/istream /usr/include/c++/9/bits/istream.tcc \
- /usr/include/c++/9/bits/stream_iterator.h span.h sporkid.h uint256.h \
+ /usr/include/c++/9/bits/stream_iterator.h span.h sporkid.h tinyformat.h \
+ /usr/include/c++/9/cassert /usr/include/c++/9/iostream \
+ /usr/include/c++/9/sstream /usr/include/c++/9/bits/sstream.tcc \
+ utilstrencodings.h support/allocators/secure.h support/lockedpool.h \
+ /usr/include/c++/9/mutex /usr/include/c++/9/chrono \
+ /usr/include/c++/9/ratio /usr/include/c++/9/ctime \
+ /usr/include/c++/9/bits/parse_numbers.h \
+ /usr/include/c++/9/bits/std_mutex.h \
+ /usr/include/c++/9/bits/unique_lock.h support/cleanse.h util/string.h \
+ attributes.h streams.h support/allocators/zeroafterfree.h uint256.h \
  crypto/common.h compat/endian.h version.h util/system.h fs.h \
  /usr/include/boost/filesystem.hpp \
  /usr/include/boost/filesystem/config.hpp \
@@ -372,12 +381,7 @@ libbitcoin_common_a-protocol.o: protocol.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/system/detail/generic_category.hpp \
  /usr/include/boost/system/detail/system_category_posix.hpp \
  /usr/include/boost/system/detail/std_interoperability.hpp \
- /usr/include/c++/9/mutex /usr/include/c++/9/chrono \
- /usr/include/c++/9/ratio /usr/include/c++/9/ctime \
- /usr/include/c++/9/bits/parse_numbers.h \
- /usr/include/c++/9/bits/std_mutex.h \
- /usr/include/c++/9/bits/unique_lock.h /usr/include/c++/9/locale \
- /usr/include/c++/9/bits/locale_facets_nonio.h \
+ /usr/include/c++/9/locale /usr/include/c++/9/bits/locale_facets_nonio.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/time_members.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/9/bits/codecvt.h \
@@ -385,7 +389,7 @@ libbitcoin_common_a-protocol.o: protocol.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/9/bits/locale_conv.h \
  /usr/include/boost/config/abi_prefix.hpp \
  /usr/include/boost/config/abi_suffix.hpp \
- /usr/include/boost/system/system_error.hpp /usr/include/c++/9/cassert \
+ /usr/include/boost/system/system_error.hpp \
  /usr/include/boost/iterator/iterator_facade.hpp \
  /usr/include/boost/iterator/interoperable.hpp \
  /usr/include/boost/mpl/bool.hpp /usr/include/boost/mpl/bool_fwd.hpp \
@@ -537,11 +541,10 @@ libbitcoin_common_a-protocol.o: protocol.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/filesystem/fstream.hpp /usr/include/c++/9/fstream \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
- /usr/include/c++/9/bits/fstream.tcc logging.h fs.h tinyformat.h \
- /usr/include/c++/9/iostream /usr/include/c++/9/sstream \
- /usr/include/c++/9/bits/sstream.tcc compat.h sync.h threadsafety.h \
- util/macros.h /usr/include/c++/9/condition_variable \
- /usr/include/c++/9/thread tinyformat.h utiltime.h util/threadnames.h \
+ /usr/include/c++/9/bits/fstream.tcc logging.h fs.h tinyformat.h compat.h \
+ sync.h threadsafety.h util/macros.h \
+ /usr/include/c++/9/condition_variable /usr/include/c++/9/thread \
+ tinyformat.h utiltime.h util/threadnames.h \
  /usr/include/c++/9/unordered_set /usr/include/c++/9/bits/hashtable.h \
  /usr/include/c++/9/bits/hashtable_policy.h \
  /usr/include/c++/9/bits/unordered_set.h \
@@ -1074,9 +1077,7 @@ libbitcoin_common_a-protocol.o: protocol.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/thread/pthread/condition_variable_fwd.hpp \
  /usr/include/boost/thread/cv_status.hpp \
  /usr/include/boost/enable_shared_from_this.hpp \
- /usr/include/boost/smart_ptr/enable_shared_from_this.hpp \
- utilstrencodings.h support/allocators/secure.h support/lockedpool.h \
- support/cleanse.h
+ /usr/include/boost/smart_ptr/enable_shared_from_this.hpp
 
 /usr/include/stdc-predef.h:
 
@@ -1956,6 +1957,46 @@ span.h:
 
 sporkid.h:
 
+tinyformat.h:
+
+/usr/include/c++/9/cassert:
+
+/usr/include/c++/9/iostream:
+
+/usr/include/c++/9/sstream:
+
+/usr/include/c++/9/bits/sstream.tcc:
+
+utilstrencodings.h:
+
+support/allocators/secure.h:
+
+support/lockedpool.h:
+
+/usr/include/c++/9/mutex:
+
+/usr/include/c++/9/chrono:
+
+/usr/include/c++/9/ratio:
+
+/usr/include/c++/9/ctime:
+
+/usr/include/c++/9/bits/parse_numbers.h:
+
+/usr/include/c++/9/bits/std_mutex.h:
+
+/usr/include/c++/9/bits/unique_lock.h:
+
+support/cleanse.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
+support/allocators/zeroafterfree.h:
+
 uint256.h:
 
 crypto/common.h:
@@ -1994,20 +2035,6 @@ fs.h:
 
 /usr/include/boost/system/detail/std_interoperability.hpp:
 
-/usr/include/c++/9/mutex:
-
-/usr/include/c++/9/chrono:
-
-/usr/include/c++/9/ratio:
-
-/usr/include/c++/9/ctime:
-
-/usr/include/c++/9/bits/parse_numbers.h:
-
-/usr/include/c++/9/bits/std_mutex.h:
-
-/usr/include/c++/9/bits/unique_lock.h:
-
 /usr/include/c++/9/locale:
 
 /usr/include/c++/9/bits/locale_facets_nonio.h:
@@ -2029,8 +2056,6 @@ fs.h:
 /usr/include/boost/config/abi_suffix.hpp:
 
 /usr/include/boost/system/system_error.hpp:
-
-/usr/include/c++/9/cassert:
 
 /usr/include/boost/iterator/iterator_facade.hpp:
 
@@ -2373,12 +2398,6 @@ logging.h:
 fs.h:
 
 tinyformat.h:
-
-/usr/include/c++/9/iostream:
-
-/usr/include/c++/9/sstream:
-
-/usr/include/c++/9/bits/sstream.tcc:
 
 compat.h:
 
@@ -3537,11 +3556,3 @@ util/threadnames.h:
 /usr/include/boost/enable_shared_from_this.hpp:
 
 /usr/include/boost/smart_ptr/enable_shared_from_this.hpp:
-
-utilstrencodings.h:
-
-support/allocators/secure.h:
-
-support/lockedpool.h:
-
-support/cleanse.h:

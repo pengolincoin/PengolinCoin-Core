@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2017-2020 PIVX developers
+// Copyright (c) 2017-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -20,6 +20,8 @@ namespace NetMsgType
 const char* VERSION = "version";
 const char* VERACK = "verack";
 const char* ADDR = "addr";
+const char* ADDRV2="addrv2";
+const char* SENDADDRV2="sendaddrv2";
 const char* INV = "inv";
 const char* GETDATA = "getdata";
 const char* MERKLEBLOCK = "merkleblock";
@@ -41,6 +43,7 @@ const char* SENDHEADERS = "sendheaders";
 const char* SPORK = "spork";
 const char* GETSPORKS = "getsporks";
 const char* MNBROADCAST = "mnb";
+const char* MNBROADCAST2 = "mnb2"; // BIP155 support
 const char* MNPING = "mnp";
 const char* MNWINNER = "mnw";
 const char* GETMNWINNERS = "mnget";
@@ -60,6 +63,8 @@ const static std::string allNetMessageTypes[] = {
     NetMsgType::VERSION,
     NetMsgType::VERACK,
     NetMsgType::ADDR,
+    NetMsgType::ADDRV2,
+    NetMsgType::SENDADDRV2,
     NetMsgType::INV,
     NetMsgType::GETDATA,
     NetMsgType::MERKLEBLOCK,
@@ -96,7 +101,8 @@ const static std::string allNetMessageTypes[] = {
     NetMsgType::GETMNLIST,
     NetMsgType::BUDGETVOTESYNC,
     NetMsgType::GETSPORKS,
-    NetMsgType::SYNCSTATUSCOUNT
+    NetMsgType::SYNCSTATUSCOUNT,
+    NetMsgType::MNBROADCAST2
 };
 const static std::vector<std::string> allNetMessageTypesVec(allNetMessageTypes, allNetMessageTypes + ARRAYLEN(allNetMessageTypes));
 const static std::vector<std::string> tiertwoNetMessageTypesVec(std::find(allNetMessageTypesVec.begin(), allNetMessageTypesVec.end(), NetMsgType::SPORK), allNetMessageTypesVec.end());
@@ -154,24 +160,6 @@ bool CMessageHeader::IsValid(const MessageStartChars& pchMessageStartIn) const
     return true;
 }
 
-
-CAddress::CAddress() : CService()
-{
-    Init();
-}
-
-CAddress::CAddress(CService ipIn, ServiceFlags nServicesIn) : CService(ipIn)
-{
-    Init();
-    nServices = nServicesIn;
-}
-
-void CAddress::Init()
-{
-    nServices = NODE_NONE;
-    nTime = 100000000;
-}
-
 CInv::CInv()
 {
     type = 0;
@@ -210,7 +198,7 @@ std::string CInv::GetCommand() const
         case MSG_BUDGET_FINALIZED: return cmd.append(NetMsgType::FINALBUDGET);
         case MSG_BUDGET_FINALIZED_VOTE: return cmd.append(NetMsgType::FINALBUDGETVOTE);
         case MSG_MASTERNODE_QUORUM: return cmd.append("mnq"); // Unused
-        case MSG_MASTERNODE_ANNOUNCE: return cmd.append(NetMsgType::MNBROADCAST);
+        case MSG_MASTERNODE_ANNOUNCE: return cmd.append(NetMsgType::MNBROADCAST); // or MNBROADCAST2
         case MSG_MASTERNODE_PING: return cmd.append(NetMsgType::MNPING);
         case MSG_DSTX: return cmd.append("dstx"); // Deprecated
         default:

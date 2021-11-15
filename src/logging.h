@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -150,9 +150,9 @@ template<typename... Args> std::string FormatStringFromLogArgs(const char *fmt, 
         std::string _log_msg_; /* Unlikely name to avoid shadowing variables */     \
         try {                                                                       \
             _log_msg_ = tfm::format(__VA_ARGS__);                                   \
-        } catch (tinyformat::format_error &e) {                                     \
+        } catch (tinyformat::format_error &fmterr) {                                     \
             /* Original format string will have newline so don't add one here */    \
-            _log_msg_ = "Error \"" + std::string(e.what()) +                        \
+            _log_msg_ = "Error \"" + std::string(fmterr.what()) +                        \
                         "\" while formatting log message: " +                       \
                         FormatStringFromLogArgs(__VA_ARGS__);                       \
         }                                                                           \

@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2014 The Bitcoin Core developers
-// Copyright (c) 2016-2021 PIVX developers
+// Copyright (c) 2016-2021 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
@@ -22,21 +22,6 @@
 
 // future: this should be MAINNET.
 BOOST_FIXTURE_TEST_SUITE(miner_tests, WalletRegTestingSetup)
-
-// BOOST_CHECK_EXCEPTION predicates to check the specific validation error
-class HasReason {
-public:
-    HasReason(const std::string& reason) : m_reason(reason) {}
-    bool operator() (const std::runtime_error& e) const {
-        bool ret = std::string(e.what()).find(m_reason) != std::string::npos;
-        if (!ret) {
-            std::cout << "error: " << e.what() << std::endl;
-        }
-        return ret;
-    };
-private:
-    const std::string m_reason;
-};
 
 static
 struct {

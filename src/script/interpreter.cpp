@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2017-2020 PIVX developers
+// Copyright (c) 2017-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -958,14 +958,20 @@ bool EvalScript(std::vector<std::vector<unsigned char> >& stack, const CScript& 
 
                 case OP_CHECKCOLDSTAKEVERIFY:
                 {
-                    return checker.CheckColdStake(false, script, stack, flags, serror);
+                    if (!checker.CheckColdStake(false, script, stack, flags, serror)) {
+                        // serror set
+                        return false;
+                    }
                 }
                 break;
 
                 case OP_CHECKCOLDSTAKEVERIFY_LOF:
                 {
                     // Allow last output script "free"
-                    return checker.CheckColdStake(true, script, stack, flags, serror);
+                    if (!checker.CheckColdStake(true, script, stack, flags, serror)) {
+                        // serror set
+                        return false;
+                    }
                 }
                 break;
 

@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 PIVX developers
+// Copyright (c) 2015-2018 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -23,7 +23,7 @@ static const bool DEFAULT_SPLASHSCREEN = true;
 #define STYLE_INVALID "background:#FF8080"
 
 /* Transaction list -- unconfirmed transaction */
-#define COLOR_UNCONFIRMED QColor(64, 90, 149)
+#define COLOR_UNCONFIRMED QColor(91, 76, 134)
 /* Transaction list -- negative amount */
 #define COLOR_NEGATIVE QColor(206, 0, 188)
 /* Transaction list -- bare address (without label) */
@@ -37,7 +37,7 @@ static const bool DEFAULT_SPLASHSCREEN = true;
 /* Transaction list -- TX status decoration - orphan (Light Gray #D3D3D3) */
 #define COLOR_ORPHAN QColor(211, 211, 211)
 /* Transaction list -- TX status decoration - stake (BlueViolet #8A2BE2) */
-#define COLOR_STAKE QColor(43,95,226)
+#define COLOR_STAKE QColor(138,43,226)
 /* Tooltips longer than this (in characters) are converted into rich text,
    so that they can be word-wrapped.
  */

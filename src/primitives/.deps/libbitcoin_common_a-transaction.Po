@@ -887,9 +887,10 @@ primitives/libbitcoin_common_a-transaction.o: primitives/transaction.cpp \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h script/interpreter.h \
- script/script_error.h tinyformat.h /usr/include/c++/9/iostream \
- utilstrencodings.h
+ /usr/include/x86_64-linux-gnu/bits/mman-shared.h tinyformat.h \
+ /usr/include/c++/9/iostream utilstrencodings.h util/string.h \
+ attributes.h streams.h script/interpreter.h script/script_error.h \
+ tinyformat.h utilstrencodings.h
 
 /usr/include/stdc-predef.h:
 
@@ -3023,12 +3024,22 @@ compat.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
+tinyformat.h:
+
+/usr/include/c++/9/iostream:
+
+utilstrencodings.h:
+
+util/string.h:
+
+attributes.h:
+
+streams.h:
+
 script/interpreter.h:
 
 script/script_error.h:
 
 tinyformat.h:
-
-/usr/include/c++/9/iostream:
 
 utilstrencodings.h:

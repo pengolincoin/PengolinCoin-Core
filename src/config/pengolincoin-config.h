@@ -9,7 +9,7 @@
 /* #undef AC_APPLE_UNIVERSAL_BUILD */
 
 /* Version Build */
-#define CLIENT_VERSION_BUILD 1
+#define CLIENT_VERSION_BUILD 0
 
 /* Version is release */
 #define CLIENT_VERSION_IS_RELEASE true
@@ -18,7 +18,7 @@
 #define CLIENT_VERSION_MAJOR 3
 
 /* Minor version */
-#define CLIENT_VERSION_MINOR 0
+#define CLIENT_VERSION_MINOR 1
 
 /* Build revision */
 #define CLIENT_VERSION_REVISION 0
@@ -60,7 +60,7 @@
 #define HAVE_BOOST_THREAD /**/
 
 /* define if the Boost::Unit_Test_Framework library is available */
-#define HAVE_BOOST_UNIT_TEST_FRAMEWORK /**/
+/* #undef HAVE_BOOST_UNIT_TEST_FRAMEWORK */
 
 /* Define to 1 if you have the <byteswap.h> header file. */
 #define HAVE_BYTESWAP_H 1
@@ -360,13 +360,13 @@
 #define LT_OBJDIR ".libs/"
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "https://github.com/pengolincoin-project/pengolincoin/issues"
+#define PACKAGE_BUGREPORT "https://github.com/pengolincoin/PengolinCoin-Core/issues"
 
 /* Define to the full name of this package. */
 #define PACKAGE_NAME "PENGOLINCOIN Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "PENGOLINCOIN Core 3.0.0.1"
+#define PACKAGE_STRING "PENGOLINCOIN Core 3.1.0"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "pengolincoin"
@@ -375,7 +375,7 @@
 #define PACKAGE_URL "https://www.pengolincoin.xyz/"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "3.0.0.1"
+#define PACKAGE_VERSION "3.1.0"
 
 /* Path to the zk params dir during unit tests on windows */
 #define PARAMS_DIR ""

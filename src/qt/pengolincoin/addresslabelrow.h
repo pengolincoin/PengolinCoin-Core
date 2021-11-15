@@ -1,4 +1,4 @@
-// Copyright (c) 2019 PIVX developers
+// Copyright (c) 2019 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -23,7 +23,7 @@ public:
     void init(bool isLightTheme, bool isHover);
 
     void updateState(bool isLightTheme, bool isHovered, bool isSelected);
-    void updateView(QString address, QString label);
+    void updateView(const QString& address, const QString& label);
 protected:
     virtual void enterEvent(QEvent *);
     virtual void leaveEvent(QEvent *);

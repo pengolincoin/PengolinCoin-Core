@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -186,11 +186,13 @@ int CMasternodeSync::GetNextAsset(int currentAsset)
 
 void CMasternodeSync::SwitchToNextAsset()
 {
+    if (RequestedMasternodeAssets == MASTERNODE_SYNC_INITIAL ||
+            RequestedMasternodeAssets == MASTERNODE_SYNC_FAILED) {
+        ClearFulfilledRequest();
+    }
     const int nextAsset = GetNextAsset(RequestedMasternodeAssets);
     if (nextAsset == MASTERNODE_SYNC_FINISHED) {
         LogPrintf("%s - Sync has finished\n", __func__);
-    } else if (nextAsset == MASTERNODE_SYNC_FAILED) {
-        ClearFulfilledRequest();
     }
     RequestedMasternodeAssets = nextAsset;
     RequestedMasternodeAttempt = 0;
@@ -274,9 +276,10 @@ void CMasternodeSync::Process()
 
     if (IsSynced()) {
         /*
-            Resync if we lose all masternodes from sleep/wake or failure to sync originally
+            Resync if we lose all masternodes (except the local one in case the node is a MN)
+            from sleep/wake or failure to sync originally
         */
-        if (mnodeman.CountEnabled() == 0 && !isRegTestNet) {
+        if (mnodeman.CountEnabled() <= 1 && !isRegTestNet) {
             Reset();
         } else
             return;
@@ -288,8 +291,6 @@ void CMasternodeSync::Process()
     } else if (RequestedMasternodeAssets == MASTERNODE_SYNC_FAILED) {
         return;
     }
-
-    LogPrint(BCLog::MASTERNODE, "CMasternodeSync::Process() - tick %d RequestedMasternodeAssets %d\n", tick, RequestedMasternodeAssets);
 
     if (RequestedMasternodeAssets == MASTERNODE_SYNC_INITIAL) SwitchToNextAsset();
 
@@ -311,7 +312,7 @@ void CMasternodeSync::Process()
     }
 
     // Mainnet sync
-    g_connman->ForEachNodeContinueIf([sync, fLegacyMnObsolete](CNode* pnode){
+    g_connman->ForEachNodeInRandomOrderContinueIf([sync, fLegacyMnObsolete](CNode* pnode){
         return sync->SyncWithNode(pnode, fLegacyMnObsolete);
     });
 }
@@ -339,13 +340,12 @@ bool CMasternodeSync::SyncWithNode(CNode* pnode, bool fLegacyMnObsolete)
             }
 
             LogPrint(BCLog::MASTERNODE, "CMasternodeSync::Process() - lastMasternodeList %lld (GetTime() - MASTERNODE_SYNC_TIMEOUT) %lld\n", lastMasternodeList, GetTime() - MASTERNODE_SYNC_TIMEOUT);
-            if (lastMasternodeList > 0 && lastMasternodeList < GetTime() - MASTERNODE_SYNC_TIMEOUT * 2 && RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD) { //hasn't received a new item in the last five seconds, so we'll move to the
+            if (lastMasternodeList > 0 && lastMasternodeList < GetTime() - MASTERNODE_SYNC_TIMEOUT * 8 && RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD) {
+                // hasn't received a new item in the last 40 seconds AND has sent at least a minimum of MASTERNODE_SYNC_THRESHOLD GETMNLIST requests,
+                // so we'll move to the next asset.
                 SwitchToNextAsset();
                 return false;
             }
-
-            if (pnode->HasFulfilledRequest("mnsync")) return true;
-            pnode->FulfilledRequest("mnsync");
 
             // timeout
             if (lastMasternodeList == 0 &&
@@ -362,11 +362,23 @@ bool CMasternodeSync::SyncWithNode(CNode* pnode, bool fLegacyMnObsolete)
                 return false;
             }
 
-            if (RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD * 3) return false;
+            // Don't request mnlist initial sync to more than 8 randomly ordered peers in this round
+            if (RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD * 4) return false;
 
-            mnodeman.DsegUpdate(pnode);
+            // Request mnb sync if we haven't requested it yet.
+            if (pnode->HasFulfilledRequest("mnsync")) return true;
+
+            // Try to request MN list sync.
+            if (!mnodeman.RequestMnList(pnode)) {
+                return true; // Failed, try next peer.
+            }
+
+            // Mark sync requested.
+            pnode->FulfilledRequest("mnsync");
+            // Increase the sync attempt count
             RequestedMasternodeAttempt++;
-            return false;
+
+            return false; // sleep 1 second before do another request round.
         }
 
         if (RequestedMasternodeAssets == MASTERNODE_SYNC_MNW) {
@@ -379,9 +391,6 @@ bool CMasternodeSync::SyncWithNode(CNode* pnode, bool fLegacyMnObsolete)
                 SwitchToNextAsset();
                 return false;
             }
-
-            if (pnode->HasFulfilledRequest("mnwsync")) return true;
-            pnode->FulfilledRequest("mnwsync");
 
             // timeout
             if (lastMasternodeWinner == 0 &&
@@ -398,18 +407,28 @@ bool CMasternodeSync::SyncWithNode(CNode* pnode, bool fLegacyMnObsolete)
                 return false;
             }
 
+            // Don't request mnw initial sync to more than 6 randomly ordered peers in this round.
             if (RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD * 3) return false;
 
+            // Request mnw sync if we haven't requested it yet.
+            if (pnode->HasFulfilledRequest("mnwsync")) return true;
+
+            // Mark sync requested.
+            pnode->FulfilledRequest("mnwsync");
+
+            // Sync mn winners
             int nMnCount = mnodeman.CountEnabled();
-            g_connman->PushMessage(pnode, msgMaker.Make(NetMsgType::GETMNWINNERS, nMnCount)); //sync payees
+            g_connman->PushMessage(pnode, msgMaker.Make(NetMsgType::GETMNWINNERS, nMnCount));
             RequestedMasternodeAttempt++;
-            return false;
+
+            return false; // sleep 1 second before do another request round.
         }
 
         if (RequestedMasternodeAssets == MASTERNODE_SYNC_BUDGET) {
             // We'll start rejecting votes if we accidentally get set as synced too soon
-            if (lastBudgetItem > 0 && lastBudgetItem < GetTime() - MASTERNODE_SYNC_TIMEOUT * 2 && RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD) {
-                // Hasn't received a new item in the last five seconds, so we'll move to the
+            if (lastBudgetItem > 0 && lastBudgetItem < GetTime() - MASTERNODE_SYNC_TIMEOUT * 10 && RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD) {
+                // Hasn't received a new item in the last fifty seconds and more than MASTERNODE_SYNC_THRESHOLD requests were sent,
+                // so we'll move to the next asset
                 SwitchToNextAsset();
 
                 // Try to activate our masternode if possible
@@ -426,19 +445,23 @@ bool CMasternodeSync::SyncWithNode(CNode* pnode, bool fLegacyMnObsolete)
                 return false;
             }
 
-            if (pnode->HasFulfilledRequest("busync")) return true;
-            pnode->FulfilledRequest("busync");
-
+            // Don't request budget initial sync to more than 6 randomly ordered peers in this round.
             if (RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD * 3) return false;
 
+            // Request bud sync if we haven't requested it yet.
+            if (pnode->HasFulfilledRequest("busync")) return true;
+
+            // Mark sync requested.
+            pnode->FulfilledRequest("busync");
+
+            // Sync proposals, finalizations and votes
             uint256 n;
-            g_connman->PushMessage(pnode, msgMaker.Make(NetMsgType::BUDGETVOTESYNC, n)); //sync masternode votes
+            g_connman->PushMessage(pnode, msgMaker.Make(NetMsgType::BUDGETVOTESYNC, n));
             RequestedMasternodeAttempt++;
-            return false;
+
+            return false; // sleep 1 second before do another request round.
         }
     }
 
     return true;
 }
-
-

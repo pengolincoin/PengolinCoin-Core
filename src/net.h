@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin developers
-// Copyright (c) 2015-2020 PIVX developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -25,8 +25,8 @@
 #include "threadinterrupt.h"
 
 #include <atomic>
+#include <cstdint>
 #include <deque>
-#include <stdint.h>
 #include <thread>
 #include <memory>
 #include <condition_variable>
@@ -50,8 +50,8 @@ static const int FEELER_INTERVAL = 120;
 static const unsigned int MAX_INV_SZ = 50000;
 /** The maximum number of entries in a locator */
 static const unsigned int MAX_LOCATOR_SZ = 101;
-/** The maximum number of new addresses to accumulate before announcing. */
-static const unsigned int MAX_ADDR_TO_SEND = 1000;
+/** The maximum number of addresses from our addrman to return in response to a getaddr message. */
+static constexpr size_t MAX_ADDR_TO_SEND = 1000;
 /** Maximum length of incoming protocol messages (no message over 2 MiB is currently acceptable). */
 static const unsigned int MAX_PROTOCOL_MESSAGE_LENGTH = 2 * 1024 * 1024;
 /** Maximum length of strSubVer in `version` message */
@@ -138,6 +138,7 @@ public:
         NetEventsInterface* m_msgproc = nullptr;
         unsigned int nSendBufferMaxSize = 0;
         unsigned int nReceiveFloodSize = 0;
+        std::vector<bool> m_asmap;
     };
     CConnman(uint64_t seed0, uint64_t seed1);
     ~CConnman();
@@ -157,6 +158,21 @@ public:
     {
         LOCK(cs_vNodes);
         for (auto&& node : vNodes)
+            if (NodeFullyConnected(node)) {
+                if (!func(node))
+                    return false;
+            }
+        return true;
+    };
+
+    template<typename Callable>
+    bool ForEachNodeInRandomOrderContinueIf(Callable&& func)
+    {
+        FastRandomContext ctx;
+        LOCK(cs_vNodes);
+        std::vector<CNode*> nodesCopy = vNodes;
+        std::shuffle(nodesCopy.begin(), nodesCopy.end(), ctx);
+        for (auto&& node : nodesCopy)
             if (NodeFullyConnected(node)) {
                 if (!func(node))
                     return false;
@@ -206,18 +222,27 @@ public:
         post();
     };
 
+    // Clears AskFor requests for every known peer
+    void RemoveAskFor(const uint256& invHash, int invType);
+
     void RelayInv(CInv& inv);
     bool IsNodeConnected(const CAddress& addr);
     // Retrieves a connected peer (if connection success). Used only to check peer address availability for now.
     CNode* ConnectNode(CAddress addrConnect);
 
     // Addrman functions
-    size_t GetAddressCount() const;
     void SetServices(const CService &addr, ServiceFlags nServices);
     void MarkAddressGood(const CAddress& addr);
     void AddNewAddress(const CAddress& addr, const CAddress& addrFrom, int64_t nTimePenalty = 0);
-    void AddNewAddresses(const std::vector<CAddress>& vAddr, const CAddress& addrFrom, int64_t nTimePenalty = 0);
-    std::vector<CAddress> GetAddresses();
+    bool AddNewAddresses(const std::vector<CAddress>& vAddr, const CAddress& addrFrom, int64_t nTimePenalty = 0);
+    /**
+     * Return all or many randomly selected addresses, optionally by network.
+     *
+     * @param[in] max_addresses  Maximum number of addresses to return (0 = all).
+     * @param[in] max_pct        Maximum percentage of addresses to return (0 = all).
+     * @param[in] network        Select only addresses of this network (nullopt = all).
+     */
+    std::vector<CAddress> GetAddresses(size_t max_addresses, size_t max_pct, Optional<Network> network);
 
     // Denial-of-service detection/prevention
     // The idea is to detect peers that are behaving
@@ -270,6 +295,8 @@ public:
     CSipHasher GetDeterministicRandomizer(uint64_t id);
 
     unsigned int GetReceiveFloodSize() const;
+
+    void SetAsmap(std::vector<bool> asmap) { addrman.m_asmap = std::move(asmap); }
 private:
     struct ListenSocket {
         SOCKET socket;
@@ -384,7 +411,7 @@ private:
 };
 extern std::unique_ptr<CConnman> g_connman;
 void Discover();
-unsigned short GetListenPort();
+uint16_t GetListenPort();
 bool BindListenPort(const CService& bindAddr, std::string& strError, bool fWhitelisted = false);
 void CheckOffsetDisconnectedPeers(const CNetAddr& ip);
 
@@ -414,17 +441,23 @@ enum {
 
 bool IsPeerAddrLocalGood(CNode* pnode);
 void AdvertiseLocal(CNode* pnode);
-void SetLimited(enum Network net, bool fLimited = true);
-bool IsLimited(enum Network net);
-bool IsLimited(const CNetAddr& addr);
+
+/**
+ * Mark a network as reachable or unreachable (no automatic connects to it)
+ * @note Networks are reachable by default
+ */
+void SetReachable(enum Network net, bool reachable);
+/** @returns true if the network is reachable, false otherwise */
+bool IsReachable(enum Network net);
+/** @returns true if the address is in a reachable network, false otherwise */
+bool IsReachable(const CNetAddr& addr);
+
 bool AddLocal(const CService& addr, int nScore = LOCAL_NONE);
 bool AddLocal(const CNetAddr& addr, int nScore = LOCAL_NONE);
 bool RemoveLocal(const CService& addr);
 bool SeenLocal(const CService& addr);
 bool IsLocal(const CService& addr);
 bool GetLocal(CService& addr, const CNetAddr* paddrPeer = NULL);
-bool IsReachable(enum Network net);
-bool IsReachable(const CNetAddr& addr);
 CAddress GetLocalAddress(const CNetAddr* paddrPeer, ServiceFlags nLocalServices);
 
 bool validateMasternodeIP(const std::string& addrStr);          // valid, reachable and routable address
@@ -469,6 +502,7 @@ public:
     double dPingTime;
     double dPingWait;
     std::string addrLocal;
+    uint32_t m_mapped_as;
 };
 
 
@@ -562,6 +596,11 @@ public:
     bool fClient;
     const bool fInbound;
     bool fNetworkNode;
+    /**
+     * Whether the peer has signaled support for receiving ADDRv2 (BIP155)
+     * messages, implying a preference to receive ADDRv2 instead of ADDR ones.
+     */
+    std::atomic_bool m_wants_addrv2{false};
     std::atomic_bool fSuccessfullyConnected;
     std::atomic_bool fDisconnect;
     // We use fRelayTxes for two purposes -
@@ -593,8 +632,8 @@ public:
     CRollingBloomFilter addrKnown;
     bool fGetAddr;
     std::set<uint256> setKnown;
-    int64_t nNextAddrSend;
-    int64_t nNextLocalAddrSend;
+    std::chrono::microseconds m_next_addr_send GUARDED_BY(cs_sendProcessing){0};
+    std::chrono::microseconds m_next_local_addr_send GUARDED_BY(cs_sendProcessing){0};
 
     // inventory based relay
     CRollingBloomFilter filterInventoryKnown;
@@ -712,10 +751,15 @@ public:
 
     void PushAddress(const CAddress& _addr, FastRandomContext &insecure_rand)
     {
+        // Whether the peer supports the address in `_addr`. For example,
+        // nodes that do not implement BIP155 cannot receive Tor v3 addresses
+        // because they require ADDRv2 (BIP155) encoding.
+        const bool addr_format_supported = m_wants_addrv2 || _addr.IsAddrV1Compatible();
+
         // Known checking here is only to save space from duplicates.
         // SendMessages will filter it again for knowns that were added
         // after addresses were pushed.
-        if (_addr.IsValid() && !addrKnown.contains(_addr.GetKey())) {
+        if (_addr.IsValid() && !addrKnown.contains(_addr.GetKey()) && addr_format_supported) {
             if (vAddrToSend.size() >= MAX_ADDR_TO_SEND) {
                 vAddrToSend[insecure_rand.randrange(vAddrToSend.size())] = _addr;
             } else {
@@ -748,6 +792,8 @@ public:
     }
 
     void AskFor(const CInv& inv);
+    // inv response received, clear it from the waiting inv set.
+    void AskForInvReceived(const uint256& invHash);
 
     bool HasFulfilledRequest(std::string strRequest)
     {
@@ -778,7 +824,7 @@ public:
     void CloseSocketDisconnect();
     bool DisconnectOldProtocol(int nVersionIn, int nVersionRequired);
 
-    void copyStats(CNodeStats& stats);
+    void copyStats(CNodeStats& stats, const std::vector<bool>& m_asmap);
 
     ServiceFlags GetLocalServices() const
     {

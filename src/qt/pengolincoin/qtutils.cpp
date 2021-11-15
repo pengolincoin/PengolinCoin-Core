@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 PIVX developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -235,7 +235,7 @@ QColor getRowColor(bool isLightTheme, bool isHovered, bool isSelected)
     } else if (isHovered) {
         return QColor("#25bababa");
     } else {
-        return isLightTheme ? QColor("#ffffff") : QColor("#0b0f16");
+        return isLightTheme ? QColor("#ffffff") : QColor("#0f0b16");
     }
 }
 

@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2021 The Bitcoin developers
-// Copyright (c) 2019-2021 PIVX developers
+// Copyright (c) 2019-2021 The PIVX developers
 // Copyright (c) 2020-2021 The PENGOLINCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -51,7 +51,7 @@ void CheckUniqueFileid(const CDBEnv& env, const std::string& filename, Db& db)
             const char* item_filename = nullptr;
             item.second->get_dbname(&item_filename, nullptr);
             throw std::runtime_error(strprintf("CDB: Can't open database %s (duplicates fileid %s from %s)", filename,
-                HexStr(std::begin(item_fileid), std::end(item_fileid)),
+                HexStr(item_fileid),
                 item_filename ? item_filename : "(unknown database)"));
         }
     }
@@ -764,10 +764,9 @@ bool CWalletDBWrapper::Backup(const std::string& strDest)
                 // Copy wallet file
                 fs::path pathSrc = env->Directory() / strFile;
                 fs::path pathDest(strDest);
-                LogPrint(BCLog::DB, "BackupWallet : pathDest = %s\n", pathDest.string());
                 if (fs::is_directory(pathDest))
                     pathDest /= strFile;
-                LogPrint(BCLog::DB, "BackupWallet : pathDest = %s\n", pathDest.string());
+
                 try {
                     if (fs::equivalent(pathSrc, pathDest)) {
                         LogPrintf("cannot backup to wallet source file %s\n", pathDest.string());
@@ -782,7 +781,7 @@ bool CWalletDBWrapper::Backup(const std::string& strDest)
                     LogPrintf("copied %s to %s\n", strFile, pathDest.string());
                     return true;
                 } catch (const fs::filesystem_error& e) {
-                    LogPrintf("error copying %s to %s - %s\n", strFile, pathDest.string(), e.what());
+                    LogPrintf("error copying %s to %s - %s\n", strFile, pathDest.string(), fsbridge::get_filesystem_error_message(e));
                     return false;
                 }
             }

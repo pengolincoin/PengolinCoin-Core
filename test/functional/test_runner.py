@@ -69,7 +69,12 @@ BASE_SCRIPTS= [
     'rpc_fundrawtransaction.py',                # ~ 227 sec
     'mining_pos_coldStaking.py',                # ~ 220 sec
     'wallet_import_rescan.py',                  # ~ 204 sec
+    'rpc_bind.py --ipv4',
+    'rpc_bind.py --ipv6',
+    'rpc_bind.py --nonloopback',
     'p2p_invalid_block.py',                     # ~ 213 sec
+    'p2p_addr_relay.py',
+    'p2p_addrv2_relay.py',
     'p2p_invalid_messages.py',
     'feature_reindex.py',                       # ~ 205 sec
     'feature_logging.py',                       # ~ 195 sec
@@ -121,11 +126,13 @@ BASE_SCRIPTS= [
     'rpc_signrawtransaction.py',                # ~ 50 sec
     'rpc_decodescript.py',                      # ~ 50 sec
     'rpc_blockchain.py',                        # ~ 50 sec
+    'feature_asmap.py',
     'wallet_disable.py',                        # ~ 50 sec
     'wallet_autocombine.py',                    # ~ 49 sec
     'mining_v5_upgrade.py',                     # ~ 48 sec
     'p2p_mempool.py',                           # ~ 46 sec
     'rpc_named_arguments.py',                   # ~ 45 sec
+    'feature_filelock.py',
     'feature_help.py',                          # ~ 30 sec
 
     # Don't append tests at the end to avoid merge conflicts
@@ -183,7 +190,6 @@ EXTENDED_SCRIPTS = [
     # vv Tests less than 60s vv
     #'p2p_feefilter.py',
     'feature_abortnode.py',
-    'rpc_bind.py',
     # vv Tests less than 30s vv
     #'example_test.py',
     'feature_notifications.py',
@@ -296,7 +302,7 @@ def main():
 
     enable_wallet = config["components"].getboolean("ENABLE_WALLET")
     enable_utils = config["components"].getboolean("ENABLE_UTILS")
-    enable_bitcoind = config["components"].getboolean("ENABLE_BITCOIND")
+    enable_pengolincoind = config["components"].getboolean("ENABLE_BITCOIND")
 
     if config["environment"]["EXEEXT"] == ".exe" and not args.force:
         # https://github.com/bitcoin/bitcoin/commit/d52802551752140cf41f0d9a225a43e84404d3e9
@@ -304,7 +310,7 @@ def main():
         print("Tests currently disabled on Windows by default. Use --force option to enable")
         sys.exit(0)
 
-    if not (enable_wallet and enable_utils and enable_bitcoind):
+    if not (enable_wallet and enable_utils and enable_pengolincoind):
         print("No functional tests to run. Wallet, utils, and pengolincoind must all be enabled")
         print("Rerun `configure` with -enable-wallet, -with-utils and -with-daemon and rerun make")
         sys.exit(0)
@@ -687,7 +693,7 @@ class RPCCoverage():
         if not os.path.isfile(coverage_ref_filename):
             raise RuntimeError("No coverage reference found")
 
-        with open(coverage_ref_filename, 'r') as f:
+        with open(coverage_ref_filename, 'r', encoding="utf8") as f:
             all_cmds.update([i.strip() for i in f.readlines()])
 
         for root, dirs, files in os.walk(self.dir):
@@ -696,7 +702,7 @@ class RPCCoverage():
                     coverage_filenames.add(os.path.join(root, filename))
 
         for filename in coverage_filenames:
-            with open(filename, 'r') as f:
+            with open(filename, 'r', encoding="utf8") as f:
                 covered_cmds.update([i.strip() for i in f.readlines()])
 
         return all_cmds - covered_cmds
