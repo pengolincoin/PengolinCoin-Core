@@ -354,14 +354,16 @@ static void SubtractMnPaymentFromCoinstake(CMutableTransaction& txCoinstake, CAm
 {
     assert (stakerOuts >= 2);
     //subtract mn payment from the stake reward
+    
+    CAmount totalPayment = masternodePayment + devFund;
     if (stakerOuts == 2) {
         // Majority of cases; do it quick and move on
-        txCoinstake.vout[1].nValue -= masternodePayment;
+        txCoinstake.vout[1].nValue -= totalPayment;
     } else {
         // special case, stake is split between (stakerOuts-1) outputs
         unsigned int outputs = stakerOuts-1;
-        CAmount mnPaymentSplit = masternodePayment / outputs;
-        CAmount mnPaymentRemainder = masternodePayment - (mnPaymentSplit * outputs);
+        CAmount mnPaymentSplit = totalPayment / outputs;
+        CAmount mnPaymentRemainder = totalPayment - (mnPaymentSplit * outputs);
         for (unsigned int j=1; j<=outputs; j++) {
             txCoinstake.vout[j].nValue -= mnPaymentSplit;
         }
@@ -369,18 +371,18 @@ static void SubtractMnPaymentFromCoinstake(CMutableTransaction& txCoinstake, CAm
         txCoinstake.vout[outputs].nValue -= mnPaymentRemainder;
     }
 
-    txCoinstake.vout.resize(stakerOuts + 1);
+    txCoinstake.vout.resize(stakerOuts + 2);
     if (!Params().GetConsensus().NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V5_2) && !Params().IsTestnet()) {
-        txCoinstake.vout[stakerOuts].scriptPubKey = CScript()
+        txCoinstake.vout[stakerOuts + 1].scriptPubKey = CScript()
                                         << ParseHex(Params().GetConsensus().strDevpubkey.c_str())
                                         << OP_CHECKSIG;
     } else {
-        txCoinstake.vout[stakerOuts].scriptPubKey = CScript() << OP_DUP << OP_HASH160
+        txCoinstake.vout[stakerOuts + 1].scriptPubKey = CScript() << OP_DUP << OP_HASH160
                                                 << ParseHex(Params().GetConsensus().strDevPubKeyID.c_str())
                                                 << OP_EQUALVERIFY << OP_CHECKSIG;
     }
     
-    txCoinstake.vout[stakerOuts].nValue = devFund;
+    txCoinstake.vout[stakerOuts + 1].nValue = devFund;
 }
 
 void CMasternodePayments::FillBlockPayee(CMutableTransaction& txCoinbase, CMutableTransaction& txCoinstake, const CBlockIndex* pindexPrev, bool fProofOfStake) const
@@ -394,6 +396,8 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txCoinbase, CMutab
     const int nHeight = pindexPrev->nHeight + 1;
     bool fPayCoinstake = fProofOfStake && !Params().GetConsensus().NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V6_0);
 
+    LogPrint(BCLog::MASTERNODE,"fPayCoinStake: %d, fProofOfStake: %d\n", fPayCoinstake, fProofOfStake);
+
     // if PoS block pays the coinbase, clear it first
     if (fProofOfStake && !fPayCoinstake) txCoinbase.vout.clear();
 
@@ -405,6 +409,7 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txCoinbase, CMutab
     CAmount masternodePayment{0};
     for (const CTxOut& mnOut: vecMnOuts) {
         // Add the mn payment to the coinstake/coinbase tx
+        
         if (fPayCoinstake) {
             txCoinstake.vout.emplace_back(mnOut);
         } else {
