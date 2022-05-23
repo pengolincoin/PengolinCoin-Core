@@ -2828,7 +2828,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
             // }
 
             if (tx->vout[nIndex + 1].nValue != nDevFundValue) {
-                return state.DoS(100, error("%s : rejected by check devfund value lock-in at %d", __func__, nHeight),
+                return state.DoS(100, error("%s : rejected by check devfund value: %d lock-in at %d", __func__, tx->vout[nIndex + 1].nValue, nHeight),
                     REJECT_INVALID, "check devfund value mismatch");
             }
 

@@ -74,6 +74,9 @@ static Checkpoints::MapCheckpoints mapCheckpoints = {
     { 0, uint256S("00000865fddb23c371506db1692c393b7f4c5813f9139ea20b808b325aa96316")},
     { 1100, uint256S("a32107ba6b3fd2a48d89a9825889c014a2479d8f17211fc7125874eb781c5286")},
     { 712312, uint256S("b0bbf31b151267e61bc8d64672df3bd331ffb9a39e96dbe0c028b0ea2fabb065")},
+    { 1038330, uint256S("1b06bd803f44d4c6bd536f099aecfa54b79d2b1e03c1d1ca145b956c3aec467b")},   // a soft-fork
+    { 1051201, uint256S("79e589e1ee9cca13e26beb412413a1fa10383a929d11dfdf5af3887645d0ca05")},   // a soft-fork
+
 };
 
 static const Checkpoints::CCheckpointData data = {
@@ -185,6 +188,7 @@ public:
         consensus.vUpgrades[Consensus::UPGRADE_V5_0].nActivationHeight          = 700001;
         consensus.vUpgrades[Consensus::UPGRADE_V5_2].nActivationHeight          = 700001;
         consensus.vUpgrades[Consensus::UPGRADE_V5_3].nActivationHeight          = 740001;
+        consensus.vUpgrades[Consensus::UPGRADE_V5_4].nActivationHeight          = 1055001;
         consensus.vUpgrades[Consensus::UPGRADE_V6_0].nActivationHeight =
                 Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
 

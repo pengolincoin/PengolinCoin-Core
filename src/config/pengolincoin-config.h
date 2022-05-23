@@ -21,7 +21,7 @@
 #define CLIENT_VERSION_MINOR 2
 
 /* Build revision */
-#define CLIENT_VERSION_REVISION 0
+#define CLIENT_VERSION_REVISION 1
 
 /* Version is release */
 #define COPYRIGHT_YEAR 2021
@@ -366,7 +366,7 @@
 #define PACKAGE_NAME "PENGOLINCOIN Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "PENGOLINCOIN Core 3.2.0"
+#define PACKAGE_STRING "PENGOLINCOIN Core 3.2.1"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "pengolincoin"
@@ -375,7 +375,7 @@
 #define PACKAGE_URL "https://www.pengolincoin.xyz/"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "3.2.0"
+#define PACKAGE_VERSION "3.2.1"
 
 /* Path to the zk params dir during unit tests on windows */
 #define PARAMS_DIR ""
